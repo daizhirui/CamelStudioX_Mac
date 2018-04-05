@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <scenes>
+        <!--Upload Config View Controller-->
+        <scene sceneID="nCs-w0-Zlw">
+            <objects>
+                <viewController storyboardIdentifier="Upload Config View Controller" id="Nri-5Q-gpK" customClass="UploadConfigViewController" customModule="CamelStudioX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Q6q-FK-79T">
+                        <rect key="frame" x="0.0" y="0.0" width="328" height="120"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X8S-jx-4uB">
+                                <rect key="frame" x="24" y="52" width="46" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Binary:" id="C7V-HW-EGZ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUW-Q9-Jex">
+                                <rect key="frame" x="70" y="49" width="152" height="51"/>
+                                <subviews>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qBW-Hu-CEo" userLabel="Port ComboBox">
+                                        <rect key="frame" x="-2" y="27" width="157" height="26"/>
+                                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="KAj-Bd-NAn">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="9sH-Sr-ZSF"/>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <binding destination="Nri-5Q-gpK" name="content" keyPath="self.uploader.serialController.serialPortManager.availablePorts" id="BVZ-gE-2li"/>
+                                            <binding destination="Nri-5Q-gpK" name="contentValues" keyPath="self.uploader.serialController.serialPortManager.availablePorts.name" previousBinding="BVZ-gE-2li" id="yYV-Eh-jiE"/>
+                                            <binding destination="Nri-5Q-gpK" name="selectedObject" keyPath="self.uploader.serialController.serialPort" previousBinding="yYV-Eh-jiE" id="3z5-28-kxV"/>
+                                        </connections>
+                                    </popUpButton>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oGh-ZJ-hPK">
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="22"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingHead" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Rqu-le-erf">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qBW-Hu-CEo" secondAttribute="trailing" id="HIx-KX-RIk"/>
+                                    <constraint firstItem="qBW-Hu-CEo" firstAttribute="leading" secondItem="dUW-Q9-Jex" secondAttribute="leading" id="gVa-o6-xfq"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-Yk-RTl">
+                                <rect key="frame" x="224" y="42" width="90" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="glN-dN-9aA"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Browser" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lgI-9l-Pfa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="selectBinary:" target="Nri-5Q-gpK" id="E0q-YZ-iN2"/>
+                                </connections>
+                            </button>
+                            <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfj-kj-Wmg">
+                                <rect key="frame" x="160" y="20" width="148" height="21"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gcb-Sx-JIf">
+                                        <rect key="frame" x="-6" y="-7" width="82" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7hn-K4-txv">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="cancelAction:" target="Nri-5Q-gpK" id="NGy-VX-s0T"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="808-Gj-Mng">
+                                        <rect key="frame" x="72" y="-7" width="82" height="32"/>
+                                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FVj-B3-AYV">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="okAction:" target="Nri-5Q-gpK" id="nbW-mt-etZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ItU-fG-TwF">
+                                <rect key="frame" x="36" y="81" width="34" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Port:" id="9vI-pt-xjI">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kfj-kj-Wmg" secondAttribute="trailing" constant="20" id="26Q-35-o8J"/>
+                            <constraint firstItem="wvv-Yk-RTl" firstAttribute="leading" secondItem="dUW-Q9-Jex" secondAttribute="trailing" constant="8" id="5mr-Vb-xkm"/>
+                            <constraint firstItem="X8S-jx-4uB" firstAttribute="leading" secondItem="Q6q-FK-79T" secondAttribute="leading" constant="26" id="9WO-Zr-OKz"/>
+                            <constraint firstItem="dUW-Q9-Jex" firstAttribute="top" secondItem="Q6q-FK-79T" secondAttribute="top" constant="20" id="KO1-rb-ABV"/>
+                            <constraint firstItem="Kfj-kj-Wmg" firstAttribute="leading" secondItem="Q6q-FK-79T" secondAttribute="leading" constant="160" id="XG7-Xk-OTt"/>
+                            <constraint firstItem="wvv-Yk-RTl" firstAttribute="bottom" secondItem="dUW-Q9-Jex" secondAttribute="bottom" id="Z3d-9I-If2"/>
+                            <constraint firstAttribute="bottom" secondItem="X8S-jx-4uB" secondAttribute="bottom" constant="52" id="aYt-SG-WXG"/>
+                            <constraint firstItem="X8S-jx-4uB" firstAttribute="trailing" secondItem="ItU-fG-TwF" secondAttribute="trailing" id="dhK-Sk-B1w"/>
+                            <constraint firstItem="dUW-Q9-Jex" firstAttribute="leading" secondItem="ItU-fG-TwF" secondAttribute="trailing" constant="2" id="h8m-vx-5tq"/>
+                            <constraint firstItem="qBW-Hu-CEo" firstAttribute="centerY" secondItem="ItU-fG-TwF" secondAttribute="centerY" id="hkr-ph-hMr"/>
+                            <constraint firstAttribute="trailing" secondItem="wvv-Yk-RTl" secondAttribute="trailing" constant="20" id="k8D-bc-fBx"/>
+                            <constraint firstAttribute="bottom" secondItem="Kfj-kj-Wmg" secondAttribute="bottom" constant="20" id="n9O-6I-Oax"/>
+                            <constraint firstItem="dUW-Q9-Jex" firstAttribute="leading" secondItem="X8S-jx-4uB" secondAttribute="trailing" constant="2" id="r84-jv-bme"/>
+                            <constraint firstItem="oGh-ZJ-hPK" firstAttribute="centerY" secondItem="X8S-jx-4uB" secondAttribute="centerY" id="uYE-4e-Vsu"/>
+                            <constraint firstItem="Kfj-kj-Wmg" firstAttribute="top" secondItem="dUW-Q9-Jex" secondAttribute="bottom" constant="8" id="wox-Mo-Slg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="binaryPath" destination="oGh-ZJ-hPK" id="VVg-tS-sVK"/>
+                    </connections>
+                </viewController>
+                <customObject id="4QH-6n-1Of" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-69" y="71"/>
+        </scene>
+    </scenes>
+</document>

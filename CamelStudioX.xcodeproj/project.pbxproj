@@ -1,0 +1,2520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		231D5D7020724A3800486DC7 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D6F20724A3800486DC7 /* Compiler.swift */; };
+		231D5D7220724E1200486DC7 /* TerminalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D7120724E1200486DC7 /* TerminalCommand.swift */; };
+		233DBE042075636100269D8E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE032075636100269D8E /* PreferenceViewController.swift */; };
+		233DBE072075648000269D8E /* Preference.plist in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE052075648000269D8E /* Preference.plist */; };
+		233DBE082075648000269D8E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE062075648000269D8E /* README.md */; };
+		233DBE0C2075668B00269D8E /* ch34x.pkg in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE0A2075668B00269D8E /* ch34x.pkg */; };
+		233DBE0D2075668B00269D8E /* pl2303.pkg in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE0B2075668B00269D8E /* pl2303.pkg */; };
+		233DBE102075686C00269D8E /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE0E2075686C00269D8E /* HelpViewController.swift */; };
+		233DBE112075686C00269D8E /* VersionRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE0F2075686C00269D8E /* VersionRecordViewController.swift */; };
+		233DBE14207568E100269D8E /* PlotKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 233DBE12207568E100269D8E /* PlotKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		233DBE1F207568F100269D8E /* Markdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 233DBE1D207568F100269D8E /* Markdown.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		233DBE22207568F100269D8E /* Markdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233DBE1B207568F100269D8E /* Markdown.framework */; };
+		233DBE23207568F100269D8E /* Markdown.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 233DBE1B207568F100269D8E /* Markdown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		233DBE2C2075693100269D8E /* libmarkdown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 233DBE272075693000269D8E /* libmarkdown.a */; };
+		233DBE2D2075693100269D8E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE282075693000269D8E /* Errors.swift */; };
+		233DBE2E2075693100269D8E /* mkdio.h in Headers */ = {isa = PBXBuildFile; fileRef = 233DBE292075693100269D8E /* mkdio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		233DBE2F2075693100269D8E /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE2A2075693100269D8E /* Options.swift */; };
+		233DBE302075693100269D8E /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE2B2075693100269D8E /* Markdown.swift */; };
+		233DBE3220756F3E00269D8E /* GetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE3120756F3E00269D8E /* GetNameViewController.swift */; };
+		233DBE3820759E5000269D8E /* cmsproj.png in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE3720759E5000269D8E /* cmsproj.png */; };
+		236428CE2072AB0E00FB9C33 /* CreateProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */; };
+		236428E82072B9D200FB9C33 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */; };
+		236429062072C2DF00FB9C33 /* Developer in Resources */ = {isa = PBXBuildFile; fileRef = 236429052072C2DF00FB9C33 /* Developer */; };
+		236429082072C34400FB9C33 /* DocumentWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236429072072C34400FB9C33 /* DocumentWindowController.swift */; };
+		2364290A2072F77200FB9C33 /* ProjectConfig.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236429092072F77200FB9C33 /* ProjectConfig.storyboard */; };
+		2364290E20736B5100FB9C33 /* ProjectConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364290D20736B5100FB9C33 /* ProjectConfigViewController.swift */; };
+		23642B3120737BDF00FB9C33 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23642B2A20737BDF00FB9C33 /* Highlightr.framework */; };
+		23642B3220737BDF00FB9C33 /* Highlightr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23642B2A20737BDF00FB9C33 /* Highlightr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23642B3720737BED00FB9C33 /* CodeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364291320737AFF00FB9C33 /* CodeAttributedString.swift */; };
+		23642B3820737BF400FB9C33 /* Highlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364291120737AFF00FB9C33 /* Highlightr.swift */; };
+		23642B3920737BF800FB9C33 /* HTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364291220737AFF00FB9C33 /* HTMLUtils.swift */; };
+		23642B3B20737BFF00FB9C33 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364291420737AFF00FB9C33 /* Theme.swift */; };
+		23642B3C20737C0A00FB9C33 /* agate.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC420737BBC00FB9C33 /* agate.min.css */; };
+		23642B3E20737C1200FB9C33 /* androidstudio.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA520737BB900FB9C33 /* androidstudio.min.css */; };
+		23642B3F20737C1200FB9C33 /* arduino-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC120737BBC00FB9C33 /* arduino-light.min.css */; };
+		23642B4020737C1200FB9C33 /* arta.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC320737BBC00FB9C33 /* arta.min.css */; };
+		23642B4120737C1200FB9C33 /* ascetic.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8E20737BB800FB9C33 /* ascetic.min.css */; };
+		23642B4220737C1200FB9C33 /* atelier-cave-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC620737BBC00FB9C33 /* atelier-cave-dark.min.css */; };
+		23642B4320737C1200FB9C33 /* atelier-cave-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC820737BBD00FB9C33 /* atelier-cave-light.min.css */; };
+		23642B4420737C1200FB9C33 /* atelier-dune-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC020737BBC00FB9C33 /* atelier-dune-dark.min.css */; };
+		23642B4520737C1200FB9C33 /* atelier-dune-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ACF20737BBD00FB9C33 /* atelier-dune-light.min.css */; };
+		23642B4620737C1200FB9C33 /* atelier-estuary-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ACB20737BBD00FB9C33 /* atelier-estuary-dark.min.css */; };
+		23642B4720737C1200FB9C33 /* atelier-estuary-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ACC20737BBD00FB9C33 /* atelier-estuary-light.min.css */; };
+		23642B4820737C1200FB9C33 /* atelier-forest-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ABA20737BBB00FB9C33 /* atelier-forest-dark.min.css */; };
+		23642B4920737C1200FB9C33 /* atelier-forest-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC920737BBD00FB9C33 /* atelier-forest-light.min.css */; };
+		23642B4A20737C1200FB9C33 /* atelier-heath-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ACD20737BBD00FB9C33 /* atelier-heath-dark.min.css */; };
+		23642B4B20737C1200FB9C33 /* atelier-heath-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AAC20737BBA00FB9C33 /* atelier-heath-light.min.css */; };
+		23642B4C20737C1200FB9C33 /* atelier-lakeside-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9820737BB800FB9C33 /* atelier-lakeside-dark.min.css */; };
+		23642B4D20737C1200FB9C33 /* atelier-lakeside-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA820737BBA00FB9C33 /* atelier-lakeside-light.min.css */; };
+		23642B4E20737C1200FB9C33 /* atelier-plateau-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB620737BBB00FB9C33 /* atelier-plateau-dark.min.css */; };
+		23642B4F20737C1200FB9C33 /* atelier-plateau-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9B20737BB900FB9C33 /* atelier-plateau-light.min.css */; };
+		23642B5020737C1200FB9C33 /* atelier-savanna-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8620737BB700FB9C33 /* atelier-savanna-dark.min.css */; };
+		23642B5120737C1200FB9C33 /* atelier-savanna-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB720737BBB00FB9C33 /* atelier-savanna-light.min.css */; };
+		23642B5220737C1200FB9C33 /* atelier-seaside-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AAD20737BBA00FB9C33 /* atelier-seaside-dark.min.css */; };
+		23642B5320737C1200FB9C33 /* atelier-seaside-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ACE20737BBD00FB9C33 /* atelier-seaside-light.min.css */; };
+		23642B5420737C1200FB9C33 /* atelier-sulphurpool-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8820737BB700FB9C33 /* atelier-sulphurpool-dark.min.css */; };
+		23642B5520737C1200FB9C33 /* atelier-sulphurpool-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA920737BBA00FB9C33 /* atelier-sulphurpool-light.min.css */; };
+		23642B5620737C1200FB9C33 /* atom-one-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9920737BB800FB9C33 /* atom-one-dark.min.css */; };
+		23642B5720737C1200FB9C33 /* atom-one-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9420737BB800FB9C33 /* atom-one-light.min.css */; };
+		23642B5820737C1200FB9C33 /* brown-paper.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB420737BBB00FB9C33 /* brown-paper.min.css */; };
+		23642B5920737C1200FB9C33 /* brown-papersq.png in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB120737BBA00FB9C33 /* brown-papersq.png */; };
+		23642B5A20737C1200FB9C33 /* codepen-embed.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AD020737BBD00FB9C33 /* codepen-embed.min.css */; };
+		23642B5B20737C1200FB9C33 /* color-brewer.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9220737BB800FB9C33 /* color-brewer.min.css */; };
+		23642B5C20737C1200FB9C33 /* darcula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AAB20737BBA00FB9C33 /* darcula.min.css */; };
+		23642B5D20737C1200FB9C33 /* dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AD220737BBD00FB9C33 /* dark.min.css */; };
+		23642B5E20737C1200FB9C33 /* darkula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AD120737BBD00FB9C33 /* darkula.min.css */; };
+		23642B5F20737C1200FB9C33 /* default.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9320737BB800FB9C33 /* default.min.css */; };
+		23642B6020737C1200FB9C33 /* docco.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC520737BBC00FB9C33 /* docco.min.css */; };
+		23642B6120737C1200FB9C33 /* dracula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8D20737BB800FB9C33 /* dracula.min.css */; };
+		23642B6220737C1200FB9C33 /* far.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9A20737BB900FB9C33 /* far.min.css */; };
+		23642B6320737C1200FB9C33 /* foundation.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AAE20737BBA00FB9C33 /* foundation.min.css */; };
+		23642B6420737C1200FB9C33 /* github-gist.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB320737BBB00FB9C33 /* github-gist.min.css */; };
+		23642B6520737C1200FB9C33 /* github.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB820737BBB00FB9C33 /* github.min.css */; };
+		23642B6620737C1200FB9C33 /* googlecode.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AAF20737BBA00FB9C33 /* googlecode.min.css */; };
+		23642B6720737C1200FB9C33 /* grayscale.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9F20737BB900FB9C33 /* grayscale.min.css */; };
+		23642B6820737C1200FB9C33 /* gruvbox-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB520737BBB00FB9C33 /* gruvbox-dark.min.css */; };
+		23642B6920737C1200FB9C33 /* gruvbox-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8C20737BB700FB9C33 /* gruvbox-light.min.css */; };
+		23642B6A20737C1200FB9C33 /* hopscotch.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8F20737BB800FB9C33 /* hopscotch.min.css */; };
+		23642B6B20737C1200FB9C33 /* hybrid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8420737BB700FB9C33 /* hybrid.min.css */; };
+		23642B6C20737C1200FB9C33 /* idea.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9520737BB800FB9C33 /* idea.min.css */; };
+		23642B6D20737C1200FB9C33 /* ir-black.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB020737BBA00FB9C33 /* ir-black.min.css */; };
+		23642B6E20737C1200FB9C33 /* kimbie.dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA020737BB900FB9C33 /* kimbie.dark.min.css */; };
+		23642B6F20737C1200FB9C33 /* kimbie.light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9620737BB800FB9C33 /* kimbie.light.min.css */; };
+		23642B7020737C1200FB9C33 /* magula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8B20737BB700FB9C33 /* magula.min.css */; };
+		23642B7120737C1200FB9C33 /* mono-blue.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ABE20737BBC00FB9C33 /* mono-blue.min.css */; };
+		23642B7220737C1200FB9C33 /* monokai-sublime.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA320737BB900FB9C33 /* monokai-sublime.min.css */; };
+		23642B7320737C1200FB9C33 /* monokai.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA120737BB900FB9C33 /* monokai.min.css */; };
+		23642B7420737C1200FB9C33 /* obsidian.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ABD20737BBC00FB9C33 /* obsidian.min.css */; };
+		23642B7520737C1200FB9C33 /* ocean.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8920737BB700FB9C33 /* ocean.min.css */; };
+		23642B7620737C1200FB9C33 /* paraiso-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ABB20737BBB00FB9C33 /* paraiso-dark.min.css */; };
+		23642B7720737C1200FB9C33 /* paraiso-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AAA20737BBA00FB9C33 /* paraiso-light.min.css */; };
+		23642B7820737C1200FB9C33 /* pojoaque.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA720737BBA00FB9C33 /* pojoaque.jpg */; };
+		23642B7920737C1200FB9C33 /* pojoaque.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9120737BB800FB9C33 /* pojoaque.min.css */; };
+		23642B7A20737C1200FB9C33 /* purebasic.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB920737BBB00FB9C33 /* purebasic.min.css */; };
+		23642B7B20737C1200FB9C33 /* qtcreator_dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8120737BB700FB9C33 /* qtcreator_dark.min.css */; };
+		23642B7C20737C1200FB9C33 /* qtcreator_light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9720737BB800FB9C33 /* qtcreator_light.min.css */; };
+		23642B7D20737C1200FB9C33 /* railscasts.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8A20737BB700FB9C33 /* railscasts.min.css */; };
+		23642B7E20737C1200FB9C33 /* rainbow.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ACA20737BBD00FB9C33 /* rainbow.min.css */; };
+		23642B7F20737C1200FB9C33 /* routeros.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA420737BB900FB9C33 /* routeros.min.css */; };
+		23642B8020737C1200FB9C33 /* school-book.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8220737BB700FB9C33 /* school-book.min.css */; };
+		23642B8120737C1200FB9C33 /* school-book.png in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8320737BB700FB9C33 /* school-book.png */; };
+		23642B8220737C1200FB9C33 /* solarized-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8520737BB700FB9C33 /* solarized-dark.min.css */; };
+		23642B8320737C1200FB9C33 /* solarized-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AB220737BBB00FB9C33 /* solarized-light.min.css */; };
+		23642B8420737C1200FB9C33 /* sunburst.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9020737BB800FB9C33 /* sunburst.min.css */; };
+		23642B8520737C1200FB9C33 /* tomorrow-night-blue.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9E20737BB900FB9C33 /* tomorrow-night-blue.min.css */; };
+		23642B8620737C1200FB9C33 /* tomorrow-night-bright.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC720737BBC00FB9C33 /* tomorrow-night-bright.min.css */; };
+		23642B8720737C1200FB9C33 /* tomorrow-night-eighties.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ABC20737BBB00FB9C33 /* tomorrow-night-eighties.min.css */; };
+		23642B8820737C1200FB9C33 /* tomorrow-night.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9C20737BB900FB9C33 /* tomorrow-night.min.css */; };
+		23642B8920737C1200FB9C33 /* tomorrow.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA220737BB900FB9C33 /* tomorrow.min.css */; };
+		23642B8A20737C1200FB9C33 /* vs.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AA620737BBA00FB9C33 /* vs.min.css */; };
+		23642B8B20737C1200FB9C33 /* vs2015.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642ABF20737BBC00FB9C33 /* vs2015.min.css */; };
+		23642B8C20737C1200FB9C33 /* xcode.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642AC220737BBC00FB9C33 /* xcode.min.css */; };
+		23642B8D20737C1200FB9C33 /* xt256.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A9D20737BB900FB9C33 /* xt256.min.css */; };
+		23642B8E20737C1200FB9C33 /* zenburn.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 23642A8720737BB700FB9C33 /* zenburn.min.css */; };
+		23642B8F20737C1B00FB9C33 /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 23642A7F20737BA000FB9C33 /* highlight.min.js */; };
+		23642B9020737C2700FB9C33 /* 1c.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B620737B9400FB9C33 /* 1c.min.js */; };
+		23642B9120737C2700FB9C33 /* abnf.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B120737B9300FB9C33 /* abnf.min.js */; };
+		23642B9220737C2700FB9C33 /* accesslog.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297D20737B8D00FB9C33 /* accesslog.min.js */; };
+		23642B9320737C2700FB9C33 /* actionscript.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297320737B8C00FB9C33 /* actionscript.min.js */; };
+		23642B9420737C2700FB9C33 /* ada.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C520737B9500FB9C33 /* ada.min.js */; };
+		23642B9520737C2700FB9C33 /* apache.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296E20737B8B00FB9C33 /* apache.min.js */; };
+		23642B9620737C2700FB9C33 /* applescript.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429BB20737B9400FB9C33 /* applescript.min.js */; };
+		23642B9720737C2700FB9C33 /* arduino.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C720737B9600FB9C33 /* arduino.min.js */; };
+		23642B9820737C2700FB9C33 /* armasm.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294620737B8600FB9C33 /* armasm.min.js */; };
+		23642B9920737C2700FB9C33 /* asciidoc.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299C20737B9000FB9C33 /* asciidoc.min.js */; };
+		23642B9A20737C2700FB9C33 /* aspectj.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292520737B8300FB9C33 /* aspectj.min.js */; };
+		23642B9B20737C2700FB9C33 /* autohotkey.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C420737B9500FB9C33 /* autohotkey.min.js */; };
+		23642B9C20737C2700FB9C33 /* autoit.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299220737B8F00FB9C33 /* autoit.min.js */; };
+		23642B9D20737C2700FB9C33 /* avrasm.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294B20737B8700FB9C33 /* avrasm.min.js */; };
+		23642B9E20737C2700FB9C33 /* awk.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295420737B8800FB9C33 /* awk.min.js */; };
+		23642B9F20737C2700FB9C33 /* axapta.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299320737B8F00FB9C33 /* axapta.min.js */; };
+		23642BA020737C2700FB9C33 /* bash.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294820737B8600FB9C33 /* bash.min.js */; };
+		23642BA120737C2700FB9C33 /* basic.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298B20737B8E00FB9C33 /* basic.min.js */; };
+		23642BA220737C2700FB9C33 /* bnf.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294120737B8600FB9C33 /* bnf.min.js */; };
+		23642BA320737C2700FB9C33 /* brainfuck.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296920737B8A00FB9C33 /* brainfuck.min.js */; };
+		23642BA420737C2700FB9C33 /* cal.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429BC20737B9400FB9C33 /* cal.min.js */; };
+		23642BA520737C2700FB9C33 /* capnproto.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C320737B9500FB9C33 /* capnproto.min.js */; };
+		23642BA620737C2700FB9C33 /* ceylon.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292120737B8300FB9C33 /* ceylon.min.js */; };
+		23642BA720737C2700FB9C33 /* clean.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429AC20737B9200FB9C33 /* clean.min.js */; };
+		23642BA820737C2700FB9C33 /* clojure-repl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A220737B9100FB9C33 /* clojure-repl.min.js */; };
+		23642BA920737C2700FB9C33 /* clojure.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296F20737B8B00FB9C33 /* clojure.min.js */; };
+		23642BAA20737C2700FB9C33 /* cmake.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B520737B9400FB9C33 /* cmake.min.js */; };
+		23642BAB20737C2700FB9C33 /* coffeescript.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293120737B8400FB9C33 /* coffeescript.min.js */; };
+		23642BAC20737C2700FB9C33 /* coq.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A520737B9200FB9C33 /* coq.min.js */; };
+		23642BAD20737C2700FB9C33 /* cos.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296620737B8A00FB9C33 /* cos.min.js */; };
+		23642BAE20737C2700FB9C33 /* cpp.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295020737B8700FB9C33 /* cpp.min.js */; };
+		23642BAF20737C2700FB9C33 /* crmsh.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295D20737B8900FB9C33 /* crmsh.min.js */; };
+		23642BB020737C2700FB9C33 /* crystal.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292920737B8300FB9C33 /* crystal.min.js */; };
+		23642BB120737C2700FB9C33 /* cs.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294020737B8500FB9C33 /* cs.min.js */; };
+		23642BB220737C2700FB9C33 /* csp.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299E20737B9100FB9C33 /* csp.min.js */; };
+		23642BB320737C2700FB9C33 /* css.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294E20737B8700FB9C33 /* css.min.js */; };
+		23642BB420737C2700FB9C33 /* d.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429AA20737B9200FB9C33 /* d.min.js */; };
+		23642BB520737C2700FB9C33 /* dart.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298620737B8E00FB9C33 /* dart.min.js */; };
+		23642BB620737C2700FB9C33 /* delphi.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429CD20737B9600FB9C33 /* delphi.min.js */; };
+		23642BB720737C2700FB9C33 /* diff.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295F20737B8900FB9C33 /* diff.min.js */; };
+		23642BB820737C2700FB9C33 /* django.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429AE20737B9300FB9C33 /* django.min.js */; };
+		23642BB920737C2700FB9C33 /* dns.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A320737B9100FB9C33 /* dns.min.js */; };
+		23642BBA20737C2700FB9C33 /* dockerfile.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298A20737B8E00FB9C33 /* dockerfile.min.js */; };
+		23642BBB20737C2700FB9C33 /* dos.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295720737B8800FB9C33 /* dos.min.js */; };
+		23642BBC20737C2700FB9C33 /* dsconfig.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298020737B8D00FB9C33 /* dsconfig.min.js */; };
+		23642BBD20737C2700FB9C33 /* dts.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296C20737B8B00FB9C33 /* dts.min.js */; };
+		23642BBE20737C2700FB9C33 /* dust.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B020737B9300FB9C33 /* dust.min.js */; };
+		23642BBF20737C2700FB9C33 /* ebnf.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299020737B8F00FB9C33 /* ebnf.min.js */; };
+		23642BC020737C2700FB9C33 /* elixir.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294D20737B8700FB9C33 /* elixir.min.js */; };
+		23642BC120737C2700FB9C33 /* elm.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295220737B8800FB9C33 /* elm.min.js */; };
+		23642BC220737C2700FB9C33 /* erb.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296020737B8900FB9C33 /* erb.min.js */; };
+		23642BC320737C2700FB9C33 /* erlang-repl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297820737B8C00FB9C33 /* erlang-repl.min.js */; };
+		23642BC420737C2700FB9C33 /* erlang.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297F20737B8D00FB9C33 /* erlang.min.js */; };
+		23642BC520737C2700FB9C33 /* excel.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299D20737B9100FB9C33 /* excel.min.js */; };
+		23642BC620737C2700FB9C33 /* fix.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293220737B8400FB9C33 /* fix.min.js */; };
+		23642BC720737C2700FB9C33 /* flix.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296420737B8A00FB9C33 /* flix.min.js */; };
+		23642BC820737C2700FB9C33 /* fortran.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299F20737B9100FB9C33 /* fortran.min.js */; };
+		23642BC920737C2700FB9C33 /* fsharp.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429BD20737B9400FB9C33 /* fsharp.min.js */; };
+		23642BCA20737C2700FB9C33 /* gams.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295120737B8700FB9C33 /* gams.min.js */; };
+		23642BCB20737C2700FB9C33 /* gauss.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A720737B9200FB9C33 /* gauss.min.js */; };
+		23642BCC20737C2700FB9C33 /* gcode.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297020737B8B00FB9C33 /* gcode.min.js */; };
+		23642BCD20737C2700FB9C33 /* gherkin.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298520737B8E00FB9C33 /* gherkin.min.js */; };
+		23642BCE20737C2700FB9C33 /* glsl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297A20737B8C00FB9C33 /* glsl.min.js */; };
+		23642BCF20737C2700FB9C33 /* go.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294420737B8600FB9C33 /* go.min.js */; };
+		23642BD020737C2700FB9C33 /* golo.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299420737B8F00FB9C33 /* golo.min.js */; };
+		23642BD120737C2700FB9C33 /* gradle.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299520737B9000FB9C33 /* gradle.min.js */; };
+		23642BD220737C2700FB9C33 /* groovy.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293720737B8400FB9C33 /* groovy.min.js */; };
+		23642BD320737C2700FB9C33 /* haml.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296A20737B8A00FB9C33 /* haml.min.js */; };
+		23642BD420737C2700FB9C33 /* handlebars.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292020737B8300FB9C33 /* handlebars.min.js */; };
+		23642BD520737C2700FB9C33 /* haskell.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297720737B8C00FB9C33 /* haskell.min.js */; };
+		23642BD620737C2700FB9C33 /* haxe.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293320737B8400FB9C33 /* haxe.min.js */; };
+		23642BD720737C2700FB9C33 /* hsp.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293020737B8400FB9C33 /* hsp.min.js */; };
+		23642BD820737C2700FB9C33 /* htmlbars.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296B20737B8B00FB9C33 /* htmlbars.min.js */; };
+		23642BD920737C2700FB9C33 /* http.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292620737B8300FB9C33 /* http.min.js */; };
+		23642BDA20737C2700FB9C33 /* hy.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C620737B9600FB9C33 /* hy.min.js */; };
+		23642BDB20737C2700FB9C33 /* inform7.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292A20737B8300FB9C33 /* inform7.min.js */; };
+		23642BDC20737C2700FB9C33 /* ini.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292820737B8300FB9C33 /* ini.min.js */; };
+		23642BDD20737C2700FB9C33 /* irpf90.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293B20737B8500FB9C33 /* irpf90.min.js */; };
+		23642BDE20737C2700FB9C33 /* java.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294F20737B8700FB9C33 /* java.min.js */; };
+		23642BDF20737C2700FB9C33 /* javascript.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298F20737B8F00FB9C33 /* javascript.min.js */; };
+		23642BE020737C2700FB9C33 /* jboss-cli.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298720737B8E00FB9C33 /* jboss-cli.min.js */; };
+		23642BE120737C2700FB9C33 /* json.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292D20737B8400FB9C33 /* json.min.js */; };
+		23642BE220737C2700FB9C33 /* julia-repl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429CC20737B9600FB9C33 /* julia-repl.min.js */; };
+		23642BE320737C2700FB9C33 /* julia.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A620737B9200FB9C33 /* julia.min.js */; };
+		23642BE420737C2700FB9C33 /* kotlin.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293420737B8400FB9C33 /* kotlin.min.js */; };
+		23642BE520737C2700FB9C33 /* lasso.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298E20737B8F00FB9C33 /* lasso.min.js */; };
+		23642BE620737C2700FB9C33 /* ldif.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294C20737B8700FB9C33 /* ldif.min.js */; };
+		23642BE720737C2700FB9C33 /* leaf.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296320737B8A00FB9C33 /* leaf.min.js */; };
+		23642BE820737C2700FB9C33 /* less.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298D20737B8F00FB9C33 /* less.min.js */; };
+		23642BE920737C2700FB9C33 /* lisp.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296D20737B8B00FB9C33 /* lisp.min.js */; };
+		23642BEA20737C2700FB9C33 /* livecodeserver.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298120737B8D00FB9C33 /* livecodeserver.min.js */; };
+		23642BEB20737C2700FB9C33 /* livescript.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299120737B8F00FB9C33 /* livescript.min.js */; };
+		23642BEC20737C2700FB9C33 /* llvm.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364291F20737B8300FB9C33 /* llvm.min.js */; };
+		23642BED20737C2700FB9C33 /* lsl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299620737B9000FB9C33 /* lsl.min.js */; };
+		23642BEE20737C2700FB9C33 /* lua.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298820737B8E00FB9C33 /* lua.min.js */; };
+		23642BEF20737C2700FB9C33 /* makefile.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293520737B8400FB9C33 /* makefile.min.js */; };
+		23642BF020737C2700FB9C33 /* markdown.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294220737B8600FB9C33 /* markdown.min.js */; };
+		23642BF120737C2700FB9C33 /* mathematica.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429CB20737B9600FB9C33 /* mathematica.min.js */; };
+		23642BF220737C2700FB9C33 /* matlab.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297120737B8B00FB9C33 /* matlab.min.js */; };
+		23642BF320737C2700FB9C33 /* maxima.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296720737B8A00FB9C33 /* maxima.min.js */; };
+		23642BF420737C2700FB9C33 /* mel.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293E20737B8500FB9C33 /* mel.min.js */; };
+		23642BF520737C2700FB9C33 /* mercury.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292E20737B8400FB9C33 /* mercury.min.js */; };
+		23642BF620737C2700FB9C33 /* mipsasm.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296520737B8A00FB9C33 /* mipsasm.min.js */; };
+		23642BF720737C2700FB9C33 /* mizar.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292320737B8300FB9C33 /* mizar.min.js */; };
+		23642BF820737C2700FB9C33 /* mojolicious.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B820737B9400FB9C33 /* mojolicious.min.js */; };
+		23642BF920737C2700FB9C33 /* monkey.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298C20737B8F00FB9C33 /* monkey.min.js */; };
+		23642BFA20737C2700FB9C33 /* moonscript.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A820737B9200FB9C33 /* moonscript.min.js */; };
+		23642BFB20737C2700FB9C33 /* n1ql.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A920737B9200FB9C33 /* n1ql.min.js */; };
+		23642BFC20737C2700FB9C33 /* nginx.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295320737B8800FB9C33 /* nginx.min.js */; };
+		23642BFD20737C2700FB9C33 /* nimrod.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297420737B8C00FB9C33 /* nimrod.min.js */; };
+		23642BFE20737C2700FB9C33 /* nix.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297220737B8B00FB9C33 /* nix.min.js */; };
+		23642BFF20737C2700FB9C33 /* nsis.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293620737B8400FB9C33 /* nsis.min.js */; };
+		23642C0020737C2700FB9C33 /* objectivec.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292720737B8300FB9C33 /* objectivec.min.js */; };
+		23642C0120737C2700FB9C33 /* ocaml.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299A20737B9000FB9C33 /* ocaml.min.js */; };
+		23642C0220737C2700FB9C33 /* openscad.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298920737B8E00FB9C33 /* openscad.min.js */; };
+		23642C0320737C2700FB9C33 /* oxygene.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297C20737B8D00FB9C33 /* oxygene.min.js */; };
+		23642C0420737C2700FB9C33 /* parser3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B920737B9400FB9C33 /* parser3.min.js */; };
+		23642C0520737C2700FB9C33 /* perl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292F20737B8400FB9C33 /* perl.min.js */; };
+		23642C0620737C2700FB9C33 /* pf.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A120737B9100FB9C33 /* pf.min.js */; };
+		23642C0720737C2700FB9C33 /* php.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294320737B8600FB9C33 /* php.min.js */; };
+		23642C0820737C2700FB9C33 /* pony.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295E20737B8900FB9C33 /* pony.min.js */; };
+		23642C0920737C2700FB9C33 /* powershell.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429AB20737B9200FB9C33 /* powershell.min.js */; };
+		23642C0A20737C2700FB9C33 /* processing.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299720737B9000FB9C33 /* processing.min.js */; };
+		23642C0B20737C2700FB9C33 /* profile.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429BF20737B9500FB9C33 /* profile.min.js */; };
+		23642C0C20737C2700FB9C33 /* prolog.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295520737B8800FB9C33 /* prolog.min.js */; };
+		23642C0D20737C2700FB9C33 /* protobuf.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C820737B9600FB9C33 /* protobuf.min.js */; };
+		23642C0E20737C2700FB9C33 /* puppet.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429AF20737B9300FB9C33 /* puppet.min.js */; };
+		23642C0F20737C2700FB9C33 /* purebasic.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429CE20737B9700FB9C33 /* purebasic.min.js */; };
+		23642C1020737C2700FB9C33 /* python.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295A20737B8800FB9C33 /* python.min.js */; };
+		23642C1120737C2700FB9C33 /* q.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295920737B8800FB9C33 /* q.min.js */; };
+		23642C1220737C2700FB9C33 /* qml.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295B20737B8900FB9C33 /* qml.min.js */; };
+		23642C1320737C2700FB9C33 /* r.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296120737B8900FB9C33 /* r.min.js */; };
+		23642C1420737C2700FB9C33 /* rib.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297520737B8C00FB9C33 /* rib.min.js */; };
+		23642C1520737C2700FB9C33 /* roboconf.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294520737B8600FB9C33 /* roboconf.min.js */; };
+		23642C1620737C2700FB9C33 /* routeros.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294A20737B8700FB9C33 /* routeros.min.js */; };
+		23642C1720737C2700FB9C33 /* rsl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A020737B9100FB9C33 /* rsl.min.js */; };
+		23642C1820737C2700FB9C33 /* ruby.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293820737B8500FB9C33 /* ruby.min.js */; };
+		23642C1920737C2700FB9C33 /* ruleslanguage.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296220737B8900FB9C33 /* ruleslanguage.min.js */; };
+		23642C1A20737C2700FB9C33 /* rust.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C120737B9500FB9C33 /* rust.min.js */; };
+		23642C1B20737C2700FB9C33 /* scala.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429BA20737B9400FB9C33 /* scala.min.js */; };
+		23642C1C20737C2700FB9C33 /* scheme.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C020737B9500FB9C33 /* scheme.min.js */; };
+		23642C1D20737C2700FB9C33 /* scilab.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C220737B9500FB9C33 /* scilab.min.js */; };
+		23642C1E20737C2700FB9C33 /* scss.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429A420737B9100FB9C33 /* scss.min.js */; };
+		23642C1F20737C2700FB9C33 /* shell.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294720737B8600FB9C33 /* shell.min.js */; };
+		23642C2020737C2700FB9C33 /* smali.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297920737B8C00FB9C33 /* smali.min.js */; };
+		23642C2120737C2700FB9C33 /* smalltalk.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292220737B8300FB9C33 /* smalltalk.min.js */; };
+		23642C2220737C2700FB9C33 /* sml.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297620737B8C00FB9C33 /* sml.min.js */; };
+		23642C2320737C2700FB9C33 /* sqf.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B220737B9300FB9C33 /* sqf.min.js */; };
+		23642C2420737C2700FB9C33 /* sql.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364296820737B8A00FB9C33 /* sql.min.js */; };
+		23642C2520737C2700FB9C33 /* stan.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429C920737B9600FB9C33 /* stan.min.js */; };
+		23642C2620737C2700FB9C33 /* stata.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297B20737B8D00FB9C33 /* stata.min.js */; };
+		23642C2720737C2700FB9C33 /* step21.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299820737B9000FB9C33 /* step21.min.js */; };
+		23642C2820737C2700FB9C33 /* stylus.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299920737B9000FB9C33 /* stylus.min.js */; };
+		23642C2920737C2700FB9C33 /* subunit.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298220737B8D00FB9C33 /* subunit.min.js */; };
+		23642C2A20737C2700FB9C33 /* swift.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298320737B8D00FB9C33 /* swift.min.js */; };
+		23642C2B20737C2700FB9C33 /* taggerscript.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292B20737B8300FB9C33 /* taggerscript.min.js */; };
+		23642C2C20737C2700FB9C33 /* tap.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364298420737B8E00FB9C33 /* tap.min.js */; };
+		23642C2D20737C2700FB9C33 /* tcl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364294920737B8600FB9C33 /* tcl.min.js */; };
+		23642C2E20737C2700FB9C33 /* tex.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292C20737B8400FB9C33 /* tex.min.js */; };
+		23642C2F20737C2700FB9C33 /* thrift.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295620737B8800FB9C33 /* thrift.min.js */; };
+		23642C3020737C2700FB9C33 /* tp.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293F20737B8500FB9C33 /* tp.min.js */; };
+		23642C3120737C2700FB9C33 /* twig.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B420737B9300FB9C33 /* twig.min.js */; };
+		23642C3220737C2700FB9C33 /* typescript.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293C20737B8500FB9C33 /* typescript.min.js */; };
+		23642C3320737C2700FB9C33 /* vala.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429BE20737B9500FB9C33 /* vala.min.js */; };
+		23642C3420737C2700FB9C33 /* vbnet.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429AD20737B9300FB9C33 /* vbnet.min.js */; };
+		23642C3520737C2700FB9C33 /* vbscript-html.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293A20737B8500FB9C33 /* vbscript-html.min.js */; };
+		23642C3620737C2700FB9C33 /* vbscript.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B320737B9300FB9C33 /* vbscript.min.js */; };
+		23642C3720737C2700FB9C33 /* verilog.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429CA20737B9600FB9C33 /* verilog.min.js */; };
+		23642C3820737C2700FB9C33 /* vhdl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364292420737B8300FB9C33 /* vhdl.min.js */; };
+		23642C3920737C2700FB9C33 /* vim.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295820737B8800FB9C33 /* vim.min.js */; };
+		23642C3A20737C2700FB9C33 /* x86asm.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364295C20737B8900FB9C33 /* x86asm.min.js */; };
+		23642C3B20737C2700FB9C33 /* xl.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364297E20737B8D00FB9C33 /* xl.min.js */; };
+		23642C3C20737C2700FB9C33 /* xml.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364299B20737B9000FB9C33 /* xml.min.js */; };
+		23642C3D20737C2700FB9C33 /* xquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293D20737B8500FB9C33 /* xquery.min.js */; };
+		23642C3E20737C2700FB9C33 /* yaml.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 2364293920737B8500FB9C33 /* yaml.min.js */; };
+		23642C3F20737C2700FB9C33 /* zephir.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 236429B720737B9400FB9C33 /* zephir.min.js */; };
+		2378FE7220715F0B0011969E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2378FE7120715F0B0011969E /* AppDelegate.swift */; };
+		2378FE7420715F0B0011969E /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2378FE7320715F0B0011969E /* DocumentViewController.swift */; };
+		2378FE7620715F0B0011969E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2378FE7520715F0B0011969E /* Document.swift */; };
+		2378FE7820715F0C0011969E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2378FE7720715F0C0011969E /* Assets.xcassets */; };
+		2378FE8720715F920011969E /* cms.png in Resources */ = {isa = PBXBuildFile; fileRef = 2378FE8620715F910011969E /* cms.png */; };
+		2378FE8920715FAC0011969E /* cmsx.png in Resources */ = {isa = PBXBuildFile; fileRef = 2378FE8820715FAC0011969E /* cmsx.png */; };
+		2378FE9C20721DA50011969E /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2378FE9A20721DA50011969E /* Help.storyboard */; };
+		2378FE9F20721DAC0011969E /* VerionRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2378FE9D20721DAB0011969E /* VerionRecord.storyboard */; };
+		2378FEA120721DC20011969E /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2378FEA020721DC20011969E /* Preference.storyboard */; };
+		2378FEA420721E150011969E /* SerialMonitor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2378FEA320721E150011969E /* SerialMonitor.storyboard */; };
+		2378FEA9207221B40011969E /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2378FEA8207221B40011969E /* ProjectManager.swift */; };
+		2378FEAB207224C90011969E /* InfoAndAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2378FEAA207224C90011969E /* InfoAndAlert.swift */; };
+		238599CF2073DC0700F2FF08 /* SerialMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238599CE2073DC0700F2FF08 /* SerialMonitorViewController.swift */; };
+		238599D12073E10600F2FF08 /* SerialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238599D02073E10600F2FF08 /* SerialController.swift */; };
+		238599D42073E14D00F2FF08 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238599D32073E14D00F2FF08 /* Uploader.swift */; };
+		238599D82073EFF000F2FF08 /* DataAnalyzer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238599D72073EFF000F2FF08 /* DataAnalyzer.storyboard */; };
+		238599DA2073F12000F2FF08 /* DataAnalyzerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238599D92073F12000F2FF08 /* DataAnalyzerViewController.swift */; };
+		238599DC207420A700F2FF08 /* UploadConfig.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238599DB207420A700F2FF08 /* UploadConfig.storyboard */; };
+		238599DF207420B900F2FF08 /* UploadConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238599DD207420B900F2FF08 /* UploadConfigViewController.swift */; };
+		23859A03207521BA00F2FF08 /* SerialMonitorConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A01207521BA00F2FF08 /* SerialMonitorConfigViewController.swift */; };
+		23859A0720752D6000F2FF08 /* SerialScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A0520752B9900F2FF08 /* SerialScreenView.swift */; };
+		23859A1120754EBC00F2FF08 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23859A0E20754EBC00F2FF08 /* Info.plist */; };
+		23859A1E20754ECC00F2FF08 /* PlotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23859A1720754ECC00F2FF08 /* PlotKit.framework */; };
+		23859A1F20754ECC00F2FF08 /* PlotKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23859A1720754ECC00F2FF08 /* PlotKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23859A2320754EE000F2FF08 /* ClosedRangeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A0D20754EBB00F2FF08 /* ClosedRangeHelpers.swift */; };
+		23859A2420754EE400F2FF08 /* PlotHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A0B20754EBB00F2FF08 /* PlotHelpers.swift */; };
+		23859A2A20754EF500F2FF08 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A2520754EF400F2FF08 /* DataView.swift */; };
+		23859A2B20754EF500F2FF08 /* AxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A2620754EF500F2FF08 /* AxisView.swift */; };
+		23859A2C20754EF500F2FF08 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A2720754EF500F2FF08 /* PlotView.swift */; };
+		23859A2D20754EF500F2FF08 /* PointSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A2820754EF500F2FF08 /* PointSetView.swift */; };
+		23859A2E20754EF500F2FF08 /* HeatMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A2920754EF500F2FF08 /* HeatMapView.swift */; };
+		23859A3520754EFC00F2FF08 /* PointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A2F20754EFB00F2FF08 /* PointSet.swift */; };
+		23859A3620754EFC00F2FF08 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A3020754EFB00F2FF08 /* Axis.swift */; };
+		23859A3720754EFC00F2FF08 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A3120754EFB00F2FF08 /* Color.swift */; };
+		23859A3820754EFC00F2FF08 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A3220754EFB00F2FF08 /* Interval.swift */; };
+		23859A3920754EFC00F2FF08 /* TickMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A3320754EFB00F2FF08 /* TickMark.swift */; };
+		23859A3A20754EFC00F2FF08 /* ColorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23859A3420754EFB00F2FF08 /* ColorMap.swift */; };
+		2391ACA620768E6F009C5C6D /* WelcomeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391ACA120768E6E009C5C6D /* WelcomeWindowController.swift */; };
+		2391ACA720768E6F009C5C6D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391ACA220768E6E009C5C6D /* WelcomeViewController.swift */; };
+		2391ACA820768E6F009C5C6D /* WelcomeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391ACA320768E6E009C5C6D /* WelcomeWindow.swift */; };
+		2391ACAA20768E6F009C5C6D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391ACA520768E6F009C5C6D /* Welcome.storyboard */; };
+		23A10BEA20725E6700758848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23A10BE920725E6700758848 /* Main.storyboard */; };
+		23C6050E2073802600375959 /* LineNumberTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 23C6050C2073802600375959 /* LineNumberTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23C605112073802600375959 /* LineNumberTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C6050A2073802600375959 /* LineNumberTextView.framework */; };
+		23C605122073802600375959 /* LineNumberTextView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23C6050A2073802600375959 /* LineNumberTextView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23C6051A2073804400375959 /* LineNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605162073804400375959 /* LineNumberTextView.swift */; };
+		23C6051D2073804400375959 /* LineNumberGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605192073804400375959 /* LineNumberGutter.swift */; };
+		D5DF9AE2AD816FCDCD0744A0 /* libPods-CamelStudioX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 751C99770D9626CB1F605CEF /* libPods-CamelStudioX.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		233DBE20207568F100269D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2378FE6620715F0B0011969E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 233DBE1A207568F100269D8E;
+			remoteInfo = Markdown;
+		};
+		23642B2F20737BDF00FB9C33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2378FE6620715F0B0011969E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23642B2920737BDF00FB9C33;
+			remoteInfo = Highlightr;
+		};
+		23859A1C20754ECC00F2FF08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2378FE6620715F0B0011969E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23859A1620754ECC00F2FF08;
+			remoteInfo = PlotKit;
+		};
+		23C6050F2073802600375959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2378FE6620715F0B0011969E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23C605092073802600375959;
+			remoteInfo = LineNumberTextView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		23642B3620737BDF00FB9C33 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				23642B3220737BDF00FB9C33 /* Highlightr.framework in Embed Frameworks */,
+				233DBE23207568F100269D8E /* Markdown.framework in Embed Frameworks */,
+				23859A1F20754ECC00F2FF08 /* PlotKit.framework in Embed Frameworks */,
+				23C605122073802600375959 /* LineNumberTextView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		231D5D6F20724A3800486DC7 /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
+		231D5D7120724E1200486DC7 /* TerminalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalCommand.swift; path = CamelStudioX/TerminalCommand.swift; sourceTree = SOURCE_ROOT; };
+		233DBE032075636100269D8E /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		233DBE052075648000269D8E /* Preference.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preference.plist; sourceTree = "<group>"; };
+		233DBE062075648000269D8E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		233DBE0A2075668B00269D8E /* ch34x.pkg */ = {isa = PBXFileReference; lastKnownFileType = file; path = ch34x.pkg; sourceTree = "<group>"; };
+		233DBE0B2075668B00269D8E /* pl2303.pkg */ = {isa = PBXFileReference; lastKnownFileType = file; path = pl2303.pkg; sourceTree = "<group>"; };
+		233DBE0E2075686C00269D8E /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		233DBE0F2075686C00269D8E /* VersionRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionRecordViewController.swift; sourceTree = "<group>"; };
+		233DBE12207568E100269D8E /* PlotKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotKit.h; sourceTree = "<group>"; };
+		233DBE13207568E100269D8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		233DBE1B207568F100269D8E /* Markdown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Markdown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		233DBE1D207568F100269D8E /* Markdown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Markdown.h; sourceTree = "<group>"; };
+		233DBE1E207568F100269D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		233DBE272075693000269D8E /* libmarkdown.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmarkdown.a; sourceTree = "<group>"; };
+		233DBE282075693000269D8E /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		233DBE292075693100269D8E /* mkdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mkdio.h; sourceTree = "<group>"; };
+		233DBE2A2075693100269D8E /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		233DBE2B2075693100269D8E /* Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
+		233DBE3120756F3E00269D8E /* GetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameViewController.swift; sourceTree = "<group>"; };
+		233DBE3720759E5000269D8E /* cmsproj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmsproj.png; sourceTree = "<group>"; };
+		236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProject.storyboard; sourceTree = "<group>"; };
+		236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
+		236429052072C2DF00FB9C33 /* Developer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Developer; sourceTree = "<group>"; };
+		236429072072C34400FB9C33 /* DocumentWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentWindowController.swift; sourceTree = "<group>"; };
+		236429092072F77200FB9C33 /* ProjectConfig.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProjectConfig.storyboard; path = CamelStudioX/ProjectManage/ProjectConfig/ProjectConfig.storyboard; sourceTree = SOURCE_ROOT; };
+		2364290D20736B5100FB9C33 /* ProjectConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectConfigViewController.swift; sourceTree = "<group>"; };
+		2364291020737AFF00FB9C33 /* Highlightr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highlightr.h; sourceTree = "<group>"; };
+		2364291120737AFF00FB9C33 /* Highlightr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlightr.swift; sourceTree = "<group>"; };
+		2364291220737AFF00FB9C33 /* HTMLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLUtils.swift; sourceTree = "<group>"; };
+		2364291320737AFF00FB9C33 /* CodeAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeAttributedString.swift; sourceTree = "<group>"; };
+		2364291420737AFF00FB9C33 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		2364291520737AFF00FB9C33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2364291F20737B8300FB9C33 /* llvm.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = llvm.min.js; sourceTree = "<group>"; };
+		2364292020737B8300FB9C33 /* handlebars.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = handlebars.min.js; sourceTree = "<group>"; };
+		2364292120737B8300FB9C33 /* ceylon.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ceylon.min.js; sourceTree = "<group>"; };
+		2364292220737B8300FB9C33 /* smalltalk.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = smalltalk.min.js; sourceTree = "<group>"; };
+		2364292320737B8300FB9C33 /* mizar.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mizar.min.js; sourceTree = "<group>"; };
+		2364292420737B8300FB9C33 /* vhdl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vhdl.min.js; sourceTree = "<group>"; };
+		2364292520737B8300FB9C33 /* aspectj.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aspectj.min.js; sourceTree = "<group>"; };
+		2364292620737B8300FB9C33 /* http.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = http.min.js; sourceTree = "<group>"; };
+		2364292720737B8300FB9C33 /* objectivec.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = objectivec.min.js; sourceTree = "<group>"; };
+		2364292820737B8300FB9C33 /* ini.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ini.min.js; sourceTree = "<group>"; };
+		2364292920737B8300FB9C33 /* crystal.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = crystal.min.js; sourceTree = "<group>"; };
+		2364292A20737B8300FB9C33 /* inform7.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = inform7.min.js; sourceTree = "<group>"; };
+		2364292B20737B8300FB9C33 /* taggerscript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = taggerscript.min.js; sourceTree = "<group>"; };
+		2364292C20737B8400FB9C33 /* tex.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tex.min.js; sourceTree = "<group>"; };
+		2364292D20737B8400FB9C33 /* json.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = json.min.js; sourceTree = "<group>"; };
+		2364292E20737B8400FB9C33 /* mercury.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mercury.min.js; sourceTree = "<group>"; };
+		2364292F20737B8400FB9C33 /* perl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = perl.min.js; sourceTree = "<group>"; };
+		2364293020737B8400FB9C33 /* hsp.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hsp.min.js; sourceTree = "<group>"; };
+		2364293120737B8400FB9C33 /* coffeescript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = coffeescript.min.js; sourceTree = "<group>"; };
+		2364293220737B8400FB9C33 /* fix.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = fix.min.js; sourceTree = "<group>"; };
+		2364293320737B8400FB9C33 /* haxe.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = haxe.min.js; sourceTree = "<group>"; };
+		2364293420737B8400FB9C33 /* kotlin.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = kotlin.min.js; sourceTree = "<group>"; };
+		2364293520737B8400FB9C33 /* makefile.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = makefile.min.js; sourceTree = "<group>"; };
+		2364293620737B8400FB9C33 /* nsis.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nsis.min.js; sourceTree = "<group>"; };
+		2364293720737B8400FB9C33 /* groovy.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = groovy.min.js; sourceTree = "<group>"; };
+		2364293820737B8500FB9C33 /* ruby.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ruby.min.js; sourceTree = "<group>"; };
+		2364293920737B8500FB9C33 /* yaml.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = yaml.min.js; sourceTree = "<group>"; };
+		2364293A20737B8500FB9C33 /* vbscript-html.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "vbscript-html.min.js"; sourceTree = "<group>"; };
+		2364293B20737B8500FB9C33 /* irpf90.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = irpf90.min.js; sourceTree = "<group>"; };
+		2364293C20737B8500FB9C33 /* typescript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = typescript.min.js; sourceTree = "<group>"; };
+		2364293D20737B8500FB9C33 /* xquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = xquery.min.js; sourceTree = "<group>"; };
+		2364293E20737B8500FB9C33 /* mel.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mel.min.js; sourceTree = "<group>"; };
+		2364293F20737B8500FB9C33 /* tp.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tp.min.js; sourceTree = "<group>"; };
+		2364294020737B8500FB9C33 /* cs.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cs.min.js; sourceTree = "<group>"; };
+		2364294120737B8600FB9C33 /* bnf.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bnf.min.js; sourceTree = "<group>"; };
+		2364294220737B8600FB9C33 /* markdown.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = markdown.min.js; sourceTree = "<group>"; };
+		2364294320737B8600FB9C33 /* php.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = php.min.js; sourceTree = "<group>"; };
+		2364294420737B8600FB9C33 /* go.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = go.min.js; sourceTree = "<group>"; };
+		2364294520737B8600FB9C33 /* roboconf.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = roboconf.min.js; sourceTree = "<group>"; };
+		2364294620737B8600FB9C33 /* armasm.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = armasm.min.js; sourceTree = "<group>"; };
+		2364294720737B8600FB9C33 /* shell.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = shell.min.js; sourceTree = "<group>"; };
+		2364294820737B8600FB9C33 /* bash.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bash.min.js; sourceTree = "<group>"; };
+		2364294920737B8600FB9C33 /* tcl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tcl.min.js; sourceTree = "<group>"; };
+		2364294A20737B8700FB9C33 /* routeros.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = routeros.min.js; sourceTree = "<group>"; };
+		2364294B20737B8700FB9C33 /* avrasm.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = avrasm.min.js; sourceTree = "<group>"; };
+		2364294C20737B8700FB9C33 /* ldif.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ldif.min.js; sourceTree = "<group>"; };
+		2364294D20737B8700FB9C33 /* elixir.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = elixir.min.js; sourceTree = "<group>"; };
+		2364294E20737B8700FB9C33 /* css.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = css.min.js; sourceTree = "<group>"; };
+		2364294F20737B8700FB9C33 /* java.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = java.min.js; sourceTree = "<group>"; };
+		2364295020737B8700FB9C33 /* cpp.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cpp.min.js; sourceTree = "<group>"; };
+		2364295120737B8700FB9C33 /* gams.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gams.min.js; sourceTree = "<group>"; };
+		2364295220737B8800FB9C33 /* elm.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = elm.min.js; sourceTree = "<group>"; };
+		2364295320737B8800FB9C33 /* nginx.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nginx.min.js; sourceTree = "<group>"; };
+		2364295420737B8800FB9C33 /* awk.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = awk.min.js; sourceTree = "<group>"; };
+		2364295520737B8800FB9C33 /* prolog.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = prolog.min.js; sourceTree = "<group>"; };
+		2364295620737B8800FB9C33 /* thrift.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = thrift.min.js; sourceTree = "<group>"; };
+		2364295720737B8800FB9C33 /* dos.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dos.min.js; sourceTree = "<group>"; };
+		2364295820737B8800FB9C33 /* vim.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vim.min.js; sourceTree = "<group>"; };
+		2364295920737B8800FB9C33 /* q.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = q.min.js; sourceTree = "<group>"; };
+		2364295A20737B8800FB9C33 /* python.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = python.min.js; sourceTree = "<group>"; };
+		2364295B20737B8900FB9C33 /* qml.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = qml.min.js; sourceTree = "<group>"; };
+		2364295C20737B8900FB9C33 /* x86asm.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = x86asm.min.js; sourceTree = "<group>"; };
+		2364295D20737B8900FB9C33 /* crmsh.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = crmsh.min.js; sourceTree = "<group>"; };
+		2364295E20737B8900FB9C33 /* pony.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = pony.min.js; sourceTree = "<group>"; };
+		2364295F20737B8900FB9C33 /* diff.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = diff.min.js; sourceTree = "<group>"; };
+		2364296020737B8900FB9C33 /* erb.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = erb.min.js; sourceTree = "<group>"; };
+		2364296120737B8900FB9C33 /* r.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = r.min.js; sourceTree = "<group>"; };
+		2364296220737B8900FB9C33 /* ruleslanguage.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ruleslanguage.min.js; sourceTree = "<group>"; };
+		2364296320737B8A00FB9C33 /* leaf.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = leaf.min.js; sourceTree = "<group>"; };
+		2364296420737B8A00FB9C33 /* flix.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = flix.min.js; sourceTree = "<group>"; };
+		2364296520737B8A00FB9C33 /* mipsasm.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mipsasm.min.js; sourceTree = "<group>"; };
+		2364296620737B8A00FB9C33 /* cos.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cos.min.js; sourceTree = "<group>"; };
+		2364296720737B8A00FB9C33 /* maxima.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = maxima.min.js; sourceTree = "<group>"; };
+		2364296820737B8A00FB9C33 /* sql.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sql.min.js; sourceTree = "<group>"; };
+		2364296920737B8A00FB9C33 /* brainfuck.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = brainfuck.min.js; sourceTree = "<group>"; };
+		2364296A20737B8A00FB9C33 /* haml.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = haml.min.js; sourceTree = "<group>"; };
+		2364296B20737B8B00FB9C33 /* htmlbars.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = htmlbars.min.js; sourceTree = "<group>"; };
+		2364296C20737B8B00FB9C33 /* dts.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dts.min.js; sourceTree = "<group>"; };
+		2364296D20737B8B00FB9C33 /* lisp.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lisp.min.js; sourceTree = "<group>"; };
+		2364296E20737B8B00FB9C33 /* apache.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = apache.min.js; sourceTree = "<group>"; };
+		2364296F20737B8B00FB9C33 /* clojure.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = clojure.min.js; sourceTree = "<group>"; };
+		2364297020737B8B00FB9C33 /* gcode.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gcode.min.js; sourceTree = "<group>"; };
+		2364297120737B8B00FB9C33 /* matlab.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = matlab.min.js; sourceTree = "<group>"; };
+		2364297220737B8B00FB9C33 /* nix.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nix.min.js; sourceTree = "<group>"; };
+		2364297320737B8C00FB9C33 /* actionscript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = actionscript.min.js; sourceTree = "<group>"; };
+		2364297420737B8C00FB9C33 /* nimrod.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nimrod.min.js; sourceTree = "<group>"; };
+		2364297520737B8C00FB9C33 /* rib.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = rib.min.js; sourceTree = "<group>"; };
+		2364297620737B8C00FB9C33 /* sml.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sml.min.js; sourceTree = "<group>"; };
+		2364297720737B8C00FB9C33 /* haskell.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = haskell.min.js; sourceTree = "<group>"; };
+		2364297820737B8C00FB9C33 /* erlang-repl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "erlang-repl.min.js"; sourceTree = "<group>"; };
+		2364297920737B8C00FB9C33 /* smali.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = smali.min.js; sourceTree = "<group>"; };
+		2364297A20737B8C00FB9C33 /* glsl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = glsl.min.js; sourceTree = "<group>"; };
+		2364297B20737B8D00FB9C33 /* stata.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = stata.min.js; sourceTree = "<group>"; };
+		2364297C20737B8D00FB9C33 /* oxygene.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = oxygene.min.js; sourceTree = "<group>"; };
+		2364297D20737B8D00FB9C33 /* accesslog.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = accesslog.min.js; sourceTree = "<group>"; };
+		2364297E20737B8D00FB9C33 /* xl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = xl.min.js; sourceTree = "<group>"; };
+		2364297F20737B8D00FB9C33 /* erlang.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = erlang.min.js; sourceTree = "<group>"; };
+		2364298020737B8D00FB9C33 /* dsconfig.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dsconfig.min.js; sourceTree = "<group>"; };
+		2364298120737B8D00FB9C33 /* livecodeserver.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = livecodeserver.min.js; sourceTree = "<group>"; };
+		2364298220737B8D00FB9C33 /* subunit.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = subunit.min.js; sourceTree = "<group>"; };
+		2364298320737B8D00FB9C33 /* swift.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = swift.min.js; sourceTree = "<group>"; };
+		2364298420737B8E00FB9C33 /* tap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tap.min.js; sourceTree = "<group>"; };
+		2364298520737B8E00FB9C33 /* gherkin.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gherkin.min.js; sourceTree = "<group>"; };
+		2364298620737B8E00FB9C33 /* dart.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dart.min.js; sourceTree = "<group>"; };
+		2364298720737B8E00FB9C33 /* jboss-cli.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jboss-cli.min.js"; sourceTree = "<group>"; };
+		2364298820737B8E00FB9C33 /* lua.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lua.min.js; sourceTree = "<group>"; };
+		2364298920737B8E00FB9C33 /* openscad.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = openscad.min.js; sourceTree = "<group>"; };
+		2364298A20737B8E00FB9C33 /* dockerfile.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dockerfile.min.js; sourceTree = "<group>"; };
+		2364298B20737B8E00FB9C33 /* basic.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = basic.min.js; sourceTree = "<group>"; };
+		2364298C20737B8F00FB9C33 /* monkey.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = monkey.min.js; sourceTree = "<group>"; };
+		2364298D20737B8F00FB9C33 /* less.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = less.min.js; sourceTree = "<group>"; };
+		2364298E20737B8F00FB9C33 /* lasso.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lasso.min.js; sourceTree = "<group>"; };
+		2364298F20737B8F00FB9C33 /* javascript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = javascript.min.js; sourceTree = "<group>"; };
+		2364299020737B8F00FB9C33 /* ebnf.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ebnf.min.js; sourceTree = "<group>"; };
+		2364299120737B8F00FB9C33 /* livescript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = livescript.min.js; sourceTree = "<group>"; };
+		2364299220737B8F00FB9C33 /* autoit.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = autoit.min.js; sourceTree = "<group>"; };
+		2364299320737B8F00FB9C33 /* axapta.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = axapta.min.js; sourceTree = "<group>"; };
+		2364299420737B8F00FB9C33 /* golo.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = golo.min.js; sourceTree = "<group>"; };
+		2364299520737B9000FB9C33 /* gradle.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gradle.min.js; sourceTree = "<group>"; };
+		2364299620737B9000FB9C33 /* lsl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lsl.min.js; sourceTree = "<group>"; };
+		2364299720737B9000FB9C33 /* processing.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = processing.min.js; sourceTree = "<group>"; };
+		2364299820737B9000FB9C33 /* step21.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = step21.min.js; sourceTree = "<group>"; };
+		2364299920737B9000FB9C33 /* stylus.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = stylus.min.js; sourceTree = "<group>"; };
+		2364299A20737B9000FB9C33 /* ocaml.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ocaml.min.js; sourceTree = "<group>"; };
+		2364299B20737B9000FB9C33 /* xml.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = xml.min.js; sourceTree = "<group>"; };
+		2364299C20737B9000FB9C33 /* asciidoc.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = asciidoc.min.js; sourceTree = "<group>"; };
+		2364299D20737B9100FB9C33 /* excel.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = excel.min.js; sourceTree = "<group>"; };
+		2364299E20737B9100FB9C33 /* csp.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = csp.min.js; sourceTree = "<group>"; };
+		2364299F20737B9100FB9C33 /* fortran.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = fortran.min.js; sourceTree = "<group>"; };
+		236429A020737B9100FB9C33 /* rsl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = rsl.min.js; sourceTree = "<group>"; };
+		236429A120737B9100FB9C33 /* pf.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = pf.min.js; sourceTree = "<group>"; };
+		236429A220737B9100FB9C33 /* clojure-repl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "clojure-repl.min.js"; sourceTree = "<group>"; };
+		236429A320737B9100FB9C33 /* dns.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dns.min.js; sourceTree = "<group>"; };
+		236429A420737B9100FB9C33 /* scss.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = scss.min.js; sourceTree = "<group>"; };
+		236429A520737B9200FB9C33 /* coq.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = coq.min.js; sourceTree = "<group>"; };
+		236429A620737B9200FB9C33 /* julia.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = julia.min.js; sourceTree = "<group>"; };
+		236429A720737B9200FB9C33 /* gauss.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gauss.min.js; sourceTree = "<group>"; };
+		236429A820737B9200FB9C33 /* moonscript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = moonscript.min.js; sourceTree = "<group>"; };
+		236429A920737B9200FB9C33 /* n1ql.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = n1ql.min.js; sourceTree = "<group>"; };
+		236429AA20737B9200FB9C33 /* d.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = d.min.js; sourceTree = "<group>"; };
+		236429AB20737B9200FB9C33 /* powershell.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = powershell.min.js; sourceTree = "<group>"; };
+		236429AC20737B9200FB9C33 /* clean.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = clean.min.js; sourceTree = "<group>"; };
+		236429AD20737B9300FB9C33 /* vbnet.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vbnet.min.js; sourceTree = "<group>"; };
+		236429AE20737B9300FB9C33 /* django.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = django.min.js; sourceTree = "<group>"; };
+		236429AF20737B9300FB9C33 /* puppet.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = puppet.min.js; sourceTree = "<group>"; };
+		236429B020737B9300FB9C33 /* dust.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dust.min.js; sourceTree = "<group>"; };
+		236429B120737B9300FB9C33 /* abnf.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = abnf.min.js; sourceTree = "<group>"; };
+		236429B220737B9300FB9C33 /* sqf.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sqf.min.js; sourceTree = "<group>"; };
+		236429B320737B9300FB9C33 /* vbscript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vbscript.min.js; sourceTree = "<group>"; };
+		236429B420737B9300FB9C33 /* twig.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = twig.min.js; sourceTree = "<group>"; };
+		236429B520737B9400FB9C33 /* cmake.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cmake.min.js; sourceTree = "<group>"; };
+		236429B620737B9400FB9C33 /* 1c.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = 1c.min.js; sourceTree = "<group>"; };
+		236429B720737B9400FB9C33 /* zephir.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = zephir.min.js; sourceTree = "<group>"; };
+		236429B820737B9400FB9C33 /* mojolicious.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mojolicious.min.js; sourceTree = "<group>"; };
+		236429B920737B9400FB9C33 /* parser3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = parser3.min.js; sourceTree = "<group>"; };
+		236429BA20737B9400FB9C33 /* scala.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = scala.min.js; sourceTree = "<group>"; };
+		236429BB20737B9400FB9C33 /* applescript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = applescript.min.js; sourceTree = "<group>"; };
+		236429BC20737B9400FB9C33 /* cal.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cal.min.js; sourceTree = "<group>"; };
+		236429BD20737B9400FB9C33 /* fsharp.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = fsharp.min.js; sourceTree = "<group>"; };
+		236429BE20737B9500FB9C33 /* vala.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vala.min.js; sourceTree = "<group>"; };
+		236429BF20737B9500FB9C33 /* profile.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = profile.min.js; sourceTree = "<group>"; };
+		236429C020737B9500FB9C33 /* scheme.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = scheme.min.js; sourceTree = "<group>"; };
+		236429C120737B9500FB9C33 /* rust.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = rust.min.js; sourceTree = "<group>"; };
+		236429C220737B9500FB9C33 /* scilab.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = scilab.min.js; sourceTree = "<group>"; };
+		236429C320737B9500FB9C33 /* capnproto.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = capnproto.min.js; sourceTree = "<group>"; };
+		236429C420737B9500FB9C33 /* autohotkey.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = autohotkey.min.js; sourceTree = "<group>"; };
+		236429C520737B9500FB9C33 /* ada.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ada.min.js; sourceTree = "<group>"; };
+		236429C620737B9600FB9C33 /* hy.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hy.min.js; sourceTree = "<group>"; };
+		236429C720737B9600FB9C33 /* arduino.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = arduino.min.js; sourceTree = "<group>"; };
+		236429C820737B9600FB9C33 /* protobuf.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = protobuf.min.js; sourceTree = "<group>"; };
+		236429C920737B9600FB9C33 /* stan.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = stan.min.js; sourceTree = "<group>"; };
+		236429CA20737B9600FB9C33 /* verilog.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = verilog.min.js; sourceTree = "<group>"; };
+		236429CB20737B9600FB9C33 /* mathematica.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mathematica.min.js; sourceTree = "<group>"; };
+		236429CC20737B9600FB9C33 /* julia-repl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "julia-repl.min.js"; sourceTree = "<group>"; };
+		236429CD20737B9600FB9C33 /* delphi.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = delphi.min.js; sourceTree = "<group>"; };
+		236429CE20737B9700FB9C33 /* purebasic.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = purebasic.min.js; sourceTree = "<group>"; };
+		23642A7F20737BA000FB9C33 /* highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
+		23642A8120737BB700FB9C33 /* qtcreator_dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = qtcreator_dark.min.css; sourceTree = "<group>"; };
+		23642A8220737BB700FB9C33 /* school-book.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "school-book.min.css"; sourceTree = "<group>"; };
+		23642A8320737BB700FB9C33 /* school-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school-book.png"; sourceTree = "<group>"; };
+		23642A8420737BB700FB9C33 /* hybrid.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = hybrid.min.css; sourceTree = "<group>"; };
+		23642A8520737BB700FB9C33 /* solarized-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "solarized-dark.min.css"; sourceTree = "<group>"; };
+		23642A8620737BB700FB9C33 /* atelier-savanna-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-dark.min.css"; sourceTree = "<group>"; };
+		23642A8720737BB700FB9C33 /* zenburn.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = zenburn.min.css; sourceTree = "<group>"; };
+		23642A8820737BB700FB9C33 /* atelier-sulphurpool-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-dark.min.css"; sourceTree = "<group>"; };
+		23642A8920737BB700FB9C33 /* ocean.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ocean.min.css; sourceTree = "<group>"; };
+		23642A8A20737BB700FB9C33 /* railscasts.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = railscasts.min.css; sourceTree = "<group>"; };
+		23642A8B20737BB700FB9C33 /* magula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = magula.min.css; sourceTree = "<group>"; };
+		23642A8C20737BB700FB9C33 /* gruvbox-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "gruvbox-light.min.css"; sourceTree = "<group>"; };
+		23642A8D20737BB800FB9C33 /* dracula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dracula.min.css; sourceTree = "<group>"; };
+		23642A8E20737BB800FB9C33 /* ascetic.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ascetic.min.css; sourceTree = "<group>"; };
+		23642A8F20737BB800FB9C33 /* hopscotch.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = hopscotch.min.css; sourceTree = "<group>"; };
+		23642A9020737BB800FB9C33 /* sunburst.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = sunburst.min.css; sourceTree = "<group>"; };
+		23642A9120737BB800FB9C33 /* pojoaque.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = pojoaque.min.css; sourceTree = "<group>"; };
+		23642A9220737BB800FB9C33 /* color-brewer.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "color-brewer.min.css"; sourceTree = "<group>"; };
+		23642A9320737BB800FB9C33 /* default.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.min.css; sourceTree = "<group>"; };
+		23642A9420737BB800FB9C33 /* atom-one-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atom-one-light.min.css"; sourceTree = "<group>"; };
+		23642A9520737BB800FB9C33 /* idea.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = idea.min.css; sourceTree = "<group>"; };
+		23642A9620737BB800FB9C33 /* kimbie.light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = kimbie.light.min.css; sourceTree = "<group>"; };
+		23642A9720737BB800FB9C33 /* qtcreator_light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = qtcreator_light.min.css; sourceTree = "<group>"; };
+		23642A9820737BB800FB9C33 /* atelier-lakeside-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-lakeside-dark.min.css"; sourceTree = "<group>"; };
+		23642A9920737BB800FB9C33 /* atom-one-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atom-one-dark.min.css"; sourceTree = "<group>"; };
+		23642A9A20737BB900FB9C33 /* far.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = far.min.css; sourceTree = "<group>"; };
+		23642A9B20737BB900FB9C33 /* atelier-plateau-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-plateau-light.min.css"; sourceTree = "<group>"; };
+		23642A9C20737BB900FB9C33 /* tomorrow-night.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night.min.css"; sourceTree = "<group>"; };
+		23642A9D20737BB900FB9C33 /* xt256.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xt256.min.css; sourceTree = "<group>"; };
+		23642A9E20737BB900FB9C33 /* tomorrow-night-blue.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-blue.min.css"; sourceTree = "<group>"; };
+		23642A9F20737BB900FB9C33 /* grayscale.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = grayscale.min.css; sourceTree = "<group>"; };
+		23642AA020737BB900FB9C33 /* kimbie.dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = kimbie.dark.min.css; sourceTree = "<group>"; };
+		23642AA120737BB900FB9C33 /* monokai.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = monokai.min.css; sourceTree = "<group>"; };
+		23642AA220737BB900FB9C33 /* tomorrow.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = tomorrow.min.css; sourceTree = "<group>"; };
+		23642AA320737BB900FB9C33 /* monokai-sublime.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "monokai-sublime.min.css"; sourceTree = "<group>"; };
+		23642AA420737BB900FB9C33 /* routeros.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = routeros.min.css; sourceTree = "<group>"; };
+		23642AA520737BB900FB9C33 /* androidstudio.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = androidstudio.min.css; sourceTree = "<group>"; };
+		23642AA620737BBA00FB9C33 /* vs.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = vs.min.css; sourceTree = "<group>"; };
+		23642AA720737BBA00FB9C33 /* pojoaque.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pojoaque.jpg; sourceTree = "<group>"; };
+		23642AA820737BBA00FB9C33 /* atelier-lakeside-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-lakeside-light.min.css"; sourceTree = "<group>"; };
+		23642AA920737BBA00FB9C33 /* atelier-sulphurpool-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-light.min.css"; sourceTree = "<group>"; };
+		23642AAA20737BBA00FB9C33 /* paraiso-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-light.min.css"; sourceTree = "<group>"; };
+		23642AAB20737BBA00FB9C33 /* darcula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darcula.min.css; sourceTree = "<group>"; };
+		23642AAC20737BBA00FB9C33 /* atelier-heath-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-heath-light.min.css"; sourceTree = "<group>"; };
+		23642AAD20737BBA00FB9C33 /* atelier-seaside-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-seaside-dark.min.css"; sourceTree = "<group>"; };
+		23642AAE20737BBA00FB9C33 /* foundation.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = foundation.min.css; sourceTree = "<group>"; };
+		23642AAF20737BBA00FB9C33 /* googlecode.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = googlecode.min.css; sourceTree = "<group>"; };
+		23642AB020737BBA00FB9C33 /* ir-black.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "ir-black.min.css"; sourceTree = "<group>"; };
+		23642AB120737BBA00FB9C33 /* brown-papersq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brown-papersq.png"; sourceTree = "<group>"; };
+		23642AB220737BBB00FB9C33 /* solarized-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "solarized-light.min.css"; sourceTree = "<group>"; };
+		23642AB320737BBB00FB9C33 /* github-gist.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "github-gist.min.css"; sourceTree = "<group>"; };
+		23642AB420737BBB00FB9C33 /* brown-paper.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "brown-paper.min.css"; sourceTree = "<group>"; };
+		23642AB520737BBB00FB9C33 /* gruvbox-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "gruvbox-dark.min.css"; sourceTree = "<group>"; };
+		23642AB620737BBB00FB9C33 /* atelier-plateau-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-plateau-dark.min.css"; sourceTree = "<group>"; };
+		23642AB720737BBB00FB9C33 /* atelier-savanna-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-light.min.css"; sourceTree = "<group>"; };
+		23642AB820737BBB00FB9C33 /* github.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.min.css; sourceTree = "<group>"; };
+		23642AB920737BBB00FB9C33 /* purebasic.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = purebasic.min.css; sourceTree = "<group>"; };
+		23642ABA20737BBB00FB9C33 /* atelier-forest-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-forest-dark.min.css"; sourceTree = "<group>"; };
+		23642ABB20737BBB00FB9C33 /* paraiso-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-dark.min.css"; sourceTree = "<group>"; };
+		23642ABC20737BBB00FB9C33 /* tomorrow-night-eighties.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-eighties.min.css"; sourceTree = "<group>"; };
+		23642ABD20737BBC00FB9C33 /* obsidian.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = obsidian.min.css; sourceTree = "<group>"; };
+		23642ABE20737BBC00FB9C33 /* mono-blue.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "mono-blue.min.css"; sourceTree = "<group>"; };
+		23642ABF20737BBC00FB9C33 /* vs2015.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = vs2015.min.css; sourceTree = "<group>"; };
+		23642AC020737BBC00FB9C33 /* atelier-dune-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-dune-dark.min.css"; sourceTree = "<group>"; };
+		23642AC120737BBC00FB9C33 /* arduino-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "arduino-light.min.css"; sourceTree = "<group>"; };
+		23642AC220737BBC00FB9C33 /* xcode.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xcode.min.css; sourceTree = "<group>"; };
+		23642AC320737BBC00FB9C33 /* arta.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = arta.min.css; sourceTree = "<group>"; };
+		23642AC420737BBC00FB9C33 /* agate.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = agate.min.css; sourceTree = "<group>"; };
+		23642AC520737BBC00FB9C33 /* docco.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = docco.min.css; sourceTree = "<group>"; };
+		23642AC620737BBC00FB9C33 /* atelier-cave-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-cave-dark.min.css"; sourceTree = "<group>"; };
+		23642AC720737BBC00FB9C33 /* tomorrow-night-bright.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-bright.min.css"; sourceTree = "<group>"; };
+		23642AC820737BBD00FB9C33 /* atelier-cave-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-cave-light.min.css"; sourceTree = "<group>"; };
+		23642AC920737BBD00FB9C33 /* atelier-forest-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-forest-light.min.css"; sourceTree = "<group>"; };
+		23642ACA20737BBD00FB9C33 /* rainbow.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = rainbow.min.css; sourceTree = "<group>"; };
+		23642ACB20737BBD00FB9C33 /* atelier-estuary-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-estuary-dark.min.css"; sourceTree = "<group>"; };
+		23642ACC20737BBD00FB9C33 /* atelier-estuary-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-estuary-light.min.css"; sourceTree = "<group>"; };
+		23642ACD20737BBD00FB9C33 /* atelier-heath-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-heath-dark.min.css"; sourceTree = "<group>"; };
+		23642ACE20737BBD00FB9C33 /* atelier-seaside-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-seaside-light.min.css"; sourceTree = "<group>"; };
+		23642ACF20737BBD00FB9C33 /* atelier-dune-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-dune-light.min.css"; sourceTree = "<group>"; };
+		23642AD020737BBD00FB9C33 /* codepen-embed.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "codepen-embed.min.css"; sourceTree = "<group>"; };
+		23642AD120737BBD00FB9C33 /* darkula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darkula.min.css; sourceTree = "<group>"; };
+		23642AD220737BBD00FB9C33 /* dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dark.min.css; sourceTree = "<group>"; };
+		23642B2A20737BDF00FB9C33 /* Highlightr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Highlightr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2378FE6E20715F0B0011969E /* CamelStudioX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamelStudioX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2378FE7120715F0B0011969E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2378FE7320715F0B0011969E /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		2378FE7520715F0B0011969E /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		2378FE7720715F0C0011969E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2378FE7C20715F0C0011969E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2378FE7D20715F0C0011969E /* CamelStudioX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CamelStudioX.entitlements; sourceTree = "<group>"; };
+		2378FE8620715F910011969E /* cms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cms.png; sourceTree = "<group>"; };
+		2378FE8820715FAC0011969E /* cmsx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmsx.png; sourceTree = "<group>"; };
+		2378FE9B20721DA50011969E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Help.storyboard; sourceTree = "<group>"; };
+		2378FE9E20721DAB0011969E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VerionRecord.storyboard; sourceTree = "<group>"; };
+		2378FEA020721DC20011969E /* Preference.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
+		2378FEA320721E150011969E /* SerialMonitor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SerialMonitor.storyboard; sourceTree = "<group>"; };
+		2378FEA8207221B40011969E /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
+		2378FEAA207224C90011969E /* InfoAndAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoAndAlert.swift; sourceTree = "<group>"; };
+		238599CE2073DC0700F2FF08 /* SerialMonitorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialMonitorViewController.swift; sourceTree = "<group>"; };
+		238599D02073E10600F2FF08 /* SerialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialController.swift; sourceTree = "<group>"; };
+		238599D32073E14D00F2FF08 /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
+		238599D52073E1B500F2FF08 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		238599D72073EFF000F2FF08 /* DataAnalyzer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataAnalyzer.storyboard; sourceTree = "<group>"; };
+		238599D92073F12000F2FF08 /* DataAnalyzerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAnalyzerViewController.swift; sourceTree = "<group>"; };
+		238599DB207420A700F2FF08 /* UploadConfig.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UploadConfig.storyboard; sourceTree = "<group>"; };
+		238599DD207420B900F2FF08 /* UploadConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadConfigViewController.swift; sourceTree = "<group>"; };
+		23859A01207521BA00F2FF08 /* SerialMonitorConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialMonitorConfigViewController.swift; sourceTree = "<group>"; };
+		23859A0520752B9900F2FF08 /* SerialScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialScreenView.swift; sourceTree = "<group>"; };
+		23859A0B20754EBB00F2FF08 /* PlotHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotHelpers.swift; sourceTree = "<group>"; };
+		23859A0C20754EBB00F2FF08 /* PlotKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotKit.h; sourceTree = "<group>"; };
+		23859A0D20754EBB00F2FF08 /* ClosedRangeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedRangeHelpers.swift; sourceTree = "<group>"; };
+		23859A0E20754EBC00F2FF08 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23859A1720754ECC00F2FF08 /* PlotKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlotKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23859A2520754EF400F2FF08 /* DataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		23859A2620754EF500F2FF08 /* AxisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisView.swift; sourceTree = "<group>"; };
+		23859A2720754EF500F2FF08 /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
+		23859A2820754EF500F2FF08 /* PointSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointSetView.swift; sourceTree = "<group>"; };
+		23859A2920754EF500F2FF08 /* HeatMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapView.swift; sourceTree = "<group>"; };
+		23859A2F20754EFB00F2FF08 /* PointSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointSet.swift; sourceTree = "<group>"; };
+		23859A3020754EFB00F2FF08 /* Axis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
+		23859A3120754EFB00F2FF08 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		23859A3220754EFB00F2FF08 /* Interval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		23859A3320754EFB00F2FF08 /* TickMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickMark.swift; sourceTree = "<group>"; };
+		23859A3420754EFB00F2FF08 /* ColorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMap.swift; sourceTree = "<group>"; };
+		2391ACA120768E6E009C5C6D /* WelcomeWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWindowController.swift; sourceTree = "<group>"; };
+		2391ACA220768E6E009C5C6D /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2391ACA320768E6E009C5C6D /* WelcomeWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWindow.swift; sourceTree = "<group>"; };
+		2391ACA520768E6F009C5C6D /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		23A10BE920725E6700758848 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		23C6050A2073802600375959 /* LineNumberTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LineNumberTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C6050C2073802600375959 /* LineNumberTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineNumberTextView.h; sourceTree = "<group>"; };
+		23C6050D2073802600375959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23C605162073804400375959 /* LineNumberTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberTextView.swift; sourceTree = "<group>"; };
+		23C605192073804400375959 /* LineNumberGutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberGutter.swift; sourceTree = "<group>"; };
+		5F760502DE131B479EBF8872 /* Pods-CamelStudioX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.release.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.release.xcconfig"; sourceTree = "<group>"; };
+		751C99770D9626CB1F605CEF /* libPods-CamelStudioX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CamelStudioX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86785BF04FC18CBE329FDEE6 /* Pods-CamelStudioX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		233DBE17207568F100269D8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233DBE2C2075693100269D8E /* libmarkdown.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23642B2620737BDF00FB9C33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2378FE6B20715F0B0011969E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23859A1E20754ECC00F2FF08 /* PlotKit.framework in Frameworks */,
+				233DBE22207568F100269D8E /* Markdown.framework in Frameworks */,
+				23642B3120737BDF00FB9C33 /* Highlightr.framework in Frameworks */,
+				23C605112073802600375959 /* LineNumberTextView.framework in Frameworks */,
+				D5DF9AE2AD816FCDCD0744A0 /* libPods-CamelStudioX.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23859A1320754ECC00F2FF08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23C605062073802600375959 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		231D5D6E20724A1E00486DC7 /* Compiler */ = {
+			isa = PBXGroup;
+			children = (
+				231D5D7120724E1200486DC7 /* TerminalCommand.swift */,
+				231D5D6F20724A3800486DC7 /* Compiler.swift */,
+			);
+			path = Compiler;
+			sourceTree = "<group>";
+		};
+		233DBE092075666D00269D8E /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				233DBE0A2075668B00269D8E /* ch34x.pkg */,
+				233DBE0B2075668B00269D8E /* pl2303.pkg */,
+			);
+			path = Driver;
+			sourceTree = "<group>";
+		};
+		233DBE1C207568F100269D8E /* Markdown */ = {
+			isa = PBXGroup;
+			children = (
+				233DBE282075693000269D8E /* Errors.swift */,
+				233DBE272075693000269D8E /* libmarkdown.a */,
+				233DBE2B2075693100269D8E /* Markdown.swift */,
+				233DBE292075693100269D8E /* mkdio.h */,
+				233DBE2A2075693100269D8E /* Options.swift */,
+				233DBE1D207568F100269D8E /* Markdown.h */,
+				233DBE1E207568F100269D8E /* Info.plist */,
+			);
+			path = Markdown;
+			sourceTree = "<group>";
+		};
+		2364290B20736B1C00FB9C33 /* CreateProject */ = {
+			isa = PBXGroup;
+			children = (
+				236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */,
+				236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */,
+			);
+			path = CreateProject;
+			sourceTree = "<group>";
+		};
+		2364290C20736B2C00FB9C33 /* ProjectConfig */ = {
+			isa = PBXGroup;
+			children = (
+				236429092072F77200FB9C33 /* ProjectConfig.storyboard */,
+				2364290D20736B5100FB9C33 /* ProjectConfigViewController.swift */,
+			);
+			path = ProjectConfig;
+			sourceTree = "<group>";
+		};
+		2364290F20737AD900FB9C33 /* Highlightr */ = {
+			isa = PBXGroup;
+			children = (
+				2364291B20737B0500FB9C33 /* Resources */,
+				2364291320737AFF00FB9C33 /* CodeAttributedString.swift */,
+				2364291020737AFF00FB9C33 /* Highlightr.h */,
+				2364291120737AFF00FB9C33 /* Highlightr.swift */,
+				2364291220737AFF00FB9C33 /* HTMLUtils.swift */,
+				2364291520737AFF00FB9C33 /* Info.plist */,
+				2364291420737AFF00FB9C33 /* Theme.swift */,
+			);
+			path = Highlightr;
+			sourceTree = "<group>";
+		};
+		2364291B20737B0500FB9C33 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2364291D20737B4500FB9C33 /* styles */,
+				2364291C20737B3900FB9C33 /* Highlightr */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2364291C20737B3900FB9C33 /* Highlightr */ = {
+			isa = PBXGroup;
+			children = (
+				23642A7F20737BA000FB9C33 /* highlight.min.js */,
+				2364291E20737B6100FB9C33 /* languages */,
+			);
+			path = Highlightr;
+			sourceTree = "<group>";
+		};
+		2364291D20737B4500FB9C33 /* styles */ = {
+			isa = PBXGroup;
+			children = (
+				23642AC420737BBC00FB9C33 /* agate.min.css */,
+				23642AA520737BB900FB9C33 /* androidstudio.min.css */,
+				23642AC120737BBC00FB9C33 /* arduino-light.min.css */,
+				23642AC320737BBC00FB9C33 /* arta.min.css */,
+				23642A8E20737BB800FB9C33 /* ascetic.min.css */,
+				23642AC620737BBC00FB9C33 /* atelier-cave-dark.min.css */,
+				23642AC820737BBD00FB9C33 /* atelier-cave-light.min.css */,
+				23642AC020737BBC00FB9C33 /* atelier-dune-dark.min.css */,
+				23642ACF20737BBD00FB9C33 /* atelier-dune-light.min.css */,
+				23642ACB20737BBD00FB9C33 /* atelier-estuary-dark.min.css */,
+				23642ACC20737BBD00FB9C33 /* atelier-estuary-light.min.css */,
+				23642ABA20737BBB00FB9C33 /* atelier-forest-dark.min.css */,
+				23642AC920737BBD00FB9C33 /* atelier-forest-light.min.css */,
+				23642ACD20737BBD00FB9C33 /* atelier-heath-dark.min.css */,
+				23642AAC20737BBA00FB9C33 /* atelier-heath-light.min.css */,
+				23642A9820737BB800FB9C33 /* atelier-lakeside-dark.min.css */,
+				23642AA820737BBA00FB9C33 /* atelier-lakeside-light.min.css */,
+				23642AB620737BBB00FB9C33 /* atelier-plateau-dark.min.css */,
+				23642A9B20737BB900FB9C33 /* atelier-plateau-light.min.css */,
+				23642A8620737BB700FB9C33 /* atelier-savanna-dark.min.css */,
+				23642AB720737BBB00FB9C33 /* atelier-savanna-light.min.css */,
+				23642AAD20737BBA00FB9C33 /* atelier-seaside-dark.min.css */,
+				23642ACE20737BBD00FB9C33 /* atelier-seaside-light.min.css */,
+				23642A8820737BB700FB9C33 /* atelier-sulphurpool-dark.min.css */,
+				23642AA920737BBA00FB9C33 /* atelier-sulphurpool-light.min.css */,
+				23642A9920737BB800FB9C33 /* atom-one-dark.min.css */,
+				23642A9420737BB800FB9C33 /* atom-one-light.min.css */,
+				23642AB420737BBB00FB9C33 /* brown-paper.min.css */,
+				23642AB120737BBA00FB9C33 /* brown-papersq.png */,
+				23642AD020737BBD00FB9C33 /* codepen-embed.min.css */,
+				23642A9220737BB800FB9C33 /* color-brewer.min.css */,
+				23642AAB20737BBA00FB9C33 /* darcula.min.css */,
+				23642AD220737BBD00FB9C33 /* dark.min.css */,
+				23642AD120737BBD00FB9C33 /* darkula.min.css */,
+				23642A9320737BB800FB9C33 /* default.min.css */,
+				23642AC520737BBC00FB9C33 /* docco.min.css */,
+				23642A8D20737BB800FB9C33 /* dracula.min.css */,
+				23642A9A20737BB900FB9C33 /* far.min.css */,
+				23642AAE20737BBA00FB9C33 /* foundation.min.css */,
+				23642AB320737BBB00FB9C33 /* github-gist.min.css */,
+				23642AB820737BBB00FB9C33 /* github.min.css */,
+				23642AAF20737BBA00FB9C33 /* googlecode.min.css */,
+				23642A9F20737BB900FB9C33 /* grayscale.min.css */,
+				23642AB520737BBB00FB9C33 /* gruvbox-dark.min.css */,
+				23642A8C20737BB700FB9C33 /* gruvbox-light.min.css */,
+				23642A8F20737BB800FB9C33 /* hopscotch.min.css */,
+				23642A8420737BB700FB9C33 /* hybrid.min.css */,
+				23642A9520737BB800FB9C33 /* idea.min.css */,
+				23642AB020737BBA00FB9C33 /* ir-black.min.css */,
+				23642AA020737BB900FB9C33 /* kimbie.dark.min.css */,
+				23642A9620737BB800FB9C33 /* kimbie.light.min.css */,
+				23642A8B20737BB700FB9C33 /* magula.min.css */,
+				23642ABE20737BBC00FB9C33 /* mono-blue.min.css */,
+				23642AA320737BB900FB9C33 /* monokai-sublime.min.css */,
+				23642AA120737BB900FB9C33 /* monokai.min.css */,
+				23642ABD20737BBC00FB9C33 /* obsidian.min.css */,
+				23642A8920737BB700FB9C33 /* ocean.min.css */,
+				23642ABB20737BBB00FB9C33 /* paraiso-dark.min.css */,
+				23642AAA20737BBA00FB9C33 /* paraiso-light.min.css */,
+				23642AA720737BBA00FB9C33 /* pojoaque.jpg */,
+				23642A9120737BB800FB9C33 /* pojoaque.min.css */,
+				23642AB920737BBB00FB9C33 /* purebasic.min.css */,
+				23642A8120737BB700FB9C33 /* qtcreator_dark.min.css */,
+				23642A9720737BB800FB9C33 /* qtcreator_light.min.css */,
+				23642A8A20737BB700FB9C33 /* railscasts.min.css */,
+				23642ACA20737BBD00FB9C33 /* rainbow.min.css */,
+				23642AA420737BB900FB9C33 /* routeros.min.css */,
+				23642A8220737BB700FB9C33 /* school-book.min.css */,
+				23642A8320737BB700FB9C33 /* school-book.png */,
+				23642A8520737BB700FB9C33 /* solarized-dark.min.css */,
+				23642AB220737BBB00FB9C33 /* solarized-light.min.css */,
+				23642A9020737BB800FB9C33 /* sunburst.min.css */,
+				23642A9E20737BB900FB9C33 /* tomorrow-night-blue.min.css */,
+				23642AC720737BBC00FB9C33 /* tomorrow-night-bright.min.css */,
+				23642ABC20737BBB00FB9C33 /* tomorrow-night-eighties.min.css */,
+				23642A9C20737BB900FB9C33 /* tomorrow-night.min.css */,
+				23642AA220737BB900FB9C33 /* tomorrow.min.css */,
+				23642AA620737BBA00FB9C33 /* vs.min.css */,
+				23642ABF20737BBC00FB9C33 /* vs2015.min.css */,
+				23642AC220737BBC00FB9C33 /* xcode.min.css */,
+				23642A9D20737BB900FB9C33 /* xt256.min.css */,
+				23642A8720737BB700FB9C33 /* zenburn.min.css */,
+			);
+			path = styles;
+			sourceTree = "<group>";
+		};
+		2364291E20737B6100FB9C33 /* languages */ = {
+			isa = PBXGroup;
+			children = (
+				236429B620737B9400FB9C33 /* 1c.min.js */,
+				236429B120737B9300FB9C33 /* abnf.min.js */,
+				2364297D20737B8D00FB9C33 /* accesslog.min.js */,
+				2364297320737B8C00FB9C33 /* actionscript.min.js */,
+				236429C520737B9500FB9C33 /* ada.min.js */,
+				2364296E20737B8B00FB9C33 /* apache.min.js */,
+				236429BB20737B9400FB9C33 /* applescript.min.js */,
+				236429C720737B9600FB9C33 /* arduino.min.js */,
+				2364294620737B8600FB9C33 /* armasm.min.js */,
+				2364299C20737B9000FB9C33 /* asciidoc.min.js */,
+				2364292520737B8300FB9C33 /* aspectj.min.js */,
+				236429C420737B9500FB9C33 /* autohotkey.min.js */,
+				2364299220737B8F00FB9C33 /* autoit.min.js */,
+				2364294B20737B8700FB9C33 /* avrasm.min.js */,
+				2364295420737B8800FB9C33 /* awk.min.js */,
+				2364299320737B8F00FB9C33 /* axapta.min.js */,
+				2364294820737B8600FB9C33 /* bash.min.js */,
+				2364298B20737B8E00FB9C33 /* basic.min.js */,
+				2364294120737B8600FB9C33 /* bnf.min.js */,
+				2364296920737B8A00FB9C33 /* brainfuck.min.js */,
+				236429BC20737B9400FB9C33 /* cal.min.js */,
+				236429C320737B9500FB9C33 /* capnproto.min.js */,
+				2364292120737B8300FB9C33 /* ceylon.min.js */,
+				236429AC20737B9200FB9C33 /* clean.min.js */,
+				236429A220737B9100FB9C33 /* clojure-repl.min.js */,
+				2364296F20737B8B00FB9C33 /* clojure.min.js */,
+				236429B520737B9400FB9C33 /* cmake.min.js */,
+				2364293120737B8400FB9C33 /* coffeescript.min.js */,
+				236429A520737B9200FB9C33 /* coq.min.js */,
+				2364296620737B8A00FB9C33 /* cos.min.js */,
+				2364295020737B8700FB9C33 /* cpp.min.js */,
+				2364295D20737B8900FB9C33 /* crmsh.min.js */,
+				2364292920737B8300FB9C33 /* crystal.min.js */,
+				2364294020737B8500FB9C33 /* cs.min.js */,
+				2364299E20737B9100FB9C33 /* csp.min.js */,
+				2364294E20737B8700FB9C33 /* css.min.js */,
+				236429AA20737B9200FB9C33 /* d.min.js */,
+				2364298620737B8E00FB9C33 /* dart.min.js */,
+				236429CD20737B9600FB9C33 /* delphi.min.js */,
+				2364295F20737B8900FB9C33 /* diff.min.js */,
+				236429AE20737B9300FB9C33 /* django.min.js */,
+				236429A320737B9100FB9C33 /* dns.min.js */,
+				2364298A20737B8E00FB9C33 /* dockerfile.min.js */,
+				2364295720737B8800FB9C33 /* dos.min.js */,
+				2364298020737B8D00FB9C33 /* dsconfig.min.js */,
+				2364296C20737B8B00FB9C33 /* dts.min.js */,
+				236429B020737B9300FB9C33 /* dust.min.js */,
+				2364299020737B8F00FB9C33 /* ebnf.min.js */,
+				2364294D20737B8700FB9C33 /* elixir.min.js */,
+				2364295220737B8800FB9C33 /* elm.min.js */,
+				2364296020737B8900FB9C33 /* erb.min.js */,
+				2364297820737B8C00FB9C33 /* erlang-repl.min.js */,
+				2364297F20737B8D00FB9C33 /* erlang.min.js */,
+				2364299D20737B9100FB9C33 /* excel.min.js */,
+				2364293220737B8400FB9C33 /* fix.min.js */,
+				2364296420737B8A00FB9C33 /* flix.min.js */,
+				2364299F20737B9100FB9C33 /* fortran.min.js */,
+				236429BD20737B9400FB9C33 /* fsharp.min.js */,
+				2364295120737B8700FB9C33 /* gams.min.js */,
+				236429A720737B9200FB9C33 /* gauss.min.js */,
+				2364297020737B8B00FB9C33 /* gcode.min.js */,
+				2364298520737B8E00FB9C33 /* gherkin.min.js */,
+				2364297A20737B8C00FB9C33 /* glsl.min.js */,
+				2364294420737B8600FB9C33 /* go.min.js */,
+				2364299420737B8F00FB9C33 /* golo.min.js */,
+				2364299520737B9000FB9C33 /* gradle.min.js */,
+				2364293720737B8400FB9C33 /* groovy.min.js */,
+				2364296A20737B8A00FB9C33 /* haml.min.js */,
+				2364292020737B8300FB9C33 /* handlebars.min.js */,
+				2364297720737B8C00FB9C33 /* haskell.min.js */,
+				2364293320737B8400FB9C33 /* haxe.min.js */,
+				2364293020737B8400FB9C33 /* hsp.min.js */,
+				2364296B20737B8B00FB9C33 /* htmlbars.min.js */,
+				2364292620737B8300FB9C33 /* http.min.js */,
+				236429C620737B9600FB9C33 /* hy.min.js */,
+				2364292A20737B8300FB9C33 /* inform7.min.js */,
+				2364292820737B8300FB9C33 /* ini.min.js */,
+				2364293B20737B8500FB9C33 /* irpf90.min.js */,
+				2364294F20737B8700FB9C33 /* java.min.js */,
+				2364298F20737B8F00FB9C33 /* javascript.min.js */,
+				2364298720737B8E00FB9C33 /* jboss-cli.min.js */,
+				2364292D20737B8400FB9C33 /* json.min.js */,
+				236429CC20737B9600FB9C33 /* julia-repl.min.js */,
+				236429A620737B9200FB9C33 /* julia.min.js */,
+				2364293420737B8400FB9C33 /* kotlin.min.js */,
+				2364298E20737B8F00FB9C33 /* lasso.min.js */,
+				2364294C20737B8700FB9C33 /* ldif.min.js */,
+				2364296320737B8A00FB9C33 /* leaf.min.js */,
+				2364298D20737B8F00FB9C33 /* less.min.js */,
+				2364296D20737B8B00FB9C33 /* lisp.min.js */,
+				2364298120737B8D00FB9C33 /* livecodeserver.min.js */,
+				2364299120737B8F00FB9C33 /* livescript.min.js */,
+				2364291F20737B8300FB9C33 /* llvm.min.js */,
+				2364299620737B9000FB9C33 /* lsl.min.js */,
+				2364298820737B8E00FB9C33 /* lua.min.js */,
+				2364293520737B8400FB9C33 /* makefile.min.js */,
+				2364294220737B8600FB9C33 /* markdown.min.js */,
+				236429CB20737B9600FB9C33 /* mathematica.min.js */,
+				2364297120737B8B00FB9C33 /* matlab.min.js */,
+				2364296720737B8A00FB9C33 /* maxima.min.js */,
+				2364293E20737B8500FB9C33 /* mel.min.js */,
+				2364292E20737B8400FB9C33 /* mercury.min.js */,
+				2364296520737B8A00FB9C33 /* mipsasm.min.js */,
+				2364292320737B8300FB9C33 /* mizar.min.js */,
+				236429B820737B9400FB9C33 /* mojolicious.min.js */,
+				2364298C20737B8F00FB9C33 /* monkey.min.js */,
+				236429A820737B9200FB9C33 /* moonscript.min.js */,
+				236429A920737B9200FB9C33 /* n1ql.min.js */,
+				2364295320737B8800FB9C33 /* nginx.min.js */,
+				2364297420737B8C00FB9C33 /* nimrod.min.js */,
+				2364297220737B8B00FB9C33 /* nix.min.js */,
+				2364293620737B8400FB9C33 /* nsis.min.js */,
+				2364292720737B8300FB9C33 /* objectivec.min.js */,
+				2364299A20737B9000FB9C33 /* ocaml.min.js */,
+				2364298920737B8E00FB9C33 /* openscad.min.js */,
+				2364297C20737B8D00FB9C33 /* oxygene.min.js */,
+				236429B920737B9400FB9C33 /* parser3.min.js */,
+				2364292F20737B8400FB9C33 /* perl.min.js */,
+				236429A120737B9100FB9C33 /* pf.min.js */,
+				2364294320737B8600FB9C33 /* php.min.js */,
+				2364295E20737B8900FB9C33 /* pony.min.js */,
+				236429AB20737B9200FB9C33 /* powershell.min.js */,
+				2364299720737B9000FB9C33 /* processing.min.js */,
+				236429BF20737B9500FB9C33 /* profile.min.js */,
+				2364295520737B8800FB9C33 /* prolog.min.js */,
+				236429C820737B9600FB9C33 /* protobuf.min.js */,
+				236429AF20737B9300FB9C33 /* puppet.min.js */,
+				236429CE20737B9700FB9C33 /* purebasic.min.js */,
+				2364295A20737B8800FB9C33 /* python.min.js */,
+				2364295920737B8800FB9C33 /* q.min.js */,
+				2364295B20737B8900FB9C33 /* qml.min.js */,
+				2364296120737B8900FB9C33 /* r.min.js */,
+				2364297520737B8C00FB9C33 /* rib.min.js */,
+				2364294520737B8600FB9C33 /* roboconf.min.js */,
+				2364294A20737B8700FB9C33 /* routeros.min.js */,
+				236429A020737B9100FB9C33 /* rsl.min.js */,
+				2364293820737B8500FB9C33 /* ruby.min.js */,
+				2364296220737B8900FB9C33 /* ruleslanguage.min.js */,
+				236429C120737B9500FB9C33 /* rust.min.js */,
+				236429BA20737B9400FB9C33 /* scala.min.js */,
+				236429C020737B9500FB9C33 /* scheme.min.js */,
+				236429C220737B9500FB9C33 /* scilab.min.js */,
+				236429A420737B9100FB9C33 /* scss.min.js */,
+				2364294720737B8600FB9C33 /* shell.min.js */,
+				2364297920737B8C00FB9C33 /* smali.min.js */,
+				2364292220737B8300FB9C33 /* smalltalk.min.js */,
+				2364297620737B8C00FB9C33 /* sml.min.js */,
+				236429B220737B9300FB9C33 /* sqf.min.js */,
+				2364296820737B8A00FB9C33 /* sql.min.js */,
+				236429C920737B9600FB9C33 /* stan.min.js */,
+				2364297B20737B8D00FB9C33 /* stata.min.js */,
+				2364299820737B9000FB9C33 /* step21.min.js */,
+				2364299920737B9000FB9C33 /* stylus.min.js */,
+				2364298220737B8D00FB9C33 /* subunit.min.js */,
+				2364298320737B8D00FB9C33 /* swift.min.js */,
+				2364292B20737B8300FB9C33 /* taggerscript.min.js */,
+				2364298420737B8E00FB9C33 /* tap.min.js */,
+				2364294920737B8600FB9C33 /* tcl.min.js */,
+				2364292C20737B8400FB9C33 /* tex.min.js */,
+				2364295620737B8800FB9C33 /* thrift.min.js */,
+				2364293F20737B8500FB9C33 /* tp.min.js */,
+				236429B420737B9300FB9C33 /* twig.min.js */,
+				2364293C20737B8500FB9C33 /* typescript.min.js */,
+				236429BE20737B9500FB9C33 /* vala.min.js */,
+				236429AD20737B9300FB9C33 /* vbnet.min.js */,
+				2364293A20737B8500FB9C33 /* vbscript-html.min.js */,
+				236429B320737B9300FB9C33 /* vbscript.min.js */,
+				236429CA20737B9600FB9C33 /* verilog.min.js */,
+				2364292420737B8300FB9C33 /* vhdl.min.js */,
+				2364295820737B8800FB9C33 /* vim.min.js */,
+				2364295C20737B8900FB9C33 /* x86asm.min.js */,
+				2364297E20737B8D00FB9C33 /* xl.min.js */,
+				2364299B20737B9000FB9C33 /* xml.min.js */,
+				2364293D20737B8500FB9C33 /* xquery.min.js */,
+				2364293920737B8500FB9C33 /* yaml.min.js */,
+				236429B720737B9400FB9C33 /* zephir.min.js */,
+			);
+			path = languages;
+			sourceTree = "<group>";
+		};
+		2378FE6520715F0B0011969E = {
+			isa = PBXGroup;
+			children = (
+				233DBE1C207568F100269D8E /* Markdown */,
+				23859A0820754E6000F2FF08 /* PlotKit */,
+				2364290F20737AD900FB9C33 /* Highlightr */,
+				23C6050B2073802600375959 /* LineNumberTextView */,
+				2378FE7020715F0B0011969E /* CamelStudioX */,
+				2378FE6F20715F0B0011969E /* Products */,
+				A023018D4786CD2BE7267AAB /* Pods */,
+				F2128ABB9A6FB1C0E8C5EBE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2378FE6F20715F0B0011969E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2378FE6E20715F0B0011969E /* CamelStudioX.app */,
+				23642B2A20737BDF00FB9C33 /* Highlightr.framework */,
+				23C6050A2073802600375959 /* LineNumberTextView.framework */,
+				23859A1720754ECC00F2FF08 /* PlotKit.framework */,
+				233DBE1B207568F100269D8E /* Markdown.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2378FE7020715F0B0011969E /* CamelStudioX */ = {
+			isa = PBXGroup;
+			children = (
+				2378FEAA207224C90011969E /* InfoAndAlert.swift */,
+				2378FE7120715F0B0011969E /* AppDelegate.swift */,
+				2378FE8B2071607E0011969E /* Welcome */,
+				2378FE9920721D610011969E /* Preference */,
+				2378FEA520721EBF0011969E /* ProjectManage */,
+				231D5D6E20724A1E00486DC7 /* Compiler */,
+				238599D22073E13500F2FF08 /* Uploader */,
+				2378FE8A207160640011969E /* Editor */,
+				2378FEA220721DED0011969E /* SerialMonitor */,
+				238599D62073EFBB00F2FF08 /* DataAnalyzer */,
+				2378FE9820721D120011969E /* Help */,
+				2378FE8320715F240011969E /* Support */,
+				236429052072C2DF00FB9C33 /* Developer */,
+				2378FE7720715F0C0011969E /* Assets.xcassets */,
+				2378FE7C20715F0C0011969E /* Info.plist */,
+				2378FE7D20715F0C0011969E /* CamelStudioX.entitlements */,
+				238599D52073E1B500F2FF08 /* Bridging.h */,
+			);
+			path = CamelStudioX;
+			sourceTree = "<group>";
+		};
+		2378FE8320715F240011969E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				233DBE3720759E5000269D8E /* cmsproj.png */,
+				233DBE092075666D00269D8E /* Driver */,
+				233DBE052075648000269D8E /* Preference.plist */,
+				233DBE062075648000269D8E /* README.md */,
+				2378FE8820715FAC0011969E /* cmsx.png */,
+				2378FE8620715F910011969E /* cms.png */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		2378FE8A207160640011969E /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				23A10BE920725E6700758848 /* Main.storyboard */,
+				236429072072C34400FB9C33 /* DocumentWindowController.swift */,
+				2378FE7320715F0B0011969E /* DocumentViewController.swift */,
+				233DBE3120756F3E00269D8E /* GetNameViewController.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		2378FE8B2071607E0011969E /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				2391ACA520768E6F009C5C6D /* Welcome.storyboard */,
+				2391ACA220768E6E009C5C6D /* WelcomeViewController.swift */,
+				2391ACA320768E6E009C5C6D /* WelcomeWindow.swift */,
+				2391ACA120768E6E009C5C6D /* WelcomeWindowController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		2378FE9820721D120011969E /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				233DBE0E2075686C00269D8E /* HelpViewController.swift */,
+				233DBE0F2075686C00269D8E /* VersionRecordViewController.swift */,
+				2378FE9D20721DAB0011969E /* VerionRecord.storyboard */,
+				2378FE9A20721DA50011969E /* Help.storyboard */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		2378FE9920721D610011969E /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				233DBE032075636100269D8E /* PreferenceViewController.swift */,
+				2378FEA020721DC20011969E /* Preference.storyboard */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
+		2378FEA220721DED0011969E /* SerialMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				2378FEA320721E150011969E /* SerialMonitor.storyboard */,
+				238599CE2073DC0700F2FF08 /* SerialMonitorViewController.swift */,
+				238599D02073E10600F2FF08 /* SerialController.swift */,
+				23859A01207521BA00F2FF08 /* SerialMonitorConfigViewController.swift */,
+			);
+			path = SerialMonitor;
+			sourceTree = "<group>";
+		};
+		2378FEA520721EBF0011969E /* ProjectManage */ = {
+			isa = PBXGroup;
+			children = (
+				2364290C20736B2C00FB9C33 /* ProjectConfig */,
+				2364290B20736B1C00FB9C33 /* CreateProject */,
+				2378FE7520715F0B0011969E /* Document.swift */,
+				2378FEA8207221B40011969E /* ProjectManager.swift */,
+			);
+			path = ProjectManage;
+			sourceTree = "<group>";
+		};
+		238599D22073E13500F2FF08 /* Uploader */ = {
+			isa = PBXGroup;
+			children = (
+				238599D32073E14D00F2FF08 /* Uploader.swift */,
+				238599DB207420A700F2FF08 /* UploadConfig.storyboard */,
+				238599DD207420B900F2FF08 /* UploadConfigViewController.swift */,
+			);
+			path = Uploader;
+			sourceTree = "<group>";
+		};
+		238599D62073EFBB00F2FF08 /* DataAnalyzer */ = {
+			isa = PBXGroup;
+			children = (
+				238599D72073EFF000F2FF08 /* DataAnalyzer.storyboard */,
+				238599D92073F12000F2FF08 /* DataAnalyzerViewController.swift */,
+			);
+			path = DataAnalyzer;
+			sourceTree = "<group>";
+		};
+		23859A0820754E6000F2FF08 /* PlotKit */ = {
+			isa = PBXGroup;
+			children = (
+				233DBE13207568E100269D8E /* Info.plist */,
+				233DBE12207568E100269D8E /* PlotKit.h */,
+				23859A0D20754EBB00F2FF08 /* ClosedRangeHelpers.swift */,
+				23859A0E20754EBC00F2FF08 /* Info.plist */,
+				23859A0B20754EBB00F2FF08 /* PlotHelpers.swift */,
+				23859A0C20754EBB00F2FF08 /* PlotKit.h */,
+				23859A0A20754EA500F2FF08 /* Views */,
+				23859A0920754E8100F2FF08 /* Model */,
+			);
+			path = PlotKit;
+			sourceTree = "<group>";
+		};
+		23859A0920754E8100F2FF08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23859A3020754EFB00F2FF08 /* Axis.swift */,
+				23859A3120754EFB00F2FF08 /* Color.swift */,
+				23859A3420754EFB00F2FF08 /* ColorMap.swift */,
+				23859A3220754EFB00F2FF08 /* Interval.swift */,
+				23859A2F20754EFB00F2FF08 /* PointSet.swift */,
+				23859A3320754EFB00F2FF08 /* TickMark.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23859A0A20754EA500F2FF08 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23859A2620754EF500F2FF08 /* AxisView.swift */,
+				23859A2520754EF400F2FF08 /* DataView.swift */,
+				23859A2920754EF500F2FF08 /* HeatMapView.swift */,
+				23859A2720754EF500F2FF08 /* PlotView.swift */,
+				23859A2820754EF500F2FF08 /* PointSetView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23C6050B2073802600375959 /* LineNumberTextView */ = {
+			isa = PBXGroup;
+			children = (
+				23C605192073804400375959 /* LineNumberGutter.swift */,
+				23859A0520752B9900F2FF08 /* SerialScreenView.swift */,
+				23C605162073804400375959 /* LineNumberTextView.swift */,
+				23C6050C2073802600375959 /* LineNumberTextView.h */,
+				23C6050D2073802600375959 /* Info.plist */,
+			);
+			path = LineNumberTextView;
+			sourceTree = "<group>";
+		};
+		A023018D4786CD2BE7267AAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86785BF04FC18CBE329FDEE6 /* Pods-CamelStudioX.debug.xcconfig */,
+				5F760502DE131B479EBF8872 /* Pods-CamelStudioX.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2128ABB9A6FB1C0E8C5EBE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				751C99770D9626CB1F605CEF /* libPods-CamelStudioX.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		233DBE18207568F100269D8E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233DBE1F207568F100269D8E /* Markdown.h in Headers */,
+				233DBE2E2075693100269D8E /* mkdio.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23642B2720737BDF00FB9C33 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23859A1420754ECC00F2FF08 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233DBE14207568E100269D8E /* PlotKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23C605072073802600375959 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C6050E2073802600375959 /* LineNumberTextView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		233DBE1A207568F100269D8E /* Markdown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 233DBE24207568F100269D8E /* Build configuration list for PBXNativeTarget "Markdown" */;
+			buildPhases = (
+				233DBE16207568F100269D8E /* Sources */,
+				233DBE17207568F100269D8E /* Frameworks */,
+				233DBE18207568F100269D8E /* Headers */,
+				233DBE19207568F100269D8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Markdown;
+			productName = Markdown;
+			productReference = 233DBE1B207568F100269D8E /* Markdown.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		23642B2920737BDF00FB9C33 /* Highlightr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23642B3320737BDF00FB9C33 /* Build configuration list for PBXNativeTarget "Highlightr" */;
+			buildPhases = (
+				23642B2520737BDF00FB9C33 /* Sources */,
+				23642B2620737BDF00FB9C33 /* Frameworks */,
+				23642B2720737BDF00FB9C33 /* Headers */,
+				23642B2820737BDF00FB9C33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Highlightr;
+			productName = Highlightr;
+			productReference = 23642B2A20737BDF00FB9C33 /* Highlightr.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2378FE6D20715F0B0011969E /* CamelStudioX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2378FE8020715F0C0011969E /* Build configuration list for PBXNativeTarget "CamelStudioX" */;
+			buildPhases = (
+				EFC46E978AEC2184EF180F0E /* [CP] Check Pods Manifest.lock */,
+				2378FE6A20715F0B0011969E /* Sources */,
+				2378FE6B20715F0B0011969E /* Frameworks */,
+				2378FE6C20715F0B0011969E /* Resources */,
+				23642B3620737BDF00FB9C33 /* Embed Frameworks */,
+				E49B71D0FF60D947DF6DCAB4 /* [CP] Embed Pods Frameworks */,
+				6B2ABFF6E7AD85F5A0E731B3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23642B3020737BDF00FB9C33 /* PBXTargetDependency */,
+				23C605102073802600375959 /* PBXTargetDependency */,
+				23859A1D20754ECC00F2FF08 /* PBXTargetDependency */,
+				233DBE21207568F100269D8E /* PBXTargetDependency */,
+			);
+			name = CamelStudioX;
+			productName = CamelStudioX;
+			productReference = 2378FE6E20715F0B0011969E /* CamelStudioX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		23859A1620754ECC00F2FF08 /* PlotKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23859A2020754ECC00F2FF08 /* Build configuration list for PBXNativeTarget "PlotKit" */;
+			buildPhases = (
+				23859A1220754ECC00F2FF08 /* Sources */,
+				23859A1320754ECC00F2FF08 /* Frameworks */,
+				23859A1420754ECC00F2FF08 /* Headers */,
+				23859A1520754ECC00F2FF08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlotKit;
+			productName = PlotKit;
+			productReference = 23859A1720754ECC00F2FF08 /* PlotKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		23C605092073802600375959 /* LineNumberTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23C605132073802600375959 /* Build configuration list for PBXNativeTarget "LineNumberTextView" */;
+			buildPhases = (
+				23C605052073802600375959 /* Sources */,
+				23C605062073802600375959 /* Frameworks */,
+				23C605072073802600375959 /* Headers */,
+				23C605082073802600375959 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LineNumberTextView;
+			productName = LineNumberTextView;
+			productReference = 23C6050A2073802600375959 /* LineNumberTextView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2378FE6620715F0B0011969E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "戴植锐";
+				TargetAttributes = {
+					233DBE1A207568F100269D8E = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					23642B2920737BDF00FB9C33 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					2378FE6D20715F0B0011969E = {
+						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+					23859A1620754ECC00F2FF08 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					23C605092073802600375959 = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+				};
+			};
+			buildConfigurationList = 2378FE6920715F0B0011969E /* Build configuration list for PBXProject "CamelStudioX" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2378FE6520715F0B0011969E;
+			productRefGroup = 2378FE6F20715F0B0011969E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2378FE6D20715F0B0011969E /* CamelStudioX */,
+				23642B2920737BDF00FB9C33 /* Highlightr */,
+				23C605092073802600375959 /* LineNumberTextView */,
+				23859A1620754ECC00F2FF08 /* PlotKit */,
+				233DBE1A207568F100269D8E /* Markdown */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		233DBE19207568F100269D8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23642B2820737BDF00FB9C33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23642B6520737C1200FB9C33 /* github.min.css in Resources */,
+				23642BD120737C2700FB9C33 /* gradle.min.js in Resources */,
+				23642B5120737C1200FB9C33 /* atelier-savanna-light.min.css in Resources */,
+				23642BB120737C2700FB9C33 /* cs.min.js in Resources */,
+				23642B8920737C1200FB9C33 /* tomorrow.min.css in Resources */,
+				23642B6820737C1200FB9C33 /* gruvbox-dark.min.css in Resources */,
+				23642BCE20737C2700FB9C33 /* glsl.min.js in Resources */,
+				23642B8020737C1200FB9C33 /* school-book.min.css in Resources */,
+				23642C2520737C2700FB9C33 /* stan.min.js in Resources */,
+				23642B6420737C1200FB9C33 /* github-gist.min.css in Resources */,
+				23642BF820737C2700FB9C33 /* mojolicious.min.js in Resources */,
+				23642B9620737C2700FB9C33 /* applescript.min.js in Resources */,
+				23642BDA20737C2700FB9C33 /* hy.min.js in Resources */,
+				23642C3820737C2700FB9C33 /* vhdl.min.js in Resources */,
+				23642BD320737C2700FB9C33 /* haml.min.js in Resources */,
+				23642B3C20737C0A00FB9C33 /* agate.min.css in Resources */,
+				23642B6E20737C1200FB9C33 /* kimbie.dark.min.css in Resources */,
+				23642BA420737C2700FB9C33 /* cal.min.js in Resources */,
+				23642C2220737C2700FB9C33 /* sml.min.js in Resources */,
+				23642BD420737C2700FB9C33 /* handlebars.min.js in Resources */,
+				23642B4820737C1200FB9C33 /* atelier-forest-dark.min.css in Resources */,
+				23642BD220737C2700FB9C33 /* groovy.min.js in Resources */,
+				23642B3F20737C1200FB9C33 /* arduino-light.min.css in Resources */,
+				23642B7F20737C1200FB9C33 /* routeros.min.css in Resources */,
+				23642BFA20737C2700FB9C33 /* moonscript.min.js in Resources */,
+				23642BAE20737C2700FB9C33 /* cpp.min.js in Resources */,
+				23642C2620737C2700FB9C33 /* stata.min.js in Resources */,
+				23642C1320737C2700FB9C33 /* r.min.js in Resources */,
+				23642C0120737C2700FB9C33 /* ocaml.min.js in Resources */,
+				23642C1F20737C2700FB9C33 /* shell.min.js in Resources */,
+				23642BBC20737C2700FB9C33 /* dsconfig.min.js in Resources */,
+				23642B8320737C1200FB9C33 /* solarized-light.min.css in Resources */,
+				23642B9E20737C2700FB9C33 /* awk.min.js in Resources */,
+				23642B4320737C1200FB9C33 /* atelier-cave-light.min.css in Resources */,
+				23642B6920737C1200FB9C33 /* gruvbox-light.min.css in Resources */,
+				23642BC420737C2700FB9C33 /* erlang.min.js in Resources */,
+				23642B5920737C1200FB9C33 /* brown-papersq.png in Resources */,
+				23642B5520737C1200FB9C33 /* atelier-sulphurpool-light.min.css in Resources */,
+				23642BD620737C2700FB9C33 /* haxe.min.js in Resources */,
+				23642BED20737C2700FB9C33 /* lsl.min.js in Resources */,
+				23642B4920737C1200FB9C33 /* atelier-forest-light.min.css in Resources */,
+				23642BB420737C2700FB9C33 /* d.min.js in Resources */,
+				23642B9220737C2700FB9C33 /* accesslog.min.js in Resources */,
+				23642C0420737C2700FB9C33 /* parser3.min.js in Resources */,
+				23642B9120737C2700FB9C33 /* abnf.min.js in Resources */,
+				23642B5E20737C1200FB9C33 /* darkula.min.css in Resources */,
+				23642BA020737C2700FB9C33 /* bash.min.js in Resources */,
+				23642B6C20737C1200FB9C33 /* idea.min.css in Resources */,
+				23642BFC20737C2700FB9C33 /* nginx.min.js in Resources */,
+				23642B6220737C1200FB9C33 /* far.min.css in Resources */,
+				23642B8820737C1200FB9C33 /* tomorrow-night.min.css in Resources */,
+				23642C0520737C2700FB9C33 /* perl.min.js in Resources */,
+				23642C3F20737C2700FB9C33 /* zephir.min.js in Resources */,
+				23642B6320737C1200FB9C33 /* foundation.min.css in Resources */,
+				23642B6720737C1200FB9C33 /* grayscale.min.css in Resources */,
+				23642C1120737C2700FB9C33 /* q.min.js in Resources */,
+				23642BB820737C2700FB9C33 /* django.min.js in Resources */,
+				23642B5F20737C1200FB9C33 /* default.min.css in Resources */,
+				23642B5820737C1200FB9C33 /* brown-paper.min.css in Resources */,
+				23642BC220737C2700FB9C33 /* erb.min.js in Resources */,
+				23642B6020737C1200FB9C33 /* docco.min.css in Resources */,
+				23642C1620737C2700FB9C33 /* routeros.min.js in Resources */,
+				23642BDD20737C2700FB9C33 /* irpf90.min.js in Resources */,
+				23642C1C20737C2700FB9C33 /* scheme.min.js in Resources */,
+				23642B9020737C2700FB9C33 /* 1c.min.js in Resources */,
+				23642B7B20737C1200FB9C33 /* qtcreator_dark.min.css in Resources */,
+				23642B9A20737C2700FB9C33 /* aspectj.min.js in Resources */,
+				23642BDC20737C2700FB9C33 /* ini.min.js in Resources */,
+				23642BEB20737C2700FB9C33 /* livescript.min.js in Resources */,
+				23642B8620737C1200FB9C33 /* tomorrow-night-bright.min.css in Resources */,
+				23642BE720737C2700FB9C33 /* leaf.min.js in Resources */,
+				23642B9C20737C2700FB9C33 /* autoit.min.js in Resources */,
+				23642BC020737C2700FB9C33 /* elixir.min.js in Resources */,
+				23642C3D20737C2700FB9C33 /* xquery.min.js in Resources */,
+				23642BB220737C2700FB9C33 /* csp.min.js in Resources */,
+				23642BA920737C2700FB9C33 /* clojure.min.js in Resources */,
+				23642BCC20737C2700FB9C33 /* gcode.min.js in Resources */,
+				23642BEC20737C2700FB9C33 /* llvm.min.js in Resources */,
+				23642C0920737C2700FB9C33 /* powershell.min.js in Resources */,
+				23642C0020737C2700FB9C33 /* objectivec.min.js in Resources */,
+				23642B8120737C1200FB9C33 /* school-book.png in Resources */,
+				23642B8A20737C1200FB9C33 /* vs.min.css in Resources */,
+				23642C1420737C2700FB9C33 /* rib.min.js in Resources */,
+				23642B4620737C1200FB9C33 /* atelier-estuary-dark.min.css in Resources */,
+				23642B8520737C1200FB9C33 /* tomorrow-night-blue.min.css in Resources */,
+				23642B7620737C1200FB9C33 /* paraiso-dark.min.css in Resources */,
+				23642BF920737C2700FB9C33 /* monkey.min.js in Resources */,
+				23642BB920737C2700FB9C33 /* dns.min.js in Resources */,
+				23642BA220737C2700FB9C33 /* bnf.min.js in Resources */,
+				23642BA320737C2700FB9C33 /* brainfuck.min.js in Resources */,
+				23642B9820737C2700FB9C33 /* armasm.min.js in Resources */,
+				23642C0D20737C2700FB9C33 /* protobuf.min.js in Resources */,
+				23642BFE20737C2700FB9C33 /* nix.min.js in Resources */,
+				23642B5720737C1200FB9C33 /* atom-one-light.min.css in Resources */,
+				23642C2420737C2700FB9C33 /* sql.min.js in Resources */,
+				23642B4C20737C1200FB9C33 /* atelier-lakeside-dark.min.css in Resources */,
+				23642BE620737C2700FB9C33 /* ldif.min.js in Resources */,
+				23642BBF20737C2700FB9C33 /* ebnf.min.js in Resources */,
+				23642C0720737C2700FB9C33 /* php.min.js in Resources */,
+				23642BAC20737C2700FB9C33 /* coq.min.js in Resources */,
+				23642C1E20737C2700FB9C33 /* scss.min.js in Resources */,
+				23642BA620737C2700FB9C33 /* ceylon.min.js in Resources */,
+				23642B5220737C1200FB9C33 /* atelier-seaside-dark.min.css in Resources */,
+				23642B4B20737C1200FB9C33 /* atelier-heath-light.min.css in Resources */,
+				23642C2820737C2700FB9C33 /* stylus.min.js in Resources */,
+				23642C3920737C2700FB9C33 /* vim.min.js in Resources */,
+				23642C1820737C2700FB9C33 /* ruby.min.js in Resources */,
+				23642BCA20737C2700FB9C33 /* gams.min.js in Resources */,
+				23642C3B20737C2700FB9C33 /* xl.min.js in Resources */,
+				23642BAD20737C2700FB9C33 /* cos.min.js in Resources */,
+				23642BD520737C2700FB9C33 /* haskell.min.js in Resources */,
+				23642BF220737C2700FB9C33 /* matlab.min.js in Resources */,
+				23642BF020737C2700FB9C33 /* markdown.min.js in Resources */,
+				23642B4120737C1200FB9C33 /* ascetic.min.css in Resources */,
+				23642BF720737C2700FB9C33 /* mizar.min.js in Resources */,
+				23642C3C20737C2700FB9C33 /* xml.min.js in Resources */,
+				23642BA820737C2700FB9C33 /* clojure-repl.min.js in Resources */,
+				23642C1D20737C2700FB9C33 /* scilab.min.js in Resources */,
+				23642B7A20737C1200FB9C33 /* purebasic.min.css in Resources */,
+				23642BFD20737C2700FB9C33 /* nimrod.min.js in Resources */,
+				23642BDB20737C2700FB9C33 /* inform7.min.js in Resources */,
+				23642C0620737C2700FB9C33 /* pf.min.js in Resources */,
+				23642BC120737C2700FB9C33 /* elm.min.js in Resources */,
+				23642BEF20737C2700FB9C33 /* makefile.min.js in Resources */,
+				23642BC920737C2700FB9C33 /* fsharp.min.js in Resources */,
+				23642C1920737C2700FB9C33 /* ruleslanguage.min.js in Resources */,
+				23642BE120737C2700FB9C33 /* json.min.js in Resources */,
+				23642B6B20737C1200FB9C33 /* hybrid.min.css in Resources */,
+				23642BF520737C2700FB9C33 /* mercury.min.js in Resources */,
+				23642C2120737C2700FB9C33 /* smalltalk.min.js in Resources */,
+				23642B8B20737C1200FB9C33 /* vs2015.min.css in Resources */,
+				23642B8220737C1200FB9C33 /* solarized-dark.min.css in Resources */,
+				23642BE320737C2700FB9C33 /* julia.min.js in Resources */,
+				23642C0F20737C2700FB9C33 /* purebasic.min.js in Resources */,
+				23642B5D20737C1200FB9C33 /* dark.min.css in Resources */,
+				23642BA520737C2700FB9C33 /* capnproto.min.js in Resources */,
+				23642B5C20737C1200FB9C33 /* darcula.min.css in Resources */,
+				23642C2920737C2700FB9C33 /* subunit.min.js in Resources */,
+				23642B8E20737C1200FB9C33 /* zenburn.min.css in Resources */,
+				23642C3120737C2700FB9C33 /* twig.min.js in Resources */,
+				23642BB520737C2700FB9C33 /* dart.min.js in Resources */,
+				23642BBA20737C2700FB9C33 /* dockerfile.min.js in Resources */,
+				23642C2F20737C2700FB9C33 /* thrift.min.js in Resources */,
+				23642BAA20737C2700FB9C33 /* cmake.min.js in Resources */,
+				23642BD820737C2700FB9C33 /* htmlbars.min.js in Resources */,
+				23642BB720737C2700FB9C33 /* diff.min.js in Resources */,
+				23642B7320737C1200FB9C33 /* monokai.min.css in Resources */,
+				23642BD020737C2700FB9C33 /* golo.min.js in Resources */,
+				23642BDE20737C2700FB9C33 /* java.min.js in Resources */,
+				23642BCD20737C2700FB9C33 /* gherkin.min.js in Resources */,
+				23642B4D20737C1200FB9C33 /* atelier-lakeside-light.min.css in Resources */,
+				23642BE820737C2700FB9C33 /* less.min.js in Resources */,
+				23642B9520737C2700FB9C33 /* apache.min.js in Resources */,
+				23642BF320737C2700FB9C33 /* maxima.min.js in Resources */,
+				23642BBE20737C2700FB9C33 /* dust.min.js in Resources */,
+				23642B5B20737C1200FB9C33 /* color-brewer.min.css in Resources */,
+				23642BBB20737C2700FB9C33 /* dos.min.js in Resources */,
+				23642BD920737C2700FB9C33 /* http.min.js in Resources */,
+				23642B7720737C1200FB9C33 /* paraiso-light.min.css in Resources */,
+				23642C3020737C2700FB9C33 /* tp.min.js in Resources */,
+				23642C3E20737C2700FB9C33 /* yaml.min.js in Resources */,
+				23642C2720737C2700FB9C33 /* step21.min.js in Resources */,
+				23642BD720737C2700FB9C33 /* hsp.min.js in Resources */,
+				23642B5320737C1200FB9C33 /* atelier-seaside-light.min.css in Resources */,
+				23642BEE20737C2700FB9C33 /* lua.min.js in Resources */,
+				23642C2C20737C2700FB9C33 /* tap.min.js in Resources */,
+				23642B5A20737C1200FB9C33 /* codepen-embed.min.css in Resources */,
+				23642C0220737C2700FB9C33 /* openscad.min.js in Resources */,
+				23642B4F20737C1200FB9C33 /* atelier-plateau-light.min.css in Resources */,
+				23642C1A20737C2700FB9C33 /* rust.min.js in Resources */,
+				23642C2B20737C2700FB9C33 /* taggerscript.min.js in Resources */,
+				23642B6D20737C1200FB9C33 /* ir-black.min.css in Resources */,
+				23642BC820737C2700FB9C33 /* fortran.min.js in Resources */,
+				23642BC720737C2700FB9C33 /* flix.min.js in Resources */,
+				23642B5020737C1200FB9C33 /* atelier-savanna-dark.min.css in Resources */,
+				23642BFB20737C2700FB9C33 /* n1ql.min.js in Resources */,
+				23642B4220737C1200FB9C33 /* atelier-cave-dark.min.css in Resources */,
+				23642C2E20737C2700FB9C33 /* tex.min.js in Resources */,
+				23642B6620737C1200FB9C33 /* googlecode.min.css in Resources */,
+				23642B6F20737C1200FB9C33 /* kimbie.light.min.css in Resources */,
+				23642B8C20737C1200FB9C33 /* xcode.min.css in Resources */,
+				23642BAB20737C2700FB9C33 /* coffeescript.min.js in Resources */,
+				23642C0820737C2700FB9C33 /* pony.min.js in Resources */,
+				23642BC320737C2700FB9C33 /* erlang-repl.min.js in Resources */,
+				23642B4020737C1200FB9C33 /* arta.min.css in Resources */,
+				23642B7920737C1200FB9C33 /* pojoaque.min.css in Resources */,
+				23642C3A20737C2700FB9C33 /* x86asm.min.js in Resources */,
+				23642B4520737C1200FB9C33 /* atelier-dune-light.min.css in Resources */,
+				23642B7520737C1200FB9C33 /* ocean.min.css in Resources */,
+				23642BB020737C2700FB9C33 /* crystal.min.js in Resources */,
+				23642C1220737C2700FB9C33 /* qml.min.js in Resources */,
+				23642B3E20737C1200FB9C33 /* androidstudio.min.css in Resources */,
+				23642B9320737C2700FB9C33 /* actionscript.min.js in Resources */,
+				23642BE520737C2700FB9C33 /* lasso.min.js in Resources */,
+				23642B8D20737C1200FB9C33 /* xt256.min.css in Resources */,
+				23642B7120737C1200FB9C33 /* mono-blue.min.css in Resources */,
+				23642BA120737C2700FB9C33 /* basic.min.js in Resources */,
+				23642BE220737C2700FB9C33 /* julia-repl.min.js in Resources */,
+				23642C1B20737C2700FB9C33 /* scala.min.js in Resources */,
+				23642B9420737C2700FB9C33 /* ada.min.js in Resources */,
+				23642BEA20737C2700FB9C33 /* livecodeserver.min.js in Resources */,
+				23642C1020737C2700FB9C33 /* python.min.js in Resources */,
+				23642BBD20737C2700FB9C33 /* dts.min.js in Resources */,
+				23642BFF20737C2700FB9C33 /* nsis.min.js in Resources */,
+				23642C3220737C2700FB9C33 /* typescript.min.js in Resources */,
+				23642B7E20737C1200FB9C33 /* rainbow.min.css in Resources */,
+				23642C3720737C2700FB9C33 /* verilog.min.js in Resources */,
+				23642B5620737C1200FB9C33 /* atom-one-dark.min.css in Resources */,
+				23642BF420737C2700FB9C33 /* mel.min.js in Resources */,
+				23642C0C20737C2700FB9C33 /* prolog.min.js in Resources */,
+				23642BC520737C2700FB9C33 /* excel.min.js in Resources */,
+				23642B7020737C1200FB9C33 /* magula.min.css in Resources */,
+				23642B8F20737C1B00FB9C33 /* highlight.min.js in Resources */,
+				23642C2020737C2700FB9C33 /* smali.min.js in Resources */,
+				23642BF120737C2700FB9C33 /* mathematica.min.js in Resources */,
+				23642BA720737C2700FB9C33 /* clean.min.js in Resources */,
+				23642B9720737C2700FB9C33 /* arduino.min.js in Resources */,
+				23642C0320737C2700FB9C33 /* oxygene.min.js in Resources */,
+				23642B7C20737C1200FB9C33 /* qtcreator_light.min.css in Resources */,
+				23642C1520737C2700FB9C33 /* roboconf.min.js in Resources */,
+				23642C3320737C2700FB9C33 /* vala.min.js in Resources */,
+				23642BAF20737C2700FB9C33 /* crmsh.min.js in Resources */,
+				23642B6120737C1200FB9C33 /* dracula.min.css in Resources */,
+				23642C3620737C2700FB9C33 /* vbscript.min.js in Resources */,
+				23642BCB20737C2700FB9C33 /* gauss.min.js in Resources */,
+				23642BCF20737C2700FB9C33 /* go.min.js in Resources */,
+				23642B6A20737C1200FB9C33 /* hopscotch.min.css in Resources */,
+				23642BE920737C2700FB9C33 /* lisp.min.js in Resources */,
+				23642BB320737C2700FB9C33 /* css.min.js in Resources */,
+				23642C3520737C2700FB9C33 /* vbscript-html.min.js in Resources */,
+				23642C0A20737C2700FB9C33 /* processing.min.js in Resources */,
+				23642BE020737C2700FB9C33 /* jboss-cli.min.js in Resources */,
+				23642B7420737C1200FB9C33 /* obsidian.min.css in Resources */,
+				23642B7220737C1200FB9C33 /* monokai-sublime.min.css in Resources */,
+				23642B8420737C1200FB9C33 /* sunburst.min.css in Resources */,
+				23642C1720737C2700FB9C33 /* rsl.min.js in Resources */,
+				23642B4420737C1200FB9C33 /* atelier-dune-dark.min.css in Resources */,
+				23642B7820737C1200FB9C33 /* pojoaque.jpg in Resources */,
+				23642BC620737C2700FB9C33 /* fix.min.js in Resources */,
+				23642B4E20737C1200FB9C33 /* atelier-plateau-dark.min.css in Resources */,
+				23642C3420737C2700FB9C33 /* vbnet.min.js in Resources */,
+				23642C2A20737C2700FB9C33 /* swift.min.js in Resources */,
+				23642B8720737C1200FB9C33 /* tomorrow-night-eighties.min.css in Resources */,
+				23642B7D20737C1200FB9C33 /* railscasts.min.css in Resources */,
+				23642B9F20737C2700FB9C33 /* axapta.min.js in Resources */,
+				23642BE420737C2700FB9C33 /* kotlin.min.js in Resources */,
+				23642B9B20737C2700FB9C33 /* autohotkey.min.js in Resources */,
+				23642C0E20737C2700FB9C33 /* puppet.min.js in Resources */,
+				23642BDF20737C2700FB9C33 /* javascript.min.js in Resources */,
+				23642B4720737C1200FB9C33 /* atelier-estuary-light.min.css in Resources */,
+				23642B5420737C1200FB9C33 /* atelier-sulphurpool-dark.min.css in Resources */,
+				23642C2320737C2700FB9C33 /* sqf.min.js in Resources */,
+				23642B4A20737C1200FB9C33 /* atelier-heath-dark.min.css in Resources */,
+				23642C2D20737C2700FB9C33 /* tcl.min.js in Resources */,
+				23642B9D20737C2700FB9C33 /* avrasm.min.js in Resources */,
+				23642C0B20737C2700FB9C33 /* profile.min.js in Resources */,
+				23642B9920737C2700FB9C33 /* asciidoc.min.js in Resources */,
+				23642BF620737C2700FB9C33 /* mipsasm.min.js in Resources */,
+				23642BB620737C2700FB9C33 /* delphi.min.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2378FE6C20715F0B0011969E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2378FE9C20721DA50011969E /* Help.storyboard in Resources */,
+				236428CE2072AB0E00FB9C33 /* CreateProject.storyboard in Resources */,
+				238599DC207420A700F2FF08 /* UploadConfig.storyboard in Resources */,
+				233DBE3820759E5000269D8E /* cmsproj.png in Resources */,
+				236429062072C2DF00FB9C33 /* Developer in Resources */,
+				2391ACAA20768E6F009C5C6D /* Welcome.storyboard in Resources */,
+				238599D82073EFF000F2FF08 /* DataAnalyzer.storyboard in Resources */,
+				2364290A2072F77200FB9C33 /* ProjectConfig.storyboard in Resources */,
+				2378FE9F20721DAC0011969E /* VerionRecord.storyboard in Resources */,
+				23859A1120754EBC00F2FF08 /* Info.plist in Resources */,
+				233DBE0C2075668B00269D8E /* ch34x.pkg in Resources */,
+				233DBE0D2075668B00269D8E /* pl2303.pkg in Resources */,
+				233DBE072075648000269D8E /* Preference.plist in Resources */,
+				2378FEA420721E150011969E /* SerialMonitor.storyboard in Resources */,
+				233DBE082075648000269D8E /* README.md in Resources */,
+				2378FEA120721DC20011969E /* Preference.storyboard in Resources */,
+				23A10BEA20725E6700758848 /* Main.storyboard in Resources */,
+				2378FE8720715F920011969E /* cms.png in Resources */,
+				2378FE7820715F0C0011969E /* Assets.xcassets in Resources */,
+				2378FE8920715FAC0011969E /* cmsx.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23859A1520754ECC00F2FF08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23C605082073802600375959 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B2ABFF6E7AD85F5A0E731B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E49B71D0FF60D947DF6DCAB4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFC46E978AEC2184EF180F0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CamelStudioX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		233DBE16207568F100269D8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233DBE2F2075693100269D8E /* Options.swift in Sources */,
+				233DBE302075693100269D8E /* Markdown.swift in Sources */,
+				233DBE2D2075693100269D8E /* Errors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23642B2520737BDF00FB9C33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23642B3720737BED00FB9C33 /* CodeAttributedString.swift in Sources */,
+				23642B3B20737BFF00FB9C33 /* Theme.swift in Sources */,
+				23642B3920737BF800FB9C33 /* HTMLUtils.swift in Sources */,
+				23642B3820737BF400FB9C33 /* Highlightr.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2378FE6A20715F0B0011969E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2364290E20736B5100FB9C33 /* ProjectConfigViewController.swift in Sources */,
+				2378FE7420715F0B0011969E /* DocumentViewController.swift in Sources */,
+				231D5D7020724A3800486DC7 /* Compiler.swift in Sources */,
+				2391ACA820768E6F009C5C6D /* WelcomeWindow.swift in Sources */,
+				238599D12073E10600F2FF08 /* SerialController.swift in Sources */,
+				238599DA2073F12000F2FF08 /* DataAnalyzerViewController.swift in Sources */,
+				236429082072C34400FB9C33 /* DocumentWindowController.swift in Sources */,
+				236428E82072B9D200FB9C33 /* CreateProjectViewController.swift in Sources */,
+				2391ACA620768E6F009C5C6D /* WelcomeWindowController.swift in Sources */,
+				233DBE102075686C00269D8E /* HelpViewController.swift in Sources */,
+				238599CF2073DC0700F2FF08 /* SerialMonitorViewController.swift in Sources */,
+				23859A03207521BA00F2FF08 /* SerialMonitorConfigViewController.swift in Sources */,
+				2378FEAB207224C90011969E /* InfoAndAlert.swift in Sources */,
+				2378FE7220715F0B0011969E /* AppDelegate.swift in Sources */,
+				2391ACA720768E6F009C5C6D /* WelcomeViewController.swift in Sources */,
+				2378FE7620715F0B0011969E /* Document.swift in Sources */,
+				2378FEA9207221B40011969E /* ProjectManager.swift in Sources */,
+				233DBE042075636100269D8E /* PreferenceViewController.swift in Sources */,
+				238599D42073E14D00F2FF08 /* Uploader.swift in Sources */,
+				233DBE112075686C00269D8E /* VersionRecordViewController.swift in Sources */,
+				233DBE3220756F3E00269D8E /* GetNameViewController.swift in Sources */,
+				231D5D7220724E1200486DC7 /* TerminalCommand.swift in Sources */,
+				238599DF207420B900F2FF08 /* UploadConfigViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23859A1220754ECC00F2FF08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23859A2A20754EF500F2FF08 /* DataView.swift in Sources */,
+				23859A3A20754EFC00F2FF08 /* ColorMap.swift in Sources */,
+				23859A2C20754EF500F2FF08 /* PlotView.swift in Sources */,
+				23859A2B20754EF500F2FF08 /* AxisView.swift in Sources */,
+				23859A3920754EFC00F2FF08 /* TickMark.swift in Sources */,
+				23859A3820754EFC00F2FF08 /* Interval.swift in Sources */,
+				23859A3720754EFC00F2FF08 /* Color.swift in Sources */,
+				23859A2420754EE400F2FF08 /* PlotHelpers.swift in Sources */,
+				23859A2D20754EF500F2FF08 /* PointSetView.swift in Sources */,
+				23859A2E20754EF500F2FF08 /* HeatMapView.swift in Sources */,
+				23859A2320754EE000F2FF08 /* ClosedRangeHelpers.swift in Sources */,
+				23859A3620754EFC00F2FF08 /* Axis.swift in Sources */,
+				23859A3520754EFC00F2FF08 /* PointSet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23C605052073802600375959 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23859A0720752D6000F2FF08 /* SerialScreenView.swift in Sources */,
+				23C6051A2073804400375959 /* LineNumberTextView.swift in Sources */,
+				23C6051D2073804400375959 /* LineNumberGutter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		233DBE21207568F100269D8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 233DBE1A207568F100269D8E /* Markdown */;
+			targetProxy = 233DBE20207568F100269D8E /* PBXContainerItemProxy */;
+		};
+		23642B3020737BDF00FB9C33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23642B2920737BDF00FB9C33 /* Highlightr */;
+			targetProxy = 23642B2F20737BDF00FB9C33 /* PBXContainerItemProxy */;
+		};
+		23859A1D20754ECC00F2FF08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23859A1620754ECC00F2FF08 /* PlotKit */;
+			targetProxy = 23859A1C20754ECC00F2FF08 /* PBXContainerItemProxy */;
+		};
+		23C605102073802600375959 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23C605092073802600375959 /* LineNumberTextView */;
+			targetProxy = 23C6050F2073802600375959 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2378FE9A20721DA50011969E /* Help.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2378FE9B20721DA50011969E /* Base */,
+			);
+			name = Help.storyboard;
+			sourceTree = "<group>";
+		};
+		2378FE9D20721DAB0011969E /* VerionRecord.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2378FE9E20721DAB0011969E /* Base */,
+			);
+			name = VerionRecord.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		233DBE25207568F100269D8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Markdown/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Markdown",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Markdown;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		233DBE26207568F100269D8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Markdown/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Markdown",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Markdown;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		23642B3420737BDF00FB9C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Highlightr/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Highlightr;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		23642B3520737BDF00FB9C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Highlightr/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Highlightr;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2378FE7E20715F0C0011969E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2378FE7F20715F0C0011969E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2378FE8120715F0C0011969E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86785BF04FC18CBE329FDEE6 /* Pods-CamelStudioX.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				INFOPLIST_FILE = CamelStudioX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.CamelStudioX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = CamelStudioX/Bridging.h;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		2378FE8220715F0C0011969E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F760502DE131B479EBF8872 /* Pods-CamelStudioX.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				INFOPLIST_FILE = CamelStudioX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.CamelStudioX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = CamelStudioX/Bridging.h;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		23859A2120754ECC00F2FF08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = PlotKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.PlotKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		23859A2220754ECC00F2FF08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = PlotKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.PlotKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		23C605142073802600375959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = LineNumberTextView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.LineNumberTextView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		23C605152073802600375959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = LineNumberTextView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.LineNumberTextView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		233DBE24207568F100269D8E /* Build configuration list for PBXNativeTarget "Markdown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				233DBE25207568F100269D8E /* Debug */,
+				233DBE26207568F100269D8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23642B3320737BDF00FB9C33 /* Build configuration list for PBXNativeTarget "Highlightr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23642B3420737BDF00FB9C33 /* Debug */,
+				23642B3520737BDF00FB9C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2378FE6920715F0B0011969E /* Build configuration list for PBXProject "CamelStudioX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2378FE7E20715F0C0011969E /* Debug */,
+				2378FE7F20715F0C0011969E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2378FE8020715F0C0011969E /* Build configuration list for PBXNativeTarget "CamelStudioX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2378FE8120715F0C0011969E /* Debug */,
+				2378FE8220715F0C0011969E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23859A2020754ECC00F2FF08 /* Build configuration list for PBXNativeTarget "PlotKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23859A2120754ECC00F2FF08 /* Debug */,
+				23859A2220754ECC00F2FF08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23C605132073802600375959 /* Build configuration list for PBXNativeTarget "LineNumberTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23C605142073802600375959 /* Debug */,
+				23C605152073802600375959 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2378FE6620715F0B0011969E /* Project object */;
+}

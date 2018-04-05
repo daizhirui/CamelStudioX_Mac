@@ -1,0 +1,14 @@
+TECH = M2
+COMPILER_PATH = /usr/local/mips-netbsd-elf/bin
+TARGET = hello
+TARGET_ADDRESS = 10000000
+DATA_ADDRESS = 01000010
+RODATA_ADDRESS = 
+ARCHITECT = standalone
+AUTOLOAD = false
+C_SOURCES = hello.c 
+//A_SOURCES = 
+//HEADERS = 
+//DEBUG = 
+//CUSTOM_LIBRARY = 
+//LIBRARY = 

@@ -1,0 +1,25 @@
+{
+  "DataAddress" : "01000010",
+  "C_Source" : [
+    "Hello.c"
+  ],
+  "Library" : [
+
+  ],
+  "TargetAddress" : "10000000",
+  "CustomLibrary" : [
+
+  ],
+  "A_Source" : [
+
+  ],
+  "RodataAddress" : "",
+  "Debug" : false,
+  "TargetName" : "Hello",
+  "Architect" : "standalone",
+  "Autoload" : false,
+  "Headers" : [
+
+  ],
+  "ChipType" : "M2"
+}
