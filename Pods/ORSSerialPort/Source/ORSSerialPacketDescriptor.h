@@ -66,6 +66,7 @@ typedef BOOL(^ORSSerialPacketEvaluator)(NSData * __nullable inputData);
  *  For more information about ORSSerialPort's packet descriptor API, see the ORSSerialPort Packet Parsing
  *  Programming Guide at
  */
+
 @interface ORSSerialPacketDescriptor : NSObject
 
 /**

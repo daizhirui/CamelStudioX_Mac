@@ -97,6 +97,7 @@ class Document: NSDocument {
             } else {
                 throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
             }
+            (NSApp.mainWindow?.contentViewController as? DocumentViewController)?.updateProjectInspector()
             return fileWrappers
         } else {
             throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)

@@ -224,17 +224,17 @@
                                                                             </customSpacing>
                                                                         </stackView>
                                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cC5-Mk-3SI">
-                                                                            <rect key="frame" x="3" y="3" width="48" height="48"/>
+                                                                            <rect key="frame" x="11" y="3" width="40" height="40"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="48" id="CHo-RY-mVo"/>
-                                                                                <constraint firstAttribute="height" constant="48" id="z9w-SO-rDG"/>
+                                                                                <constraint firstAttribute="width" constant="40" id="CHo-RY-mVo"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="z9w-SO-rDG"/>
                                                                             </constraints>
                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="8cy-CX-Ivc"/>
                                                                         </imageView>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="cC5-Mk-3SI" secondAttribute="bottom" constant="3" id="NlV-k5-tMc"/>
-                                                                        <constraint firstItem="cC5-Mk-3SI" firstAttribute="leading" secondItem="Oua-g7-Sja" secondAttribute="leading" constant="3" id="OCe-b1-E2n"/>
+                                                                        <constraint firstItem="cC5-Mk-3SI" firstAttribute="leading" secondItem="Oua-g7-Sja" secondAttribute="leading" constant="11" id="OCe-b1-E2n"/>
                                                                         <constraint firstAttribute="bottom" secondItem="EbP-kA-fKI" secondAttribute="bottom" constant="2" id="TFC-eE-cuA"/>
                                                                         <constraint firstAttribute="bottom" secondItem="EbP-kA-fKI" secondAttribute="bottom" constant="2" id="nFK-c2-Vbf"/>
                                                                         <constraint firstItem="EbP-kA-fKI" firstAttribute="leading" secondItem="cC5-Mk-3SI" secondAttribute="trailing" constant="5" id="oye-77-XRi"/>

@@ -1,4 +1,13 @@
 
+## Version 3.0.2
+----
+
+### Build 12 on 06.04.2018
+
+- Use a new file icon, it does work this time! 
+- A new looking for the refresh button.
+- Fix bug: Unexpected exit when new project button on welcome window is clicked.
+
 ## Version 3.0.1
 ----
 

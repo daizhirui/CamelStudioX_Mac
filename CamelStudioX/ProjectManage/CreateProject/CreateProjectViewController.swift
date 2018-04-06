@@ -85,6 +85,7 @@ class CreateProjectViewController: NSViewController {
             self.dismiss(self)
             document.displayName = self.projectName.stringValue
             document.save(self)
+            (NSApp.mainWindow?.contentViewController as? DocumentViewController)?.updateProjectInspector()
         }
     }
 }

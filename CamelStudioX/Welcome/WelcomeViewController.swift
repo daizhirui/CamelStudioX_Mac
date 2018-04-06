@@ -64,6 +64,7 @@ class WelcomeViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         WelcomeViewController.welcomeViewDidShowed = true
+        WelcomeWindow.windowOnShow = self.view.window!
     }
     
     override func viewWillDisappear() {
@@ -79,7 +80,7 @@ class WelcomeViewController: NSViewController {
      Create a new project
     */
     @IBAction func createNewProject(_ sender: Any) {
-        NSDocumentController.shared.newDocument(self)
+        NSDocumentController.shared.newDocument(nil)
         self.closeWelcomeWindow(self)
     }
     
@@ -164,7 +165,7 @@ extension WelcomeViewController: NSTableViewDelegate {
             projectImage?.image = #imageLiteral(resourceName: "cmsx.png")
         }
         if value.pathExtension == "cmsproj" {
-            projectImage?.image = #imageLiteral(resourceName: "cmsproj.png")
+            projectImage?.image = #imageLiteral(resourceName: "ic_cmsproj")
         }
         return view
     }

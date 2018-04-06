@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		231D5D7020724A3800486DC7 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D6F20724A3800486DC7 /* Compiler.swift */; };
 		231D5D7220724E1200486DC7 /* TerminalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D7120724E1200486DC7 /* TerminalCommand.swift */; };
+		23288F892076F700008DC349 /* cmsproj.icns in Resources */ = {isa = PBXBuildFile; fileRef = 23288F882076F700008DC349 /* cmsproj.icns */; };
 		233DBE042075636100269D8E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE032075636100269D8E /* PreferenceViewController.swift */; };
 		233DBE072075648000269D8E /* Preference.plist in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE052075648000269D8E /* Preference.plist */; };
 		233DBE082075648000269D8E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE062075648000269D8E /* README.md */; };
@@ -26,7 +27,6 @@
 		233DBE2F2075693100269D8E /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE2A2075693100269D8E /* Options.swift */; };
 		233DBE302075693100269D8E /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE2B2075693100269D8E /* Markdown.swift */; };
 		233DBE3220756F3E00269D8E /* GetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE3120756F3E00269D8E /* GetNameViewController.swift */; };
-		233DBE3820759E5000269D8E /* cmsproj.png in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE3720759E5000269D8E /* cmsproj.png */; };
 		236428CE2072AB0E00FB9C33 /* CreateProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */; };
 		236428E82072B9D200FB9C33 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */; };
 		236429062072C2DF00FB9C33 /* Developer in Resources */ = {isa = PBXBuildFile; fileRef = 236429052072C2DF00FB9C33 /* Developer */; };
@@ -399,6 +399,7 @@
 /* Begin PBXFileReference section */
 		231D5D6F20724A3800486DC7 /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
 		231D5D7120724E1200486DC7 /* TerminalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalCommand.swift; path = CamelStudioX/TerminalCommand.swift; sourceTree = SOURCE_ROOT; };
+		23288F882076F700008DC349 /* cmsproj.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cmsproj.icns; sourceTree = "<group>"; };
 		233DBE032075636100269D8E /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		233DBE052075648000269D8E /* Preference.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preference.plist; sourceTree = "<group>"; };
 		233DBE062075648000269D8E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -417,7 +418,6 @@
 		233DBE2A2075693100269D8E /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		233DBE2B2075693100269D8E /* Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
 		233DBE3120756F3E00269D8E /* GetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameViewController.swift; sourceTree = "<group>"; };
-		233DBE3720759E5000269D8E /* cmsproj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmsproj.png; sourceTree = "<group>"; };
 		236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProject.storyboard; sourceTree = "<group>"; };
 		236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
 		236429052072C2DF00FB9C33 /* Developer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Developer; sourceTree = "<group>"; };
@@ -1198,7 +1198,7 @@
 		2378FE8320715F240011969E /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				233DBE3720759E5000269D8E /* cmsproj.png */,
+				23288F882076F700008DC349 /* cmsproj.icns */,
 				233DBE092075666D00269D8E /* Driver */,
 				233DBE052075648000269D8E /* Preference.plist */,
 				233DBE062075648000269D8E /* README.md */,
@@ -1832,7 +1832,6 @@
 				2378FE9C20721DA50011969E /* Help.storyboard in Resources */,
 				236428CE2072AB0E00FB9C33 /* CreateProject.storyboard in Resources */,
 				238599DC207420A700F2FF08 /* UploadConfig.storyboard in Resources */,
-				233DBE3820759E5000269D8E /* cmsproj.png in Resources */,
 				236429062072C2DF00FB9C33 /* Developer in Resources */,
 				2391ACAA20768E6F009C5C6D /* Welcome.storyboard in Resources */,
 				238599D82073EFF000F2FF08 /* DataAnalyzer.storyboard in Resources */,
@@ -1841,6 +1840,7 @@
 				23859A1120754EBC00F2FF08 /* Info.plist in Resources */,
 				233DBE0C2075668B00269D8E /* ch34x.pkg in Resources */,
 				233DBE0D2075668B00269D8E /* pl2303.pkg in Resources */,
+				23288F892076F700008DC349 /* cmsproj.icns in Resources */,
 				233DBE072075648000269D8E /* Preference.plist in Resources */,
 				2378FEA420721E150011969E /* SerialMonitor.storyboard in Resources */,
 				233DBE082075648000269D8E /* README.md in Resources */,
