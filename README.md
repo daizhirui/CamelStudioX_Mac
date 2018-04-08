@@ -1,6 +1,14 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.0.3
+----
+
+### Build 13 on 08.04.2018
+
+- Add an option in Project Config Panel to use a customed Makefile
+- Use a library of markdown compatible to older system version
+
 ## Version 3.0.2
 ----
 

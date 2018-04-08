@@ -328,9 +328,17 @@ DQ
                                     <action selector="okAction:" target="qM7-BG-Khk" id="UTb-wb-P1u"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QsQ-4F-HSd">
+                                <rect key="frame" x="18" y="18" width="166" height="18"/>
+                                <buttonCell key="cell" type="check" title="Use Customed Makefile" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Y6t-Qf-BeA">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="qMM-Mr-Lrv" firstAttribute="leading" secondItem="Msi-UF-8FS" secondAttribute="trailing" constant="12" id="1il-Ym-FXJ"/>
+                            <constraint firstItem="qMM-Mr-Lrv" firstAttribute="bottom" secondItem="QsQ-4F-HSd" secondAttribute="bottom" id="3p8-fy-cMe"/>
                             <constraint firstItem="qMM-Mr-Lrv" firstAttribute="leading" secondItem="Msi-UF-8FS" secondAttribute="trailing" constant="12" id="5Nw-lc-XcX"/>
                             <constraint firstItem="0Yd-3q-QFQ" firstAttribute="leading" secondItem="9d6-u3-bSr" secondAttribute="leading" constant="20" id="O27-3a-OMI"/>
                             <constraint firstItem="Msi-UF-8FS" firstAttribute="leading" secondItem="9d6-u3-bSr" secondAttribute="leading" constant="273" id="Oca-aE-ELY"/>
@@ -341,6 +349,7 @@ DQ
                             <constraint firstAttribute="bottom" secondItem="Msi-UF-8FS" secondAttribute="bottom" constant="20" id="goN-XB-BFz"/>
                             <constraint firstAttribute="trailing" secondItem="qMM-Mr-Lrv" secondAttribute="trailing" constant="20" id="iZi-bX-EIF"/>
                             <constraint firstItem="qMM-Mr-Lrv" firstAttribute="top" secondItem="0Yd-3q-QFQ" secondAttribute="bottom" constant="9" id="kLY-mV-Mev"/>
+                            <constraint firstItem="QsQ-4F-HSd" firstAttribute="leading" secondItem="9d6-u3-bSr" secondAttribute="leading" constant="20" id="tDl-bC-sYa"/>
                             <constraint firstItem="0Yd-3q-QFQ" firstAttribute="top" secondItem="9d6-u3-bSr" secondAttribute="top" constant="20" id="wre-De-0Z2"/>
                         </constraints>
                     </view>
@@ -352,6 +361,7 @@ DQ
                         <outlet property="rodataAddress" destination="cvZ-e4-0hM" id="E15-0N-oEy"/>
                         <outlet property="targetAddress" destination="bbG-dN-SBh" id="o6E-kd-wQy"/>
                         <outlet property="targetName" destination="ce7-3R-pBe" id="FUG-tQ-Khq"/>
+                        <outlet property="useCustomedMakefile" destination="QsQ-4F-HSd" id="oDp-Z6-P7F"/>
                     </connections>
                 </viewController>
                 <customObject id="kci-36-UKW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

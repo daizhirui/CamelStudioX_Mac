@@ -129,6 +129,7 @@ class ProjectManager: NSObject {
                 dataDictionary["Headers"] = self.headerFiles
                 dataDictionary["CustomLibrary"] = self.customLibrary
                 dataDictionary["Library"] = self.library
+                dataDictionary["UseCustomedMakefile"] = self.useCustomedMakefile
                 let data = try? JSONSerialization.data(withJSONObject: dataDictionary, options: [.prettyPrinted])
                 return data
             } else {
@@ -137,6 +138,9 @@ class ProjectManager: NSObject {
             }
         }
     }
+    
+    /// This varible controls whether to update the makefile or not, so that the user can use a customed makefile.
+    var useCustomedMakefile: Bool = false
     
     /**
      Require the directory url of the project.
@@ -173,7 +177,9 @@ class ProjectManager: NSObject {
         }
     }
 }
-
+/**
+ This extension enables FileWrapper to check and update its child filewrappers.
+ */
 extension FileWrapper {
     
     var fileLanguage: String {
@@ -259,7 +265,9 @@ extension FileWrapper {
         }
     }
 }
-
+/**
+ This extension enables FileWrapper to make a copy with different memory address (That is a new instance instead of reference!).
+ */
 extension FileWrapper: NSCopying {
     public func copy(with zone: NSZone? = nil) -> Any {
         var copy: FileWrapper!
@@ -284,6 +292,4 @@ extension FileWrapper: NSCopying {
             }
         }
     }
-    
-    
 }

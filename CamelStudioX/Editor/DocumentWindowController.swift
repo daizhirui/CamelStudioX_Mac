@@ -118,8 +118,9 @@ class DocumentWindowController: NSWindowController {
             project.updateSourceFiles()
             // Create a compiler
             let aCompiler = Compiler(forProject: project)
-            // Generate makefile, if fails, exit
-            if aCompiler.generateMakefile() {
+            
+            /// internal function in buildLibrary
+            func buildBinaryAndCheckResult() {
                 // Build the binary
                 let (_, errorOutput) = aCompiler.buildBinary()
                 if errorOutput.count > 0 {
@@ -137,6 +138,35 @@ class DocumentWindowController: NSWindowController {
                 // update project again
                 project.updateFileWrappers()
             }
+            
+            // use customed makefile instead
+            if project.useCustomedMakefile {
+                // make sure the makefile does exist
+                if (project.filewrappers?.fileWrappers?.keys.contains("Makefile"))! {
+                    buildBinaryAndCheckResult()
+                } else {
+                    // makefile doesn't exist
+                    self.viewController.sidePanelInfoTextView.string = "Customed Makefile doesn't exist!"
+                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
+                    self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
+                    // post a notification to inform the user
+                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
+                }
+            } else {
+                // generate a makefile before building
+                // Generate makefile, if fails, exit
+                if aCompiler.generateMakefile() {
+                    // Build the binary
+                    buildBinaryAndCheckResult()
+                } else {
+                    // failed to generate the makefile
+                    self.viewController.sidePanelInfoTextView.string = "Failed to generate the makefile!"
+                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
+                    self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
+                    // post a notification to inform the user
+                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
+                }
+            }
             // update project inspector
             self.viewController.updateProjectInspector()
         }
@@ -152,9 +182,10 @@ class DocumentWindowController: NSWindowController {
             project.updateSourceFiles()
             // Create a compiler
             let aCompiler = Compiler(forProject: project)
-            // Generate makefile, if fails, exit
-            if aCompiler.generateMakefile() {
-                // Build the binary
+            
+            /// internal function in buildLibrary
+            func buildLibraryAndCheckResult() {
+                // Build the library
                 let (_, errorOutput) = aCompiler.buildLibrary()
                 if errorOutput.count > 0 {
                     // show the error message in side panel
@@ -170,6 +201,35 @@ class DocumentWindowController: NSWindowController {
                 }
                 // update project again
                 project.updateFileWrappers()
+            }
+            
+            // use customed makefile instead
+            if project.useCustomedMakefile {
+                // make sure the makefile does exist
+                if (project.filewrappers?.fileWrappers?.keys.contains("Makefile"))! {
+                    buildLibraryAndCheckResult()
+                } else {
+                    // makefile doesn't exist
+                    self.viewController.sidePanelInfoTextView.string = "Customed Makefile doesn't exist!"
+                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
+                    self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
+                    // post a notification to inform the user
+                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
+                }
+            } else {
+                // generate a makefile before building
+                // Generate makefile, if fails, exit
+                if aCompiler.generateMakefile() {
+                    // Build the library
+                    buildLibraryAndCheckResult()
+                } else {
+                    // failed to generate the makefile
+                    self.viewController.sidePanelInfoTextView.string = "Failed to generate the makefile!"
+                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
+                    self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
+                    // post a notification to inform the user
+                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
+                }
             }
             // update project inspector
             self.viewController.updateProjectInspector()

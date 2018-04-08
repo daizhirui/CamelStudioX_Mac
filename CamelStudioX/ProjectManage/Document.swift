@@ -178,6 +178,12 @@ class Document: NSDocument {
                         } else {
                             failureItem.append(NSLocalizedString("Official Library", comment: "Official Library"))
                         }
+                        // Load project.useCustomedMakefile
+                        if let useCustomedMakefile = configDict["UseCustomedMakefile"] as? Bool {
+                            self.project.useCustomedMakefile = useCustomedMakefile
+                        } else {
+                            self.project.useCustomedMakefile = false
+                        }
                         if failureItem.count > 0 {
                             _ = showAlertWindow(with: NSLocalizedString("The following settings fail to import:\n", comment: "The following settings fail to import:\n")+failureItem.joined(separator: ", "))
                         }

@@ -17,6 +17,7 @@ class ProjectConfigViewController: NSViewController {
     @IBOutlet weak var rodataAddress: NSTextField!
     @IBOutlet weak var officialLibrary: NSTextField!
     @IBOutlet weak var customLibrary: NSTextField!
+    @IBOutlet weak var useCustomedMakefile: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ProjectConfigViewController: NSViewController {
             self.rodataAddress.stringValue = project.rodataAddress
             self.officialLibrary.stringValue = project.library.joined(separator: " ")
             self.customLibrary.stringValue = project.customLibrary.joined(separator: " ")
+            self.useCustomedMakefile.state = project.useCustomedMakefile ? .on : .off
         }
     }
     
@@ -74,6 +76,8 @@ class ProjectConfigViewController: NSViewController {
             project.library = self.officialLibrary.stringValue.components(separatedBy: .whitespaces)
             // store customLibrary
             project.customLibrary = self.customLibrary.stringValue.components(separatedBy: .whitespaces)
+            // store useCustomedMakefile
+            project.useCustomedMakefile = (self.useCustomedMakefile.state == .on ? true : false)
             // project config completed, write to disk
             NSDocumentController.shared.currentDocument?.save(self)
             self.dismiss(self)
