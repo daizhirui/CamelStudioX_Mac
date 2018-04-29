@@ -27,6 +27,7 @@
 		233DBE2F2075693100269D8E /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE2A2075693100269D8E /* Options.swift */; };
 		233DBE302075693100269D8E /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE2B2075693100269D8E /* Markdown.swift */; };
 		233DBE3220756F3E00269D8E /* GetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE3120756F3E00269D8E /* GetNameViewController.swift */; };
+		23620CE82095F5E600036D27 /* MyDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE72095F5E600036D27 /* MyDebug.swift */; };
 		236428CE2072AB0E00FB9C33 /* CreateProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */; };
 		236428E82072B9D200FB9C33 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */; };
 		236429062072C2DF00FB9C33 /* Developer in Resources */ = {isa = PBXBuildFile; fileRef = 236429052072C2DF00FB9C33 /* Developer */; };
@@ -418,6 +419,7 @@
 		233DBE2A2075693100269D8E /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		233DBE2B2075693100269D8E /* Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
 		233DBE3120756F3E00269D8E /* GetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameViewController.swift; sourceTree = "<group>"; };
+		23620CE72095F5E600036D27 /* MyDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDebug.swift; sourceTree = "<group>"; };
 		236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProject.storyboard; sourceTree = "<group>"; };
 		236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
 		236429052072C2DF00FB9C33 /* Developer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Developer; sourceTree = "<group>"; };
@@ -696,7 +698,6 @@
 		2378FE7520715F0B0011969E /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		2378FE7720715F0C0011969E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2378FE7C20715F0C0011969E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2378FE7D20715F0C0011969E /* CamelStudioX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CamelStudioX.entitlements; sourceTree = "<group>"; };
 		2378FE8620715F910011969E /* cms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cms.png; sourceTree = "<group>"; };
 		2378FE8820715FAC0011969E /* cmsx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmsx.png; sourceTree = "<group>"; };
 		2378FE9B20721DA50011969E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Help.storyboard; sourceTree = "<group>"; };
@@ -741,9 +742,9 @@
 		23C6050D2073802600375959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23C605162073804400375959 /* LineNumberTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberTextView.swift; sourceTree = "<group>"; };
 		23C605192073804400375959 /* LineNumberGutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberGutter.swift; sourceTree = "<group>"; };
-		5F760502DE131B479EBF8872 /* Pods-CamelStudioX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.release.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.release.xcconfig"; sourceTree = "<group>"; };
 		751C99770D9626CB1F605CEF /* libPods-CamelStudioX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CamelStudioX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86785BF04FC18CBE329FDEE6 /* Pods-CamelStudioX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.debug.xcconfig"; sourceTree = "<group>"; };
+		8E6D528D0D512A05BD380B50 /* Pods-CamelStudioX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.debug.xcconfig"; sourceTree = "<group>"; };
+		F9B7AC63E5E5E4CA44329572 /* Pods-CamelStudioX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.release.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -821,6 +822,14 @@
 				233DBE1E207568F100269D8E /* Info.plist */,
 			);
 			path = Markdown;
+			sourceTree = "<group>";
+		};
+		23620CE62095F5D100036D27 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				23620CE72095F5E600036D27 /* MyDebug.swift */,
+			);
+			path = Debug;
 			sourceTree = "<group>";
 		};
 		2364290B20736B1C00FB9C33 /* CreateProject */ = {
@@ -1174,6 +1183,7 @@
 		2378FE7020715F0B0011969E /* CamelStudioX */ = {
 			isa = PBXGroup;
 			children = (
+				23620CE62095F5D100036D27 /* Debug */,
 				2378FEAA207224C90011969E /* InfoAndAlert.swift */,
 				2378FE7120715F0B0011969E /* AppDelegate.swift */,
 				2378FE8B2071607E0011969E /* Welcome */,
@@ -1189,7 +1199,6 @@
 				236429052072C2DF00FB9C33 /* Developer */,
 				2378FE7720715F0C0011969E /* Assets.xcassets */,
 				2378FE7C20715F0C0011969E /* Info.plist */,
-				2378FE7D20715F0C0011969E /* CamelStudioX.entitlements */,
 				238599D52073E1B500F2FF08 /* Bridging.h */,
 			);
 			path = CamelStudioX;
@@ -1346,8 +1355,8 @@
 		A023018D4786CD2BE7267AAB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				86785BF04FC18CBE329FDEE6 /* Pods-CamelStudioX.debug.xcconfig */,
-				5F760502DE131B479EBF8872 /* Pods-CamelStudioX.release.xcconfig */,
+				8E6D528D0D512A05BD380B50 /* Pods-CamelStudioX.debug.xcconfig */,
+				F9B7AC63E5E5E4CA44329572 /* Pods-CamelStudioX.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1958,6 +1967,7 @@
 				238599CF2073DC0700F2FF08 /* SerialMonitorViewController.swift in Sources */,
 				23859A03207521BA00F2FF08 /* SerialMonitorConfigViewController.swift in Sources */,
 				2378FEAB207224C90011969E /* InfoAndAlert.swift in Sources */,
+				23620CE82095F5E600036D27 /* MyDebug.swift in Sources */,
 				2378FE7220715F0B0011969E /* AppDelegate.swift in Sources */,
 				2391ACA720768E6F009C5C6D /* WelcomeViewController.swift in Sources */,
 				2378FE7620715F0B0011969E /* Document.swift in Sources */,
@@ -2292,10 +2302,11 @@
 		};
 		2378FE8120715F0C0011969E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86785BF04FC18CBE329FDEE6 /* Pods-CamelStudioX.debug.xcconfig */;
+			baseConfigurationReference = 8E6D528D0D512A05BD380B50 /* Pods-CamelStudioX.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 79DD7SDR2J;
@@ -2314,10 +2325,11 @@
 		};
 		2378FE8220715F0C0011969E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F760502DE131B479EBF8872 /* Pods-CamelStudioX.release.xcconfig */;
+			baseConfigurationReference = F9B7AC63E5E5E4CA44329572 /* Pods-CamelStudioX.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 79DD7SDR2J;

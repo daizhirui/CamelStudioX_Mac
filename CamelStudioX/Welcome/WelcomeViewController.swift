@@ -120,7 +120,7 @@ extension WelcomeViewController: NSTableViewDataSource {
     func getSelectedCellView() -> NSView? {
         let row = self.recentProjectTable.selectedRow
         let column = self.recentProjectTable.selectedColumn
-        print("row = \(row), column = \(column)")
+        myDebug("row = \(row), column = \(column)")
         if row >= 0 {
             return self.recentProjectTable.view(atColumn: column, row: row, makeIfNecessary: false)
         } else {

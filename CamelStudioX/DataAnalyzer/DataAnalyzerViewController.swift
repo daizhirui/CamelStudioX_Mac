@@ -45,7 +45,7 @@ class DataAnalyzerViewController: NSViewController {
     
     func setupHexResultTextView() {
         let hexString = self.dataTextView.string.toHex()
-        print("hexString")
+        myDebug("hexString")
         self.hexResultTextView.string = hexString
     }
     
@@ -232,7 +232,6 @@ extension DataAnalyzerViewController: NSTableViewDataSource {
         let data = self.datas[row]
         // 表格列的标识
         let key = (tableColumn?.identifier.rawValue)!
-        //print(key)
         // 单元格数据
         if data.keys.contains(key) {
             return data[key]
@@ -250,7 +249,7 @@ extension DataAnalyzerViewController: NSTableViewDataSource {
 
 extension DataAnalyzerViewController: NSTabViewDelegate {
     func tabView(_ tabView: NSTabView, didSelect tabViewItem: NSTabViewItem?) {
-        print("tabView title: \(String(describing: tabViewItem?.label)) identifier: \(String(describing: tabViewItem?.identifier))")
+        myDebug("tabView title: \(String(describing: tabViewItem?.label)) identifier: \(String(describing: tabViewItem?.identifier))")
         let title = (tabViewItem?.label)!
         if title == "Diagram" || title == "图"{
             // prepare combo boxes and dataToDraw

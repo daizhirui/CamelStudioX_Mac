@@ -67,6 +67,7 @@ typedef BOOL(^ORSSerialPacketEvaluator)(NSData * __nullable inputData);
  *  Programming Guide at
  */
 
+API_AVAILABLE(macos(10.8))
 @interface ORSSerialPacketDescriptor : NSObject
 
 /**

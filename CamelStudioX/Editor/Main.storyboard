@@ -818,7 +818,7 @@
                         <touchBarItems>
                             <touchBarItem id="NTn-PQ-FMW">
                                 <viewController key="viewController" id="laK-8w-3C1">
-                                    <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Pm-ah-yWc">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Pm-ah-yWc">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="ic_create_new_folder_white" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xaQ-vb-Q4D">
@@ -834,7 +834,7 @@
                             </touchBarItem>
                             <touchBarItem id="0eh-l5-o2L">
                                 <viewController key="viewController" id="CVI-Wf-OB2">
-                                    <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z5a-j9-HRh">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z5a-j9-HRh">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="ic_folder_open_white" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yAJ-X6-GZO">
@@ -850,7 +850,7 @@
                             </touchBarItem>
                             <touchBarItem id="3N5-W3-Aa0">
                                 <viewController key="viewController" id="PHG-ce-9ou">
-                                    <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GzC-Rl-5QY">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GzC-Rl-5QY">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="ic_save_white" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YVi-iy-Oop">
@@ -866,7 +866,7 @@
                             </touchBarItem>
                             <touchBarItem id="cr2-ig-n41">
                                 <viewController key="viewController" id="u8M-Sm-rEz">
-                                    <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWm-1t-nGS">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EWm-1t-nGS">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="ic_settings_white" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c1C-lD-g2d">
@@ -882,7 +882,7 @@
                             </touchBarItem>
                             <touchBarItem id="SVe-D4-QAE">
                                 <viewController key="viewController" id="TD0-FM-5Ti">
-                                    <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ic3-79-dDx">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ic3-79-dDx">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="ic_build_white" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QBM-WB-ytl">
@@ -895,7 +895,7 @@
                             </touchBarItem>
                             <touchBarItem id="5J2-Gk-pcm">
                                 <viewController key="viewController" id="hyb-uj-JPr">
-                                    <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXB-s3-kg4">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZXB-s3-kg4">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="ic_file_download_white" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vJS-ec-ZSn">
@@ -908,7 +908,7 @@
                             </touchBarItem>
                             <touchBarItem id="5Pd-OA-6Pl">
                                 <viewController key="viewController" id="nWi-Rv-PA1">
-                                    <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ad-GO-3rO">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9ad-GO-3rO">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="ic_usb_white" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RsC-a8-xyX">
@@ -921,7 +921,7 @@
                             </touchBarItem>
                             <touchBarItem id="4R2-0W-q7L">
                                 <viewController key="viewController" id="BVj-S2-U2F">
-                                    <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7t-Wq-292">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g7t-Wq-292">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="ic_chrome_reader_mode_white" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mVE-Jv-Xzz">
@@ -1077,7 +1077,7 @@
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <clipView key="contentView" ambiguous="YES" id="5Ul-qX-wJ6">
                                                                         <rect key="frame" x="1" y="1" width="312" height="524"/>
-                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
                                                                             <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="panel" textCompletion="NO" id="FHA-jv-p0Q">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="312" height="524"/>
@@ -1095,7 +1095,7 @@
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                     </scroller>
                                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Lr3-Gj-hqb">
-                                                                        <rect key="frame" x="297" y="1" width="16" height="524"/>
+                                                                        <rect key="frame" x="-15" y="1" width="16" height="0.0"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                     </scroller>
                                                                 </scrollView>

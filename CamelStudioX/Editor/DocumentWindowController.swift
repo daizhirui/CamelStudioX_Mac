@@ -27,6 +27,7 @@ class DocumentWindowController: NSWindowController {
         self.uploadConfigViewController.uploader = self.uploader
         NSUserNotificationCenter.default.delegate = self
         // addObservers
+        self.addObserversForUpload()
         NotificationCenter.default.addObserver(self, selector: #selector(self.lostFocusAction(_:)), name: NSWindow.didResignMainNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.getFocusAction(_:)), name: NSWindow.didBecomeMainNotification, object: nil)
         // check if a tab window is required
@@ -263,13 +264,13 @@ class DocumentWindowController: NSWindowController {
             // setup ui
             self.setupUIBeforeUpload()
             // remove observers
-            self.removeObserversForUpload()
+            // self.removeObserversForUpload()
         } else {
             if let project = self.viewController.project {
                 // setup ui
                 self.setupUIDuringUpload()
                 // add observers
-                self.addObserversForUpload()
+                // self.addObserversForUpload()
                 // start to upload
                 self.uploader.targetAddress = project.targetAddress
                 self.uploader.binaryURL = project.projectURL?.appendingPathComponent("Release").appendingPathComponent("\(project.targetName).bin")
@@ -280,10 +281,8 @@ class DocumentWindowController: NSWindowController {
             }
         }
     }
-    /// Add Observers for upload
+    /// Add Observers for upload: Used in windowsDidLoad
     func addObserversForUpload() {
-        // time for next stage, from upload config view controller
-        NotificationCenter.default.addObserver(self, selector: #selector(self.nextUploadStage(_:)), name: NSNotification.Name.timeForNextUploadStage, object: self.uploadConfigViewController)
         // uploading cancelled, from upload config view controller
         NotificationCenter.default.addObserver(self, selector: #selector(self.loadToBoard(_:)), name: NSNotification.Name.uploadingCancelled, object: self.uploadConfigViewController)
         // updated progress, from uploader
@@ -293,9 +292,9 @@ class DocumentWindowController: NSWindowController {
         // uploading succeeded, from uploader
         NotificationCenter.default.addObserver(self, selector: #selector(self.uploadSucceeded(_:)), name: NSNotification.Name.uploadingSucceeded, object: self.uploader)
     }
-    /// Remove Observers for upload
+    /// Remove Observers for upload: Not used now!
     func removeObserversForUpload() {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.timeForNextUploadStage, object: self.uploadConfigViewController)
+        //NotificationCenter.default.removeObserver(self, name: NSNotification.Name.timeForNextUploadStage, object: self.uploadConfigViewController)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.uploadingCancelled, object: self.uploadConfigViewController)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.uploadingFailed, object: self.uploader)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.uploadingSucceeded, object: self.uploader)
@@ -303,7 +302,7 @@ class DocumentWindowController: NSWindowController {
     }
     /// The official signal of uploading is from uploadingConfigViewController
     @objc func nextUploadStage(_ aNotification: Notification) {
-        self.uploader.forwardToNextStage()
+        self.uploader.uploadStageControl(aNotification)
     }
     /// Update progress information from uploader to progressInfo and progressValue
     @objc func updateProgress(_ aNotification: Notification?) {

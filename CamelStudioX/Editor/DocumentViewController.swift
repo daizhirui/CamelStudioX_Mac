@@ -227,7 +227,7 @@ class DocumentViewController: NSViewController {
     }
     func doDeleteFileInProject(parent: FileWrapper, node: FileWrapper) {
         parent.removeFileWrapper(node)
-        debugPrint("Deleting \(node.preferredFilename!) from \(parent.preferredFilename!)")
+        myDebug("Deleting \(node.preferredFilename!) from \(parent.preferredFilename!)")
         self.isOperatingFile = true
         NSDocumentController.shared.currentDocument?.save(self)
         self.updateProjectInspector()

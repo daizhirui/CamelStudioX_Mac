@@ -55,7 +55,6 @@ class UploadConfigViewController: NSViewController {
             self.parentVC.serialPortStateLabel.stringValue = "\(parentVC.project!.chipType.rawValue) at /dev/cu.\(serialPortName)"
         }
         self.dismiss(self)
-        NotificationCenter.default.post(name: NSNotification.Name.timeForNextUploadStage, object: self)
-        
+        self.uploader.uploadStageControl(nil)
     }
 }

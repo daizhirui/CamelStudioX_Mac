@@ -29,8 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let windowController = storyBoard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init("Welcome Window Controller")) as! NSWindowController
             windowController.showWindow(self)
         } else {
-            print("NSApp.windows.count = \(NSApp.windows.count)")
-            print("WelcomeViewController.welcomeViewDidShowed = \(WelcomeViewController.welcomeViewDidShowed)")
+            myDebug("NSApp.windows.count = \(NSApp.windows.count)")
+            myDebug("WelcomeViewController.welcomeViewDidShowed = \(WelcomeViewController.welcomeViewDidShowed)")
         }
     }
     //******* About Restoration and WelcomeWindow ********
@@ -38,13 +38,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //static var restorationTimer: Timer?
     /// Start to restore
     func application(_ app: NSApplication, didDecodeRestorableState coder: NSCoder) {
-        print("Application is restoring.")
+        myDebug("Application is restoring.")
         AppDelegate.isRestoring = true
         //AppDelegate.restorationTimer = Timer(timeInterval: 10, target: self, selector: #selector(self.showWelcomeWindow(_:)), userInfo: nil, repeats: false)
     }
     /// Restoration may be successful, check it
     func applicationDidBecomeActive(_ notification: Notification) {
-        print("Application become active")
+        myDebug("Application become active")
         AppDelegate.isRestoring = false
         if !WelcomeViewController.welcomeViewDidShowed && DocumentViewController.openedDocumentViewController <= 0 {
             // fail to restore, show welcome window
@@ -109,7 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let menu = sender as! NSMenuItem
         NSDocumentController.shared.openDocument(withContentsOf: self.m2ExampleList[menu.title]!, display: true, completionHandler: { document, result, error in
             if error != nil {
-                print("\(error!)")
+                myDebug("\(error!)")
             }
         })
     }
@@ -146,7 +146,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         alert.beginSheetModal(for: window, completionHandler: { returnCode in
-            print(returnCode)
+            myDebug(returnCode)
             if returnCode.rawValue == 1000 {
                 if let path = Bundle.main.url(forResource: "ch34x", withExtension: "pkg")?.relativePath {
                     NSWorkspace.shared.openFile(path)

@@ -22,11 +22,11 @@ class Document: NSDocument {
 
     override init() {
         super.init()
-        Swift.print("\(self) is created")
+        myDebug("\(self) is created")
     }
     
     deinit {
-        Swift.print("\(self) is destroyed")
+        myDebug("\(self) is destroyed")
     }
 
     override class var autosavesInPlace: Bool {
@@ -58,18 +58,6 @@ class Document: NSDocument {
         }
         //self.project.updateFileWrappers() update from disk should be done by the user
         if let fileWrappers = self.project.filewrappers {
-            /*
-            for childfileWrapper in fileWrappers.fileWrappers!.values {
-                if childfileWrapper.isRegularFile {
-                    Swift.print(childfileWrapper.preferredFilename!)
-                    if let data = childfileWrapper.regularFileContents {
-                        if let aString = String(data: data, encoding: .utf8) {
-                            Swift.print(aString)
-                        }
-                        Swift.print()
-                    }
-                }
-            }*/
             let cmsContent =
             """
             TECH = \(self.project.chipType.rawValue)
@@ -109,7 +97,6 @@ class Document: NSDocument {
      self.fileURL is ready now.
     */
     override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
-        //debugPrint(self.fileURL ?? "")
         var failureItem = [String]()    // To record items that we fail to load
         if typeName == "com.camel.cmsproj" {
             if let fileWrappers = fileWrapper.fileWrappers {

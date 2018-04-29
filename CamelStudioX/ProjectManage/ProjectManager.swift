@@ -65,7 +65,7 @@ class ProjectManager: NSObject {
             do {
                 try self.filewrappers?.write(to: url, options: .withNameUpdating, originalContentsURL: url)
             } catch {
-                print(error)
+                myDebug(error)
             }
         }
     }

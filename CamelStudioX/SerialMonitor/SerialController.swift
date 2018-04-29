@@ -59,7 +59,7 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
     @objc func serialPortsWereConnected(_ notification: Notification) {
         if let userInfo = notification.userInfo {
             let connectedPorts = userInfo[ORSConnectedSerialPortsKey] as! [ORSSerialPort]
-            print("Ports were connected: \(connectedPorts)")
+            myDebug("Ports were connected: \(connectedPorts)")
             let userNotificationCenter = NSUserNotificationCenter.default
             for port in connectedPorts {
                 let userNote = NSUserNotification()
@@ -76,7 +76,7 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
     @objc func serialPortsWereDisconnected(_ notification: Notification) {
         if let userInfo = notification.userInfo {
             let disconnectedPorts = userInfo[ORSDisconnectedSerialPortsKey] as! [ORSSerialPort]
-            print("Ports were disconnected: \(disconnectedPorts)")
+            myDebug("Ports were disconnected: \(disconnectedPorts)")
             let userNotificationCenter = NSUserNotificationCenter.default
             for port in disconnectedPorts {
                 let userNote = NSUserNotification()
@@ -111,12 +111,12 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
     /// response to serialPort opened
     func serialPortWasOpened(_ serialPort: ORSSerialPort) {
         self.switchButton?.title = NSLocalizedString("Close", comment: "Close")
-        print("\(serialPort.name) is opened")
+        myDebug("\(serialPort.name) is opened")
     }
     /// response to serialPort closed
     func serialPortWasClosed(_ serialPort: ORSSerialPort) {
         self.switchButton?.title = NSLocalizedString("Open", comment: "Open")
-        print("\(serialPort.name) is closed")
+        myDebug("\(serialPort.name) is closed")
     }
     /**
      Open or close the serial port
@@ -167,6 +167,8 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
             }
         }
     }
+    /// Uploader
+    var uploader: Uploader?
     /// store recent received data
     var recentReceivedData: String = "" {
         didSet {
@@ -175,7 +177,10 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
                 if self.recentReceivedData.hasSuffix(self.nextStageSignal) {
                     self.checkFlag = false
                     // time for next stage!
-                    NotificationCenter.default.post(name: NSNotification.Name.timeForNextUploadStage, object: self)
+                    myDebug("Time for next stage!")
+                    myDebug("SIGNAL: \(self.nextStageSignal)")
+                    myDebug(self.recentReceivedData)
+                    self.uploader?.uploadStageControl(nil)
                 }
             }
         }

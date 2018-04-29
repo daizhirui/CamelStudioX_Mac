@@ -20,7 +20,6 @@ public enum UploadStage: Int {
 }
 
 extension NSNotification.Name {
-    static let timeForNextUploadStage = NSNotification.Name(rawValue: "timeForNextUploadStage")
     static let uploadingFailed = NSNotification.Name("uploadingFailed")
     static let uploadingSucceeded = NSNotification.Name("uploadingSucceeded")
     static let uploadingCancelled = NSNotification.Name("uploadingCancelled")
@@ -44,6 +43,10 @@ class Uploader: NSObject {
     var binaryData: Data!
     var targetAddress = "10000000"
     var uploadResult = ""
+    override init() {
+        super.init()
+        self.serialController.uploader = self
+    }
     /**
      Because serial device may react slowly, we need to wait for it.
      */
@@ -51,23 +54,19 @@ class Uploader: NSObject {
         sleep(1)
     }
     func startUpload() {
-        // observe timeForNextUploadStage from self.serialController
-        NotificationCenter.default.addObserver(self, selector: #selector(self.uploadStageControl(_:)), name: NSNotification.Name.timeForNextUploadStage, object: self.serialController)
-        // observe timeForNextUploadStage from self
-        NotificationCenter.default.addObserver(self, selector: #selector(self.uploadStageControl(_:)), name: NSNotification.Name.timeForNextUploadStage, object: self)
-        // observe openPort failure, from serialController
         NotificationCenter.default.addObserver(self, selector: #selector(self.uploadFailed), name: NSNotification.Name.failToOpenPort, object: self.serialController)
         self.uploadFlag = true
     }
     
-    @objc func uploadStageControl(_ aNotification: Notification) {
-        print(">>>>>>> UPLOAD STAGE CONTROL:")
-        print("recentReceivedDataSize = \(self.serialController.recentReceivedDataSize)")
-        print("Actual size = \(self.serialController.recentReceivedData.count)")
-        print(">> recentReceivedData content:")
-        print(self.serialController.recentReceivedData)
-        print(">> receivedDataBuffer content:")
-        print(self.serialController.receivedDataBuffer)
+    @objc func uploadStageControl(_ aNotification: Notification?) {
+        myDebug(">>>>>>> UPLOAD STAGE CONTROL: \(self.currentUploadStage)")
+        myDebug("recentReceivedDataSize = \(self.serialController.recentReceivedDataSize)")
+        myDebug("Actual size = \(self.serialController.recentReceivedData.count)")
+        myDebug(">> recentReceivedData content:")
+        myDebug(self.serialController.recentReceivedData)
+        myDebug(">> receivedDataBuffer content:")
+        myDebug(self.serialController.receivedDataBuffer)
+        myDebug("\n\n")
         switch self.currentUploadStage {
         case .getBinary:
             self.getBinary()
@@ -94,7 +93,7 @@ class Uploader: NSObject {
                 self.binaryData = data
                 // next stage
                 self.currentUploadStage = .checkRootSpace
-                self.forwardToNextStage()
+                self.uploadStageControl(nil)
             } else {
                 _ = showAlertWindow(with: NSLocalizedString("Failed to get the binary", comment: "Failed to get the binary"))
                 self.uploadFailed()
@@ -103,6 +102,14 @@ class Uploader: NSObject {
             _ = showAlertWindow(with: NSLocalizedString("Failed to get the binary", comment: "Failed to get the binary"))
             self.uploadFailed()
         }
+    }
+    
+    func setupSerialControllerForStageCheck(dataSize: Int, nextStageSignal: String) {
+        self.serialController.receivedDataBuffer = ""
+        self.serialController.recentReceivedData = ""
+        self.serialController.recentReceivedDataSize = dataSize
+        self.serialController.nextStageSignal = nextStageSignal
+        self.serialController.checkFlag = true
     }
     
     func checkRootSpace() {
@@ -116,9 +123,7 @@ class Uploader: NSObject {
                 self.progressValue = 10.0
                 self.progressInfo = NSLocalizedString("Check root space...", comment: "Check root space...")
                 self.postProgressUpdate()
-                self.serialController.recentReceivedDataSize = 270
-                self.serialController.nextStageSignal = "CamelStudio"
-                self.serialController.checkFlag = true
+                self.setupSerialControllerForStageCheck(dataSize: 270, nextStageSignal: "CamelStudio")
                 self.serialController.sendData("\n")
                 // next stage
                 self.currentUploadStage = .setBaudrate19200
@@ -144,9 +149,7 @@ class Uploader: NSObject {
         self.serialController.sendData("00001000\n")
         self.waitForChip()
         self.serialController.serialPort?.baudRate = 19200       // set controller to 19200!!!
-        self.serialController.recentReceivedDataSize = 270
-        self.serialController.nextStageSignal = "CamelStudio"
-        self.serialController.checkFlag = true
+        self.setupSerialControllerForStageCheck(dataSize: 270, nextStageSignal: "CamelStudio")
         self.serialController.sendData("\n")
         // next stage
         self.currentUploadStage = .eraseFlash
@@ -168,9 +171,7 @@ class Uploader: NSObject {
         self.waitForChip()
         self.serialController.sendData("10000000\n")
         self.waitForChip()
-        self.serialController.recentReceivedDataSize = 800
-        self.serialController.nextStageSignal = "FFFFFFFF"
-        self.serialController.checkFlag = true
+        self.setupSerialControllerForStageCheck(dataSize: 800, nextStageSignal: "FFFFFFFF")
         self.serialController.sendData("64\n")
         // next stage
         self.currentUploadStage = .sendBinary
@@ -187,14 +188,13 @@ class Uploader: NSObject {
         self.serialController.sendData(self.targetAddress+"\n")
         self.waitForChip()
         self.serialController.serialPort?.send(self.binaryData)
+        // prepare to receive response
+        self.setupSerialControllerForStageCheck(dataSize: 900, nextStageSignal: "p1 final")
         self.waitForChip()
         self.serialController.sendData("1")
         self.waitForChip()
         self.serialController.sendData("1f800702\n")
         self.waitForChip()
-        self.serialController.recentReceivedDataSize = 900
-        self.serialController.nextStageSignal = "p1 final"
-        self.serialController.checkFlag = true
         // next stage
         self.currentUploadStage = .getResult
         self.startTimer()
@@ -205,8 +205,7 @@ class Uploader: NSObject {
         self.progressValue = 95.0
         self.progressInfo = NSLocalizedString("Getting the feedback from chip ...", comment: "Getting the feedback from chip ...")
         self.postProgressUpdate()
-        self.serialController.nextStageSignal = "Menu"
-        self.serialController.checkFlag = true
+        self.setupSerialControllerForStageCheck(dataSize: 270, nextStageSignal: "Menu")
         // next stage
         self.currentUploadStage = .setBaudrate9600
         self.startTimer()
@@ -226,7 +225,7 @@ class Uploader: NSObject {
                 aString.remove(at: aString.startIndex)
             }
             let startIndex = aString.startIndex
-            let endIndex = aString.index(startIndex, offsetBy: 133)
+            let endIndex = aString.index(startIndex, offsetBy: aString.count - 5)
             self.uploadResult = String(aString[startIndex..<endIndex])
         }
         self.serialController.sendData("1")
@@ -236,9 +235,7 @@ class Uploader: NSObject {
         self.serialController.sendData("00000000\n")
         self.waitForChip()
         self.serialController.serialPort?.baudRate = 9600       // set controller to 9600!!!
-        self.serialController.recentReceivedDataSize = 350
-        self.serialController.nextStageSignal = "CamelStudio"
-        self.serialController.checkFlag = true
+        self.setupSerialControllerForStageCheck(dataSize: 350, nextStageSignal: "CamelStudio")
         self.serialController.sendData("\n")
         // next stage
         self.currentUploadStage = .showResult
@@ -246,6 +243,7 @@ class Uploader: NSObject {
     }
     
     func cancelUpload() {
+        myDebug("RESET UPLOADER!!")
         self.timer?.invalidate()
         self.timer = nil
         self.uploadFlag = false
@@ -255,9 +253,8 @@ class Uploader: NSObject {
         self.serialController.serialPort?.close()
         self.serialController.recentReceivedDataSize = 270
         self.serialController.checkFlag = false
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.timeForNextUploadStage, object: self.serialController)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.timeForNextUploadStage, object: self)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.failToOpenPort, object: self.serialController)
+        myDebug("CURRENT_UPLOAD_STAGE RESET TO:\(self.currentUploadStage)")
     }
     
     var timer: Timer?
@@ -266,6 +263,9 @@ class Uploader: NSObject {
     }
     
     @objc func timeout() {
+        myDebug("WARNING!! TIMEOUT!!")
+        myDebug((UploadStage.init(rawValue: self.currentUploadStage.rawValue - 1)!))
+        myDebug("Timer ID = \(String(describing: self.timer?.hashValue))")
         switch self.currentUploadStage {
         case .setBaudrate19200:
             _ = showAlertWindow(with: NSLocalizedString("Please set the chip to root space!", comment: "Please set the chip to root space!"))
@@ -273,22 +273,26 @@ class Uploader: NSObject {
             _ = showAlertWindow(with: NSLocalizedString("Baudrate 19200 setup failed!", comment: "Baudrate 19200 setup failed!"))
         case .sendBinary:
             _ = showAlertWindow(with: NSLocalizedString("Flash erasing failed!", comment: "Flash erasing failed!"))
+        case .getResult:
+            _ = showAlertWindow(with: NSLocalizedString("The chip doesn't respond, please reset it manually!", comment: "The chip doesn't respond, please reset it manually!"))
         case .setBaudrate9600:
             _ = showAlertWindow(with: NSLocalizedString("Binary Uploading failed!", comment: "Binary Uploading failed!"))
         case .showResult:
             _ = showAlertWindow(with: NSLocalizedString("Baudrate 9600 setup maybe fail! Please reset the chip!", comment: "Baudrate 9600 setup maybe fail! Please reset the chip!"))
             self.uploadSucceeded()
+            self.timer?.invalidate()
             self.timer = nil
             return
         default:
             return
         }
+        self.timer?.invalidate()
         self.timer = nil
         self.uploadFailed()
     }
     
     func forwardToNextStage() {
-        NotificationCenter.default.post(name: NSNotification.Name.timeForNextUploadStage, object: self)
+        //NotificationCenter.default.post(name: NSNotification.Name.timeForNextUploadStage, object: self)
     }
     
     @objc func uploadFailed() {
