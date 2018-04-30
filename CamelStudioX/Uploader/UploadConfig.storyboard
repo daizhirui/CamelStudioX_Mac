@@ -34,9 +34,9 @@
                                             <menu key="menu" id="9sH-Sr-ZSF"/>
                                         </popUpButtonCell>
                                         <connections>
-                                            <binding destination="Nri-5Q-gpK" name="content" keyPath="self.uploader.serialController.serialPortManager.availablePorts" id="BVZ-gE-2li"/>
-                                            <binding destination="Nri-5Q-gpK" name="contentValues" keyPath="self.uploader.serialController.serialPortManager.availablePorts.name" previousBinding="BVZ-gE-2li" id="yYV-Eh-jiE"/>
-                                            <binding destination="Nri-5Q-gpK" name="selectedObject" keyPath="self.uploader.serialController.serialPort" previousBinding="yYV-Eh-jiE" id="3z5-28-kxV"/>
+                                            <binding destination="Nri-5Q-gpK" name="content" keyPath="self.uploader.serialPortManager.availablePorts" id="NvL-7t-DoK"/>
+                                            <binding destination="Nri-5Q-gpK" name="contentValues" keyPath="self.uploader.serialPortManager.availablePorts.name" previousBinding="NvL-7t-DoK" id="BRF-5G-qOS"/>
+                                            <binding destination="Nri-5Q-gpK" name="selectedObject" keyPath="self.uploader.serialPort" previousBinding="BRF-5G-qOS" id="S5X-2Q-f0z"/>
                                         </connections>
                                     </popUpButton>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oGh-ZJ-hPK">

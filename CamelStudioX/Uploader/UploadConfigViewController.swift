@@ -47,11 +47,11 @@ class UploadConfigViewController: NSViewController {
     }
     
     @IBAction func okAction(_ sender: Any) {
-        if self.uploader.serialController.serialPort == nil {
+        if self.uploader.serialPort == nil {
             _ = showAlertWindow(with: NSLocalizedString("Please choose a serial port!", comment: "Please choose a serial port!"))
             return
         }
-        if let serialPortName = self.uploader.serialController.serialPort?.name {
+        if let serialPortName = self.uploader.serialPort?.name {
             self.parentVC.serialPortStateLabel.stringValue = "\(parentVC.project!.chipType.rawValue) at /dev/cu.\(serialPortName)"
         }
         self.dismiss(self)

@@ -31,9 +31,11 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
      and connect the delegate to the new one automatically
      */
     @objc var serialPort: ORSSerialPort? {
+        willSet{
+            serialPort?.close()
+            serialPort?.delegate = nil
+        }
         didSet {
-            oldValue?.close()
-            oldValue?.delegate = nil
             serialPort?.delegate = self
         }
     }
@@ -137,7 +139,6 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
         let alertMessage = NSLocalizedString("Serial Port", comment: "Serial Port") + "\(serialPort) " + NSLocalizedString("encountered an error: ", comment: "encountered an error: ") + "\(error)"
         _ = showAlertWindow(with: alertMessage)
         self.switchButton?.title = NSLocalizedString("Open", comment: "Open")
-        NotificationCenter.default.post(name: NSNotification.Name.failToOpenPort, object: self)
     }
     /**
      Send data through a selected serial port.
@@ -154,43 +155,8 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
         }
     }
     /// store all the data received
-    var receivedDataBuffer: String = "" {
-        didSet {
-            if self.checkFlag {
-                if self.receivedDataBuffer.count <= self.recentReceivedDataSize {
-                    self.recentReceivedData = self.receivedDataBuffer
-                } else {
-                    let endIndex = self.receivedDataBuffer.endIndex
-                    let startIndex = self.receivedDataBuffer.index(endIndex, offsetBy: -self.recentReceivedDataSize)
-                    self.recentReceivedData = String(self.receivedDataBuffer[startIndex..<endIndex])
-                }
-            }
-        }
-    }
-    /// Uploader
-    var uploader: Uploader?
-    /// store recent received data
-    var recentReceivedData: String = "" {
-        didSet {
-            if self.checkFlag {
-                // check now!
-                if self.recentReceivedData.hasSuffix(self.nextStageSignal) {
-                    self.checkFlag = false
-                    // time for next stage!
-                    myDebug("Time for next stage!")
-                    myDebug("SIGNAL: \(self.nextStageSignal)")
-                    myDebug(self.recentReceivedData)
-                    self.uploader?.uploadStageControl(nil)
-                }
-            }
-        }
-    }
-    /// the size of recentReceivedData
-    var recentReceivedDataSize = 270
-    /// for uploader, the switch of recent data check
-    var checkFlag = false
-    /// notification trigger for uploader
-    var nextStageSignal = "CamelStudio"
+    var receivedDataBuffer: String = "" //{
+    
     /**
      Receive and store data
     */

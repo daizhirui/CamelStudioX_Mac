@@ -37,6 +37,7 @@ class DocumentViewController: NSViewController {
             self.languageComboBox.selectItem(withObjectValue: self.fileOnShow?.fileLanguage)
         }
     }
+    var fileOnShowIsSupported = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -589,21 +590,23 @@ extension DocumentViewController: NSOutlineViewDelegate {
      Check if fileOnShow should be saved
     */
     func checkFileModification() -> Bool {
-        var parentFileWrapper: FileWrapper!
-        if let fileWrapper = self.projectInspector.parent(forItem: self.fileOnShow) as? FileWrapper {
-            parentFileWrapper = fileWrapper
-        } else {
-            // fileOnShow is in root
-            parentFileWrapper = self.project?.filewrappers
-        }
-        if let fileWrapperToSave = self.fileOnShow {
-            if let originalFileString = fileWrapperToSave.regularFileString {
-                if originalFileString != self.editArea.string {
-                    // content is different
-                    if let newFileData = self.editArea.string.data(using: .utf8) {
-                        // update the file
-                        parentFileWrapper.update(withContents: newFileData, preferredName: fileWrapperToSave.preferredFilename!)
-                        return true
+        if self.fileOnShowIsSupported {
+            var parentFileWrapper: FileWrapper!
+            if let fileWrapper = self.projectInspector.parent(forItem: self.fileOnShow) as? FileWrapper {
+                parentFileWrapper = fileWrapper
+            } else {
+                // fileOnShow is in root
+                parentFileWrapper = self.project?.filewrappers
+            }
+            if let fileWrapperToSave = self.fileOnShow {
+                if let originalFileString = fileWrapperToSave.regularFileString {
+                    if originalFileString != self.editArea.string {
+                        // content is different
+                        if let newFileData = self.editArea.string.data(using: .utf8) {
+                            // update the file
+                            parentFileWrapper.update(withContents: newFileData, preferredName: fileWrapperToSave.preferredFilename!)
+                            return true
+                        }
                     }
                 }
             }
@@ -638,7 +641,9 @@ extension DocumentViewController: NSOutlineViewDelegate {
                         // show the file
                         self.editArea.textStorage?.setAttributedString(self.hignlightr.highlight(fileString, as: model.fileLanguage)!)
                         self.fileOnShow = model
+                        self.fileOnShowIsSupported = true
                     } else {
+                        self.fileOnShowIsSupported = false
                         self.editArea.string = NSLocalizedString("Fail to open ", comment: "Fail to open ") + "\(model.preferredFilename!)" + NSLocalizedString("\nUnsupported type!", comment: "\nUnsupported type!")
                     }
                 } else {

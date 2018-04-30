@@ -1,6 +1,15 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.1.1
+----
+
+### Build 15 on 30.04.2018
+
+- Fix a bug of num2Dec in M2 official library
+- Fix a bug of modifying files unexpectedly
+- Use new uploader, reduce 70% uploading time ( 20s -> 6s )
+
 ## Version 3.1.0
 ----
 
