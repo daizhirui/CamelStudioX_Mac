@@ -862,7 +862,7 @@ DQ
                             <touchBarItem id="pph-NZ-pcy">
                                 <viewController key="viewController" id="1YU-4B-I36">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1cK-JZ-y9b">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z0E-qk-7Rg">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -875,7 +875,7 @@ DQ
                             <touchBarItem id="wI0-fm-V7V">
                                 <viewController key="viewController" id="LS4-Hp-E8A">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ew3-2b-Khj">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="Save As" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="moP-LM-8d4">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -889,7 +889,7 @@ DQ
                             <touchBarItem id="f34-Qd-XBS">
                                 <viewController key="viewController" id="BXE-UA-UTM">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VR8-kV-g1M">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="Jump To" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6Hq-cD-Q5f">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -903,7 +903,7 @@ DQ
                             <touchBarItem id="353-KC-Os7">
                                 <viewController key="viewController" id="BCM-AB-1aL">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fXD-n1-DxP">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title=" Send " bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oPj-6o-7vN">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -921,7 +921,7 @@ DQ
                             <touchBarItem id="rpc-dt-6l5">
                                 <viewController key="viewController" id="Coo-9Y-21E">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qID-JB-sdG">
-                                        <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="Clear Output" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AzE-r7-Zpd">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -935,8 +935,10 @@ DQ
                     </touchBar>
                     <connections>
                         <outlet property="addressBox" destination="mzg-kf-dlO" id="HCn-hx-iTu"/>
+                        <outlet property="baudrateBox" destination="O1z-LL-JKe" id="P8k-iz-piJ"/>
                         <outlet property="endingPopUpButton" destination="TLN-bD-KoC" id="wZ6-4W-tTa"/>
                         <outlet property="inputBox" destination="Fe9-JK-jb1" id="eBu-rz-HRw"/>
+                        <outlet property="portBox" destination="qGN-zF-WxU" id="H0g-h5-wdf"/>
                         <outlet property="scrollView" destination="WTt-Wc-Ys0" id="acB-mC-Kgl"/>
                         <outlet property="switchButton" destination="icj-dj-PE4" id="m5y-7j-xLq"/>
                         <outlet property="textView" destination="sLW-fm-sxJ" id="p8x-wp-JP8"/>

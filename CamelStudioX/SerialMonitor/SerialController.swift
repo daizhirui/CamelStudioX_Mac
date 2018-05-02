@@ -37,8 +37,10 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
         }
         didSet {
             serialPort?.delegate = self
+            SerialController.recentSerialPort = self.serialPort // store recent serial port
         }
     }
+    static var recentSerialPort: ORSSerialPort?
     /// Available baudrates
     @objc let availableBaudrates = [300, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 115200, 230400]
     /**

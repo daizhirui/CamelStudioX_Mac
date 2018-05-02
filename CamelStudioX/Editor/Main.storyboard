@@ -990,18 +990,18 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="314" height="526"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8d-wj-Pe0">
+                                                                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8d-wj-Pe0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="314" height="526"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                    <clipView key="contentView" ambiguous="YES" id="I75-Rb-ptn">
+                                                                    <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="I75-Rb-ptn">
                                                                         <rect key="frame" x="1" y="1" width="312" height="524"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="TVB-8t-ULn" id="CE9-7U-Nk7" userLabel="TreeView">
+                                                                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="22" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="14" autosaveExpandedItems="YES" outlineTableColumn="TVB-8t-ULn" id="CE9-7U-Nk7" userLabel="TreeView">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="312" height="524"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                                <size key="intercellSpacing" width="3" height="2"/>
-                                                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                <size key="intercellSpacing" width="3" height="0.0"/>
+                                                                                <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                                 <tableColumns>
                                                                                     <tableColumn identifier="ProjectInspector" width="309" minWidth="40" maxWidth="1000" id="TVB-8t-ULn" userLabel="node">
@@ -1018,7 +1018,7 @@
                                                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                                         <prototypeCellViews>
                                                                                             <tableCellView id="yOv-LK-p9e">
-                                                                                                <rect key="frame" x="1" y="1" width="309" height="30"/>
+                                                                                                <rect key="frame" x="1" y="0.0" width="309" height="30"/>
                                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                                 <subviews>
                                                                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MFn-WW-6DV">
@@ -1054,6 +1054,7 @@
                                                                                 </connections>
                                                                             </outlineView>
                                                                         </subviews>
+                                                                        <nil key="backgroundColor"/>
                                                                     </clipView>
                                                                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="d82-3B-ezN">
                                                                         <rect key="frame" x="1" y="-15" width="0.0" height="16"/>

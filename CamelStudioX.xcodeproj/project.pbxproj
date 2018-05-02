@@ -401,6 +401,7 @@
 /* Begin PBXFileReference section */
 		231D5D6F20724A3800486DC7 /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
 		231D5D7120724E1200486DC7 /* TerminalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalCommand.swift; path = CamelStudioX/TerminalCommand.swift; sourceTree = SOURCE_ROOT; };
+		23205A842099E4790098B431 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23288F882076F700008DC349 /* cmsproj.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cmsproj.icns; sourceTree = "<group>"; };
 		2331799720969BAC001C0C96 /* SerialBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialBoardController.swift; sourceTree = "<group>"; };
 		233DBE032075636100269D8E /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
@@ -1159,6 +1160,7 @@
 		2378FE6520715F0B0011969E = {
 			isa = PBXGroup;
 			children = (
+				23205A842099E4790098B431 /* README.md */,
 				233DBE1C207568F100269D8E /* Markdown */,
 				23859A0820754E6000F2FF08 /* PlotKit */,
 				2364290F20737AD900FB9C33 /* Highlightr */,

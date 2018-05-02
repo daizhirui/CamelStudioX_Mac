@@ -274,7 +274,6 @@ class DocumentWindowController: NSWindowController {
                 // start to upload
                 self.uploader.targetAddress = project.targetAddress
                 self.uploader.binaryURL = project.projectURL?.appendingPathComponent("Release").appendingPathComponent("\(project.targetName).bin")
-                self.uploader.startUpload()
                 // show the upload config sheet
                 self.uploadConfigViewController.parentVC = self.contentViewController as! DocumentViewController
                 self.viewController.presentViewControllerAsSheet(self.uploadConfigViewController)

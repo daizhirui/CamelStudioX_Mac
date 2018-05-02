@@ -615,7 +615,7 @@ extension DocumentViewController: NSOutlineViewDelegate {
     }
     
     /**
-     Change the text color when selection is changed
+     Change the text color, show files when selection is changed
     */
     func outlineViewSelectionDidChange(_ notification: Notification) {
         let projectInspector = notification.object as! NSOutlineView

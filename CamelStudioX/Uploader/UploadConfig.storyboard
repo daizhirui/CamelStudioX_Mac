@@ -34,9 +34,9 @@
                                             <menu key="menu" id="9sH-Sr-ZSF"/>
                                         </popUpButtonCell>
                                         <connections>
+                                            <binding destination="Nri-5Q-gpK" name="selectedObject" keyPath="self.uploader.serialPort" previousBinding="BRF-5G-qOS" id="S5X-2Q-f0z"/>
                                             <binding destination="Nri-5Q-gpK" name="content" keyPath="self.uploader.serialPortManager.availablePorts" id="NvL-7t-DoK"/>
                                             <binding destination="Nri-5Q-gpK" name="contentValues" keyPath="self.uploader.serialPortManager.availablePorts.name" previousBinding="NvL-7t-DoK" id="BRF-5G-qOS"/>
-                                            <binding destination="Nri-5Q-gpK" name="selectedObject" keyPath="self.uploader.serialPort" previousBinding="BRF-5G-qOS" id="S5X-2Q-f0z"/>
                                         </connections>
                                     </popUpButton>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oGh-ZJ-hPK">
@@ -142,6 +142,7 @@ DQ
                     </view>
                     <connections>
                         <outlet property="binaryPath" destination="oGh-ZJ-hPK" id="VVg-tS-sVK"/>
+                        <outlet property="portBox" destination="qBW-Hu-CEo" id="c3k-hh-1DW"/>
                     </connections>
                 </viewController>
                 <customObject id="4QH-6n-1Of" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

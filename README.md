@@ -8,6 +8,12 @@ Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
 - Fix a bug of failing to upload binary since the second upload
 
+### Build 17 on 02.05.2018
+
+- Fix a bug of failing to upload binary after serial monitor is opened
+- Fix a bug of "Name disappears" in the project inspector
+- Now serial monitor and uploader can remember the last selected serial port
+
 ## Version 3.1.1
 ----
 

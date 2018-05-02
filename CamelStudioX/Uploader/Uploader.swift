@@ -47,9 +47,11 @@ class Uploader: NSObject {
                 port.baudRate = 9600
                 port.delegate = self
                 port.open()
+                self.recentSerialPort = port
             }
         }
     }
+    var recentSerialPort: ORSSerialPort?
     var receivedResponse: String = ""
     /// indicate if is uploading
     @objc var uploadFlag = false

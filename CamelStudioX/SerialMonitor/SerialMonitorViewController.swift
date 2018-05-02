@@ -12,6 +12,8 @@ import LineNumberTextView
 class SerialMonitorViewController: NSViewController {
 
     @IBOutlet weak var switchButton: NSButton!
+    @IBOutlet weak var portBox: NSPopUpButton!
+    @IBOutlet weak var baudrateBox: NSPopUpButton!
     @IBOutlet weak var scrollView: NSScrollView!
     @IBOutlet var textView: SerialScreenView!
     @objc let serialController = SerialController()
@@ -28,6 +30,12 @@ class SerialMonitorViewController: NSViewController {
         super.viewDidLoad()
         // ***** Setup SerialController ******
         self.serialController.switchButton = self.switchButton
+        if let portName = SerialController.recentSerialPort?.name {
+            self.portBox.selectItem(withTitle: portName)
+            self.serialController.serialPort = SerialController.recentSerialPort
+            self.baudrateBox.selectItem(withTitle: "9600")
+            self.serialController.serialPort?.baudRate = 9600
+        }
         self.serialController.screen = self.textView
         self.serialController.scrollControll = self.scrollView
         // ***** Setup TextView ********

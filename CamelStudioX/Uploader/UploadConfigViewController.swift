@@ -11,12 +11,22 @@ import Cocoa
 class UploadConfigViewController: NSViewController {
 
     @objc var uploader: Uploader!
+    @IBOutlet weak var portBox: NSPopUpButton!
     @IBOutlet weak var binaryPath: NSTextField!
     var parentVC: DocumentViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.binaryPath.stringValue = self.uploader.binaryURL.relativePath
+    }
+    
+    override func viewDidAppear() {
+        if let portName = self.uploader.recentSerialPort?.name {
+            self.portBox.selectItem(withTitle: portName)
+            self.uploader.serialPort = self.uploader.recentSerialPort
+            self.uploader.serialPort?.baudRate = 9600
+        }
+        
     }
     
     @IBAction func selectBinary(_ sender: Any) {
@@ -55,6 +65,7 @@ class UploadConfigViewController: NSViewController {
             self.parentVC.serialPortStateLabel.stringValue = "\(parentVC.project!.chipType.rawValue) at /dev/cu.\(serialPortName)"
         }
         self.dismiss(self)
+        self.uploader.startUpload()
         self.uploader.uploadStageControl(nil)
     }
 }
