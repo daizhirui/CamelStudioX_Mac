@@ -74,6 +74,7 @@ class Uploader: NSObject {
         usleep(250000)  // 0.25 s
     }
     func startUpload() {
+        self.serialPort?.open()
         self.uploadFlag = true
     }
     
