@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7419BD1F6208928B0411C0ECDDB24B91"
-               BuildableName = "libORSSerialPort.a"
+               BlueprintIdentifier = "B911FDF074A4916E5501295C4641CCFC"
+               BuildableName = "ORSSerial.framework"
                BlueprintName = "ORSSerialPort"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7419BD1F6208928B0411C0ECDDB24B91"
-            BuildableName = "libORSSerialPort.a"
+            BlueprintIdentifier = "B911FDF074A4916E5501295C4641CCFC"
+            BuildableName = "ORSSerial.framework"
             BlueprintName = "ORSSerialPort"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

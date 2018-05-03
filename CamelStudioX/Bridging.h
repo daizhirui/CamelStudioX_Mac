@@ -9,9 +9,9 @@
 #ifndef Bridging_h
 #define Bridging_h
 
-#import "ORSSerialPort.h"
-#import "ORSSerialPortManager.h"
-#import "ORSSerialRequest.h"
-#import "ORSSerialPacketDescriptor.h"
+//#import "ORSSerialPort.h"
+//#import "ORSSerialPortManager.h"
+//#import "ORSSerialRequest.h"
+//#import "ORSSerialPacketDescriptor.h"
 #import "mkdio.h"
 #endif /* Bridging_h */

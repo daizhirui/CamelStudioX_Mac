@@ -10,6 +10,8 @@ import Cocoa
 import Highlightr
 import LineNumberTextView
 
+let dragDropTypeForProjectInspector = NSPasteboard.PasteboardType(rawValue: "dragDropTypeForProjectInspector")
+
 class DocumentViewController: NSViewController {
     
     static var openedDocumentViewController = 0
@@ -37,6 +39,7 @@ class DocumentViewController: NSViewController {
             self.languageComboBox.selectItem(withObjectValue: self.fileOnShow?.fileLanguage)
         }
     }
+    var parentOfSelectedFile: FileWrapper?
     var fileOnShowIsSupported = true
     
     override func viewDidLoad() {
@@ -53,6 +56,8 @@ class DocumentViewController: NSViewController {
         self.sidePanelInfoTextView.isAutomaticSpellingCorrectionEnabled = false
         self.sidePanelInfoTextView.isGrammarCheckingEnabled = false
         self.projectInspector.menu = self.projectInspectorMenu
+        // Register Drag-Drop
+        self.projectInspector.registerForDraggedTypes([dragDropTypeForProjectInspector])
     }
     
     override func viewDidAppear() {
@@ -237,10 +242,9 @@ class DocumentViewController: NSViewController {
     func setupHighlightr() {
         // Load the setup of codeTheme
         // if fails, use "xcode" as themeName
-        if let path = Bundle.main.path(forResource: "Preference", ofType: "plist") {
-            if let themeName = NSDictionary(contentsOfFile: path)?.object(forKey: "CodeTheme") as? String {
-                self.themeName = themeName
-            }
+        let defaults = UserDefaults.standard
+        if let temp = defaults.string(forKey: "CodeTheme") {
+            self.themeName = temp
         }
         // setup Highlightr
         self.hignlightr.setTheme(to: self.themeName)
@@ -537,6 +541,53 @@ extension DocumentViewController: NSOutlineViewDataSource {
             return false
         }
     }
+    /**
+     Store the data of dragged item to the pasteboard
+    */
+    func outlineView(_ outlineView: NSOutlineView, writeItems items: [Any], to pasteboard: NSPasteboard) -> Bool {
+        if items.count == 0 {
+            return false
+        }
+        let data = NSKeyedArchiver.archivedData(withRootObject: items)
+        pasteboard.declareTypes([dragDropTypeForProjectInspector], owner: self)
+        pasteboard.setData(data, forType: dragDropTypeForProjectInspector)
+        // record the parent node
+        if let tempNodeItem = self.projectInspector.parent(forItem: self.projectInspector.item(atRow: self.projectInspector.selectedRow)) as? FileWrapper {
+            self.parentOfSelectedFile = tempNodeItem
+        } else {
+            self.parentOfSelectedFile = self.project!.filewrappers!
+        }
+        return true
+    }
+    /**
+     Allow dragging
+    */
+    func outlineView(_ outlineView: NSOutlineView, validateDrop info: NSDraggingInfo, proposedItem item: Any?, proposedChildIndex index: Int) -> NSDragOperation {
+        return .every
+    }
+    /**
+     Process the data received from Drag-Drop
+    */
+    func outlineView(_ outlineView: NSOutlineView, acceptDrop info: NSDraggingInfo, item: Any?, childIndex index: Int) -> Bool {
+        let pboard = info.draggingPasteboard()
+        guard let data = pboard.data(forType: dragDropTypeForProjectInspector) else { return false }
+        guard let items = NSKeyedUnarchiver.unarchiveObject(with: data) as? [FileWrapper] else { return false }
+        let targetNodeItem: FileWrapper
+        if let tempTargetNodeItem = item as? FileWrapper {
+            targetNodeItem = tempTargetNodeItem
+        } else {
+            targetNodeItem = self.project!.filewrappers!
+        }
+        for fileWrapper in items {
+            targetNodeItem.update(fileWrapper)
+            //self.parentOfSelectedFile?.removeFileWrapper(fileWrapper)
+            self.parentOfSelectedFile?.removeFileWrapper(ofName: fileWrapper.preferredFilename!)
+        }
+        // save and reload the changes
+        NSDocumentController.shared.currentDocument?.save(self)
+        self.projectInspector.reloadData()
+        return true
+    }
 }
 
 extension DocumentViewController: NSOutlineViewDelegate {
@@ -636,17 +687,13 @@ extension DocumentViewController: NSOutlineViewDelegate {
                     }
                 }
             } else {
-                if let fileData = model.regularFileContents {
-                    if let fileString = String(data: fileData, encoding: String.Encoding.utf8) {
-                        // show the file
-                        self.editArea.textStorage?.setAttributedString(self.hignlightr.highlight(fileString, as: model.fileLanguage)!)
-                        self.fileOnShow = model
-                        self.fileOnShowIsSupported = true
-                    } else {
-                        self.fileOnShowIsSupported = false
-                        self.editArea.string = NSLocalizedString("Fail to open ", comment: "Fail to open ") + "\(model.preferredFilename!)" + NSLocalizedString("\nUnsupported type!", comment: "\nUnsupported type!")
-                    }
+                if let fileString = model.regularFileString {
+                    // show the file
+                    self.editArea.textStorage?.setAttributedString(self.hignlightr.highlight(fileString, as: model.fileLanguage)!)
+                    self.fileOnShow = model
+                    self.fileOnShowIsSupported = true
                 } else {
+                    self.fileOnShowIsSupported = false
                     self.editArea.string = NSLocalizedString("Fail to open ", comment: "Fail to open ") + "\(model.preferredFilename!)" + NSLocalizedString("\nUnsupported type!", comment: "\nUnsupported type!")
                 }
             }

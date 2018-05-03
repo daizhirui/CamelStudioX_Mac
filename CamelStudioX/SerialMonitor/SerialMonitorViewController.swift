@@ -8,6 +8,7 @@
 
 import Cocoa
 import LineNumberTextView
+import ORSSerial
 
 class SerialMonitorViewController: NSViewController {
 

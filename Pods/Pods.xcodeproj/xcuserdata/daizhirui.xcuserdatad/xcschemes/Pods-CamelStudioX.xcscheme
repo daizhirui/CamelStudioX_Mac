@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F792F0658BCE1C3750FDF9A9C2D823F1"
-               BuildableName = "libPods-CamelStudioX.a"
+               BlueprintIdentifier = "2A58542FD63255BBCB5A804FF29F7A91"
+               BuildableName = "Pods_CamelStudioX.framework"
                BlueprintName = "Pods-CamelStudioX"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F792F0658BCE1C3750FDF9A9C2D823F1"
-            BuildableName = "libPods-CamelStudioX.a"
+            BlueprintIdentifier = "2A58542FD63255BBCB5A804FF29F7A91"
+            BuildableName = "Pods_CamelStudioX.framework"
             BlueprintName = "Pods-CamelStudioX"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

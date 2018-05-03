@@ -1,4 +1,13 @@
 
+## Version 3.2.0
+----
+
+### Build 18 on 03.05.2018
+
+- Correct some UI mistakes in Help Window
+- New Feature: Drag and drop files in Project Inspector
+- New Feature: Auto Update
+
 ## Version 3.1.2
 ----
 

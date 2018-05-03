@@ -254,6 +254,20 @@ extension FileWrapper {
         fileWrapper.preferredFilename = preferredName
         self.update(fileWrapper)
     }
+    /**
+     Remove a child fileWrapper according to the name provided
+    */
+    func removeFileWrapper(ofName: String) {
+        if self.isDirectory {
+            if let children = self.fileWrappers {
+                for (_, child) in children {
+                    if child.preferredFilename == ofName {
+                        self.removeFileWrapper(child)
+                    }
+                }
+            }
+        }
+    }
     
     var regularFileString: String? {
         get {

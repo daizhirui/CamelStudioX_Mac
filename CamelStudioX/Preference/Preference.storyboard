@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -36,44 +37,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-5F-pK5">
-                                <rect key="frame" x="20" y="230" width="240" height="20"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tLA-wx-Td9">
-                                        <rect key="frame" x="-2" y="2" width="86" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Code Theme:" id="01Y-z7-68r">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pDZ-Hy-Vdt">
-                                        <rect key="frame" x="90" y="-4" width="153" height="26"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="jlC-eE-4jk"/>
-                                        </constraints>
-                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="jFU-Q7-atO">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <objectValues>
-                                                <string>Item 1</string>
-                                                <string>Item 2</string>
-                                                <string>Item 3</string>
-                                            </objectValues>
-                                        </comboBoxCell>
-                                    </comboBox>
-                                </subviews>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PKs-fA-aem">
                                 <rect key="frame" x="385" y="13" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -117,13 +80,108 @@ Gw
                                 <rect key="frame" x="20" y="219" width="440" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
+                            <box fixedFrame="YES" title="Auto Update" translatesAutoresizingMaskIntoConstraints="NO" id="xIR-Np-YZi">
+                                <rect key="frame" x="17" y="141" width="446" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="6ej-wl-GRf">
+                                    <rect key="frame" x="2" y="2" width="442" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WKU-wP-jJY">
+                                            <rect key="frame" x="4" y="32" width="217" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="WuK-Zz-gyM">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="etc-Ur-nXM" name="value" keyPath="self.automaticallyChecksForUpdates" id="oAd-or-dEy"/>
+                                            </connections>
+                                        </button>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eq5-f3-WmE">
+                                            <rect key="frame" x="134" y="4" width="86" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="Daily" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="86400" imageScaling="proportionallyDown" inset="2" selectedItem="Xfp-gV-OKA" id="qVe-z5-16F">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="vAk-Au-SUb">
+                                                    <items>
+                                                        <menuItem title="Hourly" tag="3600" id="kcE-8j-FbC"/>
+                                                        <menuItem title="Daily" state="on" tag="86400" id="Xfp-gV-OKA"/>
+                                                        <menuItem title="Weekly" tag="604800" id="Lv8-hE-q6D"/>
+                                                        <menuItem title="Monthly" tag="2629800" id="hNX-13-nLw">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="etc-Ur-nXM" name="enabled" keyPath="self.updateCheckInterval" id="3Zq-9r-YBO"/>
+                                                <binding destination="etc-Ur-nXM" name="selectedTag" keyPath="self.updateCheckInterval" id="fVM-ln-mG3"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-ZM-jhM">
+                                            <rect key="frame" x="4" y="9" width="126" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Check update every" id="4bY-30-hIf">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                                <font key="titleFont" size="13" name=".AppleSystemUIFont"/>
+                            </box>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-5F-pK5">
+                                <rect key="frame" x="26" y="230" width="240" height="20"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tLA-wx-Td9">
+                                        <rect key="frame" x="-2" y="2" width="86" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Code Theme:" id="01Y-z7-68r">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pDZ-Hy-Vdt">
+                                        <rect key="frame" x="90" y="-4" width="153" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="jlC-eE-4jk"/>
+                                        </constraints>
+                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="jFU-Q7-atO">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <objectValues>
+                                                <string>Item 1</string>
+                                                <string>Item 2</string>
+                                                <string>Item 3</string>
+                                            </objectValues>
+                                        </comboBoxCell>
+                                    </comboBox>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="autoUpdate" destination="WKU-wP-jJY" id="HUn-td-dzd"/>
                         <outlet property="codeThemeBox" destination="pDZ-Hy-Vdt" id="88C-Q4-5ur"/>
+                        <outlet property="updateCheckInterval" destination="eq5-f3-WmE" id="GHr-lz-hp9"/>
+                        <outlet property="updater" destination="etc-Ur-nXM" id="g8x-aa-5QX"/>
                     </connections>
                 </viewController>
                 <customObject id="qr8-o2-pC3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="etc-Ur-nXM" customClass="SUUpdater"/>
             </objects>
             <point key="canvasLocation" x="181" y="473"/>
         </scene>

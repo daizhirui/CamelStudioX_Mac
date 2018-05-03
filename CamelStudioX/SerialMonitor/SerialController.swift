@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ORSSerial
 
 public enum Ending: String {
     case noEnding = ""

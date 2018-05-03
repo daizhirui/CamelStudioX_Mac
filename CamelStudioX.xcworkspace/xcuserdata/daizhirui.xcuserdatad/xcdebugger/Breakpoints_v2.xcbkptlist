@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CamelStudioX/Uploader/Uploader.swift"
-            timestampString = "546956229.838472"
+            timestampString = "547009015.681795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "Uploader"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CamelStudioX/Uploader/Uploader.swift"
-            timestampString = "546956229.8385381"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "startUpload()"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "serialPort(_:didReceiveResponse:to:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CamelStudioX/Editor/DocumentViewController.swift"
-            timestampString = "546956229.83859"
+            filePath = "CamelStudioX/Uploader/Uploader.swift"
+            timestampString = "547009015.681863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "620"
-            endingLineNumber = "620"
-            landmarkName = "outlineViewSelectionDidChange(_:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "uploadStageControl(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

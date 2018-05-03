@@ -65,9 +65,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.1.2</string>
+	<string>3.2.0</string>
 	<key>CFBundleVersion</key>
-	<string>17</string>
+	<string>18</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.developer-tools</string>
 	<key>LSMinimumSystemVersion</key>
@@ -78,6 +78,10 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>updateKey.pem</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>

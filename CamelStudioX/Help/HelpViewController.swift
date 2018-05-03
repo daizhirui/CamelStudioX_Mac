@@ -164,7 +164,7 @@ extension HelpViewController: NSOutlineViewDelegate {
      Return the height of a line
      */
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
-        return 20
+        return 23
     }
     /**
      Change the text color when selection is changed

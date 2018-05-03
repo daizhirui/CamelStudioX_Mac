@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230FCBB7209AB1F000BFEF51 /* updateKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 230FCBB6209AB1F000BFEF51 /* updateKey.pem */; };
+		230FCBBD209AB27100BFEF51 /* Pods_CamelStudioX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DF96228DC47F7C9C27B22D /* Pods_CamelStudioX.framework */; };
+		230FCBBE209AB27100BFEF51 /* Pods_CamelStudioX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43DF96228DC47F7C9C27B22D /* Pods_CamelStudioX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		231D5D7020724A3800486DC7 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D6F20724A3800486DC7 /* Compiler.swift */; };
 		231D5D7220724E1200486DC7 /* TerminalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D7120724E1200486DC7 /* TerminalCommand.swift */; };
 		23288F892076F700008DC349 /* cmsproj.icns in Resources */ = {isa = PBXBuildFile; fileRef = 23288F882076F700008DC349 /* cmsproj.icns */; };
@@ -347,7 +350,6 @@
 		23C605122073802600375959 /* LineNumberTextView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23C6050A2073802600375959 /* LineNumberTextView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23C6051A2073804400375959 /* LineNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605162073804400375959 /* LineNumberTextView.swift */; };
 		23C6051D2073804400375959 /* LineNumberGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605192073804400375959 /* LineNumberGutter.swift */; };
-		D5DF9AE2AD816FCDCD0744A0 /* libPods-CamelStudioX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 751C99770D9626CB1F605CEF /* libPods-CamelStudioX.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -390,6 +392,7 @@
 			files = (
 				23642B3220737BDF00FB9C33 /* Highlightr.framework in Embed Frameworks */,
 				233DBE23207568F100269D8E /* Markdown.framework in Embed Frameworks */,
+				230FCBBE209AB27100BFEF51 /* Pods_CamelStudioX.framework in Embed Frameworks */,
 				23859A1F20754ECC00F2FF08 /* PlotKit.framework in Embed Frameworks */,
 				23C605122073802600375959 /* LineNumberTextView.framework in Embed Frameworks */,
 			);
@@ -399,6 +402,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		230FCBB6209AB1F000BFEF51 /* updateKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = updateKey.pem; sourceTree = "<group>"; };
+		230FCBB8209AB25300BFEF51 /* ORSSerial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ORSSerial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		231D5D6F20724A3800486DC7 /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
 		231D5D7120724E1200486DC7 /* TerminalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalCommand.swift; path = CamelStudioX/TerminalCommand.swift; sourceTree = SOURCE_ROOT; };
 		23205A842099E4790098B431 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -745,7 +750,7 @@
 		23C6050D2073802600375959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23C605162073804400375959 /* LineNumberTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberTextView.swift; sourceTree = "<group>"; };
 		23C605192073804400375959 /* LineNumberGutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberGutter.swift; sourceTree = "<group>"; };
-		751C99770D9626CB1F605CEF /* libPods-CamelStudioX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CamelStudioX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43DF96228DC47F7C9C27B22D /* Pods_CamelStudioX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamelStudioX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6D528D0D512A05BD380B50 /* Pods-CamelStudioX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.debug.xcconfig"; sourceTree = "<group>"; };
 		F9B7AC63E5E5E4CA44329572 /* Pods-CamelStudioX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.release.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -772,9 +777,9 @@
 			files = (
 				23859A1E20754ECC00F2FF08 /* PlotKit.framework in Frameworks */,
 				233DBE22207568F100269D8E /* Markdown.framework in Frameworks */,
+				230FCBBD209AB27100BFEF51 /* Pods_CamelStudioX.framework in Frameworks */,
 				23642B3120737BDF00FB9C33 /* Highlightr.framework in Frameworks */,
 				23C605112073802600375959 /* LineNumberTextView.framework in Frameworks */,
-				D5DF9AE2AD816FCDCD0744A0 /* libPods-CamelStudioX.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1211,6 +1216,7 @@
 		2378FE8320715F240011969E /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				230FCBB6209AB1F000BFEF51 /* updateKey.pem */,
 				23288F882076F700008DC349 /* cmsproj.icns */,
 				233DBE092075666D00269D8E /* Driver */,
 				233DBE052075648000269D8E /* Preference.plist */,
@@ -1369,7 +1375,8 @@
 		F2128ABB9A6FB1C0E8C5EBE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				751C99770D9626CB1F605CEF /* libPods-CamelStudioX.a */,
+				230FCBB8209AB25300BFEF51 /* ORSSerial.framework */,
+				43DF96228DC47F7C9C27B22D /* Pods_CamelStudioX.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1861,6 +1868,7 @@
 				2378FEA120721DC20011969E /* Preference.storyboard in Resources */,
 				23A10BEA20725E6700758848 /* Main.storyboard in Resources */,
 				2378FE8720715F920011969E /* cms.png in Resources */,
+				230FCBB7209AB1F000BFEF51 /* updateKey.pem in Resources */,
 				2378FE7820715F0C0011969E /* Assets.xcassets in Resources */,
 				2378FE8920715FAC0011969E /* cmsx.png in Resources */,
 			);
@@ -1904,9 +1912,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ORSSerialPort/ORSSerial.framework",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORSSerial.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2066,7 +2081,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2090,6 +2105,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Markdown;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -2102,7 +2118,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2126,6 +2142,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Markdown;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2136,7 +2153,7 @@
 		23642B3420737BDF00FB9C33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2156,6 +2173,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Highlightr;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2166,7 +2184,7 @@
 		23642B3520737BDF00FB9C33 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2186,6 +2204,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Highlightr;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2313,6 +2332,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 79DD7SDR2J;
@@ -2324,6 +2344,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.CamelStudioX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = CamelStudioX/Bridging.h;
 				SWIFT_VERSION = 4.0;
 			};
@@ -2336,6 +2357,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 79DD7SDR2J;
@@ -2347,6 +2369,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.CamelStudioX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = CamelStudioX/Bridging.h;
 				SWIFT_VERSION = 4.0;
 			};
@@ -2355,7 +2378,7 @@
 		23859A2120754ECC00F2FF08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2375,6 +2398,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.PlotKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2385,7 +2409,7 @@
 		23859A2220754ECC00F2FF08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2405,6 +2429,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.PlotKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2416,7 +2441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2436,6 +2461,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.LineNumberTextView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -2448,7 +2474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2468,6 +2494,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.LineNumberTextView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";

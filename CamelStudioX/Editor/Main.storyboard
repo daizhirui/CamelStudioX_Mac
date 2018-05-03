@@ -26,6 +26,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="RfC-gd-nXa"/>
+                                        <menuItem title="Check For Updates" id="Xxh-CJ-OIi">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="tVS-lx-Ytd" id="VSn-j1-RPM"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Preferences…" keyEquivalent="," id="V4W-dz-5Cq">
                                             <connections>
                                                 <action selector="openPreference:" target="eQV-bR-l9y" id="nH6-Zo-oex"/>
@@ -584,6 +590,7 @@
                     </connections>
                 </customObject>
                 <customObject id="fHp-Uv-NDP" customClass="NSFontManager"/>
+                <customObject id="tVS-lx-Ytd" customClass="SUUpdater"/>
             </objects>
             <point key="canvasLocation" x="100" y="-237"/>
         </scene>
@@ -990,14 +997,14 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="314" height="526"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8d-wj-Pe0">
+                                                                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="30" horizontalPageScroll="10" verticalLineScroll="30" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8d-wj-Pe0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="314" height="526"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="I75-Rb-ptn">
                                                                         <rect key="frame" x="1" y="1" width="312" height="524"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="22" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="14" autosaveExpandedItems="YES" outlineTableColumn="TVB-8t-ULn" id="CE9-7U-Nk7" userLabel="TreeView">
+                                                                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="14" autosaveExpandedItems="YES" outlineTableColumn="TVB-8t-ULn" id="CE9-7U-Nk7" userLabel="TreeView">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="312" height="524"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <size key="intercellSpacing" width="3" height="0.0"/>

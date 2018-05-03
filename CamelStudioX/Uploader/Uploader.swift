@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ORSSerial
 
 let timeoutDuration = 5.0
 
