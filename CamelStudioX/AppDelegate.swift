@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         // change the update server if it is in China
         if TimeZone.current.secondsFromGMT() / 3600 == 8 {
-            self.updater.feedURL = URL(fileURLWithPath: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml")
+            self.updater.feedURL = URL(string: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml")
         }
     }
     
