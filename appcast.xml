@@ -3,8 +3,20 @@
 <title>CamelStudioX</title>
 <item>
 <title>3.2.0</title>
+<description><![CDATA[
+    <h2>Bugs Fixed</h2>
+    <ul>
+        <li>Correct some UI mistakes in Help Window</li>
+    </ul>
+    <h2>New Features</h2>
+    <ul>
+        <li>New Feature: Drag and drop files in Project Inspector</li>
+        <li>New Feature: Auto Update</li>
+    </ul>
+]]>
+</description>
 <pubDate>Thu, 03 May 2018 05:05:56 +0200</pubDate>
 <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
-<enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.2.0/CamelStudioX_3.2.0_Build18.zip" sparkle:version="18" sparkle:shortVersionString="3.2.0" length="66640790" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCS3xQPAp+rTXRvf5fohBwkvQ5SUQIUKkM9epmpBfibBO8MAfdv3i93jqI="/>
+<enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.2.0/CamelStudioX_3.2.0_Build18.zip" sparkle:version="18" sparkle:shortVersionString="3.2.0" length="66640790" type="application/octet-stream" sparkle:dsaSignature="MCwCFCUGiYIwlJFmTwDuSYiJ0heK4Oz+AhRg2qAi+oOTE4BdAkyXqoL2lzz36A=="/>
 </item>
 </channel></rss>

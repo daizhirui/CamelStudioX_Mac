@@ -7,10 +7,12 @@
 //
 
 import Cocoa
+import Sparkle
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    @IBOutlet weak var updater: SUUpdater!
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.setupM2ExampleMenu()
         if #available(OSX 10.12.2, *) {
@@ -20,6 +22,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if WelcomeViewController.shouldShow {
             // no document is opened or being opened(Restoration), show the welcome window now
             self.showWelcomeWindow(self)
+        }
+        // change the update server if it is in China
+        if TimeZone.current.secondsFromGMT() / 3600 == 8 {
+            self.updater.feedURL = URL(fileURLWithPath: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml")
         }
     }
     

@@ -587,6 +587,7 @@
                 <customObject id="eQV-bR-l9y" customClass="AppDelegate" customModule="CamelStudioX" customModuleProvider="target">
                     <connections>
                         <outlet property="m2ExampleMenu" destination="xrC-g3-a7p" id="YiG-S8-yP5"/>
+                        <outlet property="updater" destination="tVS-lx-Ytd" id="pM7-78-S2e"/>
                     </connections>
                 </customObject>
                 <customObject id="fHp-Uv-NDP" customClass="NSFontManager"/>
