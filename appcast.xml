@@ -30,7 +30,7 @@
     </description>
     <pubDate>Mon, 21 May 2018 14:01:11 +0200</pubDate>
     <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
-    <enclosure url="https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/CamelStudioX_3.2.1_Build19.zip" sparkle:version="19" sparkle:shortVersionString="3.2.1" length="66641723" type="application/octet-stream" sparkle:dsaSignature="MC0CFQC38RpGLhu5l6yX+05p0nX6yWlywQIUC3+ooEFjNoizjUj70IUWoLT2K1U="/>
+    <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.2.1/CamelStudioX_3.2.1_Build19.zip" sparkle:version="19" sparkle:shortVersionString="3.2.1" length="66641723" type="application/octet-stream" sparkle:dsaSignature="MC0CFQC38RpGLhu5l6yX+05p0nX6yWlywQIUC3+ooEFjNoizjUj70IUWoLT2K1U="/>
 </item>
 
 </channel></rss>
