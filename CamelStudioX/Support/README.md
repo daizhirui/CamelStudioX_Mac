@@ -1,4 +1,13 @@
 
+## Version 3.2.2
+----
+
+### Build 20 on 21.05.2018
+
+- Fix a bug of showing wrong menus for the first item in Project Inspector.
+- Fix a bug of no response of rename menu item in Project Inspector.
+- New Feature: Auto insert tab and auto insert brace, parenthesis and quotation mark.
+
 ## Version 3.2.1
 ----
 

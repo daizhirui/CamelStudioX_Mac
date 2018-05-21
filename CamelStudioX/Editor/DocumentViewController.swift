@@ -20,7 +20,7 @@ class DocumentViewController: NSViewController {
     @IBOutlet weak var sidePanelTabControl: NSSegmentedControl!
     @IBOutlet weak var projectInspector: NSOutlineView!
     @IBOutlet var sidePanelInfoTextView: NSTextView!
-    @IBOutlet var editArea: LineNumberTextView!
+    @IBOutlet var editArea: EditorTextView!
     @IBOutlet weak var languageComboBox: NSComboBox!
     @IBOutlet weak var serialPortStateLabel: NSTextField!
     @IBOutlet var projectInspectorMenu: NSMenu!
@@ -152,7 +152,7 @@ class DocumentViewController: NSViewController {
             }
         })
     }
-    /// name operation: rename, newfile, newfolder
+    /// name operation: newfile, newfolder
     @IBAction func newFileToProject(_ sender: Any) {
         // get parent node
         // 获取父节点
@@ -175,8 +175,6 @@ class DocumentViewController: NSViewController {
                 getNameVC.fileOperation = .newFile
             case "New Folder":
                 getNameVC.fileOperation = .newFolder
-            case "Rename":
-                getNameVC.fileOperation = .rename
             default:
                 return
             }
@@ -200,6 +198,35 @@ class DocumentViewController: NSViewController {
         getNameVC.parentNode = parentNode
         getNameVC.grandNode = grandParent
         self.presentViewControllerAsModalWindow(getNameVC)
+    }
+    /// rename file or folder in project
+    @IBAction func renameFileInProject(_ sender: Any) {
+        // get the filewrapper of the node
+        let row = self.projectInspector.selectedRow
+        // If no node is selected, return
+        if row < 0 {
+            return
+        } else {
+            guard let selectedFile = self.projectInspector.item(atRow: row) as? FileWrapper else { return }
+            let parentOfSelectedFile: FileWrapper
+            if let file = self.projectInspector.parent(forItem: self.projectInspector.item(atRow: row)) as? FileWrapper {
+                parentOfSelectedFile = file
+            } else {
+                parentOfSelectedFile = self.project!.filewrappers!
+            }
+            // load storyboard item
+            let sb = NSStoryboard.init(name: NSStoryboard.Name("Main"), bundle: nil)
+            let getNameVC = sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Get Name View Controller")) as! GetNameViewController
+            getNameVC.parentVC = self
+            getNameVC.fileOperation = .rename
+            getNameVC.grandNode = parentOfSelectedFile
+            getNameVC.parentNode = selectedFile
+            guard let fileNames = parentOfSelectedFile.fileWrappers?.keys else { return }
+            for fileName in fileNames {
+                getNameVC.parentNames.append(fileName)
+            }
+            self.presentViewControllerAsModalWindow(getNameVC)
+        }
     }
     /// delete
     @IBAction func deleteFileInProject(_ sender: Any) {
@@ -446,15 +473,15 @@ class DocumentViewController: NSViewController {
     func setFileTextViewColor(){
         if let color = self.hignlightr.theme.themeBackgroundColor {
             self.editArea.backgroundColor = color
-            self.editArea.gutterBackgroundColor = color
+            self.editArea.lineNumberBackgroundColor = color
             let r = color.redComponent
             let g = color.greenComponent
             let b = color.blueComponent
             if (r + g + b) / 3.0 > 0.5 {
-                self.editArea.gutterForegroundColor = NSColor.darkGray
+                self.editArea.lineNumberForegroundColor = NSColor.darkGray
                 self.editArea.insertionPointColor = NSColor.darkGray
             } else {
-                self.editArea.gutterForegroundColor = NSColor.white
+                self.editArea.lineNumberForegroundColor = NSColor.white
                 self.editArea.insertionPointColor = NSColor.white
             }
             self.editArea.textStorage?.setAttributedString(self.hignlightr.highlight(self.editArea.string, as: self.fileOnShow?.fileLanguage, fastRender: true)!)
@@ -702,7 +729,7 @@ extension DocumentViewController: NSOutlineViewDelegate {
 
     override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
         let row = self.projectInspector.selectedRow
-        if row < 1 {
+        if row < 0 {    // No item is selected, select the root.
             switch menuItem.title {
             case "Import File":
                 return true

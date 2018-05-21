@@ -1152,7 +1152,7 @@
                                                     <rect key="frame" x="1" y="1" width="573" height="544"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textView importsGraphics="NO" verticallyResizable="YES" findStyle="panel" allowsUndo="YES" allowsNonContiguousLayout="YES" textCompletion="NO" id="xFQ-1d-nti" customClass="LineNumberTextView" customModule="LineNumberTextView">
+                                                        <textView importsGraphics="NO" verticallyResizable="YES" findStyle="panel" allowsUndo="YES" allowsNonContiguousLayout="YES" textCompletion="NO" id="xFQ-1d-nti" customClass="EditorTextView" customModule="LineNumberTextView">
                                                             <rect key="frame" x="0.0" y="0.0" width="573" height="544"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1269,7 +1269,7 @@
                         <menuItem title="Rename" id="kit-8r-ngG">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="newFileToProject:" target="hpm-QP-THB" id="hQI-8A-R4v"/>
+                                <action selector="renameFileInProject:" target="hpm-QP-THB" id="wFZ-cd-e00"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Delete" id="7uN-vg-0qh">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23004D4920B30ED5005A2B0C /* EditorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23004D4820B30ED5005A2B0C /* EditorTextView.swift */; };
 		230FCBB7209AB1F000BFEF51 /* updateKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 230FCBB6209AB1F000BFEF51 /* updateKey.pem */; };
 		230FCBBD209AB27100BFEF51 /* Pods_CamelStudioX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DF96228DC47F7C9C27B22D /* Pods_CamelStudioX.framework */; };
 		230FCBBE209AB27100BFEF51 /* Pods_CamelStudioX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43DF96228DC47F7C9C27B22D /* Pods_CamelStudioX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -402,6 +403,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		23004D4820B30ED5005A2B0C /* EditorTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTextView.swift; sourceTree = "<group>"; };
 		230FCBB6209AB1F000BFEF51 /* updateKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = updateKey.pem; sourceTree = "<group>"; };
 		230FCBB8209AB25300BFEF51 /* ORSSerial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ORSSerial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		231D5D6F20724A3800486DC7 /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
@@ -1355,6 +1357,7 @@
 			isa = PBXGroup;
 			children = (
 				23C605192073804400375959 /* LineNumberGutter.swift */,
+				23004D4820B30ED5005A2B0C /* EditorTextView.swift */,
 				23859A0520752B9900F2FF08 /* SerialScreenView.swift */,
 				23C605162073804400375959 /* LineNumberTextView.swift */,
 				23C6050C2073802600375959 /* LineNumberTextView.h */,
@@ -2028,6 +2031,7 @@
 			files = (
 				23859A0720752D6000F2FF08 /* SerialScreenView.swift in Sources */,
 				23C6051A2073804400375959 /* LineNumberTextView.swift in Sources */,
+				23004D4920B30ED5005A2B0C /* EditorTextView.swift in Sources */,
 				23C6051D2073804400375959 /* LineNumberGutter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
