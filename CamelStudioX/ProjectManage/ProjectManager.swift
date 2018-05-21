@@ -243,11 +243,12 @@ extension FileWrapper {
      Check if there is a fileWrapper with the same name before add a new one.
      If finded, the original fileWrapper will be removed before a new one is added.
      
-     - Author: Zhirui Dai
-     
      - parameters:
         - withContents: The new fileWrapper's content
         - preferredName: The new fileWrapper's preferredName
+     
+     - Author: Zhirui Dai
+     - Version: 1.0
      */
     func update(withContents: Data, preferredName: String) {
         let fileWrapper = FileWrapper(regularFileWithContents: withContents)

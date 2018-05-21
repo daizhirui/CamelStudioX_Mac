@@ -78,7 +78,7 @@ class Uploader: NSObject {
     }
     func startUpload() {
         self.serialPort?.open()
-        self.uploadFlag = true
+        //self.uploadFlag = true    modified by DocumentWindowsController already
     }
     
     @objc func uploadStageControl(_ aNotification: Notification?) {

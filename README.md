@@ -1,6 +1,13 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.2.1
+----
+
+### Build 19 on 21.05.2018
+
+- Fix a bug of failing to cancel upload sheet.
+
 ## Version 3.2.0
 ----
 

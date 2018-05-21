@@ -258,6 +258,7 @@ class DocumentWindowController: NSWindowController {
     }()
     @IBAction func loadToBoard(_ sender: Any) {
         if self.uploader.uploadFlag {
+            self.uploader.uploadFlag = false
             self.progressInfo.stringValue = NSLocalizedString("Upload Cancelled", comment: "Upload Cancelled")
             // cancel upload
             self.uploader.cancelUpload()
@@ -267,6 +268,7 @@ class DocumentWindowController: NSWindowController {
             // self.removeObserversForUpload()
         } else {
             if let project = self.viewController.project {
+                self.uploader.uploadFlag = true
                 // setup ui
                 self.setupUIDuringUpload()
                 // add observers
@@ -283,7 +285,7 @@ class DocumentWindowController: NSWindowController {
     /// Add Observers for upload: Used in windowsDidLoad
     func addObserversForUpload() {
         // uploading cancelled, from upload config view controller
-        NotificationCenter.default.addObserver(self, selector: #selector(self.loadToBoard(_:)), name: NSNotification.Name.uploadingCancelled, object: self.uploadConfigViewController)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.loadToBoard(_:)), name: NSNotification.Name.uploadingCancelled, object: self.viewController)
         // updated progress, from uploader
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateProgress(_:)), name: NSNotification.Name.updatedProgress, object: self.uploader)
         // uploading failed, from uploader
@@ -294,7 +296,7 @@ class DocumentWindowController: NSWindowController {
     /// Remove Observers for upload: Not used now!
     func removeObserversForUpload() {
         //NotificationCenter.default.removeObserver(self, name: NSNotification.Name.timeForNextUploadStage, object: self.uploadConfigViewController)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.uploadingCancelled, object: self.uploadConfigViewController)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.uploadingCancelled, object: self.viewController)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.uploadingFailed, object: self.uploader)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.uploadingSucceeded, object: self.uploader)
         
