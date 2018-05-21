@@ -1,22 +1,21 @@
 <?xml version="1.0" standalone="yes"?><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
 <channel>
-<title>CamelStudioX</title>
-<item>
-<title>3.2.2</title>
-<description><![CDATA[
-    <h2>Bugs Fixed</h2>
-    <ul>
-    <li>Fix a bug of showing wrong menus for the first item in Project Inspector.</li>
-    <li>Fix a bug of no response of rename menu item in Project Inspector.</li>
-    </ul>
-    <h2>New Features</h2>
-    <ul>
-    <li>Auto insert tab and auto insert brace, parenthesis and quotation mark.</li>
-    </ul>
-]]>
-<pubDate>Mon, 21 May 2018 17:39:08 +0200</pubDate>
-<sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
-<enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.2.2/CamelStudioX_3.2.2_Build20.zip" sparkle:version="20" sparkle:shortVersionString="3.2.2" length="66661710" type="application/octet-stream" sparkle:dsaSignature="MC0CFElNVBYRF35x98UQ1/yDds9jlK3YAhUAvShDaXUmuhooqFbvjilTsfVvsco="/>
-</item>
-
+    <title>CamelStudioX</title>
+    <item>
+        <title>3.2.2</title>
+        <description><![CDATA[
+            <h2>Bugs Fixed</h2>
+            <ul>
+            <li>Fix a bug of showing wrong menus for the first item in Project Inspector.</li>
+            <li>Fix a bug of no response of rename menu item in Project Inspector.</li>
+            </ul>
+            <h2>New Features</h2>
+            <ul>
+            <li>Auto insert tab and auto insert brace, parenthesis and quotation mark.</li>
+            </ul>
+        ]]>
+        <pubDate>Mon, 21 May 2018 17:39:08 +0200</pubDate>
+        <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+        <enclosure url="https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/CamelStudioX_3.2.2_Build20.zip" sparkle:version="20" sparkle:shortVersionString="3.2.2" length="66661710" type="application/octet-stream" sparkle:dsaSignature="MC0CFElNVBYRF35x98UQ1/yDds9jlK3YAhUAvShDaXUmuhooqFbvjilTsfVvsco="/>
+    </item>
 </channel></rss>
