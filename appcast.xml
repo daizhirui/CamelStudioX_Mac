@@ -2,39 +2,6 @@
 <channel>
 <title>CamelStudioX</title>
 <item>
-<title>3.2.0</title>
-<description><![CDATA[
-    <h2>Bugs Fixed</h2>
-    <ul>
-        <li>Correct some UI mistakes in Help Window</li>
-    </ul>
-    <h2>New Features</h2>
-    <ul>
-        <li>New Feature: Drag and drop files in Project Inspector</li>
-        <li>New Feature: Auto Update</li>
-    </ul>
-]]>
-</description>
-<pubDate>Thu, 03 May 2018 05:05:56 +0200</pubDate>
-<sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
-<enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.2.0/CamelStudioX_3.2.0_Build18.zip" sparkle:version="18" sparkle:shortVersionString="3.2.0" length="66640790" type="application/octet-stream" sparkle:dsaSignature="MCwCFGWA3LyiL4IS1a2BWg6bG/uYR8W7AhR/+2h5VURhp6YlsIQaTOV36pzXXA=="/>
-</item>
-
-<item>
-<title>3.2.1</title>
-<description><![CDATA[
-    <h2>Bugs Fixed</h2>
-    <ul>
-    <li>Fix a bug of failing to cancel the upload sheet.</li>
-    </ul>
-]]>
-</description>
-<pubDate>Mon, 21 May 2018 14:01:11 +0200</pubDate>
-<sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
-<enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.2.1/CamelStudioX_3.2.1_Build19.zip" sparkle:version="19" sparkle:shortVersionString="3.2.1" length="66641723" type="application/octet-stream" sparkle:dsaSignature="MCwCFDpdEt+SW5sG3sN+JPOMiCJBIq7VAhRabJd8IvHqv4vux/q2i9l91UEQ6A=="/>
-</item>
-
-<item>
 <title>3.2.2</title>
 <description><![CDATA[
     <h2>Bugs Fixed</h2>
