@@ -20,6 +20,7 @@ public extension NSNotification.Name {
 public class EditorTextView: NSTextView {
 
     var tabCount = 0
+    var punctuationCount = 0
     
     override public func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -52,6 +53,7 @@ public class EditorTextView: NSTextView {
         }
         let position = self.string.index(self.string.startIndex, offsetBy: insertion.position)
         self.string.insert(insertion.character, at: position)
+        self.setSelectedRange(NSMakeRange(insertion.position, 0))
     }
     
     func removeCharacter(with insertion: StringInsertion) {
@@ -61,15 +63,26 @@ public class EditorTextView: NSTextView {
         }
         let position = self.string.index(self.string.startIndex, offsetBy: insertion.position)
         self.string.remove(at: position)
+        self.setSelectedRange(NSMakeRange(insertion.position, 0))
     }
     
     override public func keyDown(with event: NSEvent) {
-        super.keyDown(with: event)
-        //debugPrint("keyCode = \(event.keyCode)")
-        var upperBound: Int = self.selectedRange().upperBound
+        
+        var lowerBound: Int = self.selectedRange().lowerBound
         let startIndex = self.string.startIndex
-        let endIndex = self.string.index(startIndex, offsetBy: upperBound)
+        var endIndex = self.string.index(startIndex, offsetBy: lowerBound)
+        
+        if let char = event.characters, char == self.string[endIndex...endIndex], self.punctuationCount > 0 {
+            self.punctuationCount -= 1
+            self.setSelectedRange(NSMakeRange(lowerBound+1, 0))
+            return
+        }
+        
         // [33,30,48,36,51] keyCode for "{", "}", "\t", enter, delete
+        super.keyDown(with: event)
+        lowerBound = self.selectedRange().lowerBound
+        endIndex = self.string.index(startIndex, offsetBy: lowerBound)
+        
         if event.keyCode == 36 {                                    // enter pressed!
             self.tabCount = 0
             for character in self.string[startIndex..<endIndex] {   // calculate the number of tab to insert
@@ -79,29 +92,38 @@ public class EditorTextView: NSTextView {
                     self.tabCount -= 1
                 }
             }
-            if self.string.count - upperBound > 0 {
+            if self.string.count - lowerBound > 0 {
                 if self.string[endIndex...endIndex] == "}" {            // If the next char is "}", make a newline for it.
-                    self.insertCharacter(with: StringInsertion(position: upperBound, character: "}"))
+                    for _ in 1..<self.tabCount {                            // Start to insert tab.
+                        self.insertCharacter(with: StringInsertion(position: lowerBound, character: "\t"))
+                        //lowerBound += 1
+                    }
+                    self.insertCharacter(with: StringInsertion(position: lowerBound, character: "\n"))
                 }
             }
-            
             for _ in 0..<self.tabCount {                            // Start to insert tab.
-                self.insertCharacter(with: StringInsertion(position: upperBound, character: "\t"))
-                upperBound += 1
+                self.insertCharacter(with: StringInsertion(position: lowerBound, character: "\t"))
+                lowerBound += 1
             }
             
-        } else if event.keyCode == 33 {                             // "{" pressed!
-            self.insertCharacter(with: StringInsertion(position: upperBound, character: "}")) // insert "}"
         } else if let char = event.characters {
-            if char == "(" {
-                self.insertCharacter(with: StringInsertion(position: upperBound, character: ")")) // insert ")"
+            if char == "{" {
+                self.insertCharacter(with: StringInsertion(position: lowerBound, character: "}"))
+                self.punctuationCount += 1
+            } else if char == "(" {
+                self.insertCharacter(with: StringInsertion(position: lowerBound, character: ")")) // insert ")"
+                self.punctuationCount += 1
             } else if char == "\"" {
-                self.insertCharacter(with: StringInsertion(position: upperBound, character: "\""))
+                self.insertCharacter(with: StringInsertion(position: lowerBound, character: "\""))
+                self.punctuationCount += 1
             } else if char == "'" {
-                self.insertCharacter(with: StringInsertion(position: upperBound, character: "'"))
+                self.insertCharacter(with: StringInsertion(position: lowerBound, character: "'"))
+                self.punctuationCount += 1
+            } else {
+                return
             }
         }
-        self.setSelectedRange(NSMakeRange(upperBound, 0))           // move the cursor to the right position
+        self.setSelectedRange(NSMakeRange(lowerBound, 0))           // move the cursor to the right position
         NotificationCenter.default.post(name: NSNotification.Name.TextDidChangeNotification, object: self)
     }
     

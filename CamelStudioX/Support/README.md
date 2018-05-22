@@ -1,3 +1,10 @@
+## Version 3.3.1
+----
+
+### Build 22 on 22.05.2018
+
+- Fix some mistakes in auto punctuation pair.
+
 ## Version 3.3.0
 ----
 
