@@ -18,9 +18,8 @@ class GetNameViewController: NSViewController {
 
     var parentVC: DocumentViewController!
     var fileOperation: ProjectFileOperantion!
-    var grandNode: FileWrapper!
     var parentNode: FileWrapper!
-    var parentNames = [String]()
+    var node: FileWrapper!
     var childNames = [String]()
     
     @IBOutlet weak var operationLabel: NSTextField!
@@ -52,14 +51,14 @@ class GetNameViewController: NSViewController {
         // start to operate
         switch self.fileOperation {
         case .rename:
-            if self.parentNames.contains(self.nameBox.stringValue) {
+            if self.childNames.contains(self.nameBox.stringValue) {
                 _ = showAlertWindow(with: NSLocalizedString("The name already exists!", comment: "The name already exists!"))
                 return
             } else {
-                let fileWrapper = self.parentNode.copy() as! FileWrapper
+                let fileWrapper = self.node.copy() as! FileWrapper
                 fileWrapper.preferredFilename = self.nameBox.stringValue
-                grandNode.removeFileWrapper(parentNode)
-                grandNode.addFileWrapper(fileWrapper)
+                parentNode.removeFileWrapper(node)
+                parentNode.addFileWrapper(fileWrapper)
             }
         case .newFolder:
             if self.childNames.contains(self.nameBox.stringValue) {
@@ -68,7 +67,7 @@ class GetNameViewController: NSViewController {
             } else {
                 let folderFileWrapper = FileWrapper(directoryWithFileWrappers: [:])
                 folderFileWrapper.preferredFilename = self.nameBox.stringValue
-                self.parentNode.addFileWrapper(folderFileWrapper)
+                self.node.addFileWrapper(folderFileWrapper)
             }
         case .newFile:
             if self.childNames.contains(self.nameBox.stringValue) {
@@ -77,7 +76,7 @@ class GetNameViewController: NSViewController {
             } else {
                 let fileWrapper = FileWrapper(regularFileWithContents: Data())
                 fileWrapper.preferredFilename = self.nameBox.stringValue
-                self.parentNode.addFileWrapper(fileWrapper)
+                self.node.addFileWrapper(fileWrapper)
             }
         default:
             return

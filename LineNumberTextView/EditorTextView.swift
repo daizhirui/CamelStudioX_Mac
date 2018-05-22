@@ -8,6 +8,15 @@
 
 import Cocoa
 
+struct StringInsertion {
+    var position: Int = 0
+    var character: Character = "\0"
+}
+
+public extension NSNotification.Name {
+    static let TextDidChangeNotification = NSNotification.Name("TextDidChangeNotification")
+}
+
 public class EditorTextView: NSTextView {
 
     var tabCount = 0
@@ -15,6 +24,43 @@ public class EditorTextView: NSTextView {
     override public func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         // Drawing code here.
+    }
+    
+    func simulatedKeyDown(keyCode: CGKeyCode, useCommandFlag: Bool) {
+        let sourceRef = CGEventSource(stateID: .combinedSessionState)
+        if sourceRef == nil {
+            NSLog("FakeKey: No event source")
+            return
+        }
+        let keyDownEvent = CGEvent(keyboardEventSource: sourceRef,
+                                   virtualKey: keyCode,
+                                   keyDown: true)
+        if useCommandFlag {
+            keyDownEvent?.flags = .maskCommand
+        }
+        let keyUpEvent = CGEvent(keyboardEventSource: sourceRef,
+                                 virtualKey: keyCode,
+                                 keyDown: false)
+        keyDownEvent?.post(tap: .cghidEventTap)
+        keyUpEvent?.post(tap: .cghidEventTap)
+    }
+    
+    func insertCharacter(with insertion: StringInsertion) {
+        self.undoManager?.registerUndo(withTarget: self) {
+            target in
+            target.removeCharacter(with: insertion)
+        }
+        let position = self.string.index(self.string.startIndex, offsetBy: insertion.position)
+        self.string.insert(insertion.character, at: position)
+    }
+    
+    func removeCharacter(with insertion: StringInsertion) {
+        self.undoManager?.registerUndo(withTarget: self) {
+            target in
+            target.insertCharacter(with: insertion)
+        }
+        let position = self.string.index(self.string.startIndex, offsetBy: insertion.position)
+        self.string.remove(at: position)
     }
     
     override public func keyDown(with event: NSEvent) {
@@ -33,26 +79,30 @@ public class EditorTextView: NSTextView {
                     self.tabCount -= 1
                 }
             }
-            if self.string[endIndex...endIndex] == "}" {            // If the next char is "}", make a newline for it.
-                self.string.insert("\n", at: endIndex)
+            if self.string.count - upperBound > 0 {
+                if self.string[endIndex...endIndex] == "}" {            // If the next char is "}", make a newline for it.
+                    self.insertCharacter(with: StringInsertion(position: upperBound, character: "}"))
+                }
             }
+            
             for _ in 0..<self.tabCount {                            // Start to insert tab.
-                self.string.insert("\t", at: endIndex)
+                self.insertCharacter(with: StringInsertion(position: upperBound, character: "\t"))
                 upperBound += 1
             }
             
         } else if event.keyCode == 33 {                             // "{" pressed!
-            self.string.insert("}", at: endIndex)                   // insert "}"
+            self.insertCharacter(with: StringInsertion(position: upperBound, character: "}")) // insert "}"
         } else if let char = event.characters {
             if char == "(" {
-                self.string.insert(")", at: endIndex)               // insert ")"
+                self.insertCharacter(with: StringInsertion(position: upperBound, character: ")")) // insert ")"
             } else if char == "\"" {
-                self.string.insert("\"", at: endIndex)
+                self.insertCharacter(with: StringInsertion(position: upperBound, character: "\""))
             } else if char == "'" {
-                self.string.insert("'", at: endIndex)
+                self.insertCharacter(with: StringInsertion(position: upperBound, character: "'"))
             }
         }
         self.setSelectedRange(NSMakeRange(upperBound, 0))           // move the cursor to the right position
+        NotificationCenter.default.post(name: NSNotification.Name.TextDidChangeNotification, object: self)
     }
     
     //*********** The following part is from LineNumberTextView

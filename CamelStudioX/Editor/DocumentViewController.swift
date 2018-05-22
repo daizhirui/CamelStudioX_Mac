@@ -58,6 +58,8 @@ class DocumentViewController: NSViewController {
         self.projectInspector.menu = self.projectInspectorMenu
         // Register Drag-Drop
         self.projectInspector.registerForDraggedTypes([dragDropTypeForProjectInspector])
+        // Monitor text change
+        NotificationCenter.default.addObserver(self, selector: #selector(self.textDidChange(_:)), name: NSNotification.Name.TextDidChangeNotification, object: self.editArea)
     }
     
     override func viewDidAppear() {
@@ -154,21 +156,26 @@ class DocumentViewController: NSViewController {
     }
     /// name operation: newfile, newfolder
     @IBAction func newFileToProject(_ sender: Any) {
-        // get parent node
-        // 获取父节点
-        let parentNode: FileWrapper?
+        // get selected node
+        var selectedNode: FileWrapper!
         let row = self.projectInspector.selectedRow
-        // 没有节点被选中时，默认增加到根节点
         if row < 0 {
-            parentNode = self.project?.filewrappers
+            selectedNode = self.project?.filewrappers // No node is selected, set as root
+        } else {
+            selectedNode = self.projectInspector.item(atRow: row) as? FileWrapper
+            if !selectedNode.isDirectory {  // the selected node is not a folder! Set it to its parent
+                if let fileWrapper = self.projectInspector.parent(forItem: selectedNode) as? FileWrapper {
+                    selectedNode = fileWrapper
+                } else {
+                    selectedNode = self.project?.filewrappers   // fail to get the parent, set it as root
+                }
+            }
         }
-        else {
-            // 节点被选中，获取该节点对应的数据对象
-            parentNode = self.projectInspector.item(atRow: row) as? FileWrapper
-        }
+        // Load getNameVC
         let sb = NSStoryboard.init(name: NSStoryboard.Name("Main"), bundle: nil)
         let getNameVC = sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Get Name View Controller")) as! GetNameViewController
         getNameVC.parentVC = self
+        // setup fileOpeation
         if let senderName = (sender as? NSMenuItem)?.title {
             switch senderName {
             case "New File":
@@ -179,24 +186,13 @@ class DocumentViewController: NSViewController {
                 return
             }
         }
-        if let keys = parentNode?.fileWrappers?.keys {
+        // get all names in the selected folder node
+        if let keys = selectedNode?.fileWrappers?.keys {
             for key in keys {
                 getNameVC.childNames.append(key)
             }
         }
-        var grandParent: FileWrapper!
-        if let fileWrapper = self.projectInspector.parent(forItem: parentNode) as? FileWrapper {
-            grandParent = fileWrapper
-        } else {
-            grandParent = self.project?.filewrappers
-        }
-        if let keys = grandParent.fileWrappers?.keys {
-            for key in keys {
-                getNameVC.parentNames.append(key)
-            }
-        }
-        getNameVC.parentNode = parentNode
-        getNameVC.grandNode = grandParent
+        getNameVC.node = selectedNode
         self.presentViewControllerAsModalWindow(getNameVC)
     }
     /// rename file or folder in project
@@ -219,11 +215,11 @@ class DocumentViewController: NSViewController {
             let getNameVC = sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Get Name View Controller")) as! GetNameViewController
             getNameVC.parentVC = self
             getNameVC.fileOperation = .rename
-            getNameVC.grandNode = parentOfSelectedFile
-            getNameVC.parentNode = selectedFile
+            getNameVC.parentNode = parentOfSelectedFile
+            getNameVC.node = selectedFile
             guard let fileNames = parentOfSelectedFile.fileWrappers?.keys else { return }
             for fileName in fileNames {
-                getNameVC.parentNames.append(fileName)
+                getNameVC.childNames.append(fileName)
             }
             self.presentViewControllerAsModalWindow(getNameVC)
         }
@@ -727,61 +723,61 @@ extension DocumentViewController: NSOutlineViewDelegate {
         }
     }
 
-    override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
-        let row = self.projectInspector.selectedRow
-        if row < 0 {    // No item is selected, select the root.
-            switch menuItem.title {
-            case "Import File":
-                return true
-            case "New Folder":
-                return true
-            case "New File":
-                return true
-            case "Rename":
-                return false
-            case "Delete":
-                return false
-            default:
-                return false
-            }
-        } else {
-            if let fileWrapper = self.projectInspector.item(atRow: row) as? FileWrapper {
-                if fileWrapper.isDirectory {
-                    switch menuItem.title {
-                    case "Import File":
-                        return true
-                    case "New Folder":
-                        return true
-                    case "New File":
-                        return true
-                    case "Rename":
-                        return true
-                    case "Delete":
-                        return true
-                    default:
-                        return false
-                    }
-                } else {
-                    switch menuItem.title {
-                    case "Import File":
-                        return false
-                    case "New Folder":
-                        return false
-                    case "New File":
-                        return false
-                    case "Rename":
-                        return true
-                    case "Delete":
-                        return true
-                    default:
-                        return false
-                    }
-                }
-            } else {
-                return false
-            }
-        }
-    }
+//    override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+//        let row = self.projectInspector.selectedRow
+//        if row < 0 {    // No item is selected, select the root.
+//            switch menuItem.title {
+//            case "Import File":
+//                return true
+//            case "New Folder":
+//                return true
+//            case "New File":
+//                return true
+//            case "Rename":
+//                return false
+//            case "Delete":
+//                return false
+//            default:
+//                return false
+//            }
+//        } else {
+//            if let fileWrapper = self.projectInspector.item(atRow: row) as? FileWrapper {
+//                if fileWrapper.isDirectory {
+//                    switch menuItem.title {
+//                    case "Import File":
+//                        return true
+//                    case "New Folder":
+//                        return true
+//                    case "New File":
+//                        return true
+//                    case "Rename":
+//                        return true
+//                    case "Delete":
+//                        return true
+//                    default:
+//                        return false
+//                    }
+//                } else {
+//                    switch menuItem.title {
+//                    case "Import File":
+//                        return false
+//                    case "New Folder":
+//                        return false
+//                    case "New File":
+//                        return false
+//                    case "Rename":
+//                        return true
+//                    case "Delete":
+//                        return true
+//                    default:
+//                        return false
+//                    }
+//                }
+//            } else {
+//                return false
+//            }
+//        }
+//    }
 }
 
 extension DocumentViewController: NSSplitViewDelegate {
@@ -822,7 +818,7 @@ extension DocumentViewController: NSSplitViewDelegate {
 }
 
 extension DocumentViewController: NSTextViewDelegate {
-    func textDidChange(_ notification: Notification) {
+    @objc func textDidChange(_ notification: Notification) {
         let cursorPos = self.editArea.selectedRange()
         self.editArea.textStorage?.setAttributedString(self.hignlightr.highlight(self.editArea.string, as: self.fileOnShow?.fileLanguage)!)
         self.editArea.setSelectedRange(cursorPos)

@@ -24,9 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.showWelcomeWindow(self)
         }
         // change the update server if it is in China
-        if TimeZone.current.secondsFromGMT() / 3600 == 8 {
-            self.updater.feedURL = URL(string: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml")
-        }
+//        if TimeZone.current.secondsFromGMT() / 3600 == 8 {
+//            self.updater.feedURL = URL(string: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml")
+//        }
     }
     
     @objc func showWelcomeWindow(_ sender: Any?) {

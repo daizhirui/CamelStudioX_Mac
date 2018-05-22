@@ -1,3 +1,10 @@
+## Version 3.3.0
+----
+
+### Build 21 on 22.05.2018
+
+- Fix a bug of wrong undo action.
+- New Feature: Auto recognize the folder to add the new file or the new folder.
 
 ## Version 3.2.2
 ----
