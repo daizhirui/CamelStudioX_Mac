@@ -35,7 +35,7 @@ unsigned long getDecNum(void);
  * @param num       The number to be converted
  * @return char*    The pointer to the result
  */
-char *num2Dec(unsigned long num);
+char *num2Dec(long num);
 /**
  * @brief
  * This function converts a number to a string in bin style.

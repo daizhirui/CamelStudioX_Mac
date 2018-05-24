@@ -219,6 +219,29 @@ extension String {
         }
         return hexString
     }
+    
+    func range(of subString: String) -> NSRange? {
+        
+        var index = 0
+        guard let sign = subString.first else { return nil }
+        // Loop through parent string looing for the first character of the substring
+        for char in self {
+            if sign == char {
+
+                let startOfFoundCharacter = self.index(self.startIndex, offsetBy: index)
+                let lengthOfFoundCharacter = self.index(startOfFoundCharacter, offsetBy: subString.count)
+                
+                // Grab the substring from the parent string and compare it against substring
+                // Essentially, looking for the needle in a haystack
+                if self[startOfFoundCharacter..<lengthOfFoundCharacter] == subString {
+                    return NSMakeRange(index, subString.count)
+                }
+            }
+            index += 1
+        }
+        
+        return nil
+    }
 }
 
 // *************** For Data Table *******************

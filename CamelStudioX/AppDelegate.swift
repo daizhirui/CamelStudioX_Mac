@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if #available(OSX 10.12.2, *) {
             NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
         }
+        NotificationCenter.default.addObserver(self,selector: #selector(self.modalWindowClosed(_:)),name: NSWindow.willCloseNotification, object: nil)
         // check if the welcome window should be showed
         if WelcomeViewController.shouldShow {
             // no document is opened or being opened(Restoration), show the welcome window now
@@ -27,6 +28,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        if TimeZone.current.secondsFromGMT() / 3600 == 8 {
 //            self.updater.feedURL = URL(string: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml")
 //        }
+    }
+    
+    // modalWindow 关闭事件处理函数
+    @objc func modalWindowClosed(_ aNotification: Notification){
+        if let window = aNotification.object as? NSWindow {
+            // To close Modal Window
+            if let modalWindow = InfoAndAlert.currentAlert, modalWindow == window {
+                NSApplication.shared.stopModal()
+            }
+        }
     }
     
     @objc func showWelcomeWindow(_ sender: Any?) {
@@ -66,6 +77,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // ************** About Termination ******************
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+        NSApplication.shared.modalWindow?.close()
+        NSApplication.shared.abortModal()
+        InfoAndAlert.currentAlert?.close()
     }
     
     // The process of creating a new project should be controlled by the welcome window
@@ -157,14 +171,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if let path = Bundle.main.url(forResource: "ch34x", withExtension: "pkg")?.relativePath {
                     NSWorkspace.shared.openFile(path)
                 } else {
-                    _ = showAlertWindow(with: NSLocalizedString("ch34x.pkg lost!", comment: "ch34x.pkg lost!"))
+                    _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("ch34x.pkg lost!", comment: "ch34x.pkg lost!"))
                 }
             }
             if returnCode.rawValue == 1001 {
                 if let path = Bundle.main.url(forResource: "pl2303", withExtension: "pkg")?.relativePath {
                     NSWorkspace.shared.openFile(path)
                 } else {
-                    _ = showAlertWindow(with: NSLocalizedString("pl2303.pkg lost!", comment: "pl2303.pkg lost!"))
+                    _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("pl2303.pkg lost!", comment: "pl2303.pkg lost!"))
                 }
             }
         })

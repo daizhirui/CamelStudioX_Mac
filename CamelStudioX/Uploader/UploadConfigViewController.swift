@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ORSSerial
 
 class UploadConfigViewController: NSViewController {
 
@@ -24,9 +25,15 @@ class UploadConfigViewController: NSViewController {
         if let portName = self.uploader.recentSerialPort?.name {
             self.portBox.selectItem(withTitle: portName)
             self.uploader.serialPort = self.uploader.recentSerialPort
-            self.uploader.serialPort?.baudRate = 9600
+        } else if let portName = UserDefaults.standard.object(forKey: "recentSerialPort") as? String {
+            for possiblePort in self.uploader.serialPortManager.availablePorts {
+                if possiblePort.name == portName {
+                    self.portBox.selectItem(withTitle: portName)
+                    self.uploader.serialPort = possiblePort
+                }
+            }
         }
-        
+        self.uploader.serialPort?.baudRate = 9600
     }
     
     @IBAction func selectBinary(_ sender: Any) {
@@ -58,11 +65,12 @@ class UploadConfigViewController: NSViewController {
     
     @IBAction func okAction(_ sender: Any) {
         if self.uploader.serialPort == nil {
-            _ = showAlertWindow(with: NSLocalizedString("Please choose a serial port!", comment: "Please choose a serial port!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Please choose a serial port!", comment: "Please choose a serial port!"))
             return
         }
-        if let serialPortName = self.uploader.serialPort?.name {
-            self.parentVC.serialPortStateLabel.stringValue = "\(parentVC.project!.chipType.rawValue) at /dev/cu.\(serialPortName)"
+        if let serialPort = self.uploader.serialPort {
+            self.parentVC.serialPortStateLabel.stringValue = "\(parentVC.project!.chipType.rawValue) at /dev/cu.\(serialPort.name)"
+            UserDefaults.standard.set(serialPort.name as Any, forKey: "recentSerialPort")
         }
         self.dismiss(self)
         self.uploader.startUpload()

@@ -14,7 +14,6 @@
 		231D5D7020724A3800486DC7 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D6F20724A3800486DC7 /* Compiler.swift */; };
 		231D5D7220724E1200486DC7 /* TerminalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D7120724E1200486DC7 /* TerminalCommand.swift */; };
 		23288F892076F700008DC349 /* cmsproj.icns in Resources */ = {isa = PBXBuildFile; fileRef = 23288F882076F700008DC349 /* cmsproj.icns */; };
-		2331799820969BAC001C0C96 /* SerialBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2331799720969BAC001C0C96 /* SerialBoardController.swift */; };
 		233DBE042075636100269D8E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE032075636100269D8E /* PreferenceViewController.swift */; };
 		233DBE072075648000269D8E /* Preference.plist in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE052075648000269D8E /* Preference.plist */; };
 		233DBE082075648000269D8E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE062075648000269D8E /* README.md */; };
@@ -346,11 +345,14 @@
 		2391ACA820768E6F009C5C6D /* WelcomeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391ACA320768E6E009C5C6D /* WelcomeWindow.swift */; };
 		2391ACAA20768E6F009C5C6D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391ACA520768E6F009C5C6D /* Welcome.storyboard */; };
 		23A10BEA20725E6700758848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23A10BE920725E6700758848 /* Main.storyboard */; };
+		23A221D520B707D6007F146D /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23A221D420B707D6007F146D /* Alert.storyboard */; };
+		23A221D720B71C07007F146D /* CompilerMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A221D620B71C07007F146D /* CompilerMessageViewController.swift */; };
 		23C6050E2073802600375959 /* LineNumberTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 23C6050C2073802600375959 /* LineNumberTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23C605112073802600375959 /* LineNumberTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C6050A2073802600375959 /* LineNumberTextView.framework */; };
 		23C605122073802600375959 /* LineNumberTextView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23C6050A2073802600375959 /* LineNumberTextView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23C6051A2073804400375959 /* LineNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605162073804400375959 /* LineNumberTextView.swift */; };
 		23C6051D2073804400375959 /* LineNumberGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605192073804400375959 /* LineNumberGutter.swift */; };
+		23F0DFFB20B7002000F3F2C8 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F0DFFA20B7002000F3F2C8 /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -410,7 +412,6 @@
 		231D5D7120724E1200486DC7 /* TerminalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalCommand.swift; path = CamelStudioX/TerminalCommand.swift; sourceTree = SOURCE_ROOT; };
 		23205A842099E4790098B431 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23288F882076F700008DC349 /* cmsproj.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cmsproj.icns; sourceTree = "<group>"; };
-		2331799720969BAC001C0C96 /* SerialBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialBoardController.swift; sourceTree = "<group>"; };
 		233DBE032075636100269D8E /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		233DBE052075648000269D8E /* Preference.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preference.plist; sourceTree = "<group>"; };
 		233DBE062075648000269D8E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -747,11 +748,14 @@
 		2391ACA320768E6E009C5C6D /* WelcomeWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWindow.swift; sourceTree = "<group>"; };
 		2391ACA520768E6F009C5C6D /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		23A10BE920725E6700758848 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		23A221D420B707D6007F146D /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		23A221D620B71C07007F146D /* CompilerMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerMessageViewController.swift; sourceTree = "<group>"; };
 		23C6050A2073802600375959 /* LineNumberTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LineNumberTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C6050C2073802600375959 /* LineNumberTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineNumberTextView.h; sourceTree = "<group>"; };
 		23C6050D2073802600375959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23C605162073804400375959 /* LineNumberTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberTextView.swift; sourceTree = "<group>"; };
 		23C605192073804400375959 /* LineNumberGutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberGutter.swift; sourceTree = "<group>"; };
+		23F0DFFA20B7002000F3F2C8 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		43DF96228DC47F7C9C27B22D /* Pods_CamelStudioX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamelStudioX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6D528D0D512A05BD380B50 /* Pods-CamelStudioX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.debug.xcconfig"; sourceTree = "<group>"; };
 		F9B7AC63E5E5E4CA44329572 /* Pods-CamelStudioX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.release.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.release.xcconfig"; sourceTree = "<group>"; };
@@ -1194,8 +1198,8 @@
 		2378FE7020715F0B0011969E /* CamelStudioX */ = {
 			isa = PBXGroup;
 			children = (
+				23F0DFF720B6FFBA00F3F2C8 /* InfoAndAlert */,
 				23620CE62095F5D100036D27 /* Debug */,
-				2378FEAA207224C90011969E /* InfoAndAlert.swift */,
 				2378FE7120715F0B0011969E /* AppDelegate.swift */,
 				2378FE8B2071607E0011969E /* Welcome */,
 				2378FE9920721D610011969E /* Preference */,
@@ -1277,7 +1281,6 @@
 				2378FEA320721E150011969E /* SerialMonitor.storyboard */,
 				238599CE2073DC0700F2FF08 /* SerialMonitorViewController.swift */,
 				238599D02073E10600F2FF08 /* SerialController.swift */,
-				2331799720969BAC001C0C96 /* SerialBoardController.swift */,
 				23859A01207521BA00F2FF08 /* SerialMonitorConfigViewController.swift */,
 			);
 			path = SerialMonitor;
@@ -1364,6 +1367,17 @@
 				23C6050D2073802600375959 /* Info.plist */,
 			);
 			path = LineNumberTextView;
+			sourceTree = "<group>";
+		};
+		23F0DFF720B6FFBA00F3F2C8 /* InfoAndAlert */ = {
+			isa = PBXGroup;
+			children = (
+				2378FEAA207224C90011969E /* InfoAndAlert.swift */,
+				23F0DFFA20B7002000F3F2C8 /* AlertViewController.swift */,
+				23A221D420B707D6007F146D /* Alert.storyboard */,
+				23A221D620B71C07007F146D /* CompilerMessageViewController.swift */,
+			);
+			path = InfoAndAlert;
 			sourceTree = "<group>";
 		};
 		A023018D4786CD2BE7267AAB /* Pods */ = {
@@ -1858,6 +1872,7 @@
 				238599DC207420A700F2FF08 /* UploadConfig.storyboard in Resources */,
 				236429062072C2DF00FB9C33 /* Developer in Resources */,
 				2391ACAA20768E6F009C5C6D /* Welcome.storyboard in Resources */,
+				23A221D520B707D6007F146D /* Alert.storyboard in Resources */,
 				238599D82073EFF000F2FF08 /* DataAnalyzer.storyboard in Resources */,
 				2364290A2072F77200FB9C33 /* ProjectConfig.storyboard in Resources */,
 				2378FE9F20721DAC0011969E /* VerionRecord.storyboard in Resources */,
@@ -1986,13 +2001,13 @@
 				236429082072C34400FB9C33 /* DocumentWindowController.swift in Sources */,
 				236428E82072B9D200FB9C33 /* CreateProjectViewController.swift in Sources */,
 				2391ACA620768E6F009C5C6D /* WelcomeWindowController.swift in Sources */,
-				2331799820969BAC001C0C96 /* SerialBoardController.swift in Sources */,
 				233DBE102075686C00269D8E /* HelpViewController.swift in Sources */,
 				238599CF2073DC0700F2FF08 /* SerialMonitorViewController.swift in Sources */,
 				23859A03207521BA00F2FF08 /* SerialMonitorConfigViewController.swift in Sources */,
 				2378FEAB207224C90011969E /* InfoAndAlert.swift in Sources */,
 				23620CE82095F5E600036D27 /* MyDebug.swift in Sources */,
 				2378FE7220715F0B0011969E /* AppDelegate.swift in Sources */,
+				23A221D720B71C07007F146D /* CompilerMessageViewController.swift in Sources */,
 				2391ACA720768E6F009C5C6D /* WelcomeViewController.swift in Sources */,
 				2378FE7620715F0B0011969E /* Document.swift in Sources */,
 				2378FEA9207221B40011969E /* ProjectManager.swift in Sources */,
@@ -2001,6 +2016,7 @@
 				233DBE112075686C00269D8E /* VersionRecordViewController.swift in Sources */,
 				233DBE3220756F3E00269D8E /* GetNameViewController.swift in Sources */,
 				231D5D7220724E1200486DC7 /* TerminalCommand.swift in Sources */,
+				23F0DFFB20B7002000F3F2C8 /* AlertViewController.swift in Sources */,
 				238599DF207420B900F2FF08 /* UploadConfigViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

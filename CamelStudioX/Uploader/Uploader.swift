@@ -9,7 +9,7 @@
 import Cocoa
 import ORSSerial
 
-let timeoutDuration = 5.0
+var timeoutDuration = 5.0
 
 public enum UploadStage: Int {
     case getBinary          = 1
@@ -29,6 +29,48 @@ extension NSNotification.Name {
 }
 
 class Uploader: NSObject {
+    
+    /**
+     Initalize the super class and add notifications of "Serial ports were connected" and "Serial ports were
+     disconnected" to the notification center.
+     */
+    override init() {
+        super.init()
+        // setup the notification center
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(serialPortsWereChanged(_:)), name: NSNotification.Name.ORSSerialPortsWereConnected, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(serialPortsWereChanged(_:)), name: NSNotification.Name.ORSSerialPortsWereDisconnected, object: nil)
+    }
+    
+    // MARK: - Reaction to Serial Change
+    /// Post a notification when a serial device is connected or disconnected.
+    @objc func serialPortsWereChanged(_ aNotification: Notification) {
+        let title: String
+        let changeType: String
+        let key: String
+        
+        if aNotification.name == NSNotification.Name.ORSSerialPortsWereConnected {
+            title = "Serial Port Connected"
+            changeType = "connected"
+            key = ORSConnectedSerialPortsKey
+        } else if aNotification.name == NSNotification.Name.ORSSerialPortsWereDisconnected {
+            title = "Serial Port Disconnected"
+            changeType = "disconnected"
+            key = ORSDisconnectedSerialPortsKey
+        } else {
+            return
+        }
+        
+        if let userInfo = aNotification.userInfo {
+            if let connectedPorts = userInfo[key] as? [ORSSerialPort] {
+                for port in connectedPorts {
+                    InfoAndAlert.shared.postNotification(title: title, informativeText: "Serial Port \(port.name) is \(changeType) to your Mac.")
+                }
+            }
+        }
+    }
+    
+    // MARK: - Serial Control Properties
     /// use the default serial port manager
     @objc let serialPortManager = ORSSerialPortManager.shared()
     /**
@@ -49,38 +91,48 @@ class Uploader: NSObject {
                 port.delegate = self
                 port.open()
                 self.recentSerialPort = port
+                UserDefaults.standard.set(port.name as Any, forKey: "recentSerialPort")
             }
         }
     }
+    /// To remember the serial port choosed recently.
     var recentSerialPort: ORSSerialPort?
+    /// Response from the serial port.
     var receivedResponse: String = ""
-    /// indicate if is uploading
+    ///
+    var makeChipExitTimer: Timer?
+    
+    // MARK: - Upload Control Properties
+    /// Indicate if is uploading
     @objc var uploadFlag = false
-    /// indicate the progress
+    /// Indicate the progress
     @objc var progressValue = 0.0
+    /// Indicate the current upload stage
     @objc var progressInfo = ""
     /// Record the current upload stage
     var currentUploadStage = UploadStage.init(rawValue: 1)!
-    /// url to get the binary
+    /// URL to get the binary
     var binaryURL: URL!
     /// Store the binary data to upload
     var binaryData: Data!
+    /// Target Address
     var targetAddress = "10000000"
+    /// Upload Result from the board
     var uploadResult = ""
-//    override init() {
-//        super.init()
-//    }
+
+    // MARK: - Upload Control Functions
     /**
      Because serial device may react slowly, we need to wait for it.
      */
     func waitForChip() {
         usleep(250000)  // 0.25 s
     }
+    /// Open the serial port for uploading
     func startUpload() {
         self.serialPort?.open()
         //self.uploadFlag = true    modified by DocumentWindowsController already
     }
-    
+    /// Upload Control Entrance
     @objc func uploadStageControl(_ aNotification: Notification?) {
         myDebug(">>>>>>> UPLOAD STAGE CONTROL: \(self.currentUploadStage)")
         switch self.currentUploadStage {
@@ -100,24 +152,25 @@ class Uploader: NSObject {
             self.uploadSucceeded()
         }
     }
-    
+    /// Upload Control Function for getting the binary.
     func getBinary() {
         if FileManager.default.fileExists(atPath: self.binaryURL.relativePath) {
             if let data = try? Data(contentsOf: self.binaryURL) {
                 self.binaryData = data
+                //timeoutDuration = Double(self.binaryData.count / 1000)
                 // next stage
                 self.currentUploadStage = .checkRootSpace
                 self.uploadStageControl(nil)
             } else {
-                _ = showAlertWindow(with: NSLocalizedString("Failed to get the binary", comment: "Failed to get the binary"))
+                _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Failed to get the binary", comment: "Failed to get the binary"))
                 self.uploadFailed()
             }
         } else {
-            _ = showAlertWindow(with: NSLocalizedString("Failed to get the binary", comment: "Failed to get the binary"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Failed to get the binary", comment: "Failed to get the binary"))
             self.uploadFailed()
         }
     }
-    
+    /// Upload Control Function for checking if the board is set to root space.
     func checkRootSpace() {
         if self.uploadFlag {
             self.serialPort?.baudRate = 9600
@@ -129,34 +182,30 @@ class Uploader: NSObject {
             self.currentUploadStage = .setBaudrate19200
         }
     }
-    /**
-     Used before erase the flash
-    */
+    /// Upload Control Function for setting the baudrate of the chip to 19200.
     func setChipBaudrate19200() {
         self.progressValue = 20.0
         self.progressInfo = NSLocalizedString("Setting the baudrate to 19200 ...", comment: "Setting the baudrate to 19200 ...")
         self.postProgressUpdate()
         self.sendCommandToBoard(command: "1", responsePrefix: nil, responseSuffix: "Address in hex>", bufferSize: 20, userInfo: "send 1f800702\n")
     }
-    
+    /// Upload Control Function for erasing the flash of the chip.
     func eraseFlash() {
         self.progressValue = 30.0
         self.progressInfo = NSLocalizedString("Erasing the flash ...", comment: "Erasing the flash ...")
         self.postProgressUpdate()
         self.sendCommandToBoard(command: "1", responsePrefix: nil, responseSuffix: "Address in hex>", bufferSize: 20, userInfo: "send 10300000\n")
     }
-    
+    /// Upload Control Function for sending the binary.
     func sendBinary() {
         self.progressValue = 50.0
         self.progressInfo = NSLocalizedString("Uploading the binary ...", comment: "Uploading the binary ...")
         self.postProgressUpdate()
         self.sendCommandToBoard(command: "5", responsePrefix: nil, responseSuffix: "Address in hex>", bufferSize: 20, userInfo: "send targetAddress")
     }
-    
-    /**
-     Used after uploading the binary
-     */
+    /// Upload Control Function for setting the baudrate of the chip to 9600.
     func setChipBaudrate9600() {
+        self.makeChipExitTimer?.invalidate()
         self.progressValue = 99.0
         self.progressInfo = NSLocalizedString("Setting the baudrate to 9600 ...", comment: "Setting the baudrate to 9600 ...")
         self.postProgressUpdate()
@@ -165,7 +214,7 @@ class Uploader: NSObject {
         self.uploadResult = String(self.receivedResponse[startIndex..<endIndex])
         self.sendCommandToBoard(command: "1", responsePrefix: nil, responseSuffix: "Address in hex>", bufferSize: 20, userInfo: "send 1f800702\n")
     }
-    
+    /// Cancel uploading, reset the uploader.
     func cancelUpload() {
         myDebug("RESET UPLOADER!!")
         self.uploadFlag = false
@@ -175,20 +224,20 @@ class Uploader: NSObject {
         self.serialPort?.close()
         myDebug("CURRENT_UPLOAD_STAGE RESET TO:\(self.currentUploadStage)")
     }
-    
+    /// Timeout Process
     func timeout() {
         myDebug("WARNING!! TIMEOUT!!")
         switch self.currentUploadStage {
         case .setBaudrate19200:
-            _ = showAlertWindow(with: NSLocalizedString("Please set the chip to root space!", comment: "Please set the chip to root space!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Please set the chip to root space!", comment: "Please set the chip to root space!"))
         case .eraseFlash:
-            _ = showAlertWindow(with: NSLocalizedString("Baudrate 19200 setup failed!", comment: "Baudrate 19200 setup failed!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Baudrate 19200 setup failed!", comment: "Baudrate 19200 setup failed!"))
         case .sendBinary:
-            _ = showAlertWindow(with: NSLocalizedString("Flash erasing failed!", comment: "Flash erasing failed!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Flash erasing failed!", comment: "Flash erasing failed!"))
         case .setBaudrate9600:
-            _ = showAlertWindow(with: NSLocalizedString("Binary Uploading failed!", comment: "Binary Uploading failed!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Binary Uploading failed!", comment: "Binary Uploading failed!"))
         case .showResult:
-            _ = showAlertWindow(with: NSLocalizedString("Baudrate 9600 setup maybe fail! Please reset the chip!", comment: "Baudrate 9600 setup maybe fail! Please reset the chip!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Baudrate 9600 setup maybe fail! Please reset the chip!", comment: "Baudrate 9600 setup maybe fail! Please reset the chip!"))
             self.uploadSucceeded()
             return
         default:
@@ -196,17 +245,19 @@ class Uploader: NSObject {
         }
         self.uploadFailed()
     }
-    
+    /// Send failure notification to the user of the uploader.
     @objc func uploadFailed() {
         NotificationCenter.default.post(name: NSNotification.Name.uploadingFailed, object: self)
     }
-    
+    /// Send success notification to the user of the uploader.
     func uploadSucceeded() {
         self.progressValue = 100.0
         self.progressInfo = NSLocalizedString("Upload succeeded!", comment: "Upload succeeded!")
         NotificationCenter.default.post(name: NSNotification.Name.uploadingSucceeded, object: self)
     }
     
+    // MARK: - UI Related
+    /// Inform the view controller to update the progress bar.
     func postProgressUpdate() {
         NotificationCenter.default.post(name: NSNotification.Name.updatedProgress, object: self)
     }
@@ -214,26 +265,26 @@ class Uploader: NSObject {
 
 extension Uploader: ORSSerialPortDelegate{
     
-    
     func serialPortWasRemoved(fromSystem serialPort: ORSSerialPort) {
         self.serialPort = nil
         self.uploadFailed()
-        _ = showAlertWindow(with: NSLocalizedString("Serial Port Disconnected, Uploading Failed", comment: "Serial Port Disconnected, Uploading Failed"))
+        _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Serial Port Disconnected, Uploading Failed", comment: "Serial Port Disconnected, Uploading Failed"))
     }
     
-    /// response to serialPort Error
+    /// Response to serialPort Error
     func serialPort(_ serialPort: ORSSerialPort, didEncounterError error: Error) {
         let alertMessage = NSLocalizedString("Serial Port", comment: "Serial Port") + "\(serialPort) " + NSLocalizedString("encountered an error: ", comment: "encountered an error: ") + "\(error)"
-        _ = showAlertWindow(with: alertMessage)
+        _ = InfoAndAlert.shared.showAlertWindow(with: alertMessage)
         self.serialPort = nil
     }
     
-    /// send command to board
+    // MARK: - Send Command
+    /// Send command to board
     func sendCommandToBoard(command: String, responsePrefix: String?, responseSuffix: String?, bufferSize: UInt, userInfo: Any?) {
         let responseDescriptor = ORSSerialPacketDescriptor(prefixString: responsePrefix, suffixString: responseSuffix, maximumPacketLength: bufferSize, userInfo: userInfo)
         self.sendCommandToBoard(command: command, responseDescriptor: responseDescriptor, userInfo: userInfo)
     }
-    /// send command to board
+    /// Send command to board
     func sendCommandToBoard(command: String, responseDescriptor: ORSSerialPacketDescriptor, userInfo: Any?) {
         let commandData = command.data(using: .ascii)!
         let request = ORSSerialRequest(dataToSend: commandData,
@@ -242,6 +293,8 @@ extension Uploader: ORSSerialPortDelegate{
                                        responseDescriptor: responseDescriptor)
         self.serialPort?.send(request)
     }
+    
+    // MARK: - Send Data
     /**
      Send data through a selected serial port.
      
@@ -253,11 +306,10 @@ extension Uploader: ORSSerialPortDelegate{
         if let data = aString.data(using: encodingMethod) {
             self.serialPort?.send(data)
         } else {
-            _ = showAlertWindow(with: NSLocalizedString("Fail to send", comment: "Fail to send")+" \(aString)")
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Fail to send", comment: "Fail to send")+" \(aString)")
         }
     }
     
-    /// parsing the response
     func serialPort(_ serialPort: ORSSerialPort, didReceiveResponse responseData: Data, to request: ORSSerialRequest) {
         myDebug("Request Number = \(serialPort.queuedRequests.count)")
         if let response = String(data: responseData, encoding: .utf8) {
@@ -306,17 +358,30 @@ extension Uploader: ORSSerialPortDelegate{
             case "send binary":
                 self.serialPort?.send(self.binaryData)
                 self.waitForChip()
+                myDebug("binary count = \(self.binaryData.count)\n")
+                myDebug("Wait")
+                for _ in 0...self.binaryData.count/800 {
+                    print(".", terminator: "")
+                    self.waitForChip()
+                }
                 self.sendData("1")
                 self.waitForChip()
                 self.sendCommandToBoard(command: "1f800702\n", responsePrefix: "p1 final index", responseSuffix: "Menu", bufferSize: 120, userInfo: "sendBinary")
+                self.sendData("\0\0\0\0\0\0\0\0\0\0\0\0")   // very important!!!
                 self.currentUploadStage = .setBaudrate9600
             default: return
             }
         }
-        
     }
     
+    @objc func sendExitSignalToBoard() {
+        self.sendData("\n");
+        self.sendData("\n");
+    }
+    
+    /// Timeout reaction
     func serialPort(_ serialPort: ORSSerialPort, requestDidTimeout request: ORSSerialRequest) {
+        myDebug("Serial port timeout!")
         myDebug(request.userInfo as! String)
         self.timeout()
     }

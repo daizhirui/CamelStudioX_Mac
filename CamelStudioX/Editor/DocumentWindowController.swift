@@ -30,12 +30,22 @@ class DocumentWindowController: NSWindowController {
         self.addObserversForUpload()
         NotificationCenter.default.addObserver(self, selector: #selector(self.lostFocusAction(_:)), name: NSWindow.didResignMainNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.getFocusAction(_:)), name: NSWindow.didBecomeMainNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.resizeWindow(_:)), name: NSWindow.didResizeNotification, object: nil)
         // check if a tab window is required
         if AppDelegate.isRequiringNewTab {
             self.addWindowAsTab()
             AppDelegate.isRequiringNewTab = false
         }
         self.progressIndicator.isHidden = true
+    }
+    //****************** About Window Resize ******************************
+    @objc func resizeWindow(_ aNotification: Notification) {
+        let width = self.viewController.editAreaScrollView.frame.width + 20
+        let height = self.viewController.editAreaScrollView.frame.height
+        let x = self.viewController.editAreaScrollView.contentView.frame.origin.x
+        let y = self.viewController.editAreaScrollView.contentView.frame.origin.y
+        let newFrame = NSRect(x: x, y: y, width: width, height: height)
+        self.viewController.editAreaScrollView.contentView.frame = newFrame
     }
     //****************** About Project Inspector **************************
     /// Change text color when window becomes unmain
@@ -108,6 +118,58 @@ class DocumentWindowController: NSWindowController {
             _ = aCompiler.generateMakefile()
         }
     }
+    func updateBuildResult(errorOutput: String) {
+        let vc = CompilerMessageViewController.getCurrent
+        if errorOutput.count > 0 {
+            var warnning_count = 0
+            var error_count = 0
+            let attributedString = NSMutableAttributedString(string: "")
+            
+            for item in errorOutput.components(separatedBy: .newlines) {
+                var newItem = item
+                if let range: Range<String.Index> = newItem.range(of: "mips") {
+                    newItem.removeSubrange(newItem.startIndex..<range.lowerBound)
+                }
+                if let range: NSRange = newItem.range(of: "Warning") {
+                    let attributedItem = NSMutableAttributedString(string: newItem)
+                    attributedItem.addAttributes([.foregroundColor : NSColor.orange as Any], range: range)
+                    attributedString.append(NSAttributedString(string: "\n\n"))
+                    attributedString.append(attributedItem)
+                    warnning_count += 1
+                } else if let range: NSRange = newItem.range(of: "error") {
+                    let attributedItem = NSMutableAttributedString(string: newItem)
+                    attributedItem.addAttributes([.foregroundColor : NSColor.red as Any], range: range)
+                    attributedString.append(NSAttributedString(string: "\n\n"))
+                    attributedString.append(attributedItem)
+                    error_count += 1
+                } else {
+                    attributedString.append(NSAttributedString(string: "\n"))
+                    attributedString.append(NSAttributedString(string: newItem))
+                }
+            }
+            // show the error message in side panel
+            vc.textView.textStorage?.setAttributedString(attributedString)
+            vc.view.window?.makeKeyAndOrderFront(self)
+            
+            self.viewController.sidePanelInfoTextView.textStorage?.setAttributedString(attributedString)
+            //self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
+            //self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
+            
+            // post a notification to inform the user
+            let message: String
+            if error_count > 0 {
+                message = NSLocalizedString("Failed", comment: "Failed") + ": \(warnning_count) warnnings and \(error_count) errors!"
+            } else {
+                message = NSLocalizedString("Some warnning!", comment: "Some warnnings!") + ": \(warnning_count) warnnings!"
+            }
+            InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: message)
+        } else {
+            self.viewController.sidePanelInfoTextView.string = ""
+            vc.textView.string = ""
+            // post a notification to inform the user
+            InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Succeeded", comment: "Succeeded"))
+        }
+    }
     //*********************** About build binary **************************
     @IBAction func buildBinary(_ sender: Any) {
         // Save the modification at first
@@ -124,18 +186,7 @@ class DocumentWindowController: NSWindowController {
             func buildBinaryAndCheckResult() {
                 // Build the binary
                 let (_, errorOutput) = aCompiler.buildBinary()
-                if errorOutput.count > 0 {
-                    // show the error message in side panel
-                    self.viewController.sidePanelInfoTextView.string = errorOutput
-                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
-                    self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
-                    // post a notification to inform the user
-                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
-                } else {
-                    self.viewController.sidePanelInfoTextView.string = ""
-                    // post a notification to inform the user
-                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Succeeded", comment: "Succeeded"))
-                }
+                self.updateBuildResult(errorOutput: errorOutput)
                 // update project again
                 project.updateFileWrappers()
             }
@@ -151,7 +202,7 @@ class DocumentWindowController: NSWindowController {
                     self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
-                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
+                    InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Failed", comment: "Failed"))
                 }
             } else {
                 // generate a makefile before building
@@ -165,7 +216,7 @@ class DocumentWindowController: NSWindowController {
                     self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
-                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
+                    InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Failed", comment: "Failed"))
                 }
             }
             // update project inspector
@@ -188,18 +239,7 @@ class DocumentWindowController: NSWindowController {
             func buildLibraryAndCheckResult() {
                 // Build the library
                 let (_, errorOutput) = aCompiler.buildLibrary()
-                if errorOutput.count > 0 {
-                    // show the error message in side panel
-                    self.viewController.sidePanelInfoTextView.string = errorOutput
-                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
-                    self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
-                    // post a notification to inform the user
-                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
-                } else {
-                    self.viewController.sidePanelInfoTextView.string = ""
-                    // post a notification to inform the user
-                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Succeeded", comment: "Succeeded"))
-                }
+                self.updateBuildResult(errorOutput: errorOutput)
                 // update project again
                 project.updateFileWrappers()
             }
@@ -215,7 +255,7 @@ class DocumentWindowController: NSWindowController {
                     self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
-                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
+                    InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Failed", comment: "Failed"))
                 }
             } else {
                 // generate a makefile before building
@@ -229,7 +269,7 @@ class DocumentWindowController: NSWindowController {
                     self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
-                    postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), message: NSLocalizedString("Failed", comment: "Failed"))
+                    InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Failed", comment: "Failed"))
                 }
             }
             // update project inspector
@@ -242,7 +282,7 @@ class DocumentWindowController: NSWindowController {
             let aCompiler = Compiler(forProject: project)
             _ = aCompiler.generateMakefile()
             _ = aCompiler.cleanProject()
-            postNotification(title: NSLocalizedString("Clean Result", comment: "Clean Result"), message: NSLocalizedString("Completed", comment: "Completed"))
+            InfoAndAlert.shared.postNotification(title: NSLocalizedString("Clean Result", comment: "Clean Result"), informativeText: NSLocalizedString("Completed", comment: "Completed"))
             // update project again
             project.updateSourceFiles()
             // update project inspector

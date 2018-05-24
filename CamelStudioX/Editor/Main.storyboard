@@ -1152,7 +1152,7 @@
                                                     <rect key="frame" x="1" y="1" width="573" height="544"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textView importsGraphics="NO" verticallyResizable="YES" findStyle="panel" allowsUndo="YES" allowsNonContiguousLayout="YES" textCompletion="NO" id="xFQ-1d-nti" customClass="EditorTextView" customModule="LineNumberTextView">
+                                                        <textView importsGraphics="NO" verticallyResizable="YES" findStyle="panel" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" allowsNonContiguousLayout="YES" textCompletion="NO" id="xFQ-1d-nti" customClass="EditorTextView" customModule="LineNumberTextView">
                                                             <rect key="frame" x="0.0" y="0.0" width="573" height="544"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1235,6 +1235,7 @@
                     </view>
                     <connections>
                         <outlet property="editArea" destination="xFQ-1d-nti" id="q27-WT-Y1Z"/>
+                        <outlet property="editAreaScrollView" destination="xYs-wD-5l6" id="aNJ-eD-sxJ"/>
                         <outlet property="languageComboBox" destination="woW-bz-ceC" id="8c6-xs-wz8"/>
                         <outlet property="projectInspector" destination="CE9-7U-Nk7" id="K22-4W-wMm"/>
                         <outlet property="projectInspectorMenu" destination="KTs-7G-lD3" id="IGx-dy-GXg"/>

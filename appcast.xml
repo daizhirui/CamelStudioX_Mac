@@ -51,6 +51,26 @@
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.3.1/CamelStudioX_3.3.1_Build22.zip" sparkle:version="22" sparkle:shortVersionString="3.3.1" length="66666280" type="application/octet-stream" sparkle:dsaSignature="MCwCFDUB2yk8R7mWTQzhm/rQLJ8o3Hi4AhQo1bumkiN01NeK43b1Vi8GpfWZNw=="/>
         </item>
+
+        <item>
+            <title>3.3.2</title>
+            <description><![CDATA[
+                <h2>Improvement</h2>
+                <ul>
+                <li>Global "Serial Port Connected/DIsconnected" Notification.</li>
+                </ul>
+                <h2>New Features</h2>
+                <ul>
+                    <li>Float Point Library Support.</li>
+                    <li>New compiler message window.</li>
+                    <li>Remember the serial port last time when CamelStudioX is opened and connected to a serial port.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Thu, 24 May 2018 21:57:24 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.3.2/CamelStudioX_3.3.2_Build23.zip" sparkle:version="23" sparkle:shortVersionString="3.3.2" length="66981618" type="application/octet-stream" sparkle:dsaSignature="MCwCFCfkjaxjwicPK9YGg7d+YlQ+Ab7DAhRj50VBhfL6k6pa1VF7kz2onR3wvw=="/>
+        </item>
         
     </channel></rss>
 
