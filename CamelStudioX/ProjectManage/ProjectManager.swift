@@ -133,7 +133,7 @@ class ProjectManager: NSObject {
                 let data = try? JSONSerialization.data(withJSONObject: dataDictionary, options: [.prettyPrinted])
                 return data
             } else {
-                _ = showAlertWindow(with: NSLocalizedString("Target Name is empty!", comment: "Target Name is empty!"))
+                _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Target Name is empty!", comment: "Target Name is empty!"))
                 return nil
             }
         }

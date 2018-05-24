@@ -21,6 +21,7 @@ class DocumentViewController: NSViewController {
     @IBOutlet weak var projectInspector: NSOutlineView!
     @IBOutlet var sidePanelInfoTextView: NSTextView!
     @IBOutlet var editArea: EditorTextView!
+    @IBOutlet weak var editAreaScrollView: NSScrollView!
     @IBOutlet weak var languageComboBox: NSComboBox!
     @IBOutlet weak var serialPortStateLabel: NSTextField!
     @IBOutlet var projectInspectorMenu: NSMenu!

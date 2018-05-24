@@ -22,12 +22,12 @@ class Document: NSDocument {
 
     override init() {
         super.init()
-        myDebug("\(self) is created")
+//        myDebug("\(self) is created")
     }
     
-    deinit {
-        myDebug("\(self) is destroyed")
-    }
+//    deinit {
+//        myDebug("\(self) is destroyed")
+//    }
 
     override class var autosavesInPlace: Bool {
         return true
@@ -53,6 +53,7 @@ class Document: NSDocument {
             if !viewController.isOperatingFile {
                 _ = viewController.checkFileModification()
             } else {
+                // When there is file operation (new file, new folder, rename, delete), the content in edit area shouldn't be saved.
                 viewController.isOperatingFile = false
             }
         }
@@ -108,7 +109,7 @@ class Document: NSDocument {
                             switch chipType {
                             case "M3": self.project.chipType = ChipType.M3
                             case "M2": self.project.chipType = ChipType.M2
-                            default: _ = showAlertWindow(with: NSLocalizedString("Wrong Chip Type!", comment: "Wrong Chip Type!"))
+                            default: _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Wrong Chip Type!", comment: "Wrong Chip Type!"))
                             }
                         } else {
                             failureItem.append(NSLocalizedString("Chip Type", comment: "ChipType"))
@@ -172,14 +173,14 @@ class Document: NSDocument {
                             self.project.useCustomedMakefile = false
                         }
                         if failureItem.count > 0 {
-                            _ = showAlertWindow(with: NSLocalizedString("The following settings fail to import:\n", comment: "The following settings fail to import:\n")+failureItem.joined(separator: ", "))
+                            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("The following settings fail to import:\n", comment: "The following settings fail to import:\n")+failureItem.joined(separator: ", "))
                         }
                         return
                     } else {
                         // Fail to load Config file
                         self.project.targetName = self.project.projectName
                         self.project.updateSourceFiles()
-                        _ = showAlertWindow(with: NSLocalizedString("Fail to load configuration!", comment: "Fail to load configuration!"))
+                        _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Fail to load configuration!", comment: "Fail to load configuration!"))
                         return
                     }
                 }
@@ -208,14 +209,16 @@ class Document: NSDocument {
             func failToLoadCmsFile() {
                 self.project.targetName = self.project.projectName
                 self.project.updateSourceFiles()
-                _ = showAlertWindow(with: NSLocalizedString("Fail to load configuration!", comment: "Fail to load configuration!"))
+                _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Fail to load configuration!", comment: "Fail to load configuration!"))
             }
             // get the cmsFileName
             if let cmsFileName = self.fileURL?.lastPathComponent {
                 // update self.fileURL
                 if let url = self.fileURL?.deletingLastPathComponent() {
                     self.fileURL = url  // self.project.projectURL, projectName and project.fileWrappers are auto-set
+                    // get cms file content
                     if let cmsData = self.project.filewrappers?.fileWrappers?[cmsFileName]?.regularFileContents {
+                        // data to string
                         if let cmsString = String(data: cmsData, encoding: String.Encoding.utf8) {
                             let items = cmsString.components(separatedBy: .newlines)
                             for item in items {
@@ -226,7 +229,7 @@ class Document: NSDocument {
                                     } else if item.contains("M3") {
                                         self.project.chipType = ChipType.M3
                                     } else {
-                                        _ = showAlertWindow(with: NSLocalizedString("Wrong Chip Type!", comment: "Wrong Chip Type!"))
+                                        _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Wrong Chip Type!", comment: "Wrong Chip Type!"))
                                     }
                                 } else if item.hasPrefix("TARGET") && !item.hasPrefix("TARGET_ADDRESS"){
                                     // Load project.targetName
@@ -280,9 +283,9 @@ class Document: NSDocument {
                                         self.project.library = value.components(separatedBy: CharacterSet.whitespaces)
                                     }
                                 }
-                                _ = showAlertWindow(with: NSLocalizedString(".cms is an old file type! Some settings may missing and that may result in crash!", comment: ".cms is an old file type! Some settings may missing and that may result in crash!"))
+                                _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString(".cms is an old file type! Some settings may missing and that may result in crash!", comment: ".cms is an old file type! Some settings may missing and that may result in crash!"))
                                 if failureItem.count > 0 {
-                                    _ = showAlertWindow(with: NSLocalizedString("The following settings fail to import:\n", comment: "The following settings fail to import:\n")+failureItem.joined(separator: ", "))
+                                    _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("The following settings fail to import:\n", comment: "The following settings fail to import:\n")+failureItem.joined(separator: ", "))
                                 }
                             }
                         } else {

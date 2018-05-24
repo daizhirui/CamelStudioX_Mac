@@ -36,9 +36,18 @@ class SerialMonitorViewController: NSViewController {
             self.serialController.serialPort = SerialController.recentSerialPort
             self.baudrateBox.selectItem(withTitle: "9600")
             self.serialController.serialPort?.baudRate = 9600
+        } else if let portName = UserDefaults.standard.object(forKey: "recentSerialPort") as? String {
+            for possiblePort in self.serialController.serialPortManager.availablePorts {
+                if possiblePort.name == portName {
+                    self.portBox.selectItem(withTitle: portName)
+                    self.serialController.serialPort = possiblePort
+                    self.baudrateBox.selectItem(withTitle: "9600")
+                    self.serialController.serialPort?.baudRate = 9600
+                }
+            }
         }
         self.serialController.screen = self.textView
-        self.serialController.scrollControll = self.scrollView
+        //self.serialController.scrollControll = self.scrollView
         // ***** Setup TextView ********
         self.textView.lineNumberBackgroundColor = NSColor.white
         self.textView.lineNumberForegroundColor = NSColor.gray

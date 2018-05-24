@@ -72,7 +72,7 @@ public class EditorTextView: NSTextView {
         let startIndex = self.string.startIndex
         var endIndex = self.string.index(startIndex, offsetBy: lowerBound)
         
-        if let char = event.characters, char == self.string[endIndex...endIndex], self.punctuationCount > 0 {
+        if let char = event.characters, self.punctuationCount > 0, char == self.string[endIndex...endIndex] {
             self.punctuationCount -= 1
             self.setSelectedRange(NSMakeRange(lowerBound+1, 0))
             return

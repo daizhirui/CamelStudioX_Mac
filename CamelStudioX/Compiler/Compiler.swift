@@ -15,6 +15,7 @@ class Compiler: NSObject {
     var compilerDirectoryPath = Bundle.main.bundlePath + "/Contents/Resources/Developer/Toolchains/bin/"
     var gcc_MIPS_Compiler = "mips-netbsd-elf-gcc"
     var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c"
+//    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -w -G0 -msoft-float"
     var as_MIPS_Compiler = "mips-netbsd-elf-as"
     var as_Option = "-EL"
     var ld_MIPS_Compiler = "mips-netbsd-elf-ld"
@@ -35,10 +36,14 @@ class Compiler: NSObject {
     func generateMakefile() -> Bool {
         if self.project.projectURL != nil {
             // save project file at first
-            self.project.saveFileWrappers()
+            //self.project.saveFileWrappers()
+            NSDocumentController.shared.currentDocument?.save(self)
             self.project.updateSourceFiles()
             // start to generate Makefile
             if self.project.targetName.count > 0 {
+                if project.library.contains("math") {   // float point library!
+                    self.gcc_Option.append(" -w -G0 -msoft-float")
+                }
                 let makefileContent =
                 """
                 TARGET_NAME = \(self.project.targetName)
@@ -75,7 +80,7 @@ class Compiler: NSObject {
                 
                 CHIP_LIBRARY = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/lib/M2
                 STD_LIBRARY = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/lib/std
-                LIBRARY_FLAGS = -L $(STD_LIBRARY) -l string -L $(CHIP_LIBRARY) -l interrupt -l str \(project.library.count > 0 ? "-l  "+project.library.joined(separator: " -l ") : "") \(project.customLibrary.count > 0 ? ("-L ../lib -l  "+project.customLibrary.joined(separator: " -l ")) : "")
+                LIBRARY_FLAGS = -L $(STD_LIBRARY) -L $(CHIP_LIBRARY) \(project.library.count > 0 ? "-l  "+project.library.joined(separator: " -l") : "") \(project.customLibrary.count > 0 ? ("-L ../lib -l "+project.customLibrary.joined(separator: " -l")) : "")  -lstring -linterrupt -lstr 
                 
                 all: $(TARGET_NAME)
                 
@@ -108,11 +113,11 @@ class Compiler: NSObject {
                 }
                 return true
             } else {
-                _ = showAlertWindow(with: NSLocalizedString("Target Name is empty!", comment: "Target Name is empty!"))
+                _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Target Name is empty!", comment: "Target Name is empty!"))
                 return false
             }
         } else {
-            _ = showAlertWindow(with: NSLocalizedString("No project to build!", comment: "No project to build!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("No project to build!", comment: "No project to build!"))
             return false
         }
     }
@@ -126,9 +131,10 @@ class Compiler: NSObject {
         let originalWorkingDirectoryPath = FileManager.default.currentDirectoryPath
         if let projectPath = self.project.projectURL?.relativePath {
             FileManager.default.changeCurrentDirectoryPath(projectPath)
+            myDebug(FileManager.default.currentDirectoryPath)
             (stdOutput, errorOutput) = runCommand(run: "/usr/bin/make", with: [])
         } else {
-            _ = showAlertWindow(with: NSLocalizedString("No project to build!", comment: "No project to build!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("No project to build!", comment: "No project to build!"))
         }
         // update project.fileWrappers
         self.project.updateFileWrappers()
@@ -147,7 +153,7 @@ class Compiler: NSObject {
             FileManager.default.changeCurrentDirectoryPath(projectPath)
             (stdOutput, errorOutput) = runCommand(run: "/usr/bin/make", with: ["lib"])
         } else {
-            _ = showAlertWindow(with: NSLocalizedString("No project to build!", comment: "No project to build!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("No project to build!", comment: "No project to build!"))
         }
         // update project.fileWrappers
         self.project.updateFileWrappers()
@@ -166,7 +172,7 @@ class Compiler: NSObject {
             FileManager.default.changeCurrentDirectoryPath(projectPath)
             (stdOutput, errorOutput) = runCommand(run: "/usr/bin/make", with: ["clean"])
         } else {
-            _ = showAlertWindow(with: NSLocalizedString("No project to clean!", comment: "No project to clean!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("No project to clean!", comment: "No project to clean!"))
         }
         // update project.fileWrappers
         self.project.updateFileWrappers()

@@ -92,5 +92,4 @@ class SerialBoardController: NSObject, ORSSerialPortDelegate {
     func serialPort(_ serialPort: ORSSerialPort, requestDidTimeout request: ORSSerialRequest) {
         myDebug(request.userInfo as! String)
     }
-
 }

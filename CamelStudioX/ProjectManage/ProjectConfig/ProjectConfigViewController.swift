@@ -53,21 +53,21 @@ class ProjectConfigViewController: NSViewController {
             if self.targetName.stringValue.count > 0 {
                 project.targetName = self.targetName.stringValue
             } else {
-                _ = showAlertWindow(with: NSLocalizedString("Target Name is empty!", comment: "Target Name is empty!"))
+                _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Target Name is empty!", comment: "Target Name is empty!"))
                 return
             }
             // store targetAddress
             if self.targetAddress.stringValue.count > 0 {
                 project.targetAddress = self.targetAddress.stringValue
             } else {
-                _ = showAlertWindow(with: NSLocalizedString("Target Address is empty!", comment: "Target Address is empty!"))
+                _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Target Address is empty!", comment: "Target Address is empty!"))
                 return
             }
             // store dataAddress
             if self.dataAddress.stringValue.count > 0 {
                 project.dataAddress = self.dataAddress.stringValue
             } else {
-                _ = showAlertWindow(with: NSLocalizedString("Data Address is empty!", comment: "Data Address is empty!"))
+                _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Data Address is empty!", comment: "Data Address is empty!"))
                 return
             }
             // store rodataAddress

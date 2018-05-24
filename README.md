@@ -1,6 +1,16 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.3.2
+----
+
+### Build 23 on 24.05.2018
+
+- Improvement: Global "Serial Port Connected/DIsconnected" Notification.
+- New Feature: Float Point Library Support.
+- New Feature: New compiler message window.
+- New Feature: Remember the serial port last time when CamelStudioX is opened and connected to a serial port.
+
 ## Version 3.3.1
 ----
 

@@ -45,43 +45,29 @@ class GetNameViewController: NSViewController {
     @IBAction func okAction(_ sender: Any) {
         // check if name is provided
         if self.nameBox.stringValue == "" {
-            _ = showAlertWindow(with: NSLocalizedString("Name is empty!", comment: "Name is empty!"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Name is empty!", comment: "Name is empty!"))
+            return
+        } else if self.childNames.contains(self.nameBox.stringValue) {
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("The name already exists!", comment: "The name already exists!"))
             return
         }
         // start to operate
+        var newFileWrapper: FileWrapper
         switch self.fileOperation {
         case .rename:
-            if self.childNames.contains(self.nameBox.stringValue) {
-                _ = showAlertWindow(with: NSLocalizedString("The name already exists!", comment: "The name already exists!"))
-                return
-            } else {
-                let fileWrapper = self.node.copy() as! FileWrapper
-                fileWrapper.preferredFilename = self.nameBox.stringValue
-                parentNode.removeFileWrapper(node)
-                parentNode.addFileWrapper(fileWrapper)
-            }
+            newFileWrapper = self.node.copy() as! FileWrapper
+            parentNode.removeFileWrapper(node)
         case .newFolder:
-            if self.childNames.contains(self.nameBox.stringValue) {
-                _ = showAlertWindow(with: NSLocalizedString("The name already exists!", comment: "The name already exists!"))
-                return
-            } else {
-                let folderFileWrapper = FileWrapper(directoryWithFileWrappers: [:])
-                folderFileWrapper.preferredFilename = self.nameBox.stringValue
-                self.node.addFileWrapper(folderFileWrapper)
-            }
+            newFileWrapper = FileWrapper(directoryWithFileWrappers: [:])
         case .newFile:
-            if self.childNames.contains(self.nameBox.stringValue) {
-                _ = showAlertWindow(with: NSLocalizedString("The name already exists!", comment: "The name already exists!"))
-                return
-            } else {
-                let fileWrapper = FileWrapper(regularFileWithContents: Data())
-                fileWrapper.preferredFilename = self.nameBox.stringValue
-                self.node.addFileWrapper(fileWrapper)
-            }
+            newFileWrapper = FileWrapper(regularFileWithContents: Data())
         default:
             return
         }
-        // save
+        // Common FileWrapper Operation
+        newFileWrapper.preferredFilename = self.nameBox.stringValue
+        self.node.addFileWrapper(newFileWrapper)
+        // Save the project
         parentVC.isOperatingFile = true
         NSDocumentController.shared.currentDocument?.save(self)
         self.parentVC.updateProjectInspector()

@@ -16,7 +16,7 @@ public enum Ending: String {
     case rnEnding = "\r\n"
 }
 
-class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDelegate {
+class SerialController: NSObject, ORSSerialPortDelegate {
     
     /// bool value to control enableness of a switch button
     @objc var switchIsEnabled: Bool {
@@ -39,8 +39,12 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
         didSet {
             serialPort?.delegate = self
             SerialController.recentSerialPort = self.serialPort // store recent serial port
+            if let portName = serialPort?.name {
+                UserDefaults.standard.set(portName, forKey: "recentSerialPort")
+            }
         }
     }
+    /// To remember the serial port choosed recently.
     static var recentSerialPort: ORSSerialPort?
     /// Available baudrates
     @objc let availableBaudrates = [300, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 115200, 230400]
@@ -52,57 +56,38 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
         super.init()
         // setup the notification center
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(serialPortsWereConnected(_:)), name: NSNotification.Name.ORSSerialPortsWereConnected, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(serialPortsWereDisconnected(_:)), name: NSNotification.Name.ORSSerialPortsWereDisconnected, object: nil)
-        NSUserNotificationCenter.default.delegate = self
+        notificationCenter.addObserver(self, selector: #selector(serialPortsWereChanged(_:)), name: NSNotification.Name.ORSSerialPortsWereConnected, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(serialPortsWereChanged(_:)), name: NSNotification.Name.ORSSerialPortsWereDisconnected, object: nil)
     }
     
-    /**
-     The following functions deal with the notification and action of serial port connection and disconnection
-    */
-    /// Post a notification when serial port is connected
-    @objc func serialPortsWereConnected(_ notification: Notification) {
-        if let userInfo = notification.userInfo {
-            let connectedPorts = userInfo[ORSConnectedSerialPortsKey] as! [ORSSerialPort]
-            myDebug("Ports were connected: \(connectedPorts)")
-            let userNotificationCenter = NSUserNotificationCenter.default
-            for port in connectedPorts {
-                let userNote = NSUserNotification()
-                userNote.title = NSLocalizedString("Serial Port Connected", comment: "Serial Port Connected")
-                userNote.informativeText = NSLocalizedString("Serial Port", comment: "Serial Port")
-                userNote.informativeText?.append("\(port.name)")
-                userNote.informativeText?.append(NSLocalizedString(" was connected to your Mac.", comment: " was connected to your Mac."))
-                userNote.soundName = NSUserNotificationDefaultSoundName
-                userNotificationCenter.deliver(userNote)
+    // MARK: - Reaction to Serial Change
+    /// Post a notification when a serial device is connected or disconnected.
+    @objc func serialPortsWereChanged(_ aNotification: Notification) {
+        let title: String
+        let changeType: String
+        let key: String
+        
+        if aNotification.name == NSNotification.Name.ORSSerialPortsWereConnected {
+            title = "Serial Port Connected"
+            changeType = "connected"
+            key = ORSConnectedSerialPortsKey
+        } else if aNotification.name == NSNotification.Name.ORSSerialPortsWereDisconnected {
+            title = "Serial Port Disconnected"
+            changeType = "disconnected"
+            key = ORSDisconnectedSerialPortsKey
+        } else {
+            return
+        }
+        
+        if let userInfo = aNotification.userInfo {
+            if let connectedPorts = userInfo[key] as? [ORSSerialPort] {
+                for port in connectedPorts {
+                    InfoAndAlert.shared.postNotification(title: title, informativeText: "Serial Port \(port.name) is \(changeType) to your Mac.")
+                }
             }
         }
     }
-    /// Post a notification when serial ports is disconnected
-    @objc func serialPortsWereDisconnected(_ notification: Notification) {
-        if let userInfo = notification.userInfo {
-            let disconnectedPorts = userInfo[ORSDisconnectedSerialPortsKey] as! [ORSSerialPort]
-            myDebug("Ports were disconnected: \(disconnectedPorts)")
-            let userNotificationCenter = NSUserNotificationCenter.default
-            for port in disconnectedPorts {
-                let userNote = NSUserNotification()
-                userNote.title = NSLocalizedString("Serial Port Disconnected", comment: "Serial Port Disconnected")
-                userNote.informativeText = "Serial Port \(port.name) was disconnected from your Mac."
-                userNote.soundName = NSUserNotificationDefaultSoundName
-                userNotificationCenter.deliver(userNote)
-            }
-        }
-    }
-    /// NSUserNotifcationCenterDelegate function
-    func userNotificationCenter(_ center: NSUserNotificationCenter, didDeliver notification: NSUserNotification) {
-        let popTime = DispatchTime.now() + Double(Int64(3.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.asyncAfter(deadline: popTime) { () -> Void in
-            center.removeDeliveredNotification(notification)
-        }
-    }
-    /// NSUserNotifcationCenterDelegate function
-    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
-        return true
-    }
+    
     // ORSSerialPortDelegate
     /**
      Response to serialPort removed
@@ -134,13 +119,13 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
                 port.open()
             }
         } else {
-            _ = showAlertWindow(with: NSLocalizedString("Serial Port Not Selected", comment: "NSAlert Content"))
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Serial Port Not Selected", comment: "NSAlert Content"))
         }
     }
     /// response to serialPort Error
     func serialPort(_ serialPort: ORSSerialPort, didEncounterError error: Error) {
         let alertMessage = NSLocalizedString("Serial Port", comment: "Serial Port") + "\(serialPort) " + NSLocalizedString("encountered an error: ", comment: "encountered an error: ") + "\(error)"
-        _ = showAlertWindow(with: alertMessage)
+        _ = InfoAndAlert.shared.showAlertWindow(with: alertMessage)
         self.switchButton?.title = NSLocalizedString("Open", comment: "Open")
     }
     /**
@@ -154,11 +139,11 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
         if let data = aString.data(using: encodingMethod) {
             self.serialPort?.send(data)
         } else {
-            _ = showAlertWindow(with: NSLocalizedString("Fail to send", comment: "Fail to send")+" \(aString)")
+            _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Fail to send", comment: "Fail to send")+" \(aString)")
         }
     }
     /// store all the data received
-    var receivedDataBuffer: String = "" //{
+    var receivedDataBuffer: String = ""
     
     /**
      Receive and store data
@@ -178,7 +163,7 @@ class SerialController: NSObject, ORSSerialPortDelegate, NSUserNotificationCente
     
     // ********************** For Serial Monitor UI *****************************
     var switchButton: NSButton?
-    var scrollControll: NSScrollView?
+    //var scrollControll: NSScrollView?
     var screen: NSTextView?
     @objc var autoScroll: Bool = true
 }
