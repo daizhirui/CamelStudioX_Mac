@@ -13,11 +13,7 @@
 #define __AFE_h__
 
 #include "mcu.h"
-/********* AD Register Address *********/
-#define AD_CTL0_REG 0x1f800600 // SD and V2P control (16-bit)
-#define AD_OPO_REG 0x1f800601  // OPO and Chan control (16-bit)
-#define AD_READ_REG 0x1f800602 // SD df read (16-bit)
-#define AD_CLR_REG 0x1f800603  // SD ADC clear reg
+
 /*********** Value Definition ************/
 // This part aims to make coding easier.
 // A starting level learner just needs to use following key words.

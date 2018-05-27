@@ -3,14 +3,6 @@
 
 #include "mcu.h"
 
-/*********** Hardware addesses ***********/
-#define INT_CTL0_REG 0x1f800500 // EX Int enable control and base
-#define INT_CTL1_REG 0x1f800501 // EX Int IRQ bits content read, (m1=03)
-#define INT_CTL2_REG 0x1f800502 // EX Int high enable
-#define INT_CLR_REG 0x1f800503  // EX Int IRQ clear  (m1=01)
-#define SYS_CTL0_REG 0x1f800700 // sys control digi_off - - - - - dbg inten
-#define SYS_IRQ_REG 0x1f800707
-
 #define RT_SysIrq_On() MemoryOr32(SYS_CTL0_REG, 0x1)
 #define RT_SysIrq_Off()   MemoryAnd32(SYS_CTL0_REG, ~0x1)
 #define RT_SysIrq_GetFlag()   MemoryRead32(SYS_IRQ_REG)

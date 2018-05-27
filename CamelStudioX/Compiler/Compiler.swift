@@ -14,7 +14,7 @@ class Compiler: NSObject {
     
     var compilerDirectoryPath = Bundle.main.bundlePath + "/Contents/Resources/Developer/Toolchains/bin/"
     var gcc_MIPS_Compiler = "mips-netbsd-elf-gcc"
-    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c"
+    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -fno-builtin"
 //    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -w -G0 -msoft-float"
     var as_MIPS_Compiler = "mips-netbsd-elf-as"
     var as_Option = "-EL"
@@ -80,7 +80,7 @@ class Compiler: NSObject {
                 
                 CHIP_LIBRARY = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/lib/M2
                 STD_LIBRARY = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/lib/std
-                LIBRARY_FLAGS = -L $(STD_LIBRARY) -L $(CHIP_LIBRARY) \(project.library.count > 0 ? "-l  "+project.library.joined(separator: " -l") : "") \(project.customLibrary.count > 0 ? ("-L ../lib -l "+project.customLibrary.joined(separator: " -l")) : "")  -lstring -linterrupt -lstr 
+                LIBRARY_FLAGS = -L $(STD_LIBRARY) -L $(CHIP_LIBRARY) \(project.library.count > 0 ? "-l  "+project.library.joined(separator: " -l") : "") \(project.customLibrary.count > 0 ? ("-L ../lib -l "+project.customLibrary.joined(separator: " -l")) : "")  -lm2core
                 
                 all: $(TARGET_NAME)
                 

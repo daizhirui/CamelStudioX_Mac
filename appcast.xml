@@ -72,5 +72,25 @@
             <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.3.2/CamelStudioX_3.3.2_Build23.zip" sparkle:version="23" sparkle:shortVersionString="3.3.2" length="66981618" type="application/octet-stream" sparkle:dsaSignature="MCwCFCfkjaxjwicPK9YGg7d+YlQ+Ab7DAhRj50VBhfL6k6pa1VF7kz2onR3wvw=="/>
         </item>
         
+        <item>
+            <title>3.4.0</title>
+            <description><![CDATA[
+                <h2>Improvement</h2>
+                <ul>
+                <li>Stabler Uploader.</li>
+                </ul>
+                <h2>New Features</h2>
+                <ul>
+                <li>Official Documentation.</li>
+                <li>Auto-build binary before uploading (It can be canceled in Preference.).</li>
+                <li>New library! Now some standard C functions like printf are ready!.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Sun, 27 May 2018 18:22:46 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.4.0/CamelStudioX_3.4.0_Build24.zip" sparkle:version="24" sparkle:shortVersionString="3.4.0" length="67362343" type="application/octet-stream" sparkle:dsaSignature="MCwCFDLHlYpEZRP8uXf64XtLVCT8r2BSAhQihcO1qQijijZae6+BzvdybcxYXw=="/>
+        </item>
+        
     </channel></rss>
 

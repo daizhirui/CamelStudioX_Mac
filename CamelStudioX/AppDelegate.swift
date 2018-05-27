@@ -183,5 +183,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         })
     }
+    @IBAction func showDocumentation(_ sender: Any) {
+        let url = Bundle.main.bundleURL.appendingPathComponent("/Contents/Resources/Developer/OfficialLibrary/doc/index.html")
+        NSWorkspace.shared.open(url)
+    }
 }
 

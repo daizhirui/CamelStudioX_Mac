@@ -12,11 +12,6 @@
 
 #include "mcu.h"
 
-/*********** Hardware addesses ***********/
-#define SYS_GDR_REG 0x1f800703   // gdr register
-#define SYS_IOCTL_REG 0x1f800704 // 0=in; 1-out (16-bit), was IO config
-#define SYS_GPIO0_REG 0x1f800705 // GPIO (16-bit) to pad content
-#define SYS_GPIO1_REG 0x1f800706 // GPIO (16_bit) from pad read
 /*********** Value DefinitIOn ************/
 #define OUTPUT 0x1
 #define INPUT 0x0

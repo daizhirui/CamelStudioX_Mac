@@ -12,13 +12,6 @@
 
 #include "mcu.h"
 
-#define T1_CTL0_REG       0x1f800200  // Timer1 (32-bit)control and base
-#define T1_REF_REG        0x1f800201  // Timer1 ref number for PWM(1)
-#define T1_READ_REG       0x1f800202  // Timer1 value
-#define T1_CLRIRQ_REG     0x1f800203  // Timer1 clear IRQ
-#define T1_CLK_REG        0x1f800204  // Timer1 clk div
-#define T1_CLRCNT_REG     0x1f800205  // Timer1 clear counter content (and PWM)
-
 /***** Timer clr stop and flag Setup******/
 #define RT_TC1_Stop() MemoryWrite32(T1_CTL0_REG, 0)
 #define RT_TC1_ClearIrq() MemoryWrite32(T1_CLRIRQ_REG, 0)

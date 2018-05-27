@@ -21,11 +21,7 @@
 
 #include "mcu.h"
 
-/*********** Hardware addesses ***********/
 // this is Watch dog timer
-#define WDT_CTL0_REG    0x1f800b00  // WDT control
-#define WDT_CLR_REG     0x1f800b03  // WDT clear reg
-#define WDT_READ_REG    0x1f800b02  // WDT read reg
 
 /*************** WDT Setup***************/
 /**

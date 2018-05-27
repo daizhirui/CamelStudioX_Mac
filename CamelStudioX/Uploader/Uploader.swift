@@ -42,6 +42,9 @@ class Uploader: NSObject {
         notificationCenter.addObserver(self, selector: #selector(serialPortsWereChanged(_:)), name: NSNotification.Name.ORSSerialPortsWereDisconnected, object: nil)
     }
     
+    /// UI Properties
+    var viewController: DocumentViewController?
+    
     // MARK: - Reaction to Serial Change
     /// Post a notification when a serial device is connected or disconnected.
     @objc func serialPortsWereChanged(_ aNotification: Notification) {
@@ -57,6 +60,7 @@ class Uploader: NSObject {
             title = "Serial Port Disconnected"
             changeType = "disconnected"
             key = ORSDisconnectedSerialPortsKey
+            self.uploadConfigReady = false
         } else {
             return
         }
@@ -92,6 +96,11 @@ class Uploader: NSObject {
                 port.open()
                 self.recentSerialPort = port
                 UserDefaults.standard.set(port.name as Any, forKey: "recentSerialPort")
+                if let vc = self.viewController {
+                    vc.serialPortStateLabel.stringValue = "\(vc.project!.chipType.rawValue) at /dev/cu.\(port.name)"
+                }
+            } else {
+                self.uploadConfigReady = false
             }
         }
     }
@@ -105,6 +114,8 @@ class Uploader: NSObject {
     // MARK: - Upload Control Properties
     /// Indicate if is uploading
     @objc var uploadFlag = false
+    /// Indicate if the configuration of port and binary is ready
+    var uploadConfigReady = false
     /// Indicate the progress
     @objc var progressValue = 0.0
     /// Indicate the current upload stage
@@ -163,10 +174,12 @@ class Uploader: NSObject {
                 self.uploadStageControl(nil)
             } else {
                 _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Failed to get the binary", comment: "Failed to get the binary"))
+                self.uploadConfigReady = false
                 self.uploadFailed()
             }
         } else {
             _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Failed to get the binary", comment: "Failed to get the binary"))
+            self.uploadConfigReady = false
             self.uploadFailed()
         }
     }
@@ -269,6 +282,7 @@ extension Uploader: ORSSerialPortDelegate{
         self.serialPort = nil
         self.uploadFailed()
         _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("Serial Port Disconnected, Uploading Failed", comment: "Serial Port Disconnected, Uploading Failed"))
+        self.uploadConfigReady = false
     }
     
     /// Response to serialPort Error
@@ -276,6 +290,7 @@ extension Uploader: ORSSerialPortDelegate{
         let alertMessage = NSLocalizedString("Serial Port", comment: "Serial Port") + "\(serialPort) " + NSLocalizedString("encountered an error: ", comment: "encountered an error: ") + "\(error)"
         _ = InfoAndAlert.shared.showAlertWindow(with: alertMessage)
         self.serialPort = nil
+        self.uploadConfigReady = false
     }
     
     // MARK: - Send Command
@@ -288,6 +303,14 @@ extension Uploader: ORSSerialPortDelegate{
     func sendCommandToBoard(command: String, responseDescriptor: ORSSerialPacketDescriptor, userInfo: Any?) {
         let commandData = command.data(using: .ascii)!
         let request = ORSSerialRequest(dataToSend: commandData,
+                                       userInfo: userInfo,
+                                       timeoutInterval: timeoutDuration,
+                                       responseDescriptor: responseDescriptor)
+        self.serialPort?.send(request)
+    }
+    func sendDataToBoardAndGetResponse(data: Data, responsePrefix: String?, responseSuffix: String?, bufferSize: UInt, userInfo: Any?) {
+        let responseDescriptor = ORSSerialPacketDescriptor(prefixString: responsePrefix, suffixString: responseSuffix, maximumPacketLength: bufferSize, userInfo: userInfo)
+        let request = ORSSerialRequest(dataToSend: data,
                                        userInfo: userInfo,
                                        timeoutInterval: timeoutDuration,
                                        responseDescriptor: responseDescriptor)
@@ -356,18 +379,22 @@ extension Uploader: ORSSerialPortDelegate{
             case "send targetAddress":
                 self.sendCommandToBoard(command: self.targetAddress+"\n", responsePrefix: nil, responseSuffix: "Waiting for binary image linked at 10000000", bufferSize: 200, userInfo: "send binary")
             case "send binary":
-                self.serialPort?.send(self.binaryData)
-                self.waitForChip()
-                myDebug("binary count = \(self.binaryData.count)\n")
-                myDebug("Wait")
-                for _ in 0...self.binaryData.count/800 {
-                    print(".", terminator: "")
-                    self.waitForChip()
-                }
-                self.sendData("1")
-                self.waitForChip()
-                self.sendCommandToBoard(command: "1f800702\n", responsePrefix: "p1 final index", responseSuffix: "Menu", bufferSize: 120, userInfo: "sendBinary")
-                self.sendData("\0\0\0\0\0\0\0\0\0\0\0\0")   // very important!!!
+                self.sendDataToBoardAndGetResponse(data: self.binaryData, responsePrefix: "p1 final index", responseSuffix: "Menu", bufferSize: 120, userInfo: "sendBinary")
+//                DispatchQueue.main.async {
+//                    [weak self] in
+//                    if let uploader = self {
+//                        uploader.waitForChip()
+//                        myDebug("binary count = \(self?.binaryData.count)\n")
+//                        myDebug("Wait")
+//                        for _ in 0...uploader.binaryData.count/500 {
+//                            print(".", terminator: "")
+//                            uploader.waitForChip()
+//                        }
+//                        uploader.sendData("1")
+//                        uploader.waitForChip()
+//                        uploader.sendData("1f800702\n")
+//                    }
+//                }
                 self.currentUploadStage = .setBaudrate9600
             default: return
             }

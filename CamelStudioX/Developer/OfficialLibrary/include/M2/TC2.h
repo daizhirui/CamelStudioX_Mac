@@ -12,13 +12,7 @@
 
 #include "mcu.h"
 /*********** Hardware addesses ***********/
-#define T2_CTL0_REG 0x1f800400   // Timer2 (32-bit)control and base
-#define T2_REF_REG 0x1f800401    // Timer2 ref number for PWM(4, 32bit)
-#define T2_READ_REG 0x1f800402   // Timer2 value
-#define T2_CLRIRQ_REG 0x1f800403 // Timer2 clear IRQ
-#define T2_CLK_REG 0x1f800404    // Timer2 clk div
-#define T2_CLRCNT_REG 0x1f800405 // Timer2 clear counter content (and PWM)
-#define T2_PHASE_REG 0x1f800406  // Timer2 PWM phase reg (32b, 4 pwm)
+
 
 /***** Timer clr stop and flag Setup******/
 #define RT_TC2_Stop() MemoryWrite32(T2_CTL0_REG, 0)

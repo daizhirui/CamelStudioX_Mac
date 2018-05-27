@@ -569,9 +569,15 @@
                                                 <segue destination="gkE-e8-z7d" kind="show" id="ebd-fH-kZn"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="CamelStudioX Help" keyEquivalent="?" id="DUz-FL-kr8">
+                                        <menuItem title="Official Library Headers" id="ZkU-be-5Ov">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <segue destination="ec3-TP-miZ" kind="show" id="tEG-I7-K0V"/>
+                                                <segue destination="ec3-TP-miZ" kind="show" id="JuG-EP-n1n"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="CamelStudioX Documentation" keyEquivalent="?" id="DUz-FL-kr8">
+                                            <connections>
+                                                <action selector="showDocumentation:" target="eQV-bR-l9y" id="M1t-p5-qYu"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -1401,6 +1407,6 @@ DQ
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V8d-kW-jhl"/>
-        <segue reference="Ubs-oy-ANK"/>
+        <segue reference="7de-7c-mmq"/>
     </inferredMetricsTieBreakers>
 </document>

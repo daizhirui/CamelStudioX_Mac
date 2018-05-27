@@ -1,3 +1,13 @@
+## Version 3.4.0
+----
+
+### Build 24 on 27.05.2018
+
+- Improvement: Stabler Uploader.
+- New Feature: Official Documentation
+- New Feature: Auto-build binary before uploading (It can be canceled in Preference.)
+- New Feature: New library! Now some standard C functions like printf is ready!
+
 ## Version 3.3.2
 ----
 

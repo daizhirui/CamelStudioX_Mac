@@ -40,6 +40,7 @@ typedef unsigned char  uint8;
 #endif
 
 float FP_Neg(float a_fp);
+float FP_Abs(float a_fp);
 float FP_Add(float a_fp, float b_fp);
 float FP_Sub(float a_fp, float b_fp);
 float FP_Mult(float a_fp, float b_fp);
@@ -64,8 +65,6 @@ float FP_Pow(float x, float y);
 #define E2  ((float)7.38905609)         // e^2
 #define INV_E2  ((float)0.13533528)     // 1/e^2
 #define LN_2   ((float)0.69314718)      // ln(2)
-
-void FP_PrintFloat(float a_fp);
 
 #endif //__MATH_H__
 

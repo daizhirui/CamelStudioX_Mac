@@ -81,7 +81,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <box fixedFrame="YES" title="Auto Update" translatesAutoresizingMaskIntoConstraints="NO" id="xIR-Np-YZi">
-                                <rect key="frame" x="17" y="141" width="446" height="72"/>
+                                <rect key="frame" x="17" y="79" width="446" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="6ej-wl-GRf">
                                     <rect key="frame" x="2" y="2" width="442" height="52"/>
@@ -171,9 +171,33 @@ Gw
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <box fixedFrame="YES" title="Uploader Setting" translatesAutoresizingMaskIntoConstraints="NO" id="UKd-kf-VOg">
+                                <rect key="frame" x="17" y="155" width="446" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="2wj-Xt-428">
+                                    <rect key="frame" x="2" y="2" width="442" height="38"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zsk-oa-N4I">
+                                            <rect key="frame" x="4" y="9" width="193" height="18"/>
+                                            <buttonCell key="cell" type="check" title="Auto-Build before uploading" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="m3b-1e-9D6">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="zsk-oa-N4I" secondAttribute="bottom" constant="11" id="SOB-7f-TZp"/>
+                                        <constraint firstItem="zsk-oa-N4I" firstAttribute="top" secondItem="2wj-Xt-428" secondAttribute="top" constant="13" id="VQK-6N-Kze"/>
+                                        <constraint firstItem="zsk-oa-N4I" firstAttribute="leading" secondItem="2wj-Xt-428" secondAttribute="leading" constant="6" id="VV2-wS-TiL"/>
+                                    </constraints>
+                                </view>
+                                <font key="titleFont" size="13" name=".AppleSystemUIFont"/>
+                            </box>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="autoBuild" destination="zsk-oa-N4I" id="E78-WU-lKk"/>
                         <outlet property="autoUpdate" destination="WKU-wP-jJY" id="HUn-td-dzd"/>
                         <outlet property="codeThemeBox" destination="pDZ-Hy-Vdt" id="88C-Q4-5ur"/>
                         <outlet property="updateCheckInterval" destination="eq5-f3-WmE" id="GHr-lz-hp9"/>

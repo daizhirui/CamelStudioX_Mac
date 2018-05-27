@@ -21,15 +21,6 @@
 #ifndef __LCD_H__
 #define __LCD_H__
 
-
-/*********** Hardware addesses ***********/
-#define LCD_CTL0_REG      0x1f800300  // LCD control
-#define LCD_RAM_REG       0x1f800380  // LCD ram starting (80-8C)
-#define LCD_RAM_LINE0     0x1f800380  // LCD ram line0 (80-8C)
-#define LCD_RAM_LINE1     0x1f800384  // LCD ram line1 (80-8C)
-#define LCD_RAM_LINE2     0x1f800388  // LCD ram line2 (80-8C)
-#define LCD_RAM_LINE3     0x1f80038c  // LCD ram line3 (80-8C)
-
 /*********** LCD Special Sign  ***********/
 #define LCD_M2  0,0
 #define kPa  0,2

@@ -25,7 +25,8 @@ class DocumentWindowController: NSWindowController {
         super.windowDidLoad()
         // prepare upload config view controller
         self.uploadConfigViewController.uploader = self.uploader
-        NSUserNotificationCenter.default.delegate = self
+        self.uploader.viewController = self.viewController
+        //NSUserNotificationCenter.default.delegate = self
         // addObservers
         self.addObserversForUpload()
         NotificationCenter.default.addObserver(self, selector: #selector(self.lostFocusAction(_:)), name: NSWindow.didResignMainNotification, object: nil)
@@ -118,7 +119,7 @@ class DocumentWindowController: NSWindowController {
             _ = aCompiler.generateMakefile()
         }
     }
-    func updateBuildResult(errorOutput: String) {
+    func updateBuildResult(errorOutput: String) -> Bool {
         let vc = CompilerMessageViewController.getCurrent
         if errorOutput.count > 0 {
             var warnning_count = 0
@@ -163,14 +164,17 @@ class DocumentWindowController: NSWindowController {
                 message = NSLocalizedString("Some warnning!", comment: "Some warnnings!") + ": \(warnning_count) warnnings!"
             }
             InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: message)
+            return false
         } else {
             self.viewController.sidePanelInfoTextView.string = ""
             vc.textView.string = ""
             // post a notification to inform the user
             InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Succeeded", comment: "Succeeded"))
+            return true
         }
     }
     //*********************** About build binary **************************
+    var buildSuccess = false
     @IBAction func buildBinary(_ sender: Any) {
         // Save the modification at first
         NSDocumentController.shared.currentDocument?.save(self)
@@ -186,7 +190,7 @@ class DocumentWindowController: NSWindowController {
             func buildBinaryAndCheckResult() {
                 // Build the binary
                 let (_, errorOutput) = aCompiler.buildBinary()
-                self.updateBuildResult(errorOutput: errorOutput)
+                self.buildSuccess = self.updateBuildResult(errorOutput: errorOutput)
                 // update project again
                 project.updateFileWrappers()
             }
@@ -202,7 +206,8 @@ class DocumentWindowController: NSWindowController {
                     self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
-                    InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Failed", comment: "Failed"))
+                    InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Failed: Customed Makefile doesn't exist!", comment: "Failed"))
+                    self.buildSuccess = false
                 }
             } else {
                 // generate a makefile before building
@@ -216,7 +221,8 @@ class DocumentWindowController: NSWindowController {
                     self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
-                    InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Failed", comment: "Failed"))
+                    InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Failed: Failed to generate the makefile!", comment: "Failed"))
+                    self.buildSuccess = false
                 }
             }
             // update project inspector
@@ -239,7 +245,7 @@ class DocumentWindowController: NSWindowController {
             func buildLibraryAndCheckResult() {
                 // Build the library
                 let (_, errorOutput) = aCompiler.buildLibrary()
-                self.updateBuildResult(errorOutput: errorOutput)
+                self.buildSuccess = self.updateBuildResult(errorOutput: errorOutput)
                 // update project again
                 project.updateFileWrappers()
             }
@@ -297,6 +303,22 @@ class DocumentWindowController: NSWindowController {
         return uploadConfigViewController
     }()
     @IBAction func loadToBoard(_ sender: Any) {
+        var buildBinary = false
+        if let autoBuild = UserDefaults.standard.value(forKey: "AutoBuild") as? NSControl.StateValue {
+            if autoBuild == .on {
+                buildBinary = true
+            }
+        } else {
+            buildBinary = true
+            UserDefaults.standard.set(NSControl.StateValue.on as Any, forKey: "AutoBuild")
+        }
+        if buildBinary {
+            self.buildBinary(self)
+            if !self.buildSuccess {
+                InfoAndAlert.shared.postNotification(title: "Upload Failed", informativeText: "Fail to build a new binary.")
+                return
+            }
+        }
         if self.uploader.uploadFlag {
             self.uploader.uploadFlag = false
             self.progressInfo.stringValue = NSLocalizedString("Upload Cancelled", comment: "Upload Cancelled")
@@ -317,8 +339,13 @@ class DocumentWindowController: NSWindowController {
                 self.uploader.targetAddress = project.targetAddress
                 self.uploader.binaryURL = project.projectURL?.appendingPathComponent("Release").appendingPathComponent("\(project.targetName).bin")
                 // show the upload config sheet
-                self.uploadConfigViewController.parentVC = self.contentViewController as! DocumentViewController
-                self.viewController.presentViewControllerAsSheet(self.uploadConfigViewController)
+                if !self.uploader.uploadConfigReady {
+                    self.uploadConfigViewController.parentVC = self.contentViewController as! DocumentViewController
+                    self.viewController.presentViewControllerAsSheet(self.uploadConfigViewController)
+                } else {
+                    self.uploader.startUpload()
+                    self.uploader.uploadStageControl(nil)
+                }
             }
         }
     }

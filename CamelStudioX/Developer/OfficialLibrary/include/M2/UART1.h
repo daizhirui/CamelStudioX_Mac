@@ -22,32 +22,32 @@
 #define UART1_LIN_BREAK 0x1f800806
 #define UART1_BRP       0x1f800807
 /*************** UART1 Setup***************/
-#define RT_UART1_Off()             MemoryOr32(UART1_CTL,0x10)                  // UART1 off
-#define RT_UART1_On()              {RT_SPI_Off();MemoryAnd32(UART1_CTL,~0x10);}   // UART1 on
-#define RT_UART1_Busy()            MemoryRead32(UART1_BUSY)                    // check tx busy
-#define RT_UART1_Write(val)        MemoryWrite32(UART1_WRITE,val)              // send the data
-#define RT_UART1_DataReady()       MemoryRead32(UART1_DATA_RDY)                // check data ready
-#define RT_UART1_Read()            MemoryRead32(UART1_READ)                    // read the data
+#define RT_UART1_Off()             MemoryOr32(UART1_CTL_REG,0x10)                  // UART1 off
+#define RT_UART1_On()              {RT_SPI_Off();MemoryAnd32(UART1_CTL_REG,~0x10);}   // UART1 on
+#define RT_UART1_Busy()            MemoryRead32(UART1_BUSY_REG)                    // check tx busy
+#define RT_UART1_Write(val)        MemoryWrite32(UART1_WRITE_REG,val)              // send the data
+#define RT_UART1_DataReady()       MemoryRead32(UART1_DATA_RDY_REG)                // check data ready
+#define RT_UART1_Read()            MemoryRead32(UART1_READ_REG)                    // read the data
 /**
  * @brief This function sets UART1 compare irq on
  * 
  * @return  void
  */
-#define RT_UART1_CompareOn()       MemoryOr32(UART1_CTL,0x2)                   // UART1 compare irq on
+#define RT_UART1_CompareOn()       MemoryOr32(UART1_CTL_REG,0x2)                   // UART1 compare irq on
 /**
  * @brief This function sets UART1 compare irq off
  * 
  * @return  void
  */
-#define RT_UART1_CompareOff()      MemoryAnd32(UART1_CTL,~0x2)                 // UART1 compare irq off
+#define RT_UART1_CompareOff()      MemoryAnd32(UART1_CTL_REG,~0x2)                 // UART1 compare irq off
 /**
  * @brief This function sets UART1 compare value
  * 
  * @return  void
  */
-#define RT_UART1_SetCompare(val)   MemoryOr32(UART1_CTL,val<<8)                // set irq compare bits
-#define RT_UART1_ClearIrq()        MemoryWrite32(UART1_IRQ_ACK,0x0)            // clear irq
-#define RT_UART1_RaiseIrq()        MemoryOr32(UART1_CTL,0x1)                   // raise irq manually
+#define RT_UART1_SetCompare(val)   MemoryOr32(UART1_CTL_REG,val<<8)                // set irq compare bits
+#define RT_UART1_ClearIrq()        MemoryWrite32(UART1_IRQ_ACK_REG,0x0)            // clear irq
+#define RT_UART1_RaiseIrq()        MemoryOr32(UART1_CTL_REG,0x1)                   // raise irq manually
 /**
  * @brief This function sends 1-byte data by UART1
  * 

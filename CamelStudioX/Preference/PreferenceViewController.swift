@@ -14,6 +14,7 @@ class PreferenceViewController: NSViewController {
 
     @IBOutlet weak var codeThemeBox: NSComboBox!
     var mainVC: DocumentViewController!
+    @IBOutlet weak var autoBuild: NSButton!
     @IBOutlet var updater: SUUpdater!
     @IBOutlet weak var autoUpdate: NSButton!
     @IBOutlet weak var updateCheckInterval: NSPopUpButton!
@@ -139,15 +140,23 @@ class PreferenceViewController: NSViewController {
                 self.codeThemeBox.selectItem(at: index)
             }
         }
+        if let state = defaults.value(forKey: "AutoBuild") as? NSControl.StateValue {
+            self.autoBuild.state = state
+        } else {
+            self.autoBuild.state = .on
+            defaults.set(NSControl.StateValue.on as Any, forKey: "AutoBuild")
+        }
         if let state = defaults.value(forKey: "AutoUpdate") as? NSControl.StateValue {
             self.autoUpdate.state = state
         } else {
             self.autoUpdate.state = .on
+            defaults.set(NSControl.StateValue.on as Any, forKey: "AutoUpdate")
         }
         if let tag = defaults.value(forKey: "UpdateCheckInterval") as? Int {
             self.updateCheckInterval.selectItem(withTag: tag)
         } else {
             self.updateCheckInterval.selectItem(withTag: 86400)
+            defaults.set(self.updateCheckInterval.selectedTag() as Any, forKey: "UpdateCheckInterval")
         }
     }
     
@@ -161,8 +170,9 @@ class PreferenceViewController: NSViewController {
         // save setup to Preference.plist
         let defaults = UserDefaults.standard
         defaults.set(theme, forKey: "CodeTheme")
-        defaults.set(self.autoUpdate.state, forKey: "AutoUpdate")
-        defaults.set(self.updateCheckInterval.selectedTag(), forKey: "UpdateCheckInterval")
+        defaults.set(self.autoBuild.state as Any, forKey: "AutoBuild")
+        defaults.set(self.autoUpdate.state as Any, forKey: "AutoUpdate")
+        defaults.set(self.updateCheckInterval.selectedTag() as Any, forKey: "UpdateCheckInterval")
         // update editor
         for window in NSApp.windows {
             if let vc = window.contentViewController as? DocumentViewController {

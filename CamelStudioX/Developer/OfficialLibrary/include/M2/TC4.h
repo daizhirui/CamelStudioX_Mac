@@ -12,14 +12,7 @@
 
 #include "mcu.h"
 
-/*********** Hardware addesses ***********/
-
 // this is PWM/Bz unit, has two PWMs
-#define T4_CTL0_REG 0x1f800a00 // Timer8-4 (2-bit) enable control
-#define T4_REF0_REG 0x1f800a01 // Timer8-4 ref number for PWM0 buz(8-bit)
-#define T4_CLK0_REG 0x1f800a02 // Timer8-4 clk div for PWM0 (8-bit)
-#define T4_REF1_REG 0x1f800a03 // Timer8-4 ref number for PWM1 fast(4-bit)
-#define T4_CLK1_REG 0x1f800a04 // Timer8-4 clk div for PWM1 (8-bit)
 
 /***** Timer clr stop and flag Setup******/
 #define RT_TC4_AllPWM_On() MemoryWrite32(T4_CTL0_REG, 3)
