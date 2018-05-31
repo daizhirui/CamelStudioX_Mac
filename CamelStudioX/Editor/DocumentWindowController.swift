@@ -303,22 +303,6 @@ class DocumentWindowController: NSWindowController {
         return uploadConfigViewController
     }()
     @IBAction func loadToBoard(_ sender: Any) {
-        var buildBinary = false
-        if let autoBuild = UserDefaults.standard.value(forKey: "AutoBuild") as? NSControl.StateValue {
-            if autoBuild == .on {
-                buildBinary = true
-            }
-        } else {
-            buildBinary = true
-            UserDefaults.standard.set(NSControl.StateValue.on as Any, forKey: "AutoBuild")
-        }
-        if buildBinary {
-            self.buildBinary(self)
-            if !self.buildSuccess {
-                InfoAndAlert.shared.postNotification(title: "Upload Failed", informativeText: "Fail to build a new binary.")
-                return
-            }
-        }
         if self.uploader.uploadFlag {
             self.uploader.uploadFlag = false
             self.progressInfo.stringValue = NSLocalizedString("Upload Cancelled", comment: "Upload Cancelled")
@@ -329,6 +313,22 @@ class DocumentWindowController: NSWindowController {
             // remove observers
             // self.removeObserversForUpload()
         } else {
+            var buildBinary = false
+            if let autoBuild = UserDefaults.standard.value(forKey: "AutoBuild") as? NSControl.StateValue {
+                if autoBuild == .on {
+                    buildBinary = true
+                }
+            } else {
+                buildBinary = true
+                UserDefaults.standard.set(NSControl.StateValue.on as Any, forKey: "AutoBuild")
+            }
+            if buildBinary {
+                self.buildBinary(self)
+                if !self.buildSuccess {
+                    InfoAndAlert.shared.postNotification(title: "Upload Failed", informativeText: "Fail to build a new binary.")
+                    return
+                }
+            }
             if let project = self.viewController.project {
                 self.uploader.uploadFlag = true
                 // setup ui

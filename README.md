@@ -1,6 +1,15 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.4.1
+----
+
+### Build 25 on 31.05.2018
+
+- Fix: crash sometimes when building binary.
+- Fix: build binary when the uploading is cancelled.
+- Fix: bugs in official library.
+
 ## Version 3.4.0
 ----
 

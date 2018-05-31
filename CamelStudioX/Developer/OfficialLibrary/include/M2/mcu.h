@@ -1,3 +1,4 @@
+
 /**
  * @brief M2 micro core unit
  * 
@@ -141,8 +142,8 @@
 typedef void (*FuncPtr)(void);
 typedef void (*FuncPtr2)(unsigned long, unsigned long);
 typedef void (*FuncPtr1)(unsigned long);
-#define flashWrite(value, address) {FuncPtr2 funcptr; funcptr = (FuncPtr2)0x2d8; funcptr(value, address);}
-#define flashErase(address) {unsigned long addr; FuncPtr1 funcptr; funcptr =  (FuncPtr1)0x30c; addr = (((((address>>16)&0xF)|0x1010)<<16) + (address&0xFFFF)); funcptr(addr);}
+#define flashWrite(value, address) {FuncPtr2 funcptr; funcptr = (FuncPtr2)0x2c4; funcptr(value, address);}
+#define flashErase(address) {unsigned long addr; FuncPtr1 funcptr; funcptr =  (FuncPtr1)0x2f8; addr = (((((address>>16)&0xF)|0x1010)<<16) + (address&0xFFFF)); funcptr(addr);}
 
 /**
  * @brief Jump to a specific address.
@@ -165,9 +166,10 @@ typedef void (*FuncPtr1)(unsigned long);
 /**
  * @brief System Interrupt.
  */
-#define RT_SYSINT_Flag()  MemoryRead(SYS_IRQ_REG)
-#define RT_SYSINT_En()  MemoryWrite(SYS_CRL0_REG, 0x1)
-#define RT_SYSINT_On(A) (MemoryRead(SYS_IRQ_REG)&A)
+#define RT_SYSINT_Flag()    MemoryRead(SYS_IRQ_REG)
+#define RT_SYSINT_En()      MemoryOr(SYS_CTL0_REG, 0x1)
+#define RT_SYSINT_Off()     MemoryAnd(SYS_CTL0_REG, ~0x1)
+#define RT_SYSINT_On(A)     (MemoryRead(SYS_IRQ_REG)&A)
 
 void RT_Clr_Sram();
 
