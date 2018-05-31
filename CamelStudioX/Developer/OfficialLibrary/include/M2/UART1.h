@@ -30,39 +30,40 @@
 #define RT_UART1_Read()            MemoryRead32(UART1_READ_REG)                    // read the data
 /**
  * @brief This function sets UART1 compare irq on
- * 
+ *
  * @return  void
  */
 #define RT_UART1_CompareOn()       MemoryOr32(UART1_CTL_REG,0x2)                   // UART1 compare irq on
 /**
  * @brief This function sets UART1 compare irq off
- * 
+ *
  * @return  void
  */
 #define RT_UART1_CompareOff()      MemoryAnd32(UART1_CTL_REG,~0x2)                 // UART1 compare irq off
 /**
  * @brief This function sets UART1 compare value
- * 
+ *
  * @return  void
  */
 #define RT_UART1_SetCompare(val)   MemoryOr32(UART1_CTL_REG,val<<8)                // set irq compare bits
 #define RT_UART1_ClearIrq()        MemoryWrite32(UART1_IRQ_ACK_REG,0x0)            // clear irq
 #define RT_UART1_RaiseIrq()        MemoryOr32(UART1_CTL_REG,0x1)                   // raise irq manually
+#define RT_UART1_CheckIrq()        MemoryBitAt(UART1_CTL_REG,0)                    // Check irq
 /**
  * @brief This function sends 1-byte data by UART1
- * 
+ *
  * @param c     1-byte data to send
  */
 void RT_UART1_putchar(unsigned char c);
 /**
  * @brief This function sends a string by UART1
- * 
+ *
  * @param string    the string to send
  */
 void RT_UART1_puts(unsigned char *s);
 /**
  * @brief This function returns 1-byte data from UART1
- * 
+ *
  * @return unsigned char    1-byte data from UART1
  */
 unsigned char RT_UART1_getchar();

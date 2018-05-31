@@ -1,3 +1,11 @@
+## Version 3.4.1
+----
+
+### Build 25 on 31.05.2018
+
+- Fix: crash sometimes when building binary.
+- Fix: build binary when the uploading is cancelled.
+
 ## Version 3.4.0
 ----
 

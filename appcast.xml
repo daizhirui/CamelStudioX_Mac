@@ -92,5 +92,21 @@
             <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.4.0/CamelStudioX_3.4.0_Build24.zip" sparkle:version="24" sparkle:shortVersionString="3.4.0" length="67362343" type="application/octet-stream" sparkle:dsaSignature="MCwCFDLHlYpEZRP8uXf64XtLVCT8r2BSAhQihcO1qQijijZae6+BzvdybcxYXw=="/>
         </item>
         
+        <item>
+            <title>3.4.1</title>
+            <description><![CDATA[
+                <h2>Bugs Fixed</h2>
+                <ul>
+                <li>Crash sometimes when building binary.</li>
+                <li>Build binary when the uploading is cancelled.</li>
+                <li>Bugs in official library.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Thu, 31 May 2018 14:37:26 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.4.1/CamelStudioX_3.4.1_Build25.zip" sparkle:version="25" sparkle:shortVersionString="3.4.1" length="67367429" type="application/octet-stream" sparkle:dsaSignature="MCwCFBK4TlvM3W0Hyh1sfeqdhl6xY6ZvAhQlm9K+/rvoi3DEu9nGkqve1weHmA=="/>
+        </item>
+        
     </channel></rss>
 
