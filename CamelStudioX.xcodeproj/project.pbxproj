@@ -352,6 +352,8 @@
 		23C605122073802600375959 /* LineNumberTextView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23C6050A2073802600375959 /* LineNumberTextView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23C6051A2073804400375959 /* LineNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605162073804400375959 /* LineNumberTextView.swift */; };
 		23C6051D2073804400375959 /* LineNumberGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605192073804400375959 /* LineNumberGutter.swift */; };
+		23D4FB0A20C0230000F3B7A5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB0920C0230000F3B7A5 /* StringExtension.swift */; };
+		23D4FB0C20C023DB00F3B7A5 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 23D4FB0B20C023DB00F3B7A5 /* appcast.xml */; };
 		23F0DFFB20B7002000F3F2C8 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F0DFFA20B7002000F3F2C8 /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -755,6 +757,8 @@
 		23C6050D2073802600375959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23C605162073804400375959 /* LineNumberTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberTextView.swift; sourceTree = "<group>"; };
 		23C605192073804400375959 /* LineNumberGutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberGutter.swift; sourceTree = "<group>"; };
+		23D4FB0920C0230000F3B7A5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		23D4FB0B20C023DB00F3B7A5 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		23F0DFFA20B7002000F3F2C8 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		43DF96228DC47F7C9C27B22D /* Pods_CamelStudioX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamelStudioX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6D528D0D512A05BD380B50 /* Pods-CamelStudioX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.debug.xcconfig"; sourceTree = "<group>"; };
@@ -838,12 +842,13 @@
 			path = Markdown;
 			sourceTree = "<group>";
 		};
-		23620CE62095F5D100036D27 /* Debug */ = {
+		23620CE62095F5D100036D27 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				23620CE72095F5E600036D27 /* MyDebug.swift */,
+				23D4FB0920C0230000F3B7A5 /* StringExtension.swift */,
 			);
-			path = Debug;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		2364290B20736B1C00FB9C33 /* CreateProject */ = {
@@ -1171,6 +1176,7 @@
 		2378FE6520715F0B0011969E = {
 			isa = PBXGroup;
 			children = (
+				23D4FB0B20C023DB00F3B7A5 /* appcast.xml */,
 				23205A842099E4790098B431 /* README.md */,
 				233DBE1C207568F100269D8E /* Markdown */,
 				23859A0820754E6000F2FF08 /* PlotKit */,
@@ -1199,7 +1205,7 @@
 			isa = PBXGroup;
 			children = (
 				23F0DFF720B6FFBA00F3F2C8 /* InfoAndAlert */,
-				23620CE62095F5D100036D27 /* Debug */,
+				23620CE62095F5D100036D27 /* Utility */,
 				2378FE7120715F0B0011969E /* AppDelegate.swift */,
 				2378FE8B2071607E0011969E /* Welcome */,
 				2378FE9920721D610011969E /* Preference */,
@@ -1540,7 +1546,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "戴植锐";
 				TargetAttributes = {
 					233DBE1A207568F100269D8E = {
@@ -1876,6 +1882,7 @@
 				238599D82073EFF000F2FF08 /* DataAnalyzer.storyboard in Resources */,
 				2364290A2072F77200FB9C33 /* ProjectConfig.storyboard in Resources */,
 				2378FE9F20721DAC0011969E /* VerionRecord.storyboard in Resources */,
+				23D4FB0C20C023DB00F3B7A5 /* appcast.xml in Resources */,
 				23859A1120754EBC00F2FF08 /* Info.plist in Resources */,
 				233DBE0C2075668B00269D8E /* ch34x.pkg in Resources */,
 				233DBE0D2075668B00269D8E /* pl2303.pkg in Resources */,
@@ -1997,6 +2004,7 @@
 				231D5D7020724A3800486DC7 /* Compiler.swift in Sources */,
 				2391ACA820768E6F009C5C6D /* WelcomeWindow.swift in Sources */,
 				238599D12073E10600F2FF08 /* SerialController.swift in Sources */,
+				23D4FB0A20C0230000F3B7A5 /* StringExtension.swift in Sources */,
 				238599DA2073F12000F2FF08 /* DataAnalyzerViewController.swift in Sources */,
 				236429082072C34400FB9C33 /* DocumentWindowController.swift in Sources */,
 				236428E82072B9D200FB9C33 /* CreateProjectViewController.swift in Sources */,
@@ -2101,7 +2109,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2138,7 +2146,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2173,7 +2181,7 @@
 		23642B3420737BDF00FB9C33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2204,7 +2212,7 @@
 		23642B3520737BDF00FB9C33 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2398,7 +2406,7 @@
 		23859A2120754ECC00F2FF08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2429,7 +2437,7 @@
 		23859A2220754ECC00F2FF08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2461,7 +2469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2494,7 +2502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
