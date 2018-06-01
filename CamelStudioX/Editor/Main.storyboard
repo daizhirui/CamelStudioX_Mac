@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="101202" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="14019"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
         <capability name="the Touch Bar" minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
@@ -517,7 +517,13 @@
                                         <menuItem title="Show SidePanel" state="on" keyEquivalent="s" id="RVj-sA-8qc">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
-                                                <action selector="toggelSidePanel:" target="gal-5o-MU4" id="crs-B2-WkZ"/>
+                                                <action selector="toggelPanel:" target="gal-5o-MU4" id="ds2-Wn-MPj"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show Build Message Panel" state="on" keyEquivalent="b" id="hL3-eL-wmz">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggelPanel:" target="gal-5o-MU4" id="aP8-cm-Xki"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="F1u-hu-tnI">
@@ -761,28 +767,12 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="F6FFE7ED-C423-4873-87D4-B1332CF92343" label="Side Panel" paletteLabel="Side Panel" image="ic_chrome_reader_mode" id="uk4-lL-40H">
-                                    <nil key="toolTip"/>
-                                    <size key="minSize" width="60" height="25"/>
-                                    <size key="maxSize" width="60" height="40"/>
-                                    <button key="view" verticalHuggingPriority="750" id="LL6-6H-oNo">
-                                        <rect key="frame" x="1" y="14" width="60" height="25"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Textured Rounded" bezelStyle="texturedRounded" image="ic_chrome_reader_mode" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z77-RI-Woj">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="toggelSidePanel:" target="rhG-B7-cUS" id="O1j-9m-Lnf"/>
-                                        </connections>
-                                    </button>
-                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="ngP-eS-1Dx"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="fi2-WS-rta"/>
                                 <toolbarItem implicitItemIdentifier="2E7144B1-53F9-40D9-996D-7BC8DDC0246B" label="" paletteLabel="" tag="-1" id="EbJ-9i-Rau" userLabel="Indicator">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="163" height="26"/>
-                                    <size key="maxSize" width="8000" height="96"/>
+                                    <size key="minSize" width="150" height="33"/>
+                                    <size key="maxSize" width="8000" height="40"/>
                                     <customView key="view" id="aFo-rQ-Q7s">
                                         <rect key="frame" x="0.0" y="14" width="275" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -809,6 +799,36 @@
                                         </subviews>
                                     </customView>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="0EB41A1F-24E5-4A00-ACAC-41BFF7922996" explicitItemIdentifier="SidePanel" label="Side Panel" paletteLabel="Side Panel" toolTip="Hide or show the Project Inspector" image="astro_side_panel_left_on" id="0Ff-Ii-CBH">
+                                    <size key="minSize" width="82" height="32"/>
+                                    <size key="maxSize" width="82" height="32"/>
+                                    <button key="view" verticalHuggingPriority="750" id="M2Q-Q5-MTl">
+                                        <rect key="frame" x="0.0" y="14" width="82" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Side Panel" bezelStyle="rounded" image="astro_side_panel_left_on" imagePosition="only" alignment="center" alternateImage="astro_side_panel_left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="60Y-tq-NuL">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="toggelPanel:" target="rhG-B7-cUS" id="8s3-iU-YBi"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="9ED22D8C-62C7-4C11-86CB-CDF5E17FA151" explicitItemIdentifier="BuildMessagePanel" label="Build Message" paletteLabel="Build Message" toolTip="Hide or show the Build Message Panel" image="astro_side_panel_bottom_on" id="PDw-hv-kdR">
+                                    <size key="minSize" width="60" height="32"/>
+                                    <size key="maxSize" width="82" height="40"/>
+                                    <button key="view" verticalHuggingPriority="750" id="wBc-39-HPy">
+                                        <rect key="frame" x="1" y="14" width="82" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Build Message" bezelStyle="rounded" image="astro_side_panel_bottom_on" imagePosition="only" alignment="center" alternateImage="astro_side_panel_bottom" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4ur-kD-Ano">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="toggelPanel:" target="rhG-B7-cUS" id="Abt-7h-fGO"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="I7A-Z6-n03"/>
@@ -821,7 +841,8 @@
                                 <toolbarItem reference="fi2-WS-rta"/>
                                 <toolbarItem reference="EbJ-9i-Rau"/>
                                 <toolbarItem reference="fi2-WS-rta"/>
-                                <toolbarItem reference="uk4-lL-40H"/>
+                                <toolbarItem reference="0Ff-Ii-CBH"/>
+                                <toolbarItem reference="PDw-hv-kdR"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -1122,7 +1143,7 @@
                                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OAN-Ee-G8a" userLabel="SegmentControl">
                                                 <rect key="frame" x="0.0" y="527" width="314" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="0jJ-dJ-6Eh"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="400" id="0jJ-dJ-6Eh"/>
                                                     <constraint firstAttribute="height" constant="18" id="5KC-35-Aa2"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Xzk-5P-d4N"/>
                                                 </constraints>
@@ -1152,45 +1173,61 @@
                                         <rect key="frame" x="315" y="0.0" width="575" height="546"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYs-wD-5l6">
+                                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="8kL-hp-0sm" userLabel="EditAreaSplitView">
                                                 <rect key="frame" x="0.0" y="0.0" width="575" height="546"/>
-                                                <clipView key="contentView" id="4VM-jp-rrU">
-                                                    <rect key="frame" x="1" y="1" width="573" height="544"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <subviews>
-                                                        <textView importsGraphics="NO" verticallyResizable="YES" findStyle="panel" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" allowsNonContiguousLayout="YES" textCompletion="NO" id="xFQ-1d-nti" customClass="EditorTextView" customModule="LineNumberTextView">
-                                                            <rect key="frame" x="0.0" y="0.0" width="573" height="544"/>
+                                                <subviews>
+                                                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="xYs-wD-5l6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="575" height="418"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <clipView key="contentView" id="4VM-jp-rrU">
+                                                            <rect key="frame" x="1" y="1" width="573" height="416"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textView importsGraphics="NO" verticallyResizable="YES" findStyle="panel" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" allowsNonContiguousLayout="YES" textCompletion="NO" id="xFQ-1d-nti" customClass="EditorTextView" customModule="LineNumberTextView">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="573" height="416"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <size key="minSize" width="573" height="416"/>
+                                                                    <size key="maxSize" width="632" height="10000000"/>
+                                                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="hpm-QP-THB" id="YZd-JN-7kn"/>
+                                                                    </connections>
+                                                                </textView>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <size key="minSize" width="573" height="544"/>
-                                                            <size key="maxSize" width="632" height="10000000"/>
-                                                            <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <connections>
-                                                                <outlet property="delegate" destination="hpm-QP-THB" id="YZd-JN-7kn"/>
-                                                            </connections>
-                                                        </textView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </clipView>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="76B-93-ISS"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="mFI-HH-16G"/>
-                                                </constraints>
-                                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="IS4-Xl-FUT">
-                                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </scroller>
-                                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9bh-9X-jjL">
-                                                    <rect key="frame" x="558" y="1" width="16" height="544"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </scroller>
-                                            </scrollView>
+                                                        </clipView>
+                                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="IS4-Xl-FUT">
+                                                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </scroller>
+                                                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9bh-9X-jjL">
+                                                            <rect key="frame" x="558" y="1" width="16" height="416"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </scroller>
+                                                    </scrollView>
+                                                    <containerView id="J0v-7S-7Jt">
+                                                        <rect key="frame" x="0.0" y="419" width="575" height="127"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="127" id="tVx-jr-vdC"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <segue destination="hy1-fe-6F4" kind="embed" id="LKa-HJ-XKu"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                                <holdingPriorities>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                </holdingPriorities>
+                                            </splitView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="xYs-wD-5l6" firstAttribute="top" secondItem="mA7-SE-9l1" secondAttribute="top" id="B8e-nd-ui1"/>
-                                            <constraint firstAttribute="bottom" secondItem="xYs-wD-5l6" secondAttribute="bottom" id="bEe-uT-qjS"/>
-                                            <constraint firstItem="xYs-wD-5l6" firstAttribute="leading" secondItem="mA7-SE-9l1" secondAttribute="leading" id="ljF-vb-CYq"/>
-                                            <constraint firstAttribute="trailing" secondItem="xYs-wD-5l6" secondAttribute="trailing" id="zvX-3V-0kf"/>
+                                            <constraint firstAttribute="trailing" secondItem="8kL-hp-0sm" secondAttribute="trailing" id="HHq-1o-1vD"/>
+                                            <constraint firstAttribute="bottom" secondItem="8kL-hp-0sm" secondAttribute="bottom" id="Jcs-5y-4IP"/>
+                                            <constraint firstItem="8kL-hp-0sm" firstAttribute="top" secondItem="mA7-SE-9l1" secondAttribute="top" id="xVf-3t-00U"/>
+                                            <constraint firstItem="8kL-hp-0sm" firstAttribute="leading" secondItem="mA7-SE-9l1" secondAttribute="leading" id="yrU-X2-UT2"/>
                                         </constraints>
                                     </customView>
                                 </subviews>
@@ -1240,8 +1277,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="compilerMessageView" destination="J0v-7S-7Jt" id="5uh-qL-cWK"/>
                         <outlet property="editArea" destination="xFQ-1d-nti" id="q27-WT-Y1Z"/>
                         <outlet property="editAreaScrollView" destination="xYs-wD-5l6" id="aNJ-eD-sxJ"/>
+                        <outlet property="editAreaSplitView" destination="8kL-hp-0sm" id="xJ9-Yj-b9T"/>
                         <outlet property="languageComboBox" destination="woW-bz-ceC" id="8c6-xs-wz8"/>
                         <outlet property="projectInspector" destination="CE9-7U-Nk7" id="K22-4W-wMm"/>
                         <outlet property="projectInspectorMenu" destination="KTs-7G-lD3" id="IGx-dy-GXg"/>
@@ -1382,15 +1421,72 @@ DQ
             </objects>
             <point key="canvasLocation" x="989" y="679"/>
         </scene>
+        <!--Compiler Message View Controller-->
+        <scene sceneID="QzQ-po-qxN">
+            <objects>
+                <viewController id="hy1-fe-6F4" customClass="CompilerMessageViewController" customModule="CamelStudioX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="JZ2-0X-8n8">
+                        <rect key="frame" x="0.0" y="0.0" width="789" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evg-Yh-jaC">
+                                <rect key="frame" x="0.0" y="0.0" width="789" height="270"/>
+                                <clipView key="contentView" id="pk5-Tr-Zel">
+                                    <rect key="frame" x="1" y="1" width="787" height="268"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" findStyle="panel" allowsCharacterPickerTouchBarItem="NO" usesRuler="YES" allowsNonContiguousLayout="YES" textCompletion="NO" spellingCorrection="YES" id="XNg-Jt-U2T">
+                                            <rect key="frame" x="0.0" y="0.0" width="787" height="268"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="787" height="268"/>
+                                            <size key="maxSize" width="787" height="10000000"/>
+                                            <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="huT-Kz-i3A"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="pcp-hh-MYO"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="18h-Fp-YhK">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="z9W-B1-xlj">
+                                    <rect key="frame" x="772" y="1" width="16" height="268"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Evg-Yh-jaC" secondAttribute="bottom" id="BEk-uf-jF0"/>
+                            <constraint firstItem="Evg-Yh-jaC" firstAttribute="top" secondItem="JZ2-0X-8n8" secondAttribute="top" id="FXp-Uz-y12"/>
+                            <constraint firstItem="Evg-Yh-jaC" firstAttribute="leading" secondItem="JZ2-0X-8n8" secondAttribute="leading" id="d0P-lx-oW3"/>
+                            <constraint firstAttribute="trailing" secondItem="Evg-Yh-jaC" secondAttribute="trailing" id="pCL-7u-GKV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="XNg-Jt-U2T" id="qnJ-ys-oWn"/>
+                    </connections>
+                </viewController>
+                <customObject id="rRn-iC-6o5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="1640"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NSFolder" width="32" height="32"/>
         <image name="NSRefreshTemplate" width="11" height="15"/>
         <image name="NSTouchBarFolderTemplate" width="22" height="30"/>
         <image name="NSTouchBarTextListTemplate" width="18" height="30"/>
+        <image name="astro_side_panel_bottom" width="32" height="32"/>
+        <image name="astro_side_panel_bottom_on" width="32" height="32"/>
+        <image name="astro_side_panel_left" width="32" height="32"/>
+        <image name="astro_side_panel_left_on" width="32" height="32"/>
         <image name="ic_build" width="48" height="48"/>
         <image name="ic_build_white" width="48" height="48"/>
-        <image name="ic_chrome_reader_mode" width="48" height="48"/>
         <image name="ic_chrome_reader_mode_white" width="48" height="48"/>
         <image name="ic_create_new_folder" width="48" height="48"/>
         <image name="ic_create_new_folder_white" width="48" height="48"/>
@@ -1407,6 +1503,6 @@ DQ
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V8d-kW-jhl"/>
-        <segue reference="7de-7c-mmq"/>
+        <segue reference="Ubs-oy-ANK"/>
     </inferredMetricsTieBreakers>
 </document>

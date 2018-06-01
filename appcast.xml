@@ -108,5 +108,29 @@
             <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.4.1/CamelStudioX_3.4.1_Build25.zip" sparkle:version="25" sparkle:shortVersionString="3.4.1" length="67367429" type="application/octet-stream" sparkle:dsaSignature="MCwCFBK4TlvM3W0Hyh1sfeqdhl6xY6ZvAhQlm9K+/rvoi3DEu9nGkqve1weHmA=="/>
         </item>
         
+        <item>
+            <title>3.4.2</title>
+            <description><![CDATA[
+                <h2>Bugs Fixed</h2>
+                <ul>
+                <li>Refues to upload when just some warnings appear during compiling.</li>
+                <li>printf cannot print float variable.</li>
+                </ul>
+                <h2>Improvement</h2>
+                <ul>
+                <li>Serial Monitor doesn't affect uploading now.</li>
+                <li>Soft float library supports double now! This library is renamed to soft_fp.</li>
+                </ul>
+                <h2>New Feature</h2>
+                <ul>
+                <li>Detect serial drivers.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Fri, 01 Jun 2018 17:34:00 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.4.2/CamelStudioX_3.4.2_Build26.zip" sparkle:version="26" sparkle:shortVersionString="3.4.2" length="67386570" type="application/octet-stream" sparkle:dsaSignature="MCwCFBdZWcwRa3lS+xf6C5qyRw+jwRIxAhQK86m+iNx1RWPFVv642XWmg4OaTQ=="/>
+        </item>
+        
     </channel></rss>
 

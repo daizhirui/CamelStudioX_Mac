@@ -31,6 +31,9 @@
 		233DBE2F2075693100269D8E /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE2A2075693100269D8E /* Options.swift */; };
 		233DBE302075693100269D8E /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE2B2075693100269D8E /* Markdown.swift */; };
 		233DBE3220756F3E00269D8E /* GetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE3120756F3E00269D8E /* GetNameViewController.swift */; };
+		23454AD020C037D700823EC8 /* SerialDriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23454ACF20C037D700823EC8 /* SerialDriverManager.swift */; };
+		23454AD220C0C14E00823EC8 /* SerialMonitorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23454AD120C0C14E00823EC8 /* SerialMonitorWindowController.swift */; };
+		23454AD420C1596300823EC8 /* NSTextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23454AD320C1596300823EC8 /* NSTextViewExtensions.swift */; };
 		23620CE82095F5E600036D27 /* MyDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE72095F5E600036D27 /* MyDebug.swift */; };
 		236428CE2072AB0E00FB9C33 /* CreateProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */; };
 		236428E82072B9D200FB9C33 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */; };
@@ -432,6 +435,9 @@
 		233DBE2A2075693100269D8E /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		233DBE2B2075693100269D8E /* Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
 		233DBE3120756F3E00269D8E /* GetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameViewController.swift; sourceTree = "<group>"; };
+		23454ACF20C037D700823EC8 /* SerialDriverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialDriverManager.swift; sourceTree = "<group>"; };
+		23454AD120C0C14E00823EC8 /* SerialMonitorWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialMonitorWindowController.swift; sourceTree = "<group>"; };
+		23454AD320C1596300823EC8 /* NSTextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextViewExtensions.swift; sourceTree = "<group>"; };
 		23620CE72095F5E600036D27 /* MyDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDebug.swift; sourceTree = "<group>"; };
 		236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProject.storyboard; sourceTree = "<group>"; };
 		236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
@@ -813,6 +819,7 @@
 		231D5D6E20724A1E00486DC7 /* Compiler */ = {
 			isa = PBXGroup;
 			children = (
+				23A221D620B71C07007F146D /* CompilerMessageViewController.swift */,
 				231D5D7120724E1200486DC7 /* TerminalCommand.swift */,
 				231D5D6F20724A3800486DC7 /* Compiler.swift */,
 			);
@@ -847,6 +854,8 @@
 			children = (
 				23620CE72095F5E600036D27 /* MyDebug.swift */,
 				23D4FB0920C0230000F3B7A5 /* StringExtension.swift */,
+				23454ACF20C037D700823EC8 /* SerialDriverManager.swift */,
+				23454AD320C1596300823EC8 /* NSTextViewExtensions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1286,6 +1295,7 @@
 			children = (
 				2378FEA320721E150011969E /* SerialMonitor.storyboard */,
 				238599CE2073DC0700F2FF08 /* SerialMonitorViewController.swift */,
+				23454AD120C0C14E00823EC8 /* SerialMonitorWindowController.swift */,
 				238599D02073E10600F2FF08 /* SerialController.swift */,
 				23859A01207521BA00F2FF08 /* SerialMonitorConfigViewController.swift */,
 			);
@@ -1381,7 +1391,6 @@
 				2378FEAA207224C90011969E /* InfoAndAlert.swift */,
 				23F0DFFA20B7002000F3F2C8 /* AlertViewController.swift */,
 				23A221D420B707D6007F146D /* Alert.storyboard */,
-				23A221D620B71C07007F146D /* CompilerMessageViewController.swift */,
 			);
 			path = InfoAndAlert;
 			sourceTree = "<group>";
@@ -2002,6 +2011,7 @@
 				2364290E20736B5100FB9C33 /* ProjectConfigViewController.swift in Sources */,
 				2378FE7420715F0B0011969E /* DocumentViewController.swift in Sources */,
 				231D5D7020724A3800486DC7 /* Compiler.swift in Sources */,
+				23454AD020C037D700823EC8 /* SerialDriverManager.swift in Sources */,
 				2391ACA820768E6F009C5C6D /* WelcomeWindow.swift in Sources */,
 				238599D12073E10600F2FF08 /* SerialController.swift in Sources */,
 				23D4FB0A20C0230000F3B7A5 /* StringExtension.swift in Sources */,
@@ -2019,10 +2029,12 @@
 				2391ACA720768E6F009C5C6D /* WelcomeViewController.swift in Sources */,
 				2378FE7620715F0B0011969E /* Document.swift in Sources */,
 				2378FEA9207221B40011969E /* ProjectManager.swift in Sources */,
+				23454AD220C0C14E00823EC8 /* SerialMonitorWindowController.swift in Sources */,
 				233DBE042075636100269D8E /* PreferenceViewController.swift in Sources */,
 				238599D42073E14D00F2FF08 /* Uploader.swift in Sources */,
 				233DBE112075686C00269D8E /* VersionRecordViewController.swift in Sources */,
 				233DBE3220756F3E00269D8E /* GetNameViewController.swift in Sources */,
+				23454AD420C1596300823EC8 /* NSTextViewExtensions.swift in Sources */,
 				231D5D7220724E1200486DC7 /* TerminalCommand.swift in Sources */,
 				23F0DFFB20B7002000F3F2C8 /* AlertViewController.swift in Sources */,
 				238599DF207420B900F2FF08 /* UploadConfigViewController.swift in Sources */,

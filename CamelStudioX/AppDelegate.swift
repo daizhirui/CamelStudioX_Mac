@@ -24,10 +24,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             // no document is opened or being opened(Restoration), show the welcome window now
             self.showWelcomeWindow(self)
         }
-        // change the update server if it is in China
-//        if TimeZone.current.secondsFromGMT() / 3600 == 8 {
-//            self.updater.feedURL = URL(string: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml")
-//        }
+        // check driver
+        let checkDriver: Bool
+        if let noCheckDriver = UserDefaults.standard.object(forKey: "Don't Show Alert: SerialDriverDetect") as? Bool {
+            checkDriver = !noCheckDriver
+        } else {
+            checkDriver = true
+        }
+        if checkDriver {
+            if !SerialDriverManager.serialDriverDetected {
+                _ = InfoAndAlert.shared.showAlertWindow(with: "No serial driver detected, do you want to install a serial driver?", allowCancel: true, showDontShowAgain: true, completedHandler: {
+                    SerialDriverManager.chooseInstaller()
+                })
+            }
+        }
     }
     
     // modalWindow 关闭事件处理函数
@@ -148,40 +158,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     /// Invoke by install driver menu
     @IBAction func openDriverInstaller(_ sender: Any) {
-        let alert = NSAlert()
-        // add OK button
-        alert.addButton(withTitle: "CH340")
-        alert.addButton(withTitle: "PL2303")
-        alert.addButton(withTitle: "Cancel")
-        // set the alert title
-        alert.messageText = NSLocalizedString("Alert", comment: "NSAlert Title")
-        alert.informativeText = NSLocalizedString("Please choose the driver", comment: "Please choose the driver")
-        alert.alertStyle = .critical
-        var window: NSWindow!
-        if let mainWindow = NSApp.mainWindow {
-            window = mainWindow
-        } else {
-            self.showWelcomeWindow(self)
-            window = WelcomeWindow.windowOnShow
-        }
-        
-        alert.beginSheetModal(for: window, completionHandler: { returnCode in
-            myDebug(returnCode)
-            if returnCode.rawValue == 1000 {
-                if let path = Bundle.main.url(forResource: "ch34x", withExtension: "pkg")?.relativePath {
-                    NSWorkspace.shared.openFile(path)
-                } else {
-                    _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("ch34x.pkg lost!", comment: "ch34x.pkg lost!"))
-                }
-            }
-            if returnCode.rawValue == 1001 {
-                if let path = Bundle.main.url(forResource: "pl2303", withExtension: "pkg")?.relativePath {
-                    NSWorkspace.shared.openFile(path)
-                } else {
-                    _ = InfoAndAlert.shared.showAlertWindow(with: NSLocalizedString("pl2303.pkg lost!", comment: "pl2303.pkg lost!"))
-                }
-            }
-        })
+        SerialDriverManager.chooseInstaller()
     }
     @IBAction func showDocumentation(_ sender: Any) {
         let url = Bundle.main.bundleURL.appendingPathComponent("/Contents/Resources/Developer/OfficialLibrary/doc/index.html")

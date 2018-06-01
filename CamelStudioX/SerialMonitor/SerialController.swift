@@ -100,12 +100,14 @@ class SerialController: NSObject, ORSSerialPortDelegate {
     }
     /// response to serialPort opened
     func serialPortWasOpened(_ serialPort: ORSSerialPort) {
-        self.switchButton?.title = NSLocalizedString("Close", comment: "Close")
+        //self.switchButton?.title = NSLocalizedString("Close", comment: "Close")
+        self.switchButton?.state = .on
         myDebug("\(serialPort.name) is opened")
     }
     /// response to serialPort closed
     func serialPortWasClosed(_ serialPort: ORSSerialPort) {
-        self.switchButton?.title = NSLocalizedString("Open", comment: "Open")
+        //self.switchButton?.title = NSLocalizedString("Open", comment: "Open")
+        self.switchButton?.state = .off
         myDebug("\(serialPort.name) is closed")
     }
     /**

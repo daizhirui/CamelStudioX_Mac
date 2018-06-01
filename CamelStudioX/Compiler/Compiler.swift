@@ -14,7 +14,7 @@ class Compiler: NSObject {
     
     var compilerDirectoryPath = Bundle.main.bundlePath + "/Contents/Resources/Developer/Toolchains/bin/"
     var gcc_MIPS_Compiler = "mips-netbsd-elf-gcc"
-    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -fno-builtin"
+    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c "
 //    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -w -G0 -msoft-float"
     var as_MIPS_Compiler = "mips-netbsd-elf-as"
     var as_Option = "-EL"
@@ -41,8 +41,12 @@ class Compiler: NSObject {
             self.project.updateSourceFiles()
             // start to generate Makefile
             if self.project.targetName.count > 0 {
-                if project.library.contains("math") {   // float point library!
-                    self.gcc_Option.append(" -w -G0 -msoft-float")
+                if project.library.contains("soft_fp") {   // float point library!
+                    self.gcc_Option.append("-G0 -msoft-float ")
+                }
+                if project.library.contains("stdio") || project.library.contains("stdio_fp")
+                    || project.library.contains("stdlib") || project.library.contains("stdlib_fp") {
+                    self.gcc_Option.append("-fno-builtin ")
                 }
                 let makefileContent =
                 """

@@ -61,7 +61,7 @@ class DocumentWindowController: NSWindowController {
     //************************ About Side Panel ***************************
     /// open or close side panel
     var sidePanelWidth: CGFloat = 0
-    @IBAction func toggelSidePanel(_ sender: Any) {
+    func toggelSidePanel() {
         if let viewController = self.contentViewController as? DocumentViewController {
             // get splitView
             if let splitView = viewController.splitView {
@@ -80,17 +80,13 @@ class DocumentWindowController: NSWindowController {
                 }
                 splitView.adjustSubviews()
                 // update Show SidePanel menu's state
-                if let menuItem = sender as? NSMenuItem {
-                    menuItem.state = (menuItem.state == .on ? .off : .on)
-                } else {
-                    if let mainMenuItems = NSApp.mainMenu?.items {
-                        for mainItem in mainMenuItems {
-                            if mainItem.title == NSLocalizedString("View", comment: "View") {
-                                if let viewMenuItems = mainItem.submenu?.items {
-                                    for viewItem in viewMenuItems {
-                                        if viewItem.title == NSLocalizedString("Show SidePanel", comment: "Show SidePanel") {
-                                            viewItem.state = (leftView.isHidden == true ? .off : .on)
-                                        }
+                if let mainMenuItems = NSApp.mainMenu?.items {
+                    for mainItem in mainMenuItems {
+                        if mainItem.title == NSLocalizedString("View", comment: "View") {
+                            if let viewMenuItems = mainItem.submenu?.items {
+                                for viewItem in viewMenuItems {
+                                    if viewItem.title == NSLocalizedString("Show SidePanel", comment: "Show SidePanel") {
+                                        viewItem.state = (leftView.isHidden == true ? .off : .on)
                                     }
                                 }
                             }
@@ -98,6 +94,59 @@ class DocumentWindowController: NSWindowController {
                     }
                 }
             }
+        }
+    }
+    func toggelBuildMessagePanel() {
+        if let viewController = self.contentViewController as? DocumentViewController {
+            // get splitView
+            if let splitView = viewController.editAreaSplitView {
+                // get side panel view
+                let bottomView = splitView.subviews[1]
+                // check if it is hidden
+                if splitView.isSubviewCollapsed(bottomView) {
+                    // is hidden
+                    splitView.setPosition(self.sidePanelWidth, ofDividerAt: 0)
+                    bottomView.isHidden = false
+                } else {
+                    // not hidden
+                    self.sidePanelWidth = bottomView.frame.size.width
+                    splitView.setPosition(0, ofDividerAt: 0)
+                    bottomView.isHidden = true
+                }
+                splitView.adjustSubviews()
+                // update Show SidePanel menu's state
+                if let mainMenuItems = NSApp.mainMenu?.items {
+                    for mainItem in mainMenuItems {
+                        if mainItem.title == NSLocalizedString("View", comment: "View") {
+                            if let viewMenuItems = mainItem.submenu?.items {
+                                for viewItem in viewMenuItems {
+                                    if viewItem.title == NSLocalizedString("Show Build Message Panel", comment: "Show Build Message Panel") {
+                                        viewItem.state = (bottomView.isHidden == true ? .off : .on)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @IBAction func toggelPanel(_ sender: Any) {
+        if let toolBarItem = sender as? NSButton {
+            if toolBarItem.title == "Side Panel" {
+                self.toggelSidePanel()
+            }
+            if toolBarItem.title == "Build Message" {
+                self.toggelBuildMessagePanel()
+            }
+        } // end of if let toolBarItem
+        else if let menuItem = sender as? NSMenuItem {
+            if menuItem.title == "Show SidePanel" {
+                self.toggelSidePanel()
+            } else if menuItem.title == "Show Build Message Panel" {
+                self.toggelBuildMessagePanel()
+            }
+            menuItem.state = (menuItem.state == .on ? .off : .on)
         }
     }
     // ******************** Project Config Menu Action ****************
@@ -120,7 +169,15 @@ class DocumentWindowController: NSWindowController {
         }
     }
     func updateBuildResult(errorOutput: String) -> Bool {
-        let vc = CompilerMessageViewController.getCurrent
+        var compilerMessageViewController: CompilerMessageViewController?
+        for controller in self.viewController.childViewControllers {
+            if let vc = controller as? CompilerMessageViewController {
+                compilerMessageViewController = vc
+                break   // stop searching
+            } else {
+                compilerMessageViewController = nil
+            }
+        }
         if errorOutput.count > 0 {
             var warnning_count = 0
             var error_count = 0
@@ -137,7 +194,19 @@ class DocumentWindowController: NSWindowController {
                     attributedString.append(NSAttributedString(string: "\n\n"))
                     attributedString.append(attributedItem)
                     warnning_count += 1
+                } else if let range: NSRange = newItem.range(of: "warning") {
+                    let attributedItem = NSMutableAttributedString(string: newItem)
+                    attributedItem.addAttributes([.foregroundColor : NSColor.orange as Any], range: range)
+                    attributedString.append(NSAttributedString(string: "\n\n"))
+                    attributedString.append(attributedItem)
+                    warnning_count += 1
                 } else if let range: NSRange = newItem.range(of: "error") {
+                    let attributedItem = NSMutableAttributedString(string: newItem)
+                    attributedItem.addAttributes([.foregroundColor : NSColor.red as Any], range: range)
+                    attributedString.append(NSAttributedString(string: "\n\n"))
+                    attributedString.append(attributedItem)
+                    error_count += 1
+                }  else if let range: NSRange = newItem.range(of: "Error") {
                     let attributedItem = NSMutableAttributedString(string: newItem)
                     attributedItem.addAttributes([.foregroundColor : NSColor.red as Any], range: range)
                     attributedString.append(NSAttributedString(string: "\n\n"))
@@ -149,25 +218,25 @@ class DocumentWindowController: NSWindowController {
                 }
             }
             // show the error message in side panel
-            vc.textView.textStorage?.setAttributedString(attributedString)
-            vc.view.window?.makeKeyAndOrderFront(self)
+            compilerMessageViewController?.textView.textStorage?.setAttributedString(attributedString)
+            compilerMessageViewController?.view.window?.makeKeyAndOrderFront(self)
             
             self.viewController.sidePanelInfoTextView.textStorage?.setAttributedString(attributedString)
-            //self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
-            //self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
             
             // post a notification to inform the user
             let message: String
             if error_count > 0 {
                 message = NSLocalizedString("Failed", comment: "Failed") + ": \(warnning_count) warnnings and \(error_count) errors!"
+                InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: message)
+                return false
             } else {
                 message = NSLocalizedString("Some warnning!", comment: "Some warnnings!") + ": \(warnning_count) warnnings!"
+                InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: message)
+                return true
             }
-            InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: message)
-            return false
         } else {
             self.viewController.sidePanelInfoTextView.string = ""
-            vc.textView.string = ""
+            compilerMessageViewController?.textView.string = ""
             // post a notification to inform the user
             InfoAndAlert.shared.postNotification(title: NSLocalizedString("Build Result", comment: "Build Result"), informativeText: NSLocalizedString("Succeeded", comment: "Succeeded"))
             return true
@@ -406,12 +475,6 @@ class DocumentWindowController: NSWindowController {
     }
     
     func setupUIBeforeUpload() {
-        /*
-        self.serialMonitorButton.isEnabled = true
-        self.serialMonitorButton.needsDisplay = true
-        self.serialMonitorButtonInTouchbar.isEnabled = true
-        self.serialMonitorButtonInTouchbar.needsDisplay = true
-         */
         self.loadToBoardButton.image = #imageLiteral(resourceName: "ic_get_app")
         self.loadToBoardButton.needsDisplay = true
         self.loadToBoardButtonInTouchbar.image = #imageLiteral(resourceName: "ic_file_download_white")

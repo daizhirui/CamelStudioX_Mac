@@ -1,6 +1,17 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.4.2
+----
+
+### Build 26 on 01.06.2018
+
+- Fix: refues to upload when just some warnings appear during compiling.
+- Fix: printf cannot print float variable.
+- Improvement: Serial Monitor doesn't affect uploading now.
+- Improvement: Soft float library supports double now! This library is renamed to soft_fp.
+- New Feature: Detect serial drivers.
+
 ## Version 3.4.1
 ----
 

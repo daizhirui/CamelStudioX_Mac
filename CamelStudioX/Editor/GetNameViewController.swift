@@ -29,13 +29,30 @@ class GetNameViewController: NSViewController {
         super.viewDidLoad()
         switch self.fileOperation {
         case .rename:
-            self.operationLabel.stringValue = NSLocalizedString("Rename to:", comment: "Rename to:")
+            self.operationLabel.stringValue = NSLocalizedString("Rename to:", comment: "Rename to:")    // Set Window title
+            if let fileName = self.node.preferredFilename { // Load file name
+                self.nameBox.stringValue = fileName
+            }
         case .newFolder:
             self.operationLabel.stringValue = NSLocalizedString("Folder Name:", comment: "Folder Name:")
         case .newFile:
             self.operationLabel.stringValue = NSLocalizedString("File Name:", comment: "File Name:")
         default:
             self.operationLabel.stringValue = NSLocalizedString("ERROR", comment: "ERROR")
+        }
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        switch self.fileOperation {
+        case .rename:
+            self.view.window?.title = "Rename"
+        case .newFolder:
+            self.view.window?.title = "New Folder"
+        case .newFile:
+            self.view.window?.title = "New File"
+        default:
+            self.view.window?.title = "ERROR"
         }
     }
     
@@ -64,9 +81,13 @@ class GetNameViewController: NSViewController {
         default:
             return
         }
-        // Common FileWrapper Operation
+        // Save FileWrapper Operation
         newFileWrapper.preferredFilename = self.nameBox.stringValue
-        self.node.addFileWrapper(newFileWrapper)
+        if self.fileOperation == .rename {
+            self.parentNode.addFileWrapper(newFileWrapper)
+        } else {
+            self.node.addFileWrapper(newFileWrapper)
+        }
         // Save the project
         parentVC.isOperatingFile = true
         NSDocumentController.shared.currentDocument?.save(self)

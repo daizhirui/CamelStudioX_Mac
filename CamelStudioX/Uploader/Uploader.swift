@@ -28,7 +28,7 @@ extension NSNotification.Name {
     static let updatedProgress = NSNotification.Name("updatedProgress")
 }
 
-class Uploader: NSObject {
+class Uploader: NSObject, ORSSerialPortDelegate {
     
     /**
      Initalize the super class and add notifications of "Serial ports were connected" and "Serial ports were
@@ -36,6 +36,7 @@ class Uploader: NSObject {
      */
     override init() {
         super.init()
+        myDebug("Uploader \(self) is loaded")
         // setup the notification center
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(serialPortsWereChanged(_:)), name: NSNotification.Name.ORSSerialPortsWereConnected, object: nil)
@@ -91,6 +92,11 @@ class Uploader: NSObject {
         }
         didSet {
             if let port = serialPort {
+                if let lastDelegate = port.delegate as? SerialController {
+                    port.close()
+                    lastDelegate.serialPort = nil
+                    lastDelegate.switchButton?.state = .off
+                }
                 port.baudRate = 9600
                 port.delegate = self
                 port.open()
@@ -108,8 +114,6 @@ class Uploader: NSObject {
     var recentSerialPort: ORSSerialPort?
     /// Response from the serial port.
     var receivedResponse: String = ""
-    ///
-    var makeChipExitTimer: Timer?
     
     // MARK: - Upload Control Properties
     /// Indicate if is uploading
@@ -142,6 +146,7 @@ class Uploader: NSObject {
     func startUpload() {
         self.serialPort?.open()
         //self.uploadFlag = true    modified by DocumentWindowsController already
+        self.serialPort?.delegate = self
     }
     /// Upload Control Entrance
     @objc func uploadStageControl(_ aNotification: Notification?) {
@@ -218,7 +223,6 @@ class Uploader: NSObject {
     }
     /// Upload Control Function for setting the baudrate of the chip to 9600.
     func setChipBaudrate9600() {
-        self.makeChipExitTimer?.invalidate()
         self.progressValue = 99.0
         self.progressInfo = NSLocalizedString("Setting the baudrate to 9600 ...", comment: "Setting the baudrate to 9600 ...")
         self.postProgressUpdate()
@@ -274,10 +278,8 @@ class Uploader: NSObject {
     func postProgressUpdate() {
         NotificationCenter.default.post(name: NSNotification.Name.updatedProgress, object: self)
     }
-}
-
-extension Uploader: ORSSerialPortDelegate{
     
+    // MARK: - ORSSerialPortDelegate
     func serialPortWasRemoved(fromSystem serialPort: ORSSerialPort) {
         self.serialPort = nil
         self.uploadFailed()
@@ -379,6 +381,7 @@ extension Uploader: ORSSerialPortDelegate{
             case "send targetAddress":
                 self.sendCommandToBoard(command: self.targetAddress+"\n", responsePrefix: nil, responseSuffix: "Waiting for binary image linked at 10000000", bufferSize: 200, userInfo: "send binary")
             case "send binary":
+                timeoutDuration = Double(self.binaryData.count) / 1000
                 self.sendDataToBoardAndGetResponse(data: self.binaryData, responsePrefix: "p1 final index", responseSuffix: "Menu", bufferSize: 120, userInfo: "sendBinary")
 //                DispatchQueue.main.async {
 //                    [weak self] in

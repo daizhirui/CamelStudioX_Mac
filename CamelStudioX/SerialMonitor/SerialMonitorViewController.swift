@@ -52,11 +52,8 @@ class SerialMonitorViewController: NSViewController {
         self.textView.lineNumberBackgroundColor = NSColor.white
         self.textView.lineNumberForegroundColor = NSColor.gray
         NotificationCenter.default.addObserver(self, selector: #selector(self.sendDataForSerialScreen), name: NSNotification.Name.userInput, object: self.textView)
-            // 关闭智能引号功能, 拼写检查，拼写纠正, 语法检查
-        self.textView.isAutomaticQuoteSubstitutionEnabled = false
-        self.textView.isContinuousSpellCheckingEnabled = false
-        self.textView.isAutomaticSpellingCorrectionEnabled = false
-        self.textView.isGrammarCheckingEnabled = false
+        // turn off some smart functions or automatic functions of nstextview
+        self.textView.turnOffAllSmartOrAutoFunctionExceptLinkDetection()
         // ****** Setup Config View Controller
         self.moreConfigViewController.parentVC = self
         // ******* Setup Ending *********
@@ -67,6 +64,8 @@ class SerialMonitorViewController: NSViewController {
     override func viewWillDisappear() {
         super.viewWillDisappear()
         self.serialController.serialPort?.close()
+        self.serialController.serialPort?.delegate = nil
+        self.serialController.serialPort = nil
         if let wc = self.view.window?.windowController {
             wc.close()
         }

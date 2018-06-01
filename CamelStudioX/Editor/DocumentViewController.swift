@@ -21,10 +21,12 @@ class DocumentViewController: NSViewController {
     @IBOutlet weak var projectInspector: NSOutlineView!
     @IBOutlet var sidePanelInfoTextView: NSTextView!
     @IBOutlet var editArea: EditorTextView!
+    @IBOutlet weak var editAreaSplitView: NSSplitView!
     @IBOutlet weak var editAreaScrollView: NSScrollView!
     @IBOutlet weak var languageComboBox: NSComboBox!
     @IBOutlet weak var serialPortStateLabel: NSTextField!
     @IBOutlet var projectInspectorMenu: NSMenu!
+    @IBOutlet weak var compilerMessageView: NSView!
     
     // execute with a delay
     var timer: Timer?
@@ -47,15 +49,10 @@ class DocumentViewController: NSViewController {
         super.viewDidLoad()
         self.setupLanguageComboBox()
         self.setupHighlightr()
-        // 关闭智能引号功能, 拼写检查，拼写纠正, 语法检查
-        self.editArea.isAutomaticQuoteSubstitutionEnabled = false
-        self.editArea.isContinuousSpellCheckingEnabled = false
-        self.editArea.isAutomaticSpellingCorrectionEnabled = false
-        self.editArea.isGrammarCheckingEnabled = false
-        self.sidePanelInfoTextView.isAutomaticQuoteSubstitutionEnabled = false
-        self.sidePanelInfoTextView.isContinuousSpellCheckingEnabled = false
-        self.sidePanelInfoTextView.isAutomaticSpellingCorrectionEnabled = false
-        self.sidePanelInfoTextView.isGrammarCheckingEnabled = false
+        // turn off some smart functions or automatic functions of nstextview
+        self.editArea.turnOffAllSmartOrAutoFunctionExceptLinkDetection()
+        self.sidePanelInfoTextView.turnOffAllSmartOrAutoFunctionExceptLinkDetection()
+        // Register menu of project inspector
         self.projectInspector.menu = self.projectInspectorMenu
         // Register Drag-Drop
         self.projectInspector.registerForDraggedTypes([dragDropTypeForProjectInspector])
@@ -469,18 +466,24 @@ class DocumentViewController: NSViewController {
     /// Invoke by setupHighlightr and Preference
     func setFileTextViewColor(){
         if let color = self.hignlightr.theme.themeBackgroundColor {
-            self.editArea.backgroundColor = color
-            self.editArea.lineNumberBackgroundColor = color
+            
+            let backgroundColor: NSColor
+            let foregroundColor: NSColor
+            
+            backgroundColor = color
+            
             let r = color.redComponent
             let g = color.greenComponent
             let b = color.blueComponent
             if (r + g + b) / 3.0 > 0.5 {
-                self.editArea.lineNumberForegroundColor = NSColor.darkGray
-                self.editArea.insertionPointColor = NSColor.darkGray
+                foregroundColor = NSColor.darkGray
             } else {
-                self.editArea.lineNumberForegroundColor = NSColor.white
-                self.editArea.insertionPointColor = NSColor.white
+                foregroundColor = NSColor.white
             }
+            
+            self.editArea.insertionPointColor = foregroundColor
+            self.editArea.setLinumberGutterColor(foreground: foregroundColor, background: backgroundColor)
+            
             self.editArea.textStorage?.setAttributedString(self.hignlightr.highlight(self.editArea.string, as: self.fileOnShow?.fileLanguage, fastRender: true)!)
             self.editArea.needsDisplay = true
         }

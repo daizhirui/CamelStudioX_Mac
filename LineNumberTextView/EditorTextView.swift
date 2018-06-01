@@ -127,6 +127,11 @@ public class EditorTextView: NSTextView {
         NotificationCenter.default.post(name: NSNotification.Name.TextDidChangeNotification, object: self)
     }
     
+    public func setLinumberGutterColor(foreground: NSColor, background: NSColor) {
+        self.lineNumberBackgroundColor = background
+        self.lineNumberForegroundColor = foreground
+    }
+    
     //*********** The following part is from LineNumberTextView
     /// Holds the attached line number gutter.
     private var lineNumberGutter: LineNumberGutter?

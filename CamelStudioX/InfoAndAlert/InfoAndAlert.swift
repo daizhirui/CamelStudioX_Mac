@@ -25,9 +25,12 @@ class InfoAndAlert: NSObject, NSUserNotificationCenterDelegate {
         NSUserNotificationCenter.default.delegate = self
     }
     
-    func showAlertWindow(with message: String) -> NSWindow? {
+    func showAlertWindow(with message: String, allowCancel:Bool = false, showDontShowAgain: Bool = false, completedHandler: (()->Void)? = nil) -> NSWindow? {
         InfoAndAlert.alertViewController.informativeText.stringValue = message
-        InfoAndAlert.currentAlert = InfoAndAlert.alertViewController.view.window
+        InfoAndAlert.currentAlert = InfoAndAlert.alertViewController.view.window    // keep the window
+        InfoAndAlert.alertViewController.needDontShowAgain = showDontShowAgain
+        InfoAndAlert.alertViewController.needCancelButton = allowCancel
+        InfoAndAlert.alertViewController.completedHandler = completedHandler
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             NSApp.runModal(for: InfoAndAlert.alertViewController.view.window!)
         }
