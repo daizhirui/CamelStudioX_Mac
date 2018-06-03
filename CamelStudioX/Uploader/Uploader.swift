@@ -103,7 +103,7 @@ class Uploader: NSObject, ORSSerialPortDelegate {
                 self.recentSerialPort = port
                 UserDefaults.standard.set(port.name as Any, forKey: "recentSerialPort")
                 if let vc = self.viewController {
-                    vc.serialPortStateLabel.stringValue = "\(vc.project!.chipType.rawValue) at /dev/cu.\(port.name)"
+                    vc.serialPortStateLabel.stringValue = "\(vc.project!.chipType.rawValue) at \(port.path)"
                 }
             } else {
                 self.uploadConfigReady = false

@@ -65,3 +65,18 @@ extension String {
         return nil
     }
 }
+
+extension Array where Element == NSAttributedString {
+    /// Connect members of a NSAttributedString Array into a new NSAttributedString
+    func join(separator: String) -> NSAttributedString {
+        let result = NSMutableAttributedString()
+        let separatorString = NSAttributedString(string: separator)
+        for (index, attributedString) in self.enumerated() {
+            if index > 0 {
+                result.append(separatorString)
+            }
+            result.append(attributedString)
+        }
+        return result
+    }
+}

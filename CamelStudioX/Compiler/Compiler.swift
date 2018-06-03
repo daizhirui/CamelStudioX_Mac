@@ -8,6 +8,12 @@
 
 import Cocoa
 
+struct CompilerMessages {
+    var normal = [NSAttributedString]()
+    var warnings = [NSAttributedString]()
+    var errors = [NSAttributedString]()
+}
+
 class Compiler: NSObject {
 
     var project: ProjectManager!
@@ -129,7 +135,7 @@ class Compiler: NSObject {
     /**
      Build a binary for the project and return output
     */
-    func buildBinary() -> (String, String) {
+    func buildBinary() -> CompilerMessages {
         var stdOutput: String = ""
         var errorOutput: String = ""
         let originalWorkingDirectoryPath = FileManager.default.currentDirectoryPath
@@ -143,13 +149,13 @@ class Compiler: NSObject {
         // update project.fileWrappers
         self.project.updateFileWrappers()
         FileManager.default.changeCurrentDirectoryPath(originalWorkingDirectoryPath)
-        return (stdOutput, errorOutput)
+        return Compiler.processMessages(stdOutput: stdOutput, stdErrorOutput: errorOutput)
     }
     
     /**
      Build a library for the project and return output
     */
-    func buildLibrary() -> (String, String) {
+    func buildLibrary() -> CompilerMessages {
         var stdOutput: String = ""
         var errorOutput: String = ""
         let originalWorkingDirectoryPath = FileManager.default.currentDirectoryPath
@@ -162,7 +168,7 @@ class Compiler: NSObject {
         // update project.fileWrappers
         self.project.updateFileWrappers()
         FileManager.default.changeCurrentDirectoryPath(originalWorkingDirectoryPath)
-        return (stdOutput, errorOutput)
+        return Compiler.processMessages(stdOutput: stdOutput, stdErrorOutput: errorOutput)
     }
     
     /**
@@ -182,5 +188,44 @@ class Compiler: NSObject {
         self.project.updateFileWrappers()
         FileManager.default.changeCurrentDirectoryPath(originalWorkingDirectoryPath)
         return (stdOutput, errorOutput)
+    }
+    
+    static private func processMessages(stdOutput: String, stdErrorOutput: String) -> CompilerMessages {
+        var compilerMessage = CompilerMessages()
+        if stdOutput.count > 0 {
+            for message in stdOutput.components(separatedBy: .newlines) {
+                let attributedMessage = NSAttributedString(string: message)
+                compilerMessage.normal.append(attributedMessage)
+            }
+        }
+        if stdErrorOutput.count > 0 {
+            for item in stdErrorOutput.components(separatedBy: .newlines) {
+                if item.contains("-msoft-float") {  // Ignore the warning of using soft float
+                    continue
+                }
+                var newItem = item
+                var attributedMessage = NSMutableAttributedString(string: "")
+                if let range: Range<String.Index> = newItem.range(of: "mips") {             // remove the path of the compiler
+                    newItem.removeSubrange(newItem.startIndex..<range.lowerBound)
+                }
+                if let range: NSRange = newItem.lowercased().range(of: "warning") {         // Detect a new start of a warning
+                    if attributedMessage.string.count > 0 {
+                        compilerMessage.warnings.append(attributedMessage)                  // store the old error message
+                    }
+                    attributedMessage = NSMutableAttributedString(string: newItem)
+                    attributedMessage.addAttributes([.foregroundColor : NSColor.orange as Any], range: range)
+                } else if let range: NSRange = newItem.lowercased().range(of: "error") {    // Detect a new start of an error
+                    if attributedMessage.string.count > 0 {
+                        compilerMessage.errors.append(attributedMessage)                    // store the old error message
+                    }
+                    attributedMessage = NSMutableAttributedString(string: newItem)
+                    attributedMessage.addAttributes([.foregroundColor : NSColor.red as Any], range: range)
+                } else {
+                    let messageDetail = NSAttributedString(string: newItem)
+                    attributedMessage.append(messageDetail)
+                }
+            }
+        }
+        return compilerMessage
     }
 }

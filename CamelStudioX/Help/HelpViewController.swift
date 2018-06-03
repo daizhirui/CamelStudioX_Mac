@@ -164,7 +164,7 @@ extension HelpViewController: NSOutlineViewDelegate {
      Return the height of a line
      */
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
-        return 23
+        return 25
     }
     /**
      Change the text color when selection is changed
@@ -204,3 +204,12 @@ extension HelpViewController: NSOutlineViewDelegate {
     }
 }
 
+extension HelpViewController: NSSplitViewDelegate {
+    func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        if dividerIndex == 0 {
+            return 300
+        } else {
+            return 400
+        }
+    }
+}

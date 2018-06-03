@@ -1,6 +1,14 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.4.3
+----
+
+### Build
+
+- Fix: Some UI constraint errors.
+- Improvement: Warnings of using soft float library won't be shown.
+
 ## Version 3.4.2
 ----
 

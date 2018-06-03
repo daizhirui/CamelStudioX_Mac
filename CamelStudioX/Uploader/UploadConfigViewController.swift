@@ -69,7 +69,7 @@ class UploadConfigViewController: NSViewController {
             return
         }
         if let serialPort = self.uploader.serialPort {
-            self.parentVC.serialPortStateLabel.stringValue = "\(parentVC.project!.chipType.rawValue) at /dev/cu.\(serialPort.name)"
+            self.parentVC.serialPortStateLabel.stringValue = "\(parentVC.project!.chipType.rawValue) at \(serialPort.path)"
             UserDefaults.standard.set(serialPort.name as Any, forKey: "recentSerialPort")
         }
         self.dismiss(self)

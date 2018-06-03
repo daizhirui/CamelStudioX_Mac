@@ -787,8 +787,12 @@ extension DocumentViewController: NSOutlineViewDelegate {
 extension DocumentViewController: NSSplitViewDelegate {
     
     func splitView(_ splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
-        if subview == splitView.subviews[0] {
-            return true
+        if splitView == self.splitView {
+            if subview == splitView.subviews[0] {   // Side panel
+                return true
+            } else {
+                return false
+            }
         } else {
             return false
         }
@@ -804,11 +808,15 @@ extension DocumentViewController: NSSplitViewDelegate {
     }
     
     func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-        if dividerIndex == 0 {
-            // side panel
-            return 150
+        if splitView == self.splitView {
+            if dividerIndex == 0 {
+                // side panel
+                return 150
+            } else {
+                return 300
+            }
         } else {
-            return 300
+            return 800
         }
     }
     
