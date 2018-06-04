@@ -4,10 +4,11 @@ Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 ## Version 3.4.3
 ----
 
-### Build
+### Build 27 on 04.06.2018
 
 - Fix: Some UI constraint errors.
 - Improvement: Warnings of using soft float library won't be shown.
+- Improvement: soft float library supports double more and stdio_fp library supports 5 fractional digits now.
 
 ## Version 3.4.2
 ----
