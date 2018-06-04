@@ -115,6 +115,15 @@ class SerialController: NSObject, ORSSerialPortDelegate {
     */
     func openOrClosePort() {
         if let port = self.serialPort {
+            if let delegate = port.delegate.self {
+                if let uploader = delegate as? Uploader {   // remove the control by Uploader
+                    uploader.serialPort?.close()
+                    uploader.serialPort?.delegate = nil
+                    port.delegate = self
+                } else {
+                    myDebug("The delegate of \(port.name) is \(delegate)")
+                }
+            }
             if (port.isOpen) {
                 port.close()
             } else {

@@ -568,12 +568,14 @@ static __strong NSMutableArray *allSerialPorts;
 
 - (void)receiveData:(NSData *)data;
 {
-	if ([self.delegate respondsToSelector:@selector(serialPort:didReceiveData:)])
-	{
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.delegate serialPort:self didReceiveData:data];
-		});
-	}
+    if ([self.delegate respondsToSelector:@selector(serialPort:didReceiveData:)])
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.isOpen) {
+                [self.delegate serialPort:self didReceiveData:data];
+            }
+        });
+    }
 	
 	dispatch_async(self.requestHandlingQueue, ^{
 		const void *bytes = [data bytes];

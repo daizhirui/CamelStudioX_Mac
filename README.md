@@ -1,6 +1,15 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.4.4
+----
+
+### Build 28 on 04.06.2018
+
+- Fix: Possible crash when users start the second uploading after the open of Serial Monitor.
+- Fix: A bug in ORSSerialPort library: Try to invoke "didReceiveData" function when serial port is closed.
+- Improvement: Serial Monitor don't need closing now when users start the uploading.
+
 ## Version 3.4.3
 ----
 

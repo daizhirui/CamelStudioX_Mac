@@ -77,29 +77,23 @@ class Uploader: NSObject, ORSSerialPortDelegate {
     
     // MARK: - Serial Control Properties
     /// use the default serial port manager
-    @objc let serialPortManager = ORSSerialPortManager.shared()
+//    @objc let serialPortManager = ORSSerialPortManager.shared()
+    @objc let serialPortManager = ORSSerialPortManager()
     /**
      an ORSSerialPort instance to store the current used serial port
      When the serial port selected is changed, the didSetter will release the old one
      and connect the delegate to the new one automatically
      */
     @objc var serialPort: ORSSerialPort? {
-        willSet {
-            if let port = serialPort {
-                port.close()
-                port.delegate = nil
+        willSet(newValue) {
+            if let port = newValue {
+                self.getControlOfThePort(port: port)
             }
         }
         didSet {
             if let port = serialPort {
-                if let lastDelegate = port.delegate as? SerialController {
-                    port.close()
-                    lastDelegate.serialPort = nil
-                    lastDelegate.switchButton?.state = .off
-                }
                 port.baudRate = 9600
                 port.delegate = self
-                port.open()
                 self.recentSerialPort = port
                 UserDefaults.standard.set(port.name as Any, forKey: "recentSerialPort")
                 if let vc = self.viewController {
@@ -142,11 +136,27 @@ class Uploader: NSObject, ORSSerialPortDelegate {
     func waitForChip() {
         usleep(250000)  // 0.25 s
     }
+    func getControlOfThePort(port: ORSSerialPort) {
+        if let delegate = port.delegate.self {
+            if let serialControllerOfSerialMonitor = delegate as? SerialController {    // Remove the control by SerialController
+                serialControllerOfSerialMonitor.serialPort?.close()
+                serialControllerOfSerialMonitor.serialPort?.cleanupAfterSystemRemoval()
+                serialControllerOfSerialMonitor.serialPort?.cancelAllQueuedRequests()
+                serialControllerOfSerialMonitor.serialPort?.delegate = nil
+                serialControllerOfSerialMonitor.switchButton?.state = .off
+            } else {
+                myDebug("The delegate of \(port.name) is \(delegate)")
+            }
+        } else {
+            myDebug("The delegate of \(port.name) is nil")
+        }
+        port.delegate = self
+    }
     /// Open the serial port for uploading
     func startUpload() {
+        self.getControlOfThePort(port: self.serialPort!)
         self.serialPort?.open()
         //self.uploadFlag = true    modified by DocumentWindowsController already
-        self.serialPort?.delegate = self
     }
     /// Upload Control Entrance
     @objc func uploadStageControl(_ aNotification: Notification?) {

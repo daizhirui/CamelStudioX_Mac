@@ -151,5 +151,24 @@
             <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.4.3/CamelStudioX_3.4.3_Build27.zip" sparkle:version="27" sparkle:shortVersionString="3.4.3" length="67389886" type="application/octet-stream" sparkle:dsaSignature="MC0CFDfSZVIWS/RmZR16qU5KrsbIUZzBAhUAk47YwLehVjXX5DgAKP31b7EYf5U="/>
         </item>
         
+        <item>
+            <title>3.4.4</title>
+            <description><![CDATA[
+                <h2>Bugs Fixed</h2>
+                <ul>
+                <li>Possible crash when users start the second uploading after the open of Serial Monitor.</li>
+                <li>A bug in ORSSerialPort library: Try to invoke "didReceiveData" function when serial port is closed.</li>
+                </ul>
+                <h2>Improvement</h2>
+                <ul>
+                <li>Serial Monitor don't need closing now when users start the uploading.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Mon, 04 Jun 2018 23:27:08 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.4.4/CamelStudioX_3.4.4_Build28.zip" sparkle:version="28" sparkle:shortVersionString="3.4.4" length="67390481" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDGqwOM8uXGkiVXAMOvltSo3l2J7wIUZl1gfeX6gV9++zZif2cQvvqYq3Y="/>
+        </item>
+        
     </channel></rss>
 
