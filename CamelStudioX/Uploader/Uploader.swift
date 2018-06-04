@@ -10,6 +10,7 @@ import Cocoa
 import ORSSerial
 
 var timeoutDuration = 5.0
+var repeatingTimer: Timer!
 
 public enum UploadStage: Int {
     case getBinary          = 1
@@ -137,24 +138,25 @@ class Uploader: NSObject, ORSSerialPortDelegate {
         usleep(250000)  // 0.25 s
     }
     func getControlOfThePort(port: ORSSerialPort) {
+        myDebug("Get control of \(port.name)")
         if let delegate = port.delegate.self {
+            myDebug("The delegate of \(port.name) is \(delegate)")
             if let serialControllerOfSerialMonitor = delegate as? SerialController {    // Remove the control by SerialController
                 serialControllerOfSerialMonitor.serialPort?.close()
-                serialControllerOfSerialMonitor.serialPort?.cleanupAfterSystemRemoval()
-                serialControllerOfSerialMonitor.serialPort?.cancelAllQueuedRequests()
                 serialControllerOfSerialMonitor.serialPort?.delegate = nil
+                serialControllerOfSerialMonitor.serialPort = nil
                 serialControllerOfSerialMonitor.switchButton?.state = .off
-            } else {
-                myDebug("The delegate of \(port.name) is \(delegate)")
             }
         } else {
             myDebug("The delegate of \(port.name) is nil")
         }
-        port.delegate = self
+        self.serialPort?.delegate = self
+        sleep(1)    // make the delay for ORSSerialPort to be ready.
     }
     /// Open the serial port for uploading
     func startUpload() {
         self.getControlOfThePort(port: self.serialPort!)
+        myDebug("Start to upload, the delegate of \(self.serialPort?.name ?? "UNKNOWN PORT") is \(self.serialPort?.delegate.self)")
         self.serialPort?.open()
         //self.uploadFlag = true    modified by DocumentWindowsController already
     }
@@ -206,12 +208,16 @@ class Uploader: NSObject, ORSSerialPortDelegate {
             self.progressInfo = NSLocalizedString("Check root space...", comment: "Check root space...")
             self.postProgressUpdate()
             self.sendCommandToBoard(command: "\n", responsePrefix: nil, responseSuffix: "CamelStudio", bufferSize: 270, userInfo: "checkRootSpace")
+//            repeatingTimer = Timer(timeInterval: 1.0, repeats: true) { [weak self] (timer) in
+//                self?.sendData("\n")    // make sure the chip receive "\n"
+//            }
             // next stage
             self.currentUploadStage = .setBaudrate19200
         }
     }
     /// Upload Control Function for setting the baudrate of the chip to 19200.
     func setChipBaudrate19200() {
+//        repeatingTimer.invalidate()
         self.progressValue = 20.0
         self.progressInfo = NSLocalizedString("Setting the baudrate to 19200 ...", comment: "Setting the baudrate to 19200 ...")
         self.postProgressUpdate()
@@ -248,7 +254,9 @@ class Uploader: NSObject, ORSSerialPortDelegate {
         self.currentUploadStage = UploadStage.init(rawValue: 1)!
         self.binaryData = nil
         self.serialPort?.baudRate = 9600
+        self.serialPort?.cancelAllQueuedRequests()
         self.serialPort?.close()
+        timeoutDuration = 5.0
         myDebug("CURRENT_UPLOAD_STAGE RESET TO:\(self.currentUploadStage)")
     }
     /// Timeout Process
