@@ -148,7 +148,7 @@
             </description>
             <pubDate>Mon, 04 Jun 2018 11:44:11 +0200</pubDate>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
-            <enclosure url="https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/CamelStudioX_3.4.3_Build27.zip" sparkle:version="27" sparkle:shortVersionString="3.4.3" length="67389715" type="application/octet-stream" sparkle:dsaSignature="MCwCFACt5GSUi9MuhivT6k5TFIg6tGA1AhQvCrYpDBag8DdL0rhJA62QaOAeBQ=="/>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.4.3/CamelStudioX_3.4.3_Build27.zip" sparkle:version="27" sparkle:shortVersionString="3.4.3" length="67389715" type="application/octet-stream" sparkle:dsaSignature="MCwCFACt5GSUi9MuhivT6k5TFIg6tGA1AhQvCrYpDBag8DdL0rhJA62QaOAeBQ=="/>
         </item>
         
     </channel></rss>
