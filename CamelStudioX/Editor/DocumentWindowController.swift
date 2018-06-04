@@ -170,7 +170,7 @@ class DocumentWindowController: NSWindowController {
         }
     }
     /// Process the errorOutput from make system and show them in the compiler message panel.
-    func updateBuildResult(compilerMessages: CompilerMessages) {
+    func updateBuildResult(compilerMessages: CompilerMessages) -> Bool {
         // Get the CompilerMessageViewController belonging to this window
         var compilerMessageViewController: CompilerMessageViewController?
         for controller in self.viewController.childViewControllers {
@@ -216,6 +216,7 @@ class DocumentWindowController: NSWindowController {
 //            // post a notification to inform the user
 //            InfoAndAlert.shared.postNotification(title: "Build Result", informativeText: "Succeeded")
 //        }
+        return compilerMessages.success
     }
     //*********************** About build binary **************************
     var buildSuccess = false
@@ -233,7 +234,7 @@ class DocumentWindowController: NSWindowController {
             /// internal function in buildLibrary
             func buildBinaryAndCheckResult() {
                 // Build the binary
-                self.updateBuildResult(compilerMessages: aCompiler.buildBinary())
+                self.buildSuccess = self.updateBuildResult(compilerMessages: aCompiler.buildBinary())
                 // update project again
                 project.updateFileWrappers()
             }
@@ -287,7 +288,7 @@ class DocumentWindowController: NSWindowController {
             /// internal function in buildLibrary
             func buildLibraryAndCheckResult() {
                 // Build the library and process the result
-                self.updateBuildResult(compilerMessages: aCompiler.buildLibrary())
+                self.buildSuccess = self.updateBuildResult(compilerMessages: aCompiler.buildLibrary())
                 // update project again
                 project.updateFileWrappers()
             }

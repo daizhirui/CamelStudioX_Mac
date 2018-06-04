@@ -23,6 +23,10 @@
 #define fp_uint32_to_float32    __floatunsisf
 #define fp_float32_to_float64   __extendsfdf2
 #define fp_float64_to_float32   __truncdfsf2
+#define fp_float64_add          __adddf3
+#define fp_float64_sub          __subdf3
+#define fp_float64_mult         __muldf3
+#define fp_float64_div          __divdf3
 #define abs     fp_float32_abs
 #define sqrt    fp_float32_sqrt
 #define cos     fp_float32_cos
@@ -45,6 +49,11 @@ float fp_uint32_to_float32(unsigned long af);
 double fp_float32_to_float64(float a_fp);
 float fp_float64_to_float32(double a_dfp);
 int fp_float32_cmp(float a_fp, float b_fp);
+
+double fp_float64_add(double a_dfp, double b_dfp);
+double fp_float64_sub(double a_dfp, double b_dfp);
+double fp_float64_mult(double a_dfp, double b_dfp);
+double fp_float64_div(double a_dfp, double b_dfp);
 
 float fp_float32_sqrt(float a);
 float fp_float32_cos(float rad);

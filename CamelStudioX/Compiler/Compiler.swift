@@ -9,6 +9,7 @@
 import Cocoa
 
 struct CompilerMessages {
+    var success = true
     var normal = [NSAttributedString]()
     var warnings = [NSAttributedString]()
     var errors = [NSAttributedString]()
@@ -220,6 +221,7 @@ class Compiler: NSObject {
                     }
                     attributedMessage = NSMutableAttributedString(string: newItem)
                     attributedMessage.addAttributes([.foregroundColor : NSColor.red as Any], range: range)
+                    compilerMessage.success = false
                 } else {
                     let messageDetail = NSAttributedString(string: newItem)
                     attributedMessage.append(messageDetail)
