@@ -1,6 +1,14 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.5.1
+----
+
+### Build 30 on 13.06.2018
+
+- Fix: A compromise to save root program out of the bug of bootloader.
+- Fix: Program cannot run when there is no bss section.
+
 ## Version 3.5.0
 ----
 

@@ -399,23 +399,27 @@ class Uploader: NSObject, ORSSerialPortDelegate {
             case "send targetAddress":
                 self.sendCommandToBoard(command: self.targetAddress+"\n", responsePrefix: nil, responseSuffix: "Waiting for binary image linked at 10000000", bufferSize: 200, userInfo: "send binary")
             case "send binary":
+                myDebug("Bin length = \(self.binaryData.count)\n")
                 timeoutDuration = Double(self.binaryData.count) / 1000
+                if timeoutDuration < 5 {
+                    timeoutDuration = 5
+                }
                 self.sendDataToBoardAndGetResponse(data: self.binaryData, responsePrefix: "p1 final index", responseSuffix: "Menu", bufferSize: 120, userInfo: "sendBinary")
-//                DispatchQueue.main.async {
-//                    [weak self] in
-//                    if let uploader = self {
-//                        uploader.waitForChip()
-//                        myDebug("binary count = \(self?.binaryData.count)\n")
-//                        myDebug("Wait")
-//                        for _ in 0...uploader.binaryData.count/500 {
-//                            print(".", terminator: "")
-//                            uploader.waitForChip()
-//                        }
-//                        uploader.sendData("1")
-//                        uploader.waitForChip()
-//                        uploader.sendData("1f800702\n")
-//                    }
-//                }
+                DispatchQueue.main.async {
+                    [weak self] in
+                    if let uploader = self {
+                        let binLength: Int = uploader.binaryData.count
+                        let incompletedLength = binLength % 4
+                        myDebug("binLength = \(binLength), incompletedLength = \(incompletedLength)")
+                        if incompletedLength > 0 {
+                            let fillingLength = 4 - incompletedLength
+                            myDebug("fillingLength = \(fillingLength)\n")
+                            for _ in 0..<fillingLength {
+                                uploader.sendData("1")
+                            }
+                        }
+                    }
+                }
                 self.currentUploadStage = .setBaudrate9600
             default: return
             }

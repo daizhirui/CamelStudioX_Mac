@@ -185,5 +185,20 @@
             <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.5.0/CamelStudioX_3.5.0_Build29.zip" sparkle:version="29" sparkle:shortVersionString="3.5.0" length="67392388" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCKcK2FzfVyZ/5Hn+tbqITgEPe2GgIVAKHC1AZ9cqI9x+unwhobq6RmpS+q"/>
         </item>
         
+        <item>
+            <title>3.5.1</title>
+            <description><![CDATA[
+                <h2>Bugs Fixed</h2>
+                <ul>
+                <li>A compromise to save root program out of the bug of bootloader.</li>
+                <li>Program cannot run when there is no bss section.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Wed, 13 Jun 2018 19:44:20 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camel-micro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.5.1_Build30.zip" sparkle:version="30" sparkle:shortVersionString="3.5.1" length="67393509" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCNqfme/1i1n60NgVZzoObgVX8N1wIUasP1Wt+4JPINiTsr38g3B2f/Kls="/>
+        </item>
+        
     </channel></rss>
 
