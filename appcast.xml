@@ -170,5 +170,20 @@
             <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.4.4/CamelStudioX_3.4.4_Build28.zip" sparkle:version="28" sparkle:shortVersionString="3.4.4" length="67390481" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCvWte9Sim4lpieSxS1+dYcPRdckwIVAKooTmXBAhOf8tSreDFtZB1TSGoJ"/>
         </item>
         
+        <item>
+            <title>3.5.0</title>
+            <description><![CDATA[
+                <h2>Bugs Fixed</h2>
+                <ul>
+                <li>Global variables are not initialized properly.</li>
+                <li>Fail to show compiler error / warning messages.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Wed, 13 Jun 2018 16:00:17 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.5.0/CamelStudioX_3.5.0_Build29.zip" sparkle:version="29" sparkle:shortVersionString="3.5.0" length="67392388" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCKcK2FzfVyZ/5Hn+tbqITgEPe2GgIVAKHC1AZ9cqI9x+unwhobq6RmpS+q"/>
+        </item>
+        
     </channel></rss>
 

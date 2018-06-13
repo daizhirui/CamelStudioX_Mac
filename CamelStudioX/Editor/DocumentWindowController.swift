@@ -203,19 +203,10 @@ class DocumentWindowController: NSWindowController {
                 message = "Some warnning!: \(compilerMessages.warnings.count) warnnings!"
                 InfoAndAlert.shared.postNotification(title: "Build Result", informativeText: message)
             } else {
+                myDebug(compilerMessages.normal.join(separator: "\n"))
                 InfoAndAlert.shared.postNotification(title: "Build Result", informativeText: "Succeeded")
             }
-//            else if compilerMessages.normal.count > 0 {
-//                message = "Some normal messages: \(compilerMessages.normal.count) normal messages!"
-//                InfoAndAlert.shared.postNotification(title: "Build Result", informativeText: message)
-//            }
         }
-//        else {
-////            self.viewController.sidePanelInfoTextView.string = ""
-////            compilerMessageViewController?.textView.string = ""
-//            // post a notification to inform the user
-//            InfoAndAlert.shared.postNotification(title: "Build Result", informativeText: "Succeeded")
-//        }
         return compilerMessages.success
     }
     //*********************** About build binary **************************

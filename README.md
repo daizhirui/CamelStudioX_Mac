@@ -1,6 +1,14 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.5.0
+----
+
+### Build 29 on 13.06.2018
+
+- Fix: Global variables are not initialized properly.
+- Fix: Fail to show compiler error / warning messages.
+
 ## Version 3.4.4
 ----
 

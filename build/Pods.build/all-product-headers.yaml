@@ -1,0 +1,64 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/daizhirui/Development/CamelStudioX_Mac/build/Debug/ORSSerialPort/ORSSerial.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "ORSSerial-Swift.h",
+          'external-contents': "/Users/daizhirui/Development/CamelStudioX_Mac/build/Debug/ORSSerialPort/ORSSerial.framework/Versions/A/Headers/ORSSerial-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "ORSSerialPacketDescriptor.h",
+          'external-contents': "/Users/daizhirui/Development/CamelStudioX_Mac/Pods/ORSSerialPort/Source/ORSSerialPacketDescriptor.h"
+        },
+        {
+          'type': 'file',
+          'name': "ORSSerialPort-umbrella.h",
+          'external-contents': "/Users/daizhirui/Development/CamelStudioX_Mac/Pods/Target Support Files/ORSSerialPort/ORSSerialPort-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "ORSSerialPort.h",
+          'external-contents': "/Users/daizhirui/Development/CamelStudioX_Mac/Pods/ORSSerialPort/Source/ORSSerialPort.h"
+        },
+        {
+          'type': 'file',
+          'name': "ORSSerialPortManager.h",
+          'external-contents': "/Users/daizhirui/Development/CamelStudioX_Mac/Pods/ORSSerialPort/Source/ORSSerialPortManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "ORSSerialRequest.h",
+          'external-contents': "/Users/daizhirui/Development/CamelStudioX_Mac/Pods/ORSSerialPort/Source/ORSSerialRequest.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/daizhirui/Development/CamelStudioX_Mac/build/Debug/ORSSerialPort/ORSSerial.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/daizhirui/Development/CamelStudioX_Mac/build/Pods.build/Debug/ORSSerialPort.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/daizhirui/Development/CamelStudioX_Mac/build/Debug/ORSSerialPort/ORSSerial.framework/PrivateHeaders",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "ORSSerialBuffer.h",
+          'external-contents': "/Users/daizhirui/Development/CamelStudioX_Mac/Pods/ORSSerialPort/Source/ORSSerialBuffer.h"
+        }
+      ]
+    }
+  ]
+}

@@ -15,13 +15,17 @@ struct CompilerMessages {
     var errors = [NSAttributedString]()
 }
 
+enum CompilerMessagesType {
+    case error, warning, normal
+}
+
 class Compiler: NSObject {
 
     var project: ProjectManager!
     
     var compilerDirectoryPath = Bundle.main.bundlePath + "/Contents/Resources/Developer/Toolchains/bin/"
     var gcc_MIPS_Compiler = "mips-netbsd-elf-gcc"
-    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c "
+    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -G0 "
 //    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -w -G0 -msoft-float"
     var as_MIPS_Compiler = "mips-netbsd-elf-as"
     var as_Option = "-EL"
@@ -49,7 +53,7 @@ class Compiler: NSObject {
             // start to generate Makefile
             if self.project.targetName.count > 0 {
                 if project.library.contains("soft_fp") {   // float point library!
-                    self.gcc_Option.append("-G0 -msoft-float ")
+                    self.gcc_Option.append("-msoft-float ")
                 }
                 if project.library.contains("stdio") || project.library.contains("stdio_fp")
                     || project.library.contains("stdlib") || project.library.contains("stdlib_fp") {
@@ -200,31 +204,43 @@ class Compiler: NSObject {
             }
         }
         if stdErrorOutput.count > 0 {
+            var compilerMessageType: CompilerMessagesType = .normal
+            var attributedMessage = NSMutableAttributedString(string: "")
             for item in stdErrorOutput.components(separatedBy: .newlines) {
                 if item.contains("-msoft-float") {  // Ignore the warning of using soft float
                     continue
                 }
                 var newItem = item
-                var attributedMessage = NSMutableAttributedString(string: "")
                 if let range: Range<String.Index> = newItem.range(of: "mips") {             // remove the path of the compiler
                     newItem.removeSubrange(newItem.startIndex..<range.lowerBound)
                 }
-                if let range: NSRange = newItem.lowercased().range(of: "warning") {         // Detect a new start of a warning
-                    if attributedMessage.string.count > 0 {
-                        compilerMessage.warnings.append(attributedMessage)                  // store the old error message
+                func addMessage() {
+                    switch compilerMessageType {
+                        case .error:
+                            compilerMessage.errors.append(attributedMessage)
+                        case .warning:
+                            compilerMessage.warnings.append(attributedMessage)
+                        case .normal:
+                            compilerMessage.normal.append(attributedMessage)
                     }
+                }
+                if let range: NSRange = newItem.lowercased().range(of: "warning") {         // Detect a new start of a warning
+                    addMessage()
                     attributedMessage = NSMutableAttributedString(string: newItem)
                     attributedMessage.addAttributes([.foregroundColor : NSColor.orange as Any], range: range)
+                    compilerMessageType = .warning
+                    myDebug("Warning!\n")
                 } else if let range: NSRange = newItem.lowercased().range(of: "error") {    // Detect a new start of an error
-                    if attributedMessage.string.count > 0 {
-                        compilerMessage.errors.append(attributedMessage)                    // store the old error message
-                    }
+                    addMessage()
                     attributedMessage = NSMutableAttributedString(string: newItem)
                     attributedMessage.addAttributes([.foregroundColor : NSColor.red as Any], range: range)
+                    compilerMessageType = .error
+                    myDebug("Error!\n")
                     compilerMessage.success = false
                 } else {
-                    let messageDetail = NSAttributedString(string: newItem)
+                    let messageDetail = NSAttributedString(string: "\n"+newItem)
                     attributedMessage.append(messageDetail)
+                    myDebug(attributedMessage)
                 }
             }
         }
