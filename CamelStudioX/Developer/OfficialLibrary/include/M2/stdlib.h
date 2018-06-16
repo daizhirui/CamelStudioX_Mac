@@ -1,10 +1,10 @@
 /**
- * @brief Standard Library for M2
- * 
- * @file stdlib.c
- * @author Zhirui Dai
- * @date 2018-05-27
- */
+* @file stdlib.h
+* @author Zhirui Dai
+* @date 27 May 2018
+* @copyright 2018 Zhirui
+* @brief Standard Library for M2
+*/
 
 #ifndef __M2_STDLIB_H__
 #define __M2_STDLIB_H__

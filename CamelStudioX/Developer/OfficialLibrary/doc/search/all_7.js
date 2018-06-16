@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['on',['ON',['../mcu_8h.html#ad76d1750a6cdeebd506bfcd6752554d2',1,'mcu.h']]]
+  ['jumpto',['JumpTo',['../mcu_8h.html#a38c3a81fc94bff4cb6654061b7d21909',1,'mcu.h']]]
 ];

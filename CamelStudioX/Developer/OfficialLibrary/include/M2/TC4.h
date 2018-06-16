@@ -1,13 +1,10 @@
-/*--------------------------------------------------------------------
- * TITLE: M2 Hardware Definition
- * AUTHOR: Astro
- * DATE CREATED: 2017/11/3
- * FILENAME: TC4.h
- * PROJECT: M2Library
- * COPYRIGHT: Camel Microelectronics, Ltd.
- * DESCRIPTION:
- *--------------------------------------------------------------------*/
-#ifndef __TC4_h__
+/**
+* @file TC4.h
+* @author Zhirui Dai
+* @date 16 Jun 2018
+* @copyright 2018 Zhirui
+* @brief Timer4 Library for M2
+*/#ifndef __TC4_h__
 #define __TC4_h__
 
 #include "mcu.h"
@@ -23,7 +20,7 @@
 
 /*********** Timer4 PWM Setup*************/
 /**
- * @brief 
+ * @brief
  * This function sets all the PWM function of TC4
  * @param pwm0_en   the switch of TC4-pwm0, ON or OFF
  * @param div0      the clock freq divider of TC4-pwm0
@@ -43,7 +40,7 @@
         MemoryOr32(T4_CTL0_REG, (pwm0_en | pwm1_en << 1));      \
     }
 /**
- * @brief 
+ * @brief
  * This function sets single pwm of TC4
  * @param n         the number of pwm, 0 or 1
  * @param pwm_en    the switch of the pwm, ON or OFF

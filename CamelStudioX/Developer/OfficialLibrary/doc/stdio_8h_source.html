@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CamelStudio Library Documentaion: std/stdio.h Source File</title>
+<title>CamelStudio Library Documentaion: src/std/stdio.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="cmstudiox-1.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CamelStudio Library Documentaion
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -91,20 +91,12 @@ $(document).ready(function(){initNavTree('stdio_8h_source.html','');});
 <div class="title">stdio.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="stdio_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __M2_STDIO_H__</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define __M2_STDIO_H__</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> <a class="code" href="stdio_8h.html#a948b7a0779c308ac5502c57e282e6933">putchar</a>(<span class="keywordtype">char</span> c);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">void</span> <a class="code" href="stdio_8h.html#a46036bd75b920766eef64eb7910c887d">puts</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keywordtype">string</span>);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">char</span> <a class="code" href="stdio_8h.html#a0979671914792955a7a68461634ff82d">getchar</a>();</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">long</span> <a class="code" href="stdio_8h.html#a46d9f17d80612d1174eab96f53c7c5b7">getnum</a>();</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="stdio_8h.html#af48103646b7cb053e55eb3867a05fc85">getHexNum</a>();</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="stdio_8h.html#ac399b37e5355c704e130b1c6f60b71ec">itoa</a>(<span class="keywordtype">int</span> value, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> base);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define xtoa(A) itoa(A, 16)</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> <a class="code" href="stdio_8h.html#a133c04c35a1c14c6f8d8078831705661">printf</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *format, ...);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="stdio_8h.html#ab416b2a62f47ec0095853e37ba84e78b">sprintf</a>(<span class="keywordtype">char</span>* buf, <span class="keyword">const</span> <span class="keywordtype">char</span>* format, ...);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="stdio_8h_html_af48103646b7cb053e55eb3867a05fc85"><div class="ttname"><a href="stdio_8h.html#af48103646b7cb053e55eb3867a05fc85">getHexNum</a></div><div class="ttdeci">unsigned long getHexNum()</div><div class="ttdoc">Get a hexadecimal integer from uart0. </div><div class="ttdef"><b>Definition:</b> stdio_shared.c:90</div></div>
-<div class="ttc" id="stdio_8h_html_ac399b37e5355c704e130b1c6f60b71ec"><div class="ttname"><a href="stdio_8h.html#ac399b37e5355c704e130b1c6f60b71ec">itoa</a></div><div class="ttdeci">char * itoa(int value, unsigned int base)</div><div class="ttdoc">Convert an integer to a string. </div><div class="ttdef"><b>Definition:</b> stdio_shared.c:129</div></div>
-<div class="ttc" id="stdio_8h_html_a46d9f17d80612d1174eab96f53c7c5b7"><div class="ttname"><a href="stdio_8h.html#a46d9f17d80612d1174eab96f53c7c5b7">getnum</a></div><div class="ttdeci">long getnum()</div><div class="ttdoc">Get a decimal integer from uart0. </div><div class="ttdef"><b>Definition:</b> stdio_shared.c:58</div></div>
-<div class="ttc" id="stdio_8h_html_a0979671914792955a7a68461634ff82d"><div class="ttname"><a href="stdio_8h.html#a0979671914792955a7a68461634ff82d">getchar</a></div><div class="ttdeci">char getchar()</div><div class="ttdoc">Get a character from uart0. </div><div class="ttdef"><b>Definition:</b> stdio_shared.c:47</div></div>
-<div class="ttc" id="stdio_8h_html_ab416b2a62f47ec0095853e37ba84e78b"><div class="ttname"><a href="stdio_8h.html#ab416b2a62f47ec0095853e37ba84e78b">sprintf</a></div><div class="ttdeci">void sprintf(char *buf, const char *format,...)</div><div class="ttdoc">Generate and store a formated string. </div><div class="ttdef"><b>Definition:</b> stdio_shared.c:214</div></div>
-<div class="ttc" id="stdio_8h_html_a948b7a0779c308ac5502c57e282e6933"><div class="ttname"><a href="stdio_8h.html#a948b7a0779c308ac5502c57e282e6933">putchar</a></div><div class="ttdeci">void putchar(char c)</div><div class="ttdoc">Print a character to uart0. </div><div class="ttdef"><b>Definition:</b> stdio_shared.c:21</div></div>
-<div class="ttc" id="stdio_8h_html_a133c04c35a1c14c6f8d8078831705661"><div class="ttname"><a href="stdio_8h.html#a133c04c35a1c14c6f8d8078831705661">printf</a></div><div class="ttdeci">void printf(const char *format,...)</div><div class="ttdoc">Print a formated string to uart0. </div><div class="ttdef"><b>Definition:</b> stdio_shared.c:184</div></div>
-<div class="ttc" id="stdio_8h_html_a46036bd75b920766eef64eb7910c887d"><div class="ttname"><a href="stdio_8h.html#a46036bd75b920766eef64eb7910c887d">puts</a></div><div class="ttdeci">void puts(const char *string)</div><div class="ttdoc">Print a string to uart0. </div><div class="ttdef"><b>Definition:</b> stdio_shared.c:32</div></div>
-</div><!-- fragment --></div><!-- contents -->
+<a href="stdio_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div></div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e3ca87bab28942003398a7ab6222efec.html">std</a></li><li class="navelem"><a class="el" href="stdio_8h.html">stdio.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fe9004854c8f0f3cfbfe7f330be58a96.html">std</a></li><li class="navelem"><a class="el" href="stdio_8h.html">stdio.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

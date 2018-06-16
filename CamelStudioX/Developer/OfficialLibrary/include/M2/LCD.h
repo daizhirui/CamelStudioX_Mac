@@ -1,23 +1,10 @@
-/*--------------------------------------------------------------------
- * TITLE: m2 Hardware Defines
- * AUTHOR: John & Jack 
- * DATE CREATED: 2013/10/10
- * FILENAME: LCD.h
- * PROJECT: m2
- * COPYRIGHT: Small World, Inc.
- * DESCRIPTION:
- *    m2 Hardware Defines
- *
- *    2014-03-17: added sd adc, opo, v2p; sys reg modified
- *    2014-01-11: added sd adc, opo, v2p; sys reg modified
- *    2013-12-18: misc edit
- *    2013-12-15: uart reg back to m1
- *    2012-10-16: modified base on m2 new design
- *    2012-10-10: modified base on s0.h
- * NOTE:
- * 		This LCD library is almost full-copied from old version. It hasn't
- * been checked again.	-- Astro, 2017/11/3
- *--------------------------------------------------------------------*/
+/**
+* @file LCD.h
+* @author John & Jack, Zhirui Dai
+* @date 16 Jun 2018
+* @copyright 2018 Zhirui
+* @brief LCD Library for M2
+*/
 #ifndef __LCD_H__
 #define __LCD_H__
 
@@ -55,7 +42,7 @@
 #define B13	 12,30
 
 #define segment 0x01000600   //0604 0608 060c
-#define digit 0x01000610     //0610 0611 0612 
+#define digit 0x01000610     //0610 0611 0612
 #define days  0x01000613     //0613 0614 0615 0616 0617  ***  061e
 #define LCDCode1 0x01000620  //0620 0624 0628 062c
 #define LCDCode2 0x01000630  //0630 0634 0638 063c
@@ -70,7 +57,7 @@
 #define hourg     0x01000678
 #define dayg      0x01000660
 #define monthg    0x01000664
-#define SetMode   (*(volatile unsigned long *)(0x01000664))      
+#define SetMode   (*(volatile unsigned long *)(0x01000664))
 /*********** End of LCD Special Sign******/
 
 /*********** LCD dis app******************/
@@ -83,13 +70,13 @@ void RT_LCD_DisLoPressure(unsigned int b);
 void RT_LCD_DisHeartRate(unsigned int b);
 void RT_LCD_DisDate(unsigned int month,unsigned int day);
 void RT_LCD_DisTime(unsigned int hour,unsigned int minute);
-void RT_LCD_DisSign(unsigned int x,unsigned int y);
-void RT_LCD_ClearSign(unsigned int x,unsigned int y);
+void RT_LCD_DisSign(unsigned long x, unsigned long y);
+void RT_LCD_ClearSign(unsigned long x,unsigned long y);
 void RT_LCD_GetSegCode1(unsigned int b);
 void RT_LCD_GetSegCode2(unsigned int b);
 void RT_LCD_GetSegCode3(unsigned int b);
 void RT_LCD_ExtractDigit(unsigned int b);
-void RT_LCD_BlinkSign(unsigned int x,unsigned int y);
+void RT_LCD_BlinkSign(unsigned long x,unsigned long y);
 void RT_LCD_BlinkMinute();
 void RT_LCD_BlinkHour();
 void RT_LCD_BlinkDay();

@@ -200,5 +200,20 @@
             <enclosure url="https://camel-micro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.5.1_Build30.zip" sparkle:version="30" sparkle:shortVersionString="3.5.1" length="67393509" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCNqfme/1i1n60NgVZzoObgVX8N1wIUasP1Wt+4JPINiTsr38g3B2f/Kls="/>
         </item>
         
+        <item>
+            <title>3.5.2</title>
+            <description><![CDATA[
+                <h2>Improvement</h2>
+                <ul>
+                <li>Auto insert 4 spaces as a tab.</li>
+                <li>Update library and documentation.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Sat, 16 Jun 2018 20:43:16 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camel-micro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.5.2_Build31.zip" sparkle:version="31" sparkle:shortVersionString="3.5.2" length="67762244" type="application/octet-stream" sparkle:dsaSignature="MCwCFGoP17jo/znHSmS2vEje+n2OrvvvAhRXH87DvKcXzy2WesHsZRNzE7MD5A=="/>
+        </item>
+        
     </channel></rss>
 

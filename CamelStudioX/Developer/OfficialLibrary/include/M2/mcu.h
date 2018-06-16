@@ -1,7 +1,5 @@
-
 /**
  * @brief M2 micro core unit
- * 
  * @file mcu.h
  * @author Zhirui Dai
  * @date 2018-05-25
@@ -11,14 +9,13 @@
 #define __M2_MCU__
 
 /**
- * @brief Value definition
+ * @brief Keyword ON.
  */
 #define ON      0x1
+/**
+ * @brief Keyword OFF.
+ */
 #define OFF     0x0
-#define RISING  0x1
-#define FALLING 0x0
-#define RTC_12HOUR 0x1
-#define RTC_24HOUR 0x3
 
 /**
  * @brief Hardware address
@@ -34,8 +31,8 @@
 #define INT_COUNT            0x01001FF4 //RAM address to store current interrupt depth, number of interrupts
 // External Interrupt
 #define INT_CTL0_REG         0x1f800500 // EX Int enable control and base
-#define INT_CTL1_REG         0x1f800501 // EX Int IRQ bits content read, (m1=03) 
-#define INT_CTL2_REG         0x1f800502 // EX Int high enable 
+#define INT_CTL1_REG         0x1f800501 // EX Int IRQ bits content read, (m1=03)
+#define INT_CTL2_REG         0x1f800502 // EX Int high enable
 #define INT_CLR_REG          0x1f800503 // EX Int IRQ clear  (m1=01)
 // Uart0
 #define UART0_READ_REG       0x1f800000
@@ -116,8 +113,6 @@
 #define RTC_TIME_REG         0x1f800f01 // time
 #define RTC_CLR_REG          0x1f800f03
 
-
-
 #define DATA_SIZE 256
 
 /**
@@ -162,14 +157,6 @@ typedef void (*FuncPtr1)(unsigned long);
  * @brief Set chip identity(MAC_ID).
  */
 #define setMAC(id) flashWrite(id, MAC_ID)
-
-/**
- * @brief System Interrupt.
- */
-#define RT_SYSINT_Flag()    MemoryRead(SYS_IRQ_REG)
-#define RT_SYSINT_En()      MemoryOr(SYS_CTL0_REG, 0x1)
-#define RT_SYSINT_Off()     MemoryAnd(SYS_CTL0_REG, ~0x1)
-#define RT_SYSINT_On(A)     (MemoryRead(SYS_IRQ_REG)&A)
 
 void RT_Clr_Sram();
 

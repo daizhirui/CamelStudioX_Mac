@@ -95,15 +95,19 @@ public class EditorTextView: NSTextView {
             if self.string.count - lowerBound > 0 {
                 if self.string[endIndex...endIndex] == "}" {            // If the next char is "}", make a newline for it.
                     for _ in 1..<self.tabCount {                            // Start to insert tab.
-                        self.insertCharacter(with: StringInsertion(position: lowerBound, character: "\t"))
+                        for _ in 0...3 { // 1 tab = 4 spaces
+                            self.insertCharacter(with: StringInsertion(position: lowerBound, character: " "))
+                        }
                         //lowerBound += 1
                     }
                     self.insertCharacter(with: StringInsertion(position: lowerBound, character: "\n"))
                 }
             }
             for _ in 0..<self.tabCount {                            // Start to insert tab.
-                self.insertCharacter(with: StringInsertion(position: lowerBound, character: "\t"))
-                lowerBound += 1
+                for _ in 0...3 {
+                    self.insertCharacter(with: StringInsertion(position: lowerBound, character: " "))
+                }
+                lowerBound += 4
             }
             
         } else if let char = event.characters {

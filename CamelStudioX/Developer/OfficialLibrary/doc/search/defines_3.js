@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['memoryread',['MemoryRead',['../mcu_8h.html#abb6df44d49409584016eff1f123f7bce',1,'mcu.h']]]
+  ['jumpto',['JumpTo',['../mcu_8h.html#a38c3a81fc94bff4cb6654061b7d21909',1,'mcu.h']]]
 ];

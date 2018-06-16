@@ -1,13 +1,19 @@
 var searchData=
 [
-  ['setmac',['setMAC',['../mcu_8h.html#a1ca5743c7289ed1ddab97e841058721c',1,'mcu.h']]],
-  ['sprintf',['sprintf',['../stdio_8h.html#ab416b2a62f47ec0095853e37ba84e78b',1,'stdio_shared.c']]],
-  ['stdarg_2eh',['stdarg.h',['../stdarg_8h.html',1,'']]],
-  ['stdio_2ec',['stdio.c',['../stdio_8c.html',1,'']]],
-  ['stdio_2eh',['stdio.h',['../stdio_8h.html',1,'']]],
-  ['stdio_5ffp_2ec',['stdio_fp.c',['../stdio__fp_8c.html',1,'']]],
-  ['stdio_5ffp_2eh',['stdio_fp.h',['../stdio__fp_8h.html',1,'']]],
-  ['stdio_5fshared_2eh',['stdio_shared.h',['../stdio__shared_8h.html',1,'']]],
-  ['stdlib_2ec',['stdlib.c',['../stdlib_8c.html',1,'']]],
-  ['sys_5fctl0_5freg',['SYS_CTL0_REG',['../mcu_8h.html#ab34acec79daf4fcc12a662cde9e75df7',1,'mcu.h']]]
+  ['off',['OFF',['../mcu_8h.html#a29e413f6725b2ba32d165ffaa35b01e5',1,'mcu.h']]],
+  ['on',['ON',['../mcu_8h.html#ad76d1750a6cdeebd506bfcd6752554d2',1,'mcu.h']]],
+  ['opo_5fexchange_5fpin',['OPO_EXCHANGE_PIN',['../analog_i_o_8h.html#a9bf75bd96cc424c955447196c8c32599',1,'analogIO.h']]],
+  ['opo_5fgain_5f100k',['OPO_GAIN_100K',['../analog_i_o_8h.html#a1527f1208a4d416c958d9a4cb7898d57',1,'analogIO.h']]],
+  ['opo_5fgain_5f20k',['OPO_GAIN_20K',['../analog_i_o_8h.html#a359161bc139a807e18272ed299751933',1,'analogIO.h']]],
+  ['opo_5fgain_5f240k',['OPO_GAIN_240K',['../analog_i_o_8h.html#aa1b4f7d9963ffab8a02b20899b14d7d2',1,'analogIO.h']]],
+  ['opo_5fgain_5f320k',['OPO_GAIN_320K',['../analog_i_o_8h.html#a745661ecb7c4cefdd93f1dd884881ad1',1,'analogIO.h']]],
+  ['opo_5fgain_5f400k',['OPO_GAIN_400K',['../analog_i_o_8h.html#ac0474e7b2ba70f25f3e2e081ffd4d93e',1,'analogIO.h']]],
+  ['opo_5fgain_5f40k',['OPO_GAIN_40K',['../analog_i_o_8h.html#aab9ad7795ad4a3bee4556b5996dd4f92',1,'analogIO.h']]],
+  ['opo_5fgain_5f480k',['OPO_GAIN_480K',['../analog_i_o_8h.html#acb6f7c236c6582f0be238af31657e5be',1,'analogIO.h']]],
+  ['opo_5fgain_5f80k',['OPO_GAIN_80K',['../analog_i_o_8h.html#a54c220ac63070817355b633c892fb2f4',1,'analogIO.h']]],
+  ['opo_5fnot_5fexchange_5fpin',['OPO_NOT_EXCHANGE_PIN',['../analog_i_o_8h.html#a60931ceb0df42cf485a8e2244c50a8d5',1,'analogIO.h']]],
+  ['opo_5fnside',['OPO_NSIDE',['../analog_i_o_8h.html#a27ea87270635b005b79ed3c2bdf817b1',1,'analogIO.h']]],
+  ['opo_5fpin_5fresistor_5f10k',['OPO_PIN_RESISTOR_10K',['../analog_i_o_8h.html#a8be5c9e583cc3a5748e250988c0a09ea',1,'analogIO.h']]],
+  ['opo_5fpin_5fresistor_5f1k',['OPO_PIN_RESISTOR_1K',['../analog_i_o_8h.html#a3e3450fbf20861f9c18264c410a6436d',1,'analogIO.h']]],
+  ['opo_5fpside',['OPO_PSIDE',['../analog_i_o_8h.html#a8bcbcccda02f456b9d5395756791c1a4',1,'analogIO.h']]]
 ];

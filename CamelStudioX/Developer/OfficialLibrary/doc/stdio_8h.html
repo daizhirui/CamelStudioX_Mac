@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CamelStudio Library Documentaion: std/stdio.h File Reference</title>
+<title>CamelStudio Library Documentaion: src/std/stdio.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="cmstudiox-1.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CamelStudio Library Documentaion
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('stdio_8h.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ab1b1876f06eb8953b8c21b11ef27e162"><td class="memItemLeft" align="right" valign="top"><a id="ab1b1876f06eb8953b8c21b11ef27e162"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>xtoa</b>(A)&#160;&#160;&#160;<a class="el" href="stdio_8h.html#ac399b37e5355c704e130b1c6f60b71ec">itoa</a>(A, 16)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>xtoa</b>(A)&#160;&#160;&#160;<a class="el" href="stdio_8h.html#a675c55759ba790d414dcaf12773299bc">itoa</a>(A, 16)</td></tr>
 <tr class="separator:ab1b1876f06eb8953b8c21b11ef27e162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -123,9 +123,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af48103646b7cb053e55eb3867a05fc85"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#af48103646b7cb053e55eb3867a05fc85">getHexNum</a> ()</td></tr>
 <tr class="memdesc:af48103646b7cb053e55eb3867a05fc85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a hexadecimal integer from uart0.  <a href="#af48103646b7cb053e55eb3867a05fc85">More...</a><br /></td></tr>
 <tr class="separator:af48103646b7cb053e55eb3867a05fc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac399b37e5355c704e130b1c6f60b71ec"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#ac399b37e5355c704e130b1c6f60b71ec">itoa</a> (int value, unsigned int base)</td></tr>
-<tr class="memdesc:ac399b37e5355c704e130b1c6f60b71ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an integer to a string.  <a href="#ac399b37e5355c704e130b1c6f60b71ec">More...</a><br /></td></tr>
-<tr class="separator:ac399b37e5355c704e130b1c6f60b71ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675c55759ba790d414dcaf12773299bc"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a675c55759ba790d414dcaf12773299bc">itoa</a> (int value, unsigned int base)</td></tr>
+<tr class="memdesc:a675c55759ba790d414dcaf12773299bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an integer to a string.  <a href="#a675c55759ba790d414dcaf12773299bc">More...</a><br /></td></tr>
+<tr class="separator:a675c55759ba790d414dcaf12773299bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a133c04c35a1c14c6f8d8078831705661"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a133c04c35a1c14c6f8d8078831705661">printf</a> (const char *format,...)</td></tr>
 <tr class="memdesc:a133c04c35a1c14c6f8d8078831705661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a formated string to uart0.  <a href="#a133c04c35a1c14c6f8d8078831705661">More...</a><br /></td></tr>
 <tr class="separator:a133c04c35a1c14c6f8d8078831705661"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,14 +198,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac399b37e5355c704e130b1c6f60b71ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac399b37e5355c704e130b1c6f60b71ec">&#9670;&nbsp;</a></span>itoa()</h2>
+<a id="a675c55759ba790d414dcaf12773299bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a675c55759ba790d414dcaf12773299bc">&#9670;&nbsp;</a></span>itoa()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* itoa </td>
+          <td class="memname">char * itoa </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -374,7 +374,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e3ca87bab28942003398a7ab6222efec.html">std</a></li><li class="navelem"><a class="el" href="stdio_8h.html">stdio.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fe9004854c8f0f3cfbfe7f330be58a96.html">std</a></li><li class="navelem"><a class="el" href="stdio_8h.html">stdio.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

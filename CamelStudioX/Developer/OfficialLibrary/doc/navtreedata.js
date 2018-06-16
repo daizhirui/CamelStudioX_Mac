@@ -24,10 +24,16 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "CamelStudio Library Documentaion", "index.html", [
+    [ "Analog Input Output Library for M2", "md_src_analog_i_o__r_e_a_d_m_e.html", null ],
+    [ "Data Encryption Standard (DES) Library for M2", "md_src__d_e_s__r_e_a_d_m_e.html", null ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
@@ -38,7 +44,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_a_f_e_8h_source.html"
+"_d_e_s_8c.html",
+"_t_c2_8h.html#a80f5ade258504a1243ccb058dd860475",
+"mcu_8h.html#a61c6c3e2790298ca9bef424e17010ae5",
+"string_8h.html#a43b4547e12226fef871eed8afe191ad7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

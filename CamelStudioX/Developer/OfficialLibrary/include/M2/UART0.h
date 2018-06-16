@@ -1,12 +1,10 @@
-/*--------------------------------------------------------------------
- * TITLE: M2 Hardware Definition
- * AUTHOR: Astro
- * DATE CREATED: 2017/10/31
- * FILENAME: UART0.h
- * PROJECT: M2Library
- * COPYRIGHT: Camel Microelectronics, Ltd.
- * DESCRIPTION:
- *--------------------------------------------------------------------*/
+/**
+* @file UART0.h
+* @author Zhirui Dai
+* @date 31 Oct 2017
+* @copyright 2018 Zhirui
+* @brief UART0 Library for M2
+*/
 #ifndef __UART0_h__
 #define __UART0_h__
 

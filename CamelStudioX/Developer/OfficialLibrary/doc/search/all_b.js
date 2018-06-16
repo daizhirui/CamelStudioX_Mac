@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['va_5farg',['va_arg',['../stdarg_8h.html#a81ebe6ea6253b0c6618e29de70fe10eb',1,'stdarg.h']]],
-  ['va_5fend',['va_end',['../stdarg_8h.html#acd9b3b9085ec072324c5fdac2b40304e',1,'stdarg.h']]],
-  ['va_5fstart',['va_start',['../stdarg_8h.html#ab23fb3ac0aff18d3c1a09f3df4ebc8b5',1,'stdarg.h']]]
+  ['printf',['printf',['../stdio_8h.html#a133c04c35a1c14c6f8d8078831705661',1,'stdio_shared.c']]],
+  ['putchar',['putchar',['../stdio_8h.html#a948b7a0779c308ac5502c57e282e6933',1,'stdio_shared.c']]],
+  ['puts',['puts',['../stdio_8h.html#a46036bd75b920766eef64eb7910c887d',1,'stdio_shared.c']]]
 ];

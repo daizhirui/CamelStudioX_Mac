@@ -1,12 +1,10 @@
-/*--------------------------------------------------------------------
- * TITLE: M2 Hardware Definition
- * AUTHOR: Astro
- * DATE CREATED: 2017/10/31
- * FILENAME: UART1.h
- * PROJECT: M2Library
- * COPYRIGHT: Camel Microelectronics, Ltd.
- * DESCRIPTION:
- *--------------------------------------------------------------------*/
+/**
+* @file UART1.h
+* @author Zhirui Dai
+* @date 31 Oct 2017
+* @copyright 2018 Zhirui
+* @brief Uart1 Library for M2
+*/
 #ifndef __UART1_h__
 #define __UART1_h__
 
@@ -28,6 +26,10 @@
 #define RT_UART1_Write(val)        MemoryWrite32(UART1_WRITE_REG,val)              // send the data
 #define RT_UART1_DataReady()       MemoryRead32(UART1_DATA_RDY_REG)                // check data ready
 #define RT_UART1_Read()            MemoryRead32(UART1_READ_REG)                    // read the data
+
+#define RT_UART1_IrqOn()   MemoryOr32(UART1_CTL_REG,1)
+#define RT_UART1_IrqOff()  MemoryAnd32(UART1_CTL_REG,~1)
+
 /**
  * @brief This function sets UART1 compare irq on
  *

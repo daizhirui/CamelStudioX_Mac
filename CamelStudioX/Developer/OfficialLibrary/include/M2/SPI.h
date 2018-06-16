@@ -1,12 +1,10 @@
-/*--------------------------------------------------------------------
- * TITLE: M2 Hardware Definition
- * AUTHOR: Astro
- * DATE CREATED: 2017/10/31
- * FILENAME: SPI.h
- * PROJECT: M2Library
- * COPYRIGHT: Camel Microelectronics, Ltd.
- * DESCRIPTION:
- *--------------------------------------------------------------------*/
+/**
+* @file SPI.h
+* @author Zhirui Dai
+* @date 16 Jun 2018
+* @copyright 2018 Zhirui
+* @brief SPI Library for M2
+*/
 #ifndef __SPI_h__
 #define __SPI_h__
 
@@ -43,20 +41,20 @@
 #define RT_SPI_Read_() MemoryRead32(SPI_READ_REG)
 /**
  * @brief This function returns 1 byte from SPI
- * 
+ *
  * @return unsigned char 1-byte data from SPI
  */
 unsigned char RT_SPI_Read();
 /**
  * @brief This function transfers data when M2's SPI works as Master
- * 
+ *
  * @param c     1-byte data to send
  * @return unsigned char 1-byte data received
  */
 unsigned char RT_SPI_MasterTransfer(unsigned char c);
 /**
  * @brief This function transfers data when M2's SPI works as Slave
- * 
+ *
  * @param c     1-byte data to send
  * @return unsigned char 1-byte data received
  */

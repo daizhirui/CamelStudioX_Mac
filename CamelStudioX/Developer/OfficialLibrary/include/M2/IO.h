@@ -1,12 +1,10 @@
-/*--------------------------------------------------------------------
- * TITLE: M2 Hardware Definition
- * AUTHOR: Astro
- * DATE CREATED: 2017/11/2
- * FILENAME: IO.h
- * PROJECT: M2Library
- * COPYRIGHT: Camel Microelectronics, Ltd.
- * DESCRIPTION:
- *--------------------------------------------------------------------*/
+/**
+* @file IO.h
+* @author Zhirui Dai
+* @date 16 Jun 2018
+* @copyright 2018 Zhirui
+* @brief General Input Output Library for M2
+*/
 #ifndef __IO_h__
 #define __IO_h__
 
@@ -20,58 +18,58 @@
 /***************** IO Setup***************/
 /**
  * @brief This function sets a specific channel at OUTPUT mode
- * 
+ *
  * @return      void
  */
 #define RT_IO_SetOutput(A) MemoryOr32(SYS_IOCTL_REG, (1 << A))
 /**
  * @brief This function sets a specific channel at INPUT mode
- * 
+ *
  * @return      void
  */
 #define RT_IO_SetInput(A) MemoryAnd32(SYS_IOCTL_REG, ~(1 << A))
 /**
  * @brief This function sets the mode of all GPIO channels
- * 
+ *
  * @param A     16-bit number which defines 16 IO channels' mode
  * @return      void
  */
 #define RT_IO_Mode16(A) MemoryWrite32(SYS_IOCTL_REG, A)
 /**
  * @brief This function sets a specific output io channel at HIGH level
- * 
- * @return      void 
+ *
+ * @return      void
  */
 #define RT_IO_SetHigh(A) MemoryOr32(SYS_GPIO0_REG, (1 << A))
 /**
  * @brief This function sets a specific output io channel at LOW level
- * 
- * @return      void 
+ *
+ * @return      void
  */
 #define RT_IO_SetLow(A) MemoryAnd32(SYS_GPIO0_REG, ~(1 << A))
 /**
  * @brief This function sets the level of all 16 io channel
- * 
+ *
  * @param A     16-bit number which defines 16 IO channels' level
- * @return      void 
+ * @return      void
  */
 #define RT_IO_Write16(A) MemoryWrite32(SYS_GPIO0_REG, A)
 /**
  * @brief This function returns the level of a specific io
- * 
+ *
  * @param  A    the io channel to read
  * @return      the io level
  */
 #define RT_IO_Read(A) ((MemoryRead32(SYS_GPIO1_REG) >> A) & 0x1)
 /**
  * @brief This function returns the level of all 16 io
- * 
- * @return      16-bit number which defines 16 io channels' level 
+ *
+ * @return      16-bit number which defines 16 io channels' level
  */
 #define RT_IO_Read16() MemoryRead32(SYS_GPIO1_REG)
 /**
  * @brief This function sets the mode of specific GPIO channel
- * 
+ *
  * @param io    the specific io channel to setup
  * @param mode  the mode, INPUT or OUTPUT
  * @return      void
@@ -85,7 +83,7 @@
     }
 /**
  * @brief This function sets the level of a specific io channel
- * 
+ *
  * @param io    the io channel to setup
  * @param level the io level
  * @return      void

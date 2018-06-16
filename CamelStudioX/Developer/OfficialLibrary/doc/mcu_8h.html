@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CamelStudio Library Documentaion: mcu/mcu.h File Reference</title>
+<title>CamelStudio Library Documentaion: src/mcu/mcu.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="cmstudiox-1.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CamelStudio Library Documentaion
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -105,23 +105,12 @@ $(document).ready(function(){initNavTree('mcu_8h.html','');});
 Macros</h2></td></tr>
 <tr class="memitem:ad76d1750a6cdeebd506bfcd6752554d2"><td class="memItemLeft" align="right" valign="top"><a id="ad76d1750a6cdeebd506bfcd6752554d2"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcu_8h.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>&#160;&#160;&#160;0x1</td></tr>
-<tr class="memdesc:ad76d1750a6cdeebd506bfcd6752554d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value definition. <br /></td></tr>
+<tr class="memdesc:ad76d1750a6cdeebd506bfcd6752554d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword ON. <br /></td></tr>
 <tr class="separator:ad76d1750a6cdeebd506bfcd6752554d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29e413f6725b2ba32d165ffaa35b01e5"><td class="memItemLeft" align="right" valign="top"><a id="a29e413f6725b2ba32d165ffaa35b01e5"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>OFF</b>&#160;&#160;&#160;0x0</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcu_8h.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="memdesc:a29e413f6725b2ba32d165ffaa35b01e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword OFF. <br /></td></tr>
 <tr class="separator:a29e413f6725b2ba32d165ffaa35b01e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeea2b49478f3b13faedba764985c6e96"><td class="memItemLeft" align="right" valign="top"><a id="aeea2b49478f3b13faedba764985c6e96"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RISING</b>&#160;&#160;&#160;0x1</td></tr>
-<tr class="separator:aeea2b49478f3b13faedba764985c6e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac00eb6fc2047dc399280f31b0c5f4472"><td class="memItemLeft" align="right" valign="top"><a id="ac00eb6fc2047dc399280f31b0c5f4472"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FALLING</b>&#160;&#160;&#160;0x0</td></tr>
-<tr class="separator:ac00eb6fc2047dc399280f31b0c5f4472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6023ebffc90fff4ba8131242c8f4e1ed"><td class="memItemLeft" align="right" valign="top"><a id="a6023ebffc90fff4ba8131242c8f4e1ed"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RTC_12HOUR</b>&#160;&#160;&#160;0x1</td></tr>
-<tr class="separator:a6023ebffc90fff4ba8131242c8f4e1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bb66ada65a9c9df51dd50402f75e35e"><td class="memItemLeft" align="right" valign="top"><a id="a4bb66ada65a9c9df51dd50402f75e35e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RTC_24HOUR</b>&#160;&#160;&#160;0x3</td></tr>
-<tr class="separator:a4bb66ada65a9c9df51dd50402f75e35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab34acec79daf4fcc12a662cde9e75df7"><td class="memItemLeft" align="right" valign="top"><a id="ab34acec79daf4fcc12a662cde9e75df7"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcu_8h.html#ab34acec79daf4fcc12a662cde9e75df7">SYS_CTL0_REG</a>&#160;&#160;&#160;0x1f800700</td></tr>
 <tr class="memdesc:ab34acec79daf4fcc12a662cde9e75df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware address. <br /></td></tr>
@@ -395,10 +384,10 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MemoryBitSwitch</b>(A,  V)&#160;&#160;&#160;(*(volatile unsigned long*)(A)^=(1&lt;&lt;V))</td></tr>
 <tr class="separator:a0ca70ad25735a971cad8268bec94941c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7cd8e68d0987c5b6e7fddfb595b4611"><td class="memItemLeft" align="right" valign="top"><a id="ac7cd8e68d0987c5b6e7fddfb595b4611"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>flashWrite</b>(value,  address)&#160;&#160;&#160;{FuncPtr2 funcptr; funcptr = (FuncPtr2)0x2d8; funcptr(value, address);}</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>flashWrite</b>(value,  address)&#160;&#160;&#160;{FuncPtr2 funcptr; funcptr = (FuncPtr2)0x2c4; funcptr(value, address);}</td></tr>
 <tr class="separator:ac7cd8e68d0987c5b6e7fddfb595b4611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b61f6e1d381be314c87ca74025e6162"><td class="memItemLeft" align="right" valign="top"><a id="a0b61f6e1d381be314c87ca74025e6162"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>flashErase</b>(address)&#160;&#160;&#160;{unsigned long addr; FuncPtr1 funcptr; funcptr =  (FuncPtr1)0x30c; addr = (((((address&gt;&gt;16)&amp;0xF)|0x1010)&lt;&lt;16) + (address&amp;0xFFFF)); funcptr(addr);}</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>flashErase</b>(address)&#160;&#160;&#160;{unsigned long addr; FuncPtr1 funcptr; funcptr =  (FuncPtr1)0x2f8; addr = (((((address&gt;&gt;16)&amp;0xF)|0x1010)&lt;&lt;16) + (address&amp;0xFFFF)); funcptr(addr);}</td></tr>
 <tr class="separator:a0b61f6e1d381be314c87ca74025e6162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38c3a81fc94bff4cb6654061b7d21909"><td class="memItemLeft" align="right" valign="top"><a id="a38c3a81fc94bff4cb6654061b7d21909"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcu_8h.html#a38c3a81fc94bff4cb6654061b7d21909">JumpTo</a>(address)&#160;&#160;&#160;{<a class="el" href="mcu_8h.html#a3d987633d7a3ca10c14905a807b62eb1">FuncPtr</a> funcptr; funcptr = (<a class="el" href="mcu_8h.html#a3d987633d7a3ca10c14905a807b62eb1">FuncPtr</a>)address; funcptr();}</td></tr>
@@ -415,16 +404,6 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcu_8h.html#a1ca5743c7289ed1ddab97e841058721c">setMAC</a>(id)&#160;&#160;&#160;flashWrite(id, MAC_ID)</td></tr>
 <tr class="memdesc:a1ca5743c7289ed1ddab97e841058721c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set chip identity(MAC_ID). <br /></td></tr>
 <tr class="separator:a1ca5743c7289ed1ddab97e841058721c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b5c7263f32d6555951bedb9222f9c25"><td class="memItemLeft" align="right" valign="top"><a id="a5b5c7263f32d6555951bedb9222f9c25"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcu_8h.html#a5b5c7263f32d6555951bedb9222f9c25">RT_SYSINT_Flag</a>()&#160;&#160;&#160;<a class="el" href="mcu_8h.html#abb6df44d49409584016eff1f123f7bce">MemoryRead</a>(SYS_IRQ_REG)</td></tr>
-<tr class="memdesc:a5b5c7263f32d6555951bedb9222f9c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Interrupt. <br /></td></tr>
-<tr class="separator:a5b5c7263f32d6555951bedb9222f9c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a5a4fd26771545cf945f34fa520e83f"><td class="memItemLeft" align="right" valign="top"><a id="a3a5a4fd26771545cf945f34fa520e83f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RT_SYSINT_En</b>()&#160;&#160;&#160;MemoryWrite(SYS_CRL0_REG, 0x1)</td></tr>
-<tr class="separator:a3a5a4fd26771545cf945f34fa520e83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19ec160c158f3f3531745d431e19bc24"><td class="memItemLeft" align="right" valign="top"><a id="a19ec160c158f3f3531745d431e19bc24"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RT_SYSINT_On</b>(A)&#160;&#160;&#160;(<a class="el" href="mcu_8h.html#abb6df44d49409584016eff1f123f7bce">MemoryRead</a>(SYS_IRQ_REG)&amp;A)</td></tr>
-<tr class="separator:a19ec160c158f3f3531745d431e19bc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -475,7 +454,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_4cee3ed2fe28b98d73407141cfd215dc.html">mcu</a></li><li class="navelem"><a class="el" href="mcu_8h.html">mcu.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b24b7e6370455d61c0bb46dddfb27cce.html">mcu</a></li><li class="navelem"><a class="el" href="mcu_8h.html">mcu.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>

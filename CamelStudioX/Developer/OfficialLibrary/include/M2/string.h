@@ -1,18 +1,15 @@
-/*--------------------------------------------------------------------
- * TITLE: M2 Hardware Definition
- * AUTHOR: Astro
- * DATE CREATED: 2017/11/1
- * FILENAME: string.h
- * PROJECT: M2Library
- * COPYRIGHT: Camel Microelectronics, Ltd.
- * DESCRIPTION:
- * NOTE:
- *      This library has been checked. --Astro, 2017/11/3
- *--------------------------------------------------------------------*/
+/**
+* @file string.h
+* @author John & Jack
+* @date 16 Jun 2018
+* @copyright 2018 Zhirui
+* @brief String Library for M2
+*/
 #ifndef __string_h__
 #define __string_h__
 
 #define size_t unsigned int
+
 void *memchr(const void *str, int c, size_t n);
 int memcmp(const void * str1, const void * str2, size_t n);
 void * memcpy(void * dest, const void * src, size_t n);

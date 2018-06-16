@@ -1,3 +1,11 @@
+## Version 3.5.2
+----
+
+### Build 31 on 16.06.2018
+
+- Improvement: Auto insert 4 spaces as a tab.
+- Update library and documentation.
+
 ## Version 3.5.1
 ----
 

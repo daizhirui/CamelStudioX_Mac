@@ -1,36 +1,42 @@
-/*--------------------------------------------------------------------
- * TITLE: M2 Hardware Definition
- * AUTHOR: Astro
- * DATE CREATED: 2017/11/4
- * FILENAME: time.h
- * PROJECT: M2Library
- * COPYRIGHT: Camel Microelectronics, Ltd.
- * DESCRIPTION:
- *--------------------------------------------------------------------*/
-#ifndef __time_h__
+/**
+* @file time.h
+* @author Zhirui Dai
+* @date 16 Jun 2018
+* @copyright 2018 Zhirui
+* @brief Real Time Module Library for M2
+*/#ifndef __time_h__
 #define __time_h__
 
 #include "mcu.h"
 
 /**
- * @brief This function turns RTC on
- * 
- * @return      void
+ * @brief   Turn on RTC.
+ * @return  void
  */
 #define RT_RTC_On() MemoryOr32(RTC_CTL_REG, 1)
 
 /**
- * @brief This function turns RTC off
- * 
- * @return      void
+ * @brief   Turn off RTC.
+ * @return  void
  */
 #define RT_RTC_Off() MemoryAnd32(RTC_CTL_REG, ~1)
 
 /**
- * @brief This function sets the time format of RTC
- * 
- * @param formate 
- * @return      void
+ * @brief   Keyword RTC_12HOUR
+ * @note    Time format used in RT_RTC_SetTimeFormat
+ */
+#define RTC_12HOUR 0x1
+
+/**
+ * @brief   Keyword RTC_24HOUR
+ * @note    Time format used in RT_RTC_SetTimeFormat
+ */
+#define RTC_24HOUR 0x3
+
+/**
+ * @brief           Set the time format of RTC.
+ * @param formate   The time format, optional value: \code{.c}RTC_12HOUR, RTC_24HOUR\endcode.
+ * @return          void
  */
 #define RT_RTC_SetTimeFormat(format)             \
     {                                            \
@@ -40,7 +46,7 @@
 
 /**
  * @brief This function sets the time of RTC
- * 
+ *
  * @param year      year value
  * @param month     month value
  * @param day       day value
@@ -54,14 +60,14 @@
 
 /**
  * @brief This function returns the RTC time raw value
- * 
- * @return #define 
+ *
+ * @return #define
  */
 #define RT_RTC_Read32()    MemoryRead32(RTC_TIME_REG)
 
 /**
  * @brief This function returns the RTC time
- * 
+ *
  * @param d_year    year
  * @param d_mon     month
  * @param d_day     day
@@ -69,13 +75,12 @@
  * @param d_min     minute
  * @param d_sec     second
  */
-
 extern void RT_RTC_GetTime(unsigned char *d_year, unsigned char *d_mon, unsigned char *d_day,
                         unsigned char *d_hour, unsigned char *d_min, unsigned char *d_sec);
 
 /**
  * @brief This function delays specific time
- * 
+ *
  * @param ms 	time to delay, the unit is ms
  */
 void RT_DelayMiliseconds(unsigned long ms);
