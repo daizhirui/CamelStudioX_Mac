@@ -7,6 +7,7 @@
 - New Feature: Feedback is now available in Help Menu.
 - New Feature: Crash report auto collector.
 - New Feature: Register Products.
+- Improvement: Update examples.
 
 ## Version 3.5.2
 ----

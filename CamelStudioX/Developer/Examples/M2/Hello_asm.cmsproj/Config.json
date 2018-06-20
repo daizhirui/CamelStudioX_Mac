@@ -3,10 +3,14 @@
   "C_Source" : [
     "interrupt.c"
   ],
+  "Headers" : [
+
+  ],
   "Library" : [
 
   ],
   "TargetAddress" : "10000000",
+  "ChipType" : "M2",
   "CustomLibrary" : [
 
   ],
@@ -14,12 +18,6 @@
     "Hello.s"
   ],
   "RodataAddress" : "",
-  "Debug" : false,
-  "TargetName" : "Hello",
-  "Architect" : "standalone",
-  "Autoload" : false,
-  "Headers" : [
-
-  ],
-  "ChipType" : "M2"
+  "UseCustomedMakefile" : false,
+  "TargetName" : "Hello"
 }

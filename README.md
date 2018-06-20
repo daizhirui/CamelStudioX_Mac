@@ -1,6 +1,9 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+[Latest Version](https://github.com/daizhirui/CamelStudioX_Mac/releases/latest)
+[Documentation](https://daizhirui.github.io/CamelStudio_Library/)
+
 ## Version 3.6.0
 ----
 
@@ -10,6 +13,7 @@ Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 - New Feature: Feedback is now available in Help Menu.
 - New Feature: Crash report auto collector.
 - New Feature: Register Products.
+- Improvement: Update examples.
 
 ## Version 3.5.2
 ----

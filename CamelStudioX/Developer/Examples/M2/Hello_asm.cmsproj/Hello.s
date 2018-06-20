@@ -1,15 +1,9 @@
 ##################################################################
-# TITLE: simple Hello test to uart 2
+# TITLE: Assembly Excample of print "Hello!" through uart0.
 # AUTHOR: John & Matt
-# DATE CREATED: 2011-11-12
-# FILENAME: hiuart2.s
-# PROJECT: s0/mp2
+# DATE: 21/06/2018
+# FILENAME: hello_asm.s
 # COPYRIGHT: Camel Microelectronics, Inc (C) 2009-2019.
-# DESCRIPTION:
-#
-#    print "Hello, World!" to uart, with repeat, no $drom
-#    this is to test Uart initial
-#
 ##################################################################
 	.text
 	   .align	2
