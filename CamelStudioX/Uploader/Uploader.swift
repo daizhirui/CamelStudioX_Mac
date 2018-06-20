@@ -156,7 +156,7 @@ class Uploader: NSObject, ORSSerialPortDelegate {
     /// Open the serial port for uploading
     func startUpload() {
         self.getControlOfThePort(port: self.serialPort!)
-        myDebug("Start to upload, the delegate of \(self.serialPort?.name ?? "UNKNOWN PORT") is \(self.serialPort?.delegate.self)")
+//        myDebug("Start to upload, the delegate of \(self.serialPort?.name ?? "UNKNOWN PORT") is \(self.serialPort?.delegate.self ?? nil)")
         self.serialPort?.open()
         //self.uploadFlag = true    modified by DocumentWindowsController already
     }

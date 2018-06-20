@@ -3,27 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1FCAA02C586D36F43C759AF49B803AFD /* ORSSerialPort-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 015940833BB22EE4C83D7F18EA86BB5E /* ORSSerialPort-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		228F04CDE5ED668998D8727964D0ACF8 /* ORSSerialPacketDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F740D4CE2A423335CE69B36A46A92 /* ORSSerialPacketDescriptor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1FCAA02C586D36F43C759AF49B803AFD /* ORSSerialPort-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D78E0C3E181FACE11883FA19A88CE60B /* ORSSerialPort-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		228F04CDE5ED668998D8727964D0ACF8 /* ORSSerialPacketDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C8CB5313332CDA93E9381CAA202154 /* ORSSerialPacketDescriptor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		2DCFE903AA25DA76335BCFF14D0050BD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350D8714E912454970B401DDE8F3C85C /* Cocoa.framework */; };
 		37DB8720EDFD685B113BD0BF044906C8 /* Pods-CamelStudioX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48ACD05DD36BA228F50452B7EF415193 /* Pods-CamelStudioX-dummy.m */; };
-		3D4B8BF0B704641CC1DFCF93E54FC70B /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8B4CADFE36AA183FF937296684B4DA /* ORSSerialPort.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3D4B8BF0B704641CC1DFCF93E54FC70B /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5C367428D80680554D09022687B77F /* ORSSerialPort.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		613DA68701FD5B54D9C73BEE6D2B64AC /* Pods-CamelStudioX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 987F1E8B83C5B1C5EB1F4D8F7C15A9B5 /* Pods-CamelStudioX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74DF89F2A62A4061AFEB891C660EF710 /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 594655B56313640AB538D637A4B7F7F1 /* ORSSerialRequest.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		904609CF6D2BD5336B0DCD650AC0D5D8 /* ORSSerialPacketDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E48A2113299B437EB3630AA6BE5B80B /* ORSSerialPacketDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95EAD4242F6EFBB700C71C497EC4189A /* ORSSerialPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E960B9C1436DF92D6959DC20A53F48 /* ORSSerialPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74DF89F2A62A4061AFEB891C660EF710 /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFC115D86E4D2E28CA35A00AE7D4FE /* ORSSerialRequest.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		904609CF6D2BD5336B0DCD650AC0D5D8 /* ORSSerialPacketDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = C67AC1B9E2798A6B3D225EC51E559950 /* ORSSerialPacketDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95EAD4242F6EFBB700C71C497EC4189A /* ORSSerialPort.h in Headers */ = {isa = PBXBuildFile; fileRef = B973B023F151BED68A5811E4E43ACE17 /* ORSSerialPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		965FAEA39626B50FC99E5BA91F753875 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6B267E93917FEA0729E16FFD69780E /* IOKit.framework */; };
 		CD95E5E336E80577DFBC089AC022EABB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350D8714E912454970B401DDE8F3C85C /* Cocoa.framework */; };
-		CDE876AA7231ACDE9FB465C2898DAB4A /* ORSSerialBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99195DCC8DDCE50057102481055BC218 /* ORSSerialBuffer.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D4C7E65AEEFCC95F8896434061D61171 /* ORSSerialRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 640B52F092DCE37B0C07664D3BEE9849 /* ORSSerialRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6AD3875B77ADDD9DD152C036B7789FB /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C56C92AE24CFAE1A36C2FCB7D3C5CAC /* ORSSerialPortManager.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DB69BBCA9AEFE8BF6837F6525183EB81 /* ORSSerialPort-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B41DA138F0142C61A44EF3095DBC903E /* ORSSerialPort-dummy.m */; };
-		DB7FBC051C5FA8725038FAB2C73892BE /* ORSSerialBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FC1EA967C22EA067821D70CC1D69AC /* ORSSerialBuffer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FBB7FE945D4A9F13BBC954DB832A4500 /* ORSSerialPortManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C19A2C1C78D72F7F3ED3B50217AABFE6 /* ORSSerialPortManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDE876AA7231ACDE9FB465C2898DAB4A /* ORSSerialBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = E291399CC95C7509A3110DF6282561C9 /* ORSSerialBuffer.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		D4C7E65AEEFCC95F8896434061D61171 /* ORSSerialRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B520A3EDF74E09662316A26C773251 /* ORSSerialRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6AD3875B77ADDD9DD152C036B7789FB /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F69A711B938A98B9DA207BD7689B5709 /* ORSSerialPortManager.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DB69BBCA9AEFE8BF6837F6525183EB81 /* ORSSerialPort-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B1ED79E4FD96477FAFBA7BBF9BDBD7 /* ORSSerialPort-dummy.m */; };
+		DB7FBC051C5FA8725038FAB2C73892BE /* ORSSerialBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4B4976C2BB8A0AD2ABE46CB80A362 /* ORSSerialBuffer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FBB7FE945D4A9F13BBC954DB832A4500 /* ORSSerialPortManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E448634652042BAF9718077EE9DDE9F /* ORSSerialPortManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,55 +37,56 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		015940833BB22EE4C83D7F18EA86BB5E /* ORSSerialPort-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-umbrella.h"; sourceTree = "<group>"; };
-		018A290FD723113823CD64B3BE80F8BB /* SPUDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloader.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloader.h; sourceTree = "<group>"; };
-		0E1ABD8EEDEFF6B28AAF9C9B36DC9DD1 /* SUVersionComparisonProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUVersionComparisonProtocol.h; path = Sparkle.framework/Versions/A/Headers/SUVersionComparisonProtocol.h; sourceTree = "<group>"; };
-		0E48A2113299B437EB3630AA6BE5B80B /* ORSSerialPacketDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPacketDescriptor.h; path = Source/ORSSerialPacketDescriptor.h; sourceTree = "<group>"; };
+		01B1ED79E4FD96477FAFBA7BBF9BDBD7 /* ORSSerialPort-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ORSSerialPort-dummy.m"; sourceTree = "<group>"; };
 		18E5E7FA9101258C2EC8AAB6B3E968CD /* Pods-CamelStudioX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CamelStudioX.release.xcconfig"; sourceTree = "<group>"; };
 		1C6B267E93917FEA0729E16FFD69780E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
-		23B82FE4BD2153351C4DBE342B24C26A /* SUUpdaterDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUUpdaterDelegate.h; path = Sparkle.framework/Versions/A/Headers/SUUpdaterDelegate.h; sourceTree = "<group>"; };
-		24E960B9C1436DF92D6959DC20A53F48 /* ORSSerialPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPort.h; path = Source/ORSSerialPort.h; sourceTree = "<group>"; };
-		25A5FE118221BB4D210D32C808EC8DA3 /* ORSSerialPort.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ORSSerialPort.xcconfig; sourceTree = "<group>"; };
-		2AE20295B4E9DAFDE60F606B5BAE832F /* Sparkle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Sparkle.h; path = Sparkle.framework/Versions/A/Headers/Sparkle.h; sourceTree = "<group>"; };
-		2C56C92AE24CFAE1A36C2FCB7D3C5CAC /* ORSSerialPortManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = Source/ORSSerialPortManager.m; sourceTree = "<group>"; };
-		2D1151BD1F7149357B71637405E64513 /* ORSSerial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ORSSerial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		305728B9D63742A1E27C2FB4475EBCD9 /* ORSSerialPort-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-prefix.pch"; sourceTree = "<group>"; };
-		33481FDE0F685578AADC91FD1D920E32 /* SPUURLRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUURLRequest.h; path = Sparkle.framework/Versions/A/Headers/SPUURLRequest.h; sourceTree = "<group>"; };
+		2D1151BD1F7149357B71637405E64513 /* ORSSerial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ORSSerial.framework; path = ORSSerialPort.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA89B83B79F7050EE433C5D6325D0CB /* SPUDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloader.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloader.h; sourceTree = "<group>"; };
+		2EF564309CE61F1CAFB49570457E79CC /* SPUDownloaderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderDelegate.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderDelegate.h; sourceTree = "<group>"; };
 		350D8714E912454970B401DDE8F3C85C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		3D8C5EFCEDA5F9D40522F87625A0EEF9 /* SUExport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUExport.h; path = Sparkle.framework/Versions/A/Headers/SUExport.h; sourceTree = "<group>"; };
-		3FD7C9E9D6F76BD9CE0979FB932BC968 /* SUUpdater.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUUpdater.h; path = Sparkle.framework/Versions/A/Headers/SUUpdater.h; sourceTree = "<group>"; };
+		3D9803475CE440E7FAE1F0EF3F04717C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E448634652042BAF9718077EE9DDE9F /* ORSSerialPortManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPortManager.h; path = Source/ORSSerialPortManager.h; sourceTree = "<group>"; };
 		41E1D0DC290518CB09C1A20D16C0C05C /* Pods-CamelStudioX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CamelStudioX.modulemap"; sourceTree = "<group>"; };
-		42E99DC6E4B5DDB70668716A04F5E485 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		43B520A3EDF74E09662316A26C773251 /* ORSSerialRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialRequest.h; path = Source/ORSSerialRequest.h; sourceTree = "<group>"; };
 		48ACD05DD36BA228F50452B7EF415193 /* Pods-CamelStudioX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CamelStudioX-dummy.m"; sourceTree = "<group>"; };
 		48D3572D2F7213CBC97EDDE33A106BD6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BF0EB84966CAB6B1223021988A831E3 /* SPUDownloaderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderDelegate.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderDelegate.h; sourceTree = "<group>"; };
-		580C2C12F0DDB3EE142D3AC6CFE30F2F /* SPUDownloaderSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderSession.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderSession.h; sourceTree = "<group>"; };
-		594655B56313640AB538D637A4B7F7F1 /* ORSSerialRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialRequest.m; path = Source/ORSSerialRequest.m; sourceTree = "<group>"; };
-		5A4BC1E7FF1DEEF4FB2AC84D32B83F0B /* SUVersionDisplayProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUVersionDisplayProtocol.h; path = Sparkle.framework/Versions/A/Headers/SUVersionDisplayProtocol.h; sourceTree = "<group>"; };
-		640B52F092DCE37B0C07664D3BEE9849 /* ORSSerialRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialRequest.h; path = Source/ORSSerialRequest.h; sourceTree = "<group>"; };
-		6609BA1162086695E4B999B23A013B16 /* SUAppcast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUAppcast.h; path = Sparkle.framework/Versions/A/Headers/SUAppcast.h; sourceTree = "<group>"; };
-		69FC1EA967C22EA067821D70CC1D69AC /* ORSSerialBuffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialBuffer.m; path = Source/ORSSerialBuffer.m; sourceTree = "<group>"; };
-		6E8B4CADFE36AA183FF937296684B4DA /* ORSSerialPort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = Source/ORSSerialPort.m; sourceTree = "<group>"; };
-		71D9B19CBD5D551541AFD05240699FB1 /* SUAppcastItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUAppcastItem.h; path = Sparkle.framework/Versions/A/Headers/SUAppcastItem.h; sourceTree = "<group>"; };
-		832BA31A140BFDF081E0E08693C8EBB2 /* Pods_CamelStudioX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamelStudioX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4B029D98C87E4CA4BD144B7EA41A50EF /* SPUDownloaderSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderSession.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderSession.h; sourceTree = "<group>"; };
+		57C93577EAA68F9B2D7FD59D5D0EDB49 /* ORSSerialPort-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-prefix.pch"; sourceTree = "<group>"; };
+		601892AFBE681E9084C088B298853A1B /* SUUpdater.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUUpdater.h; path = Sparkle.framework/Versions/A/Headers/SUUpdater.h; sourceTree = "<group>"; };
+		6587D247D73BA3CDE7AB111D2E7C8759 /* SPUDownloadData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloadData.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloadData.h; sourceTree = "<group>"; };
+		6AE53AA325719A6584F13CEF56B5778D /* Sparkle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Sparkle.h; path = Sparkle.framework/Versions/A/Headers/Sparkle.h; sourceTree = "<group>"; };
+		6C1EBDB0F65F3DDC0054E27700204F5C /* SUStandardVersionComparator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUStandardVersionComparator.h; path = Sparkle.framework/Versions/A/Headers/SUStandardVersionComparator.h; sourceTree = "<group>"; };
+		7EC4B4976C2BB8A0AD2ABE46CB80A362 /* ORSSerialBuffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialBuffer.m; path = Source/ORSSerialBuffer.m; sourceTree = "<group>"; };
+		832BA31A140BFDF081E0E08693C8EBB2 /* Pods_CamelStudioX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CamelStudioX.framework; path = "Pods-CamelStudioX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C5C367428D80680554D09022687B77F /* ORSSerialPort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = Source/ORSSerialPort.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		987F1E8B83C5B1C5EB1F4D8F7C15A9B5 /* Pods-CamelStudioX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CamelStudioX-umbrella.h"; sourceTree = "<group>"; };
-		99195DCC8DDCE50057102481055BC218 /* ORSSerialBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialBuffer.h; path = Source/ORSSerialBuffer.h; sourceTree = "<group>"; };
-		9B042F47FAF9C07CCF5B6B0C998A6BE6 /* SPUDownloadData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloadData.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloadData.h; sourceTree = "<group>"; };
-		9DD8C9D27E024F40A5B8FB5A74A3B7DC /* SUStandardVersionComparator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUStandardVersionComparator.h; path = Sparkle.framework/Versions/A/Headers/SUStandardVersionComparator.h; sourceTree = "<group>"; };
-		AF156A94A3EAA46B50F77F9239EEED72 /* ORSSerialPort.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ORSSerialPort.modulemap; sourceTree = "<group>"; };
+		9A04CB88CA57F51F0CDA7A3B6B58836F /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "HockeySDK-Mac/HockeySDK.framework"; sourceTree = "<group>"; };
+		9E5EA31ECF04BEF8EB60095A43EECB2D /* SUVersionComparisonProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUVersionComparisonProtocol.h; path = Sparkle.framework/Versions/A/Headers/SUVersionComparisonProtocol.h; sourceTree = "<group>"; };
+		A73A99E7A179D13BD25EEEFDF54FE52D /* SUExport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUExport.h; path = Sparkle.framework/Versions/A/Headers/SUExport.h; sourceTree = "<group>"; };
+		A9CFD5FF1E6B71153B45A4DACFF84B98 /* SUVersionDisplayProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUVersionDisplayProtocol.h; path = Sparkle.framework/Versions/A/Headers/SUVersionDisplayProtocol.h; sourceTree = "<group>"; };
 		AF48B9EC024DB671E7D0FD410C0448F8 /* Pods-CamelStudioX-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CamelStudioX-resources.sh"; sourceTree = "<group>"; };
-		B150E046F51B6583043955F9F6EFC28C /* SPUDownloaderDeprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderDeprecated.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderDeprecated.h; sourceTree = "<group>"; };
-		B41DA138F0142C61A44EF3095DBC903E /* ORSSerialPort-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ORSSerialPort-dummy.m"; sourceTree = "<group>"; };
-		BD1CC2FCBD4EC92B37D6A228D4B4B620 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C19A2C1C78D72F7F3ED3B50217AABFE6 /* ORSSerialPortManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPortManager.h; path = Source/ORSSerialPortManager.h; sourceTree = "<group>"; };
+		B08CBA32BC469F5DDF26EC4DEF87BA15 /* SPUDownloaderDeprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderDeprecated.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderDeprecated.h; sourceTree = "<group>"; };
+		B973B023F151BED68A5811E4E43ACE17 /* ORSSerialPort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPort.h; path = Source/ORSSerialPort.h; sourceTree = "<group>"; };
+		BB4D7012A9D256949ED145BAF099FE8D /* SUUpdaterDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUUpdaterDelegate.h; path = Sparkle.framework/Versions/A/Headers/SUUpdaterDelegate.h; sourceTree = "<group>"; };
+		BF1A282A89963F303C6809992C9708A8 /* SPUURLRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUURLRequest.h; path = Sparkle.framework/Versions/A/Headers/SPUURLRequest.h; sourceTree = "<group>"; };
+		BF2F10F3D67EE337259B6ABE75263DE3 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		C67AC1B9E2798A6B3D225EC51E559950 /* ORSSerialPacketDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPacketDescriptor.h; path = Source/ORSSerialPacketDescriptor.h; sourceTree = "<group>"; };
 		C70290664BBFF4BE6AB6659094189FD6 /* Pods-CamelStudioX-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CamelStudioX-acknowledgements.plist"; sourceTree = "<group>"; };
 		C7C4DF5EAD4BAE4C47FA527A80CEA121 /* Pods-CamelStudioX-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CamelStudioX-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DF1F740D4CE2A423335CE69B36A46A92 /* ORSSerialPacketDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPacketDescriptor.m; path = Source/ORSSerialPacketDescriptor.m; sourceTree = "<group>"; };
+		CCAFC115D86E4D2E28CA35A00AE7D4FE /* ORSSerialRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialRequest.m; path = Source/ORSSerialRequest.m; sourceTree = "<group>"; };
+		D2C8CB5313332CDA93E9381CAA202154 /* ORSSerialPacketDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPacketDescriptor.m; path = Source/ORSSerialPacketDescriptor.m; sourceTree = "<group>"; };
+		D78E0C3E181FACE11883FA19A88CE60B /* ORSSerialPort-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-umbrella.h"; sourceTree = "<group>"; };
+		DD0AC99AF9722F7DBE948343C0B2D9BE /* SUAppcast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUAppcast.h; path = Sparkle.framework/Versions/A/Headers/SUAppcast.h; sourceTree = "<group>"; };
+		E291399CC95C7509A3110DF6282561C9 /* ORSSerialBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialBuffer.h; path = Source/ORSSerialBuffer.h; sourceTree = "<group>"; };
+		E48A0B483A771FF863FC33988312484E /* SUAppcastItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUAppcastItem.h; path = Sparkle.framework/Versions/A/Headers/SUAppcastItem.h; sourceTree = "<group>"; };
+		E5FB65481BDC7CF58EE430D9AC723955 /* ORSSerialPort.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ORSSerialPort.modulemap; sourceTree = "<group>"; };
 		E69E39BFDA568EFD0DDC441BE5D5CA9A /* Pods-CamelStudioX-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CamelStudioX-frameworks.sh"; sourceTree = "<group>"; };
-		ECBB6A617FA288129074306D20F3E3D2 /* SPUDownloaderProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderProtocol.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderProtocol.h; sourceTree = "<group>"; };
 		F19059A0F02BEA171C1A97AB4F2D85DA /* Pods-CamelStudioX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CamelStudioX.debug.xcconfig"; sourceTree = "<group>"; };
-		FAF7C253FFF81EB88484255595F14AF3 /* SUErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUErrors.h; path = Sparkle.framework/Versions/A/Headers/SUErrors.h; sourceTree = "<group>"; };
+		F4C83477D1230F10D052D515DDB970E1 /* ORSSerialPort.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ORSSerialPort.xcconfig; sourceTree = "<group>"; };
+		F69A711B938A98B9DA207BD7689B5709 /* ORSSerialPortManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = Source/ORSSerialPortManager.m; sourceTree = "<group>"; };
+		FA49420270C51ABE06310FC01B824456 /* SPUDownloaderProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderProtocol.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderProtocol.h; sourceTree = "<group>"; };
+		FDACB443E183DC70FCFEA2F478906E5B /* SUErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUErrors.h; path = Sparkle.framework/Versions/A/Headers/SUErrors.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,29 +119,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0AACC7F8086ECCF801A902D2045CE3E1 /* Sparkle */ = {
+		16845A77239F11F37617817CB57B4659 /* ORSSerialPort */ = {
 			isa = PBXGroup;
 			children = (
-				2AE20295B4E9DAFDE60F606B5BAE832F /* Sparkle.h */,
-				9B042F47FAF9C07CCF5B6B0C998A6BE6 /* SPUDownloadData.h */,
-				018A290FD723113823CD64B3BE80F8BB /* SPUDownloader.h */,
-				4BF0EB84966CAB6B1223021988A831E3 /* SPUDownloaderDelegate.h */,
-				B150E046F51B6583043955F9F6EFC28C /* SPUDownloaderDeprecated.h */,
-				ECBB6A617FA288129074306D20F3E3D2 /* SPUDownloaderProtocol.h */,
-				580C2C12F0DDB3EE142D3AC6CFE30F2F /* SPUDownloaderSession.h */,
-				33481FDE0F685578AADC91FD1D920E32 /* SPUURLRequest.h */,
-				6609BA1162086695E4B999B23A013B16 /* SUAppcast.h */,
-				71D9B19CBD5D551541AFD05240699FB1 /* SUAppcastItem.h */,
-				FAF7C253FFF81EB88484255595F14AF3 /* SUErrors.h */,
-				3D8C5EFCEDA5F9D40522F87625A0EEF9 /* SUExport.h */,
-				9DD8C9D27E024F40A5B8FB5A74A3B7DC /* SUStandardVersionComparator.h */,
-				3FD7C9E9D6F76BD9CE0979FB932BC968 /* SUUpdater.h */,
-				23B82FE4BD2153351C4DBE342B24C26A /* SUUpdaterDelegate.h */,
-				0E1ABD8EEDEFF6B28AAF9C9B36DC9DD1 /* SUVersionComparisonProtocol.h */,
-				5A4BC1E7FF1DEEF4FB2AC84D32B83F0B /* SUVersionDisplayProtocol.h */,
-				7881BEDD7003C648B147618313197871 /* Frameworks */,
+				E291399CC95C7509A3110DF6282561C9 /* ORSSerialBuffer.h */,
+				7EC4B4976C2BB8A0AD2ABE46CB80A362 /* ORSSerialBuffer.m */,
+				C67AC1B9E2798A6B3D225EC51E559950 /* ORSSerialPacketDescriptor.h */,
+				D2C8CB5313332CDA93E9381CAA202154 /* ORSSerialPacketDescriptor.m */,
+				B973B023F151BED68A5811E4E43ACE17 /* ORSSerialPort.h */,
+				8C5C367428D80680554D09022687B77F /* ORSSerialPort.m */,
+				3E448634652042BAF9718077EE9DDE9F /* ORSSerialPortManager.h */,
+				F69A711B938A98B9DA207BD7689B5709 /* ORSSerialPortManager.m */,
+				43B520A3EDF74E09662316A26C773251 /* ORSSerialRequest.h */,
+				CCAFC115D86E4D2E28CA35A00AE7D4FE /* ORSSerialRequest.m */,
+				CA6074FAA4C0F2998DD8746C445ABBB7 /* Support Files */,
 			);
-			path = Sparkle;
+			name = ORSSerialPort;
+			path = ORSSerialPort;
 			sourceTree = "<group>";
 		};
 		5804DCABAB878CCF089720DFC026F3DF /* Pods-CamelStudioX */ = {
@@ -161,12 +156,40 @@
 			path = "Target Support Files/Pods-CamelStudioX";
 			sourceTree = "<group>";
 		};
-		7881BEDD7003C648B147618313197871 /* Frameworks */ = {
+		6602233FB3E06CD8EFC099100EE7A68A /* Sparkle */ = {
 			isa = PBXGroup;
 			children = (
-				42E99DC6E4B5DDB70668716A04F5E485 /* Sparkle.framework */,
+				6AE53AA325719A6584F13CEF56B5778D /* Sparkle.h */,
+				6587D247D73BA3CDE7AB111D2E7C8759 /* SPUDownloadData.h */,
+				2EA89B83B79F7050EE433C5D6325D0CB /* SPUDownloader.h */,
+				2EF564309CE61F1CAFB49570457E79CC /* SPUDownloaderDelegate.h */,
+				B08CBA32BC469F5DDF26EC4DEF87BA15 /* SPUDownloaderDeprecated.h */,
+				FA49420270C51ABE06310FC01B824456 /* SPUDownloaderProtocol.h */,
+				4B029D98C87E4CA4BD144B7EA41A50EF /* SPUDownloaderSession.h */,
+				BF1A282A89963F303C6809992C9708A8 /* SPUURLRequest.h */,
+				DD0AC99AF9722F7DBE948343C0B2D9BE /* SUAppcast.h */,
+				E48A0B483A771FF863FC33988312484E /* SUAppcastItem.h */,
+				FDACB443E183DC70FCFEA2F478906E5B /* SUErrors.h */,
+				A73A99E7A179D13BD25EEEFDF54FE52D /* SUExport.h */,
+				6C1EBDB0F65F3DDC0054E27700204F5C /* SUStandardVersionComparator.h */,
+				601892AFBE681E9084C088B298853A1B /* SUUpdater.h */,
+				BB4D7012A9D256949ED145BAF099FE8D /* SUUpdaterDelegate.h */,
+				9E5EA31ECF04BEF8EB60095A43EECB2D /* SUVersionComparisonProtocol.h */,
+				A9CFD5FF1E6B71153B45A4DACFF84B98 /* SUVersionDisplayProtocol.h */,
+				A13A9A6E6431E364C577B78C83883E2E /* Frameworks */,
 			);
-			name = Frameworks;
+			name = Sparkle;
+			path = Sparkle;
+			sourceTree = "<group>";
+		};
+		72C34AC3D3171B2A6091270898A4188D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6618B02507DB4A03E96C5B3E1D3747F /* HockeySDK-Mac */,
+				16845A77239F11F37617817CB57B4659 /* ORSSerialPort */,
+				6602233FB3E06CD8EFC099100EE7A68A /* Sparkle */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -174,33 +197,26 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */,
-				804AC17A5026E7A8C80D0BF59045481B /* Pods */,
+				72C34AC3D3171B2A6091270898A4188D /* Pods */,
 				0A0C60C6933F18F47DAAD2608CA53D9E /* Products */,
 				C44B4BC9E2B4927F7B30206BF50A55DA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		804AC17A5026E7A8C80D0BF59045481B /* Pods */ = {
+		A13A9A6E6431E364C577B78C83883E2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E0B4F07A3DEC37091606237D76D87A12 /* ORSSerialPort */,
-				0AACC7F8086ECCF801A902D2045CE3E1 /* Sparkle */,
+				BF2F10F3D67EE337259B6ABE75263DE3 /* Sparkle.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		85FFDFA1305A7BC0BC96584CB99C0A0F /* Support Files */ = {
+		AB6293662F41B13F9ABC676997FBF6AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BD1CC2FCBD4EC92B37D6A228D4B4B620 /* Info.plist */,
-				AF156A94A3EAA46B50F77F9239EEED72 /* ORSSerialPort.modulemap */,
-				25A5FE118221BB4D210D32C808EC8DA3 /* ORSSerialPort.xcconfig */,
-				B41DA138F0142C61A44EF3095DBC903E /* ORSSerialPort-dummy.m */,
-				305728B9D63742A1E27C2FB4475EBCD9 /* ORSSerialPort-prefix.pch */,
-				015940833BB22EE4C83D7F18EA86BB5E /* ORSSerialPort-umbrella.h */,
+				9A04CB88CA57F51F0CDA7A3B6B58836F /* HockeySDK.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ORSSerialPort";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B0CCB868DE333015678C9DAE40F26FC9 /* OS X */ = {
@@ -220,6 +236,20 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		CA6074FAA4C0F2998DD8746C445ABBB7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D9803475CE440E7FAE1F0EF3F04717C /* Info.plist */,
+				E5FB65481BDC7CF58EE430D9AC723955 /* ORSSerialPort.modulemap */,
+				F4C83477D1230F10D052D515DDB970E1 /* ORSSerialPort.xcconfig */,
+				01B1ED79E4FD96477FAFBA7BBF9BDBD7 /* ORSSerialPort-dummy.m */,
+				57C93577EAA68F9B2D7FD59D5D0EDB49 /* ORSSerialPort-prefix.pch */,
+				D78E0C3E181FACE11883FA19A88CE60B /* ORSSerialPort-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ORSSerialPort";
+			sourceTree = "<group>";
+		};
 		D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,22 +258,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E0B4F07A3DEC37091606237D76D87A12 /* ORSSerialPort */ = {
+		D6618B02507DB4A03E96C5B3E1D3747F /* HockeySDK-Mac */ = {
 			isa = PBXGroup;
 			children = (
-				99195DCC8DDCE50057102481055BC218 /* ORSSerialBuffer.h */,
-				69FC1EA967C22EA067821D70CC1D69AC /* ORSSerialBuffer.m */,
-				0E48A2113299B437EB3630AA6BE5B80B /* ORSSerialPacketDescriptor.h */,
-				DF1F740D4CE2A423335CE69B36A46A92 /* ORSSerialPacketDescriptor.m */,
-				24E960B9C1436DF92D6959DC20A53F48 /* ORSSerialPort.h */,
-				6E8B4CADFE36AA183FF937296684B4DA /* ORSSerialPort.m */,
-				C19A2C1C78D72F7F3ED3B50217AABFE6 /* ORSSerialPortManager.h */,
-				2C56C92AE24CFAE1A36C2FCB7D3C5CAC /* ORSSerialPortManager.m */,
-				640B52F092DCE37B0C07664D3BEE9849 /* ORSSerialRequest.h */,
-				594655B56313640AB538D637A4B7F7F1 /* ORSSerialRequest.m */,
-				85FFDFA1305A7BC0BC96584CB99C0A0F /* Support Files */,
+				AB6293662F41B13F9ABC676997FBF6AD /* Frameworks */,
+				E6BAF8E40B0F89AFF82C5B0DFE9A3DA2 /* Resources */,
 			);
-			path = ORSSerialPort;
+			name = "HockeySDK-Mac";
+			path = "HockeySDK-Mac";
+			sourceTree = "<group>";
+		};
+		E6BAF8E40B0F89AFF82C5B0DFE9A3DA2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,17 +344,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0940;
-				TargetAttributes = {
-					2A58542FD63255BBCB5A804FF29F7A91 = {
-						DevelopmentTeam = 79DD7SDR2J;
-						ProvisioningStyle = Automatic;
-					};
-					B911FDF074A4916E5501295C4641CCFC = {
-						DevelopmentTeam = 79DD7SDR2J;
-						ProvisioningStyle = Automatic;
-					};
-				};
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -381,17 +400,15 @@
 /* Begin XCBuildConfiguration section */
 		12D31D616BA4B49AEB583A5C2592D066 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25A5FE118221BB4D210D32C808EC8DA3 /* ORSSerialPort.xcconfig */;
+			baseConfigurationReference = F4C83477D1230F10D052D515DDB970E1 /* ORSSerialPort.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 79DD7SDR2J;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -400,10 +417,9 @@
 				INFOPLIST_FILE = "Target Support Files/ORSSerialPort/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MODULEMAP_FILE = "Target Support Files/ORSSerialPort/ORSSerialPort.modulemap";
 				PRODUCT_NAME = ORSSerial;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -473,17 +489,15 @@
 		};
 		820B7441CE3697AB1D818C816139C42A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25A5FE118221BB4D210D32C808EC8DA3 /* ORSSerialPort.xcconfig */;
+			baseConfigurationReference = F4C83477D1230F10D052D515DDB970E1 /* ORSSerialPort.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 79DD7SDR2J;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -492,10 +506,9 @@
 				INFOPLIST_FILE = "Target Support Files/ORSSerialPort/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MODULEMAP_FILE = "Target Support Files/ORSSerialPort/ORSSerialPort.modulemap";
 				PRODUCT_NAME = ORSSerial;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -577,11 +590,9 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 79DD7SDR2J;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -597,7 +608,6 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_CamelStudioX;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -614,11 +624,9 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 79DD7SDR2J;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -634,7 +642,6 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_CamelStudioX;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";

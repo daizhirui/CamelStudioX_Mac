@@ -1,6 +1,16 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
+## Version 3.6.0
+----
+
+### Build 32 on 20.06.2018
+
+- New Feature: Online technical support, you can get support now just by opening Feedback window.
+- New Feature: Feedback is now available in Help Menu.
+- New Feature: Crash report auto collector.
+- New Feature: Register Products.
+
 ## Version 3.5.2
 ----
 

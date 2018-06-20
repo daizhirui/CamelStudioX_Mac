@@ -8,23 +8,75 @@
 
 import Cocoa
 import Sparkle
+import HockeySDK
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
     
+    static var shared: AppDelegate!
     @IBOutlet weak var updater: SUUpdater!
+    let hockeyManager = BITHockeyManager.shared()
+    
+    override init() {
+        super.init()
+        if AppDelegate.shared == nil {
+            AppDelegate.shared = self
+        }
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Menu bar
         self.setupM2ExampleMenu()
+        // Touch bar
         if #available(OSX 10.12.2, *) {
             NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
         }
+        // Modal window
         NotificationCenter.default.addObserver(self,selector: #selector(self.modalWindowClosed(_:)),name: NSWindow.willCloseNotification, object: nil)
-        // check if the welcome window should be showed
-        if WelcomeViewController.shouldShow {
-            // no document is opened or being opened(Restoration), show the welcome window now
-            self.showWelcomeWindow(self)
-        }
+        // Welcome window
+        self.showWelcomeWindow(self)
         // check driver
+        self.checkDriver()
+        // Crash, Feedback Reporter
+        self.setupHockeySDK()
+    }
+    
+//    - (NSArray *)feedParametersForUpdater:(SUUpdater *)updater
+//    sendingSystemProfile:(BOOL)sendingProfile {
+//    return [[BITSystemProfile sharedSystemProfile] systemUsageData];
+//    }
+    
+    func feedParameters(for updater: SUUpdater, sendingSystemProfile sendingProfile: Bool) -> [[String : String]] {
+        return BITSystemProfile.shared().systemUsageData() as! [[String : String]]
+    }
+    
+    /// Setup Hockey App SDK.
+    func setupHockeySDK() {
+        hockeyManager?.configure(withIdentifier: "798a2dae49b04400bcadaf69bda80417")
+        hockeyManager?.crashManager.isAutoSubmitCrashReport = true
+        if let userID = UserDefaults.standard.object(forKey: "UserID") as? String,
+            let userName = UserDefaults.standard.object(forKey: "UserName") as? String,
+            let userMailAddress = UserDefaults.standard.object(forKey: "UserMailAddress") as? String {
+            hockeyManager?.setUserID(userID)
+            hockeyManager?.setUserName(userName)
+            hockeyManager?.setUserEmail(userMailAddress)
+        } else {
+            self.openRegisterWindow()
+        }
+        hockeyManager?.start()
+    }
+    
+    /// Open register window to collect user's name and mail address.
+    var reRegister = false
+    func openRegisterWindow() {
+        let sb = NSStoryboard.init(name: NSStoryboard.Name(rawValue: "Register"), bundle: nil)
+        if let registerWC = sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("RegisterWindowController")) as? NSWindowController {
+            NSApp.runModal(for: registerWC.window!)
+        }
+    }
+    
+    /// Check if serial driver is installed.
+    func checkDriver() {
         let checkDriver: Bool
         if let noCheckDriver = UserDefaults.standard.object(forKey: "Don't Show Alert: SerialDriverDetect") as? Bool {
             checkDriver = !noCheckDriver
@@ -40,7 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    // modalWindow 关闭事件处理函数
+    /// This function is invocked when a modal window is being closed.
     @objc func modalWindowClosed(_ aNotification: Notification){
         if let window = aNotification.object as? NSWindow {
             // To close Modal Window
@@ -50,8 +102,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    /// Show the welcome window if necessary.
     @objc func showWelcomeWindow(_ sender: Any?) {
-        if WelcomeViewController.shouldShow {
+        if WelcomeViewController.shouldShow { // check if the welcome window should be showed
             let storyBoard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Welcome"), bundle: nil)
             let windowController = storyBoard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init("Welcome Window Controller")) as! NSWindowController
             windowController.showWindow(self)
@@ -60,14 +113,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             myDebug("WelcomeViewController.welcomeViewDidShowed = \(WelcomeViewController.welcomeViewDidShowed)")
         }
     }
-    //******* About Restoration and WelcomeWindow ********
+    // MARK:- Restoration and WelcomeWindow
     static var isRestoring = false
-    //static var restorationTimer: Timer?
+    
     /// Start to restore
     func application(_ app: NSApplication, didDecodeRestorableState coder: NSCoder) {
         myDebug("Application is restoring.")
         AppDelegate.isRestoring = true
-        //AppDelegate.restorationTimer = Timer(timeInterval: 10, target: self, selector: #selector(self.showWelcomeWindow(_:)), userInfo: nil, repeats: false)
     }
     /// Restoration may be successful, check it
     func applicationDidBecomeActive(_ notification: Notification) {
@@ -84,7 +136,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
     
-    // ************** About Termination ******************
+    // MARK:- Termination
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
         NSApplication.shared.modalWindow?.close()
@@ -92,11 +144,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         InfoAndAlert.currentAlert?.close()
     }
     
-    // The process of creating a new project should be controlled by the welcome window
+    
+    
+    // MARK:- UntiledFile Process
+    /// The process of creating a new project should be controlled by the welcome window
     func applicationShouldOpenUntitledFile(_ sender: NSApplication) -> Bool {
         return false
     }
     
+    // MARK:- Tab window
     static var isRequiringNewTab = false
     /// NewTab MenuItem is binded to this, so its enableness state can be controlled.
     @objc var shouldEnableNewTabMenu: Bool {
@@ -109,18 +165,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AppDelegate.isRequiringNewTab = true
         NSDocumentController.shared.newDocument(self)
     }
-    // **************** M2 Example Menu **************
+    // MARK:- M2 Example Menu
+    /// Store paths of every example file so that these examples can be opened later.
     var m2ExampleList: [String : URL] = [String : URL]()
+    /// UI element of M2 Example
     @IBOutlet weak var m2ExampleMenu: NSMenu!
+    /// Setup the M2 Example menu for examples
     func setupM2ExampleMenu() {
         // For M2
         if let exampleFileList = try? FileManager.default.contentsOfDirectory(atPath: "\(Bundle.main.bundlePath)/Contents/Resources/Developer/Examples/M2") {
             for exampleFile in exampleFileList {
-                // make sure it is a Directory
-                var isDirectory: ObjCBool = false
+                var isDirectory: ObjCBool = false  // make sure it is a Directory
                 FileManager.default.fileExists(atPath: "\(Bundle.main.bundlePath)/Contents/Resources/Developer/Examples/M2/\(exampleFile)", isDirectory: &isDirectory)
-                if isDirectory.boolValue {
-                    // OK, it is a directory
+                if isDirectory.boolValue {   // OK, it is a directory
                     if exampleFile.hasSuffix(".cmsproj") {
                         var title = exampleFile
                         title.removeLast(".cmsproj".count)
@@ -135,6 +192,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
+    // MARK:- Responders
+    /// Responder to opening an example.
     @objc func m2ExamplesMenu(_ sender: Any) {
         let menu = sender as! NSMenuItem
         NSDocumentController.shared.openDocument(withContentsOf: self.m2ExampleList[menu.title]!, display: true, completionHandler: { document, result, error in
@@ -143,8 +202,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         })
     }
-    // ****************** About Menu Action *********************
-    /// Invoke by preference menu
+    /// Responder to showing Preference Window
     @IBAction func openPreference(_ sender: Any) {
         let sb = NSStoryboard.init(name: NSStoryboard.Name(rawValue: "Preference"), bundle: nil)
         if let preferenceWindowController = sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "PreferenceWindowController")) as? NSWindowController {
@@ -156,13 +214,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-    /// Invoke by install driver menu
+    /// Responder to showing driver installation window
     @IBAction func openDriverInstaller(_ sender: Any) {
+        //let test: String? = nil
+        //print(test!)
         SerialDriverManager.chooseInstaller()
     }
+    /// Responder to showing the documentation
     @IBAction func showDocumentation(_ sender: Any) {
         let url = Bundle.main.bundleURL.appendingPathComponent("/Contents/Resources/Developer/OfficialLibrary/doc/index.html")
         NSWorkspace.shared.open(url)
+    }
+    @IBAction func onFeedback(_ sender: Any) {
+        self.hockeyManager?.feedbackManager.showAlertOnIncomingMessages = true
+        self.hockeyManager?.feedbackManager.requireUserEmail = .required
+        self.hockeyManager?.feedbackManager.requireUserName = .required
+        self.hockeyManager?.feedbackManager.showFeedbackWindow()
+    }
+    @IBAction func onReregister(_ sender: Any) {
+        self.reRegister = true
+        self.openRegisterWindow()
     }
 }
 

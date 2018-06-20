@@ -215,5 +215,22 @@
             <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.5.2_Build31.zip" sparkle:version="31" sparkle:shortVersionString="3.5.2" length="67762244" type="application/octet-stream" sparkle:dsaSignature="MCwCFGoP17jo/znHSmS2vEje+n2OrvvvAhRXH87DvKcXzy2WesHsZRNzE7MD5A=="/>
         </item>
         
+        <item>
+            <title>3.6.0</title>
+            <description><![CDATA[
+                <h2>New Feature</h2>
+                <ul>
+                <li>Online technical support, you can get support now just by opening Feedback window.</li>
+                <li>Feedback is now available in Help Menu.</li>
+                <li>Crash report auto collector.</li>
+                <li>Register Products.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Wed, 20 Jun 2018 19:25:30 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/CamelStudioX_3.6.0_Build32.zip" sparkle:version="32" sparkle:shortVersionString="3.6.0" length="68184230" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDS3po8Cp2RhDLQclyMvUIPCPAYhQIUX+QKCCLYErkHAvGT9+nb1oIol30="/>
+        </item>
+        
     </channel></rss>
 

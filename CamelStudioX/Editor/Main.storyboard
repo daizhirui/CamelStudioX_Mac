@@ -586,6 +586,18 @@
                                                 <action selector="showDocumentation:" target="eQV-bR-l9y" id="M1t-p5-qYu"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Feedback / Technical Support" id="T5M-VR-sre">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="onFeedback:" target="eQV-bR-l9y" id="nhx-Jv-W2T"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Reregister" id="Wev-NK-7fR">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="onReregister:" target="eQV-bR-l9y" id="5Io-ir-Vj3"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -1092,7 +1104,7 @@
                                                                         <nil key="backgroundColor"/>
                                                                     </clipView>
                                                                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="d82-3B-ezN">
-                                                                        <rect key="frame" x="1" y="509" width="219" height="16"/>
+                                                                        <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                     </scroller>
                                                                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Lv5-Q7-28w">
@@ -1188,7 +1200,7 @@
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <size key="minSize" width="666" height="419"/>
-                                                                    <size key="maxSize" width="666" height="10000000"/>
+                                                                    <size key="maxSize" width="668" height="10000000"/>
                                                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <connections>
                                                                         <outlet property="delegate" destination="hpm-QP-THB" id="YZd-JN-7kn"/>
@@ -1509,6 +1521,6 @@ DQ
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V8d-kW-jhl"/>
-        <segue reference="Ubs-oy-ANK"/>
+        <segue reference="7de-7c-mmq"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -34,6 +34,8 @@
 		23454AD020C037D700823EC8 /* SerialDriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23454ACF20C037D700823EC8 /* SerialDriverManager.swift */; };
 		23454AD220C0C14E00823EC8 /* SerialMonitorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23454AD120C0C14E00823EC8 /* SerialMonitorWindowController.swift */; };
 		23454AD420C1596300823EC8 /* NSTextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23454AD320C1596300823EC8 /* NSTextViewExtensions.swift */; };
+		235D0C4C20DAB0BD00C39486 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D0C4B20DAB0BD00C39486 /* RegisterViewController.swift */; };
+		235D0C4E20DAB0CA00C39486 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235D0C4D20DAB0CA00C39486 /* Register.storyboard */; };
 		23620CE82095F5E600036D27 /* MyDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE72095F5E600036D27 /* MyDebug.swift */; };
 		236428CE2072AB0E00FB9C33 /* CreateProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */; };
 		236428E82072B9D200FB9C33 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */; };
@@ -438,6 +440,8 @@
 		23454ACF20C037D700823EC8 /* SerialDriverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialDriverManager.swift; sourceTree = "<group>"; };
 		23454AD120C0C14E00823EC8 /* SerialMonitorWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialMonitorWindowController.swift; sourceTree = "<group>"; };
 		23454AD320C1596300823EC8 /* NSTextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextViewExtensions.swift; sourceTree = "<group>"; };
+		235D0C4B20DAB0BD00C39486 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		235D0C4D20DAB0CA00C39486 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		23620CE72095F5E600036D27 /* MyDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDebug.swift; sourceTree = "<group>"; };
 		236428CD2072AB0E00FB9C33 /* CreateProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProject.storyboard; sourceTree = "<group>"; };
 		236428E72072B9D200FB9C33 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
@@ -849,6 +853,15 @@
 			path = Markdown;
 			sourceTree = "<group>";
 		};
+		235D0C4A20DAB0A600C39486 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				235D0C4B20DAB0BD00C39486 /* RegisterViewController.swift */,
+				235D0C4D20DAB0CA00C39486 /* Register.storyboard */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		23620CE62095F5D100036D27 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -1213,6 +1226,7 @@
 		2378FE7020715F0B0011969E /* CamelStudioX */ = {
 			isa = PBXGroup;
 			children = (
+				235D0C4A20DAB0A600C39486 /* Register */,
 				23F0DFF720B6FFBA00F3F2C8 /* InfoAndAlert */,
 				23620CE62095F5D100036D27 /* Utility */,
 				2378FE7120715F0B0011969E /* AppDelegate.swift */,
@@ -1905,6 +1919,7 @@
 				230FCBB7209AB1F000BFEF51 /* updateKey.pem in Resources */,
 				2378FE7820715F0C0011969E /* Assets.xcassets in Resources */,
 				2378FE8920715FAC0011969E /* cmsx.png in Resources */,
+				235D0C4E20DAB0CA00C39486 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1931,9 +1946,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX-resources.sh",
+				"${PODS_ROOT}/HockeySDK-Mac/HockeySDK-Mac/HockeySDK.framework",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HockeySDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1947,12 +1965,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX-frameworks.sh",
+				"${PODS_ROOT}/HockeySDK-Mac/HockeySDK-Mac/HockeySDK.framework",
+				"${PODS_ROOT}/HockeySDK-Mac/HockeySDK-Mac/HockeySDK.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/ORSSerialPort/ORSSerial.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HockeySDK.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/HockeySDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORSSerial.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
@@ -2029,6 +2051,7 @@
 				2391ACA720768E6F009C5C6D /* WelcomeViewController.swift in Sources */,
 				2378FE7620715F0B0011969E /* Document.swift in Sources */,
 				2378FEA9207221B40011969E /* ProjectManager.swift in Sources */,
+				235D0C4C20DAB0BD00C39486 /* RegisterViewController.swift in Sources */,
 				23454AD220C0C14E00823EC8 /* SerialMonitorWindowController.swift in Sources */,
 				233DBE042075636100269D8E /* PreferenceViewController.swift in Sources */,
 				238599D42073E14D00F2FF08 /* Uploader.swift in Sources */,
@@ -2376,6 +2399,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-Mac",
+					"$(PROJECT_DIR)/Pods/HockeySDK-Mac/HockeySDK-Mac",
+				);
 				INFOPLIST_FILE = CamelStudioX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2401,6 +2429,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 79DD7SDR2J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-Mac",
+					"$(PROJECT_DIR)/Pods/HockeySDK-Mac/HockeySDK-Mac",
+				);
 				INFOPLIST_FILE = CamelStudioX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

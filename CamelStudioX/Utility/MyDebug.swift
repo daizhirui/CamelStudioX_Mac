@@ -6,7 +6,7 @@
 //  Copyright © 2018 戴植锐. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 func myDebug( _ content:Any) {
     #if DEBUG
