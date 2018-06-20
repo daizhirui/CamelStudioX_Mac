@@ -229,7 +229,7 @@
             </description>
             <pubDate>Wed, 20 Jun 2018 19:25:30 +0200</pubDate>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
-            <enclosure url="https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/CamelStudioX_3.6.0_Build32.zip" sparkle:version="32" sparkle:shortVersionString="3.6.0" length="68184230" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDS3po8Cp2RhDLQclyMvUIPCPAYhQIUX+QKCCLYErkHAvGT9+nb1oIol30="/>
+            <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.6.0_Build32.zip" sparkle:version="32" sparkle:shortVersionString="3.6.0" length="68184230" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDS3po8Cp2RhDLQclyMvUIPCPAYhQIUX+QKCCLYErkHAvGT9+nb1oIol30="/>
         </item>
         
     </channel></rss>
