@@ -169,6 +169,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
     /// Store paths of every example file so that these examples can be opened later.
     var m2ExampleList: [String : URL] = [String : URL]()
     /// UI element of M2 Example
+    @IBOutlet weak var exampleMenu: NSMenuItem!
     @IBOutlet weak var m2ExampleMenu: NSMenu!
     /// Setup the M2 Example menu for examples
     func setupM2ExampleMenu() {

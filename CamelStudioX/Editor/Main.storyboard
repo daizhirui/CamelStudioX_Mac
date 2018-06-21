@@ -610,6 +610,7 @@
                 <customObject id="gal-5o-MU4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="eQV-bR-l9y" customClass="AppDelegate" customModule="CamelStudioX" customModuleProvider="target">
                     <connections>
+                        <outlet property="exampleMenu" destination="ngF-Lc-Lp9" id="j6H-AT-5JT"/>
                         <outlet property="m2ExampleMenu" destination="xrC-g3-a7p" id="YiG-S8-yP5"/>
                         <outlet property="updater" destination="tVS-lx-Ytd" id="pM7-78-S2e"/>
                     </connections>

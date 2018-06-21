@@ -22,6 +22,7 @@ class WelcomeViewController: NSViewController {
     }
     @IBOutlet var welcomeView: NSView!
     @IBOutlet weak var closeButton: NSButton!
+    @IBOutlet var openExampleMenu: NSMenu!
     @IBOutlet weak var leftView: NSView!
     @IBOutlet weak var recentProjectTable: NSTableView!
     var selectedProjectNameTextField: NSTextField!
@@ -65,6 +66,7 @@ class WelcomeViewController: NSViewController {
         super.viewDidAppear()
         WelcomeViewController.welcomeViewDidShowed = true
         WelcomeWindow.windowOnShow = self.view.window!
+        myDebug("Welcome window \(self.view.window!) is showed")
     }
     
     override func viewWillDisappear() {
@@ -90,6 +92,14 @@ class WelcomeViewController: NSViewController {
     @IBAction func openProject(_ sender: Any) {
         NSDocumentController.shared.openDocument(self)
         self.closeWelcomeWindow(self)
+    }
+    
+    lazy var exampleMenuItem: NSMenuItem = AppDelegate.shared.exampleMenu.copy() as! NSMenuItem
+    @IBAction func openExample(_ sender: Any) {
+        if let button = sender as? NSButton {
+            self.openExampleMenu.addItem(self.exampleMenuItem)
+            self.openExampleMenu.popUp(positioning: nil, at: button.frame.origin, in: self.view)
+        }
     }
     
     /**

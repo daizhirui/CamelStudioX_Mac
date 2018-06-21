@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="KPN-GV-gxh">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="KPN-GV-gxh">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="14019"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
@@ -114,10 +114,10 @@
                                         </connections>
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hb9-zB-b1t">
-                                        <rect key="frame" x="55" y="184" width="341" height="36"/>
+                                        <rect key="frame" x="77" y="184" width="297" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to CamelStudioX" id="FX2-Tq-YG2">
-                                            <font key="font" metaFont="systemLight" size="30"/>
+                                            <font key="font" metaFont="systemLight" size="26"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -131,8 +131,19 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RoE-TB-XVw">
+                                        <rect key="frame" x="154" y="105" width="142" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" title="New Project" bezelStyle="shadowlessSquare" image="ic_create_new_folder" imagePosition="left" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="MHE-Cl-kv8">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="systemBold"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="createNewProject:" target="QOV-Dx-5Ta" id="23j-X6-R7V"/>
+                                        </connections>
+                                    </button>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aad-PI-Flf" userLabel="Open Project">
-                                        <rect key="frame" x="140" y="39" width="170" height="48"/>
+                                        <rect key="frame" x="155" y="66" width="141" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="square" title="Open Project" bezelStyle="shadowlessSquare" image="ic_folder" imagePosition="left" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="AWO-tq-ayj">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -142,15 +153,15 @@
                                             <action selector="openProject:" target="QOV-Dx-5Ta" id="flA-c2-cvH"/>
                                         </connections>
                                     </button>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RoE-TB-XVw">
-                                        <rect key="frame" x="140" y="97" width="170" height="48"/>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSy-e5-xJ6" userLabel="Open Project">
+                                        <rect key="frame" x="155" y="20" width="141" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" title="New Project" bezelStyle="shadowlessSquare" image="ic_create_new_folder" imagePosition="left" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="MHE-Cl-kv8">
+                                        <buttonCell key="cell" type="square" title="Open Example" bezelStyle="shadowlessSquare" image="ic_folder_open" imagePosition="left" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="FSR-4Q-C7N">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemBold"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="createNewProject:" target="QOV-Dx-5Ta" id="23j-X6-R7V"/>
+                                            <action selector="openExample:" target="QOV-Dx-5Ta" id="KrD-jz-ZUm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -263,14 +274,16 @@
                     <connections>
                         <outlet property="closeButton" destination="Kl6-ZG-wWE" id="9Mk-bF-VsS"/>
                         <outlet property="leftView" destination="nvW-Vp-X2I" id="3n1-TB-mVN"/>
+                        <outlet property="openExampleMenu" destination="hoa-kJ-PaY" id="IfC-Er-2dQ"/>
                         <outlet property="recentProjectTable" destination="nNa-lp-CaC" id="jTW-oJ-gty"/>
                         <outlet property="versionLabel" destination="yCk-pW-DTA" id="1T7-bL-GCQ"/>
                         <outlet property="welcomeView" destination="LvK-ni-PJY" id="OrO-8s-dHI"/>
                     </connections>
                 </viewController>
                 <customObject id="BDs-PV-5jM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu title="exampleButtonMenu" id="hoa-kJ-PaY"/>
             </objects>
-            <point key="canvasLocation" x="19.5" y="451"/>
+            <point key="canvasLocation" x="-129" y="397"/>
         </scene>
     </scenes>
     <resources>
@@ -278,5 +291,6 @@
         <image name="ic_close" width="14" height="14"/>
         <image name="ic_create_new_folder" width="48" height="48"/>
         <image name="ic_folder" width="48" height="48"/>
+        <image name="ic_folder_open" width="48" height="48"/>
     </resources>
 </document>
