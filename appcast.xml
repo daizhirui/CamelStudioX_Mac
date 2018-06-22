@@ -272,5 +272,19 @@
             <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.6.2_Build34.zip" sparkle:version="34" sparkle:shortVersionString="3.6.2" length="68281275" type="application/octet-stream" sparkle:dsaSignature="MCwCFH/ZgI5qnIp63vtslZH+fDLynPGfAhR9fQjiqNF91Fi7kq1AIFVMW7yvnw=="/>
         </item>
         
+        <item>
+            <title>3.6.3</title>
+            <description><![CDATA[
+                <h2>Bug Fixed</h2>
+                <ul>
+                <li>UI error of Welcome Window on MacBook Air.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Fri, 22 Jun 2018 13:46:06 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.6.3_Build35.zip" sparkle:version="35" sparkle:shortVersionString="3.6.3" length="68281726" type="application/octet-stream" sparkle:dsaSignature="MC0CFHRsno8l5pUzTNR1o6rGUsIK5iddAhUAr8ijFbbByjf43dwjE/I64tiSEU4="/>
+        </item>
+        
     </channel></rss>
 

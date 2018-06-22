@@ -98,6 +98,10 @@
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQA-Ty-pnt" userLabel="CamelStudio Icon">
                                         <rect key="frame" x="161" y="247" width="128" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="9aT-kk-deT"/>
+                                            <constraint firstAttribute="width" constant="128" id="gJc-KR-mCw"/>
+                                        </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="FYx-Ht-k1k"/>
                                     </imageView>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kl6-ZG-wWE" userLabel="Close Button">

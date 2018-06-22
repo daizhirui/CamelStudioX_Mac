@@ -1,3 +1,10 @@
+### Version 3.6.3
+----
+
+#### Build 35 on 22.06.2018
+
+- Fix: UI error of Welcome Window on MacBook Air.
+
 ### Version 3.6.2
 ----
 
