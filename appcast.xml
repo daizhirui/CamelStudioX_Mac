@@ -254,5 +254,23 @@
             <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.6.1_Build33.zip" sparkle:version="33" sparkle:shortVersionString="3.6.1" length="68195273" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCysmMMV8VF7ihd6DVY56UpNng6XAIUV/9YKVMSCkE2hLBvNEOhkjVqMrs="/>
         </item>
         
+        <item>
+            <title>3.6.2</title>
+            <description><![CDATA[
+                <h2>Bug Fixed</h2>
+                <ul>
+                <li>Possible crash when checking update with a project opened.</li>
+                </ul>
+                <h2>Improvement</h2>
+                <ul>
+                <li>UI adjustment of Welcome Window for old mac machines.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Fri, 22 Jun 2018 02:15:55 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.6.2_Build34.zip" sparkle:version="34" sparkle:shortVersionString="3.6.2" length="68281275" type="application/octet-stream" sparkle:dsaSignature="MCwCFH/ZgI5qnIp63vtslZH+fDLynPGfAhR9fQjiqNF91Fi7kq1AIFVMW7yvnw=="/>
+        </item>
+        
     </channel></rss>
 

@@ -1,10 +1,18 @@
+### Version 3.6.2
+----
+
+#### Build 34 on 22.06.2018
+
+- Improvement: UI adjustment of Welcome Window for old mac machines.
+- Fix: Possible crash when checking update with a project opened.
+
 ### Version 3.6.1
 ----
 
 #### Build 33 on 21.06.2018
 
 - New Feature: Open Example button in Welcome Window.
-- Improvement: UI addjustment of Welcome Window for old mac machines.
+- Improvement: UI adjustment of Welcome Window for old mac machines.
 
 ### Version 3.6.0
 ----

@@ -54,10 +54,12 @@ class WelcomeViewController: NSViewController {
         self.view.addTrackingArea(area)
     }
     
+    /// show close button when the mouse enters left view
     override func mouseEntered(with event: NSEvent) {
         self.closeButton.isHidden = false
     }
     
+    /// hide close button when the mouse exits left view
     override func mouseExited(with event: NSEvent) {
         self.closeButton.isHidden = true
     }
@@ -102,9 +104,7 @@ class WelcomeViewController: NSViewController {
         }
     }
     
-    /**
-     Open project from recent project list
-    */
+    /// Open project from recent project list
     @objc func doubleClickRecentProject() {
         if let stackView = self.getSelectedCellView()?.subviews[0] as? NSStackView {
             if let urlLabel = stackView.subviews[1] as? NSTextField {

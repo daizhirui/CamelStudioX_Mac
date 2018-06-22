@@ -93,13 +93,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="675" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvW-Vp-X2I" userLabel="leftView">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="nvW-Vp-X2I" userLabel="leftView">
                                 <rect key="frame" x="0.0" y="0.0" width="451" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQA-Ty-pnt" userLabel="CamelStudio Icon">
-                                        <rect key="frame" x="158" y="228" width="134" height="134"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQA-Ty-pnt" userLabel="CamelStudio Icon">
+                                        <rect key="frame" x="161" y="247" width="128" height="128"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="FYx-Ht-k1k"/>
                                     </imageView>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kl6-ZG-wWE" userLabel="Close Button">
@@ -113,27 +111,28 @@
                                             <action selector="closeWelcomeWindow:" target="QOV-Dx-5Ta" id="okf-vO-C0D"/>
                                         </connections>
                                     </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hb9-zB-b1t">
-                                        <rect key="frame" x="77" y="184" width="297" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hb9-zB-b1t">
+                                        <rect key="frame" x="77" y="203" width="297" height="31"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to CamelStudioX" id="FX2-Tq-YG2">
                                             <font key="font" metaFont="systemLight" size="26"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCk-pW-DTA">
-                                        <rect key="frame" x="153" y="159" width="145" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yCk-pW-DTA">
+                                        <rect key="frame" x="160" y="176" width="132" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version 3.0 (Build 9)" id="B9o-Jn-huk">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RoE-TB-XVw">
-                                        <rect key="frame" x="154" y="105" width="142" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="RoE-TB-XVw">
+                                        <rect key="frame" x="155" y="121" width="140" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="VvN-o7-ot0"/>
+                                            <constraint firstAttribute="height" constant="40" id="cvQ-3W-Wog"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="square" title="New Project" bezelStyle="shadowlessSquare" image="ic_create_new_folder" imagePosition="left" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="MHE-Cl-kv8">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemBold"/>
@@ -142,9 +141,12 @@
                                             <action selector="createNewProject:" target="QOV-Dx-5Ta" id="23j-X6-R7V"/>
                                         </connections>
                                     </button>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aad-PI-Flf" userLabel="Open Project">
-                                        <rect key="frame" x="155" y="66" width="141" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="aad-PI-Flf" userLabel="Open Project">
+                                        <rect key="frame" x="156" y="71" width="140" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gAp-qx-Jdz"/>
+                                            <constraint firstAttribute="width" constant="140" id="tBs-vx-Lda"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="square" title="Open Project" bezelStyle="shadowlessSquare" image="ic_folder" imagePosition="left" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="AWO-tq-ayj">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemBold"/>
@@ -153,9 +155,12 @@
                                             <action selector="openProject:" target="QOV-Dx-5Ta" id="flA-c2-cvH"/>
                                         </connections>
                                     </button>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSy-e5-xJ6" userLabel="Open Project">
-                                        <rect key="frame" x="155" y="20" width="141" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="wSy-e5-xJ6" userLabel="Open Project">
+                                        <rect key="frame" x="156" y="21" width="140" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="TVf-tJ-1SC"/>
+                                            <constraint firstAttribute="width" constant="140" id="orN-Ds-K1B"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="square" title="Open Example" bezelStyle="shadowlessSquare" image="ic_folder_open" imagePosition="left" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="FSR-4Q-C7N">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemBold"/>
@@ -165,15 +170,29 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="RoE-TB-XVw" firstAttribute="top" secondItem="yCk-pW-DTA" secondAttribute="bottom" constant="15" id="0Cm-fm-lpi"/>
+                                    <constraint firstAttribute="height" constant="400" id="ESo-4E-76f"/>
+                                    <constraint firstItem="wSy-e5-xJ6" firstAttribute="centerX" secondItem="nvW-Vp-X2I" secondAttribute="centerX" id="EhP-3P-y1p"/>
+                                    <constraint firstItem="KQA-Ty-pnt" firstAttribute="centerX" secondItem="nvW-Vp-X2I" secondAttribute="centerX" id="GPZ-FJ-ugX"/>
+                                    <constraint firstItem="wSy-e5-xJ6" firstAttribute="top" secondItem="aad-PI-Flf" secondAttribute="bottom" constant="10" id="HFk-hp-tO9"/>
+                                    <constraint firstItem="aad-PI-Flf" firstAttribute="top" secondItem="RoE-TB-XVw" secondAttribute="bottom" constant="10" id="NrK-YB-PjD"/>
+                                    <constraint firstItem="aad-PI-Flf" firstAttribute="centerX" secondItem="nvW-Vp-X2I" secondAttribute="centerX" id="OCe-MF-5Nu"/>
+                                    <constraint firstItem="yCk-pW-DTA" firstAttribute="centerX" secondItem="nvW-Vp-X2I" secondAttribute="centerX" id="R4B-Be-oWA"/>
+                                    <constraint firstItem="RoE-TB-XVw" firstAttribute="centerX" secondItem="nvW-Vp-X2I" secondAttribute="centerX" id="RG7-cN-I90"/>
+                                    <constraint firstItem="Hb9-zB-b1t" firstAttribute="centerX" secondItem="nvW-Vp-X2I" secondAttribute="centerX" id="S26-aU-cCG"/>
+                                    <constraint firstItem="Hb9-zB-b1t" firstAttribute="top" secondItem="KQA-Ty-pnt" secondAttribute="bottom" constant="13" id="UHf-xI-ca9"/>
+                                    <constraint firstAttribute="width" constant="451" id="Vb7-W4-2Qe"/>
+                                    <constraint firstItem="KQA-Ty-pnt" firstAttribute="top" secondItem="nvW-Vp-X2I" secondAttribute="top" constant="25" id="XKn-YJ-5J9"/>
+                                    <constraint firstItem="yCk-pW-DTA" firstAttribute="top" secondItem="Hb9-zB-b1t" secondAttribute="bottom" constant="10" id="YC6-1G-20p"/>
+                                </constraints>
                             </customView>
-                            <visualEffectView wantsLayer="YES" fixedFrame="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="enb-FB-jh6">
+                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="enb-FB-jh6">
                                 <rect key="frame" x="440" y="0.0" width="235" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="56" horizontalPageScroll="10" verticalLineScroll="56" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-Gg-xJN">
+                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="56" horizontalPageScroll="10" verticalLineScroll="56" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-Gg-xJN">
                                         <rect key="frame" x="0.0" y="0.0" width="235" height="400"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Gof-sF-Bac">
+                                        <clipView key="contentView" drawsBackground="NO" id="Gof-sF-Bac">
                                             <rect key="frame" x="0.0" y="0.0" width="235" height="400"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -258,6 +277,10 @@
                                             </subviews>
                                             <nil key="backgroundColor"/>
                                         </clipView>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="235" id="Lci-nU-0Ie"/>
+                                            <constraint firstAttribute="height" constant="400" id="qaZ-JN-zcU"/>
+                                        </constraints>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="pPB-Fj-o8B">
                                             <rect key="frame" x="0.0" y="-16" width="0.0" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -268,8 +291,25 @@
                                         </scroller>
                                     </scrollView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TRn-Gg-xJN" secondAttribute="trailing" id="KQr-al-ZgP"/>
+                                    <constraint firstAttribute="width" constant="235" id="MFm-eO-YXr"/>
+                                    <constraint firstItem="TRn-Gg-xJN" firstAttribute="leading" secondItem="enb-FB-jh6" secondAttribute="leading" id="RKB-vD-BwE"/>
+                                    <constraint firstAttribute="height" constant="400" id="Yrr-7j-PrO"/>
+                                    <constraint firstAttribute="bottom" secondItem="TRn-Gg-xJN" secondAttribute="bottom" id="fGX-8u-gVW"/>
+                                    <constraint firstItem="TRn-Gg-xJN" firstAttribute="top" secondItem="enb-FB-jh6" secondAttribute="top" id="hNo-lo-wTB"/>
+                                </constraints>
                             </visualEffectView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nvW-Vp-X2I" secondAttribute="bottom" id="FfU-48-5hY"/>
+                            <constraint firstAttribute="bottom" secondItem="enb-FB-jh6" secondAttribute="bottom" id="Isu-f3-i2Z"/>
+                            <constraint firstAttribute="trailing" secondItem="enb-FB-jh6" secondAttribute="trailing" id="L5i-Dl-YhV"/>
+                            <constraint firstItem="nvW-Vp-X2I" firstAttribute="leading" secondItem="LvK-ni-PJY" secondAttribute="leading" id="Q6y-il-SuG"/>
+                            <constraint firstItem="enb-FB-jh6" firstAttribute="leading" secondItem="LvK-ni-PJY" secondAttribute="leading" constant="440" id="fYj-5d-8II"/>
+                            <constraint firstItem="enb-FB-jh6" firstAttribute="top" secondItem="LvK-ni-PJY" secondAttribute="top" id="jjD-sF-bqs"/>
+                            <constraint firstItem="nvW-Vp-X2I" firstAttribute="top" secondItem="LvK-ni-PJY" secondAttribute="top" id="xU8-NP-Ka3"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="Kl6-ZG-wWE" id="9Mk-bF-VsS"/>
