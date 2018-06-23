@@ -1,7 +1,9 @@
 # CamelStudioX_Mac
 Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
-## [Download the Latest Version](https://github.com/daizhirui/CamelStudioX_Mac/releases/latest)
+## [Download the Latest Version from GitHub](https://github.com/daizhirui/CamelStudioX_Mac/releases/latest)
+
+## [Download the Latest Version from HockeyApp](https://rink.hockeyapp.net/apps/798a2dae49b04400bcadaf69bda80417)
 
 ## [Documentation](https://daizhirui.github.io/CamelStudio_Library/)
 
