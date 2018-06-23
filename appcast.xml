@@ -286,5 +286,29 @@
             <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.6.3_Build35.zip" sparkle:version="35" sparkle:shortVersionString="3.6.3" length="68281726" type="application/octet-stream" sparkle:dsaSignature="MC0CFHRsno8l5pUzTNR1o6rGUsIK5iddAhUAr8ijFbbByjf43dwjE/I64tiSEU4="/>
         </item>
         
+        <item>
+            <title>3.6.4</title>
+            <description><![CDATA[
+                <h2>Improvement</h2>
+                <ul>
+                <li>Speed up preparation before uploading.</li>
+                </ul>
+                <h2>Fixed Bugs</h2>
+                <ul>
+                <li>Crash when users try to setup serial port in the More Config Sheet in Serial Monitor.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Sat, 23 Jun 2018 19:26:00 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.6.4_Build36.zip" sparkle:version="36" sparkle:shortVersionString="3.6.4" length="68284819" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCxZOKPwWsqVdMRqSLr0wlbTNdvWgIVAMQSxOemlDa+ko7f4zbXjd5TV2Ay"/>
+            <sparkle:deltas>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-35.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="35" length="226571" type="application/octet-stream" sparkle:dsaSignature="MC4CFQDNzAUFpF/jTEpoIGlfC5YsKWnfMAIVAIlONP8ZcJBL9t/hJn4AnLj+d8O7"/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-34.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="34" length="238859" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCais05JY6f8bhBZVnllYG9qW0jxwIUdoYV9w2ttTpvHCWr6kt9zDliH9s="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-33.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="33" length="468561" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCq6F1ocHbhwZI7DHFuj4S1fA33ygIULn6/+dccCPxBNy0C1dSLfg0iz9E="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-32.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="32" length="511753" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDU5s81d3pdVaucYl6tEIYWhY7owAIUKv5urA5eR8ViYPkF3BoyhwbN/qo="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-31.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="31" length="925083" type="application/octet-stream" sparkle:dsaSignature="MC0CFGqXF1DCG+w2tzt51wzBHkLI3VDTAhUAtx0xyLayETS9eCmLhNGmVvXxkY8="/></sparkle:deltas>
+        </item>
+        
     </channel></rss>
 

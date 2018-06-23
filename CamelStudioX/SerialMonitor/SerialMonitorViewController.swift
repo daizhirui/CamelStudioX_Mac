@@ -17,12 +17,13 @@ class SerialMonitorViewController: NSViewController {
     @IBOutlet weak var baudrateBox: NSPopUpButton!
     @IBOutlet weak var scrollView: NSScrollView!
     @IBOutlet var textView: SerialScreenView!
-    @objc let serialController = SerialController()
     @IBOutlet weak var inputBox: NSTextField!
     @IBOutlet weak var addressBox: NSTextField!
     @IBOutlet weak var endingPopUpButton: NSPopUpButton!
     
-    let moreConfigViewController: SerialMonitorConfigViewController = {
+    @objc let serialController = SerialController()
+    
+    let serialConfigViewController: SerialMonitorConfigViewController = {
         let sb = NSStoryboard.init(name: NSStoryboard.Name("SerialMonitor"), bundle: nil)
         return sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "SerialMonitorConfigViewController")) as! SerialMonitorConfigViewController
     }()
@@ -55,10 +56,15 @@ class SerialMonitorViewController: NSViewController {
         // turn off some smart functions or automatic functions of nstextview
         self.textView.turnOffAllSmartOrAutoFunctionExceptLinkDetection()
         // ****** Setup Config View Controller
-        self.moreConfigViewController.parentVC = self
+        self.serialConfigViewController.parentVC = self
         // ******* Setup Ending *********
         self.endingPopUpButton.addItems(withTitles: ["<CR>", "<LF>", "<CR><LF>"])
         self.endingPopUpButton.selectItem(at: 0)
+    }
+    
+    override func viewWillAppear() {
+        guard let baudrateValue = self.serialController.serialPort?.baudRate else { return }
+        self.baudrateBox.selectItem(withTitle: "\(baudrateValue)")
     }
     
     override func viewWillDisappear() {
@@ -75,7 +81,7 @@ class SerialMonitorViewController: NSViewController {
         self.serialController.openOrClosePort()
     }
     @IBAction func moreSerialControllerConfig(_ sender: Any) {
-        self.presentViewControllerAsSheet(self.moreConfigViewController)
+        self.presentViewControllerAsSheet(self.serialConfigViewController)
     }
     
     // ************* Communication **************

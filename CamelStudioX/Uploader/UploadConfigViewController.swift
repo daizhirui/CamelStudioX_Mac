@@ -75,6 +75,5 @@ class UploadConfigViewController: NSViewController {
         self.dismiss(self)
         self.uploader.uploadConfigReady = true
         self.uploader.startUpload()
-        self.uploader.uploadStageControl(nil)
     }
 }

@@ -642,7 +642,7 @@
                 <controllerPlaceholder storyboardName="SerialMonitor" id="Yll-2S-NJV" sceneMemberID="viewController"/>
                 <customObject id="IYv-vd-rim" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="-123"/>
+            <point key="canvasLocation" x="312" y="-91"/>
         </scene>
         <!--ProjectConfig-->
         <scene sceneID="qIg-pD-LYa">
@@ -650,7 +650,7 @@
                 <controllerPlaceholder storyboardName="ProjectConfig" id="g80-2G-VOH" sceneMemberID="viewController"/>
                 <customObject id="DJH-g4-rt5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024" y="-41"/>
+            <point key="canvasLocation" x="1237" y="43"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="txS-ec-aHP">
@@ -1522,6 +1522,6 @@ DQ
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V8d-kW-jhl"/>
-        <segue reference="7de-7c-mmq"/>
+        <segue reference="Ubs-oy-ANK"/>
     </inferredMetricsTieBreakers>
 </document>

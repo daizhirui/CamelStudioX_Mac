@@ -96,17 +96,17 @@ class SerialController: NSObject, ORSSerialPortDelegate {
     */
     func serialPortWasRemoved(fromSystem serialPort: ORSSerialPort) {
         self.serialPort = nil
-        self.switchButton?.title = NSLocalizedString("Open", comment: "Open")
+        self.switchButton?.title = "Open"
     }
     /// response to serialPort opened
     func serialPortWasOpened(_ serialPort: ORSSerialPort) {
-        //self.switchButton?.title = NSLocalizedString("Close", comment: "Close")
+        self.switchButton?.title = "Close"
         self.switchButton?.state = .on
         myDebug("\(serialPort.name) is opened")
     }
     /// response to serialPort closed
     func serialPortWasClosed(_ serialPort: ORSSerialPort) {
-        //self.switchButton?.title = NSLocalizedString("Open", comment: "Open")
+        self.switchButton?.title = "Open"
         self.switchButton?.state = .off
         myDebug("\(serialPort.name) is closed")
     }
@@ -137,7 +137,7 @@ class SerialController: NSObject, ORSSerialPortDelegate {
     func serialPort(_ serialPort: ORSSerialPort, didEncounterError error: Error) {
         let alertMessage = NSLocalizedString("Serial Port", comment: "Serial Port") + "\(serialPort) " + NSLocalizedString("encountered an error: ", comment: "encountered an error: ") + "\(error)"
         _ = InfoAndAlert.shared.showAlertWindow(with: alertMessage)
-        self.switchButton?.title = NSLocalizedString("Open", comment: "Open")
+        self.switchButton?.title = "Open"
     }
     /**
      Send data through a selected serial port.

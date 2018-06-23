@@ -11,9 +11,21 @@ import Cocoa
 class SerialMonitorConfigViewController: NSViewController {
     
     @objc var parentVC: SerialMonitorViewController!
+    @IBOutlet weak var baudrateBox: NSPopUpButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear() {
+        guard let baudrateValue = self.parentVC.serialController.serialPort?.baudRate else { return }
+        self.baudrateBox.selectItem(withTitle: "\(baudrateValue)")
+    }
+    @IBAction func baudrateBoxAction(_ sender: NSPopUpButton) {
+        guard let baudrateString = sender.selectedItem?.title else { return }
+        guard let baudrateValue = Int(baudrateString) else { return }
+        self.parentVC.baudrateBox.selectItem(withTitle: baudrateString)
+        self.parentVC.serialController.serialPort?.baudRate = NSNumber(value: baudrateValue)
     }
     
     @IBAction func okAction(_ sender: Any) {

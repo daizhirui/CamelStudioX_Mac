@@ -25,13 +25,12 @@ class DocumentWindowController: NSWindowController {
         super.windowDidLoad()
         // prepare upload config view controller
         self.uploadConfigViewController.uploader = self.uploader
+        self.uploadConfigViewController.parentVC = self.viewController
         self.uploader.viewController = self.viewController
         //NSUserNotificationCenter.default.delegate = self
         // addObservers
         self.addObserversForUpload()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.lostFocusAction(_:)), name: NSWindow.didResignMainNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getFocusAction(_:)), name: NSWindow.didBecomeMainNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.resizeWindow(_:)), name: NSWindow.didResizeNotification, object: nil)
+        self.addObserversForWindowControl()
         // check if a tab window is required
         if AppDelegate.isRequiringNewTab {
             self.addWindowAsTab()
@@ -39,7 +38,16 @@ class DocumentWindowController: NSWindowController {
         }
         self.progressIndicator.isHidden = true
     }
-    //****************** About Window Resize ******************************
+    deinit {
+        self.removeObserversForUpload()
+    }
+    
+    // MARK:- Window Resize
+    func addObserversForWindowControl() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.lostFocusAction(_:)), name: NSWindow.didResignMainNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.getFocusAction(_:)), name: NSWindow.didBecomeMainNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.resizeWindow(_:)), name: NSWindow.didResizeNotification, object: nil)
+    }
     @objc func resizeWindow(_ aNotification: Notification) {
         let width = self.viewController.editAreaScrollView.frame.width + 20
         let height = self.viewController.editAreaScrollView.frame.height
@@ -48,7 +56,8 @@ class DocumentWindowController: NSWindowController {
         let newFrame = NSRect(x: x, y: y, width: width, height: height)
         self.viewController.editAreaScrollView.contentView.frame = newFrame
     }
-    //****************** About Project Inspector **************************
+    
+    // MARK:- Project Inspector
     /// Change text color when window becomes unmain
     @objc func lostFocusAction(_ aNotification: Notification) {
         self.viewController.lastSelectedItem?.textColor = NSColor.darkGray
@@ -58,7 +67,6 @@ class DocumentWindowController: NSWindowController {
         self.viewController.lastSelectedItem?.textColor = NSColor.white
         self.viewController.updateProjectInspector()
     }
-    //************************ About Side Panel ***************************
     /// open or close side panel
     var sidePanelWidth: CGFloat = 0
     func toggelSidePanel() {
@@ -150,10 +158,12 @@ class DocumentWindowController: NSWindowController {
             menuItem.state = (menuItem.state == .on ? .off : .on)
         }
     }
+    
     // ******************** Project Config Menu Action ****************
     @IBAction func openProjectConfig(_ sender: Any) {
         self.projectConfigButton.performClick(self)
     }
+    
     // ******************* Generate Makefile ********************
     @IBAction func generateMakefile(_ sender: Any) {
         // Save the modification at first
@@ -169,6 +179,7 @@ class DocumentWindowController: NSWindowController {
             _ = aCompiler.generateMakefile()
         }
     }
+    
     /// Process the errorOutput from make system and show them in the compiler message panel.
     func updateBuildResult(compilerMessages: CompilerMessages) -> Bool {
         // Get the CompilerMessageViewController belonging to this window
@@ -230,8 +241,7 @@ class DocumentWindowController: NSWindowController {
                 project.updateFileWrappers()
             }
             
-            // use customed makefile instead
-            if project.useCustomedMakefile {
+            if project.useCustomedMakefile {    // use customed makefile instead
                 // make sure the makefile does exist
                 if (project.filewrappers?.fileWrappers?.keys.contains("Makefile"))! {
                     buildBinaryAndCheckResult()
@@ -246,10 +256,8 @@ class DocumentWindowController: NSWindowController {
                 }
             } else {
                 // generate a makefile before building
-                // Generate makefile, if fails, exit
-                if aCompiler.generateMakefile() {
-                    // Build the binary
-                    buildBinaryAndCheckResult()
+                if aCompiler.generateMakefile() {   // Generate makefile, if fails, exit
+                    buildBinaryAndCheckResult() // Build the binary
                 } else {
                     // failed to generate the makefile
                     self.viewController.sidePanelInfoTextView.string = "Failed to generate the makefile!"
@@ -316,6 +324,7 @@ class DocumentWindowController: NSWindowController {
             self.viewController.updateProjectInspector()
         }
     }
+    
     // **************** About Clean Project *****************
     @IBAction func cleanProject(_ sender: Any) {
         if let project = self.viewController.project {
@@ -329,7 +338,8 @@ class DocumentWindowController: NSWindowController {
             self.viewController.updateProjectInspector()
         }
     }
-    //*********************** About upload binary ********************
+    
+    // MARK:- Upload binary
     @objc var uploader = Uploader()
     var uploadConfigViewController: UploadConfigViewController = {
         let storyBoard = NSStoryboard.init(name: NSStoryboard.Name("UploadConfig"), bundle: nil)
@@ -338,17 +348,12 @@ class DocumentWindowController: NSWindowController {
     }()
     @IBAction func loadToBoard(_ sender: Any) {
         if self.uploader.uploadFlag {
-            self.uploader.uploadFlag = false
             self.progressInfo.stringValue = "Upload Cancelled"
-            // cancel upload
-            self.uploader.cancelUpload()
-            // setup ui
-            self.setupUIBeforeUpload()
-            // remove observers
-            // self.removeObserversForUpload()
+            self.uploader.cancelUpload()    // cancel upload
+            self.setupUIBeforeUpload()      // setup ui
         } else {
             var buildBinary = false
-            if let autoBuild = UserDefaults.standard.value(forKey: "AutoBuild") as? NSControl.StateValue {
+            if let autoBuild = UserDefaults.standard.value(forKey: "AutoBuild") as? NSControl.StateValue {  // check auto build
                 if autoBuild == .on {
                     buildBinary = true
                 }
@@ -356,7 +361,7 @@ class DocumentWindowController: NSWindowController {
                 buildBinary = true
                 UserDefaults.standard.set(NSControl.StateValue.on as Any, forKey: "AutoBuild")
             }
-            if buildBinary {
+            if buildBinary {    // build binary
                 self.buildBinary(self)
                 if !self.buildSuccess {
                     InfoAndAlert.shared.postNotification(title: "Upload Failed", informativeText: "Fail to build a new binary.")
@@ -364,21 +369,15 @@ class DocumentWindowController: NSWindowController {
                 }
             }
             if let project = self.viewController.project {
-                self.uploader.uploadFlag = true
-                // setup ui
-                self.setupUIDuringUpload()
-                // add observers
-                // self.addObserversForUpload()
+                self.setupUIDuringUpload()  // setup ui
                 // start to upload
                 self.uploader.targetAddress = project.targetAddress
                 self.uploader.binaryURL = project.projectURL?.appendingPathComponent("Release").appendingPathComponent("\(project.targetName).bin")
                 // show the upload config sheet
                 if !self.uploader.uploadConfigReady {
-                    self.uploadConfigViewController.parentVC = self.contentViewController as! DocumentViewController
                     self.viewController.presentViewControllerAsSheet(self.uploadConfigViewController)
                 } else {
                     self.uploader.startUpload()
-                    self.uploader.uploadStageControl(nil)
                 }
             }
         }

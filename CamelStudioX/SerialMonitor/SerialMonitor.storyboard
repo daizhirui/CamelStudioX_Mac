@@ -94,8 +94,8 @@
                                                     <menu key="menu" id="nS7-NT-veB"/>
                                                 </popUpButtonCell>
                                                 <connections>
+                                                    <action selector="baudrateBoxAction:" target="LTH-ik-Zfo" id="C1a-zB-fmd"/>
                                                     <binding destination="LTH-ik-Zfo" name="contentValues" keyPath="self.parentVC.serialController.availableBaudrates" id="111-lB-S6g"/>
-                                                    <binding destination="LTH-ik-Zfo" name="selectedObject" keyPath="self.parentVC.serialController.serialPort.baudRate" previousBinding="111-lB-S6g" id="58Q-aw-Ct1"/>
                                                 </connections>
                                             </popUpButton>
                                         </subviews>
@@ -529,6 +529,9 @@ DQ
                             <outlet property="delegate" destination="LTH-ik-Zfo" id="ab2-0V-QKK"/>
                         </connections>
                     </touchBar>
+                    <connections>
+                        <outlet property="baudrateBox" destination="6SS-pX-Y2c" id="KIR-Mf-umn"/>
+                    </connections>
                 </viewController>
                 <customObject id="PuQ-Te-Zao" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -770,7 +773,6 @@ DQ
                                 </popUpButtonCell>
                                 <connections>
                                     <binding destination="d3s-ps-ZGy" name="contentValues" keyPath="self.serialController.availableBaudrates" id="UB5-Lt-FD7"/>
-                                    <binding destination="d3s-ps-ZGy" name="selectedObject" keyPath="self.serialController.serialPort.baudRate" previousBinding="UB5-Lt-FD7" id="97a-kK-zXd"/>
                                 </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eFK-x5-eVY">

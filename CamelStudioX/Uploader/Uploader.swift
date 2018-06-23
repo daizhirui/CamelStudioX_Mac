@@ -131,12 +131,13 @@ class Uploader: NSObject, ORSSerialPortDelegate {
     var uploadResult = ""
 
     // MARK: - Upload Control Functions
-    /**
-     Because serial device may react slowly, we need to wait for it.
-     */
+    
+    /// Because serial device may react slowly, we need to wait for it.
     func waitForChip() {
         usleep(250000)  // 0.25 s
     }
+    
+    /// Get the control of the chosen serial port
     func getControlOfThePort(port: ORSSerialPort) {
         myDebug("Get control of \(port.name)")
         if let delegate = port.delegate.self {
@@ -144,21 +145,28 @@ class Uploader: NSObject, ORSSerialPortDelegate {
             if let serialControllerOfSerialMonitor = delegate as? SerialController {    // Remove the control by SerialController
                 serialControllerOfSerialMonitor.serialPort?.close()
                 serialControllerOfSerialMonitor.serialPort?.delegate = nil
-                serialControllerOfSerialMonitor.serialPort = nil
                 serialControllerOfSerialMonitor.switchButton?.state = .off
+            } else if let otherUploader = delegate as? Uploader, otherUploader != self {
+                otherUploader.serialPort?.close()
+                otherUploader.serialPort?.delegate = nil
             }
         } else {
             myDebug("The delegate of \(port.name) is nil")
         }
-        self.serialPort?.delegate = self
-        sleep(1)    // make the delay for ORSSerialPort to be ready.
+        self.serialPort?.delegate = self    // get the control
     }
+    
     /// Open the serial port for uploading
     func startUpload() {
+        self.uploadFlag = true
         self.getControlOfThePort(port: self.serialPort!)
-//        myDebug("Start to upload, the delegate of \(self.serialPort?.name ?? "UNKNOWN PORT") is \(self.serialPort?.delegate.self ?? nil)")
-        self.serialPort?.open()
-        //self.uploadFlag = true    modified by DocumentWindowsController already
+        self.progressInfo = "Starting the uploader..."
+        self.postProgressUpdate()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            self.serialPort?.baudRate = 9600
+            self.serialPort?.open()
+            self.uploadStageControl(nil)
+        }
     }
     /// Upload Control Entrance
     @objc func uploadStageControl(_ aNotification: Notification?) {

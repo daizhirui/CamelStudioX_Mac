@@ -1,3 +1,11 @@
+### Version 3.6.4
+----
+
+#### Build 36 on 23.06.2018
+
+- Improvement: Speed up preparation before uploading.
+- Fixed Bug: Crash when users try to setup serial port in the More Config Sheet in Serial Monitor.
+
 ### Version 3.6.3
 ----
 
