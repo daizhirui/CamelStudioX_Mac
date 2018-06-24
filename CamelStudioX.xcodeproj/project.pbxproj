@@ -33,6 +33,8 @@
 		233DBE3220756F3E00269D8E /* GetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE3120756F3E00269D8E /* GetNameViewController.swift */; };
 		23454AD020C037D700823EC8 /* SerialDriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23454ACF20C037D700823EC8 /* SerialDriverManager.swift */; };
 		23454AD420C1596300823EC8 /* NSTextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23454AD320C1596300823EC8 /* NSTextViewExtensions.swift */; };
+		23518CAE20DFA70F009BE629 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23518CAC20DFA6FC009BE629 /* Sparkle.framework */; };
+		23518CAF20DFA70F009BE629 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23518CAC20DFA6FC009BE629 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		235D0C4C20DAB0BD00C39486 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D0C4B20DAB0BD00C39486 /* RegisterViewController.swift */; };
 		235D0C4E20DAB0CA00C39486 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235D0C4D20DAB0CA00C39486 /* Register.storyboard */; };
 		23620CE82095F5E600036D27 /* MyDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE72095F5E600036D27 /* MyDebug.swift */; };
@@ -358,7 +360,6 @@
 		23C6051A2073804400375959 /* LineNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605162073804400375959 /* LineNumberTextView.swift */; };
 		23C6051D2073804400375959 /* LineNumberGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C605192073804400375959 /* LineNumberGutter.swift */; };
 		23D4FB0A20C0230000F3B7A5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB0920C0230000F3B7A5 /* StringExtension.swift */; };
-		23D4FB0C20C023DB00F3B7A5 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 23D4FB0B20C023DB00F3B7A5 /* appcast.xml */; };
 		23F0DFFB20B7002000F3F2C8 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F0DFFA20B7002000F3F2C8 /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -401,6 +402,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				23642B3220737BDF00FB9C33 /* Highlightr.framework in Embed Frameworks */,
+				23518CAF20DFA70F009BE629 /* Sparkle.framework in Embed Frameworks */,
 				233DBE23207568F100269D8E /* Markdown.framework in Embed Frameworks */,
 				230FCBBE209AB27100BFEF51 /* Pods_CamelStudioX.framework in Embed Frameworks */,
 				23859A1F20754ECC00F2FF08 /* PlotKit.framework in Embed Frameworks */,
@@ -439,6 +441,9 @@
 		233DBE3120756F3E00269D8E /* GetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNameViewController.swift; sourceTree = "<group>"; };
 		23454ACF20C037D700823EC8 /* SerialDriverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialDriverManager.swift; sourceTree = "<group>"; };
 		23454AD320C1596300823EC8 /* NSTextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextViewExtensions.swift; sourceTree = "<group>"; };
+		23518CAC20DFA6FC009BE629 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		23518CB320DFB56F009BE629 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		23518CB420DFB577009BE629 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = appcast.xml; path = ../../appcast.xml; sourceTree = "<group>"; };
 		235D0C4B20DAB0BD00C39486 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		235D0C4D20DAB0CA00C39486 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		23620CE72095F5E600036D27 /* MyDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDebug.swift; sourceTree = "<group>"; };
@@ -768,7 +773,6 @@
 		23C605162073804400375959 /* LineNumberTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberTextView.swift; sourceTree = "<group>"; };
 		23C605192073804400375959 /* LineNumberGutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberGutter.swift; sourceTree = "<group>"; };
 		23D4FB0920C0230000F3B7A5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		23D4FB0B20C023DB00F3B7A5 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		23F0DFFA20B7002000F3F2C8 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		43DF96228DC47F7C9C27B22D /* Pods_CamelStudioX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamelStudioX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6D528D0D512A05BD380B50 /* Pods-CamelStudioX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamelStudioX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CamelStudioX/Pods-CamelStudioX.debug.xcconfig"; sourceTree = "<group>"; };
@@ -797,6 +801,7 @@
 			files = (
 				23859A1E20754ECC00F2FF08 /* PlotKit.framework in Frameworks */,
 				233DBE22207568F100269D8E /* Markdown.framework in Frameworks */,
+				23518CAE20DFA70F009BE629 /* Sparkle.framework in Frameworks */,
 				230FCBBD209AB27100BFEF51 /* Pods_CamelStudioX.framework in Frameworks */,
 				23642B3120737BDF00FB9C33 /* Highlightr.framework in Frameworks */,
 				23C605112073802600375959 /* LineNumberTextView.framework in Frameworks */,
@@ -851,6 +856,39 @@
 				233DBE1E207568F100269D8E /* Info.plist */,
 			);
 			path = Markdown;
+			sourceTree = "<group>";
+		};
+		23518CAB20DFA6E9009BE629 /* Sparkle */ = {
+			isa = PBXGroup;
+			children = (
+				23518CAC20DFA6FC009BE629 /* Sparkle.framework */,
+			);
+			path = Sparkle;
+			sourceTree = "<group>";
+		};
+		23518CB020DFB51E009BE629 /* Appcast */ = {
+			isa = PBXGroup;
+			children = (
+				23518CB220DFB551009BE629 /* International */,
+				23518CB120DFB54A009BE629 /* China */,
+			);
+			path = Appcast;
+			sourceTree = "<group>";
+		};
+		23518CB120DFB54A009BE629 /* China */ = {
+			isa = PBXGroup;
+			children = (
+				23518CB320DFB56F009BE629 /* appcast.xml */,
+			);
+			path = China;
+			sourceTree = "<group>";
+		};
+		23518CB220DFB551009BE629 /* International */ = {
+			isa = PBXGroup;
+			children = (
+				23518CB420DFB577009BE629 /* appcast.xml */,
+			);
+			path = International;
 			sourceTree = "<group>";
 		};
 		235D0C4A20DAB0A600C39486 /* Register */ = {
@@ -1198,8 +1236,9 @@
 		2378FE6520715F0B0011969E = {
 			isa = PBXGroup;
 			children = (
-				23D4FB0B20C023DB00F3B7A5 /* appcast.xml */,
 				23205A842099E4790098B431 /* README.md */,
+				23518CB020DFB51E009BE629 /* Appcast */,
+				23518CAB20DFA6E9009BE629 /* Sparkle */,
 				233DBE1C207568F100269D8E /* Markdown */,
 				23859A0820754E6000F2FF08 /* PlotKit */,
 				2364290F20737AD900FB9C33 /* Highlightr */,
@@ -1905,7 +1944,6 @@
 				238599D82073EFF000F2FF08 /* DataAnalyzer.storyboard in Resources */,
 				2364290A2072F77200FB9C33 /* ProjectConfig.storyboard in Resources */,
 				2378FE9F20721DAC0011969E /* VerionRecord.storyboard in Resources */,
-				23D4FB0C20C023DB00F3B7A5 /* appcast.xml in Resources */,
 				23859A1120754EBC00F2FF08 /* Info.plist in Resources */,
 				233DBE0C2075668B00269D8E /* ch34x.pkg in Resources */,
 				233DBE0D2075668B00269D8E /* pl2303.pkg in Resources */,
@@ -1968,16 +2006,12 @@
 				"${PODS_ROOT}/HockeySDK-Mac/HockeySDK-Mac/HockeySDK.framework",
 				"${PODS_ROOT}/HockeySDK-Mac/HockeySDK-Mac/HockeySDK.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/ORSSerialPort/ORSSerial.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HockeySDK.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/HockeySDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORSSerial.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2403,6 +2437,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeySDK-Mac",
 					"$(PROJECT_DIR)/Pods/HockeySDK-Mac/HockeySDK-Mac",
+					"$(PROJECT_DIR)/Sparkle",
 				);
 				INFOPLIST_FILE = CamelStudioX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2433,6 +2468,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeySDK-Mac",
 					"$(PROJECT_DIR)/Pods/HockeySDK-Mac/HockeySDK-Mac",
+					"$(PROJECT_DIR)/Sparkle",
 				);
 				INFOPLIST_FILE = CamelStudioX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

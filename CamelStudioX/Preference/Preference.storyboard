@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
@@ -34,7 +34,7 @@
             <objects>
                 <viewController id="ydL-ox-oiR" customClass="PreferenceViewController" customModule="CamelStudioX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="7hM-W0-n77">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="287"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PKs-fA-aem">
@@ -76,31 +76,32 @@ Gw
                                     <action selector="applyAction:" target="ydL-ox-oiR" id="fqq-hk-QJf"/>
                                 </connections>
                             </button>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="OgI-5y-9od">
-                                <rect key="frame" x="20" y="219" width="440" height="5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="OgI-5y-9od">
+                                <rect key="frame" x="20" y="235" width="440" height="5"/>
                             </box>
-                            <box fixedFrame="YES" title="Auto Update" translatesAutoresizingMaskIntoConstraints="NO" id="xIR-Np-YZi">
-                                <rect key="frame" x="17" y="79" width="446" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <box title="Auto Update" translatesAutoresizingMaskIntoConstraints="NO" id="xIR-Np-YZi">
+                                <rect key="frame" x="17" y="49" width="446" height="119"/>
                                 <view key="contentView" id="6ej-wl-GRf">
-                                    <rect key="frame" x="2" y="2" width="442" height="52"/>
+                                    <rect key="frame" x="2" y="2" width="442" height="99"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WKU-wP-jJY">
-                                            <rect key="frame" x="4" y="32" width="217" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WKU-wP-jJY">
+                                            <rect key="frame" x="4" y="79" width="217" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="213" id="9GZ-5y-2Ld"/>
+                                                <constraint firstAttribute="height" constant="14" id="xUF-8k-XVK"/>
+                                            </constraints>
                                             <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="WuK-Zz-gyM">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
-                                            <connections>
-                                                <binding destination="etc-Ur-nXM" name="value" keyPath="self.automaticallyChecksForUpdates" id="oAd-or-dEy"/>
-                                            </connections>
                                         </button>
-                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eq5-f3-WmE">
-                                            <rect key="frame" x="134" y="4" width="86" height="26"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eq5-f3-WmE">
+                                            <rect key="frame" x="134" y="26" width="86" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="81" id="Vt8-ua-HXf"/>
+                                                <constraint firstAttribute="height" constant="21" id="u40-Bi-zve"/>
+                                            </constraints>
                                             <popUpButtonCell key="cell" type="push" title="Daily" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="86400" imageScaling="proportionallyDown" inset="2" selectedItem="Xfp-gV-OKA" id="qVe-z5-16F">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="menu"/>
@@ -115,27 +116,77 @@ Gw
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
-                                            <connections>
-                                                <binding destination="etc-Ur-nXM" name="enabled" keyPath="self.updateCheckInterval" id="3Zq-9r-YBO"/>
-                                                <binding destination="etc-Ur-nXM" name="selectedTag" keyPath="self.updateCheckInterval" id="fVM-ln-mG3"/>
-                                            </connections>
                                         </popUpButton>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-ZM-jhM">
-                                            <rect key="frame" x="4" y="9" width="126" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-ZM-jhM">
+                                            <rect key="frame" x="4" y="31" width="126" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="122" id="Yj8-aa-WpZ"/>
+                                                <constraint firstAttribute="height" constant="17" id="p9l-PC-ezs"/>
+                                            </constraints>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Check update every" id="4bY-30-hIf">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KIg-2A-M7e">
+                                            <rect key="frame" x="4" y="6" width="96" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="b86-8k-UbR"/>
+                                                <constraint firstAttribute="width" constant="92" id="jel-hw-Hn1"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Update Server:" id="iGQ-la-N3G">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t06-mK-lWf" userLabel="UpdateServerPopButton">
+                                            <rect key="frame" x="104" y="1" width="118" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="113" id="Ncj-d5-esn"/>
+                                            </constraints>
+                                            <popUpButtonCell key="cell" type="push" title="International" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Czt-Z6-0jZ" id="P4Y-iZ-YvW">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="N16-MG-2fW">
+                                                    <items>
+                                                        <menuItem title="International" state="on" id="Czt-Z6-0jZ"/>
+                                                        <menuItem title="China" id="xs7-G1-iYF"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                        </popUpButton>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Eh-7A-iLX">
+                                            <rect key="frame" x="4" y="54" width="219" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Automatically download updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="k0h-3D-3Fq">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eq5-f3-WmE" firstAttribute="top" secondItem="WKU-wP-jJY" secondAttribute="bottom" constant="31" id="6Kh-4M-AQX"/>
+                                        <constraint firstItem="nLT-ZM-jhM" firstAttribute="top" secondItem="WKU-wP-jJY" secondAttribute="bottom" constant="33" id="9o8-z8-hbd"/>
+                                        <constraint firstItem="WKU-wP-jJY" firstAttribute="leading" secondItem="6ej-wl-GRf" secondAttribute="leading" constant="6" id="JPL-ZS-FYa"/>
+                                        <constraint firstItem="t06-mK-lWf" firstAttribute="top" secondItem="eq5-f3-WmE" secondAttribute="bottom" constant="4" id="LPt-Mm-OPx"/>
+                                        <constraint firstItem="KIg-2A-M7e" firstAttribute="top" secondItem="nLT-ZM-jhM" secondAttribute="bottom" constant="8" id="WXi-Ud-DjE"/>
+                                        <constraint firstItem="nLT-ZM-jhM" firstAttribute="leading" secondItem="6ej-wl-GRf" secondAttribute="leading" constant="6" id="bDr-K2-hFs"/>
+                                        <constraint firstItem="t06-mK-lWf" firstAttribute="leading" secondItem="KIg-2A-M7e" secondAttribute="trailing" constant="8" id="kN9-TG-cdA"/>
+                                        <constraint firstItem="eq5-f3-WmE" firstAttribute="leading" secondItem="nLT-ZM-jhM" secondAttribute="trailing" constant="8" id="mWw-Vb-A69"/>
+                                        <constraint firstItem="WKU-wP-jJY" firstAttribute="top" secondItem="6ej-wl-GRf" secondAttribute="top" constant="4" id="pjb-0b-Meq"/>
+                                        <constraint firstItem="KIg-2A-M7e" firstAttribute="leading" secondItem="6ej-wl-GRf" secondAttribute="leading" constant="6" id="xtQ-Bh-cOo"/>
+                                    </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="1G6-Iy-jaG"/>
+                                    <constraint firstAttribute="width" constant="440" id="mAq-Iz-GiA"/>
+                                </constraints>
                                 <font key="titleFont" size="13" name=".AppleSystemUIFont"/>
                             </box>
-                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-5F-pK5">
-                                <rect key="frame" x="26" y="230" width="240" height="20"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-5F-pK5">
+                                <rect key="frame" x="26" y="247" width="240" height="20"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tLA-wx-Td9">
                                         <rect key="frame" x="-2" y="2" width="86" height="17"/>
@@ -171,9 +222,8 @@ Gw
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <box fixedFrame="YES" title="Uploader Setting" translatesAutoresizingMaskIntoConstraints="NO" id="UKd-kf-VOg">
-                                <rect key="frame" x="17" y="155" width="446" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <box title="Uploader Setting" translatesAutoresizingMaskIntoConstraints="NO" id="UKd-kf-VOg">
+                                <rect key="frame" x="17" y="171" width="446" height="58"/>
                                 <view key="contentView" id="2wj-Xt-428">
                                     <rect key="frame" x="2" y="2" width="442" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,22 +242,37 @@ Gw
                                         <constraint firstItem="zsk-oa-N4I" firstAttribute="leading" secondItem="2wj-Xt-428" secondAttribute="leading" constant="6" id="VV2-wS-TiL"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="EH6-CT-wRI"/>
+                                    <constraint firstAttribute="width" constant="440" id="mH4-Mh-5CE"/>
+                                </constraints>
                                 <font key="titleFont" size="13" name=".AppleSystemUIFont"/>
                             </box>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="xIR-Np-YZi" firstAttribute="leading" secondItem="7hM-W0-n77" secondAttribute="leading" constant="20" id="OUQ-d3-AVf"/>
+                            <constraint firstItem="OgI-5y-9od" firstAttribute="top" secondItem="0UZ-5F-pK5" secondAttribute="bottom" constant="9" id="YKN-6C-Q6m"/>
+                            <constraint firstItem="xIR-Np-YZi" firstAttribute="top" secondItem="UKd-kf-VOg" secondAttribute="bottom" constant="7" id="aaf-CP-2NV"/>
+                            <constraint firstAttribute="trailing" secondItem="OgI-5y-9od" secondAttribute="trailing" constant="20" id="fir-Tg-vyq"/>
+                            <constraint firstItem="UKd-kf-VOg" firstAttribute="leading" secondItem="7hM-W0-n77" secondAttribute="leading" constant="20" id="i7W-0m-cZN"/>
+                            <constraint firstItem="0UZ-5F-pK5" firstAttribute="leading" secondItem="7hM-W0-n77" secondAttribute="leading" constant="26" id="iAy-gX-iel"/>
+                            <constraint firstItem="OgI-5y-9od" firstAttribute="leading" secondItem="7hM-W0-n77" secondAttribute="leading" constant="20" id="ikH-nL-kL2"/>
+                            <constraint firstItem="0UZ-5F-pK5" firstAttribute="top" secondItem="7hM-W0-n77" secondAttribute="top" constant="20" id="m2l-cp-IIW"/>
+                            <constraint firstItem="UKd-kf-VOg" firstAttribute="top" secondItem="OgI-5y-9od" secondAttribute="bottom" constant="8" id="xZb-CU-d7D"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="autoBuild" destination="zsk-oa-N4I" id="E78-WU-lKk"/>
+                        <outlet property="autoDownload" destination="1Eh-7A-iLX" id="pgy-Dz-IWK"/>
                         <outlet property="autoUpdate" destination="WKU-wP-jJY" id="HUn-td-dzd"/>
                         <outlet property="codeThemeBox" destination="pDZ-Hy-Vdt" id="88C-Q4-5ur"/>
                         <outlet property="updateCheckInterval" destination="eq5-f3-WmE" id="GHr-lz-hp9"/>
-                        <outlet property="updater" destination="etc-Ur-nXM" id="g8x-aa-5QX"/>
+                        <outlet property="updateServer" destination="t06-mK-lWf" id="OOC-Ce-U1A"/>
                     </connections>
                 </viewController>
                 <customObject id="qr8-o2-pC3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="etc-Ur-nXM" customClass="SUUpdater"/>
             </objects>
-            <point key="canvasLocation" x="181" y="473"/>
+            <point key="canvasLocation" x="181" y="481.5"/>
         </scene>
     </scenes>
 </document>

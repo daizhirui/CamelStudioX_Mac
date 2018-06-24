@@ -1,0 +1,53 @@
+<?xml version="1.0" standalone="yes"?><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <item>
+            <title>3.6.4</title>
+            <description><![CDATA[
+                <h2>Improvement</h2>
+                <ul>
+                <li>Speed up preparation before uploading.</li>
+                </ul>
+                <h2>Fixed Bugs</h2>
+                <ul>
+                <li>Crash when users try to setup serial port in the More Config Sheet in Serial Monitor.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Sat, 23 Jun 2018 19:26:00 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.6.4_Build36.zip" sparkle:version="36" sparkle:shortVersionString="3.6.4" length="68284819" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCxZOKPwWsqVdMRqSLr0wlbTNdvWgIVAMQSxOemlDa+ko7f4zbXjd5TV2Ay"/>
+            <sparkle:deltas>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-35.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="35" length="226571" type="application/octet-stream" sparkle:dsaSignature="MC4CFQDNzAUFpF/jTEpoIGlfC5YsKWnfMAIVAIlONP8ZcJBL9t/hJn4AnLj+d8O7"/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-34.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="34" length="238859" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCais05JY6f8bhBZVnllYG9qW0jxwIUdoYV9w2ttTpvHCWr6kt9zDliH9s="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-33.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="33" length="468561" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCq6F1ocHbhwZI7DHFuj4S1fA33ygIULn6/+dccCPxBNy0C1dSLfg0iz9E="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-32.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="32" length="511753" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDU5s81d3pdVaucYl6tEIYWhY7owAIUKv5urA5eR8ViYPkF3BoyhwbN/qo="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX36-31.delta" sparkle:version="36" sparkle:shortVersionString="3.6.4" sparkle:deltaFrom="31" length="925083" type="application/octet-stream" sparkle:dsaSignature="MC0CFGqXF1DCG+w2tzt51wzBHkLI3VDTAhUAtx0xyLayETS9eCmLhNGmVvXxkY8="/></sparkle:deltas>
+        </item>
+        
+        <item>
+            <title>3.6.5</title>
+            <description><![CDATA[
+                <h2>Improvement</h2>
+                <ul>
+                <li>Auto copy example files to user's project folder.</li>
+                </ul>
+                <h2>New Features</h2>
+                <ul>
+                <li>Auto detect timezone to determine which server for update to use.</li>
+                <li>Select update server manually in Preference.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Sun, 24 Jun 2018 13:22:36 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.6.5_Build37.zip" sparkle:version="37" sparkle:shortVersionString="3.6.5" length="68288705" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCDVRa5BgyFlYHiuyoaxf7TeJOLmgIUUzEwl1WK+TPc/tmL0N/g8wCCI3E="/>
+            <sparkle:deltas>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX37-36.delta" sparkle:version="37" sparkle:shortVersionString="3.6.5" sparkle:deltaFrom="36" length="255603" type="application/octet-stream" sparkle:dsaSignature="MC0CFQC0Vc0YerNyk4O7zoZayvLmvj/B8QIUTzWsCGMlg5SGWoQV69ciNxWIrRs="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX37-35.delta" sparkle:version="37" sparkle:shortVersionString="3.6.5" sparkle:deltaFrom="35" length="292642" type="application/octet-stream" sparkle:dsaSignature="MC0CFAhG6g8hb4c3TNiB6KhntdD2A1TIAhUApNszuG9BniMJPRlmtZzwSPKQM3M="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX37-34.delta" sparkle:version="37" sparkle:shortVersionString="3.6.5" sparkle:deltaFrom="34" length="304735" type="application/octet-stream" sparkle:dsaSignature="MC0CFD85NrqNbAlOUlIyYd14c0B1JJBZAhUAw2khsudypvyWqtIwDySHjCnOkjc="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX37-33.delta" sparkle:version="37" sparkle:shortVersionString="3.6.5" sparkle:deltaFrom="33" length="509479" type="application/octet-stream" sparkle:dsaSignature="MC0CFEFER9PdXLQQbRCYa0E8Ub8wmivIAhUApYvKV4K/3e8MHg6/hKDN3n3NIhw="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX37-32.delta" sparkle:version="37" sparkle:shortVersionString="3.6.5" sparkle:deltaFrom="32" length="540462" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCZZCqK01CgZNX5eC2ZXguurm+bbwIVAIElL61QLcCyhGNTy2+K8mlzYfET"/></sparkle:deltas>
+        </item>
+        
+    </channel></rss>
+

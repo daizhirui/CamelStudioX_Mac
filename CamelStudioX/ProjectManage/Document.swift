@@ -22,12 +22,7 @@ class Document: NSDocument {
 
     override init() {
         super.init()
-//        myDebug("\(self) is created")
     }
-    
-//    deinit {
-//        myDebug("\(self) is destroyed")
-//    }
 
     override class var autosavesInPlace: Bool {
         return true

@@ -122,7 +122,11 @@ class SerialMonitorViewController: NSViewController {
     @IBAction func saveAction(_ sender: NSButton) {
         if let url = self.logFileURL {
             let text = self.textView.string
-            _ = try? text.write(to: url, atomically: true, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+            do {
+                _ = try text.write(to: url, atomically: true, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+            } catch let error as NSError {
+                _ = InfoAndAlert.shared.showAlertWindow(with: error.localizedDescription)
+            }
         } else {
             self.saveAsAction(sender)
         }

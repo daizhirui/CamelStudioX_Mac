@@ -25,6 +25,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Set feed url
+        let serverLocation: String
+        if let location = UserDefaults.standard.object(forKey: "ServerLocation") as? String {
+            serverLocation = location
+        } else {
+            if TimeZone.current.secondsFromGMT() / 3600 == 8 {
+                serverLocation = "China"
+                UserDefaults.standard.set(serverLocation as Any, forKey: "ServerLocation")
+            } else {
+                serverLocation = "International"
+            }
+        }
+        if serverLocation == "China" {
+            self.updater.updateFeedURL(URL(string: "https://camelmicro.oss-cn-beijing.aliyuncs.com/appcast.xml"))
+        } else {
+            self.updater.updateFeedURL(URL(string: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml"))
+        }
+        myDebug("FeedURL = \(self.updater.feedURL)")
         // Menu bar
         self.setupM2ExampleMenu()
         // Touch bar
@@ -40,11 +58,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
         // Crash, Feedback Reporter
         self.setupHockeySDK()
     }
-    
-//    - (NSArray *)feedParametersForUpdater:(SUUpdater *)updater
-//    sendingSystemProfile:(BOOL)sendingProfile {
-//    return [[BITSystemProfile sharedSystemProfile] systemUsageData];
-//    }
     
     func feedParameters(for updater: SUUpdater, sendingSystemProfile sendingProfile: Bool) -> [[String : String]] {
         return BITSystemProfile.shared().systemUsageData() as! [[String : String]]
@@ -196,12 +209,29 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
     // MARK:- Responders
     /// Responder to opening an example.
     @objc func m2ExamplesMenu(_ sender: Any) {
-        let menu = sender as! NSMenuItem
-        NSDocumentController.shared.openDocument(withContentsOf: self.m2ExampleList[menu.title]!, display: true, completionHandler: { document, result, error in
-            if error != nil {
-                myDebug("\(error!)")
+        guard let menu = sender as? NSMenuItem else { return }
+        // get example url
+        guard let exampleURL = self.m2ExampleList[menu.title] else { return }
+        // copy example to user's documents
+        let copyedExampleURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(
+            "Documents", isDirectory: true).appendingPathComponent(
+            "CamelStudioX_Project", isDirectory: true).appendingPathComponent(
+            "Examples", isDirectory: true).appendingPathComponent(
+            "M2", isDirectory: true).appendingPathComponent(exampleURL.lastPathComponent)
+        // make sure all directories exist
+        do {
+            try FileManager.default.createDirectory(at: copyedExampleURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+            try FileManager.default.copyItem(at: exampleURL, to: copyedExampleURL)
+            if FileManager.default.fileExists(atPath: copyedExampleURL.relativePath) {
+                NSDocumentController.shared.openDocument(withContentsOf: copyedExampleURL, display: true, completionHandler: { document, result, error in
+                    if error != nil {
+                        myDebug("\(error!)")
+                    }
+                })
             }
-        })
+        } catch let error as NSError {
+            _ = InfoAndAlert.shared.showAlertWindow(with: error.localizedDescription)
+        }
     }
     /// Responder to showing Preference Window
     @IBAction func openPreference(_ sender: Any) {
@@ -226,12 +256,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
         let url = Bundle.main.bundleURL.appendingPathComponent("/Contents/Resources/Developer/OfficialLibrary/doc/index.html")
         NSWorkspace.shared.open(url)
     }
+    /// Responder to open feedback window
     @IBAction func onFeedback(_ sender: Any) {
         self.hockeyManager?.feedbackManager.showAlertOnIncomingMessages = true
         self.hockeyManager?.feedbackManager.requireUserEmail = .required
         self.hockeyManager?.feedbackManager.requireUserName = .required
         self.hockeyManager?.feedbackManager.showFeedbackWindow()
     }
+    /// Responder to register username and user e-mail again
     @IBAction func onReregister(_ sender: Any) {
         self.reRegister = true
         self.openRegisterWindow()

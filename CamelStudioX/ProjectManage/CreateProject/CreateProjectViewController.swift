@@ -48,13 +48,13 @@ class CreateProjectViewController: NSViewController {
             document.project.library = self.officialLibrary.stringValue.components(separatedBy: .whitespaces)
             let cFileContent =
             """
-            /***************************************************
-            Project: \(document.project.projectName)
-            File Name: \(document.project.targetName).c
-            Author: \(NSUserName())
-            Date: \(Date().description(with: Locale.current))
-            Copyright © \(Calendar.current.component(.year, from: Date())) \(NSUserName()). All rights reserved.
-            ****************************************************/
+            /**
+            * @file \(document.project.targetName).c
+            * @author \(NSUserName())
+            * @date \(Date().description(with: Locale.current))
+            * @copyright 2018 © \(Calendar.current.component(.year, from: Date())) \(NSUserName()). All rights reserved.
+            * @brief \(document.project.projectName)
+            */
             
             // Add your header files here
             #include "mcu.h"

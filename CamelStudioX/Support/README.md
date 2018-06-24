@@ -1,3 +1,14 @@
+### Version 3.6.5
+----
+
+#### Build 37 on 24.06.2018
+
+- Improvement
+    - Auto copy example files to user's project folder.
+- New Features
+    - Auto detect timezone to determine which server for update to use.
+    - Select update server manually in Preference.
+
 ### Version 3.6.4
 ----
 

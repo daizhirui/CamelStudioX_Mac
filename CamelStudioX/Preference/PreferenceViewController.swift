@@ -15,9 +15,11 @@ class PreferenceViewController: NSViewController {
     @IBOutlet weak var codeThemeBox: NSComboBox!
     var mainVC: DocumentViewController!
     @IBOutlet weak var autoBuild: NSButton!
-    @IBOutlet var updater: SUUpdater!
     @IBOutlet weak var autoUpdate: NSButton!
+    @IBOutlet weak var autoDownload: NSButton!
     @IBOutlet weak var updateCheckInterval: NSPopUpButton!
+    @IBOutlet weak var updateServer: NSPopUpButton!
+    let updater = AppDelegate.shared.updater
     
     let themes: [String] = {
         let themesString =
@@ -152,11 +154,26 @@ class PreferenceViewController: NSViewController {
             self.autoUpdate.state = .on
             defaults.set(NSControl.StateValue.on as Any, forKey: "AutoUpdate")
         }
+        if let state = defaults.value(forKey: "AutoDownload") as? NSControl.StateValue {
+            self.autoUpdate.state = state
+        } else {
+            self.autoUpdate.state = .on
+            defaults.set(NSControl.StateValue.on as Any, forKey: "AutoDownload")
+        }
         if let tag = defaults.value(forKey: "UpdateCheckInterval") as? Int {
             self.updateCheckInterval.selectItem(withTag: tag)
         } else {
             self.updateCheckInterval.selectItem(withTag: 86400)
             defaults.set(self.updateCheckInterval.selectedTag() as Any, forKey: "UpdateCheckInterval")
+        }
+        if let location = defaults.object(forKey: "ServerLocation") as? String {
+            self.updateServer.selectItem(withTitle: location)
+        } else {
+            if TimeZone.current.secondsFromGMT() / 3600 == 8 {
+                self.updateServer.selectItem(withTitle: "China")
+            } else {
+                self.updateServer.selectItem(withTitle: "International")
+            }
         }
     }
     
@@ -171,8 +188,23 @@ class PreferenceViewController: NSViewController {
         let defaults = UserDefaults.standard
         defaults.set(theme, forKey: "CodeTheme")
         defaults.set(self.autoBuild.state as Any, forKey: "AutoBuild")
+        
         defaults.set(self.autoUpdate.state as Any, forKey: "AutoUpdate")
+        self.updater?.automaticallyChecksForUpdates = (self.autoUpdate.state == .on)
+        
+        defaults.set(self.autoDownload.state as Any, forKey: "AutoDownload")
+        self.updater?.automaticallyDownloadsUpdates = (self.autoDownload.state == .on)
+        
         defaults.set(self.updateCheckInterval.selectedTag() as Any, forKey: "UpdateCheckInterval")
+        self.updater?.updateCheckInterval = TimeInterval(self.updateCheckInterval.selectedTag())
+        
+        defaults.set(self.updateServer.selectedItem!.title, forKey: "ServerLocation")
+        if self.updateServer.selectedItem?.title == "China" {
+            self.updater?.updateFeedURL(URL(string: "https://camelmicro.oss-cn-beijing.aliyuncs.com/appcast.xml"))
+        } else {
+            self.updater?.updateFeedURL(URL(string: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml"))
+        }
+        
         // update editor
         for window in NSApp.windows {
             if let vc = window.contentViewController as? DocumentViewController {

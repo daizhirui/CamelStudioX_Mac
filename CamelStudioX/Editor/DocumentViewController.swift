@@ -70,6 +70,16 @@ class DocumentViewController: NSViewController {
         // check if this is a new project
         self.checkProjectCreation()
         self.updateProjectInspector()
+        
+        if let document = NSDocumentController.shared.document(for: self.view.window!) {
+            if document.isLocked {
+                document.unlock { (error: Error?) in
+                    if let unwrappedError = error {
+                        _ = InfoAndAlert.shared.showAlertWindow(with: unwrappedError.localizedDescription)
+                    }
+                }
+            }
+        }
     }
     override func viewWillDisappear() {
         DocumentViewController.openedDocumentViewController -= 1
