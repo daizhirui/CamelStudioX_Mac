@@ -221,14 +221,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
         // make sure all directories exist
         do {
             try FileManager.default.createDirectory(at: copyedExampleURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
-            try FileManager.default.copyItem(at: exampleURL, to: copyedExampleURL)
-            if FileManager.default.fileExists(atPath: copyedExampleURL.relativePath) {
-                NSDocumentController.shared.openDocument(withContentsOf: copyedExampleURL, display: true, completionHandler: { document, result, error in
-                    if error != nil {
-                        myDebug("\(error!)")
-                    }
-                })
+            if !FileManager.default.fileExists(atPath: copyedExampleURL.relativePath) {
+                try FileManager.default.copyItem(at: exampleURL, to: copyedExampleURL)
             }
+            NSDocumentController.shared.openDocument(withContentsOf: copyedExampleURL, display: true, completionHandler: { document, result, error in
+                if error != nil {
+                    myDebug("\(error!)")
+                }
+            })
         } catch let error as NSError {
             _ = InfoAndAlert.shared.showAlertWindow(with: error.localizedDescription)
         }

@@ -1,3 +1,10 @@
+### Version 3.6.6
+----
+
+#### Build 38 on 25.06.2018
+
+- Fixed Bug: Fail to open example second time.
+
 ### Version 3.6.5
 ----
 

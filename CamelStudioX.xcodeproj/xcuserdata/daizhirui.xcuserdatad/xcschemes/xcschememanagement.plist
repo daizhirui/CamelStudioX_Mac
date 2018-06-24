@@ -7,27 +7,27 @@
 		<key>CamelStudioX.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Highlightr.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>3</integer>
 		</dict>
 		<key>LineNumberTextView.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Markdown.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>6</integer>
 		</dict>
 		<key>PlotKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>5</integer>
 		</dict>
 	</dict>
 </dict>
