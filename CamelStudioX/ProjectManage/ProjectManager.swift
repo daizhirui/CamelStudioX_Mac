@@ -8,14 +8,9 @@
 
 import Cocoa
 
-public enum ChipType: String {
+enum ChipType: String {
     case M2 = "M2"
     case M3 = "M3"
-}
-
-public class AvailabelOfficialLibrary {
-    static let M2Library = ["AFE", "IO", "irq", "LCD", "SPI", "str", "string", "extend_str", "TC0", "TC1", "TC2", "TC4", "time", "UART0_Lin", "UART1_Lin", "UART0", "UART0", "WDT"]
-    static let M3Library = ["AFE", "EV", "EXTIN", "UART1", "TC0", "MCUIO", "str"]
 }
 
 class ProjectManager: NSObject {

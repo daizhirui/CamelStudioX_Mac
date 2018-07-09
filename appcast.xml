@@ -70,5 +70,25 @@
                 <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.6.6/CamelStudioX38-33.delta" sparkle:version="38" sparkle:shortVersionString="3.6.6" sparkle:deltaFrom="33" length="509483" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCkXh9JvLr1jVhNHYD0qr9hvRw16AIUQAIr8BL17NAA0Pj4VcOKPYTxzoc="/></sparkle:deltas>
         </item>
         
+        <item>
+            <title>3.7.0</title>
+            <description><![CDATA[
+                <h2>Fixed Bug</h2>
+                <ul>
+                <li>Fail to detect some linker error.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Mon, 09 Jul 2018 10:18:54 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.0/CamelStudioX_3.7.0_Build39.zip" sparkle:version="39" sparkle:shortVersionString="3.7.0" length="68297935" type="application/octet-stream" sparkle:dsaSignature="MC0CFGG8NAuZ06QYpK68bb6rxjI+PmDNAhUAxXzSuWwyM4VuWZpQg0uC3Q+R87M="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.0/CamelStudioX39-38.delta" sparkle:version="39" sparkle:shortVersionString="3.7.0" sparkle:deltaFrom="38" length="243049" type="application/octet-stream" sparkle:dsaSignature="MCwCFC5XWkv5bcNK8Yf4jvZ16rNkswehAhQv70ck/dzDaFj0LrsMpeQrtiGJYw=="/>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.0/CamelStudioX39-37.delta" sparkle:version="39" sparkle:shortVersionString="3.7.0" sparkle:deltaFrom="37" length="242888" type="application/octet-stream" sparkle:dsaSignature="MCwCFFwNkLJRYnJevXaI7dPx6iIMIMbeAhQFBTFnhekN12+GVSlGrU4tI7H3kg=="/>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.0/CamelStudioX39-36.delta" sparkle:version="39" sparkle:shortVersionString="3.7.0" sparkle:deltaFrom="36" length="325234" type="application/octet-stream" sparkle:dsaSignature="MC0CFEFoItDmaCQKJaFOiy9wdIGLcQGHAhUAuukyRz2OjGQ3pH+BitPIb7P05aQ="/>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.0/CamelStudioX39-35.delta" sparkle:version="39" sparkle:shortVersionString="3.7.0" sparkle:deltaFrom="35" length="341611" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCXLP/+/moTiSsMmMcyBl9ndf9VIwIVAMoM3OJW9Jdf+eHMbKkzgpLQl2we"/>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.0/CamelStudioX39-34.delta" sparkle:version="39" sparkle:shortVersionString="3.7.0" sparkle:deltaFrom="34" length="354046" type="application/octet-stream" sparkle:dsaSignature="MCwCFEJB6ZHZcdi4x7XCUPfoZyRu6YYDAhRZh70GQIl/S7Sa6NYeqvNgAIxkZA=="/></sparkle:deltas>
+        </item>
+        
     </channel></rss>
 

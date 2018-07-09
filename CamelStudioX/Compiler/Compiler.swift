@@ -26,7 +26,6 @@ class Compiler: NSObject {
     var compilerDirectoryPath = Bundle.main.bundlePath + "/Contents/Resources/Developer/Toolchains/bin/"
     var gcc_MIPS_Compiler = "mips-netbsd-elf-gcc"
     var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -G0 "
-//    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -w -G0 -msoft-float"
     var as_MIPS_Compiler = "mips-netbsd-elf-as"
     var as_Option = "-EL"
     var ld_MIPS_Compiler = "mips-netbsd-elf-ld"
@@ -52,75 +51,9 @@ class Compiler: NSObject {
             self.project.updateSourceFiles()
             // start to generate Makefile
             if self.project.targetName.count > 0 {
-                if project.library.contains("soft_fp") {   // float point library!
-                    self.gcc_Option.append("-msoft-float ")
-                }
-                if project.library.contains("stdio") || project.library.contains("stdio_fp")
-                    || project.library.contains("stdlib") || project.library.contains("stdlib_fp") {
-                    self.gcc_Option.append("-fno-builtin ")
-                }
-                let makefileContent =
-                """
-                TARGET_NAME = \(self.project.targetName)
-                OBJ_DIR = release
-                BIN_DIR = release
-                LIB_DIR = lib
-                TARGET_ADDRESS = \(project.targetAddress)
-                DATA_ADDRESS = \(project.dataAddress)
-                RODATA_ADDRESS = \(project.rodataAddress)
                 
-                COMPILER_PATH = \(self.compilerDirectoryPath)
-                GCC = $(COMPILER_PATH)\(self.gcc_MIPS_Compiler)
-                GCC_OPTION = \(gcc_Option)
-                AS = $(COMPILER_PATH)\(self.as_MIPS_Compiler)
-                AS_OPTION = \(as_Option)
-                LD = $(COMPILER_PATH)\(self.ld_MIPS_Compiler)
-                LD_OPTION = \(self.ld_Option) -Ttext $(TARGET_ADDRESS) -Tdata $(DATA_ADDRESS) $(if $(RODATA_ADDRESS),--section-start .rodata=$(RODATA_ADDRESS),)
-                OBJDUMP = $(COMPILER_PATH)\(self.objdump_MIPS_Compiler)
-                AR = $(COMPILER_PATH)\(self.ar_MIPS_Compiler)
-                AR_OPTION = \(ar_Option)
-                CONVERTER = $(COMPILER_PATH)../convert
-                CONVERTER_OPTION = -m
+                let makefileContent = MakefileGenerator.generate(compiler: self)
                 
-                C_SOURCE = \(project.C_SourceFiles.joined(separator: " "))
-                C_OBJECT = $(C_SOURCE:.c=.o)
-                A_SOURCE = \(project.A_SourceFiles.joined(separator: " "))
-                A_OBJECT = $(A_SOURCE:.s=.o)
-                ENTRY_FILE = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/lib/M2/entry.o
-                
-                CHIP_HEADER = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/include/M2
-                STD_HEADER = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/include/std
-                CORE_HEADER = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/include/core
-                HEADER_FLAGS = -I $(CHIP_HEADER) -I $(STD_HEADER) -I $(CORE_HEADER) -I ./
-                
-                CHIP_LIBRARY = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/lib/M2
-                STD_LIBRARY = \(Bundle.main.bundlePath)/Contents/Resources/Developer/OfficialLibrary/lib/std
-                LIBRARY_FLAGS = -L $(STD_LIBRARY) -L $(CHIP_LIBRARY) \(project.library.count > 0 ? "-l  "+project.library.joined(separator: " -l") : "") \(project.customLibrary.count > 0 ? ("-L ../lib -l "+project.customLibrary.joined(separator: " -l")) : "")  -lm2core
-                
-                all: $(TARGET_NAME)
-                
-                $(TARGET_NAME):$(C_OBJECT) $(A_OBJECT)
-                \tmkdir -p $(OBJ_DIR);mkdir -p $(BIN_DIR);mkdir -p $(LIB_DIR);
-                \tcd $(OBJ_DIR);$(LD) $(LD_OPTION) -o ../$(BIN_DIR)/$(TARGET_NAME) $(ENTRY_FILE) $^ $(LIBRARY_FLAGS);
-                \t$(CONVERTER) $(CONVERTER_OPTION) $(BIN_DIR)/$(TARGET_NAME)
-                \techo "Success"
-                
-                lib:$(C_OBJECT) $(A_OBJECT)
-                \tcd $(OBJ_DIR);$(AR) $(AR_OPTION) ../$(LIB_DIR)/lib$(TARGET_NAME).a $^
-                \techo "Success"
-                
-                clean:
-                \trm -f $(OBJ_DIR)/*
-                \trm -f $(BIN_DIR)/*
-                \trm -f $(LIB_DIR)/*
-                
-                .c.o:
-                \tmkdir -p $(OBJ_DIR);mkdir -p $(BIN_DIR);mkdir -p $(LIB_DIR);
-                \t$(GCC) $(GCC_OPTION) $(HEADER_FLAGS) -o $(OBJ_DIR)/$@ $<
-                .s.o:
-                \tmkdir -p $(OBJ_DIR);mkdir -p $(BIN_DIR);mkdir -p $(LIB_DIR);
-                \t$(AS) $(AS_OPTION) -o $(OBJ_DIR)/$@ $<
-                """
                 // store the Makefile
                 if let data = makefileContent.data(using: String.Encoding.utf8) {
                     self.project.filewrappers?.update(withContents: data, preferredName: "Makefile")
@@ -221,16 +154,19 @@ class Compiler: NSObject {
                         case .warning:
                             compilerMessage.warnings.append(attributedMessage)
                         case .normal:
-                            compilerMessage.normal.append(attributedMessage)
+                            // some messages from stderr, but these messages appear before "warning" or "error"
+                            compilerMessage.warnings.append(attributedMessage)
                     }
                 }
-                if let range: NSRange = newItem.lowercased().range(of: "warning") {         // Detect a new start of a warning
+                if let range: NSRange = newItem.lowercased().range(of: "warning")?.toNSRange(string: newItem) {
+                    // Detect a new start of a warning
                     addMessage()
                     attributedMessage = NSMutableAttributedString(string: newItem)
                     attributedMessage.addAttributes([.foregroundColor : NSColor.orange as Any], range: range)
                     compilerMessageType = .warning
                     myDebug("Warning!\n")
-                } else if let range: NSRange = newItem.lowercased().range(of: "error") {    // Detect a new start of an error
+                } else if let range: NSRange = newItem.lowercased().range(of: "error")?.toNSRange(string: newItem) {
+                    // Detect a new start of an error
                     addMessage()
                     attributedMessage = NSMutableAttributedString(string: newItem)
                     attributedMessage.addAttributes([.foregroundColor : NSColor.red as Any], range: range)

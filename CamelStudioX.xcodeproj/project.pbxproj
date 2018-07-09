@@ -14,6 +14,9 @@
 		231D5D7020724A3800486DC7 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D6F20724A3800486DC7 /* Compiler.swift */; };
 		231D5D7220724E1200486DC7 /* TerminalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D5D7120724E1200486DC7 /* TerminalCommand.swift */; };
 		23288F892076F700008DC349 /* cmsproj.icns in Resources */ = {isa = PBXBuildFile; fileRef = 23288F882076F700008DC349 /* cmsproj.icns */; };
+		232C330F20E0FE840073D98F /* CMSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C330E20E0FE840073D98F /* CMSParser.swift */; };
+		232C331120E109750073D98F /* RangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C331020E109750073D98F /* RangeExtension.swift */; };
+		232C331320E10EBE0073D98F /* MakefileGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C331220E10EBE0073D98F /* MakefileGenerator.swift */; };
 		233DBE042075636100269D8E /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233DBE032075636100269D8E /* PreferenceViewController.swift */; };
 		233DBE072075648000269D8E /* Preference.plist in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE052075648000269D8E /* Preference.plist */; };
 		233DBE082075648000269D8E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 233DBE062075648000269D8E /* README.md */; };
@@ -421,6 +424,9 @@
 		231D5D7120724E1200486DC7 /* TerminalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminalCommand.swift; path = CamelStudioX/TerminalCommand.swift; sourceTree = SOURCE_ROOT; };
 		23205A842099E4790098B431 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23288F882076F700008DC349 /* cmsproj.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cmsproj.icns; sourceTree = "<group>"; };
+		232C330E20E0FE840073D98F /* CMSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSParser.swift; sourceTree = "<group>"; };
+		232C331020E109750073D98F /* RangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeExtension.swift; sourceTree = "<group>"; };
+		232C331220E10EBE0073D98F /* MakefileGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakefileGenerator.swift; sourceTree = "<group>"; };
 		233DBE032075636100269D8E /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		233DBE052075648000269D8E /* Preference.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preference.plist; sourceTree = "<group>"; };
 		233DBE062075648000269D8E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -831,6 +837,7 @@
 				23A221D620B71C07007F146D /* CompilerMessageViewController.swift */,
 				231D5D7120724E1200486DC7 /* TerminalCommand.swift */,
 				231D5D6F20724A3800486DC7 /* Compiler.swift */,
+				232C331220E10EBE0073D98F /* MakefileGenerator.swift */,
 			);
 			path = Compiler;
 			sourceTree = "<group>";
@@ -907,6 +914,7 @@
 				23D4FB0920C0230000F3B7A5 /* StringExtension.swift */,
 				23454ACF20C037D700823EC8 /* SerialDriverManager.swift */,
 				23454AD320C1596300823EC8 /* NSTextViewExtensions.swift */,
+				232C331020E109750073D98F /* RangeExtension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1362,6 +1370,7 @@
 				2364290B20736B1C00FB9C33 /* CreateProject */,
 				2378FE7520715F0B0011969E /* Document.swift */,
 				2378FEA8207221B40011969E /* ProjectManager.swift */,
+				232C330E20E0FE840073D98F /* CMSParser.swift */,
 			);
 			path = ProjectManage;
 			sourceTree = "<group>";
@@ -2085,11 +2094,14 @@
 				2378FE7620715F0B0011969E /* Document.swift in Sources */,
 				2367D62E20DEB42400B79DEB /* SerialMonitorWindowController.swift in Sources */,
 				2378FEA9207221B40011969E /* ProjectManager.swift in Sources */,
+				232C331120E109750073D98F /* RangeExtension.swift in Sources */,
 				235D0C4C20DAB0BD00C39486 /* RegisterViewController.swift in Sources */,
 				233DBE042075636100269D8E /* PreferenceViewController.swift in Sources */,
 				238599D42073E14D00F2FF08 /* Uploader.swift in Sources */,
 				233DBE112075686C00269D8E /* VersionRecordViewController.swift in Sources */,
 				233DBE3220756F3E00269D8E /* GetNameViewController.swift in Sources */,
+				232C331320E10EBE0073D98F /* MakefileGenerator.swift in Sources */,
+				232C330F20E0FE840073D98F /* CMSParser.swift in Sources */,
 				23454AD420C1596300823EC8 /* NSTextViewExtensions.swift in Sources */,
 				231D5D7220724E1200486DC7 /* TerminalCommand.swift in Sources */,
 				23F0DFFB20B7002000F3F2C8 /* AlertViewController.swift in Sources */,

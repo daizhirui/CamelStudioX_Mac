@@ -656,7 +656,7 @@
         <scene sceneID="txS-ec-aHP">
             <objects>
                 <windowController storyboardIdentifier="Document Window Controller" id="rhG-B7-cUS" customClass="DocumentWindowController" customModule="CamelStudioX" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="nk3-eU-6GK">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="nk3-eU-6GK">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="954" height="449"/>
@@ -1045,7 +1045,7 @@
                                                                         <rect key="frame" x="1" y="1" width="219" height="528"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="14" autosaveExpandedItems="YES" outlineTableColumn="TVB-8t-ULn" id="CE9-7U-Nk7" userLabel="TreeView">
+                                                                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="14" autosaveExpandedItems="YES" outlineTableColumn="TVB-8t-ULn" id="CE9-7U-Nk7" userLabel="TreeView" customClass="ProjectInspector" customModule="CamelStudioX" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="219" height="528"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <size key="intercellSpacing" width="3" height="0.0"/>

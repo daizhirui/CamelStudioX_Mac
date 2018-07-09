@@ -10,7 +10,15 @@ import Cocoa
 import Highlightr
 import LineNumberTextView
 
-let dragDropTypeForProjectInspector = NSPasteboard.PasteboardType(rawValue: "dragDropTypeForProjectInspector")
+let dragDropTypeForProjectInspector = NSPasteboard.PasteboardType(rawValue: "com.camel.cmsproj")
+
+class ProjectInspector: NSOutlineView {
+    var commandKeyPressed = false
+    override func mouseDown(with event: NSEvent) {
+        self.commandKeyPressed = event.modifierFlags.contains(.command)
+        super.mouseDown(with: event)
+    }
+}
 
 class DocumentViewController: NSViewController {
     
@@ -18,7 +26,7 @@ class DocumentViewController: NSViewController {
     @IBOutlet weak var sidePanelTabView: NSTabView!
     @IBOutlet weak var splitView: NSSplitView!
     @IBOutlet weak var sidePanelTabControl: NSSegmentedControl!
-    @IBOutlet weak var projectInspector: NSOutlineView!
+    @IBOutlet weak var projectInspector: ProjectInspector!
     @IBOutlet var sidePanelInfoTextView: NSTextView!
     @IBOutlet var editArea: EditorTextView!
     @IBOutlet weak var editAreaSplitView: NSSplitView!
@@ -42,7 +50,7 @@ class DocumentViewController: NSViewController {
             self.languageComboBox.selectItem(withObjectValue: self.fileOnShow?.fileLanguage)
         }
     }
-    var parentOfSelectedFile: FileWrapper?
+    var parentsOfSelectedFile = [String:FileWrapper]()
     var fileOnShowIsSupported = true
     
     override func viewDidLoad() {
@@ -89,6 +97,17 @@ class DocumentViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        print(event.modifierFlags.contains(.command))
+        super.mouseDown(with: event)
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        print(event.keyCode)
+        print(event.modifierFlags.contains(.command))
+        super.keyDown(with: event)
     }
     //******************* About project creation *****************
     /**
@@ -582,6 +601,7 @@ extension DocumentViewController: NSOutlineViewDataSource {
      Store the data of dragged item to the pasteboard
     */
     func outlineView(_ outlineView: NSOutlineView, writeItems items: [Any], to pasteboard: NSPasteboard) -> Bool {
+        myDebug("writeItems")
         if items.count == 0 {
             return false
         }
@@ -590,11 +610,31 @@ extension DocumentViewController: NSOutlineViewDataSource {
         pasteboard.setData(data, forType: dragDropTypeForProjectInspector)
         // record the parent node
         if let tempNodeItem = self.projectInspector.parent(forItem: self.projectInspector.item(atRow: self.projectInspector.selectedRow)) as? FileWrapper {
-            self.parentOfSelectedFile = tempNodeItem
+            self.parentsOfSelectedFile[tempNodeItem.preferredFilename!] = tempNodeItem
         } else {
-            self.parentOfSelectedFile = self.project!.filewrappers!
+            self.parentsOfSelectedFile[(self.project?.filewrappers!.preferredFilename!)!] = self.project!.filewrappers!
         }
         return true
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
+        self.parentsOfSelectedFile = [String : FileWrapper]()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            NSDocumentController.shared.currentDocument?.save(self)
+            self.projectInspector.reloadData()
+        }
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, pasteboardWriterForItem item: Any) -> NSPasteboardWriting? {
+        myDebug("pasteboardWriterForItem")
+        guard let parentOfItem = outlineView.parent(forItem: item) else { return nil }
+        let propertyList = NSMutableDictionary(capacity: 2)
+        propertyList.addEntries(from: ["Parent" : (parentOfItem as! FileWrapper).preferredFilename as Any])
+        let data = NSKeyedArchiver.archivedData(withRootObject: item)
+        propertyList.addEntries(from: ["Item" : data])
+        self.parentsOfSelectedFile[(parentOfItem as! FileWrapper).preferredFilename!] = parentOfItem as! FileWrapper
+        let pboardItem = NSPasteboardItem(pasteboardPropertyList: propertyList, ofType: dragDropTypeForProjectInspector)
+        return pboardItem
     }
     /**
      Allow dragging
@@ -606,25 +646,45 @@ extension DocumentViewController: NSOutlineViewDataSource {
      Process the data received from Drag-Drop
     */
     func outlineView(_ outlineView: NSOutlineView, acceptDrop info: NSDraggingInfo, item: Any?, childIndex index: Int) -> Bool {
+        print("acceptDrop")
         let pboard = info.draggingPasteboard()
-        guard let data = pboard.data(forType: dragDropTypeForProjectInspector) else { return false }
-        guard let items = NSKeyedUnarchiver.unarchiveObject(with: data) as? [FileWrapper] else { return false }
-        let targetNodeItem: FileWrapper
-        if let tempTargetNodeItem = item as? FileWrapper {
-            targetNodeItem = tempTargetNodeItem
-        } else {
-            targetNodeItem = self.project!.filewrappers!
+        for pboardItem in pboard.pasteboardItems! {
+            
+            let propertyList = pboardItem.propertyList(forType: dragDropTypeForProjectInspector)
+            //        guard let data = pboard.data(forType: dragDropTypeForProjectInspector) else { return false }
+            //        guard let items = NSKeyedUnarchiver.unarchiveObject(with: data) as? [FileWrapper] else { return false }
+            guard let dict = propertyList as? NSDictionary else { return false }
+            let targetNodeItem: FileWrapper
+            if let tempTargetNodeItem = item as? FileWrapper {
+                targetNodeItem = tempTargetNodeItem
+            } else {
+                targetNodeItem = self.project!.filewrappers!
+            }
+            guard let fileData = dict.object(forKey: "Item") as? Data else { return false }
+            guard let file = NSKeyedUnarchiver.unarchiveObject(with: fileData) as? FileWrapper else { return false }
+            targetNodeItem.update(file)
+            guard let parentName = dict.object(forKey: "Parent") as? String else { return false }
+            
+            guard let parent = self.parentsOfSelectedFile[parentName] else {
+                print("No \(parentName), \(self.parentsOfSelectedFile.count) parents")
+                return false
+            }
+            parent.removeFileWrapper(ofName: file.preferredFilename!)
+            //        for fileWrapper in items {
+            //            targetNodeItem.update(fileWrapper)
+            //            //self.parentOfSelectedFile?.removeFileWrapper(fileWrapper)
+            //            self.parentOfSelectedFile?.removeFileWrapper(ofName: fileWrapper.preferredFilename!)
+            //        }
+            // save and reload the changes
+            
+            print(parentName)
+            print(file.preferredFilename!)
         }
-        for fileWrapper in items {
-            targetNodeItem.update(fileWrapper)
-            //self.parentOfSelectedFile?.removeFileWrapper(fileWrapper)
-            self.parentOfSelectedFile?.removeFileWrapper(ofName: fileWrapper.preferredFilename!)
-        }
-        // save and reload the changes
-        NSDocumentController.shared.currentDocument?.save(self)
-        self.projectInspector.reloadData()
+        
+        
         return true
     }
+    
 }
 
 extension DocumentViewController: NSOutlineViewDelegate {
@@ -736,62 +796,75 @@ extension DocumentViewController: NSOutlineViewDelegate {
             }
         }
     }
+    
+    func outlineView(_ outlineView: NSOutlineView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
+        var newIndexSet = proposedSelectionIndexes
+        if let projectInspector = outlineView as? ProjectInspector {
+            if projectInspector.commandKeyPressed {
+                newIndexSet.formUnion(outlineView.selectedRowIndexes)
+                print(newIndexSet)
+                return newIndexSet
+            }
+        }
+        _ = newIndexSet.union(outlineView.selectedRowIndexes)
+        return newIndexSet
+    }
 
-//    override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
-//        let row = self.projectInspector.selectedRow
-//        if row < 0 {    // No item is selected, select the root.
-//            switch menuItem.title {
-//            case "Import File":
-//                return true
-//            case "New Folder":
-//                return true
-//            case "New File":
-//                return true
-//            case "Rename":
-//                return false
-//            case "Delete":
-//                return false
-//            default:
-//                return false
-//            }
-//        } else {
-//            if let fileWrapper = self.projectInspector.item(atRow: row) as? FileWrapper {
-//                if fileWrapper.isDirectory {
-//                    switch menuItem.title {
-//                    case "Import File":
-//                        return true
-//                    case "New Folder":
-//                        return true
-//                    case "New File":
-//                        return true
-//                    case "Rename":
-//                        return true
-//                    case "Delete":
-//                        return true
-//                    default:
-//                        return false
-//                    }
-//                } else {
-//                    switch menuItem.title {
-//                    case "Import File":
-//                        return false
-//                    case "New Folder":
-//                        return false
-//                    case "New File":
-//                        return false
-//                    case "Rename":
-//                        return true
-//                    case "Delete":
-//                        return true
-//                    default:
-//                        return false
-//                    }
-//                }
-//            } else {
-//                return false
-//            }
-//        }
-//    }
+    override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        let row = self.projectInspector.selectedRow
+        if row < 0 {    // No item is selected, select the root.
+            switch menuItem.title {
+            case "Import File":
+                return true
+            case "New Folder":
+                return true
+            case "New File":
+                return true
+            case "Rename":
+                return false
+            case "Delete":
+                return false
+            default:
+                return false
+            }
+        } else {
+            if let fileWrapper = self.projectInspector.item(atRow: row) as? FileWrapper {
+                if fileWrapper.isDirectory {
+                    switch menuItem.title {
+                    case "Import File":
+                        return true
+                    case "New Folder":
+                        return true
+                    case "New File":
+                        return true
+                    case "Rename":
+                        return true
+                    case "Delete":
+                        return true
+                    default:
+                        return false
+                    }
+                } else {
+                    switch menuItem.title {
+                    case "Import File":
+                        return false
+                    case "New Folder":
+                        return false
+                    case "New File":
+                        return false
+                    case "Rename":
+                        return true
+                    case "Delete":
+                        return true
+                    default:
+                        return false
+                    }
+                }
+            } else {
+                return false
+            }
+        }
+    }
 }
 
 extension DocumentViewController: NSSplitViewDelegate {

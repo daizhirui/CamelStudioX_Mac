@@ -9,6 +9,7 @@
 import Cocoa
 
 extension String {
+    /// Convert a string to double
     func toDouble(isHex: Bool) -> Double? {
         if isHex {
             return Double.init("0X"+self)
@@ -16,12 +17,14 @@ extension String {
             return Double.init(self)
         }
     }
+    /// Convert an ascii string to hex expression, and insert a newline where '\r' or '\n' appears
     func toHex() -> String {
         var hexString = ""
         var lastValue: UInt32 = 0
+        // get unicode values
         for unicodeValue in self.unicodeScalars {
             let value = unicodeValue.value
-            if value >= 0 && value <= 255 {
+            if value >= 0 && value <= 255 { // ascii value
                 if value == 10 { //"\n" or "\r\n"
                     hexString.append(String(format:"%02X ",value))
                     hexString.append("\n")
@@ -36,33 +39,23 @@ extension String {
         }
         return hexString
     }
-    
-    func range(of subString: String) -> NSRange? {
+
+    /// Get all strings by a regular expression
+    func getStringByRegularExpression(pattern: String, options: NSRegularExpression.Options) -> [String] {
+        var result = [String]()
         
-        var index = 0
-        guard let sign = subString.first else { return nil }
-        // Loop through parent string looing for the first character of the substring
-        for char in self {
-            if sign == char {
-                
-                let startOfFoundCharacter = self.index(self.startIndex, offsetBy: index)
-                let lengthOfFoundCharacter: String.Index
-                if subString.count > self.count - index {
-                    return nil
-                } else {
-                    lengthOfFoundCharacter = self.index(startOfFoundCharacter, offsetBy: subString.count)
-                }
-                
-                // Grab the substring from the parent string and compare it against substring
-                // Essentially, looking for the needle in a haystack
-                if self[startOfFoundCharacter..<lengthOfFoundCharacter] == subString {
-                    return NSMakeRange(index, subString.count)
-                }
-            }
-            index += 1
+        guard let reglx = try? NSRegularExpression(pattern: pattern, options: options) else {
+            return result
         }
         
-        return nil
+        let matches = reglx.matches(in: self, options: [], range: NSMakeRange(0, self.count))
+        
+        let nsstring = self as NSString
+        for match in matches {
+            result.append(nsstring.substring(with: match.range))
+        }
+        
+        return result
     }
 }
 
