@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sprintf',['sprintf',['../stdio_8h.html#ab416b2a62f47ec0095853e37ba84e78b',1,'stdio_shared.c']]]
+  ['xtoi',['xtoi',['../a00032.html#a9d6165da864d16ad50c13690c1e7d7ea',1,'stdlib.h']]]
 ];

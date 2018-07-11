@@ -1,0 +1,876 @@
+<!-- HTML header for doxygen 1.8.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta name="generator" content="Doxygen 1.8.14" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>Camel Library Documentaion: /Users/daizhirui/Development/Camel_Library/release/include/TC1.h File Reference</title>
+    <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
+    <script type="text/javascript" src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script> <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script> 
+    <link href="doxygen.css" rel="stylesheet" type="text/css" /> <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="doxy-boot.js"></script>
+    <style>
+        /*a {color: darkblue;}*/
+        container {background-color: white}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- justify-content-end -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active align-self-center">
+                        <a class="navbar-brand" href="#"><img src="cmstudio.png" width="30px">  Camel Library Documentaion    </a>
+                    </li>
+                    <li class="nav-item active align-self-center">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown align-self-center">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Related links</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="files.html">File&nbsp;List</a>
+                            <a class="dropdown-item" href="annotated.html">Data&nbsp;Structure</a>
+                            <a class="dropdown-item" href="classes.html">Data&nbsp;Structure&nbsp;Index</a>
+                            <a class="dropdown-item" href="https://rink.hockeyapp.net/apps/798a2dae49b04400bcadaf69bda80417">CamelStudioX For Mac</a>
+                            <a class="dropdown-item" href="https://github.com/daizhirui/CamelStudio_Library">GitHub Project</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="MSearchBox" class="MSearchBoxInactive justify-content-end">
+                <span class="left">
+                    <img id="MSearchSelect" src="search/mag_sel.png" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" alt="">
+                    <input type="text" id="MSearchField" value="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event)">
+                </span><span class="right">
+                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()" style="display: none;"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""></a>
+                </span>
+            </div>
+        </nav>
+    </div>
+    <div id="top">
+        <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(0)" href="javascript:void(0)"><span class="SelectionMark">•</span>All</a><a class="SelectItem" onclick="searchBox.OnSelectItem(1)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Classes</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(2)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" onclick="searchBox.OnSelectItem(3)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Functions</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(4)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" onclick="searchBox.OnSelectItem(5)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Typedefs</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(6)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" onclick="searchBox.OnSelectItem(7)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerator</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(8)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" onclick="searchBox.OnSelectItem(9)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Modules</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(10)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Pages</a>
+        </div>
+        <div id="MSearchResultsWindow" style="display: none; top: 52px; left: 1221px;">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults"></iframe>
+        </div>
+        <!-- do not remove this div, it is closed by doxygen! -->
+        <div class="content" id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 panel " style="padding-bottom: 15px;">
+                        <div style="margin-bottom: 15px;">
+                            <!-- end header part -->
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00044.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">TC1.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Timer1 Library for M2.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00020.html">mcu.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ade1093a6b28016a59b5e5b0c2733ab2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#ade1093a6b28016a59b5e5b0c2733ab2c">RT_TC1_Stop</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 0)</td></tr>
+<tr class="memdesc:ade1093a6b28016a59b5e5b0c2733ab2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop TC1.  <a href="#ade1093a6b28016a59b5e5b0c2733ab2c">More...</a><br /></td></tr>
+<tr class="separator:ade1093a6b28016a59b5e5b0c2733ab2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c21242bf3ba2144aa45a336a4dc7ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#ab9c21242bf3ba2144aa45a336a4dc7ea">RT_TC1_ClearIrq</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf10911af3fb19f6d248097500d6ab3cd">T1_CLRIRQ_REG</a>, 0)</td></tr>
+<tr class="memdesc:ab9c21242bf3ba2144aa45a336a4dc7ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear TC1 TC-IRQ and PWM-IRQ.  <a href="#ab9c21242bf3ba2144aa45a336a4dc7ea">More...</a><br /></td></tr>
+<tr class="separator:ab9c21242bf3ba2144aa45a336a4dc7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd4f7c1a53b5d0a31f45076725a1ed6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#abcd4f7c1a53b5d0a31f45076725a1ed6">RT_TC1_ClearCnt</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da8d9e7af787d31f28782260c199cc8bd5">T1_CLRCNT_REG</a>, 0)</td></tr>
+<tr class="memdesc:abcd4f7c1a53b5d0a31f45076725a1ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear TC1 Counter value.  <a href="#abcd4f7c1a53b5d0a31f45076725a1ed6">More...</a><br /></td></tr>
+<tr class="separator:abcd4f7c1a53b5d0a31f45076725a1ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7757de241add69f5fffc4e1dfa431a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a2a7757de241add69f5fffc4e1dfa431a">RT_TC1_ClearAll</a>()</td></tr>
+<tr class="memdesc:a2a7757de241add69f5fffc4e1dfa431a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear TC1 TC-IRQ, PWM-IRQ and Counter value.  <a href="#a2a7757de241add69f5fffc4e1dfa431a">More...</a><br /></td></tr>
+<tr class="separator:a2a7757de241add69f5fffc4e1dfa431a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbef657c94c7b32f07e4210fbf7f4745"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#adbef657c94c7b32f07e4210fbf7f4745">RT_TC1_TcIrqOn</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 7)</td></tr>
+<tr class="memdesc:adbef657c94c7b32f07e4210fbf7f4745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on TC1 TC-IRQ.  <a href="#adbef657c94c7b32f07e4210fbf7f4745">More...</a><br /></td></tr>
+<tr class="separator:adbef657c94c7b32f07e4210fbf7f4745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8775d32f1b8cb982c2abf045e3b6b95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#ad8775d32f1b8cb982c2abf045e3b6b95">RT_TC1_TcIrqOff</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 7))</td></tr>
+<tr class="memdesc:ad8775d32f1b8cb982c2abf045e3b6b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off TC1 TC-IRQ.  <a href="#ad8775d32f1b8cb982c2abf045e3b6b95">More...</a><br /></td></tr>
+<tr class="separator:ad8775d32f1b8cb982c2abf045e3b6b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61477182241a8629176801cca44ce09a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a61477182241a8629176801cca44ce09a">RT_TC1_PWMIrqOn</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 6)</td></tr>
+<tr class="memdesc:a61477182241a8629176801cca44ce09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on TC1 PWM-IRQ.  <a href="#a61477182241a8629176801cca44ce09a">More...</a><br /></td></tr>
+<tr class="separator:a61477182241a8629176801cca44ce09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c33903adfe470964d7eb5126c4ce7d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a1c33903adfe470964d7eb5126c4ce7d4">RT_TC1_PWMIrqOff</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 6))</td></tr>
+<tr class="memdesc:a1c33903adfe470964d7eb5126c4ce7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off TC1 PWM-IRQ.  <a href="#a1c33903adfe470964d7eb5126c4ce7d4">More...</a><br /></td></tr>
+<tr class="separator:a1c33903adfe470964d7eb5126c4ce7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3395d62010d1ca815676f3086f0dfb4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a3395d62010d1ca815676f3086f0dfb4a">RT_TC1_CheckTcFlag</a>()&#160;&#160;&#160;((<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>) &amp; 0x80000000) &gt;&gt; 31)</td></tr>
+<tr class="memdesc:a3395d62010d1ca815676f3086f0dfb4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read TC1 TC-flag.  <a href="#a3395d62010d1ca815676f3086f0dfb4a">More...</a><br /></td></tr>
+<tr class="separator:a3395d62010d1ca815676f3086f0dfb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0b6d73b626b9f56f9f6fda79d0860c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#acf0b6d73b626b9f56f9f6fda79d0860c">RT_TC1_CheckPWMFlag</a>()&#160;&#160;&#160;((<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>) &amp; 0x40000000) &gt;&gt; 30)</td></tr>
+<tr class="memdesc:acf0b6d73b626b9f56f9f6fda79d0860c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read TC1 PWM-flag.  <a href="#acf0b6d73b626b9f56f9f6fda79d0860c">More...</a><br /></td></tr>
+<tr class="separator:acf0b6d73b626b9f56f9f6fda79d0860c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac76393581e0b1d58a9628139db72cdaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#ac76393581e0b1d58a9628139db72cdaf">RT_TC1_TimerOn</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 1)</td></tr>
+<tr class="memdesc:ac76393581e0b1d58a9628139db72cdaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on TC1 Timer.  <a href="#ac76393581e0b1d58a9628139db72cdaf">More...</a><br /></td></tr>
+<tr class="separator:ac76393581e0b1d58a9628139db72cdaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bccbc833364c4f1c6ce63a758136817"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a1bccbc833364c4f1c6ce63a758136817">RT_TC1_TimerOff</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 1))</td></tr>
+<tr class="memdesc:a1bccbc833364c4f1c6ce63a758136817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off TC1 Timer.  <a href="#a1bccbc833364c4f1c6ce63a758136817">More...</a><br /></td></tr>
+<tr class="separator:a1bccbc833364c4f1c6ce63a758136817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac04f2d9427689062596382399aa7d909"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#ac04f2d9427689062596382399aa7d909">RT_TC1_SetCounter</a>(n)</td></tr>
+<tr class="memdesc:ac04f2d9427689062596382399aa7d909"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the frequency counter of TC1 The base frequency of the counter is 45Hz.  <a href="#ac04f2d9427689062596382399aa7d909">More...</a><br /></td></tr>
+<tr class="separator:ac04f2d9427689062596382399aa7d909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9b6f778a744d79226f5165a04a38d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#add9b6f778a744d79226f5165a04a38d9">RT_TC1_EcntOn</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1)</td></tr>
+<tr class="memdesc:add9b6f778a744d79226f5165a04a38d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on TC1 Event Counter.  <a href="#add9b6f778a744d79226f5165a04a38d9">More...</a><br /></td></tr>
+<tr class="separator:add9b6f778a744d79226f5165a04a38d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9b9839a03d3e9b1158a2be2feebf42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a1c9b9839a03d3e9b1158a2be2feebf42">RT_TC1_EcntOff</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~1)</td></tr>
+<tr class="memdesc:a1c9b9839a03d3e9b1158a2be2feebf42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off TC1 Event Counter.  <a href="#a1c9b9839a03d3e9b1158a2be2feebf42">More...</a><br /></td></tr>
+<tr class="separator:a1c9b9839a03d3e9b1158a2be2feebf42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b786bd70b41c950892beeef4cbd2b27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a4b786bd70b41c950892beeef4cbd2b27">RT_TC1_SetEcnt</a>(n,  trigger,  irq)</td></tr>
+<tr class="memdesc:a4b786bd70b41c950892beeef4cbd2b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the ECNT function of TC1.  <a href="#a4b786bd70b41c950892beeef4cbd2b27">More...</a><br /></td></tr>
+<tr class="separator:a4b786bd70b41c950892beeef4cbd2b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66b006ccc7fcf8165e1bed013985b92e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a66b006ccc7fcf8165e1bed013985b92e">RT_TC1_PWMOn</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 4)</td></tr>
+<tr class="memdesc:a66b006ccc7fcf8165e1bed013985b92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on TC1 PWM.  <a href="#a66b006ccc7fcf8165e1bed013985b92e">More...</a><br /></td></tr>
+<tr class="separator:a66b006ccc7fcf8165e1bed013985b92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbffb90a80851e9a1e6e3dc03938c547"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#afbffb90a80851e9a1e6e3dc03938c547">RT_TC1_PWMOff</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 4))</td></tr>
+<tr class="memdesc:afbffb90a80851e9a1e6e3dc03938c547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off TC1 PWM.  <a href="#afbffb90a80851e9a1e6e3dc03938c547">More...</a><br /></td></tr>
+<tr class="separator:afbffb90a80851e9a1e6e3dc03938c547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f2a1fa7c0f6bf6e61dbc2c1ecb1730"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#af7f2a1fa7c0f6bf6e61dbc2c1ecb1730">RT_TC1_SetPWM</a>(div,  ref,  irq)</td></tr>
+<tr class="memdesc:af7f2a1fa7c0f6bf6e61dbc2c1ecb1730"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the PWM function of TC1.  <a href="#af7f2a1fa7c0f6bf6e61dbc2c1ecb1730">More...</a><br /></td></tr>
+<tr class="separator:af7f2a1fa7c0f6bf6e61dbc2c1ecb1730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f11e47b5a8e7947fc76e9955e94acea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a6f11e47b5a8e7947fc76e9955e94acea">RT_TC1_PWMMOn</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 3)</td></tr>
+<tr class="memdesc:a6f11e47b5a8e7947fc76e9955e94acea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on TC1 Pulse Width Measurement.  <a href="#a6f11e47b5a8e7947fc76e9955e94acea">More...</a><br /></td></tr>
+<tr class="separator:a6f11e47b5a8e7947fc76e9955e94acea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa070a043272a38ae84492146683a00d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#aa070a043272a38ae84492146683a00d3">RT_TC1_PWMMOff</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 3))</td></tr>
+<tr class="memdesc:aa070a043272a38ae84492146683a00d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off TC1 Pulse Width Measurement.  <a href="#aa070a043272a38ae84492146683a00d3">More...</a><br /></td></tr>
+<tr class="separator:aa070a043272a38ae84492146683a00d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a326645a1e9eb49468e696ba7a186cdba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a326645a1e9eb49468e696ba7a186cdba">RT_TC1_PWMMTriggerMode</a>(mode)</td></tr>
+<tr class="memdesc:a326645a1e9eb49468e696ba7a186cdba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set TC1 Trigger Mode of Pulse Width Measurement.  <a href="#a326645a1e9eb49468e696ba7a186cdba">More...</a><br /></td></tr>
+<tr class="separator:a326645a1e9eb49468e696ba7a186cdba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e92ad68930f990a6437c74432689e1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a1e92ad68930f990a6437c74432689e1b">RT_TC1_SetPWMM</a>(trigger,  irq)</td></tr>
+<tr class="memdesc:a1e92ad68930f990a6437c74432689e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the Pulse width measure for TC1.  <a href="#a1e92ad68930f990a6437c74432689e1b">More...</a><br /></td></tr>
+<tr class="separator:a1e92ad68930f990a6437c74432689e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98f0ff60ac42d9ca3eef5f7d6e893df2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a98f0ff60ac42d9ca3eef5f7d6e893df2">RT_TC1_ReadCnt</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da317e9d68df901e9bb407bddbc2ced61b">T1_READ_REG</a>)</td></tr>
+<tr class="memdesc:a98f0ff60ac42d9ca3eef5f7d6e893df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read TC1 Counter Register Value.  <a href="#a98f0ff60ac42d9ca3eef5f7d6e893df2">More...</a><br /></td></tr>
+<tr class="separator:a98f0ff60ac42d9ca3eef5f7d6e893df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a88f5b0594e9e1006860ebde0dc13c148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044.html#a88f5b0594e9e1006860ebde0dc13c148">RT_TC1_TimerSet1us</a> (uint32_t T, switch_t irqEn)</td></tr>
+<tr class="memdesc:a88f5b0594e9e1006860ebde0dc13c148"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the timer function of TC0.  <a href="#a88f5b0594e9e1006860ebde0dc13c148">More...</a><br /></td></tr>
+<tr class="separator:a88f5b0594e9e1006860ebde0dc13c148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Timer1 Library for M2. </p>
+<dl class="section author"><dt>Author</dt><dd>Zhirui Dai </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>16 Jun 2018 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>2018 Zhirui </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="acf0b6d73b626b9f56f9f6fda79d0860c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0b6d73b626b9f56f9f6fda79d0860c">&#9670;&nbsp;</a></span>RT_TC1_CheckPWMFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_CheckPWMFlag</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>) &amp; 0x40000000) &gt;&gt; 30)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read TC1 PWM-flag. </p>
+<dl class="section return"><dt>Returns</dt><dd>int PWM-flag </dd></dl>
+
+</div>
+</div>
+<a id="a3395d62010d1ca815676f3086f0dfb4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3395d62010d1ca815676f3086f0dfb4a">&#9670;&nbsp;</a></span>RT_TC1_CheckTcFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_CheckTcFlag</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>) &amp; 0x80000000) &gt;&gt; 31)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read TC1 TC-flag. </p>
+<dl class="section return"><dt>Returns</dt><dd>int TC-flag </dd></dl>
+
+</div>
+</div>
+<a id="a2a7757de241add69f5fffc4e1dfa431a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7757de241add69f5fffc4e1dfa431a">&#9670;&nbsp;</a></span>RT_TC1_ClearAll</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_ClearAll</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                   \</div><div class="line">        RT_TC1_ClearIrq(); \</div><div class="line">        RT_TC1_ClearCnt(); \</div><div class="line">    }</div></div><!-- fragment -->
+<p>Clear TC1 TC-IRQ, PWM-IRQ and Counter value. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="abcd4f7c1a53b5d0a31f45076725a1ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd4f7c1a53b5d0a31f45076725a1ed6">&#9670;&nbsp;</a></span>RT_TC1_ClearCnt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_ClearCnt</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da8d9e7af787d31f28782260c199cc8bd5">T1_CLRCNT_REG</a>, 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear TC1 Counter value. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ab9c21242bf3ba2144aa45a336a4dc7ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c21242bf3ba2144aa45a336a4dc7ea">&#9670;&nbsp;</a></span>RT_TC1_ClearIrq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_ClearIrq</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf10911af3fb19f6d248097500d6ab3cd">T1_CLRIRQ_REG</a>, 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear TC1 TC-IRQ and PWM-IRQ. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a1c9b9839a03d3e9b1158a2be2feebf42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c9b9839a03d3e9b1158a2be2feebf42">&#9670;&nbsp;</a></span>RT_TC1_EcntOff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_EcntOff</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn off TC1 Event Counter. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="add9b6f778a744d79226f5165a04a38d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9b6f778a744d79226f5165a04a38d9">&#9670;&nbsp;</a></span>RT_TC1_EcntOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_EcntOn</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn on TC1 Event Counter. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a1c33903adfe470964d7eb5126c4ce7d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c33903adfe470964d7eb5126c4ce7d4">&#9670;&nbsp;</a></span>RT_TC1_PWMIrqOff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_PWMIrqOff</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 6))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn off TC1 PWM-IRQ. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a61477182241a8629176801cca44ce09a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61477182241a8629176801cca44ce09a">&#9670;&nbsp;</a></span>RT_TC1_PWMIrqOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_PWMIrqOn</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn on TC1 PWM-IRQ. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="aa070a043272a38ae84492146683a00d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa070a043272a38ae84492146683a00d3">&#9670;&nbsp;</a></span>RT_TC1_PWMMOff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_PWMMOff</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 3))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn off TC1 Pulse Width Measurement. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a6f11e47b5a8e7947fc76e9955e94acea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f11e47b5a8e7947fc76e9955e94acea">&#9670;&nbsp;</a></span>RT_TC1_PWMMOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_PWMMOn</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn on TC1 Pulse Width Measurement. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a326645a1e9eb49468e696ba7a186cdba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a326645a1e9eb49468e696ba7a186cdba">&#9670;&nbsp;</a></span>RT_TC1_PWMMTriggerMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_PWMMTriggerMode</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mode</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                                        \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 2)); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, mode &lt;&lt; 2);  \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:129</div></div>
+</div><!-- fragment -->
+<p>Set TC1 Trigger Mode of Pulse Width Measurement. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>Trigger mode, optional values: <a class="el" href="a00020.html#abda90eda34a640b130f48a6ade23fe22">RAISE_TRIGGER</a>, <a class="el" href="a00020.html#a9bbaf5b9e2125c7597249c7113b20e6c">FALL_TRIGGER</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="afbffb90a80851e9a1e6e3dc03938c547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbffb90a80851e9a1e6e3dc03938c547">&#9670;&nbsp;</a></span>RT_TC1_PWMOff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_PWMOff</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn off TC1 PWM. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a66b006ccc7fcf8165e1bed013985b92e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b006ccc7fcf8165e1bed013985b92e">&#9670;&nbsp;</a></span>RT_TC1_PWMOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_PWMOn</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn on TC1 PWM. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a98f0ff60ac42d9ca3eef5f7d6e893df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98f0ff60ac42d9ca3eef5f7d6e893df2">&#9670;&nbsp;</a></span>RT_TC1_ReadCnt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_ReadCnt</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da317e9d68df901e9bb407bddbc2ced61b">T1_READ_REG</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read TC1 Counter Register Value. </p>
+<dl class="section return"><dt>Returns</dt><dd>int TC0 Counter Register Value </dd></dl>
+
+</div>
+</div>
+<a id="ac04f2d9427689062596382399aa7d909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac04f2d9427689062596382399aa7d909">&#9670;&nbsp;</a></span>RT_TC1_SetCounter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_SetCounter</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                                        \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 7)); \</div><div class="line">        MemoryWrite32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dad4c8dc76a3496583d94443a52d7c5606">T1_CLK_REG</a>, n);        \</div><div class="line">        MemoryWrite32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da">T1_REF_REG</a>, 0x0);      \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, (0x02));     \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da">T1_REF_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:131</div></div>
+<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:129</div></div>
+<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dad4c8dc76a3496583d94443a52d7c5606"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dad4c8dc76a3496583d94443a52d7c5606">T1_CLK_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:137</div></div>
+</div><!-- fragment -->
+<p>This function sets the frequency counter of TC1 The base frequency of the counter is 45Hz. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>times of 45Hz </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a4b786bd70b41c950892beeef4cbd2b27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b786bd70b41c950892beeef4cbd2b27">&#9670;&nbsp;</a></span>RT_TC1_SetEcnt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_SetEcnt</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">trigger, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">irq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                                                                 \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~((0x1 &lt;&lt; 7) + (0x1 &lt;&lt; 2)));         \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ((trigger &lt;&lt; 2) | (irq &lt;&lt; 7) | 0x1)); \</div><div class="line">        MemoryWrite32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da">T1_REF_REG</a>, n);                                 \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5">SYS_CTL0_REG</a>, irq);                                \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5">SYS_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:43</div></div>
+<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da">T1_REF_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:131</div></div>
+<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:129</div></div>
+</div><!-- fragment -->
+<p>This function sets the ECNT function of TC1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>the target value to reach </td></tr>
+    <tr><td class="paramname">trigger</td><td>the trigger mode, RISING or FALLING </td></tr>
+    <tr><td class="paramname">irq</td><td>when ON, the interrupt is enabled; when OFF, disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="af7f2a1fa7c0f6bf6e61dbc2c1ecb1730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f2a1fa7c0f6bf6e61dbc2c1ecb1730">&#9670;&nbsp;</a></span>RT_TC1_SetPWM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_SetPWM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">div, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ref, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">irq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                                                              \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(0x3 &lt;&lt; 6));                     \</div><div class="line">        MemoryWrite32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dad4c8dc76a3496583d94443a52d7c5606">T1_CLK_REG</a>, div);                            \</div><div class="line">        MemoryWrite32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da">T1_REF_REG</a>, ref);                            \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, (0x10 | (irq &lt;&lt; 6) | (irq &lt;&lt; 7))); \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da">T1_REF_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:131</div></div>
+<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:129</div></div>
+<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dad4c8dc76a3496583d94443a52d7c5606"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dad4c8dc76a3496583d94443a52d7c5606">T1_CLK_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:137</div></div>
+</div><!-- fragment -->
+<p>This function sets the PWM function of TC1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">div</td><td>the clock freq divider </td></tr>
+    <tr><td class="paramname">ref</td><td>0-255, the clock high length </td></tr>
+    <tr><td class="paramname">irq</td><td>when ON, the interrupt is enabled; when OFF, disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a1e92ad68930f990a6437c74432689e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e92ad68930f990a6437c74432689e1b">&#9670;&nbsp;</a></span>RT_TC1_SetPWMM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_SetPWMM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">trigger, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">irq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                                                               \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~((0x1 &lt;&lt; 7) + (0x1 &lt;&lt; 2)));       \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, (0x18 | (irq &lt;&lt; 7) | (rise &lt;&lt; 2))); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5">SYS_CTL0_REG</a>, irq);                              \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5">SYS_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:43</div></div>
+<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:129</div></div>
+</div><!-- fragment -->
+<p>This function sets the Pulse width measure for TC1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trigger</td><td>the trigger mode, RISING or FALLING </td></tr>
+    <tr><td class="paramname">irq</td><td>when ON, the interrupt is enabled; when OFF, disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ade1093a6b28016a59b5e5b0c2733ab2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade1093a6b28016a59b5e5b0c2733ab2c">&#9670;&nbsp;</a></span>RT_TC1_Stop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_Stop</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop TC1. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ad8775d32f1b8cb982c2abf045e3b6b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8775d32f1b8cb982c2abf045e3b6b95">&#9670;&nbsp;</a></span>RT_TC1_TcIrqOff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_TcIrqOff</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 7))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn off TC1 TC-IRQ. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="adbef657c94c7b32f07e4210fbf7f4745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbef657c94c7b32f07e4210fbf7f4745">&#9670;&nbsp;</a></span>RT_TC1_TcIrqOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_TcIrqOn</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn on TC1 TC-IRQ. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a1bccbc833364c4f1c6ce63a758136817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bccbc833364c4f1c6ce63a758136817">&#9670;&nbsp;</a></span>RT_TC1_TimerOff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_TimerOff</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, ~(1 &lt;&lt; 1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn off TC1 Timer. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ac76393581e0b1d58a9628139db72cdaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac76393581e0b1d58a9628139db72cdaf">&#9670;&nbsp;</a></span>RT_TC1_TimerOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_TC1_TimerOn</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a>, 1 &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn on TC1 Timer. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a88f5b0594e9e1006860ebde0dc13c148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f5b0594e9e1006860ebde0dc13c148">&#9670;&nbsp;</a></span>RT_TC1_TimerSet1us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RT_TC1_TimerSet1us </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">switch_t&#160;</td>
+          <td class="paramname"><em>irqEn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets the timer function of TC0. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>the target time to reach, the uint is us. </td></tr>
+    <tr><td class="paramname">irqEn</td><td>when <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, the interrupt is enabled; when <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a>, disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.8-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+    <!-- id is needed for treeview function! -->
+    <!-- <ul>
+        <li class="navelem"><a class="el" href="dir_9c8c494a5e1ae1f33037b0e9d49f06c7.html">release</a></li><li class="navelem"><a class="el" href="dir_42743c43973611cb0b05144d150e48a5.html">include</a></li><li class="navelem"><a class="el" href="a00044.html">TC1.h</a></li>
+        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+            <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+    </ul> -->
+    <div class="card">
+        <!-- <div class="card-header"> -->
+            <!-- Quote -->
+        <!-- </div> -->
+        <div class="card-body">
+            <!-- <h5 class="card-title">Special title treatment</h5> -->
+            <p class="card-text d-flex justify-content-between">
+                <a href="#" class="btn btn-primary">Return To Top</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

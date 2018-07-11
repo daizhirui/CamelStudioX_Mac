@@ -60,9 +60,7 @@
  * @brief Check interrupt flag of SPI, UART1, WatchDog, ExternalInterrupt,
  *        Debug, Timer2, Timer1, Timer0 or UART0.
  * @note  SYS_IRQ_REG[8:0]: 9 devices.
- * @param device Optional value: \code{.c}SYSINT_SPIINT, SYSINT_UART1INT,
-                    SYSINT_UART0INT, SYSINT_WDTINT, SYSINT_EXTINT, SYSINT_DBGINT,
-                    SYSINT_TC2INT, SYSINT_TC1INT. SYSINT_TC0INT\endcode.
+ * @param device Optional value: #SYSINT_SPIINT, #SYSINT_UART1INT, #SYSINT_UART0INT, #SYSINT_WDTINT, #SYSINT_EXTINT, #SYSINT_DBGINT, #SYSINT_TC2INT, #SYSINT_TC1INT, #SYSINT_TC0INT
  */
 #define RT_SYSINT_GetFlag(device)  (MemoryRead(SYS_IRQ_REG)&(0x1 << device) >> device)
 /**
@@ -117,9 +115,8 @@
 #define FALLING 0x0
 /**
  * @brief           Set the external interrupt
- * @param port      the port of external interrupt, optional value:
-                    \code{.c}EXINT0, EXINT1, EXINT2, EXINT3, EXINT4, EXINT5\endcode.
- * @param trigger   the trigger mode, optional value: \code{.c}RISING, FALLING\endcode
+ * @param port      the port of external interrupt, optional value: #EXINT0, #EXINT1, #EXINT2, #EXINT3, #EXINT4, #EXINT5
+ * @param trigger   the trigger mode, optional value: #RISING, #FALLING
  * @return          void
  */
 #define RT_EXINT_Setup(port, trigger)                \
@@ -131,15 +128,14 @@
 /**
  * @brief           Close an external interrupt port.
  * @param port      the external interrupt port to close, optional value:
-                    \code{.c}EXINT0, EXINT1, EXINT2, EXINT3, EXINT4, EXINT5\endcode.
+                    #EXINT0, #EXINT1, #EXINT2, #EXINT3, #EXINT4, #EXINT5
  * @return          void
  */
 #define RT_EXINT_Off(port)  MemoryAnd32(INT_CTL0_REG, ~(1 << port))
 
 /**
  * @brief       Clear interrupt flag from specific external interrupt port
- * @param port  the external interrupt port to clear irq flag, optional value:
-                \code{.c}EXINT0, EXINT1, EXINT2, EXINT3, EXINT4, EXINT5\endcode.
+ * @param port  the external interrupt port to clear irq flag, optional value: #EXINT0, #EXINT1, #EXINT2, #EXINT3, #EXINT4, #EXINT5
  * @return      void
  */
 #define RT_EXINT_Clear(port)  MemoryWrite(INT_CLR_REG, 1 << port)

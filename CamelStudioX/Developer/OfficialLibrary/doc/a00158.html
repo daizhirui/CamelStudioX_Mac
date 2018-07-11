@@ -1,0 +1,172 @@
+<!-- HTML header for doxygen 1.8.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta name="generator" content="Doxygen 1.8.14" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>Camel Library Documentaion: UART Library for M2</title>
+    <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
+    <script type="text/javascript" src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script> <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script> 
+    <link href="doxygen.css" rel="stylesheet" type="text/css" /> <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="doxy-boot.js"></script>
+    <style>
+        /*a {color: darkblue;}*/
+        container {background-color: white}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- justify-content-end -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active align-self-center">
+                        <a class="navbar-brand" href="#"><img src="cmstudio.png" width="30px">  Camel Library Documentaion    </a>
+                    </li>
+                    <li class="nav-item active align-self-center">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown align-self-center">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Related links</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="files.html">File&nbsp;List</a>
+                            <a class="dropdown-item" href="annotated.html">Data&nbsp;Structure</a>
+                            <a class="dropdown-item" href="classes.html">Data&nbsp;Structure&nbsp;Index</a>
+                            <a class="dropdown-item" href="https://rink.hockeyapp.net/apps/798a2dae49b04400bcadaf69bda80417">CamelStudioX For Mac</a>
+                            <a class="dropdown-item" href="https://github.com/daizhirui/CamelStudio_Library">GitHub Project</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="MSearchBox" class="MSearchBoxInactive justify-content-end">
+                <span class="left">
+                    <img id="MSearchSelect" src="search/mag_sel.png" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" alt="">
+                    <input type="text" id="MSearchField" value="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event)">
+                </span><span class="right">
+                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()" style="display: none;"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""></a>
+                </span>
+            </div>
+        </nav>
+    </div>
+    <div id="top">
+        <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(0)" href="javascript:void(0)"><span class="SelectionMark">•</span>All</a><a class="SelectItem" onclick="searchBox.OnSelectItem(1)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Classes</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(2)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" onclick="searchBox.OnSelectItem(3)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Functions</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(4)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" onclick="searchBox.OnSelectItem(5)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Typedefs</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(6)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" onclick="searchBox.OnSelectItem(7)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerator</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(8)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" onclick="searchBox.OnSelectItem(9)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Modules</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(10)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Pages</a>
+        </div>
+        <div id="MSearchResultsWindow" style="display: none; top: 52px; left: 1221px;">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults"></iframe>
+        </div>
+        <!-- do not remove this div, it is closed by doxygen! -->
+        <div class="content" id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 panel " style="padding-bottom: 15px;">
+                        <div style="margin-bottom: 15px;">
+                            <!-- end header part -->
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00158.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">UART Library for M2 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>UART library provides interface to operate UART0 and UART1 of M2. To use this library, please include <code><a class="el" href="a00056.html" title="UART Library for M2. ">UART.h</a></code>.</p>
+<h2>Interface</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a7c1428a7b16eec7fe710679dd70b4069">RT_UART_On</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a60de547d761052a56b69e4a75493b831">RT_UART_Off</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a3ab834a97a200601f16b923a705f3f01">RT_UART_Busy</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a3c30d4d2e260d1c2f96747e9d7bdaf0d">RT_UART_Write</a>(port);</div><div class="line"></div><div class="line">uint32_t <a class="code" href="a00056.html#abd2a573ae35e4f6381f9f9758a12806b">RT_UART_DataReady</a>(port);</div><div class="line"></div><div class="line">uint8_t <a class="code" href="a00056.html#a7804645fb092b24545278660f6b66409">RT_UART_Read</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a5ed058b5d506df45c51358b8451550ad">RT_UART_IrqOn</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#aab5e3da11e9f9d531cab23aa451d2356">RT_UART_CompareOn</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#aab59c28b31f6d93c8400c2af10cc0b05">RT_UART_CompareOff</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a432520c6f67a10918aa07884250a7cbc">RT_UART_SetCompare</a>(port, val);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a84e87fc64f3149f1d5171ddca5719220">RT_UART_ClearIrq</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#ad8934a303c429b70176995f2dd6ac67b">RT_UART_RaiseIrq</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a3e29e879f76b82a13419f4d59a1c3053">RT_UART_CheckIrq</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a49f9d43f5fd87ceed952123010e015fa">RT_UART_LinSyncOn</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#aea01869278bc3c4e332af854c4e660be">RT_UART_LinSyncOff</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a45d1e1116c5b535f276acc73e522570f">RT_UART_LinBreakNormal</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a9e7d98206f07485a3347bab6672a971c">RT_UART_LinBreakExtreme</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#ad1e6c13693e5ea54a55ce78635617178">RT_UART_LinSendBreak</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a2e2715198f9716282584f34a7f472649">RT_UART_LinCheckIrq</a>(port);</div><div class="line"></div><div class="line">uint32_t <a class="code" href="a00056.html#a74f1bca1f0b60eeec1f84bcba3e34919">RT_UART_GetBrp</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#a3f9518fa74ec401803fe1d15e0d39ff2">RT_UART_LinSlave</a>(port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#ab03e9e1a8d4d9b97583db27174086108">RT_UART_putchar</a>(uint32_t port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#ad61c03a00ccd43875563c16f97d61af7">RT_UART_puts</a>(uint32_t port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<span class="keywordtype">string</span>);</div><div class="line"></div><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="a00056.html#abc136df9d66fe27bf8ffcc319246591e">RT_UART_getchar</a>(uint32_t port);</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="a00056.html#ab0faf051e642e540b1b9c114eae242bd">RT_UART_LinMaster</a>(uint32_t port, <span class="keywordtype">char</span> pattern);</div></div><!-- fragment --><h2>Example</h2>
+<h3>Send and receive data via UART0 and UART1</h3>
+<div class="fragment"><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * Before running this example, please connect pins:</span></div><div class="line"><span class="comment"> *      P_TX &lt;------&gt; SPI_SI/RX1</span></div><div class="line"><span class="comment"> *      P_RX &lt;------&gt; SPI_SO/TX1  </span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="a00056.html">UART.h</a>&quot;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> user_interrupt(){}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main() {</div><div class="line">    <span class="keywordtype">char</span> c;</div><div class="line"></div><div class="line">    <span class="comment">// Turn on UART0 and UART1</span></div><div class="line">    <a class="code" href="a00056.html#a7c1428a7b16eec7fe710679dd70b4069">RT_UART_On</a>(<a class="code" href="a00056.html#a0508661f121639ffdee7de2353a0def2">UART0</a>);</div><div class="line">    <a class="code" href="a00056.html#a7c1428a7b16eec7fe710679dd70b4069">RT_UART_On</a>(<a class="code" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff">UART1</a>);</div><div class="line"></div><div class="line">    <span class="keywordflow">while</span>(1) {</div><div class="line">        c = <a class="code" href="a00056.html#abc136df9d66fe27bf8ffcc319246591e">RT_UART_getchar</a>(<a class="code" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff">UART1</a>);</div><div class="line">        <a class="code" href="a00056.html#ad61c03a00ccd43875563c16f97d61af7">RT_UART_puts</a>(<a class="code" href="a00056.html#a0508661f121639ffdee7de2353a0def2">UART0</a>, <span class="stringliteral">&quot;Get a character from UART1: &quot;</span>);</div><div class="line">        <a class="code" href="a00056.html#ab03e9e1a8d4d9b97583db27174086108">RT_UART_putchar</a>(<a class="code" href="a00056.html#a0508661f121639ffdee7de2353a0def2">UART0</a>, c);</div><div class="line">        <a class="code" href="a00056.html#ab03e9e1a8d4d9b97583db27174086108">RT_UART_putchar</a>(<a class="code" href="a00056.html#a0508661f121639ffdee7de2353a0def2">UART0</a>, <span class="charliteral">&#39;\n&#39;</span>);</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><h3>Send Lin break via UART1</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="a00056.html">UART.h</a>&quot;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> user_interrupt()</div><div class="line"></div><div class="line">int main() {</div><div class="line">    <a class="code" href="a00056.html#a7c1428a7b16eec7fe710679dd70b4069">RT_UART_On</a>(<a class="code" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff">UART1</a>);                          <span class="comment">// Turn on UART1</span></div><div class="line">    <span class="comment">// RT_UART_LinSlave(UART1);                 // set M2 as Lin slave</span></div><div class="line">    <span class="comment">// RT_UART_LinMaster(UART1, NORMAL_BREAK);  // 13-bit break</span></div><div class="line">    <a class="code" href="a00056.html#ab0faf051e642e540b1b9c114eae242bd">RT_UART_LinMaster</a>(<a class="code" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff">UART1</a>, <a class="code" href="a00056.html#a7c76b3ed72795f2085873ee332fdab1b">EXTREME_BREAK</a>);    <span class="comment">// 26-bit break</span></div><div class="line">    <span class="comment">// ATTENTION: When RT_UART_LinMaster is used, a break will be sent automatically.</span></div><div class="line">    <a class="code" href="a00056.html#ad1e6c13693e5ea54a55ce78635617178">RT_UART_LinSendBreak</a>(<a class="code" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff">UART1</a>);                <span class="comment">// Send break again manually.</span></div><div class="line"></div><div class="line">    <span class="comment">// code after Lin sync</span></div><div class="line">    <span class="comment">// ...</span></div><div class="line">}</div></div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.8-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+    <!-- id is needed for treeview function! -->
+    <!-- <ul>
+        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+            <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+    </ul> -->
+    <div class="card">
+        <!-- <div class="card-header"> -->
+            <!-- Quote -->
+        <!-- </div> -->
+        <div class="card-body">
+            <!-- <h5 class="card-title">Special title treatment</h5> -->
+            <p class="card-text d-flex justify-content-between">
+                <a href="#" class="btn btn-primary">Return To Top</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

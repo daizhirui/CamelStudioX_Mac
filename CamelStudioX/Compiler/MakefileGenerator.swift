@@ -71,7 +71,7 @@ class MakefileGenerator {
             }
         }
         
-        fileContent.append(" -lm2core\n")
+        fileContent.append(" -lisr\n")
         
         fileContent.append(
         """

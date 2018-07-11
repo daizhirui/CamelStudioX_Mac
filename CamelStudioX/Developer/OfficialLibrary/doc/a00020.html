@@ -1,0 +1,1023 @@
+<!-- HTML header for doxygen 1.8.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta name="generator" content="Doxygen 1.8.14" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>Camel Library Documentaion: /Users/daizhirui/Development/Camel_Library/release/include/mcu.h File Reference</title>
+    <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
+    <script type="text/javascript" src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script> <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script> 
+    <link href="doxygen.css" rel="stylesheet" type="text/css" /> <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="doxy-boot.js"></script>
+    <style>
+        /*a {color: darkblue;}*/
+        container {background-color: white}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- justify-content-end -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active align-self-center">
+                        <a class="navbar-brand" href="#"><img src="cmstudio.png" width="30px">  Camel Library Documentaion    </a>
+                    </li>
+                    <li class="nav-item active align-self-center">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown align-self-center">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Related links</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="files.html">File&nbsp;List</a>
+                            <a class="dropdown-item" href="annotated.html">Data&nbsp;Structure</a>
+                            <a class="dropdown-item" href="classes.html">Data&nbsp;Structure&nbsp;Index</a>
+                            <a class="dropdown-item" href="https://rink.hockeyapp.net/apps/798a2dae49b04400bcadaf69bda80417">CamelStudioX For Mac</a>
+                            <a class="dropdown-item" href="https://github.com/daizhirui/CamelStudio_Library">GitHub Project</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="MSearchBox" class="MSearchBoxInactive justify-content-end">
+                <span class="left">
+                    <img id="MSearchSelect" src="search/mag_sel.png" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" alt="">
+                    <input type="text" id="MSearchField" value="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event)">
+                </span><span class="right">
+                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()" style="display: none;"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""></a>
+                </span>
+            </div>
+        </nav>
+    </div>
+    <div id="top">
+        <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(0)" href="javascript:void(0)"><span class="SelectionMark">•</span>All</a><a class="SelectItem" onclick="searchBox.OnSelectItem(1)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Classes</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(2)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" onclick="searchBox.OnSelectItem(3)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Functions</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(4)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" onclick="searchBox.OnSelectItem(5)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Typedefs</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(6)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" onclick="searchBox.OnSelectItem(7)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerator</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(8)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" onclick="searchBox.OnSelectItem(9)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Modules</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(10)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Pages</a>
+        </div>
+        <div id="MSearchResultsWindow" style="display: none; top: 52px; left: 1221px;">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults"></iframe>
+        </div>
+        <!-- do not remove this div, it is closed by doxygen! -->
+        <div class="content" id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 panel " style="padding-bottom: 15px;">
+                        <div style="margin-bottom: 15px;">
+                            <!-- end header part -->
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00020.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">mcu.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>M2 micro core unit.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ad76d1750a6cdeebd506bfcd6752554d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="separator:ad76d1750a6cdeebd506bfcd6752554d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e413f6725b2ba32d165ffaa35b01e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="separator:a29e413f6725b2ba32d165ffaa35b01e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abda90eda34a640b130f48a6ade23fe22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#abda90eda34a640b130f48a6ade23fe22">RAISE_TRIGGER</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="separator:abda90eda34a640b130f48a6ade23fe22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bbaf5b9e2125c7597249c7113b20e6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a9bbaf5b9e2125c7597249c7113b20e6c">FALL_TRIGGER</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="separator:a9bbaf5b9e2125c7597249c7113b20e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d484dc15bdf30ee11ab3b05f31f0e16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(addr)&#160;&#160;&#160;(*(volatile uint32_t*)(addr))</td></tr>
+<tr class="memdesc:a2d484dc15bdf30ee11ab3b05f31f0e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 32-bit data from a specific address.  <a href="#a2d484dc15bdf30ee11ab3b05f31f0e16">More...</a><br /></td></tr>
+<tr class="separator:a2d484dc15bdf30ee11ab3b05f31f0e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b9732365b12e48ddb89fe1028b975b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(addr,  val)&#160;&#160;&#160;*(volatile uint32_t*)(addr)=(val)</td></tr>
+<tr class="memdesc:a6b9732365b12e48ddb89fe1028b975b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 32-bit data to a specific address.  <a href="#a6b9732365b12e48ddb89fe1028b975b0">More...</a><br /></td></tr>
+<tr class="separator:a6b9732365b12e48ddb89fe1028b975b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27874a97deab7cecdde5ddecf466e31e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(addr,  val)&#160;&#160;&#160;(*(volatile uint32_t*)(addr)|=(val))</td></tr>
+<tr class="memdesc:a27874a97deab7cecdde5ddecf466e31e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical OR operation on 32-bit data at a specific address.  <a href="#a27874a97deab7cecdde5ddecf466e31e">More...</a><br /></td></tr>
+<tr class="separator:a27874a97deab7cecdde5ddecf466e31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad87cedffcaadc51db22594fce55173d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(addr,  val)&#160;&#160;&#160;(*(volatile uint32_t*)(addr)&amp;=(val))</td></tr>
+<tr class="memdesc:ad87cedffcaadc51db22594fce55173d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical addrND operation on 32-bit data from a specific address.  <a href="#ad87cedffcaadc51db22594fce55173d4">More...</a><br /></td></tr>
+<tr class="separator:ad87cedffcaadc51db22594fce55173d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc530c7e6b49b0ca97c1ad9dac1c4750"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#afc530c7e6b49b0ca97c1ad9dac1c4750">MemoryBitAt</a>(addr,  val)&#160;&#160;&#160;((*(volatile uint32_t*)(addr)&amp;=(1&lt;&lt;(val)))&gt;&gt;(val))</td></tr>
+<tr class="memdesc:afc530c7e6b49b0ca97c1ad9dac1c4750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific bit of a 32-bit data from a specific address.  <a href="#afc530c7e6b49b0ca97c1ad9dac1c4750">More...</a><br /></td></tr>
+<tr class="separator:afc530c7e6b49b0ca97c1ad9dac1c4750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99a602346038b54068758ef00c42d1b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a99a602346038b54068758ef00c42d1b6">MemoryBitOn</a>(addr,  val)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(addr,1&lt;&lt;(val))</td></tr>
+<tr class="memdesc:a99a602346038b54068758ef00c42d1b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a specific bit of a 32-bit data from a specific address to 1.  <a href="#a99a602346038b54068758ef00c42d1b6">More...</a><br /></td></tr>
+<tr class="separator:a99a602346038b54068758ef00c42d1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c34919a950117ae7da2dc5a235622b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a04c34919a950117ae7da2dc5a235622b">MemoryBitOff</a>(addr,  val)&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(addr,~(1&lt;&lt;(val)))</td></tr>
+<tr class="memdesc:a04c34919a950117ae7da2dc5a235622b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a specific bit of a 32-bit data from a specific address to 0.  <a href="#a04c34919a950117ae7da2dc5a235622b">More...</a><br /></td></tr>
+<tr class="separator:a04c34919a950117ae7da2dc5a235622b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49e41753dbce64185d380d307ade78d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ae49e41753dbce64185d380d307ade78d">MemoryBitSwitch</a>(addr,  val)&#160;&#160;&#160;(*(volatile uint32_t*)(addr)^=(1&lt;&lt;(val)))</td></tr>
+<tr class="memdesc:ae49e41753dbce64185d380d307ade78d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a specific bit of a 32-bit data from a specific address to opposite state.  <a href="#ae49e41753dbce64185d380d307ade78d">More...</a><br /></td></tr>
+<tr class="separator:ae49e41753dbce64185d380d307ade78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a3d987633d7a3ca10c14905a807b62eb1"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a3d987633d7a3ca10c14905a807b62eb1">FuncPtr</a>) (void)</td></tr>
+<tr class="separator:a3d987633d7a3ca10c14905a807b62eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0891965816a5b721b07f7bebefaf7430"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a0891965816a5b721b07f7bebefaf7430">FuncPtr1</a>) (uint32_t)</td></tr>
+<tr class="separator:a0891965816a5b721b07f7bebefaf7430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331a88eeefe11112bb8fe1b43dd777b8"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a331a88eeefe11112bb8fe1b43dd777b8">FuncPtr2</a>) (uint32_t, uint32_t)</td></tr>
+<tr class="separator:a331a88eeefe11112bb8fe1b43dd777b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ab43e533f3793920486fb81c580f71564"><td class="memItemLeft" align="right" valign="top"><a id="ab43e533f3793920486fb81c580f71564"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>switch_t</b> { <b>ON</b> = 0x1, 
+<b>OFF</b> = 0x0
+ }</td></tr>
+<tr class="separator:ab43e533f3793920486fb81c580f71564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ecccde27f29cedbe9bc6a22e3aad16f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a4ecccde27f29cedbe9bc6a22e3aad16f">KERNAL_INTERRUPT</a> { <a class="el" href="a00020.html#a4ecccde27f29cedbe9bc6a22e3aad16fa2c882d4b03fdd083b40f2807ea7c0bf2">USER_INT</a> = (uint32_t)0x01001FFC, 
+<a class="el" href="a00020.html#a4ecccde27f29cedbe9bc6a22e3aad16fa2a5bd1194e8dba9ee7ed1d1039942739">PC_LOC</a> = (uint32_t)0x01001FF8, 
+<a class="el" href="a00020.html#a4ecccde27f29cedbe9bc6a22e3aad16fa529ec3035e124aebce1fd8b0a0b7c408">INT_COUNT</a> = (uint32_t)0x01001FF4
+ }</td></tr>
+<tr class="separator:a4ecccde27f29cedbe9bc6a22e3aad16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adadaa0ab1ebbd7ba9b70dfd24c3ed44d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44d">M2_EXTERNAL_REG</a> { <br />
+&#160;&#160;<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5">SYS_CTL0_REG</a> = (uint32_t)0x1f800700, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da7dd70f67b5962a7974603376399afb49">SYS_CTL2_REG</a> = (uint32_t)0x1f800702, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da9c4ce03a199984a23165617318767eca">SYS_IRQ_REG</a> = (uint32_t)0x1f800707, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da417bb62509b1343f4685a023c8ec4b09">INT_CTL0_REG</a> = (uint32_t)0x1f800500, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc5f0d33bb47527f3d8a9c20250d5c5b">INT_CTL1_REG</a> = (uint32_t)0x1f800501, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dafba45e74edabe7b9fd6d0c36e8492bcd">INT_CTL2_REG</a> = (uint32_t)0x1f800502, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da33cabaff7369092ec0e29dd2ffb0cb3d">INT_CLR_REG</a> = (uint32_t)0x1f800503, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da744e0b80c93cc5242d28ebff68af035c">UART0_READ_REG</a> = (uint32_t)0x1f800000, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf27c578db5f1c598bc68d35594c46c3b">UART0_BUSY_REG</a> = (uint32_t)0x1f800001, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daa28fa5d3d15be1e18c88f0a9b49ae354">UART0_WRITE_REG</a> = (uint32_t)0x1f800002, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dae600bdbea9d783e73b98dfd4f0bfa22c">UART0_IRQ_ACK_REG</a> = (uint32_t)0x1f800003, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab46484503c27cdfdacd27c42e56d734e">UART0_CTL_REG</a> = (uint32_t)0x1f800004, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daddbf0424b34467727095fd485368539f">UART0_DATA_RDY_REG</a> = (uint32_t)0x1f800005, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da69d448f38cd5d7af00eeb4028fd85278">UART0_LIN_BREAK_REG</a> = (uint32_t)0x1f800006, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da0a2dc1266e40d64afec2e365629ec5a8">UART0_BRP_REG</a> = (uint32_t)0x1f800007, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da3e17c3b68a2da78b68a7ee3ebc9f2ed3">UART1_READ_REG</a> = (uint32_t)0x1f800800, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da4f51ce223b69a742a6ea6235bbaed115">UART1_BUSY_REG</a> = (uint32_t)0x1f800801, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da80f7501c68809d7b6688c150c7b7eca6">UART1_WRITE_REG</a> = (uint32_t)0x1f800802, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da183266487e95910e93d82f505a6e1999">UART1_IRQ_ACK_REG</a> = (uint32_t)0x1f800803, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dad12ffc8607a04d98e1926c7fdaebf424">UART1_CTL_REG</a> = (uint32_t)0x1f800804, 
+<br />
+&#160;&#160;<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dae9ec65704ae72f3decc61aba5354425b">UART1_DATA_RDY_REG</a> = (uint32_t)0x1f800805, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da827a2b1f5ea5bfe4f6d0e37f474e4269">UART1_LIN_BREAK_REG</a> = (uint32_t)0x1f800806, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da91f19cac907baa4a3578702d31790706">UART1_BRP_REG</a> = (uint32_t)0x1f800807, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab0b73430c96c50b3d64bba4ddd4a5dce">SPI_READ_REG</a> = (uint32_t)0x1f800d00, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da2c1d161fe3c119cda59515c9934565be">SPI_BUSY_REG</a> = (uint32_t)0x1f800d01, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da7ba51faa410f67aa26265d946e53dcfd">SPI_WRITE_REG</a> = (uint32_t)0x1f800d02, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da13987c84f71b7a0ccd7e9e5360391e99">SPI_IRQ_ACK_REG</a> = (uint32_t)0x1f800d03, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daca8d646ede65fc2ccdd0442b78e5de83">SPI_CTL_REG</a> = (uint32_t)0x1f800d04, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf4cfc6f69d1f1c1f9493b1cfbc17323c">SPI_DATA_RDY_REG</a> = (uint32_t)0x1f800d05, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da81072e84e040f3ee8c531655c60e325d">SYS_GDR_REG</a> = (uint32_t)0x1f800703, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da835280d31e2f3f5bc44bb1eb58024d80">SYS_IOCTL_REG</a> = (uint32_t)0x1f800704, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc4ad11c216d218134b37833679bab11">SYS_GPIO0_REG</a> = (uint32_t)0x1f800705, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da394e80146590b4c461618c0c8ba298a9">SYS_GPIO1_REG</a> = (uint32_t)0x1f800706, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e">T0_CTL0_REG</a> = (uint32_t)0x1f800100, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da7b512fe986ef45d3f84daa6bf6733200">T0_REF_REG</a> = (uint32_t)0x1f800101, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6bfc1cf6a584321dfac7d842bab4f7d4">T0_READ_REG</a> = (uint32_t)0x1f800102, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da605de2dfe6755d8f8fad197c5f407167">T0_CLRIRQ_REG</a> = (uint32_t)0x1f800103, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da944380f6d792e04a4c2e84dc668581a3">T0_CLK_REG</a> = (uint32_t)0x1f800104, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da420bf6168c45c07b5b47903f3409acc7">T0_CLRCNT_REG</a> = (uint32_t)0x1f800105, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a> = (uint32_t)0x1f800200, 
+<br />
+&#160;&#160;<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da">T1_REF_REG</a> = (uint32_t)0x1f800201, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da317e9d68df901e9bb407bddbc2ced61b">T1_READ_REG</a> = (uint32_t)0x1f800202, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf10911af3fb19f6d248097500d6ab3cd">T1_CLRIRQ_REG</a> = (uint32_t)0x1f800203, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dad4c8dc76a3496583d94443a52d7c5606">T1_CLK_REG</a> = (uint32_t)0x1f800204, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da8d9e7af787d31f28782260c199cc8bd5">T1_CLRCNT_REG</a> = (uint32_t)0x1f800205, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf2e9deb36631241181cbf09e8d959475">T2_CTL0_REG</a> = (uint32_t)0x1f800400, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da840de759e5083c864ed1c57dad568251">T2_REF_REG</a> = (uint32_t)0x1f800401, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da2ce860fb68efa5daaac3e07dd534dd54">T2_READ_REG</a> = (uint32_t)0x1f800402, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da505b90f4de2b8b5b23d7154861265863">T2_CLRIRQ_REG</a> = (uint32_t)0x1f800403, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab67d86aa158825e559813e0df3f74cc6">T2_CLK_REG</a> = (uint32_t)0x1f800404, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da9b4ab7bd6ab1e6514a439bd0056fb099">T2_CLRCNT_REG</a> = (uint32_t)0x1f800405, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da0e4e92920a475b537196369ae8274e7e">T2_PHASE_REG</a> = (uint32_t)0x1f800406, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dafd9396894f78b2346881d9f21f33ddac">T4_CTL0_REG</a> = (uint32_t)0x1f800a00, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf3defc137aefe85b83bf5a60ce3aa500">T4_REF0_REG</a> = (uint32_t)0x1f800a01, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da823ff62ae93ababd0e40840c75bcea22">T4_CLK0_REG</a> = (uint32_t)0x1f800a02, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da95c58fa920043643bf6860a4901d617a">T4_REF1_REG</a> = (uint32_t)0x1f800a03, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dac2903974c7bce2ee41ec919d76393952">T4_CLK1_REG</a> = (uint32_t)0x1f800a04, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a> = (uint32_t)0x1f800600, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a> = (uint32_t)0x1f800601, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dacb460996f05b78aea23f3fa2722cc548">AD_READ_REG</a> = (uint32_t)0x1f800602, 
+<br />
+&#160;&#160;<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da03a55605f114ad34a5768f096cec3d9d">AD_CLR_REG</a> = (uint32_t)0x1f800603, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da77e003aedc8fe70bc48b6ddd38033080">LCD_CTL0_REG</a> = (uint32_t)0x1f800300, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da315bb739346889cfc0eb2ec89096b842">LCD_RAM_REG</a> = (uint32_t)0x1f800380, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dac108471ba346ec94645fb57f1f55162c">LCD_RAM_LINE0</a> = (uint32_t)0x1f800380, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da9637d64359f6c0fe921c7e0918e5fbcf">LCD_RAM_LINE1</a> = (uint32_t)0x1f800384, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da518df685b2b96a604a1f035be4b94cb0">LCD_RAM_LINE2</a> = (uint32_t)0x1f800388, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da20958f68fcfbeb67683a7c72ff2adc74">LCD_RAM_LINE3</a> = (uint32_t)0x1f80038c, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dad29dfaec986c68d5a49517de7f268504">WDT_CTL0_REG</a> = (uint32_t)0x1f800b00, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabca167e95871e42fa1108c2fd2cae6b3">WDT_CLR_REG</a> = (uint32_t)0x1f800b03, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da91e0f7299a076e5fae19c026a579e1bb">WDT_READ_REG</a> = (uint32_t)0x1f800b02, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dac218ded0714563f03f40814bf16da7c7">RTC_CTL_REG</a> = (uint32_t)0x1f800f00, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf375f171cb828ab3d87d45724750256d">RTC_TIME_REG</a> = (uint32_t)0x1f800f01, 
+<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc51699db6321ee7f233162735869f70">RTC_CLR_REG</a> = (uint32_t)0x1f800f03
+<br />
+ }</td></tr>
+<tr class="separator:adadaa0ab1ebbd7ba9b70dfd24c3ed44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a2d501b8662e11b969fb4a5e195e5b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ae3a2d501b8662e11b969fb4a5e195e5b">SYS_CLK</a> { <a class="el" href="a00020.html#ae3a2d501b8662e11b969fb4a5e195e5baaac7754daa9ff2db35951f3539495122">SYS_CLK_3M</a> = (0x0&lt;&lt;12), 
+<a class="el" href="a00020.html#ae3a2d501b8662e11b969fb4a5e195e5bad1640aa8c46162a7551abca12293ef39">SYS_CLK_6M</a> = (0x1&lt;&lt;12), 
+<a class="el" href="a00020.html#ae3a2d501b8662e11b969fb4a5e195e5ba6c646c9a1e4c38ef0af6d576eacfb401">SYS_CLK_12M</a> = (0x3&lt;&lt;12)
+ }</td></tr>
+<tr class="separator:ae3a2d501b8662e11b969fb4a5e195e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa106e3c9181a65a83156bda31f4f61e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#aa106e3c9181a65a83156bda31f4f61e9">RT_MCU_JumpTo</a> (unsigned long address)</td></tr>
+<tr class="memdesc:aa106e3c9181a65a83156bda31f4f61e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jump to a specific address.  <a href="#aa106e3c9181a65a83156bda31f4f61e9">More...</a><br /></td></tr>
+<tr class="separator:aa106e3c9181a65a83156bda31f4f61e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e578ce669735935a1d505c0edf98221"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a1e578ce669735935a1d505c0edf98221">RT_MCU_SetSystemClock</a> (uint32_t mode)</td></tr>
+<tr class="memdesc:a1e578ce669735935a1d505c0edf98221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frequency of the system clock.  <a href="#a1e578ce669735935a1d505c0edf98221">More...</a><br /></td></tr>
+<tr class="separator:a1e578ce669735935a1d505c0edf98221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad514417aa2e5a5d061a5eabeceae20c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ad514417aa2e5a5d061a5eabeceae20c6">RT_Sram_Clear</a> ()</td></tr>
+<tr class="memdesc:ad514417aa2e5a5d061a5eabeceae20c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is to clear the former 7K-byte sram.  <a href="#ad514417aa2e5a5d061a5eabeceae20c6">More...</a><br /></td></tr>
+<tr class="separator:ad514417aa2e5a5d061a5eabeceae20c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>M2 micro core unit. </p>
+<dl class="section author"><dt>Author</dt><dd>Zhirui Dai </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2018-05-25 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a9bbaf5b9e2125c7597249c7113b20e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bbaf5b9e2125c7597249c7113b20e6c">&#9670;&nbsp;</a></span>FALL_TRIGGER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FALL_TRIGGER&#160;&#160;&#160;0x0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword FALL_TRIGGER. </p>
+
+</div>
+</div>
+<a id="ad87cedffcaadc51db22594fce55173d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad87cedffcaadc51db22594fce55173d4">&#9670;&nbsp;</a></span>MemoryAnd32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MemoryAnd32</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">addr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(*(volatile uint32_t*)(addr)&amp;=(val))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Logical addrND operation on 32-bit data from a specific address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>the address to be AND </td></tr>
+    <tr><td class="paramname">val</td><td>the AND mask </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="afc530c7e6b49b0ca97c1ad9dac1c4750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc530c7e6b49b0ca97c1ad9dac1c4750">&#9670;&nbsp;</a></span>MemoryBitAt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MemoryBitAt</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">addr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((*(volatile uint32_t*)(addr)&amp;=(1&lt;&lt;(val)))&gt;&gt;(val))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a specific bit of a 32-bit data from a specific address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>the address </td></tr>
+    <tr><td class="paramname">val</td><td>the bit location (in the 32-bit data) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>long the bit </dd></dl>
+
+</div>
+</div>
+<a id="a04c34919a950117ae7da2dc5a235622b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04c34919a950117ae7da2dc5a235622b">&#9670;&nbsp;</a></span>MemoryBitOff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MemoryBitOff</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">addr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(addr,~(1&lt;&lt;(val)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a specific bit of a 32-bit data from a specific address to 0. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>the address </td></tr>
+    <tr><td class="paramname">val</td><td>the bit location (in the 32-bit data) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a99a602346038b54068758ef00c42d1b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99a602346038b54068758ef00c42d1b6">&#9670;&nbsp;</a></span>MemoryBitOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MemoryBitOn</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">addr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(addr,1&lt;&lt;(val))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a specific bit of a 32-bit data from a specific address to 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>the address </td></tr>
+    <tr><td class="paramname">val</td><td>the bit location (in the 32-bit data) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ae49e41753dbce64185d380d307ade78d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae49e41753dbce64185d380d307ade78d">&#9670;&nbsp;</a></span>MemoryBitSwitch</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MemoryBitSwitch</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">addr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(*(volatile uint32_t*)(addr)^=(1&lt;&lt;(val)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a specific bit of a 32-bit data from a specific address to opposite state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>the address </td></tr>
+    <tr><td class="paramname">val</td><td>the bit location (in the 32-bit data) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a27874a97deab7cecdde5ddecf466e31e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27874a97deab7cecdde5ddecf466e31e">&#9670;&nbsp;</a></span>MemoryOr32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MemoryOr32</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">addr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(*(volatile uint32_t*)(addr)|=(val))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Logical OR operation on 32-bit data at a specific address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>the address to be OR </td></tr>
+    <tr><td class="paramname">val</td><td>the OR mask </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a2d484dc15bdf30ee11ab3b05f31f0e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d484dc15bdf30ee11ab3b05f31f0e16">&#9670;&nbsp;</a></span>MemoryRead32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MemoryRead32</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">addr</td><td>)</td>
+          <td>&#160;&#160;&#160;(*(volatile uint32_t*)(addr))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read 32-bit data from a specific address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>the address to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>long the read value </dd></dl>
+
+</div>
+</div>
+<a id="a6b9732365b12e48ddb89fe1028b975b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b9732365b12e48ddb89fe1028b975b0">&#9670;&nbsp;</a></span>MemoryWrite32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MemoryWrite32</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">addr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;*(volatile uint32_t*)(addr)=(val)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write 32-bit data to a specific address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>the address to write </td></tr>
+    <tr><td class="paramname">val</td><td>the value to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a29e413f6725b2ba32d165ffaa35b01e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29e413f6725b2ba32d165ffaa35b01e5">&#9670;&nbsp;</a></span>OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OFF&#160;&#160;&#160;0x0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword OFF. </p>
+
+</div>
+</div>
+<a id="ad76d1750a6cdeebd506bfcd6752554d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad76d1750a6cdeebd506bfcd6752554d2">&#9670;&nbsp;</a></span>ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ON&#160;&#160;&#160;0x1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword ON. </p>
+
+</div>
+</div>
+<a id="abda90eda34a640b130f48a6ade23fe22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abda90eda34a640b130f48a6ade23fe22">&#9670;&nbsp;</a></span>RAISE_TRIGGER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RAISE_TRIGGER&#160;&#160;&#160;0x1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword RAISE_TRIGGER. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a3d987633d7a3ca10c14905a807b62eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d987633d7a3ca10c14905a807b62eb1">&#9670;&nbsp;</a></span>FuncPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* FuncPtr) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function pointer type (void)-&gt;void definition. </p>
+
+</div>
+</div>
+<a id="a0891965816a5b721b07f7bebefaf7430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0891965816a5b721b07f7bebefaf7430">&#9670;&nbsp;</a></span>FuncPtr1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* FuncPtr1) (uint32_t)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function pointer type (uint32_t)-&gt;void definition. </p>
+
+</div>
+</div>
+<a id="a331a88eeefe11112bb8fe1b43dd777b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331a88eeefe11112bb8fe1b43dd777b8">&#9670;&nbsp;</a></span>FuncPtr2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* FuncPtr2) (uint32_t, uint32_t)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function pointer type (uint32_t, uint32_t)-&gt;void definition. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a4ecccde27f29cedbe9bc6a22e3aad16f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ecccde27f29cedbe9bc6a22e3aad16f">&#9670;&nbsp;</a></span>KERNAL_INTERRUPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00020.html#a4ecccde27f29cedbe9bc6a22e3aad16f">KERNAL_INTERRUPT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Addresses for kernal interrupt process. These are not needed in user code. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4ecccde27f29cedbe9bc6a22e3aad16fa2c882d4b03fdd083b40f2807ea7c0bf2"></a>USER_INT&#160;</td><td class="fielddoc"><p>interrupt is from user code if [0] is 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4ecccde27f29cedbe9bc6a22e3aad16fa2a5bd1194e8dba9ee7ed1d1039942739"></a>PC_LOC&#160;</td><td class="fielddoc"><p>SRAM address to store current program counter </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4ecccde27f29cedbe9bc6a22e3aad16fa529ec3035e124aebce1fd8b0a0b7c408"></a>INT_COUNT&#160;</td><td class="fielddoc"><p>SRAM address to store current interrupt depth, number of interrupts. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adadaa0ab1ebbd7ba9b70dfd24c3ed44d">&#9670;&nbsp;</a></span>M2_EXTERNAL_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44d">M2_EXTERNAL_REG</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>M2's external registers. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5"></a>SYS_CTL0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da7dd70f67b5962a7974603376399afb49"></a>SYS_CTL2_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da9c4ce03a199984a23165617318767eca"></a>SYS_IRQ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da417bb62509b1343f4685a023c8ec4b09"></a>INT_CTL0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc5f0d33bb47527f3d8a9c20250d5c5b"></a>INT_CTL1_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dafba45e74edabe7b9fd6d0c36e8492bcd"></a>INT_CTL2_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da33cabaff7369092ec0e29dd2ffb0cb3d"></a>INT_CLR_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da744e0b80c93cc5242d28ebff68af035c"></a>UART0_READ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44daf27c578db5f1c598bc68d35594c46c3b"></a>UART0_BUSY_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44daa28fa5d3d15be1e18c88f0a9b49ae354"></a>UART0_WRITE_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dae600bdbea9d783e73b98dfd4f0bfa22c"></a>UART0_IRQ_ACK_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dab46484503c27cdfdacd27c42e56d734e"></a>UART0_CTL_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44daddbf0424b34467727095fd485368539f"></a>UART0_DATA_RDY_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da69d448f38cd5d7af00eeb4028fd85278"></a>UART0_LIN_BREAK_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da0a2dc1266e40d64afec2e365629ec5a8"></a>UART0_BRP_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da3e17c3b68a2da78b68a7ee3ebc9f2ed3"></a>UART1_READ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da4f51ce223b69a742a6ea6235bbaed115"></a>UART1_BUSY_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da80f7501c68809d7b6688c150c7b7eca6"></a>UART1_WRITE_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da183266487e95910e93d82f505a6e1999"></a>UART1_IRQ_ACK_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dad12ffc8607a04d98e1926c7fdaebf424"></a>UART1_CTL_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dae9ec65704ae72f3decc61aba5354425b"></a>UART1_DATA_RDY_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da827a2b1f5ea5bfe4f6d0e37f474e4269"></a>UART1_LIN_BREAK_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da91f19cac907baa4a3578702d31790706"></a>UART1_BRP_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dab0b73430c96c50b3d64bba4ddd4a5dce"></a>SPI_READ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da2c1d161fe3c119cda59515c9934565be"></a>SPI_BUSY_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da7ba51faa410f67aa26265d946e53dcfd"></a>SPI_WRITE_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da13987c84f71b7a0ccd7e9e5360391e99"></a>SPI_IRQ_ACK_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44daca8d646ede65fc2ccdd0442b78e5de83"></a>SPI_CTL_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44daf4cfc6f69d1f1c1f9493b1cfbc17323c"></a>SPI_DATA_RDY_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da81072e84e040f3ee8c531655c60e325d"></a>SYS_GDR_REG&#160;</td><td class="fielddoc"><p>GDR register. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da835280d31e2f3f5bc44bb1eb58024d80"></a>SYS_IOCTL_REG&#160;</td><td class="fielddoc"><p>GPIO mode control register(16-bit). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc4ad11c216d218134b37833679bab11"></a>SYS_GPIO0_REG&#160;</td><td class="fielddoc"><p>GPIO output control register(16-bit). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da394e80146590b4c461618c0c8ba298a9"></a>SYS_GPIO1_REG&#160;</td><td class="fielddoc"><p>GPIO input value register(16-bit). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e"></a>T0_CTL0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da7b512fe986ef45d3f84daa6bf6733200"></a>T0_REF_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da6bfc1cf6a584321dfac7d842bab4f7d4"></a>T0_READ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da605de2dfe6755d8f8fad197c5f407167"></a>T0_CLRIRQ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da944380f6d792e04a4c2e84dc668581a3"></a>T0_CLK_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da420bf6168c45c07b5b47903f3409acc7"></a>T0_CLRCNT_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e"></a>T1_CTL0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dab7bb28fcf87a9c631bc17c016065c2da"></a>T1_REF_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da317e9d68df901e9bb407bddbc2ced61b"></a>T1_READ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44daf10911af3fb19f6d248097500d6ab3cd"></a>T1_CLRIRQ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dad4c8dc76a3496583d94443a52d7c5606"></a>T1_CLK_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da8d9e7af787d31f28782260c199cc8bd5"></a>T1_CLRCNT_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44daf2e9deb36631241181cbf09e8d959475"></a>T2_CTL0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da840de759e5083c864ed1c57dad568251"></a>T2_REF_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da2ce860fb68efa5daaac3e07dd534dd54"></a>T2_READ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da505b90f4de2b8b5b23d7154861265863"></a>T2_CLRIRQ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dab67d86aa158825e559813e0df3f74cc6"></a>T2_CLK_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da9b4ab7bd6ab1e6514a439bd0056fb099"></a>T2_CLRCNT_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da0e4e92920a475b537196369ae8274e7e"></a>T2_PHASE_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dafd9396894f78b2346881d9f21f33ddac"></a>T4_CTL0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44daf3defc137aefe85b83bf5a60ce3aa500"></a>T4_REF0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da823ff62ae93ababd0e40840c75bcea22"></a>T4_CLK0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da95c58fa920043643bf6860a4901d617a"></a>T4_REF1_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dac2903974c7bce2ee41ec919d76393952"></a>T4_CLK1_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4"></a>AD_CTL0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e"></a>AD_OPO_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dacb460996f05b78aea23f3fa2722cc548"></a>AD_READ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da03a55605f114ad34a5768f096cec3d9d"></a>AD_CLR_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da77e003aedc8fe70bc48b6ddd38033080"></a>LCD_CTL0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da315bb739346889cfc0eb2ec89096b842"></a>LCD_RAM_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dac108471ba346ec94645fb57f1f55162c"></a>LCD_RAM_LINE0&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da9637d64359f6c0fe921c7e0918e5fbcf"></a>LCD_RAM_LINE1&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da518df685b2b96a604a1f035be4b94cb0"></a>LCD_RAM_LINE2&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da20958f68fcfbeb67683a7c72ff2adc74"></a>LCD_RAM_LINE3&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dad29dfaec986c68d5a49517de7f268504"></a>WDT_CTL0_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dabca167e95871e42fa1108c2fd2cae6b3"></a>WDT_CLR_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44da91e0f7299a076e5fae19c026a579e1bb"></a>WDT_READ_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dac218ded0714563f03f40814bf16da7c7"></a>RTC_CTL_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44daf375f171cb828ab3d87d45724750256d"></a>RTC_TIME_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc51699db6321ee7f233162735869f70"></a>RTC_CLR_REG&#160;</td><td class="fielddoc"><p>External register address. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ae3a2d501b8662e11b969fb4a5e195e5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a2d501b8662e11b969fb4a5e195e5b">&#9670;&nbsp;</a></span>SYS_CLK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00020.html#ae3a2d501b8662e11b969fb4a5e195e5b">SYS_CLK</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword for setting the system clock frequency. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae3a2d501b8662e11b969fb4a5e195e5baaac7754daa9ff2db35951f3539495122"></a>SYS_CLK_3M&#160;</td><td class="fielddoc"><p>Set the system clock frequency at 3 MHz. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae3a2d501b8662e11b969fb4a5e195e5bad1640aa8c46162a7551abca12293ef39"></a>SYS_CLK_6M&#160;</td><td class="fielddoc"><p>Set the system clock frequency at 6 MHz. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae3a2d501b8662e11b969fb4a5e195e5ba6c646c9a1e4c38ef0af6d576eacfb401"></a>SYS_CLK_12M&#160;</td><td class="fielddoc"><p>Set the system clock frequency at 12 MHz. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aa106e3c9181a65a83156bda31f4f61e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa106e3c9181a65a83156bda31f4f61e9">&#9670;&nbsp;</a></span>RT_MCU_JumpTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RT_MCU_JumpTo </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Jump to a specific address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>the address to jump </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>When this function is used, returning to the position where this function is used is impossible. By using RT_MCU_JumpTo, we can make a soft reset. For example, if the entrance address of the program is 0x10000000, it is: <div class="fragment"><div class="line"><a class="code" href="a00020.html#aa106e3c9181a65a83156bda31f4f61e9">RT_MCU_JumpTo</a>(0x10000000);</div></div><!-- fragment --> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a1e578ce669735935a1d505c0edf98221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e578ce669735935a1d505c0edf98221">&#9670;&nbsp;</a></span>RT_MCU_SetSystemClock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RT_MCU_SetSystemClock </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the frequency of the system clock. </p>
+<dl class="section note"><dt>Note</dt><dd>This is used in UART to adjust the baudrate. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>The frequency of system clock to set. Optional value: <a class="el" href="a00020.html#ae3a2d501b8662e11b969fb4a5e195e5baaac7754daa9ff2db35951f3539495122">SYS_CLK_3M</a>, <a class="el" href="a00020.html#ae3a2d501b8662e11b969fb4a5e195e5bad1640aa8c46162a7551abca12293ef39">SYS_CLK_6M</a>, <a class="el" href="a00020.html#ae3a2d501b8662e11b969fb4a5e195e5ba6c646c9a1e4c38ef0af6d576eacfb401">SYS_CLK_12M</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ad514417aa2e5a5d061a5eabeceae20c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad514417aa2e5a5d061a5eabeceae20c6">&#9670;&nbsp;</a></span>RT_Sram_Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RT_Sram_Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function is to clear the former 7K-byte sram. </p>
+<dl class="section warning"><dt>Warning</dt><dd>To avoid possible influence on the stack, this function only clear the former 7K bytes. When it is in interrupt, this function is not recommended because some important data is stored in the sram for the later state recover from the interrupt. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.8-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+    <!-- id is needed for treeview function! -->
+    <!-- <ul>
+        <li class="navelem"><a class="el" href="dir_9c8c494a5e1ae1f33037b0e9d49f06c7.html">release</a></li><li class="navelem"><a class="el" href="dir_42743c43973611cb0b05144d150e48a5.html">include</a></li><li class="navelem"><a class="el" href="a00020.html">mcu.h</a></li>
+        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+            <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+    </ul> -->
+    <div class="card">
+        <!-- <div class="card-header"> -->
+            <!-- Quote -->
+        <!-- </div> -->
+        <div class="card-body">
+            <!-- <h5 class="card-title">Special title treatment</h5> -->
+            <p class="card-text d-flex justify-content-between">
+                <a href="#" class="btn btn-primary">Return To Top</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

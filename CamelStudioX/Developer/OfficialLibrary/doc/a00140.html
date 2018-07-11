@@ -1,0 +1,190 @@
+<!-- HTML header for doxygen 1.8.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta name="generator" content="Doxygen 1.8.14" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>Camel Library Documentaion: Data Encryption Standard (DES) Library for M2</title>
+    <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
+    <script type="text/javascript" src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script> <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script> 
+    <link href="doxygen.css" rel="stylesheet" type="text/css" /> <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="doxy-boot.js"></script>
+    <style>
+        /*a {color: darkblue;}*/
+        container {background-color: white}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- justify-content-end -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active align-self-center">
+                        <a class="navbar-brand" href="#"><img src="cmstudio.png" width="30px">  Camel Library Documentaion    </a>
+                    </li>
+                    <li class="nav-item active align-self-center">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown align-self-center">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Related links</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="files.html">File&nbsp;List</a>
+                            <a class="dropdown-item" href="annotated.html">Data&nbsp;Structure</a>
+                            <a class="dropdown-item" href="classes.html">Data&nbsp;Structure&nbsp;Index</a>
+                            <a class="dropdown-item" href="https://rink.hockeyapp.net/apps/798a2dae49b04400bcadaf69bda80417">CamelStudioX For Mac</a>
+                            <a class="dropdown-item" href="https://github.com/daizhirui/CamelStudio_Library">GitHub Project</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="MSearchBox" class="MSearchBoxInactive justify-content-end">
+                <span class="left">
+                    <img id="MSearchSelect" src="search/mag_sel.png" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" alt="">
+                    <input type="text" id="MSearchField" value="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event)">
+                </span><span class="right">
+                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()" style="display: none;"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""></a>
+                </span>
+            </div>
+        </nav>
+    </div>
+    <div id="top">
+        <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(0)" href="javascript:void(0)"><span class="SelectionMark">•</span>All</a><a class="SelectItem" onclick="searchBox.OnSelectItem(1)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Classes</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(2)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" onclick="searchBox.OnSelectItem(3)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Functions</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(4)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" onclick="searchBox.OnSelectItem(5)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Typedefs</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(6)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" onclick="searchBox.OnSelectItem(7)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerator</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(8)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" onclick="searchBox.OnSelectItem(9)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Modules</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(10)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Pages</a>
+        </div>
+        <div id="MSearchResultsWindow" style="display: none; top: 52px; left: 1221px;">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults"></iframe>
+        </div>
+        <!-- do not remove this div, it is closed by doxygen! -->
+        <div class="content" id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 panel " style="padding-bottom: 15px;">
+                        <div style="margin-bottom: 15px;">
+                            <!-- end header part -->
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00140.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Data Encryption Standard (DES) Library for M2 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Since M2 is a 32-bit chip, some special measurements should be used in the implementation.</p>
+<p>To use this library, please include <code><a class="el" href="a00005.html" title="Data Encryption Standard Library for M2. ">DES.h</a></code>.</p>
+<h2>Data Structure</h2>
+<h3>1. <a class="el" href="a00134.html" title="Type for storing key to be used by DES Algorithm. ">DES_Key</a></h3>
+<p>This is a data structure defined by union. <a class="el" href="a00134.html#a48b5dadf7decf3076826072563041f1b" title="64-bit key. ">DES_Key.key</a> is a 64-bit value. <a class="el" href="a00134.html#a3e14395e8ac22e9e775a243041daaeeb" title="two 32-bit key. apart[1] is high 32 bits, apart[0] is low 32 bits. ">DES_Key.apart</a> is a 2*32-bit array.</p>
+<p>To prepare a key for DES algorithm, declare an <a class="el" href="a00134.html" title="Type for storing key to be used by DES Algorithm. ">DES_Key</a> at first.</p>
+<div class="fragment"><div class="line"><a class="code" href="a00134.html">DES_Key</a> originalKey;</div></div><!-- fragment --><p>Then store high 32 bits and low 32 bits respectively.</p>
+<div class="fragment"><div class="line">originalKey.<a class="code" href="a00134.html#a3e14395e8ac22e9e775a243041daaeeb">apart</a>[1] = &lt;#high32OfKey#&gt;;</div><div class="line">originalKey.<a class="code" href="a00134.html#a3e14395e8ac22e9e775a243041daaeeb">apart</a>[0] = &lt;#low32OfKey#&gt;;</div></div><!-- fragment --><h3>2. <a class="el" href="a00138.html" title="Type for storing data to be processed by DES Algorithm. ">MessageData</a></h3>
+<p>This is a data structure for storing data to encrypt or decrypt.</p>
+<p><a class="el" href="a00138.html#a2cf9dd28d0679205048930fe98fa116b" title="64-bit key. ">MessageData.data</a> is a 64-bit value. <a class="el" href="a00138.html#a43406dd2e72f1230b8f70551a96699c5" title="two 32-bit keys. apart[1] is high 32 bits, apart[0] is low 32 bits. ">MessageData.apart</a> is a 2*32-bit array. <a class="el" href="a00138.html#aaceaebf6f0349dae52e2c1c2a462b654" title="eight 8-bit keys. ">MessageData.bytes</a> is an 8*8-bit array.</p>
+<p>To prepare a <a class="el" href="a00138.html" title="Type for storing data to be processed by DES Algorithm. ">MessageData</a> for DES algorithm, the operation is similar to <a class="el" href="a00134.html" title="Type for storing key to be used by DES Algorithm. ">DES_Key</a>'s.</p>
+<p>You can load data byte by byte or uint32_t by uint32_t.</p>
+<h2>Interface</h2>
+<h3>1. DES_generateSubKeys</h3>
+<p>Generate 16 subKeys with a provided original key.</p>
+<h4>Definition</h4>
+<div class="fragment"><div class="line"><a class="code" href="a00134.html">DES_Key</a>* DES_generateSubKeys(<span class="keyword">const</span> <a class="code" href="a00134.html">DES_Key</a> originalKey);</div></div><!-- fragment --><h3>2. DES_process</h3>
+<p>Encrypt or decrypt data, require 16 subKeys provided by DES_generateSubKeys. When mode = DES_ENCRYPT_MODE, encrypt data. When DES_DECRYPT_MODE, decrypt data.</p>
+<h4>Definition</h4>
+<div class="fragment"><div class="line"><a class="code" href="a00138.html">MessageData</a> DES_process(<a class="code" href="a00138.html">MessageData</a> originalData, <a class="code" href="a00134.html">DES_Key</a>* subKeys, uint8_t mode);</div></div><!-- fragment --><h3>3. DES</h3>
+<p>Encrypt or decrypt data, require original key. When mode = DES_ENCRYPT_MODE, encrypt data. When DES_DECRYPT_MODE, decrypt data.</p>
+<h4>Definition</h4>
+<div class="fragment"><div class="line"><a class="code" href="a00138.html">MessageData</a> DES(<a class="code" href="a00138.html">MessageData</a> originalData, <a class="code" href="a00134.html">DES_Key</a> originalKey, uint8_t mode);</div></div><!-- fragment --><h2>Example</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="a00020.html">mcu.h</a>&quot;</span></div><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="a00005.html">DES.h</a>&quot;</span></div><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="a00026.html">stdio.h</a>&quot;</span></div><div class="line"><span class="comment">// This is the interrupt function for user</span></div><div class="line"><span class="keywordtype">void</span> user_interrupt() {</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// This is the main function</span></div><div class="line"><span class="keywordtype">int</span> main() {</div><div class="line">    <a class="code" href="a00134.html">DES_Key</a> originalKey;</div><div class="line">    originalKey.<a class="code" href="a00134.html#a48b5dadf7decf3076826072563041f1b">key</a> = 0x133457799BBCDFF1;</div><div class="line"></div><div class="line">    <span class="comment">// Generate 16 subKeys</span></div><div class="line">    <a class="code" href="a00134.html">DES_Key</a>* subKeys = DES_generateSubKeys(originalKey);</div><div class="line">    <span class="keywordflow">for</span> (uint8_t index = 0; index &lt; 17; index++) {</div><div class="line">        <a class="code" href="a00026.html#a133c04c35a1c14c6f8d8078831705661">printf</a>(<span class="stringliteral">&quot;K%d = 0x%x%x\n&quot;</span>, index, subKeys[index].apart[1], subKeys[index].apart[0]);</div><div class="line">    }</div><div class="line"></div><div class="line">    <a class="code" href="a00138.html">MessageData</a> originalData;</div><div class="line">    originalData.<a class="code" href="a00138.html#a2cf9dd28d0679205048930fe98fa116b">data</a> = 0x123456789abcdef;</div><div class="line">    <a class="code" href="a00026.html#a133c04c35a1c14c6f8d8078831705661">printf</a>(<span class="stringliteral">&quot;originalData = 0x%x%x\n&quot;</span>, originalData.<a class="code" href="a00138.html#a43406dd2e72f1230b8f70551a96699c5">apart</a>[1], originalData.<a class="code" href="a00138.html#a43406dd2e72f1230b8f70551a96699c5">apart</a>[0]);</div><div class="line"></div><div class="line">    <span class="comment">// encrypt data</span></div><div class="line">    <a class="code" href="a00138.html">MessageData</a> encryptedData = DES_process(originalData, subKeys, <a class="code" href="a00005.html#a73b9a4e1e36c14eb7a44556ee767f106">DES_ENCRYPT_MODE</a>);</div><div class="line">    <a class="code" href="a00026.html#a133c04c35a1c14c6f8d8078831705661">printf</a>(<span class="stringliteral">&quot;encryptedData = 0x%x%x\n&quot;</span>, encryptedData.<a class="code" href="a00138.html#a43406dd2e72f1230b8f70551a96699c5">apart</a>[1], encryptedData.<a class="code" href="a00138.html#a43406dd2e72f1230b8f70551a96699c5">apart</a>[0]);</div><div class="line"></div><div class="line">    <span class="comment">// decrypt data</span></div><div class="line">    <a class="code" href="a00138.html">MessageData</a> decryptedData = DES_process(encryptedData, subKeys, <a class="code" href="a00005.html#a874730b46afa0dd86cf7e3f60bd51165">DES_DECRYPT_MODE</a>);</div><div class="line">    <a class="code" href="a00026.html#a133c04c35a1c14c6f8d8078831705661">printf</a>(<span class="stringliteral">&quot;decryptedData = 0x%x%x\n&quot;</span>, decryptedData.<a class="code" href="a00138.html#a43406dd2e72f1230b8f70551a96699c5">apart</a>[1], decryptedData.<a class="code" href="a00138.html#a43406dd2e72f1230b8f70551a96699c5">apart</a>[0]);</div><div class="line">}</div></div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.8-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+    <!-- id is needed for treeview function! -->
+    <!-- <ul>
+        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+            <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+    </ul> -->
+    <div class="card">
+        <!-- <div class="card-header"> -->
+            <!-- Quote -->
+        <!-- </div> -->
+        <div class="card-body">
+            <!-- <h5 class="card-title">Special title treatment</h5> -->
+            <p class="card-text d-flex justify-content-between">
+                <a href="#" class="btn btn-primary">Return To Top</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

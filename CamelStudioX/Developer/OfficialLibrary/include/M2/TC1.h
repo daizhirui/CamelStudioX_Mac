@@ -4,45 +4,101 @@
 * @date 16 Jun 2018
 * @copyright 2018 Zhirui
 * @brief Timer1 Library for M2
-*/#ifndef __TC1_h__
+*/
+#ifndef __TC1_h__
 #define __TC1_h__
 
 #include "mcu.h"
 
 /***** Timer clr stop and flag Setup******/
+
+/**
+ * @brief       Stop TC1
+ * @return      void
+ */
 #define RT_TC1_Stop() MemoryWrite32(T1_CTL0_REG, 0)
+
+/**
+ * @brief       Clear TC1 TC-IRQ and PWM-IRQ
+ * @return      void
+ */
 #define RT_TC1_ClearIrq() MemoryWrite32(T1_CLRIRQ_REG, 0)
+
+/**
+ * @brief       Clear TC1 Counter value
+ * @return      void
+ */
 #define RT_TC1_ClearCnt() MemoryWrite32(T1_CLRCNT_REG, 0)
+
+/**
+ * @brief       Clear TC1 TC-IRQ, PWM-IRQ and Counter value
+ * @return      void
+ */
 #define RT_TC1_ClearAll()  \
     {                   \
         RT_TC1_ClearIrq(); \
         RT_TC1_ClearCnt(); \
     }
+
+/**
+ * @brief       Turn on TC1 TC-IRQ
+ * @return      void
+ */
 #define RT_TC1_TcIrqOn() MemoryOr32(T1_CTL0_REG, 1 << 7)
+
+/**
+ * @brief       Turn off TC1 TC-IRQ
+ * @return      void
+ */
 #define RT_TC1_TcIrqOff() MemoryAnd32(T1_CTL0_REG, ~(1 << 7))
+
+/**
+ * @brief       Turn on TC1 PWM-IRQ
+ * @return      void
+ */
 #define RT_TC1_PWMIrqOn() MemoryOr32(T1_CTL0_REG, 1 << 6)
+
+/**
+ * @brief       Turn off TC1 PWM-IRQ
+ * @return      void
+ */
 #define RT_TC1_PWMIrqOff() MemoryAnd32(T1_CTL0_REG, ~(1 << 6))
+
+/**
+ * @brief       Read TC1 TC-flag
+ * @return int  TC-flag
+ */
 #define RT_TC1_CheckTcFlag() ((MemoryRead32(T1_CTL0_REG) & 0x80000000) >> 31)
+
+/**
+ * @brief       Read TC1 PWM-flag
+ * @return int  PWM-flag
+ */
 #define RT_TC1_CheckPWMFlag() ((MemoryRead32(T1_CTL0_REG) & 0x40000000) >> 30)
 /****************** end*******************/
 /****************** Timer ******************/
+
+/**
+ * @brief       Turn on TC1 Timer
+ * @return      void
+ */
 #define RT_TC1_TimerOn() MemoryOr32(T1_CTL0_REG, 1 << 1)
+
+/**
+ * @brief       Turn off TC1 Timer
+ * @return      void
+ */
 #define RT_TC1_TimerOff() MemoryAnd32(T1_CTL0_REG, ~(1 << 1))
+
 /**
  * @brief
- * This function sets the timer function of TC1
- * @param T         the target time to reach
- * @param irq       when ON, the interrupt is enabled; when OFF, disabled
+ * This function sets the timer function of TC0
+ * @param T         the target time to reach, the uint is us.
+ * @param irqEn     when #ON, the interrupt is enabled; when #OFF, disabled
  * @return          void
  */
-#define RT_TC1_TimerSet1us(T, irq)                        \
-    {                                                  \
-        MemoryAnd32(T1_CTL0_REG, ~(1 << 7));           \
-        MemoryWrite32(T1_CLK_REG, T / 81 + 1);             \
-        MemoryWrite32(T1_REF_REG, 243 * T / (T + 81)); \
-        MemoryOr32(T1_CTL0_REG, (0x02 | (irq << 7)));  \
-        MemoryOr32(SYS_CTL0_REG, irq);                 \
-    }
+void RT_TC1_TimerSet1us(uint32_t T, switch_t irqEn);
+
 /**
  * @brief
  * This function sets the frequency counter of TC1
@@ -59,7 +115,17 @@
     }
 
 /****************** ECNT *******************/
+
+/**
+ * @brief       Turn on TC1 Event Counter
+ * @return      void
+ */
 #define RT_TC1_EcntOn() MemoryOr32(T1_CTL0_REG, 1)
+
+/**
+ * @brief       Turn off TC1 Event Counter
+ * @return      void
+ */
 #define RT_TC1_EcntOff() MemoryAnd32(T1_CTL0_REG, ~1)
 /**
  * @brief
@@ -77,7 +143,17 @@
         MemoryOr32(SYS_CTL0_REG, irq);                                \
     }
 /****************** PWM *******************/
+
+/**
+ * @brief       Turn on TC1 PWM
+ * @return      void
+ */
 #define RT_TC1_PWMOn() MemoryOr32(T1_CTL0_REG, 1 << 4)
+
+/**
+ * @brief       Turn off TC1 PWM
+ * @return      void
+ */
 #define RT_TC1_PWMOff() MemoryAnd32(T1_CTL0_REG, ~(1 << 4))
 /**
  * @brief
@@ -96,8 +172,24 @@
     }
 
 /****************** PWMM ******************/
+
+/**
+ * @brief       Turn on TC1 Pulse Width Measurement
+ * @return      void
+ */
 #define RT_TC1_PWMMOn() MemoryOr32(T1_CTL0_REG, 1 << 3)
+
+/**
+ * @brief       Turn off TC1 Pulse Width Measurement
+ * @return      void
+ */
 #define RT_TC1_PWMMOff() MemoryAnd32(T1_CTL0_REG, ~(1 << 3))
+
+/**
+ * @brief       Set TC1 Trigger Mode of Pulse Width Measurement
+ * @param mode  Trigger mode, optional values: #RAISE_TRIGGER, #FALL_TRIGGER
+ * @return      void
+ */
 #define RT_TC1_PWMMTriggerMode(mode)            \
     {                                        \
         MemoryAnd32(T1_CTL0_REG, ~(1 << 2)); \
@@ -117,6 +209,11 @@
         MemoryOr32(SYS_CTL0_REG, irq);                              \
     }
 /*************** Timer0 Read ***************/
+
+/**
+ * @brief       Read TC1 Counter Register Value
+ * @return int  TC0 Counter Register Value
+ */
 #define RT_TC1_ReadCnt() MemoryRead32(T1_READ_REG)
 
 #endif

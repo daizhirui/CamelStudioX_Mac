@@ -1,0 +1,1004 @@
+<!-- HTML header for doxygen 1.8.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta name="generator" content="Doxygen 1.8.14" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>Camel Library Documentaion: /Users/daizhirui/Development/Camel_Library/release/include/soft_fp.h File Reference</title>
+    <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
+    <script type="text/javascript" src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script> <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script> 
+    <link href="doxygen.css" rel="stylesheet" type="text/css" /> <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="doxy-boot.js"></script>
+    <style>
+        /*a {color: darkblue;}*/
+        container {background-color: white}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- justify-content-end -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active align-self-center">
+                        <a class="navbar-brand" href="#"><img src="cmstudio.png" width="30px">  Camel Library Documentaion    </a>
+                    </li>
+                    <li class="nav-item active align-self-center">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown align-self-center">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Related links</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="files.html">File&nbsp;List</a>
+                            <a class="dropdown-item" href="annotated.html">Data&nbsp;Structure</a>
+                            <a class="dropdown-item" href="classes.html">Data&nbsp;Structure&nbsp;Index</a>
+                            <a class="dropdown-item" href="https://rink.hockeyapp.net/apps/798a2dae49b04400bcadaf69bda80417">CamelStudioX For Mac</a>
+                            <a class="dropdown-item" href="https://github.com/daizhirui/CamelStudio_Library">GitHub Project</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="MSearchBox" class="MSearchBoxInactive justify-content-end">
+                <span class="left">
+                    <img id="MSearchSelect" src="search/mag_sel.png" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" alt="">
+                    <input type="text" id="MSearchField" value="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event)">
+                </span><span class="right">
+                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()" style="display: none;"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""></a>
+                </span>
+            </div>
+        </nav>
+    </div>
+    <div id="top">
+        <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(0)" href="javascript:void(0)"><span class="SelectionMark">•</span>All</a><a class="SelectItem" onclick="searchBox.OnSelectItem(1)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Classes</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(2)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" onclick="searchBox.OnSelectItem(3)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Functions</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(4)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" onclick="searchBox.OnSelectItem(5)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Typedefs</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(6)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" onclick="searchBox.OnSelectItem(7)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerator</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(8)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" onclick="searchBox.OnSelectItem(9)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Modules</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(10)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Pages</a>
+        </div>
+        <div id="MSearchResultsWindow" style="display: none; top: 52px; left: 1221px;">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults"></iframe>
+        </div>
+        <!-- do not remove this div, it is closed by doxygen! -->
+        <div class="content" id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 panel " style="padding-bottom: 15px;">
+                        <div style="margin-bottom: 15px;">
+                            <!-- end header part -->
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00023.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">soft_fp.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Soft float library.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a7eee275c4550a21c03be987913256c82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a7eee275c4550a21c03be987913256c82">abs</a>&#160;&#160;&#160;<a class="el" href="a00023.html#a50dbb1be8035ed17c71df34d180056e0">fp_float32_abs</a></td></tr>
+<tr class="separator:a7eee275c4550a21c03be987913256c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8418f27fe28830a7fb62322463f15e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#aa8418f27fe28830a7fb62322463f15e0">sqrt</a>&#160;&#160;&#160;<a class="el" href="a00023.html#a310b7eb83e737130e48a8d4b0853efd5">fp_float32_sqrt</a></td></tr>
+<tr class="separator:aa8418f27fe28830a7fb62322463f15e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57a66355e043ccefc17aca9338a2b748"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a57a66355e043ccefc17aca9338a2b748">cos</a>&#160;&#160;&#160;<a class="el" href="a00023.html#a76d63763a1fbbbed015ad39ff22a1a99">fp_float32_cos</a></td></tr>
+<tr class="separator:a57a66355e043ccefc17aca9338a2b748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28642ecbd9d1e77ab5a140a460f47d83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a28642ecbd9d1e77ab5a140a460f47d83">sin</a>&#160;&#160;&#160;<a class="el" href="a00023.html#ae57383891f734bc754b6ade61fed3677">fp_float32_sin</a></td></tr>
+<tr class="separator:a28642ecbd9d1e77ab5a140a460f47d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0526fb3466fec955862c2cee3110a6ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a0526fb3466fec955862c2cee3110a6ab">atan</a>&#160;&#160;&#160;<a class="el" href="a00023.html#afff3776b0834631c841e3799f545f7a0">fp_float32_atan</a></td></tr>
+<tr class="separator:a0526fb3466fec955862c2cee3110a6ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac371f13b8648d84164686c8f32aa6ed8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#ac371f13b8648d84164686c8f32aa6ed8">atan2</a>&#160;&#160;&#160;<a class="el" href="a00023.html#aa7b8601248d31c15f917e4d8f4f6e9d9">fp_float32_atan2</a></td></tr>
+<tr class="separator:ac371f13b8648d84164686c8f32aa6ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb9b8ff973345c3b4770d31cfb71ea8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a4bb9b8ff973345c3b4770d31cfb71ea8">exp</a>&#160;&#160;&#160;<a class="el" href="a00023.html#a595d6a7d9a0a116f0db5bd4cfdbcd166">fp_float32_exp</a></td></tr>
+<tr class="separator:a4bb9b8ff973345c3b4770d31cfb71ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25274c13d478263ec5322541d7bbfeee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a25274c13d478263ec5322541d7bbfeee">log</a>&#160;&#160;&#160;<a class="el" href="a00023.html#a694db5e30e3f76718f29bacd4e044135">fp_float32_log</a></td></tr>
+<tr class="separator:a25274c13d478263ec5322541d7bbfeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b7fecf5b1bc24739831b0aaca6ffaf7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a4b7fecf5b1bc24739831b0aaca6ffaf7">pow</a>&#160;&#160;&#160;<a class="el" href="a00023.html#ac888f98a6e5d89837b647d2c81725836">fp_float32_pow</a></td></tr>
+<tr class="separator:a4b7fecf5b1bc24739831b0aaca6ffaf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598a3330b3c21701223ee0ca14316eca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a598a3330b3c21701223ee0ca14316eca">PI</a>&#160;&#160;&#160;((float)3.1415926)</td></tr>
+<tr class="separator:a598a3330b3c21701223ee0ca14316eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ec3219e4eee3b0992bfd59c2e2bc42"><td class="memItemLeft" align="right" valign="top"><a id="ae3ec3219e4eee3b0992bfd59c2e2bc42"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#ae3ec3219e4eee3b0992bfd59c2e2bc42">HALF_PI</a>&#160;&#160;&#160;((float)(<a class="el" href="a00023.html#a598a3330b3c21701223ee0ca14316eca">PI</a>/2.0))</td></tr>
+<tr class="memdesc:ae3ec3219e4eee3b0992bfd59c2e2bc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword HALF_PI, PI/2.0. <br /></td></tr>
+<tr class="separator:ae3ec3219e4eee3b0992bfd59c2e2bc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e8f7fbed3cb3e8e3636300b37e2dbb3"><td class="memItemLeft" align="right" valign="top"><a id="a4e8f7fbed3cb3e8e3636300b37e2dbb3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a4e8f7fbed3cb3e8e3636300b37e2dbb3">EIGHTH_PI</a>&#160;&#160;&#160;((float)(<a class="el" href="a00023.html#a598a3330b3c21701223ee0ca14316eca">PI</a>/8.0))</td></tr>
+<tr class="memdesc:a4e8f7fbed3cb3e8e3636300b37e2dbb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword EIGHTH_PI, PI/8.0. <br /></td></tr>
+<tr class="separator:a4e8f7fbed3cb3e8e3636300b37e2dbb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b947f4b635461030ff2d87833e5049e"><td class="memItemLeft" align="right" valign="top"><a id="a3b947f4b635461030ff2d87833e5049e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a3b947f4b635461030ff2d87833e5049e">TWO_PI</a>&#160;&#160;&#160;((float)(<a class="el" href="a00023.html#a598a3330b3c21701223ee0ca14316eca">PI</a>*2.0))</td></tr>
+<tr class="memdesc:a3b947f4b635461030ff2d87833e5049e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword TWO_PI, 2 * PI. <br /></td></tr>
+<tr class="separator:a3b947f4b635461030ff2d87833e5049e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c8eebe5b0dbd390778ec30422eee7e8"><td class="memItemLeft" align="right" valign="top"><a id="a5c8eebe5b0dbd390778ec30422eee7e8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a5c8eebe5b0dbd390778ec30422eee7e8">ATAN_EIGHTH_PI</a>&#160;&#160;&#160;((float)0.37419668)</td></tr>
+<tr class="memdesc:a5c8eebe5b0dbd390778ec30422eee7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword ATAN_EIGHTH_PI, atan(PI/8.0). <br /></td></tr>
+<tr class="separator:a5c8eebe5b0dbd390778ec30422eee7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09ca0c42bed2331f570a1b64c7cdee3e"><td class="memItemLeft" align="right" valign="top"><a id="a09ca0c42bed2331f570a1b64c7cdee3e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a09ca0c42bed2331f570a1b64c7cdee3e">E_SQUARE</a>&#160;&#160;&#160;((float)7.38905609)</td></tr>
+<tr class="memdesc:a09ca0c42bed2331f570a1b64c7cdee3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword E_SQUARE, e^2. <br /></td></tr>
+<tr class="separator:a09ca0c42bed2331f570a1b64c7cdee3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6adbf51b830cf254970e774bf5f809a"><td class="memItemLeft" align="right" valign="top"><a id="ae6adbf51b830cf254970e774bf5f809a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#ae6adbf51b830cf254970e774bf5f809a">INV_E_SQUARE</a>&#160;&#160;&#160;((float)0.13533528)</td></tr>
+<tr class="memdesc:ae6adbf51b830cf254970e774bf5f809a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword INV_E_SQUARE, the reciprocal of e^2, 1/e^2. <br /></td></tr>
+<tr class="separator:ae6adbf51b830cf254970e774bf5f809a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94d5c40b9f567f0bb88c23634f9d106"><td class="memItemLeft" align="right" valign="top"><a id="aa94d5c40b9f567f0bb88c23634f9d106"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#aa94d5c40b9f567f0bb88c23634f9d106">LN_2</a>&#160;&#160;&#160;((float)0.69314718)</td></tr>
+<tr class="memdesc:aa94d5c40b9f567f0bb88c23634f9d106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword LN_2, ln(2). <br /></td></tr>
+<tr class="separator:aa94d5c40b9f567f0bb88c23634f9d106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4702619cb8ca993b69919e1d7ca71f57"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a4702619cb8ca993b69919e1d7ca71f57">fp_float32_neg</a> (float a_fp)</td></tr>
+<tr class="memdesc:a4702619cb8ca993b69919e1d7ca71f57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the negative value of a_fp.  <a href="#a4702619cb8ca993b69919e1d7ca71f57">More...</a><br /></td></tr>
+<tr class="separator:a4702619cb8ca993b69919e1d7ca71f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50dbb1be8035ed17c71df34d180056e0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a50dbb1be8035ed17c71df34d180056e0">fp_float32_abs</a> (float a_fp)</td></tr>
+<tr class="memdesc:a50dbb1be8035ed17c71df34d180056e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate absolute value.  <a href="#a50dbb1be8035ed17c71df34d180056e0">More...</a><br /></td></tr>
+<tr class="separator:a50dbb1be8035ed17c71df34d180056e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d59640c2e2b66e3f13e423c0779ce9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a05d59640c2e2b66e3f13e423c0779ce9">fp_float32_add</a> (float a_fp, float b_fp)</td></tr>
+<tr class="memdesc:a05d59640c2e2b66e3f13e423c0779ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add arithmetic operation.  <a href="#a05d59640c2e2b66e3f13e423c0779ce9">More...</a><br /></td></tr>
+<tr class="separator:a05d59640c2e2b66e3f13e423c0779ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131916cff95f607242ea6affe3e50382"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a131916cff95f607242ea6affe3e50382">fp_float32_sub</a> (float a_fp, float b_fp)</td></tr>
+<tr class="memdesc:a131916cff95f607242ea6affe3e50382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtraction arithmetic operation.  <a href="#a131916cff95f607242ea6affe3e50382">More...</a><br /></td></tr>
+<tr class="separator:a131916cff95f607242ea6affe3e50382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb177861851cf018559768551298993"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a4fb177861851cf018559768551298993">fp_float32_mult</a> (float a_fp, float b_fp)</td></tr>
+<tr class="memdesc:a4fb177861851cf018559768551298993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication.  <a href="#a4fb177861851cf018559768551298993">More...</a><br /></td></tr>
+<tr class="separator:a4fb177861851cf018559768551298993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02a02cf636799092e56f66a57d90d91b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a02a02cf636799092e56f66a57d90d91b">fp_float32_div</a> (float a_fp, float b_fp)</td></tr>
+<tr class="memdesc:a02a02cf636799092e56f66a57d90d91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Float Division.  <a href="#a02a02cf636799092e56f66a57d90d91b">More...</a><br /></td></tr>
+<tr class="separator:a02a02cf636799092e56f66a57d90d91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3c64f665ae99d4f267aef56d96be03"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#aab3c64f665ae99d4f267aef56d96be03">fp_float32_to_int32</a> (float a_fp)</td></tr>
+<tr class="memdesc:aab3c64f665ae99d4f267aef56d96be03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert float to signed long.  <a href="#aab3c64f665ae99d4f267aef56d96be03">More...</a><br /></td></tr>
+<tr class="separator:aab3c64f665ae99d4f267aef56d96be03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13d2d336c17fa7ca9867415d017039f9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a13d2d336c17fa7ca9867415d017039f9">fp_int32_to_float32</a> (long af)</td></tr>
+<tr class="memdesc:a13d2d336c17fa7ca9867415d017039f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert signed long to float.  <a href="#a13d2d336c17fa7ca9867415d017039f9">More...</a><br /></td></tr>
+<tr class="separator:a13d2d336c17fa7ca9867415d017039f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a096ed4a261247431549a71225761fffc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a096ed4a261247431549a71225761fffc">fp_uint32_to_float32</a> (unsigned long af)</td></tr>
+<tr class="memdesc:a096ed4a261247431549a71225761fffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert unsigned long to float.  <a href="#a096ed4a261247431549a71225761fffc">More...</a><br /></td></tr>
+<tr class="separator:a096ed4a261247431549a71225761fffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ee0ff6cc8f2a97c7079024577d33d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a55ee0ff6cc8f2a97c7079024577d33d3">fp_float32_cmp</a> (float a_fp, float b_fp)</td></tr>
+<tr class="memdesc:a55ee0ff6cc8f2a97c7079024577d33d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two float value.  <a href="#a55ee0ff6cc8f2a97c7079024577d33d3">More...</a><br /></td></tr>
+<tr class="separator:a55ee0ff6cc8f2a97c7079024577d33d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a310b7eb83e737130e48a8d4b0853efd5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a310b7eb83e737130e48a8d4b0853efd5">fp_float32_sqrt</a> (float a)</td></tr>
+<tr class="memdesc:a310b7eb83e737130e48a8d4b0853efd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the square root of x.  <a href="#a310b7eb83e737130e48a8d4b0853efd5">More...</a><br /></td></tr>
+<tr class="separator:a310b7eb83e737130e48a8d4b0853efd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d63763a1fbbbed015ad39ff22a1a99"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a76d63763a1fbbbed015ad39ff22a1a99">fp_float32_cos</a> (float rad)</td></tr>
+<tr class="memdesc:a76d63763a1fbbbed015ad39ff22a1a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cosine of an angle of x radians.  <a href="#a76d63763a1fbbbed015ad39ff22a1a99">More...</a><br /></td></tr>
+<tr class="separator:a76d63763a1fbbbed015ad39ff22a1a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae57383891f734bc754b6ade61fed3677"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#ae57383891f734bc754b6ade61fed3677">fp_float32_sin</a> (float rad)</td></tr>
+<tr class="memdesc:ae57383891f734bc754b6ade61fed3677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sine of an angle of x radians.  <a href="#ae57383891f734bc754b6ade61fed3677">More...</a><br /></td></tr>
+<tr class="separator:ae57383891f734bc754b6ade61fed3677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff3776b0834631c841e3799f545f7a0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#afff3776b0834631c841e3799f545f7a0">fp_float32_atan</a> (float x)</td></tr>
+<tr class="memdesc:afff3776b0834631c841e3799f545f7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the principal value of the arc tangent of x, expressed in radians.  <a href="#afff3776b0834631c841e3799f545f7a0">More...</a><br /></td></tr>
+<tr class="separator:afff3776b0834631c841e3799f545f7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b8601248d31c15f917e4d8f4f6e9d9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#aa7b8601248d31c15f917e4d8f4f6e9d9">fp_float32_atan2</a> (float y, float x)</td></tr>
+<tr class="memdesc:aa7b8601248d31c15f917e4d8f4f6e9d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the principal value of the arc tangent of y/x, expressed in radians.  <a href="#aa7b8601248d31c15f917e4d8f4f6e9d9">More...</a><br /></td></tr>
+<tr class="separator:aa7b8601248d31c15f917e4d8f4f6e9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a595d6a7d9a0a116f0db5bd4cfdbcd166"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a595d6a7d9a0a116f0db5bd4cfdbcd166">fp_float32_exp</a> (float x)</td></tr>
+<tr class="memdesc:a595d6a7d9a0a116f0db5bd4cfdbcd166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the base-e exponential function of x, which is e raised to the power x.  <a href="#a595d6a7d9a0a116f0db5bd4cfdbcd166">More...</a><br /></td></tr>
+<tr class="separator:a595d6a7d9a0a116f0db5bd4cfdbcd166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a694db5e30e3f76718f29bacd4e044135"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a694db5e30e3f76718f29bacd4e044135">fp_float32_log</a> (float x)</td></tr>
+<tr class="memdesc:a694db5e30e3f76718f29bacd4e044135"><td class="mdescLeft">&#160;</td><td class="mdescRight">The natural logarithm is the base-e logarithm: the inverse of the natural exponential function (fp_float32_exp).  <a href="#a694db5e30e3f76718f29bacd4e044135">More...</a><br /></td></tr>
+<tr class="separator:a694db5e30e3f76718f29bacd4e044135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac888f98a6e5d89837b647d2c81725836"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#ac888f98a6e5d89837b647d2c81725836">fp_float32_pow</a> (float x, float y)</td></tr>
+<tr class="memdesc:ac888f98a6e5d89837b647d2c81725836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute power.  <a href="#ac888f98a6e5d89837b647d2c81725836">More...</a><br /></td></tr>
+<tr class="separator:ac888f98a6e5d89837b647d2c81725836"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Soft float library. </p>
+<dl class="section author"><dt>Author</dt><dd>Zhirui Dai </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>1 Jun 2018 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>2018 Zhirui </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7eee275c4550a21c03be987913256c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eee275c4550a21c03be987913256c82">&#9670;&nbsp;</a></span>abs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define abs&#160;&#160;&#160;<a class="el" href="a00023.html#a50dbb1be8035ed17c71df34d180056e0">fp_float32_abs</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fp_float32_abs </p>
+
+</div>
+</div>
+<a id="a0526fb3466fec955862c2cee3110a6ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0526fb3466fec955862c2cee3110a6ab">&#9670;&nbsp;</a></span>atan</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define atan&#160;&#160;&#160;<a class="el" href="a00023.html#afff3776b0834631c841e3799f545f7a0">fp_float32_atan</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fp_float32_atan </p>
+
+</div>
+</div>
+<a id="ac371f13b8648d84164686c8f32aa6ed8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac371f13b8648d84164686c8f32aa6ed8">&#9670;&nbsp;</a></span>atan2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define atan2&#160;&#160;&#160;<a class="el" href="a00023.html#aa7b8601248d31c15f917e4d8f4f6e9d9">fp_float32_atan2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fp_float32_atan2 </p>
+
+</div>
+</div>
+<a id="a57a66355e043ccefc17aca9338a2b748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57a66355e043ccefc17aca9338a2b748">&#9670;&nbsp;</a></span>cos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define cos&#160;&#160;&#160;<a class="el" href="a00023.html#a76d63763a1fbbbed015ad39ff22a1a99">fp_float32_cos</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fp_float32_cos </p>
+
+</div>
+</div>
+<a id="a4bb9b8ff973345c3b4770d31cfb71ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb9b8ff973345c3b4770d31cfb71ea8">&#9670;&nbsp;</a></span>exp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define exp&#160;&#160;&#160;<a class="el" href="a00023.html#a595d6a7d9a0a116f0db5bd4cfdbcd166">fp_float32_exp</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fp_float32_exp </p>
+
+</div>
+</div>
+<a id="a25274c13d478263ec5322541d7bbfeee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25274c13d478263ec5322541d7bbfeee">&#9670;&nbsp;</a></span>log</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define log&#160;&#160;&#160;<a class="el" href="a00023.html#a694db5e30e3f76718f29bacd4e044135">fp_float32_log</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fp_float32_log </p>
+
+</div>
+</div>
+<a id="a598a3330b3c21701223ee0ca14316eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598a3330b3c21701223ee0ca14316eca">&#9670;&nbsp;</a></span>PI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PI&#160;&#160;&#160;((float)3.1415926)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword PI. </p>
+
+</div>
+</div>
+<a id="a4b7fecf5b1bc24739831b0aaca6ffaf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7fecf5b1bc24739831b0aaca6ffaf7">&#9670;&nbsp;</a></span>pow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define pow&#160;&#160;&#160;<a class="el" href="a00023.html#ac888f98a6e5d89837b647d2c81725836">fp_float32_pow</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fp_float32_pow </p>
+
+</div>
+</div>
+<a id="a28642ecbd9d1e77ab5a140a460f47d83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28642ecbd9d1e77ab5a140a460f47d83">&#9670;&nbsp;</a></span>sin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define sin&#160;&#160;&#160;<a class="el" href="a00023.html#ae57383891f734bc754b6ade61fed3677">fp_float32_sin</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fp_float32_sin </p>
+
+</div>
+</div>
+<a id="aa8418f27fe28830a7fb62322463f15e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8418f27fe28830a7fb62322463f15e0">&#9670;&nbsp;</a></span>sqrt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define sqrt&#160;&#160;&#160;<a class="el" href="a00023.html#a310b7eb83e737130e48a8d4b0853efd5">fp_float32_sqrt</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fp_float32_sqrt </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a50dbb1be8035ed17c71df34d180056e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50dbb1be8035ed17c71df34d180056e0">&#9670;&nbsp;</a></span>fp_float32_abs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_abs </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate absolute value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_fp</td><td>The value to calculate absolute value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float The absolute value of a_fp. </dd></dl>
+
+</div>
+</div>
+<a id="a05d59640c2e2b66e3f13e423c0779ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d59640c2e2b66e3f13e423c0779ce9">&#9670;&nbsp;</a></span>fp_float32_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_add </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b_fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add arithmetic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_fp</td><td>Number 1 to add. </td></tr>
+    <tr><td class="paramname">b_fp</td><td>Number 2 to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The sum of a_fp and b_fp. </dd></dl>
+
+</div>
+</div>
+<a id="afff3776b0834631c841e3799f545f7a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afff3776b0834631c841e3799f545f7a0">&#9670;&nbsp;</a></span>fp_float32_atan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_atan </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the principal value of the arc tangent of x, expressed in radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Value whose arc tangent is computed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Principal arc tangent of x, in the interval [-pi/2,+pi/2] radians.One radian is equivalent to 180/PI degrees. </dd></dl>
+
+</div>
+</div>
+<a id="aa7b8601248d31c15f917e4d8f4f6e9d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b8601248d31c15f917e4d8f4f6e9d9">&#9670;&nbsp;</a></span>fp_float32_atan2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_atan2 </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the principal value of the arc tangent of y/x, expressed in radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>Value representing the proportion of the y-coordinate. </td></tr>
+    <tr><td class="paramname">x</td><td>Value representing the proportion of the x-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Principal arc tangent of y/x, in the interval [-pi,+pi] radians. One radian is equivalent to 180/PI degrees. If x is zero, return 0. </dd></dl>
+
+</div>
+</div>
+<a id="a55ee0ff6cc8f2a97c7079024577d33d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ee0ff6cc8f2a97c7079024577d33d3">&#9670;&nbsp;</a></span>fp_float32_cmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fp_float32_cmp </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b_fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two float value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_fp</td><td>float value a. </td></tr>
+    <tr><td class="paramname">b_fp</td><td>float value b. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 if a==b; 1 if a&gt;b; -1 if a&lt;b; </dd></dl>
+
+</div>
+</div>
+<a id="a76d63763a1fbbbed015ad39ff22a1a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d63763a1fbbbed015ad39ff22a1a99">&#9670;&nbsp;</a></span>fp_float32_cos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_cos </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rad</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the cosine of an angle of x radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rad</td><td>Value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Cosine of x radians. </dd></dl>
+
+</div>
+</div>
+<a id="a02a02cf636799092e56f66a57d90d91b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02a02cf636799092e56f66a57d90d91b">&#9670;&nbsp;</a></span>fp_float32_div()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_div </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b_fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Float Division. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_fp</td><td>Dividend. </td></tr>
+    <tr><td class="paramname">b_fp</td><td>Divisor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Quotient. </dd></dl>
+
+</div>
+</div>
+<a id="a595d6a7d9a0a116f0db5bd4cfdbcd166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595d6a7d9a0a116f0db5bd4cfdbcd166">&#9670;&nbsp;</a></span>fp_float32_exp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_exp </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the base-e exponential function of x, which is e raised to the power x. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Value of the exponent. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Exponential value of x. </dd></dl>
+
+</div>
+</div>
+<a id="a694db5e30e3f76718f29bacd4e044135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a694db5e30e3f76718f29bacd4e044135">&#9670;&nbsp;</a></span>fp_float32_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_log </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The natural logarithm is the base-e logarithm: the inverse of the natural exponential function (fp_float32_exp). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Value whose logarithm is calculated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Natural logarithm of x. If x &lt;= 0, return 0. </dd></dl>
+
+</div>
+</div>
+<a id="a4fb177861851cf018559768551298993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb177861851cf018559768551298993">&#9670;&nbsp;</a></span>fp_float32_mult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_mult </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b_fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiplication. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_fp</td><td>The number 1 to multiply. </td></tr>
+    <tr><td class="paramname">b_fp</td><td>The number 2 to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The product. </dd></dl>
+
+</div>
+</div>
+<a id="a4702619cb8ca993b69919e1d7ca71f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4702619cb8ca993b69919e1d7ca71f57">&#9670;&nbsp;</a></span>fp_float32_neg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_neg </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the negative value of a_fp. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_fp</td><td>The value to calculate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The negative value of a_fp. </dd></dl>
+
+</div>
+</div>
+<a id="ac888f98a6e5d89837b647d2c81725836"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac888f98a6e5d89837b647d2c81725836">&#9670;&nbsp;</a></span>fp_float32_pow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_pow </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute power. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Base value. </td></tr>
+    <tr><td class="paramname">y</td><td>Exponent value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float The result of raising base to the power exponent. </dd></dl>
+
+</div>
+</div>
+<a id="ae57383891f734bc754b6ade61fed3677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae57383891f734bc754b6ade61fed3677">&#9670;&nbsp;</a></span>fp_float32_sin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_sin </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rad</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the sine of an angle of x radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rad</td><td>Value representing an angle expressed in radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Sine of x radians. </dd></dl>
+
+</div>
+</div>
+<a id="a310b7eb83e737130e48a8d4b0853efd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a310b7eb83e737130e48a8d4b0853efd5">&#9670;&nbsp;</a></span>fp_float32_sqrt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_sqrt </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the square root of x. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Value whose square root is computed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Square root of x.If x &lt; 0, return 0. </dd></dl>
+
+</div>
+</div>
+<a id="a131916cff95f607242ea6affe3e50382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a131916cff95f607242ea6affe3e50382">&#9670;&nbsp;</a></span>fp_float32_sub()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_float32_sub </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b_fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtraction arithmetic operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_fp</td><td>The minuend. </td></tr>
+    <tr><td class="paramname">b_fp</td><td>The subtrahend. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result. </dd></dl>
+
+</div>
+</div>
+<a id="aab3c64f665ae99d4f267aef56d96be03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3c64f665ae99d4f267aef56d96be03">&#9670;&nbsp;</a></span>fp_float32_to_int32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long fp_float32_to_int32 </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a_fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert float to signed long. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_fp</td><td>float to be converted to long. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>long the long integer. </dd></dl>
+
+</div>
+</div>
+<a id="a13d2d336c17fa7ca9867415d017039f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13d2d336c17fa7ca9867415d017039f9">&#9670;&nbsp;</a></span>fp_int32_to_float32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_int32_to_float32 </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>af</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert signed long to float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td>long value to be converted to float. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float the float. </dd></dl>
+
+</div>
+</div>
+<a id="a096ed4a261247431549a71225761fffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096ed4a261247431549a71225761fffc">&#9670;&nbsp;</a></span>fp_uint32_to_float32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fp_uint32_to_float32 </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>af</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert unsigned long to float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">af</td><td>unsigned long value to be converted to float. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float the float. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.8-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+    <!-- id is needed for treeview function! -->
+    <!-- <ul>
+        <li class="navelem"><a class="el" href="dir_9c8c494a5e1ae1f33037b0e9d49f06c7.html">release</a></li><li class="navelem"><a class="el" href="dir_42743c43973611cb0b05144d150e48a5.html">include</a></li><li class="navelem"><a class="el" href="a00023.html">soft_fp.h</a></li>
+        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+            <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+    </ul> -->
+    <div class="card">
+        <!-- <div class="card-header"> -->
+            <!-- Quote -->
+        <!-- </div> -->
+        <div class="card-body">
+            <!-- <h5 class="card-title">Special title treatment</h5> -->
+            <p class="card-text d-flex justify-content-between">
+                <a href="#" class="btn btn-primary">Return To Top</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

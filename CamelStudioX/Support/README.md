@@ -1,3 +1,8 @@
+### Version 3.7.1
+----
+
+- Improvement: update library and documentation.
+
 ### Version 3.7.0
 ----
 

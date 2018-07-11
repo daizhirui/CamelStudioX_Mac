@@ -35,7 +35,7 @@
 
 /**
  * @brief           Set the time format of RTC.
- * @param formate   The time format, optional value: \code{.c}RTC_12HOUR, RTC_24HOUR\endcode.
+ * @param format    The time format, optional value: #RTC_12HOUR, #RTC_24HOUR.
  * @return          void
  */
 #define RT_RTC_SetTimeFormat(format)             \
@@ -59,9 +59,8 @@
                         MemoryWrite32(RTC_TIME_REG, year << 26 | mon << 22 | day << 17 | hour << 12 | min << 6 | sec);
 
 /**
- * @brief This function returns the RTC time raw value
- *
- * @return #define
+ * @brief This function returns the RTC time raw value.
+ * @return void
  */
 #define RT_RTC_Read32()    MemoryRead32(RTC_TIME_REG)
 

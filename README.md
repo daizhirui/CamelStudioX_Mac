@@ -7,6 +7,11 @@ Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
 ## [Documentation](https://daizhirui.github.io/CamelStudio_Library/)
 
+### Version 3.7.1
+----
+
+- Improvement: update library and documentation.
+
 ### Version 3.7.0
 ----
 

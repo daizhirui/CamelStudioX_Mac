@@ -164,19 +164,16 @@ class Compiler: NSObject {
                     attributedMessage = NSMutableAttributedString(string: newItem)
                     attributedMessage.addAttributes([.foregroundColor : NSColor.orange as Any], range: range)
                     compilerMessageType = .warning
-                    myDebug("Warning!\n")
                 } else if let range: NSRange = newItem.lowercased().range(of: "error")?.toNSRange(string: newItem) {
                     // Detect a new start of an error
                     addMessage()
                     attributedMessage = NSMutableAttributedString(string: newItem)
                     attributedMessage.addAttributes([.foregroundColor : NSColor.red as Any], range: range)
                     compilerMessageType = .error
-                    myDebug("Error!\n")
                     compilerMessage.success = false
                 } else {
                     let messageDetail = NSAttributedString(string: "\n"+newItem)
                     attributedMessage.append(messageDetail)
-                    myDebug(attributedMessage)
                 }
             }
         }

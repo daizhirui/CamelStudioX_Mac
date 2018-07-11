@@ -90,5 +90,24 @@
                 <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX39-34.delta" sparkle:version="39" sparkle:shortVersionString="3.7.0" sparkle:deltaFrom="34" length="354046" type="application/octet-stream" sparkle:dsaSignature="MCwCFEJB6ZHZcdi4x7XCUPfoZyRu6YYDAhRZh70GQIl/S7Sa6NYeqvNgAIxkZA=="/></sparkle:deltas>
         </item>
         
+        <item>
+            <title>3.7.1</title>
+            <description><![CDATA[
+                <h2>Improvement</h2>
+                <ul>
+                <li>Update library and documentation.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Wed, 11 Jul 2018 15:41:32 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.7.1_Build40.zip" sparkle:version="40" sparkle:shortVersionString="3.7.1" length="68389988" type="application/octet-stream" sparkle:dsaSignature="MCwCFEABcFAxxrsEA3MR6z29hPRpqjwkAhQIdGEG8T34VXdAGAvdqlCiMnzf4g=="/>
+            <sparkle:deltas>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX40-39.delta" sparkle:version="40" sparkle:shortVersionString="3.7.1" sparkle:deltaFrom="39" length="688657" type="application/octet-stream" sparkle:dsaSignature="MCwCFCCQ+yoXaGqQP2V1phDyty+3b5SVAhRgmrn9hkdG59Dj1gwDiJ56nn1CAA=="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX40-38.delta" sparkle:version="40" sparkle:shortVersionString="3.7.1" sparkle:deltaFrom="38" length="921527" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCm097F9xTXXURD2St6PaZ6xNAO1wIVANLE2+O4j/u1DMCQfFjOZaRRa+jA"/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX40-37.delta" sparkle:version="40" sparkle:shortVersionString="3.7.1" sparkle:deltaFrom="37" length="921512" type="application/octet-stream" sparkle:dsaSignature="MC0CFEqQxKkwPDeRzRQ95sG+PqRejqiFAhUApD/CyMfyR73WzgLtyyUcfoT9PqI="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX40-36.delta" sparkle:version="40" sparkle:shortVersionString="3.7.1" sparkle:deltaFrom="36" length="1003954" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDPwTzkFjixFK74ojveUkuFtioiTAIUPsWLI3r7wT434ccnIGUywgIys8s="/></sparkle:deltas>
+        </item>
+        
     </channel></rss>
 

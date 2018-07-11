@@ -1,0 +1,567 @@
+<!-- HTML header for doxygen 1.8.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- For Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta name="generator" content="Doxygen 1.8.14" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>Camel Library Documentaion: /Users/daizhirui/Development/Camel_Library/release/include/IO.h File Reference</title>
+    <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
+    <script type="text/javascript" src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script> <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script> 
+    <link href="doxygen.css" rel="stylesheet" type="text/css" /> <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="doxy-boot.js"></script>
+    <style>
+        /*a {color: darkblue;}*/
+        container {background-color: white}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- justify-content-end -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active align-self-center">
+                        <a class="navbar-brand" href="#"><img src="cmstudio.png" width="30px">  Camel Library Documentaion    </a>
+                    </li>
+                    <li class="nav-item active align-self-center">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown align-self-center">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Related links</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="files.html">File&nbsp;List</a>
+                            <a class="dropdown-item" href="annotated.html">Data&nbsp;Structure</a>
+                            <a class="dropdown-item" href="classes.html">Data&nbsp;Structure&nbsp;Index</a>
+                            <a class="dropdown-item" href="https://rink.hockeyapp.net/apps/798a2dae49b04400bcadaf69bda80417">CamelStudioX For Mac</a>
+                            <a class="dropdown-item" href="https://github.com/daizhirui/CamelStudio_Library">GitHub Project</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="MSearchBox" class="MSearchBoxInactive justify-content-end">
+                <span class="left">
+                    <img id="MSearchSelect" src="search/mag_sel.png" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" alt="">
+                    <input type="text" id="MSearchField" value="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event)">
+                </span><span class="right">
+                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()" style="display: none;"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""></a>
+                </span>
+            </div>
+        </nav>
+    </div>
+    <div id="top">
+        <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(0)" href="javascript:void(0)"><span class="SelectionMark">•</span>All</a><a class="SelectItem" onclick="searchBox.OnSelectItem(1)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Classes</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(2)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" onclick="searchBox.OnSelectItem(3)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Functions</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(4)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" onclick="searchBox.OnSelectItem(5)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Typedefs</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(6)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" onclick="searchBox.OnSelectItem(7)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Enumerator</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(8)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" onclick="searchBox.OnSelectItem(9)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Modules</a>
+            <a class="SelectItem" onclick="searchBox.OnSelectItem(10)" href="javascript:void(0)"><span class="SelectionMark">&nbsp;</span>Pages</a>
+        </div>
+        <div id="MSearchResultsWindow" style="display: none; top: 52px; left: 1221px;">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults"></iframe>
+        </div>
+        <!-- do not remove this div, it is closed by doxygen! -->
+        <div class="content" id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 panel " style="padding-bottom: 15px;">
+                        <div style="margin-bottom: 15px;">
+                            <!-- end header part -->
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00014.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">IO.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>General Input Output Library for M2.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00020.html">mcu.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a61a3c9a18380aafb6e430e79bf596557"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a61a3c9a18380aafb6e430e79bf596557">OUTPUT</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="separator:a61a3c9a18380aafb6e430e79bf596557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bb283bd7893b9855e2f23013891fc82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a1bb283bd7893b9855e2f23013891fc82">INPUT</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="separator:a1bb283bd7893b9855e2f23013891fc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="separator:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab811d8c6ff3a505312d3276590444289"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#ab811d8c6ff3a505312d3276590444289">LOW</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="separator:ab811d8c6ff3a505312d3276590444289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f50c7de76076789b624b7fce7531c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a80f50c7de76076789b624b7fce7531c6">RT_IO_SetOutput</a>(io)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da835280d31e2f3f5bc44bb1eb58024d80">SYS_IOCTL_REG</a>, (1 &lt;&lt; (io)))</td></tr>
+<tr class="memdesc:a80f50c7de76076789b624b7fce7531c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets a specific channel at OUTPUT mode.  <a href="#a80f50c7de76076789b624b7fce7531c6">More...</a><br /></td></tr>
+<tr class="separator:a80f50c7de76076789b624b7fce7531c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae333f1c232fdcb61b9e6ccaceeca2cec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#ae333f1c232fdcb61b9e6ccaceeca2cec">RT_IO_SetInput</a>(io)&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da835280d31e2f3f5bc44bb1eb58024d80">SYS_IOCTL_REG</a>, ~(1 &lt;&lt; (io)))</td></tr>
+<tr class="memdesc:ae333f1c232fdcb61b9e6ccaceeca2cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets a specific channel at INPUT mode.  <a href="#ae333f1c232fdcb61b9e6ccaceeca2cec">More...</a><br /></td></tr>
+<tr class="separator:ae333f1c232fdcb61b9e6ccaceeca2cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4bc867a36445fe0debc59cd5c9d9a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#ade4bc867a36445fe0debc59cd5c9d9a5">RT_IO_SetInputOutput16</a>(mode)&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da835280d31e2f3f5bc44bb1eb58024d80">SYS_IOCTL_REG</a>, mode)</td></tr>
+<tr class="memdesc:ade4bc867a36445fe0debc59cd5c9d9a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the mode of all GPIO channels.  <a href="#ade4bc867a36445fe0debc59cd5c9d9a5">More...</a><br /></td></tr>
+<tr class="separator:ade4bc867a36445fe0debc59cd5c9d9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a752d981d1948aeae63c1a86070ae8e3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a752d981d1948aeae63c1a86070ae8e3a">RT_IO_SetHigh</a>(io)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc4ad11c216d218134b37833679bab11">SYS_GPIO0_REG</a>, (1 &lt;&lt; (io)))</td></tr>
+<tr class="memdesc:a752d981d1948aeae63c1a86070ae8e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets a specific output io channel at HIGH level.  <a href="#a752d981d1948aeae63c1a86070ae8e3a">More...</a><br /></td></tr>
+<tr class="separator:a752d981d1948aeae63c1a86070ae8e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e5eb1313d8307cf1362e997ee6f25e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#ae0e5eb1313d8307cf1362e997ee6f25e">RT_IO_SetLow</a>(io)&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc4ad11c216d218134b37833679bab11">SYS_GPIO0_REG</a>, ~(1 &lt;&lt; (io)))</td></tr>
+<tr class="memdesc:ae0e5eb1313d8307cf1362e997ee6f25e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets a specific output io channel at LOW level.  <a href="#ae0e5eb1313d8307cf1362e997ee6f25e">More...</a><br /></td></tr>
+<tr class="separator:ae0e5eb1313d8307cf1362e997ee6f25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a3ae496ca3e12098c74c9f13b20c554"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a5a3ae496ca3e12098c74c9f13b20c554">RT_IO_SetLevel16</a>(level)&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc4ad11c216d218134b37833679bab11">SYS_GPIO0_REG</a>, (level))</td></tr>
+<tr class="memdesc:a5a3ae496ca3e12098c74c9f13b20c554"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the level of all 16 io channel.  <a href="#a5a3ae496ca3e12098c74c9f13b20c554">More...</a><br /></td></tr>
+<tr class="separator:a5a3ae496ca3e12098c74c9f13b20c554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa69642c4177a35776090fdcf78d12e3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#aa69642c4177a35776090fdcf78d12e3b">RT_IO_Read</a>(io)&#160;&#160;&#160;((<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da394e80146590b4c461618c0c8ba298a9">SYS_GPIO1_REG</a>) &gt;&gt; (io)) &amp; 0x1)</td></tr>
+<tr class="memdesc:aa69642c4177a35776090fdcf78d12e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the level of a specific io.  <a href="#aa69642c4177a35776090fdcf78d12e3b">More...</a><br /></td></tr>
+<tr class="separator:aa69642c4177a35776090fdcf78d12e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf9c93d24ffeac5705da2c83ea2303d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#acf9c93d24ffeac5705da2c83ea2303d1">RT_IO_Read16</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da394e80146590b4c461618c0c8ba298a9">SYS_GPIO1_REG</a>)</td></tr>
+<tr class="memdesc:acf9c93d24ffeac5705da2c83ea2303d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the level of all 16 io.  <a href="#acf9c93d24ffeac5705da2c83ea2303d1">More...</a><br /></td></tr>
+<tr class="separator:acf9c93d24ffeac5705da2c83ea2303d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae845dc41cbf1b32b4d576373d1866d65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#ae845dc41cbf1b32b4d576373d1866d65">RT_IO_SetInputOutput</a>(io,  mode)</td></tr>
+<tr class="memdesc:ae845dc41cbf1b32b4d576373d1866d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the mode of specific GPIO channel.  <a href="#ae845dc41cbf1b32b4d576373d1866d65">More...</a><br /></td></tr>
+<tr class="separator:ae845dc41cbf1b32b4d576373d1866d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95fe40498ba314e1ea68aaa50335e7ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a95fe40498ba314e1ea68aaa50335e7ef">RT_IO_SetLevel</a>(io,  level)</td></tr>
+<tr class="memdesc:a95fe40498ba314e1ea68aaa50335e7ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the level of a specific io channel.  <a href="#a95fe40498ba314e1ea68aaa50335e7ef">More...</a><br /></td></tr>
+<tr class="separator:a95fe40498ba314e1ea68aaa50335e7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>General Input Output Library for M2. </p>
+<dl class="section author"><dt>Author</dt><dd>Zhirui Dai </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>16 Jun 2018 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>2018 Zhirui </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a5bb885982ff66a2e0a0a45a8ee9c35e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb885982ff66a2e0a0a45a8ee9c35e2">&#9670;&nbsp;</a></span>HIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HIGH&#160;&#160;&#160;0x1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword HIGH. </p>
+
+</div>
+</div>
+<a id="a1bb283bd7893b9855e2f23013891fc82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bb283bd7893b9855e2f23013891fc82">&#9670;&nbsp;</a></span>INPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INPUT&#160;&#160;&#160;0x0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword INPUT. </p>
+
+</div>
+</div>
+<a id="ab811d8c6ff3a505312d3276590444289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab811d8c6ff3a505312d3276590444289">&#9670;&nbsp;</a></span>LOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOW&#160;&#160;&#160;0x0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword LOW. </p>
+
+</div>
+</div>
+<a id="a61a3c9a18380aafb6e430e79bf596557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61a3c9a18380aafb6e430e79bf596557">&#9670;&nbsp;</a></span>OUTPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT&#160;&#160;&#160;0x1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Keyword OUTPUT. </p>
+
+</div>
+</div>
+<a id="aa69642c4177a35776090fdcf78d12e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa69642c4177a35776090fdcf78d12e3b">&#9670;&nbsp;</a></span>RT_IO_Read</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_Read</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">io</td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da394e80146590b4c461618c0c8ba298a9">SYS_GPIO1_REG</a>) &gt;&gt; (io)) &amp; 0x1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function returns the level of a specific io. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">io</td><td>the io channel to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the io level </dd></dl>
+
+</div>
+</div>
+<a id="acf9c93d24ffeac5705da2c83ea2303d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf9c93d24ffeac5705da2c83ea2303d1">&#9670;&nbsp;</a></span>RT_IO_Read16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_Read16</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da394e80146590b4c461618c0c8ba298a9">SYS_GPIO1_REG</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function returns the level of all 16 io. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t 16-bit number which defines 16 io channels' level </dd></dl>
+
+</div>
+</div>
+<a id="a752d981d1948aeae63c1a86070ae8e3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a752d981d1948aeae63c1a86070ae8e3a">&#9670;&nbsp;</a></span>RT_IO_SetHigh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_SetHigh</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">io</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc4ad11c216d218134b37833679bab11">SYS_GPIO0_REG</a>, (1 &lt;&lt; (io)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets a specific output io channel at HIGH level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">io</td><td>Channel to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ae333f1c232fdcb61b9e6ccaceeca2cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae333f1c232fdcb61b9e6ccaceeca2cec">&#9670;&nbsp;</a></span>RT_IO_SetInput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_SetInput</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">io</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da835280d31e2f3f5bc44bb1eb58024d80">SYS_IOCTL_REG</a>, ~(1 &lt;&lt; (io)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets a specific channel at INPUT mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">io</td><td>Channel to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ae845dc41cbf1b32b4d576373d1866d65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae845dc41cbf1b32b4d576373d1866d65">&#9670;&nbsp;</a></span>RT_IO_SetInputOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_SetInputOutput</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">io, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mode&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                         \</div><div class="line">        if (!mode)            \</div><div class="line">            IO_SetInput(io);  \</div><div class="line">        else                  \</div><div class="line">            IO_SetOutput(io); \</div><div class="line">    }</div></div><!-- fragment -->
+<p>This function sets the mode of specific GPIO channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">io</td><td>the specific io channel to setup </td></tr>
+    <tr><td class="paramname">mode</td><td>the mode, optional value: <a class="el" href="a00014.html#a1bb283bd7893b9855e2f23013891fc82">INPUT</a>, <a class="el" href="a00014.html#a61a3c9a18380aafb6e430e79bf596557">OUTPUT</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ade4bc867a36445fe0debc59cd5c9d9a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4bc867a36445fe0debc59cd5c9d9a5">&#9670;&nbsp;</a></span>RT_IO_SetInputOutput16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_SetInputOutput16</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mode</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da835280d31e2f3f5bc44bb1eb58024d80">SYS_IOCTL_REG</a>, mode)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets the mode of all GPIO channels. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>16-bit number which defines 16 IO channels' mode </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a95fe40498ba314e1ea68aaa50335e7ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95fe40498ba314e1ea68aaa50335e7ef">&#9670;&nbsp;</a></span>RT_IO_SetLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_SetLevel</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">io, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">level&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                       \</div><div class="line">        IO_SetOutput(io);   \</div><div class="line">        if (!level)         \</div><div class="line">            IO_SetLow(io);  \</div><div class="line">        else                \</div><div class="line">            IO_SetHigh(io); \</div><div class="line">    }</div></div><!-- fragment -->
+<p>This function sets the level of a specific io channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">io</td><td>the io channel to setup </td></tr>
+    <tr><td class="paramname">level</td><td>the io level, optional value: <a class="el" href="a00014.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>, <a class="el" href="a00014.html#ab811d8c6ff3a505312d3276590444289">LOW</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a5a3ae496ca3e12098c74c9f13b20c554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a3ae496ca3e12098c74c9f13b20c554">&#9670;&nbsp;</a></span>RT_IO_SetLevel16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_SetLevel16</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">level</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc4ad11c216d218134b37833679bab11">SYS_GPIO0_REG</a>, (level))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets the level of all 16 io channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>16-bit number which defines 16 IO channels' level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="ae0e5eb1313d8307cf1362e997ee6f25e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e5eb1313d8307cf1362e997ee6f25e">&#9670;&nbsp;</a></span>RT_IO_SetLow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_SetLow</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">io</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabc4ad11c216d218134b37833679bab11">SYS_GPIO0_REG</a>, ~(1 &lt;&lt; (io)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets a specific output io channel at LOW level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">io</td><td>Channel to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a80f50c7de76076789b624b7fce7531c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80f50c7de76076789b624b7fce7531c6">&#9670;&nbsp;</a></span>RT_IO_SetOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_IO_SetOutput</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">io</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da835280d31e2f3f5bc44bb1eb58024d80">SYS_IOCTL_REG</a>, (1 &lt;&lt; (io)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets a specific channel at OUTPUT mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">io</td><td>Channel to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.8-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+    <!-- id is needed for treeview function! -->
+    <!-- <ul>
+        <li class="navelem"><a class="el" href="dir_9c8c494a5e1ae1f33037b0e9d49f06c7.html">release</a></li><li class="navelem"><a class="el" href="dir_42743c43973611cb0b05144d150e48a5.html">include</a></li><li class="navelem"><a class="el" href="a00014.html">IO.h</a></li>
+        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+            <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+    </ul> -->
+    <div class="card">
+        <!-- <div class="card-header"> -->
+            <!-- Quote -->
+        <!-- </div> -->
+        <div class="card-body">
+            <!-- <h5 class="card-title">Special title treatment</h5> -->
+            <p class="card-text d-flex justify-content-between">
+                <a href="#" class="btn btn-primary">Return To Top</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

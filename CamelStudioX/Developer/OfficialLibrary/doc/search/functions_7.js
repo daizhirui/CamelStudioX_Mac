@@ -1,20 +1,13 @@
 var searchData=
 [
-  ['rt_5fadc_5fsd_5fread',['RT_ADC_SD_Read',['../analog_i_o_8c.html#a5532ac461de55576a3875b29300c8536',1,'RT_ADC_SD_Read():&#160;analogIO.c'],['../analog_i_o_8h.html#a5532ac461de55576a3875b29300c8536',1,'RT_ADC_SD_Read():&#160;analogIO.c']]],
-  ['rt_5fadc_5fv2p_5fread',['RT_ADC_V2P_Read',['../analog_i_o_8c.html#aeb7d0cb0a7849fc5736dae01fe607910',1,'RT_ADC_V2P_Read():&#160;analogIO.c'],['../analog_i_o_8h.html#aeb7d0cb0a7849fc5736dae01fe607910',1,'RT_ADC_V2P_Read():&#160;analogIO.c']]],
-  ['rt_5fclr_5fsram',['RT_Clr_Sram',['../mcu_8h.html#a42674a2ca7d088e68de4e2aa81ec597c',1,'mcu.c']]],
-  ['rt_5fdelaymiliseconds',['RT_DelayMiliseconds',['../time_8h.html#a960534919351d6e419e70a78521e87da',1,'RT_DelayMiliseconds(unsigned long ms):&#160;time.c'],['../time_8c.html#a960534919351d6e419e70a78521e87da',1,'RT_DelayMiliseconds(unsigned long ms):&#160;time.c']]],
-  ['rt_5frtc_5fgettime',['RT_RTC_GetTime',['../time_8h.html#ae30dec10f77cab56a66ee070fbe6a490',1,'RT_RTC_GetTime(unsigned char *d_year, unsigned char *d_mon, unsigned char *d_day, unsigned char *d_hour, unsigned char *d_min, unsigned char *d_sec):&#160;time.c'],['../time_8c.html#ae30dec10f77cab56a66ee070fbe6a490',1,'RT_RTC_GetTime(unsigned char *d_year, unsigned char *d_mon, unsigned char *d_day, unsigned char *d_hour, unsigned char *d_min, unsigned char *d_sec):&#160;time.c']]],
-  ['rt_5fspi_5fdelay',['RT_SPI_delay',['../_s_p_i_8c.html#ad8501612270a1f61933e255945765b11',1,'RT_SPI_delay():&#160;SPI.c'],['../_s_p_i_8h.html#ad8501612270a1f61933e255945765b11',1,'RT_SPI_delay():&#160;SPI.c']]],
-  ['rt_5fspi_5fmastertransfer',['RT_SPI_MasterTransfer',['../_s_p_i_8c.html#a61938c7db10cdb7d7281c7c796526b59',1,'RT_SPI_MasterTransfer(unsigned char c):&#160;SPI.c'],['../_s_p_i_8h.html#a61938c7db10cdb7d7281c7c796526b59',1,'RT_SPI_MasterTransfer(unsigned char c):&#160;SPI.c']]],
-  ['rt_5fspi_5fread',['RT_SPI_Read',['../_s_p_i_8c.html#a12247c98a144c67f02e3c0783c430b17',1,'RT_SPI_Read():&#160;SPI.c'],['../_s_p_i_8h.html#a12247c98a144c67f02e3c0783c430b17',1,'RT_SPI_Read():&#160;SPI.c']]],
-  ['rt_5fspi_5fslavetransfer',['RT_SPI_SlaveTransfer',['../_s_p_i_8c.html#a86a904500b912f32af83058779a01251',1,'RT_SPI_SlaveTransfer(unsigned char c):&#160;SPI.c'],['../_s_p_i_8h.html#a86a904500b912f32af83058779a01251',1,'RT_SPI_SlaveTransfer(unsigned char c):&#160;SPI.c']]],
-  ['rt_5fuart0_5fgetchar',['RT_UART0_getchar',['../_u_a_r_t0_8c.html#a63544d2653f23b5ae1d4b948dd107919',1,'RT_UART0_getchar():&#160;UART0.c'],['../_u_a_r_t0_8h.html#a63544d2653f23b5ae1d4b948dd107919',1,'RT_UART0_getchar():&#160;UART0.c']]],
-  ['rt_5fuart0_5flinmaster',['RT_UART0_LinMaster',['../_u_a_r_t0___lin_8c.html#a89ca6622996722badf3ec453f814c87c',1,'RT_UART0_LinMaster(char pattern):&#160;UART0_Lin.c'],['../_u_a_r_t0___lin_8h.html#a89ca6622996722badf3ec453f814c87c',1,'RT_UART0_LinMaster(char pattern):&#160;UART0_Lin.c']]],
-  ['rt_5fuart0_5fputchar',['RT_UART0_putchar',['../_u_a_r_t0_8c.html#a301c06c215f2eca7fe000f5f72700e01',1,'RT_UART0_putchar(unsigned char c):&#160;UART0.c'],['../_u_a_r_t0_8h.html#a301c06c215f2eca7fe000f5f72700e01',1,'RT_UART0_putchar(unsigned char c):&#160;UART0.c']]],
-  ['rt_5fuart0_5fputs',['RT_UART0_puts',['../_u_a_r_t0_8c.html#ab079403cb489ed69ce51cdbf7b0abdea',1,'RT_UART0_puts(unsigned char *string):&#160;UART0.c'],['../_u_a_r_t0_8h.html#ab079403cb489ed69ce51cdbf7b0abdea',1,'RT_UART0_puts(unsigned char *string):&#160;UART0.c']]],
-  ['rt_5fuart1_5fgetchar',['RT_UART1_getchar',['../_u_a_r_t1_8h.html#a6e1ba7e2961dd736524d823ca6d8734f',1,'RT_UART1_getchar():&#160;UART1.c'],['../_u_a_r_t1_8c.html#a6e1ba7e2961dd736524d823ca6d8734f',1,'RT_UART1_getchar():&#160;UART1.c']]],
-  ['rt_5fuart1_5flinmaster',['RT_UART1_LinMaster',['../_u_a_r_t1___lin_8c.html#a8763af887fdc610ac16b9f550b417cbd',1,'RT_UART1_LinMaster(char pattern):&#160;UART1_Lin.c'],['../_u_a_r_t1___lin_8h.html#a8763af887fdc610ac16b9f550b417cbd',1,'RT_UART1_LinMaster(char pattern):&#160;UART1_Lin.c']]],
-  ['rt_5fuart1_5fputchar',['RT_UART1_putchar',['../_u_a_r_t1_8h.html#a45468a0c69183466f2de1bee15c31a7b',1,'RT_UART1_putchar(unsigned char c):&#160;UART1.c'],['../_u_a_r_t1_8c.html#a45468a0c69183466f2de1bee15c31a7b',1,'RT_UART1_putchar(unsigned char c):&#160;UART1.c']]],
-  ['rt_5fuart1_5fputs',['RT_UART1_puts',['../_u_a_r_t1_8h.html#a7be48e49416eaa11107c5046b3bc27e0',1,'RT_UART1_puts(unsigned char *s):&#160;UART1.c'],['../_u_a_r_t1_8c.html#a31cc7b17b0b69f03fc5bc9ebff9f93d5',1,'RT_UART1_puts(unsigned char *string):&#160;UART1.c']]]
+  ['sprintf',['sprintf',['../a00026.html#ab416b2a62f47ec0095853e37ba84e78b',1,'stdio.h']]],
+  ['strcat',['strcat',['../a00038.html#adb8723e585ed29f2370cddf90f6891bc',1,'string.h']]],
+  ['strchr',['strchr',['../a00038.html#afcd97f487174f9092b0f23c7ac78a55a',1,'string.h']]],
+  ['strcmp',['strcmp',['../a00038.html#a11bd144d7d44914099a3aeddf1c8567d',1,'string.h']]],
+  ['strcpy',['strcpy',['../a00038.html#a7a82515b5d377be04817715c5465b647',1,'string.h']]],
+  ['strlen',['strlen',['../a00038.html#a008e171a518fe0e0352f31b245e03875',1,'string.h']]],
+  ['strncat',['strncat',['../a00038.html#a0aee928c2844a269966e4832fd2255c5',1,'string.h']]],
+  ['strncmp',['strncmp',['../a00038.html#a07f4a84c11c106e95c32b6ab509346ef',1,'string.h']]],
+  ['strncpy',['strncpy',['../a00038.html#a47d54f24198df56da51078a6c540b9ed',1,'string.h']]],
+  ['strstr',['strstr',['../a00038.html#aeb923ee2a7a01f82eb1e2f8ae188c6d4',1,'string.h']]]
 ];

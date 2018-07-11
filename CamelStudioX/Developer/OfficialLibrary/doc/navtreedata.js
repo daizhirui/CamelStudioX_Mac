@@ -23,12 +23,37 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "CamelStudio Library Documentaion", "index.html", [
-    [ "Analog Input Output Library for M2", "md_src_analog_i_o__r_e_a_d_m_e.html", null ],
-    [ "Data Encryption Standard (DES) Library for M2", "md_src__d_e_s__r_e_a_d_m_e.html", null ],
+  [ "Camel Library Documentaion", "index.html", [
+    [ "Main Page", "index.html", null ],
+    [ "Analog Output Library for M2", "a00139.html", null ],
+    [ "Data Encryption Standard (DES) Library for M2", "a00140.html", null ],
+    [ "Flash Library for M2", "a00141.html", null ],
+    [ "Internal Temperature Sensor", "a00142.html", null ],
+    [ "Interrupt Library for M2", "a00143.html", null ],
+    [ "Input Output Library for M2", "a00144.html", null ],
+    [ "Micro Control Unit (MCU) Library for M2", "a00145.html", null ],
+    [ "Amplifier (OPO)", "a00146.html", null ],
+    [ "Sigma Delta", "a00147.html", null ],
+    [ "Soft Float Library for M2", "a00148.html", null ],
+    [ "SPI Library For M2", "a00149.html", null ],
+    [ "Standard Input Output Library for M2", "a00150.html", null ],
+    [ "Standard Library for M2", "a00151.html", null ],
+    [ "String Library for M2", "a00152.html", null ],
+    [ "TC0 Library for M2", "a00153.html", null ],
+    [ "TC1 Library for M2", "a00154.html", null ],
+    [ "TC2 Library for M2", "a00155.html", null ],
+    [ "TC4 Library for M2", "a00156.html", null ],
+    [ "Real Time Counter Library for M2", "a00157.html", null ],
+    [ "UART Library for M2", "a00158.html", null ],
+    [ "Voltage to Pulse Width", "a00159.html", null ],
+    [ "Watch Dog Library for M2", "a00160.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ]
+      [ "Class Index", "classes.html", null ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
@@ -36,7 +61,9 @@ var NAVTREE =
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
+        [ "Macros", "globals_defs.html", "globals_defs" ]
       ] ]
     ] ]
   ] ]
@@ -44,10 +71,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_d_e_s_8c.html",
-"_t_c2_8h.html#a80f5ade258504a1243ccb058dd860475",
-"mcu_8h.html#a61c6c3e2790298ca9bef424e17010ae5",
-"string_8h.html#a43b4547e12226fef871eed8afe191ad7"
+"a00002.html",
+"a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da827a2b1f5ea5bfe4f6d0e37f474e4269",
+"a00059.html#acdfc8b8f0bddfd7382d49a22a92a5930"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

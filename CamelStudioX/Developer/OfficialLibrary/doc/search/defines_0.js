@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['exint0',['EXINT0',['../_interrupt_8h.html#a2e3f727d359d26314631842394f4a223',1,'Interrupt.h']]],
-  ['exint1',['EXINT1',['../_interrupt_8h.html#a1ea7d6796165b98f1bc6bf6fe841c3d9',1,'Interrupt.h']]],
-  ['exint2',['EXINT2',['../_interrupt_8h.html#ac959f4d8aed4e04e25c966e6c8315431',1,'Interrupt.h']]],
-  ['exint3',['EXINT3',['../_interrupt_8h.html#ae8428c0cbd7362b90ea048bcf59aef2c',1,'Interrupt.h']]],
-  ['exint4',['EXINT4',['../_interrupt_8h.html#a719b5fa27b5469e1fe2844e9930fa249',1,'Interrupt.h']]],
-  ['exint5',['EXINT5',['../_interrupt_8h.html#a309fb21107f9f6261cd7e7ca9de6c2f2',1,'Interrupt.h']]]
+  ['abs',['abs',['../a00023.html#a7eee275c4550a21c03be987913256c82',1,'soft_fp.h']]],
+  ['atan',['atan',['../a00023.html#a0526fb3466fec955862c2cee3110a6ab',1,'soft_fp.h']]],
+  ['atan2',['atan2',['../a00023.html#ac371f13b8648d84164686c8f32aa6ed8',1,'soft_fp.h']]],
+  ['atan_5feighth_5fpi',['ATAN_EIGHTH_PI',['../a00023.html#a5c8eebe5b0dbd390778ec30422eee7e8',1,'soft_fp.h']]]
 ];
