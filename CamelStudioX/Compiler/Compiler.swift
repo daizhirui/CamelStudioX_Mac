@@ -25,7 +25,7 @@ class Compiler: NSObject {
     
     var compilerDirectoryPath = Bundle.main.bundlePath + "/Contents/Resources/Developer/Toolchains/bin/"
     var gcc_MIPS_Compiler = "mips-netbsd-elf-gcc"
-    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -G0 "
+    var gcc_Option = "-EL -DPRT_UART -march=mips1 -std=c99 -c -G0 -O2 -msoft-float -Wall -Wextra"
     var as_MIPS_Compiler = "mips-netbsd-elf-as"
     var as_Option = "-EL"
     var ld_MIPS_Compiler = "mips-netbsd-elf-ld"

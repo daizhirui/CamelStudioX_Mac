@@ -146,10 +146,10 @@ Macros</h2></td></tr>
 <tr class="memitem:a369b51538a0ccf57dcdb30e12352a8c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00059.html#a369b51538a0ccf57dcdb30e12352a8c7">RT_WatchDog_Setup</a>(n,  irq,  rst)</td></tr>
 <tr class="memdesc:a369b51538a0ccf57dcdb30e12352a8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function set the WDT app.  <a href="#a369b51538a0ccf57dcdb30e12352a8c7">More...</a><br /></td></tr>
 <tr class="separator:a369b51538a0ccf57dcdb30e12352a8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae976b2fe76d4b216e68a771068434abc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00059.html#ae976b2fe76d4b216e68a771068434abc">RT_WatchDog_Clear</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabca167e95871e42fa1108c2fd2cae6b3">WDT_CLR_REG</a>, 1)</td></tr>
+<tr class="memitem:ae976b2fe76d4b216e68a771068434abc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00059.html#ae976b2fe76d4b216e68a771068434abc">RT_WatchDog_Clear</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(WDT_CLR_REG, 1)</td></tr>
 <tr class="memdesc:ae976b2fe76d4b216e68a771068434abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear Watchdog.  <a href="#ae976b2fe76d4b216e68a771068434abc">More...</a><br /></td></tr>
 <tr class="separator:ae976b2fe76d4b216e68a771068434abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdfc8b8f0bddfd7382d49a22a92a5930"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00059.html#acdfc8b8f0bddfd7382d49a22a92a5930">RT_WatchDog_ReadValue</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da91e0f7299a076e5fae19c026a579e1bb">WDT_READ_REG</a>)</td></tr>
+<tr class="memitem:acdfc8b8f0bddfd7382d49a22a92a5930"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00059.html#acdfc8b8f0bddfd7382d49a22a92a5930">RT_WatchDog_ReadValue</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(WDT_READ_REG)</td></tr>
 <tr class="memdesc:acdfc8b8f0bddfd7382d49a22a92a5930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read watchdog value.  <a href="#acdfc8b8f0bddfd7382d49a22a92a5930">More...</a><br /></td></tr>
 <tr class="separator:acdfc8b8f0bddfd7382d49a22a92a5930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -169,7 +169,7 @@ Macros</h2></td></tr>
           <td class="memname">#define RT_WatchDog_Clear</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dabca167e95871e42fa1108c2fd2cae6b3">WDT_CLR_REG</a>, 1)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(WDT_CLR_REG, 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -189,7 +189,7 @@ Macros</h2></td></tr>
           <td class="memname">#define RT_WatchDog_ReadValue</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da91e0f7299a076e5fae19c026a579e1bb">WDT_READ_REG</a>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(WDT_READ_REG)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -230,9 +230,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                                                    \</div><div class="line">        MemoryWrite32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dad29dfaec986c68d5a49517de7f268504">WDT_CTL0_REG</a>, (n &lt;&lt; 4 | irq &lt;&lt; 2 | rst &lt;&lt; 1 | 1)); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5">SYS_CTL0_REG</a>, irq);                                   \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dab61d9968d782d6c00e9de838e38913f5">SYS_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:43</div></div>
-<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dad29dfaec986c68d5a49517de7f268504"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dad29dfaec986c68d5a49517de7f268504">WDT_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:190</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                                                    \</div><div class="line">        MemoryWrite32(WDT_CTL0_REG, (n &lt;&lt; 4 | irq &lt;&lt; 2 | rst &lt;&lt; 1 | 1)); \</div><div class="line">        MemoryOr32(SYS_CTL0_REG, irq);                                   \</div><div class="line">    }</div></div><!-- fragment -->
 <p>This function set the WDT app. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -254,7 +252,7 @@ Macros</h2></td></tr>
     <!-- id is needed for treeview function! -->
     <!-- <ul>
         <li class="navelem"><a class="el" href="dir_9c8c494a5e1ae1f33037b0e9d49f06c7.html">release</a></li><li class="navelem"><a class="el" href="dir_42743c43973611cb0b05144d150e48a5.html">include</a></li><li class="navelem"><a class="el" href="a00059.html">WDT.h</a></li>
-        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+        <li class="footer">Generated on Fri Jul 13 2018 14:03:53 for Camel Library Documentaion by
             <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
     </ul> -->
@@ -266,7 +264,7 @@ Macros</h2></td></tr>
             <!-- <h5 class="card-title">Special title treatment</h5> -->
             <p class="card-text d-flex justify-content-between">
                 <a href="#" class="btn btn-primary">Return To Top</a>
-                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Fri Jul 13 2018 14:03:53 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
             </p>
         </div>
     </div>

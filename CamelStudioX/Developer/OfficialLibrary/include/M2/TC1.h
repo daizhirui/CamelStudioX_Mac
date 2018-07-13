@@ -1,10 +1,10 @@
 /**
-* @file TC1.h
-* @author Zhirui Dai
-* @date 16 Jun 2018
-* @copyright 2018 Zhirui
-* @brief Timer1 Library for M2
-*/
+ * @file TC1.h
+ * @author Zhirui Dai
+ * @date 16 Jun 2018
+ * @copyright 2018 Zhirui
+ * @brief Timer1 Library for M2
+ */
 #ifndef __TC1_h__
 #define __TC1_h__
 
@@ -97,7 +97,21 @@
  * @param irqEn     when #ON, the interrupt is enabled; when #OFF, disabled
  * @return          void
  */
-void RT_TC1_TimerSet1us(uint32_t T, switch_t irqEn);
+inline void RT_TC1_TimerSet1us(uint32_t T, switch_t irqEn)
+{
+    // [T1_CLK_REG] = 3 * T / [T1_REF_REG] - 1
+    // Let [T1_REF_REG] = 255, get [T1_CLK_REG]
+    uint32_t clk = T / 81 - 1;
+    if (clk < 1) clk = 1;
+    uint32_t ref = 30 * T / clk;
+    if (ref % 10 >= 5) ref = ref / 10 + 1;  // ensure the interval is bigger than T
+    else ref /= 10;
+    MemoryAnd32(T1_CTL0_REG, ~(1 << 7));    // turn off irq
+    MemoryWrite32(T1_CLK_REG, clk);
+    MemoryWrite32(T1_REF_REG, ref);
+    MemoryOr32(T1_CTL0_REG, (0x02 | (irqEn << 7)));
+    MemoryOr32(SYS_CTL0_REG, irqEn);
+}
 
 /**
  * @brief
@@ -187,27 +201,27 @@ void RT_TC1_TimerSet1us(uint32_t T, switch_t irqEn);
 
 /**
  * @brief       Set TC1 Trigger Mode of Pulse Width Measurement
- * @param mode  Trigger mode, optional values: #RAISE_TRIGGER, #FALL_TRIGGER
+ * @param mode  Trigger mode, optional values: #RISING_TRIGGER, #FALLING_TRIGGER
  * @return      void
  */
-#define RT_TC1_PWMMTriggerMode(mode)            \
-    {                                        \
-        MemoryAnd32(T1_CTL0_REG, ~(1 << 2)); \
-        MemoryOr32(T1_CTL0_REG, mode << 2);  \
-    }
+inline void RT_TC1_PWMMTriggerMode(trigger_mode_t mode)
+{
+    MemoryAnd32(T1_CTL0_REG, ~(1 << 2));
+    MemoryOr32(T1_CTL0_REG, mode << 2);
+}
 /**
  * @brief
  * This function sets the Pulse width measure for TC1
- * @param trigger   the trigger mode, RISING or FALLING
+ * @param trigger   the trigger mode, #RISING_TRIGGER, #FALLING_TRIGGER
  * @param irq       when ON, the interrupt is enabled; when OFF, disabled
  * @return          void
  */
-#define RT_TC1_SetPWMM(trigger, irq)                                   \
-    {                                                               \
-        MemoryAnd32(T1_CTL0_REG, ~((0x1 << 7) + (0x1 << 2)));       \
-        MemoryOr32(T1_CTL0_REG, (0x18 | (irq << 7) | (rise << 2))); \
-        MemoryOr32(SYS_CTL0_REG, irq);                              \
-    }
+inline void RT_TC1_SetPWMM(trigger_mode_t mode, switch_t irq)
+{
+    MemoryAnd32(T1_CTL0_REG, ~((0x1 << 7) + (0x1 << 2)));
+    MemoryOr32(T1_CTL0_REG, (0x18 | (irq << 7) | (mode << 2)));
+    MemoryOr32(SYS_CTL0_REG, irq);
+}
 /*************** Timer0 Read ***************/
 
 /**

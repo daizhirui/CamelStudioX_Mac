@@ -142,6 +142,7 @@ $(document).ready(function(){initNavTree('a00002.html','');});
 <p>Analog Input Output Library for M2.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="a00020.html">mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00041.html">TC0.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -194,9 +195,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a312f152517ab50c1cda791e118dd4473"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a312f152517ab50c1cda791e118dd4473">RT_ADC_SD_Setup</a>(sampleRate,  adWidth,  triggerSource)</td></tr>
 <tr class="memdesc:a312f152517ab50c1cda791e118dd4473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set SD simply.  <a href="#a312f152517ab50c1cda791e118dd4473">More...</a><br /></td></tr>
 <tr class="separator:a312f152517ab50c1cda791e118dd4473"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab44c37130776b81ef554d8967fcf9e62"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ab44c37130776b81ef554d8967fcf9e62">RT_DAC_analogWrite</a>(channel,  value,  p_vdd5)</td></tr>
-<tr class="memdesc:ab44c37130776b81ef554d8967fcf9e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output an analog value by a selected pwm.  <a href="#ab44c37130776b81ef554d8967fcf9e62">More...</a><br /></td></tr>
-<tr class="separator:ab44c37130776b81ef554d8967fcf9e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -244,11 +242,11 @@ Enumerations</h2></td></tr>
 <a class="el" href="a00002.html#a80255c41c3764feff9b79664f15feb46aa035ba8725fe8565c5505a295c22ea8e">V2P_185K</a> = 0x3
  }</td></tr>
 <tr class="separator:a80255c41c3764feff9b79664f15feb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d490931c48f5330b52533397251335c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a4d490931c48f5330b52533397251335c">ANALOG_OUTPUT</a> { <a class="el" href="a00002.html#a4d490931c48f5330b52533397251335cacddac909ab33947534e48dd4db264d74">ANALOG_OUTPUT_0</a> = 0x0, 
-<a class="el" href="a00002.html#a4d490931c48f5330b52533397251335cae3e86cb61e54d2d71a936d57768b2c04">ANALOG_OUTPUT_1</a> = 0x100, 
-<a class="el" href="a00002.html#a4d490931c48f5330b52533397251335ca778485bb7dac9a00dadf2d72aa1606e1">ANALOG_OUTPUT_2</a> = 0x300
+<tr class="memitem:ae9e6d7c812d9175f04b9a2d31a74f737"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737">ANALOG_OUTPUT_T</a> { <a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737acddac909ab33947534e48dd4db264d74">ANALOG_OUTPUT_0</a> = 0x0, 
+<a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737ae3e86cb61e54d2d71a936d57768b2c04">ANALOG_OUTPUT_1</a> = 0x100, 
+<a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737a778485bb7dac9a00dadf2d72aa1606e1">ANALOG_OUTPUT_2</a> = 0x300
  }</td></tr>
-<tr class="separator:a4d490931c48f5330b52533397251335c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ae9e6d7c812d9175f04b9a2d31a74f737"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -291,6 +289,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aeb7d0cb0a7849fc5736dae01fe607910"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aeb7d0cb0a7849fc5736dae01fe607910">RT_ADC_V2P_Read</a> ()</td></tr>
 <tr class="memdesc:aeb7d0cb0a7849fc5736dae01fe607910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the result of V2P.  <a href="#aeb7d0cb0a7849fc5736dae01fe607910">More...</a><br /></td></tr>
 <tr class="separator:aeb7d0cb0a7849fc5736dae01fe607910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae07217c068930cb51221cac4b42d5338"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ae07217c068930cb51221cac4b42d5338">RT_DAC_analogWrite</a> (<a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737">ANALOG_OUTPUT_T</a> channel, uint32_t value, uint32_t p_vdd5)</td></tr>
+<tr class="memdesc:ae07217c068930cb51221cac4b42d5338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output an analog value by a selected pwm.  <a href="#ae07217c068930cb51221cac4b42d5338">More...</a><br /></td></tr>
+<tr class="separator:ae07217c068930cb51221cac4b42d5338"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Analog Input Output Library for M2. </p>
@@ -328,8 +329,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                          \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, ~(0x3 &lt;&lt; 1)); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, (mode &lt;&lt; 1));  \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:168</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                          \</div><div class="line">        MemoryAnd32(AD_CTL0_REG, ~(0x3 &lt;&lt; 1)); \</div><div class="line">        MemoryOr32(AD_CTL0_REG, (mode &lt;&lt; 1));  \</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set the length of the result. </p>
 <dl class="section note"><dt>Note</dt><dd>Set the filter frequency to adjust the ad width. 1K Hz is for 14bit, 512Hz for 16bit, 256Hz for 18bit, 128Hz for 20bit. The frequency mentioned is relative to the sd clock frequency. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -357,8 +357,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                          \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, ~(0x3 &lt;&lt; 3)); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, (mode &lt;&lt; 3));  \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:168</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                          \</div><div class="line">        MemoryAnd32(AD_CTL0_REG, ~(0x3 &lt;&lt; 3)); \</div><div class="line">        MemoryOr32(AD_CTL0_REG, (mode &lt;&lt; 3));  \</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set the sample rate of SD. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -385,8 +384,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                        \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, ~(1 &lt;&lt; 6)); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, source &lt;&lt; 6);\</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:168</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                        \</div><div class="line">        MemoryAnd32(AD_CTL0_REG, ~(1 &lt;&lt; 6)); \</div><div class="line">        MemoryOr32(AD_CTL0_REG, source &lt;&lt; 6);\</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set the trigger source of SD. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -458,67 +456,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                          \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, ~(0x3 &lt;&lt; 9)); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, (resistor &lt;&lt; 9));   \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:168</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                          \</div><div class="line">        MemoryAnd32(AD_CTL0_REG, ~(0x3 &lt;&lt; 9)); \</div><div class="line">        MemoryOr32(AD_CTL0_REG, (resistor &lt;&lt; 9));   \</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set the resistor of V2P. When res = 3, single input mode is enabled, vcom will be fed into the P-side of OPO! </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">resistor</td><td>optional value: <a class="el" href="a00002.html#a80255c41c3764feff9b79664f15feb46aa035ba8725fe8565c5505a295c22ea8e">V2P_185K</a>, <a class="el" href="a00002.html#a80255c41c3764feff9b79664f15feb46a1ac9774056594cac22ae2c6431fa4277">V2P_220K</a>, <a class="el" href="a00002.html#a80255c41c3764feff9b79664f15feb46a4b7eb698a06cc149cbb1b7f8f4dd4a8e">V2P_256K</a>, <a class="el" href="a00002.html#a80255c41c3764feff9b79664f15feb46ae20e5b8adb1fa31fa8df9a56d05e7eb5">V2P_291K</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-</div>
-</div>
-<a id="ab44c37130776b81ef554d8967fcf9e62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab44c37130776b81ef554d8967fcf9e62">&#9670;&nbsp;</a></span>RT_DAC_analogWrite</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RT_DAC_analogWrite</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">channel, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">value, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">p_vdd5&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                                               \</div><div class="line">    MemoryOr32((<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e">T0_CTL0_REG</a>|channel), 1&lt;&lt;4);                    \</div><div class="line">    MemoryAnd32((<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e">T0_CTL0_REG</a>|channel), ~(0x3 &lt;&lt; 6));            \</div><div class="line">    MemoryWrite32((<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da944380f6d792e04a4c2e84dc668581a3">T0_CLK_REG</a>|channel), 1);                     \</div><div class="line">    MemoryWrite32((<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da7b512fe986ef45d3f84daa6bf6733200">T0_REF_REG</a>|channel), value * 255/p_vdd5);    \</div><div class="line">}</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da944380f6d792e04a4c2e84dc668581a3"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da944380f6d792e04a4c2e84dc668581a3">T0_CLK_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:124</div></div>
-<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da7b512fe986ef45d3f84daa6bf6733200"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da7b512fe986ef45d3f84daa6bf6733200">T0_REF_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:118</div></div>
-<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e">T0_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:116</div></div>
-</div><!-- fragment -->
-<p>Output an analog value by a selected pwm. </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>Turn the pwm for selected channel on.</li>
-<li>Turn on the interrupt of the pwm.</li>
-<li>Set the clock divider of the corresponding timer.</li>
-<li>Set the duty of the pwm. </li>
-</ol>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">channel</td><td>The analog channel to output, optional value: <a class="el" href="a00002.html#a4d490931c48f5330b52533397251335cacddac909ab33947534e48dd4db264d74">ANALOG_OUTPUT_0</a>, <a class="el" href="a00002.html#a4d490931c48f5330b52533397251335cae3e86cb61e54d2d71a936d57768b2c04">ANALOG_OUTPUT_1</a>, <a class="el" href="a00002.html#a4d490931c48f5330b52533397251335ca778485bb7dac9a00dadf2d72aa1606e1">ANALOG_OUTPUT_2</a> </td></tr>
-    <tr><td class="paramname">value</td><td>The analog value to output. </td></tr>
-    <tr><td class="paramname">p_vdd5</td><td>The vlotage of external power supply, it should be connected to p_vdd5, a pin of M2. On the Oasis V1.1 (black board version) of M2, it is determined by Jumper 6 and Jumper 7. Choose Jumper 6 for 5V and Jumper 7 for 3.3V. ATTENTION! DO NOT CHOOSE JUMPER 6 AND JUMPER 7 AT THE SAME TIME! </td></tr>
   </table>
   </dd>
 </dl>
@@ -541,8 +483,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                                   \</div><div class="line">        RT_ADC_V2P_SetResistor(0);                      \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, ~<a class="code" href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae">OPO_EXCHANGE_PIN</a>);     \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, <span class="keywordflow">switch</span>);                 \</div><div class="line">    }</div><div class="ttc" id="a00002_html_af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae"><div class="ttname"><a href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae">OPO_EXCHANGE_PIN</a></div><div class="ttdef"><b>Definition:</b> analogIO.h:28</div></div>
-<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:170</div></div>
+<b>Value:</b><div class="fragment"><div class="line">{                                                   \</div><div class="line">        RT_ADC_V2P_SetResistor(0);                      \</div><div class="line">        MemoryAnd32(AD_OPO_REG, ~<a class="code" href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae">OPO_EXCHANGE_PIN</a>);     \</div><div class="line">        MemoryOr32(AD_OPO_REG, <span class="keywordflow">switch</span>);                 \</div><div class="line">    }</div><div class="ttc" id="a00002_html_af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae"><div class="ttname"><a href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae">OPO_EXCHANGE_PIN</a></div><div class="ttdef"><b>Definition:</b> analogIO.h:28</div></div>
 </div><!-- fragment -->
 <p>Set double side mode and exchange P side and N side in double side mode. </p>
 <dl class="section note"><dt>Note</dt><dd>AD_OPO_REG[2]: 1 for inn and inp switch, 0 for not (normal use). AD_OPO_REG[2]: 0 for not exchange, 1 for exchange. </dd></dl>
@@ -571,9 +512,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                               \</div><div class="line">        RT_ADC_V2P_SetResistor(<a class="code" href="a00002.html#a80255c41c3764feff9b79664f15feb46aa035ba8725fe8565c5505a295c22ea8e">V2P_185K</a>);           \</div><div class="line">        RT_ADC_TemperatureSensorOff();              \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, ~<a class="code" href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae">OPO_EXCHANGE_PIN</a>); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, pin);                \</div><div class="line">    }</div><div class="ttc" id="a00002_html_af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae"><div class="ttname"><a href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae">OPO_EXCHANGE_PIN</a></div><div class="ttdef"><b>Definition:</b> analogIO.h:28</div></div>
+<b>Value:</b><div class="fragment"><div class="line">{                                               \</div><div class="line">        RT_ADC_V2P_SetResistor(<a class="code" href="a00002.html#a80255c41c3764feff9b79664f15feb46aa035ba8725fe8565c5505a295c22ea8e">V2P_185K</a>);           \</div><div class="line">        RT_ADC_TemperatureSensorOff();              \</div><div class="line">        MemoryAnd32(AD_OPO_REG, ~<a class="code" href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae">OPO_EXCHANGE_PIN</a>); \</div><div class="line">        MemoryOr32(AD_OPO_REG, pin);                \</div><div class="line">    }</div><div class="ttc" id="a00002_html_af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae"><div class="ttname"><a href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae">OPO_EXCHANGE_PIN</a></div><div class="ttdef"><b>Definition:</b> analogIO.h:28</div></div>
 <div class="ttc" id="a00002_html_a80255c41c3764feff9b79664f15feb46aa035ba8725fe8565c5505a295c22ea8e"><div class="ttname"><a href="a00002.html#a80255c41c3764feff9b79664f15feb46aa035ba8725fe8565c5505a295c22ea8e">V2P_185K</a></div><div class="ttdef"><b>Definition:</b> analogIO.h:97</div></div>
-<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:170</div></div>
 </div><!-- fragment -->
 <p>Set single side mode and select P side or N side in single side mode. </p>
 <dl class="section note"><dt>Note</dt><dd>AD_CTL0_REG[10:9]: should be 11(binary) when opo is required to be single mode. Temperature sensor should be turned off. AD_OPO_REG[15]: 1 for single side, 0 for double side. AD_OPO_REG[2]: 0 for n side, 1 for p side. </dd></dl>
@@ -624,8 +564,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                                                                    \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, ~(0xff &lt;&lt; 8));                                           \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, (((Pin &lt;&lt; 7) + (Pgain &lt;&lt; 4) + (Nin &lt;&lt; 3) + Ngain) &lt;&lt; 8)); \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:170</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                                                                    \</div><div class="line">        MemoryAnd32(AD_OPO_REG, ~(0xff &lt;&lt; 8));                                           \</div><div class="line">        MemoryOr32(AD_OPO_REG, (((Pin &lt;&lt; 7) + (Pgain &lt;&lt; 4) + (Nin &lt;&lt; 3) + Ngain) &lt;&lt; 8)); \</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set the amplification of the amplifier. </p>
 <dl class="section note"><dt>Note</dt><dd>AD_OPO_REG[15]: Pin, AD_OPO_REG[14:12]: Pgain; AD_OPO_REG[11]: Nin, AD_OPO_REG[10:8]: Ngain. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -656,13 +595,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                           \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, ~(1 &lt;&lt; 15));   \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, (mode &lt;&lt; 15));  \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:168</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                           \</div><div class="line">        MemoryAnd32(AD_CTL0_REG, ~(1 &lt;&lt; 15));   \</div><div class="line">        MemoryOr32(AD_CTL0_REG, (mode &lt;&lt; 15));  \</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set the bypass of opo. If opo is bypassed, input will be fed into SD directly. (select the filter resistor, 1 for 50k and 0 for 100k) </p>
 <dl class="section note"><dt>Note</dt><dd>AD_CTL0_REG[15]: 1=bypass, 0=no bypass </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mode</td><td>bypass switch, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
+    <tr><td class="paramname">mode</td><td>bypass switch, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -707,15 +645,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                                                                \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, ~(0xf &lt;&lt; 4));                                        \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, ((ch0 &lt;&lt; 4) + (ch1 &lt;&lt; 5) + (ch2 &lt;&lt; 6) + (ch3 &lt;&lt; 7))); \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:170</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                                                                \</div><div class="line">        MemoryAnd32(AD_OPO_REG, ~(0xf &lt;&lt; 4));                                        \</div><div class="line">        MemoryOr32(AD_OPO_REG, ((ch0 &lt;&lt; 4) + (ch1 &lt;&lt; 5) + (ch2 &lt;&lt; 6) + (ch3 &lt;&lt; 7))); \</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set the state of every amplifier channel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ch0</td><td>channel 0, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
-    <tr><td class="paramname">ch1</td><td>channel 1, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
-    <tr><td class="paramname">ch2</td><td>channel 2, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
-    <tr><td class="paramname">ch3</td><td>channel 3, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
+    <tr><td class="paramname">ch0</td><td>channel 0, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
+    <tr><td class="paramname">ch1</td><td>channel 1, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
+    <tr><td class="paramname">ch2</td><td>channel 2, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
+    <tr><td class="paramname">ch3</td><td>channel 3, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -770,10 +707,10 @@ Functions</h2></td></tr>
 <p>Set OPO at Differential Mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ch0</td><td>channel 0, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
-    <tr><td class="paramname">ch1</td><td>channel 1, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
-    <tr><td class="paramname">ch2</td><td>channel 2, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
-    <tr><td class="paramname">ch3</td><td>channel 3, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
+    <tr><td class="paramname">ch0</td><td>channel 0, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
+    <tr><td class="paramname">ch1</td><td>channel 1, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
+    <tr><td class="paramname">ch2</td><td>channel 2, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
+    <tr><td class="paramname">ch3</td><td>channel 3, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
     <tr><td class="paramname">exchange</td><td>Exchange P side and N side or not. optional value: <a class="el" href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae">OPO_EXCHANGE_PIN</a>, <a class="el" href="a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda4c251187b10da59c8696dbf4951b49d3">OPO_NOT_EXCHANGE_PIN</a>. </td></tr>
   </table>
   </dd>
@@ -797,13 +734,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                       \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, ~(1 &lt;&lt; 3)); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, mode &lt;&lt; 3);  \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:170</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                       \</div><div class="line">        MemoryAnd32(AD_OPO_REG, ~(1 &lt;&lt; 3)); \</div><div class="line">        MemoryOr32(AD_OPO_REG, mode &lt;&lt; 3);  \</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set the feedback mode of P-Side of the amplifier. When mode = 1, feedback is on, vcom(1.5V) is connected to the resistor block at inp When mode = 0, vcom is disconnected to the resistor block at inp. </p>
 <dl class="section note"><dt>Note</dt><dd>Set AD_OPO_REG[3] </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mode</td><td>Pside feedback switch, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
+    <tr><td class="paramname">mode</td><td>Pside feedback switch, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -826,14 +762,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                             \</div><div class="line">        RT_OPO_SetChannel(<a class="code" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a>, <a class="code" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a>, <a class="code" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a>, <a class="code" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a>);    \</div><div class="line">        if (mode)                                 \</div><div class="line">        {                                         \</div><div class="line">            MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, ~(0xf &lt;&lt; 4)); \</div><div class="line">            MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, (1 &lt;&lt; 1));     \</div><div class="line">        }                                         <a class="code" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">\</a></div><div class="line"><a class="code" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">        else                                      \</a></div><div class="line"><a class="code" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">            MemoryAnd32</a>(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a>, ~(1 &lt;&lt; 1));   \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da6dc7e2b1252e5ac208ae78d9c46e8e7e">AD_OPO_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:170</div></div>
-<div class="ttc" id="a00020_html_ad87cedffcaadc51db22594fce55173d4"><div class="ttname"><a href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a></div><div class="ttdeci">#define MemoryAnd32(addr, val)</div><div class="ttdoc">Logical addrND operation on 32-bit data from a specific address. </div><div class="ttdef"><b>Definition:</b> mcu.h:245</div></div>
-<div class="ttc" id="a00020_html_a29e413f6725b2ba32d165ffaa35b01e5"><div class="ttname"><a href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a></div><div class="ttdeci">#define OFF</div><div class="ttdef"><b>Definition:</b> mcu.h:21</div></div>
+<b>Value:</b><div class="fragment"><div class="line">{                                             \</div><div class="line">        RT_OPO_SetChannel(<a class="code" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a>, <a class="code" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a>, <a class="code" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a>, <a class="code" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a>);    \</div><div class="line">        if (mode)                                 \</div><div class="line">        {                                         \</div><div class="line">            MemoryAnd32(AD_OPO_REG, ~(0xf &lt;&lt; 4)); \</div><div class="line">            MemoryOr32(AD_OPO_REG, (1 &lt;&lt; 1));     \</div><div class="line">        }                                         <a class="code" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">\</a></div><div class="line"><a class="code" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">        else                                      \</a></div><div class="line"><a class="code" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">            MemoryAnd32</a>(AD_OPO_REG, ~(1 &lt;&lt; 1));   \</div><div class="line">    }</div><div class="ttc" id="a00020_html_a5c1a2bd4c1bd4c2f429d8042a45327ff"><div class="ttname"><a href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a></div><div class="ttdeci">void MemoryAnd32(memory_addr_t addr, uint32_t val)</div><div class="ttdoc">Logical addrND operation on 32-bit data from a specific address. </div><div class="ttdef"><b>Definition:</b> mcu.h:186</div></div>
+<div class="ttc" id="a00020_html_ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75"><div class="ttname"><a href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a></div><div class="ttdef"><b>Definition:</b> mcu.h:18</div></div>
 </div><!-- fragment -->
 <p>Set whether to connecte pin and nin to vcom. Channel 0-3 should be closed! </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mode</td><td>short switch, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
+    <tr><td class="paramname">mode</td><td>short switch, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -888,10 +823,10 @@ Functions</h2></td></tr>
 <p>Set OPO at SingleSide Mode, open specific channel and select specific pin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ch0</td><td>channel 0, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
-    <tr><td class="paramname">ch1</td><td>channel 1, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
-    <tr><td class="paramname">ch2</td><td>channel 2, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
-    <tr><td class="paramname">ch3</td><td>channel 3, optional value: <a class="el" href="a00020.html#ad76d1750a6cdeebd506bfcd6752554d2">ON</a>, <a class="el" href="a00020.html#a29e413f6725b2ba32d165ffaa35b01e5">OFF</a> </td></tr>
+    <tr><td class="paramname">ch0</td><td>channel 0, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
+    <tr><td class="paramname">ch1</td><td>channel 1, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
+    <tr><td class="paramname">ch2</td><td>channel 2, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
+    <tr><td class="paramname">ch3</td><td>channel 3, optional value: <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03">ON</a>, <a class="el" href="a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75">OFF</a> </td></tr>
     <tr><td class="paramname">pin</td><td>Select P side or N side. Optional value: <a class="el" href="a00002.html#afb2207320139ac264d5cc1600d3cae9eafd1c5b2cbd5e5a8866364e6af2dbd4c0">OPO_NSIDE</a>, <a class="el" href="a00002.html#afb2207320139ac264d5cc1600d3cae9ea740f1053bc0489a53c4cfe9bfc3de403">OPO_PSIDE</a>. </td></tr>
   </table>
   </dd>
@@ -915,8 +850,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                        \</div><div class="line">        MemoryAnd32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, ~(1 &lt;&lt; 7)); \</div><div class="line">        MemoryOr32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a>, op &lt;&lt; 7);    \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da479497b755dee411ad6348cae2ef26b4">AD_CTL0_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:168</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                        \</div><div class="line">        MemoryAnd32(AD_CTL0_REG, ~(1 &lt;&lt; 7)); \</div><div class="line">        MemoryOr32(AD_CTL0_REG, op &lt;&lt; 7);    \</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set VPGND op=1, PsideGND = vcom; op=0, PsideGND = 0. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -944,24 +878,24 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a4d490931c48f5330b52533397251335c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d490931c48f5330b52533397251335c">&#9670;&nbsp;</a></span>ANALOG_OUTPUT</h2>
+<a id="ae9e6d7c812d9175f04b9a2d31a74f737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e6d7c812d9175f04b9a2d31a74f737">&#9670;&nbsp;</a></span>ANALOG_OUTPUT_T</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00002.html#a4d490931c48f5330b52533397251335c">ANALOG_OUTPUT</a></td>
+          <td class="memname">enum <a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737">ANALOG_OUTPUT_T</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Analog output channels. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4d490931c48f5330b52533397251335cacddac909ab33947534e48dd4db264d74"></a>ANALOG_OUTPUT_0&#160;</td><td class="fielddoc"><p>Relative value of <a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e">T0_CTL0_REG</a> to <a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e">T0_CTL0_REG</a>. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae9e6d7c812d9175f04b9a2d31a74f737acddac909ab33947534e48dd4db264d74"></a>ANALOG_OUTPUT_0&#160;</td><td class="fielddoc"><p>Relative value of #T0_CTL0_REG to #T0_CTL0_REG. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a4d490931c48f5330b52533397251335cae3e86cb61e54d2d71a936d57768b2c04"></a>ANALOG_OUTPUT_1&#160;</td><td class="fielddoc"><p>Relative value of <a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da38632250c2e72df96fcaa3f8bd8ecc5e">T1_CTL0_REG</a> to <a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e">T0_CTL0_REG</a>. </p>
+<tr><td class="fieldname"><a id="ae9e6d7c812d9175f04b9a2d31a74f737ae3e86cb61e54d2d71a936d57768b2c04"></a>ANALOG_OUTPUT_1&#160;</td><td class="fielddoc"><p>Relative value of #T1_CTL0_REG to #T0_CTL0_REG. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a4d490931c48f5330b52533397251335ca778485bb7dac9a00dadf2d72aa1606e1"></a>ANALOG_OUTPUT_2&#160;</td><td class="fielddoc"><p>Relative value of <a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf2e9deb36631241181cbf09e8d959475">T2_CTL0_REG</a> to <a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da869abf9d87f78f45a0e07ad352abb39e">T0_CTL0_REG</a>. </p>
+<tr><td class="fieldname"><a id="ae9e6d7c812d9175f04b9a2d31a74f737a778485bb7dac9a00dadf2d72aa1606e1"></a>ANALOG_OUTPUT_2&#160;</td><td class="fielddoc"><p>Relative value of #T2_CTL0_REG to #T0_CTL0_REG. </p>
 </td></tr>
 </table>
 
@@ -1165,6 +1099,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_ADC_Clear </td>
@@ -1174,10 +1111,15 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Clear the state of Analog Digit Converter. </p>
-<dl class="section note"><dt>Note</dt><dd>Write 1 to <a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44da03a55605f114ad34a5768f096cec3d9d">AD_CLR_REG</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Write 1 to #AD_CLR_REG </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
@@ -1187,6 +1129,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint32_t RT_ADC_SD_DataReady </td>
@@ -1196,6 +1141,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Check is the accumulation of SD is completed. </p>
@@ -1208,6 +1158,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_ADC_SD_Off </td>
@@ -1217,6 +1170,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turn off SD. </p>
@@ -1230,6 +1188,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_ADC_SD_On </td>
@@ -1239,6 +1200,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turn on SD. </p>
@@ -1272,6 +1238,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_ADC_SD_Start </td>
@@ -1281,10 +1250,15 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Start SD accumulate. </p>
-<dl class="section note"><dt>Note</dt><dd>When writing to <a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dacb460996f05b78aea23f3fa2722cc548">AD_READ_REG</a>, it will start df conversion, if SD is enabled and choose trig pwm. SD flag or irq will be asserted upon conversion completed. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>When writing to #AD_READ_REG, it will start df conversion, if SD is enabled and choose trig pwm. SD flag or irq will be asserted upon conversion completed. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
@@ -1294,6 +1268,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_ADC_TemperatureSensorOff </td>
@@ -1303,6 +1280,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Set ADC temperature sensor off. </p>
@@ -1316,6 +1298,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_ADC_TemperatureSensorOn </td>
@@ -1325,6 +1310,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Set ADC temperature sensor on. </p>
@@ -1338,6 +1328,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_ADC_V2P_Off </td>
@@ -1347,6 +1340,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Set ADC_V2P off. </p>
@@ -1360,6 +1358,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_ADC_V2P_On </td>
@@ -1369,6 +1370,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Set ADC_V2P on. </p>
@@ -1396,11 +1402,74 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae07217c068930cb51221cac4b42d5338"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae07217c068930cb51221cac4b42d5338">&#9670;&nbsp;</a></span>RT_DAC_analogWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RT_DAC_analogWrite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737">ANALOG_OUTPUT_T</a>&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>p_vdd5</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Output an analog value by a selected pwm. </p>
+<dl class="section note"><dt>Note</dt><dd><ol type="1">
+<li>Turn the pwm for selected channel on.</li>
+<li>Turn on the interrupt of the pwm.</li>
+<li>Set the clock divider of the corresponding timer.</li>
+<li>Set the duty of the pwm. </li>
+</ol>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>The analog channel to output, optional value: <a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737acddac909ab33947534e48dd4db264d74">ANALOG_OUTPUT_0</a>, <a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737ae3e86cb61e54d2d71a936d57768b2c04">ANALOG_OUTPUT_1</a>, <a class="el" href="a00002.html#ae9e6d7c812d9175f04b9a2d31a74f737a778485bb7dac9a00dadf2d72aa1606e1">ANALOG_OUTPUT_2</a> </td></tr>
+    <tr><td class="paramname">value</td><td>The analog value to output. </td></tr>
+    <tr><td class="paramname">p_vdd5</td><td>The vlotage of external power supply, it should be connected to p_vdd5, a pin of M2. On the Oasis V1.1 (black board version) of M2, it is determined by Jumper 6 and Jumper 7. Choose Jumper 6 for 5V and Jumper 7 for 3.3V. ATTENTION! DO NOT CHOOSE JUMPER 6 AND JUMPER 7 AT THE SAME TIME! </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
 <a id="ad981e76e736802e0d75c93aa87239c21"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad981e76e736802e0d75c93aa87239c21">&#9670;&nbsp;</a></span>RT_OPO_Off()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_OPO_Off </td>
@@ -1410,6 +1479,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turn the Amplifier off. </p>
@@ -1423,6 +1497,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RT_OPO_On </td>
@@ -1432,6 +1509,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Turn the Amplifier on. </p>
@@ -1448,7 +1530,7 @@ Functions</h2></td></tr>
     <!-- id is needed for treeview function! -->
     <!-- <ul>
         <li class="navelem"><a class="el" href="dir_9c8c494a5e1ae1f33037b0e9d49f06c7.html">release</a></li><li class="navelem"><a class="el" href="dir_42743c43973611cb0b05144d150e48a5.html">include</a></li><li class="navelem"><a class="el" href="a00002.html">analogIO.h</a></li>
-        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+        <li class="footer">Generated on Fri Jul 13 2018 14:03:53 for Camel Library Documentaion by
             <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
     </ul> -->
@@ -1460,7 +1542,7 @@ Functions</h2></td></tr>
             <!-- <h5 class="card-title">Special title treatment</h5> -->
             <p class="card-text d-flex justify-content-between">
                 <a href="#" class="btn btn-primary">Return To Top</a>
-                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Fri Jul 13 2018 14:03:53 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
             </p>
         </div>
     </div>

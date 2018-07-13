@@ -98,7 +98,21 @@
  * @param irqEn     when #ON, the interrupt is enabled; when #OFF, disabled
  * @return          void
  */
-void RT_TC2_TimerSet1us(uint32_t T, switch_t irqEn);
+inline void RT_TC2_TimerSet1us(uint32_t T, switch_t irqEn)
+{
+    // [T2_CLK_REG] = 3 * T / [T2_REF_REG] - 1
+    // Let [T2_REF_REG] = 255, get [T2_CLK_REG]
+    uint32_t clk = T / 81 - 1;
+    if (clk < 1) clk = 1;
+    uint32_t ref = 30 * T / clk;
+    if (ref % 10 >= 5) ref = ref / 10 + 1;  // ensure the interval is bigger than T
+    else ref /= 10;
+    MemoryAnd32(T2_CTL0_REG, ~(1 << 7));    // turn off irq
+    MemoryWrite32(T2_CLK_REG, clk);
+    MemoryWrite32(T2_REF_REG, ref);
+    MemoryOr32(T2_CTL0_REG, (0x02 | (irqEn << 7)));
+    MemoryOr32(SYS_CTL0_REG, irqEn);
+}
 
 /****************** Counter ******************/
 /**
@@ -215,7 +229,7 @@ void RT_TC2_TimerSet1us(uint32_t T, switch_t irqEn);
 
 /**
  * @brief       Set TC2 Trigger Mode of Pulse Width Measurement
- * @param mode  Trigger mode, optional values: #RAISE_TRIGGER, #FALL_TRIGGER
+ * @param mode  Trigger mode, optional values: #RISING_TRIGGER, #FALLING_TRIGGER
  * @return      void
  */
 #define RT_TC2_PWMMTriggerMode(mode)            \

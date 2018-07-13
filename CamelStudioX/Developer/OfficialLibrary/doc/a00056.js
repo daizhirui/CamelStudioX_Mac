@@ -28,8 +28,10 @@ var a00056 =
     [ "RT_UART_SetBaudrate", "a00056.html#a565befb27caf782083358e0ad81af3a3", null ],
     [ "RT_UART_SetCompare", "a00056.html#a432520c6f67a10918aa07884250a7cbc", null ],
     [ "RT_UART_Write", "a00056.html#a3c30d4d2e260d1c2f96747e9d7bdaf0d", null ],
-    [ "UART0", "a00056.html#a0508661f121639ffdee7de2353a0def2", null ],
-    [ "UART1", "a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff", null ],
+    [ "UART_DEVICE", "a00056.html#a700933f5613c8346ce78b2362c55c7eb", [
+      [ "UART0", "a00056.html#a700933f5613c8346ce78b2362c55c7eba9283de1a2e6eea552574a50ca586df8e", null ],
+      [ "UART1", "a00056.html#a700933f5613c8346ce78b2362c55c7ebad78b5dd576e9a3ab80d6c77ff9d1cd27", null ]
+    ] ],
     [ "RT_UART_getchar", "a00056.html#abc136df9d66fe27bf8ffcc319246591e", null ],
     [ "RT_UART_LinMaster", "a00056.html#ab0faf051e642e540b1b9c114eae242bd", null ],
     [ "RT_UART_putchar", "a00056.html#ab03e9e1a8d4d9b97583db27174086108", null ],

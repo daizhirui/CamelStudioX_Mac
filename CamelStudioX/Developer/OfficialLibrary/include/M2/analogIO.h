@@ -102,18 +102,27 @@ enum V2P_RESISTOR {
  * @note        Write 1 to #AD_CLR_REG
  * @return      void
  */
-void RT_ADC_Clear(void);
+inline void RT_ADC_Clear(void)
+{
+    MemoryWrite32(AD_CLR_REG, 1);
+}
 /**
  * @brief       Set ADC_V2P on.
  * @note        AD_CLR_REG[8]: 1=V2P on, 0=V2P off.
  */
-void RT_ADC_V2P_On(void);
+inline void RT_ADC_V2P_On(void)
+{
+    MemoryOr32(AD_CTL0_REG, (1 << 8));
+}
 /**
  * @brief       Set ADC_V2P off.
  * @note        AD_CLR_REG[8]: 1=V2P on, 0=V2P off.
  * @return      void
  */
-void RT_ADC_V2P_Off(void);
+inline void RT_ADC_V2P_Off(void)
+{
+    MemoryAnd32(AD_CTL0_REG, ~(1 << 8));
+}
 /**
  * @brief           Set the resistor of V2P.
  *                  When res = 3, single input mode is enabled, vcom will be fed into the P-side of OPO!
@@ -130,26 +139,38 @@ void RT_ADC_V2P_Off(void);
  * @note        AD_CTL0_REG[5]: 1=on, 0=off
  * @return      void
  */
-void RT_ADC_TemperatureSensorOn(void);
+inline void RT_ADC_TemperatureSensorOn(void)
+{
+    MemoryOr32(AD_CTL0_REG, 1 << 5);
+}
 /**
  * @brief       Set ADC temperature sensor off.
  * @note        AD_CTL0_REG[5]: 1=on, 0=off
  * @return      void
  */
-void RT_ADC_TemperatureSensorOff(void);
+inline void RT_ADC_TemperatureSensorOff(void)
+{
+    MemoryAnd32(AD_CTL0_REG, ~(1 << 5));
+}
 /************* OPO setup **************/
 /**
  * @brief       Turn the Amplifier on.
  * @note        AD_OPO_REG[0]: 1=on, 0=off
  * @return      void
  */
-void RT_OPO_On(void);
+inline void RT_OPO_On(void)
+{
+    MemoryOr32(AD_OPO_REG, 0x1);
+}
 /**
  * @brief       Turn the Amplifier off.
  * @note        AD_OPO_REG[0]: 1=on, 0=off
  * @return      void
  */
-void RT_OPO_Off(void);
+inline void RT_OPO_Off(void)
+{
+    MemoryAnd32(AD_OPO_REG, ~0x1);
+}
 /**
  * @brief           Set the state of every amplifier channel.
  * @param ch0       channel 0, optional value: #ON, #OFF
@@ -297,13 +318,19 @@ void RT_OPO_Off(void);
  * @note        AD_CTL0_REG[0]: 1=on, 0=off
  * @return      void
  */
-void RT_ADC_SD_On(void);
+inline void RT_ADC_SD_On(void)
+{
+    MemoryOr32(AD_CTL0_REG, 1);
+}
 /**
  * @brief       Turn off SD.
  * @note        AD_CTL0_REG[0]: 1=on, 0=off
  * @return      void
  */
-void RT_ADC_SD_Off(void);
+inline void RT_ADC_SD_Off(void)
+{
+    MemoryAnd32(AD_CTL0_REG, ~1);
+}
 /**
  * @brief           Set the sample rate of SD.
  * @param mode      optional value: #SD_CLK_3M, #SD_CLK_1_5M, #SD_CLK_781K, #SD_CLK_390K
@@ -360,33 +387,73 @@ void RT_ADC_SD_Off(void);
  *              be asserted upon conversion completed.
  * @return      void
  */
-void RT_ADC_SD_Start(void);
+inline void RT_ADC_SD_Start(void)
+{
+    MemoryWrite32(AD_READ_REG, 1);
+}
 /**
  * @brief   Check is the accumulation of SD is completed.
  * @return  The result if the accumulation is completed, 1=completed, 0=not completed
  */
-uint32_t RT_ADC_SD_DataReady(void);
+inline uint32_t RT_ADC_SD_DataReady(void)
+{
+    return ((MemoryRead32(AD_CTL0_REG) & 0x80000000) >> 31);
+}
 
 /**
  * @brief           Get the result of SD.
  * @return uint32_t SD result.
  */
-uint32_t RT_ADC_SD_Read();
+uint32_t RT_ADC_SD_Read()
+{
+    register uint32_t i;
+    RT_ADC_SD_On();                             // make sure sd is on.
+    RT_ADC_Clear();                             // clear ADC to prepare reading
+    for (i = 0; i < 200; i++)
+        __asm__("nop");                         // add delay for acc_en up
+    RT_ADC_SD_SetTrigger(SD_TRIG_BY_WT2READ);   // use SD_WT2READ as trigger source
+    RT_ADC_SD_Start();                          // start to accumulate
+    while (!RT_ADC_SD_DataReady());             // check if rdy bit is ok
+    return MemoryRead32(AD_READ_REG) & 0xfffff; // read the low 20bit data
+} // End of ADC_SD_Read
 /**
  * @brief           Get the result of V2P.
  * @return int      V2P result.
  */
-uint32_t RT_ADC_V2P_Read();
+#include "TC0.h"
+uint32_t RT_ADC_V2P_Read()
+{
+    uint32_t count = 0;
+    uint32_t number = 16; //16 times to average
+    uint32_t valid = 0;
+    uint32_t i = 0;
+    for (i = 0; i < number; i++)
+    {
+        int tmp;
+        RT_TC0_ClearAll();
+        while (!RT_TC0_CheckTcFlag())
+            ;
+        tmp = RT_TC0_ReadCnt();
+        if (tmp > 1000)
+        {
+            valid++;
+            count += tmp;
+        }
+    }
+    if (valid > 0)
+        return count / valid;
+    else
+        return 0;
+} // End of ADC_V2P_Read
 
 /*! Analog output channels. */
-enum ANALOG_OUTPUT
-{   /*! Relative value of #T0_CTL0_REG to #T0_CTL0_REG. */
+typedef enum {   /*! Relative value of #T0_CTL0_REG to #T0_CTL0_REG. */
     ANALOG_OUTPUT_0 = 0x0,
     /*! Relative value of #T1_CTL0_REG to #T0_CTL0_REG. */
     ANALOG_OUTPUT_1 = 0x100,
     /*! Relative value of #T2_CTL0_REG to #T0_CTL0_REG. */
     ANALOG_OUTPUT_2 = 0x300
-};
+} ANALOG_OUTPUT_T;
 /**
 * @brief    Output an analog value by a selected pwm.
 * @note
@@ -403,12 +470,12 @@ enum ANALOG_OUTPUT
                     AT THE SAME TIME!
 * @return void
 */
-#define RT_DAC_analogWrite(channel, value, p_vdd5)              \
-{                                                               \
-    MemoryOr32((T0_CTL0_REG|channel), 1<<4);                    \
-    MemoryAnd32((T0_CTL0_REG|channel), ~(0x3 << 6));            \
-    MemoryWrite32((T0_CLK_REG|channel), 1);                     \
-    MemoryWrite32((T0_REF_REG|channel), value * 255/p_vdd5);    \
+inline void RT_DAC_analogWrite(ANALOG_OUTPUT_T channel, uint32_t value, uint32_t p_vdd5)
+{
+    MemoryOr32((T0_CTL0_REG|channel), 1<<4);
+    MemoryAnd32((T0_CTL0_REG|channel), ~(0x3 << 6));
+    MemoryWrite32((T0_CLK_REG|channel), 1);
+    MemoryWrite32((T0_REF_REG|channel), value * 255/p_vdd5);
 }
 
 #endif // End of __M2_ANALOG_h__

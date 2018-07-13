@@ -144,10 +144,10 @@ $(document).ready(function(){initNavTree('a00053.html','');});
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:abcec88fd1699e238435a90f1b49f01fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#abcec88fd1699e238435a90f1b49f01fc">RT_RTC_On</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dac218ded0714563f03f40814bf16da7c7">RTC_CTL_REG</a>, 1)</td></tr>
+<tr class="memitem:abcec88fd1699e238435a90f1b49f01fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#abcec88fd1699e238435a90f1b49f01fc">RT_RTC_On</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(RTC_CTL_REG, 1)</td></tr>
 <tr class="memdesc:abcec88fd1699e238435a90f1b49f01fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on RTC.  <a href="#abcec88fd1699e238435a90f1b49f01fc">More...</a><br /></td></tr>
 <tr class="separator:abcec88fd1699e238435a90f1b49f01fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad065bdfa3138a773950a7d5e9e9f863a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#ad065bdfa3138a773950a7d5e9e9f863a">RT_RTC_Off</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dac218ded0714563f03f40814bf16da7c7">RTC_CTL_REG</a>, ~1)</td></tr>
+<tr class="memitem:ad065bdfa3138a773950a7d5e9e9f863a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#ad065bdfa3138a773950a7d5e9e9f863a">RT_RTC_Off</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(RTC_CTL_REG, ~1)</td></tr>
 <tr class="memdesc:ad065bdfa3138a773950a7d5e9e9f863a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off RTC.  <a href="#ad065bdfa3138a773950a7d5e9e9f863a">More...</a><br /></td></tr>
 <tr class="separator:ad065bdfa3138a773950a7d5e9e9f863a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6023ebffc90fff4ba8131242c8f4e1ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a6023ebffc90fff4ba8131242c8f4e1ed">RTC_12HOUR</a>&#160;&#160;&#160;0x1</td></tr>
@@ -159,10 +159,10 @@ Macros</h2></td></tr>
 <tr class="memitem:a4342706ea208fe0adff35bfa3c78b87c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a4342706ea208fe0adff35bfa3c78b87c">RT_RTC_SetTimeFormat</a>(format)</td></tr>
 <tr class="memdesc:a4342706ea208fe0adff35bfa3c78b87c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the time format of RTC.  <a href="#a4342706ea208fe0adff35bfa3c78b87c">More...</a><br /></td></tr>
 <tr class="separator:a4342706ea208fe0adff35bfa3c78b87c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8929da3f9ad422dd07f18d603c63b7b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a8929da3f9ad422dd07f18d603c63b7b7">RT_RTC_SetTime</a>(year,  month,  day,  hour,  min,  sec)&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf375f171cb828ab3d87d45724750256d">RTC_TIME_REG</a>, year &lt;&lt; 26 | mon &lt;&lt; 22 | day &lt;&lt; 17 | hour &lt;&lt; 12 | min &lt;&lt; 6 | sec);</td></tr>
+<tr class="memitem:a8929da3f9ad422dd07f18d603c63b7b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a8929da3f9ad422dd07f18d603c63b7b7">RT_RTC_SetTime</a>(year,  month,  day,  hour,  min,  sec)&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(RTC_TIME_REG, year &lt;&lt; 26 | mon &lt;&lt; 22 | day &lt;&lt; 17 | hour &lt;&lt; 12 | min &lt;&lt; 6 | sec);</td></tr>
 <tr class="memdesc:a8929da3f9ad422dd07f18d603c63b7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the time of RTC.  <a href="#a8929da3f9ad422dd07f18d603c63b7b7">More...</a><br /></td></tr>
 <tr class="separator:a8929da3f9ad422dd07f18d603c63b7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61ac395d30cde55137bf04acaec570f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a61ac395d30cde55137bf04acaec570f0">RT_RTC_Read32</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf375f171cb828ab3d87d45724750256d">RTC_TIME_REG</a>)</td></tr>
+<tr class="memitem:a61ac395d30cde55137bf04acaec570f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00053.html#a61ac395d30cde55137bf04acaec570f0">RT_RTC_Read32</a>()&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(RTC_TIME_REG)</td></tr>
 <tr class="memdesc:a61ac395d30cde55137bf04acaec570f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the RTC time raw value.  <a href="#a61ac395d30cde55137bf04acaec570f0">More...</a><br /></td></tr>
 <tr class="separator:a61ac395d30cde55137bf04acaec570f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -191,7 +191,7 @@ Functions</h2></td></tr>
           <td class="memname">#define RT_RTC_Off</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dac218ded0714563f03f40814bf16da7c7">RTC_CTL_REG</a>, ~1)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(RTC_CTL_REG, ~1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -211,7 +211,7 @@ Functions</h2></td></tr>
           <td class="memname">#define RT_RTC_On</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dac218ded0714563f03f40814bf16da7c7">RTC_CTL_REG</a>, 1)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(RTC_CTL_REG, 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -231,7 +231,7 @@ Functions</h2></td></tr>
           <td class="memname">#define RT_RTC_Read32</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf375f171cb828ab3d87d45724750256d">RTC_TIME_REG</a>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(RTC_TIME_REG)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -286,7 +286,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(<a class="el" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf375f171cb828ab3d87d45724750256d">RTC_TIME_REG</a>, year &lt;&lt; 26 | mon &lt;&lt; 22 | day &lt;&lt; 17 | hour &lt;&lt; 12 | min &lt;&lt; 6 | sec);</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(RTC_TIME_REG, year &lt;&lt; 26 | mon &lt;&lt; 22 | day &lt;&lt; 17 | hour &lt;&lt; 12 | min &lt;&lt; 6 | sec);</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -322,9 +322,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                            \</div><div class="line">        MemoryWrite32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dac218ded0714563f03f40814bf16da7c7">RTC_CTL_REG</a>, format);      \</div><div class="line">        MemoryWrite32(<a class="code" href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf375f171cb828ab3d87d45724750256d">RTC_TIME_REG</a>, 0x00420000); \</div><div class="line">    }</div><div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44dac218ded0714563f03f40814bf16da7c7"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44dac218ded0714563f03f40814bf16da7c7">RTC_CTL_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:197</div></div>
-<div class="ttc" id="a00020_html_adadaa0ab1ebbd7ba9b70dfd24c3ed44daf375f171cb828ab3d87d45724750256d"><div class="ttname"><a href="a00020.html#adadaa0ab1ebbd7ba9b70dfd24c3ed44daf375f171cb828ab3d87d45724750256d">RTC_TIME_REG</a></div><div class="ttdef"><b>Definition:</b> mcu.h:199</div></div>
-</div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">{                                            \</div><div class="line">        MemoryWrite32(RTC_CTL_REG, format);      \</div><div class="line">        MemoryWrite32(RTC_TIME_REG, 0x00420000); \</div><div class="line">    }</div></div><!-- fragment -->
 <p>Set the time format of RTC. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -470,7 +468,7 @@ Functions</h2></td></tr>
     <!-- id is needed for treeview function! -->
     <!-- <ul>
         <li class="navelem"><a class="el" href="dir_9c8c494a5e1ae1f33037b0e9d49f06c7.html">release</a></li><li class="navelem"><a class="el" href="dir_42743c43973611cb0b05144d150e48a5.html">include</a></li><li class="navelem"><a class="el" href="a00053.html">time.h</a></li>
-        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+        <li class="footer">Generated on Fri Jul 13 2018 14:03:53 for Camel Library Documentaion by
             <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
     </ul> -->
@@ -482,7 +480,7 @@ Functions</h2></td></tr>
             <!-- <h5 class="card-title">Special title treatment</h5> -->
             <p class="card-text d-flex justify-content-between">
                 <a href="#" class="btn btn-primary">Return To Top</a>
-                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Fri Jul 13 2018 14:03:53 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
             </p>
         </div>
     </div>

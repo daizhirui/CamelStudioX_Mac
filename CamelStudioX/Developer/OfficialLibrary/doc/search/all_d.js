@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['off',['OFF',['../a00020.html#a29e413f6725b2ba32d165ffaa35b01e5',1,'mcu.h']]],
-  ['on',['ON',['../a00020.html#ad76d1750a6cdeebd506bfcd6752554d2',1,'mcu.h']]],
+  ['off',['OFF',['../a00020.html#ab43e533f3793920486fb81c580f71564aac132f2982b98bcaa3445e535a03ff75',1,'mcu.h']]],
+  ['on',['ON',['../a00020.html#ab43e533f3793920486fb81c580f71564a977d478dacaae531f95695750d1e9d03',1,'mcu.h']]],
   ['opo_5fexchange',['OPO_EXCHANGE',['../a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebd',1,'analogIO.h']]],
   ['opo_5fexchange_5fpin',['OPO_EXCHANGE_PIN',['../a00002.html#af0663f5e9fee7a904ad95d1a4ecdaebda8866b250a87989e76add11875358e4ae',1,'analogIO.h']]],
   ['opo_5fgain',['OPO_GAIN',['../a00002.html#a6424f6db97a2e691b73af9c4053f1650',1,'analogIO.h']]],

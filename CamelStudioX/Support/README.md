@@ -1,3 +1,9 @@
+### Version 3.7.2
+----
+
+- Change: Add gcc options: -O2 -msoft-float -Wall -Wextra
+- Improvement: update library and documentation.
+
 ### Version 3.7.1
 ----
 

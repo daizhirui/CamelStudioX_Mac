@@ -132,6 +132,7 @@ $(document).ready(function(){initNavTree('a00056.html','');});
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">UART.h File Reference</div>  </div>
@@ -144,14 +145,6 @@ $(document).ready(function(){initNavTree('a00056.html','');});
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a0508661f121639ffdee7de2353a0def2"><td class="memItemLeft" align="right" valign="top"><a id="a0508661f121639ffdee7de2353a0def2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2">UART0</a>&#160;&#160;&#160;0x0</td></tr>
-<tr class="memdesc:a0508661f121639ffdee7de2353a0def2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword UART0. <br /></td></tr>
-<tr class="separator:a0508661f121639ffdee7de2353a0def2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d69bf04d07af4fbbab5a8bd291f65ff"><td class="memItemLeft" align="right" valign="top"><a id="a8d69bf04d07af4fbbab5a8bd291f65ff"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff">UART1</a>&#160;&#160;&#160;0x1</td></tr>
-<tr class="memdesc:a8d69bf04d07af4fbbab5a8bd291f65ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword UART0. <br /></td></tr>
-<tr class="separator:a8d69bf04d07af4fbbab5a8bd291f65ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c76b3ed72795f2085873ee332fdab1b"><td class="memItemLeft" align="right" valign="top"><a id="a7c76b3ed72795f2085873ee332fdab1b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a7c76b3ed72795f2085873ee332fdab1b">EXTREME_BREAK</a>&#160;&#160;&#160;0x1</td></tr>
 <tr class="memdesc:a7c76b3ed72795f2085873ee332fdab1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword EXTREME_BREAK. <br /></td></tr>
@@ -160,10 +153,10 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a7d77cd41951b1fe6b0874924df2bf689">NORMAL_BREAK</a>&#160;&#160;&#160;0x0</td></tr>
 <tr class="memdesc:a7d77cd41951b1fe6b0874924df2bf689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keyword NORMAL_BREAK. <br /></td></tr>
 <tr class="separator:a7d77cd41951b1fe6b0874924df2bf689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60de547d761052a56b69e4a75493b831"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a60de547d761052a56b69e4a75493b831">RT_UART_Off</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x10)</td></tr>
+<tr class="memitem:a60de547d761052a56b69e4a75493b831"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a60de547d761052a56b69e4a75493b831">RT_UART_Off</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x10)</td></tr>
 <tr class="memdesc:a60de547d761052a56b69e4a75493b831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off Uart.  <a href="#a60de547d761052a56b69e4a75493b831">More...</a><br /></td></tr>
 <tr class="separator:a60de547d761052a56b69e4a75493b831"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c1428a7b16eec7fe710679dd70b4069"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a7c1428a7b16eec7fe710679dd70b4069">RT_UART_On</a>(port)&#160;&#160;&#160;{<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~0x10);}</td></tr>
+<tr class="memitem:a7c1428a7b16eec7fe710679dd70b4069"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a7c1428a7b16eec7fe710679dd70b4069">RT_UART_On</a>(port)&#160;&#160;&#160;{<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~0x10);}</td></tr>
 <tr class="memdesc:a7c1428a7b16eec7fe710679dd70b4069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on Uart.  <a href="#a7c1428a7b16eec7fe710679dd70b4069">More...</a><br /></td></tr>
 <tr class="separator:a7c1428a7b16eec7fe710679dd70b4069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89d72bee69b33d0404d33f47608d16f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a89d72bee69b33d0404d33f47608d16f0">BAUDRATE_9600</a>&#160;&#160;&#160;(0x0&lt;&lt;12)</td></tr>
@@ -172,69 +165,76 @@ Macros</h2></td></tr>
 <tr class="separator:ab94a89ecf1976f304764aec119e215e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c74d2185a532185624b8dc3086f8e3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a9c74d2185a532185624b8dc3086f8e3e">BAUDRATE_38400</a>&#160;&#160;&#160;(0x3&lt;&lt;12)</td></tr>
 <tr class="separator:a9c74d2185a532185624b8dc3086f8e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a565befb27caf782083358e0ad81af3a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a565befb27caf782083358e0ad81af3a3">RT_UART_SetBaudrate</a>(mode)&#160;&#160;&#160;<a class="el" href="a00020.html#a1e578ce669735935a1d505c0edf98221">RT_MCU_SetSystemClock</a>(mode)</td></tr>
+<tr class="memitem:a565befb27caf782083358e0ad81af3a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a565befb27caf782083358e0ad81af3a3">RT_UART_SetBaudrate</a>(mode)&#160;&#160;&#160;<a class="el" href="a00020.html#a8e87aa8d85986723da69a68cd0d1e51c">RT_MCU_SetSystemClock</a>(mode)</td></tr>
 <tr class="memdesc:a565befb27caf782083358e0ad81af3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the baudrate of UART.  <a href="#a565befb27caf782083358e0ad81af3a3">More...</a><br /></td></tr>
 <tr class="separator:a565befb27caf782083358e0ad81af3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ab834a97a200601f16b923a705f3f01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a3ab834a97a200601f16b923a705f3f01">RT_UART_Busy</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_BUSY_REG(port))</td></tr>
+<tr class="memitem:a3ab834a97a200601f16b923a705f3f01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a3ab834a97a200601f16b923a705f3f01">RT_UART_Busy</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_BUSY_REG|port)</td></tr>
 <tr class="memdesc:a3ab834a97a200601f16b923a705f3f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if Uart Tx is busy.  <a href="#a3ab834a97a200601f16b923a705f3f01">More...</a><br /></td></tr>
 <tr class="separator:a3ab834a97a200601f16b923a705f3f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c30d4d2e260d1c2f96747e9d7bdaf0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a3c30d4d2e260d1c2f96747e9d7bdaf0d">RT_UART_Write</a>(port,  val)&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(UART_WRITE_REG(port),val)</td></tr>
+<tr class="memitem:a3c30d4d2e260d1c2f96747e9d7bdaf0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a3c30d4d2e260d1c2f96747e9d7bdaf0d">RT_UART_Write</a>(port,  val)&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(UART0_WRITE_REG|port,val)</td></tr>
 <tr class="memdesc:a3c30d4d2e260d1c2f96747e9d7bdaf0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sent data via Uart Tx.  <a href="#a3c30d4d2e260d1c2f96747e9d7bdaf0d">More...</a><br /></td></tr>
 <tr class="separator:a3c30d4d2e260d1c2f96747e9d7bdaf0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd2a573ae35e4f6381f9f9758a12806b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#abd2a573ae35e4f6381f9f9758a12806b">RT_UART_DataReady</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_DATA_RDY_REG(port))</td></tr>
+<tr class="memitem:abd2a573ae35e4f6381f9f9758a12806b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#abd2a573ae35e4f6381f9f9758a12806b">RT_UART_DataReady</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_DATA_RDY_REG|port)</td></tr>
 <tr class="memdesc:abd2a573ae35e4f6381f9f9758a12806b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if Uart Rx has received data.  <a href="#abd2a573ae35e4f6381f9f9758a12806b">More...</a><br /></td></tr>
 <tr class="separator:abd2a573ae35e4f6381f9f9758a12806b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7804645fb092b24545278660f6b66409"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a7804645fb092b24545278660f6b66409">RT_UART_Read</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_READ_REG(port))</td></tr>
+<tr class="memitem:a7804645fb092b24545278660f6b66409"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a7804645fb092b24545278660f6b66409">RT_UART_Read</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_READ_REG|port)</td></tr>
 <tr class="memdesc:a7804645fb092b24545278660f6b66409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read Uart Rx data.  <a href="#a7804645fb092b24545278660f6b66409">More...</a><br /></td></tr>
 <tr class="separator:a7804645fb092b24545278660f6b66409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ed058b5d506df45c51358b8451550ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a5ed058b5d506df45c51358b8451550ad">RT_UART_IrqOn</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),1)</td></tr>
+<tr class="memitem:a5ed058b5d506df45c51358b8451550ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a5ed058b5d506df45c51358b8451550ad">RT_UART_IrqOn</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,1)</td></tr>
 <tr class="memdesc:a5ed058b5d506df45c51358b8451550ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on Uart Irq enable.  <a href="#a5ed058b5d506df45c51358b8451550ad">More...</a><br /></td></tr>
 <tr class="separator:a5ed058b5d506df45c51358b8451550ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf04f21e0b0f598ac00a1a08eb4e5f2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#acf04f21e0b0f598ac00a1a08eb4e5f2e">RT_UART_IrqOff</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~1)</td></tr>
+<tr class="memitem:acf04f21e0b0f598ac00a1a08eb4e5f2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#acf04f21e0b0f598ac00a1a08eb4e5f2e">RT_UART_IrqOff</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~1)</td></tr>
 <tr class="memdesc:acf04f21e0b0f598ac00a1a08eb4e5f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off Uart Irq (interrupt)  <a href="#acf04f21e0b0f598ac00a1a08eb4e5f2e">More...</a><br /></td></tr>
 <tr class="separator:acf04f21e0b0f598ac00a1a08eb4e5f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab5e3da11e9f9d531cab23aa451d2356"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#aab5e3da11e9f9d531cab23aa451d2356">RT_UART_CompareOn</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x2)</td></tr>
+<tr class="memitem:aab5e3da11e9f9d531cab23aa451d2356"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#aab5e3da11e9f9d531cab23aa451d2356">RT_UART_CompareOn</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x2)</td></tr>
 <tr class="memdesc:aab5e3da11e9f9d531cab23aa451d2356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set UART compare irq on, irq flag will be raised when the port receives a byte the same as the compare value.  <a href="#aab5e3da11e9f9d531cab23aa451d2356">More...</a><br /></td></tr>
 <tr class="separator:aab5e3da11e9f9d531cab23aa451d2356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab59c28b31f6d93c8400c2af10cc0b05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#aab59c28b31f6d93c8400c2af10cc0b05">RT_UART_CompareOff</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~0x2)</td></tr>
+<tr class="memitem:aab59c28b31f6d93c8400c2af10cc0b05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#aab59c28b31f6d93c8400c2af10cc0b05">RT_UART_CompareOff</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~0x2)</td></tr>
 <tr class="memdesc:aab59c28b31f6d93c8400c2af10cc0b05"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets UART compare irq off.  <a href="#aab59c28b31f6d93c8400c2af10cc0b05">More...</a><br /></td></tr>
 <tr class="separator:aab59c28b31f6d93c8400c2af10cc0b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a432520c6f67a10918aa07884250a7cbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a432520c6f67a10918aa07884250a7cbc">RT_UART_SetCompare</a>(port,  val)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),val&lt;&lt;8)</td></tr>
+<tr class="memitem:a432520c6f67a10918aa07884250a7cbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a432520c6f67a10918aa07884250a7cbc">RT_UART_SetCompare</a>(port,  val)&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,val&lt;&lt;8)</td></tr>
 <tr class="memdesc:a432520c6f67a10918aa07884250a7cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set UART port's compare value.  <a href="#a432520c6f67a10918aa07884250a7cbc">More...</a><br /></td></tr>
 <tr class="separator:a432520c6f67a10918aa07884250a7cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84e87fc64f3149f1d5171ddca5719220"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a84e87fc64f3149f1d5171ddca5719220">RT_UART_ClearIrq</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(UART_IRQ_ACK_REG(port),0x0)</td></tr>
+<tr class="memitem:a84e87fc64f3149f1d5171ddca5719220"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a84e87fc64f3149f1d5171ddca5719220">RT_UART_ClearIrq</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(UART0_IRQ_ACK_REG|port,0x0)</td></tr>
 <tr class="memdesc:a84e87fc64f3149f1d5171ddca5719220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear Uart Irq (interrupt)  <a href="#a84e87fc64f3149f1d5171ddca5719220">More...</a><br /></td></tr>
 <tr class="separator:a84e87fc64f3149f1d5171ddca5719220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8934a303c429b70176995f2dd6ac67b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#ad8934a303c429b70176995f2dd6ac67b">RT_UART_RaiseIrq</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x1)</td></tr>
+<tr class="memitem:ad8934a303c429b70176995f2dd6ac67b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#ad8934a303c429b70176995f2dd6ac67b">RT_UART_RaiseIrq</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x1)</td></tr>
 <tr class="memdesc:ad8934a303c429b70176995f2dd6ac67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on Uart Irq enable.  <a href="#ad8934a303c429b70176995f2dd6ac67b">More...</a><br /></td></tr>
 <tr class="separator:ad8934a303c429b70176995f2dd6ac67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e29e879f76b82a13419f4d59a1c3053"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a3e29e879f76b82a13419f4d59a1c3053">RT_UART_CheckIrq</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#afc530c7e6b49b0ca97c1ad9dac1c4750">MemoryBitAt</a>(UART_CTL_REG(port),0)</td></tr>
+<tr class="memitem:a3e29e879f76b82a13419f4d59a1c3053"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a3e29e879f76b82a13419f4d59a1c3053">RT_UART_CheckIrq</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#aaa87daf3a7b5e127c21919e520e58282">MemoryBitAt</a>(UART0_CTL_REG|port,0)</td></tr>
 <tr class="memdesc:a3e29e879f76b82a13419f4d59a1c3053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if Uart Irq enable.  <a href="#a3e29e879f76b82a13419f4d59a1c3053">More...</a><br /></td></tr>
 <tr class="separator:a3e29e879f76b82a13419f4d59a1c3053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49f9d43f5fd87ceed952123010e015fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a49f9d43f5fd87ceed952123010e015fa">RT_UART_LinSyncOn</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x8)</td></tr>
+<tr class="memitem:a49f9d43f5fd87ceed952123010e015fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a49f9d43f5fd87ceed952123010e015fa">RT_UART_LinSyncOn</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x8)</td></tr>
 <tr class="memdesc:a49f9d43f5fd87ceed952123010e015fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on LIN sync.  <a href="#a49f9d43f5fd87ceed952123010e015fa">More...</a><br /></td></tr>
 <tr class="separator:a49f9d43f5fd87ceed952123010e015fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea01869278bc3c4e332af854c4e660be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#aea01869278bc3c4e332af854c4e660be">RT_UART_LinSyncOff</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~0x8)</td></tr>
+<tr class="memitem:aea01869278bc3c4e332af854c4e660be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#aea01869278bc3c4e332af854c4e660be">RT_UART_LinSyncOff</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~0x8)</td></tr>
 <tr class="memdesc:aea01869278bc3c4e332af854c4e660be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off LIN sync.  <a href="#aea01869278bc3c4e332af854c4e660be">More...</a><br /></td></tr>
 <tr class="separator:aea01869278bc3c4e332af854c4e660be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45d1e1116c5b535f276acc73e522570f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a45d1e1116c5b535f276acc73e522570f">RT_UART_LinBreakNormal</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~0x20)</td></tr>
+<tr class="memitem:a45d1e1116c5b535f276acc73e522570f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a45d1e1116c5b535f276acc73e522570f">RT_UART_LinBreakNormal</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~0x20)</td></tr>
 <tr class="memdesc:a45d1e1116c5b535f276acc73e522570f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on LIN break normal length (13-bit)  <a href="#a45d1e1116c5b535f276acc73e522570f">More...</a><br /></td></tr>
 <tr class="separator:a45d1e1116c5b535f276acc73e522570f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e7d98206f07485a3347bab6672a971c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a9e7d98206f07485a3347bab6672a971c">RT_UART_LinBreakExtreme</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x20)</td></tr>
+<tr class="memitem:a9e7d98206f07485a3347bab6672a971c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a9e7d98206f07485a3347bab6672a971c">RT_UART_LinBreakExtreme</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x20)</td></tr>
 <tr class="memdesc:a9e7d98206f07485a3347bab6672a971c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on LIN break extra long length (26-bit)  <a href="#a9e7d98206f07485a3347bab6672a971c">More...</a><br /></td></tr>
 <tr class="separator:a9e7d98206f07485a3347bab6672a971c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1e6c13693e5ea54a55ce78635617178"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#ad1e6c13693e5ea54a55ce78635617178">RT_UART_LinSendBreak</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(UART_LIN_BREAK_REG(port),0x0)</td></tr>
+<tr class="memitem:ad1e6c13693e5ea54a55ce78635617178"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#ad1e6c13693e5ea54a55ce78635617178">RT_UART_LinSendBreak</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(UART0_LIN_BREAK_REG|port,0x0)</td></tr>
 <tr class="memdesc:ad1e6c13693e5ea54a55ce78635617178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send LIN break.  <a href="#ad1e6c13693e5ea54a55ce78635617178">More...</a><br /></td></tr>
 <tr class="separator:ad1e6c13693e5ea54a55ce78635617178"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e2715198f9716282584f34a7f472649"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a2e2715198f9716282584f34a7f472649">RT_UART_LinCheckIrq</a>(port)&#160;&#160;&#160;((<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_CTL_REG(port))&amp;0x4)&gt;&gt;3)</td></tr>
+<tr class="memitem:a2e2715198f9716282584f34a7f472649"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a2e2715198f9716282584f34a7f472649">RT_UART_LinCheckIrq</a>(port)&#160;&#160;&#160;((<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_CTL_REG|port)&amp;0x4)&gt;&gt;3)</td></tr>
 <tr class="memdesc:a2e2715198f9716282584f34a7f472649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check LIN irq enable.  <a href="#a2e2715198f9716282584f34a7f472649">More...</a><br /></td></tr>
 <tr class="separator:a2e2715198f9716282584f34a7f472649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74f1bca1f0b60eeec1f84bcba3e34919"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a74f1bca1f0b60eeec1f84bcba3e34919">RT_UART_GetBrp</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_BRP_REG(port))</td></tr>
+<tr class="memitem:a74f1bca1f0b60eeec1f84bcba3e34919"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a74f1bca1f0b60eeec1f84bcba3e34919">RT_UART_GetBrp</a>(port)&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_BRP_REG|port)</td></tr>
 <tr class="memdesc:a74f1bca1f0b60eeec1f84bcba3e34919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read Uart Brp value.  <a href="#a74f1bca1f0b60eeec1f84bcba3e34919">More...</a><br /></td></tr>
 <tr class="separator:a74f1bca1f0b60eeec1f84bcba3e34919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f9518fa74ec401803fe1d15e0d39ff2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056.html#a3f9518fa74ec401803fe1d15e0d39ff2">RT_UART_LinSlave</a>(port)&#160;&#160;&#160;UART_LinSyncOn(port)</td></tr>
 <tr class="memdesc:a3f9518fa74ec401803fe1d15e0d39ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set LIN slave mode.  <a href="#a3f9518fa74ec401803fe1d15e0d39ff2">More...</a><br /></td></tr>
 <tr class="separator:a3f9518fa74ec401803fe1d15e0d39ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a700933f5613c8346ce78b2362c55c7eb"><td class="memItemLeft" align="right" valign="top"><a id="a700933f5613c8346ce78b2362c55c7eb"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>UART_DEVICE</b> { <b>UART0</b> = 0x0, 
+<b>UART1</b> = 0x800
+ }</td></tr>
+<tr class="separator:a700933f5613c8346ce78b2362c55c7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -313,7 +313,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_BUSY_REG(port))</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_BUSY_REG|port)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -321,7 +321,7 @@ Functions</h2></td></tr>
 <p>Check if Uart Tx is busy. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -340,7 +340,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#afc530c7e6b49b0ca97c1ad9dac1c4750">MemoryBitAt</a>(UART_CTL_REG(port),0)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#aaa87daf3a7b5e127c21919e520e58282">MemoryBitAt</a>(UART0_CTL_REG|port,0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -348,7 +348,7 @@ Functions</h2></td></tr>
 <p>Check if Uart Irq enable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -367,7 +367,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(UART_IRQ_ACK_REG(port),0x0)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(UART0_IRQ_ACK_REG|port,0x0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -375,7 +375,7 @@ Functions</h2></td></tr>
 <p>Clear Uart Irq (interrupt) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -394,7 +394,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~0x2)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~0x2)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -402,7 +402,7 @@ Functions</h2></td></tr>
 <p>This function sets UART compare irq off. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -421,7 +421,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x2)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x2)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -429,7 +429,7 @@ Functions</h2></td></tr>
 <p>Set UART compare irq on, irq flag will be raised when the port receives a byte the same as the compare value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -448,7 +448,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_DATA_RDY_REG(port))</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_DATA_RDY_REG|port)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -456,7 +456,7 @@ Functions</h2></td></tr>
 <p>Check if Uart Rx has received data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -475,7 +475,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_BRP_REG(port))</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_BRP_REG|port)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -483,7 +483,7 @@ Functions</h2></td></tr>
 <p>Read Uart Brp value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -502,7 +502,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~1)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -510,7 +510,7 @@ Functions</h2></td></tr>
 <p>Turn off Uart Irq (interrupt) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -529,7 +529,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),1)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -537,7 +537,7 @@ Functions</h2></td></tr>
 <p>Turn on Uart Irq enable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -556,7 +556,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x20)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x20)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -564,7 +564,7 @@ Functions</h2></td></tr>
 <p>Turn on LIN break extra long length (26-bit) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -583,7 +583,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~0x20)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~0x20)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -591,7 +591,7 @@ Functions</h2></td></tr>
 <p>Turn on LIN break normal length (13-bit) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -610,7 +610,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_CTL_REG(port))&amp;0x4)&gt;&gt;3)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_CTL_REG|port)&amp;0x4)&gt;&gt;3)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -618,7 +618,7 @@ Functions</h2></td></tr>
 <p>Check LIN irq enable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -637,7 +637,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(UART_LIN_BREAK_REG(port),0x0)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(UART0_LIN_BREAK_REG|port,0x0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -645,7 +645,7 @@ Functions</h2></td></tr>
 <p>Send LIN break. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -672,7 +672,7 @@ Functions</h2></td></tr>
 <p>Set LIN slave mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -691,7 +691,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~0x8)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~0x8)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -699,7 +699,7 @@ Functions</h2></td></tr>
 <p>Turn off LIN sync. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -718,7 +718,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x8)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x8)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -726,7 +726,7 @@ Functions</h2></td></tr>
 <p>Turn on LIN sync. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -745,7 +745,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x10)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x10)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -753,7 +753,7 @@ Functions</h2></td></tr>
 <p>Turn off Uart. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -772,7 +772,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="a00020.html#ad87cedffcaadc51db22594fce55173d4">MemoryAnd32</a>(UART_CTL_REG(port),~0x10);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="a00020.html#a5c1a2bd4c1bd4c2f429d8042a45327ff">MemoryAnd32</a>(UART0_CTL_REG|port,~0x10);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -780,7 +780,7 @@ Functions</h2></td></tr>
 <p>Turn on Uart. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -799,7 +799,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),0x1)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,0x1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -807,7 +807,7 @@ Functions</h2></td></tr>
 <p>Turn on Uart Irq enable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -826,7 +826,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">port</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a2d484dc15bdf30ee11ab3b05f31f0e16">MemoryRead32</a>(UART_READ_REG(port))</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a706b02571285f92589fbb0b964d7d0bb">MemoryRead32</a>(UART0_READ_REG|port)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -834,7 +834,7 @@ Functions</h2></td></tr>
 <p>Read Uart Rx data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -853,7 +853,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">mode</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a1e578ce669735935a1d505c0edf98221">RT_MCU_SetSystemClock</a>(mode)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="a00020.html#a8e87aa8d85986723da69a68cd0d1e51c">RT_MCU_SetSystemClock</a>(mode)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -890,7 +890,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="a00020.html#a27874a97deab7cecdde5ddecf466e31e">MemoryOr32</a>(UART_CTL_REG(port),val&lt;&lt;8)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="a00020.html#a9ea92ebccdef6bdaca4d00210cc7266d">MemoryOr32</a>(UART0_CTL_REG|port,val&lt;&lt;8)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -898,7 +898,7 @@ Functions</h2></td></tr>
 <p>Set UART port's compare value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
     <tr><td class="paramname">val</td><td>Value to be compared. </td></tr>
   </table>
   </dd>
@@ -928,7 +928,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="a00020.html#a6b9732365b12e48ddb89fe1028b975b0">MemoryWrite32</a>(UART_WRITE_REG(port),val)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="a00020.html#ad9953f631a539cfaa35baf94f878b3ec">MemoryWrite32</a>(UART0_WRITE_REG|port,val)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -936,7 +936,7 @@ Functions</h2></td></tr>
 <p>Sent data via Uart Tx. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
     <tr><td class="paramname">val</td><td>data to Tx </td></tr>
   </table>
   </dd>
@@ -965,7 +965,7 @@ Functions</h2></td></tr>
 <p>Get a character via Uart, to get a byte via UART0, <a class="el" href="a00026.html#a0979671914792955a7a68461634ff82d" title="Get a character from uart0. ">getchar()</a> is recommended. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1002,7 +1002,7 @@ Functions</h2></td></tr>
 <p>Send LIN break mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
     <tr><td class="paramname">pattern</td><td>The length of the break, optional value: <a class="el" href="a00056.html#a7d77cd41951b1fe6b0874924df2bf689" title="Keyword NORMAL_BREAK. ">NORMAL_BREAK</a>, <a class="el" href="a00056.html#a7c76b3ed72795f2085873ee332fdab1b" title="Keyword EXTREME_BREAK. ">EXTREME_BREAK</a> </td></tr>
   </table>
   </dd>
@@ -1040,7 +1040,7 @@ Functions</h2></td></tr>
 <p>Send a character via Uart, to print via UART0, <a class="el" href="a00026.html#a948b7a0779c308ac5502c57e282e6933" title="Print a character to uart0. ">putchar()</a> is recommended. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
     <tr><td class="paramname">c</td><td>character </td></tr>
   </table>
   </dd>
@@ -1078,7 +1078,7 @@ Functions</h2></td></tr>
 <p>Send a string via Uart, to print via UART0, <a class="el" href="a00026.html#a46036bd75b920766eef64eb7910c887d" title="Print a string to uart0. ">puts()</a> is recommended. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Port to use, optional value: <a class="el" href="a00056.html#a0508661f121639ffdee7de2353a0def2" title="Keyword UART0. ">UART0</a>, <a class="el" href="a00056.html#a8d69bf04d07af4fbbab5a8bd291f65ff" title="Keyword UART0. ">UART1</a> </td></tr>
+    <tr><td class="paramname">port</td><td>Port to use, optional value: #UART0, #UART1 </td></tr>
     <tr><td class="paramname">string</td><td>string </td></tr>
   </table>
   </dd>
@@ -1095,7 +1095,7 @@ Functions</h2></td></tr>
     <!-- id is needed for treeview function! -->
     <!-- <ul>
         <li class="navelem"><a class="el" href="dir_9c8c494a5e1ae1f33037b0e9d49f06c7.html">release</a></li><li class="navelem"><a class="el" href="dir_42743c43973611cb0b05144d150e48a5.html">include</a></li><li class="navelem"><a class="el" href="a00056.html">UART.h</a></li>
-        <li class="footer">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by
+        <li class="footer">Generated on Fri Jul 13 2018 14:03:53 for Camel Library Documentaion by
             <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
     </ul> -->
@@ -1107,7 +1107,7 @@ Functions</h2></td></tr>
             <!-- <h5 class="card-title">Special title treatment</h5> -->
             <p class="card-text d-flex justify-content-between">
                 <a href="#" class="btn btn-primary">Return To Top</a>
-                <a href="http://www.doxygen.org/index.html">Generated on Wed Jul 11 2018 15:21:28 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
+                <a href="http://www.doxygen.org/index.html">Generated on Fri Jul 13 2018 14:03:53 for Camel Library Documentaion by <img class="footer" src="doxygen.png" alt="doxygen"/>  1.8.14</a>
             </p>
         </div>
     </div>

@@ -12,6 +12,15 @@
 
 /*! \cond PRIVATE */
 // #define assert(A) if((A)==0){puts("\r\nAssert");}
+typedef union {
+    float       floatValue;
+    uint32_t    uint32Value;
+} float32_container;
+typedef union {
+    double      doubleValue;
+    uint32_t    uint32Value[2];
+} float64_container;
+
 #define assert(A) if((A)==0){}
 
 #define fp_float32_neg          __negsf2
