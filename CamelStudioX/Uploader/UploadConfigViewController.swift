@@ -59,8 +59,9 @@ class UploadConfigViewController: NSViewController {
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        NotificationCenter.default.post(name: Notification.Name.uploadingCancelled, object: self.parentVC)
+        self.uploader.uploadFlag = true // make sure it will be cancelled later
         self.dismiss(self)
+        NotificationCenter.default.post(name: Notification.Name.uploadingCancelled, object: self.parentVC)
     }
     
     @IBAction func okAction(_ sender: Any) {
