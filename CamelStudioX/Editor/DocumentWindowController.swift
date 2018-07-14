@@ -203,8 +203,6 @@ class DocumentWindowController: NSWindowController {
             // show the error message in build message panel
             compilerMessageViewController?.textView.textStorage?.setAttributedString(allMessages)
             compilerMessageViewController?.view.window?.makeKeyAndOrderFront(self)
-            // show the error message in side panel
-            self.viewController.sidePanelInfoTextView.textStorage?.setAttributedString(allMessages)
             // post a notification to inform the user
             let message: String
             if compilerMessages.errors.count > 0 {
@@ -247,8 +245,6 @@ class DocumentWindowController: NSWindowController {
                     buildBinaryAndCheckResult()
                 } else {
                     // makefile doesn't exist
-                    self.viewController.sidePanelInfoTextView.string = "Customed Makefile doesn't exist!"
-                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
                     InfoAndAlert.shared.postNotification(title: "Build Result", informativeText: "Failed: Customed Makefile doesn't exist!")
@@ -260,8 +256,6 @@ class DocumentWindowController: NSWindowController {
                     buildBinaryAndCheckResult() // Build the binary
                 } else {
                     // failed to generate the makefile
-                    self.viewController.sidePanelInfoTextView.string = "Failed to generate the makefile!"
-                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
                     InfoAndAlert.shared.postNotification(title: "Build Result", informativeText: "Failed: Failed to generate the makefile!")
@@ -299,8 +293,6 @@ class DocumentWindowController: NSWindowController {
                     buildLibraryAndCheckResult()
                 } else {
                     // makefile doesn't exist
-                    self.viewController.sidePanelInfoTextView.string = "Customed Makefile doesn't exist!"
-                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
                     InfoAndAlert.shared.postNotification(title: "Build Result", informativeText: "Failed")
@@ -313,8 +305,6 @@ class DocumentWindowController: NSWindowController {
                     buildLibraryAndCheckResult()
                 } else {
                     // failed to generate the makefile
-                    self.viewController.sidePanelInfoTextView.string = "Failed to generate the makefile!"
-                    self.viewController.sidePanelTabControl.selectSegment(withTag: 1)
                     self.viewController.sidePanelTabView.selectTabViewItem(at: 1)
                     // post a notification to inform the user
                     InfoAndAlert.shared.postNotification(title: "Build Result", informativeText: "Failed")

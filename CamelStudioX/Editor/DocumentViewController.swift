@@ -25,9 +25,7 @@ class DocumentViewController: NSViewController {
     static var openedDocumentViewController = 0
     @IBOutlet weak var sidePanelTabView: NSTabView!
     @IBOutlet weak var splitView: NSSplitView!
-    @IBOutlet weak var sidePanelTabControl: NSSegmentedControl!
     @IBOutlet weak var projectInspector: ProjectInspector!
-    @IBOutlet var sidePanelInfoTextView: NSTextView!
     @IBOutlet var editArea: EditorTextView!
     @IBOutlet weak var editAreaSplitView: NSSplitView!
     @IBOutlet weak var editAreaScrollView: NSScrollView!
@@ -59,7 +57,6 @@ class DocumentViewController: NSViewController {
         self.setupHighlightr()
         // turn off some smart functions or automatic functions of nstextview
         self.editArea.turnOffAllSmartOrAutoFunctionExceptLinkDetection()
-        self.sidePanelInfoTextView.turnOffAllSmartOrAutoFunctionExceptLinkDetection()
         // Register menu of project inspector
         self.projectInspector.menu = self.projectInspectorMenu
         // Register Drag-Drop
@@ -127,11 +124,7 @@ class DocumentViewController: NSViewController {
             }
         }
     }
-    // *************** About side panel **********************
-    @IBAction func switchSidePanelTab(_ sender: Any) {
-        let tag = self.sidePanelTabControl.selectedSegment
-        self.sidePanelTabView.selectTabViewItem(at: tag)
-    }
+    
     //***************** About project inspector ******************
     func updateProjectInspector() {
         //self.project?.updateFileWrappers()

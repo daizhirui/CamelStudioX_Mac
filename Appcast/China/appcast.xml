@@ -126,5 +126,30 @@
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
             <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.7.2_Build41.zip" sparkle:version="41" sparkle:shortVersionString="3.7.2" length="68383493" type="application/octet-stream" sparkle:dsaSignature="MC0CFBIMMRaBx+17ON6xUCsqFT9xnJASAhUAo1CGnKYF9I+mlQwnw4TA06F0e7Y="/>
         </item>
+        
+        <item>
+            <title>3.7.3</title>
+            <description><![CDATA[
+                <h1>The programmer says he is boring and throws an update to you!</h1>
+                <h2>Fixed Bugs</h2>
+                <ul>
+                <li>UI error of Side Panel in macOS 10.12.x.</li>
+                <li>Crash results from Auto-indent function.</li>
+                </ul>
+                <h2>Improvement</h2>
+                <ul>
+                <li>Update library and documentation.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Sat, 14 Jul 2018 20:07:28 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.7.3_Build42.zip" sparkle:version="42" sparkle:shortVersionString="3.7.3" length="68383036" type="application/octet-stream" sparkle:dsaSignature="MC0CFDZOLsi+JKqKJD1vkwHS6667XeolAhUAlzYlzZ7en8eE/7PjU875+XlgQxc="/>
+            <sparkle:deltas>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX42-41.delta" sparkle:version="42" sparkle:shortVersionString="3.7.3" sparkle:deltaFrom="41" length="214280" type="application/octet-stream" sparkle:dsaSignature="MC0CFGFQl+sRbE9UmDo3zBZ0ouq7AeJ3AhUAxMmQhZsQUsSgSbRHxeIEqGFFGAQ="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX42-40.delta" sparkle:version="42" sparkle:shortVersionString="3.7.3" sparkle:deltaFrom="40" length="364447" type="application/octet-stream" sparkle:dsaSignature="MC0CFACRWSolQd0YRGiefZ81KH92WYIrAhUAl5AJ6/U7cL15SQb7VH+iyWcsyw4="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX42-39.delta" sparkle:version="42" sparkle:shortVersionString="3.7.3" sparkle:deltaFrom="39" length="925606" type="application/octet-stream" sparkle:dsaSignature="MCwCFH3WyTX1ov5BDPXZeldDuBozIvPiAhRxIK3h2he4XRfCM2yPI3QgEA9kLA=="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX42-38.delta" sparkle:version="42" sparkle:shortVersionString="3.7.3" sparkle:deltaFrom="38" length="978902" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDTU33T4fK/tq1e4jUvQsSLqIG0/QIUFHSji0IlPoslcs7j6Am+jguMfpg="/></sparkle:deltas>
+        </item>
 
     </channel></rss>

@@ -52,7 +52,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CamelStudioX/Editor/DocumentWindowController.swift"
-            timestampString = "553012407.2631"
+            timestampString = "553283936.8885961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CamelStudioX/Editor/DocumentViewController.swift"
-            timestampString = "552080319.379295"
+            timestampString = "553283851.430845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "650"
-            endingLineNumber = "650"
+            startingLineNumber = "645"
+            endingLineNumber = "645"
             landmarkName = "outlineView(_:acceptDrop:item:childIndex:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,6 +106,22 @@
             startingLineNumber = "62"
             endingLineNumber = "62"
             landmarkName = "cancelAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LineNumberTextView/EditorTextView.swift"
+            timestampString = "553283851.4312"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "keyDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,3 +1,9 @@
+### Version 3.7.3
+----
+
+- Fixed Bug: Crash results from Auto-indent function.
+- Fixed Bug: UI error of Side Panel in macOS 10.12.x.
+
 ### Version 3.7.2
 ----
 
