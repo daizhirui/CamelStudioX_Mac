@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,7 +40,7 @@
 		18E5E7FA9101258C2EC8AAB6B3E968CD /* Pods-CamelStudioX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CamelStudioX.release.xcconfig"; sourceTree = "<group>"; };
 		1C6B267E93917FEA0729E16FFD69780E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
 		28CD9ADD592E468DEFE7C7ECFCD19A4C /* ORSSerialPort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = Source/ORSSerialPort.m; sourceTree = "<group>"; };
-		2D1151BD1F7149357B71637405E64513 /* ORSSerial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ORSSerial.framework; path = ORSSerialPort.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D1151BD1F7149357B71637405E64513 /* ORSSerial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ORSSerial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		350D8714E912454970B401DDE8F3C85C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		38689DC7FCDAF9A7C6E784C2BB8F5F08 /* ORSSerialPort-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPort-prefix.pch"; sourceTree = "<group>"; };
 		412EE76DCAB9B0B5DE3959072A150718 /* ORSSerialPort-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ORSSerialPort-dummy.m"; sourceTree = "<group>"; };
@@ -53,10 +53,10 @@
 		48D3572D2F7213CBC97EDDE33A106BD6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D4E15F9EC9FE7D2328CFE601A9B0EF9 /* ORSSerialBuffer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialBuffer.m; path = Source/ORSSerialBuffer.m; sourceTree = "<group>"; };
 		7318B07320825BFCF9628D3E5927AF80 /* ORSSerialPacketDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialPacketDescriptor.h; path = Source/ORSSerialPacketDescriptor.h; sourceTree = "<group>"; };
-		832BA31A140BFDF081E0E08693C8EBB2 /* Pods_CamelStudioX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CamelStudioX.framework; path = "Pods-CamelStudioX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		832BA31A140BFDF081E0E08693C8EBB2 /* Pods_CamelStudioX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamelStudioX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FE142B9F0AE95C3008EA2E053BC03C /* ORSSerialPortManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = Source/ORSSerialPortManager.m; sourceTree = "<group>"; };
 		91628FA32164494E8569B89B513550F8 /* ORSSerialBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialBuffer.h; path = Source/ORSSerialBuffer.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		987F1E8B83C5B1C5EB1F4D8F7C15A9B5 /* Pods-CamelStudioX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CamelStudioX-umbrella.h"; sourceTree = "<group>"; };
 		9AA40CF7FD2906B29FF66B67C3288A57 /* ORSSerialPort.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ORSSerialPort.xcconfig; sourceTree = "<group>"; };
 		A7321A199B248210F84E55850E444E11 /* ORSSerialRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORSSerialRequest.h; path = Source/ORSSerialRequest.h; sourceTree = "<group>"; };
@@ -167,7 +167,6 @@
 				4582DEB1411D163264F2208F4B8279F3 /* ORSSerialRequest.m */,
 				602BC64DA9FAE71EB5646D3233EAD1B0 /* Support Files */,
 			);
-			name = ORSSerialPort;
 			path = ORSSerialPort;
 			sourceTree = "<group>";
 		};
@@ -177,7 +176,6 @@
 				2B3C268A49B999FD2065D69FC0D5DA3B /* Frameworks */,
 				FBA0969DC1EF22C2DF218A0C83DABC25 /* Resources */,
 			);
-			name = "HockeySDK-Mac";
 			path = "HockeySDK-Mac";
 			sourceTree = "<group>";
 		};
@@ -294,7 +292,7 @@
 				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (

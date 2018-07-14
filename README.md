@@ -5,6 +5,8 @@ Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
 ## [Download the Latest Version from HockeyApp](https://rink.hockeyapp.net/apps/798a2dae49b04400bcadaf69bda80417)
 
+## [Download 3.7.3 from Aliyun](https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.7.3_Build42.zip)
+
 ## [Documentation](https://daizhirui.github.io/CamelStudio_Library/)
 
 ### Version 3.7.3

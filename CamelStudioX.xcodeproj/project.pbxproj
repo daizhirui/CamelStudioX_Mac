@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1618,17 +1618,20 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "戴植锐";
+				ORGANIZATIONNAME = "Zhirui Dai";
 				TargetAttributes = {
 					233DBE1A207568F100269D8E = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
+						ProvisioningStyle = Automatic;
 					};
 					23642B2920737BDF00FB9C33 = {
 						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
 					};
 					2378FE6D20715F0B0011969E = {
 						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -1637,15 +1640,17 @@
 					};
 					23859A1620754ECC00F2FF08 = {
 						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
 					};
 					23C605092073802600375959 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 2378FE6920715F0B0011969E /* Build configuration list for PBXProject "CamelStudioX" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -2202,11 +2207,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Markdown/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Markdown",
@@ -2239,11 +2240,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Markdown/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Markdown",
@@ -2274,11 +2271,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Highlightr/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Highlightr;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -2305,11 +2298,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Highlightr/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.Highlightr;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -2429,8 +2418,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -2452,10 +2440,7 @@
 					"$(PROJECT_DIR)/Sparkle",
 				);
 				INFOPLIST_FILE = CamelStudioX/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.CamelStudioX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2483,10 +2468,7 @@
 					"$(PROJECT_DIR)/Sparkle",
 				);
 				INFOPLIST_FILE = CamelStudioX/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.CamelStudioX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2511,11 +2493,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = PlotKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.PlotKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -2542,11 +2520,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = PlotKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.PlotKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -2574,11 +2548,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = LineNumberTextView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.LineNumberTextView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -2607,11 +2577,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = LineNumberTextView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = daizhirui.LineNumberTextView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
