@@ -42,7 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
         } else {
             self.updater.updateFeedURL(URL(string: "https://raw.githubusercontent.com/daizhirui/CamelStudioX_Mac/master/appcast.xml"))
         }
-        myDebug("FeedURL = \(self.updater.feedURL)")
+        
         // Menu bar
         self.setupM2ExampleMenu()
         // Touch bar
@@ -121,9 +121,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
             let storyBoard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Welcome"), bundle: nil)
             let windowController = storyBoard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init("Welcome Window Controller")) as! NSWindowController
             windowController.showWindow(self)
-        } else {
-            myDebug("NSApp.windows.count = \(NSApp.windows.count)")
-            myDebug("WelcomeViewController.welcomeViewDidShowed = \(WelcomeViewController.welcomeViewDidShowed)")
         }
     }
     // MARK:- Restoration and WelcomeWindow
@@ -131,12 +128,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
     
     /// Start to restore
     func application(_ app: NSApplication, didDecodeRestorableState coder: NSCoder) {
-        myDebug("Application is restoring.")
         AppDelegate.isRestoring = true
     }
     /// Restoration may be successful, check it
     func applicationDidBecomeActive(_ notification: Notification) {
-        myDebug("Application become active")
         AppDelegate.isRestoring = false
         if !WelcomeViewController.welcomeViewDidShowed && DocumentViewController.openedDocumentViewController <= 0 {
             // fail to restore, show welcome window

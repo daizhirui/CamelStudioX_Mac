@@ -37,7 +37,6 @@ class Uploader: NSObject, ORSSerialPortDelegate {
      */
     override init() {
         super.init()
-        myDebug("Uploader \(self) is loaded")
         // setup the notification center
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(serialPortsWereChanged(_:)), name: NSNotification.Name.ORSSerialPortsWereConnected, object: nil)

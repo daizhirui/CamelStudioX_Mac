@@ -130,7 +130,6 @@
         <item>
             <title>3.7.3</title>
             <description><![CDATA[
-                <h1>The programmer says he is boring and throws an update to you!</h1>
                 <h2>Fixed Bugs</h2>
                 <ul>
                 <li>UI error of Side Panel in macOS 10.12.x.</li>

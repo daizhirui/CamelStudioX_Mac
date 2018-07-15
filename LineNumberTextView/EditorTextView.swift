@@ -89,8 +89,12 @@ public class EditorTextView: NSTextView {
         
         let cursorPos = self.selectedRange().lowerBound
         if event.keyCode == 36 {
-            let leftCurlyBraceCount = EditorTextView.characterRegx.leftCurlyBrace.matches(in: self.string, options: [], range: NSMakeRange(0, cursorPos - 1)).count
-            let rightCurlyBraceCount = EditorTextView.characterRegx.rightCurlyBrace.matches(in: self.string, options: [], range: NSMakeRange(0, cursorPos - 1)).count
+            let leftCurlyBraceCount = EditorTextView.characterRegx.leftCurlyBrace.matches(in: self.string,
+                                                                                          options: [],
+                                                                                          range: NSMakeRange(0, cursorPos - 1)).count
+            let rightCurlyBraceCount = EditorTextView.characterRegx.rightCurlyBrace.matches(in: self.string,
+                                                                                            options: [],
+                                                                                            range: NSMakeRange(0, cursorPos - 1)).count
             let numberOfSpacesToInsertBefore = (leftCurlyBraceCount - rightCurlyBraceCount) * 4;
             
             var sequenceToInsert = String(repeating: " ", count: numberOfSpacesToInsertBefore)
@@ -104,28 +108,35 @@ public class EditorTextView: NSTextView {
                     sequenceToInsert.append(String(repeating: " ", count: numberOfSpacesToInsertAfter))
                 }
             }
-            
-            self.string.insert(contentsOf: sequenceToInsert, at: self.string.index(self.string.startIndex, offsetBy: cursorPos))
+            self.insertText(sequenceToInsert, replacementRange: NSMakeRange(cursorPos, 0))
             self.setSelectedRange(NSMakeRange(cursorPos + numberOfSpacesToInsertBefore, 0))
-        } else if event.characters == "{" {
-            self.string.insert(contentsOf: "}", at: self.string.index(self.string.startIndex, offsetBy: cursorPos))
+        }
+        else if event.characters == "{" {
+            self.insertText("}", replacementRange: NSMakeRange(cursorPos, 0))
             self.setSelectedRange(NSMakeRange(cursorPos, 0))
-        } else if event.characters == "(" {
-            self.string.insert(contentsOf: ")", at: self.string.index(self.string.startIndex, offsetBy: cursorPos))
+        }
+        else if event.characters == "(" {                 /*! Smart "(" insertion */
+            self.insertText(")", replacementRange: NSMakeRange(cursorPos, 0))
             self.setSelectedRange(NSMakeRange(cursorPos, 0))
-        } else if event.characters == ")" {
+        }
+        else if event.characters == ")" {                 /*! Smart ")" insertion */
             if cursorPos < self.string.count {
                 let nextCharacter = (self.string as NSString).substring(with: NSMakeRange(cursorPos, 1))
                 if nextCharacter == ")" {
-                    let leftParenthesisCount = EditorTextView.characterRegx.leftParenthesis.matches(in: self.string, options: [], range: NSMakeRange(0, cursorPos - 1)).count
-                    let rightParenthesisCount = EditorTextView.characterRegx.rightParenthesis.matches(in: self.string, options: [], range: NSMakeRange(0, cursorPos - 1)).count
+                    let leftParenthesisCount = EditorTextView.characterRegx.leftParenthesis.matches(in: self.string,
+                                                                                                    options: [],
+                                                                                                    range: NSMakeRange(0, cursorPos - 1)).count
+                    let rightParenthesisCount = EditorTextView.characterRegx.rightParenthesis.matches(in: self.string,
+                                                                                                      options: [],
+                                                                                                      range: NSMakeRange(0, cursorPos - 1)).count
                     if leftParenthesisCount - rightParenthesisCount > 0 {
-                        self.string.remove(at: self.string.index(self.string.startIndex, offsetBy: cursorPos))
+                        self.removeCharacter(with: StringInsertion(position: cursorPos, character: ")"))
                         self.setSelectedRange(NSMakeRange(cursorPos, 0))
                     }
                 }
             }
-        } else if event.characters == "\"" || event.characters == "'" {
+        }
+        else if event.characters == "\"" || event.characters == "'" {
             self.string.insert(contentsOf: event.characters!, at: self.string.index(self.string.startIndex, offsetBy: cursorPos))
             self.setSelectedRange(NSMakeRange(cursorPos, 0))
         }
@@ -161,7 +172,6 @@ public class EditorTextView: NSTextView {
             }
         }
     }
-    
     
     override public func awakeFromNib() {
         // Get the enclosing scroll view

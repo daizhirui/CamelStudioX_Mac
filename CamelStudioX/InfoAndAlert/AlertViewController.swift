@@ -23,7 +23,6 @@ class AlertViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myDebug("AlerViewController \(self) is loaded.\n")
     }
     
     override func viewWillAppear() {

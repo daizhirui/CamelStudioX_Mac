@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CamelStudioX/Uploader/Uploader.swift"
-            timestampString = "553291254.320083"
+            timestampString = "553354022.686445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "serialPort"
             landmarkType = "24">
          </BreakpointContent>
@@ -106,22 +106,6 @@
             startingLineNumber = "62"
             endingLineNumber = "62"
             landmarkName = "cancelAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LineNumberTextView/EditorTextView.swift"
-            timestampString = "553283851.4312"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "keyDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
