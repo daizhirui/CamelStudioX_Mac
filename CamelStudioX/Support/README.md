@@ -1,3 +1,8 @@
+### Version 3.7.4
+----
+
+- Fixed Bug: Library functions for Memory should be extern.
+
 ### Version 3.7.3
 ----
 

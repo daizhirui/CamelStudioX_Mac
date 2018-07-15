@@ -150,5 +150,24 @@
                 <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX42-39.delta" sparkle:version="42" sparkle:shortVersionString="3.7.3" sparkle:deltaFrom="39" length="925606" type="application/octet-stream" sparkle:dsaSignature="MCwCFH3WyTX1ov5BDPXZeldDuBozIvPiAhRxIK3h2he4XRfCM2yPI3QgEA9kLA=="/>
                 <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX42-38.delta" sparkle:version="42" sparkle:shortVersionString="3.7.3" sparkle:deltaFrom="38" length="978902" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDTU33T4fK/tq1e4jUvQsSLqIG0/QIUFHSji0IlPoslcs7j6Am+jguMfpg="/></sparkle:deltas>
         </item>
+        
+        <item>
+            <title>3.7.4</title>
+            <description><![CDATA[
+                <h2>Fixed Bugs</h2>
+                <ul>
+                <li>Library functions for Memory should be extern.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Sun, 15 Jul 2018 22:42:27 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX_3.7.4_Build43.zip" sparkle:version="43" sparkle:shortVersionString="3.7.4" length="68386502" type="application/octet-stream" sparkle:dsaSignature="MC4CFQC69/Oly9Ef7Yci3xqe3yO5oxO8xwIVAIOwAH83FQ3A5TdNoaz6CRNyz0UG"/>
+            <sparkle:deltas>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX43-42.delta" sparkle:version="43" sparkle:shortVersionString="3.7.4" sparkle:deltaFrom="42" length="78017" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCHm8rw8IkcjBd9mZPiQrtlz2/8SQIULjhkMfVTUonwPnO6mnYkS8DHLfc="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX43-41.delta" sparkle:version="43" sparkle:shortVersionString="3.7.4" sparkle:deltaFrom="41" length="226515" type="application/octet-stream" sparkle:dsaSignature="MCwCFBsmTCosTrTVkdxovt6KBggWyaeSAhRTRbyecgoUSJFQ+UWdGLVvtdoglg=="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX43-40.delta" sparkle:version="43" sparkle:shortVersionString="3.7.4" sparkle:deltaFrom="40" length="376709" type="application/octet-stream" sparkle:dsaSignature="MCwCFFNuJTXDEQG3oZeNS28++xxDdERLAhQorj1EjxpJgUSwSQO0CdHAaIPMSQ=="/>
+                <enclosure url="https://camelmicro.oss-cn-beijing.aliyuncs.com/CamelStudioX43-39.delta" sparkle:version="43" sparkle:shortVersionString="3.7.4" sparkle:deltaFrom="39" length="942015" type="application/octet-stream" sparkle:dsaSignature="MCwCFB+lF/WjDyfdmvlok4Vz2E8DIxEUAhR5OM4f7D6v/2zipdBlLZyR4Kewig=="/></sparkle:deltas>
+        </item>
 
     </channel></rss>
