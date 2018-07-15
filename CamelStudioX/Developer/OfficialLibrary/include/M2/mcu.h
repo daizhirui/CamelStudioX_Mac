@@ -150,7 +150,7 @@ enum M2_EXTERNAL_REG {
  * @param addr  the address to read
  * @return long the read value
  */
-inline uint32_t MemoryRead32(memory_addr_t addr)
+extern inline uint32_t MemoryRead32(memory_addr_t addr)
 {
     return *(volatile memory_addr_t*)(addr);
 }
@@ -161,7 +161,7 @@ inline uint32_t MemoryRead32(memory_addr_t addr)
  * @param val   the value to be written
  * @return void
  */
-inline void MemoryWrite32(memory_addr_t addr, uint32_t val)
+extern inline void MemoryWrite32(memory_addr_t addr, uint32_t val)
 {
     (*(volatile memory_addr_t*)(addr)) = (val);
 }
@@ -172,7 +172,7 @@ inline void MemoryWrite32(memory_addr_t addr, uint32_t val)
  * @param val    the OR mask
  * @return void
  */
-inline void MemoryOr32(memory_addr_t addr, uint32_t val)
+extern inline void MemoryOr32(memory_addr_t addr, uint32_t val)
 {
     (*(volatile memory_addr_t*)(addr)) |= (val);
 }
@@ -183,7 +183,7 @@ inline void MemoryOr32(memory_addr_t addr, uint32_t val)
  * @param val    the AND mask
  * @return void
  */
-inline void MemoryAnd32(memory_addr_t addr, uint32_t val)
+extern inline void MemoryAnd32(memory_addr_t addr, uint32_t val)
 {
     (*(volatile memory_addr_t*)(addr)) &= (val);
 }
@@ -194,7 +194,7 @@ inline void MemoryAnd32(memory_addr_t addr, uint32_t val)
  * @param val    the bit location (in the 32-bit data)
  * @return long  the bit
  */
-inline uint32_t MemoryBitAt(memory_addr_t addr, uint32_t val)
+extern inline uint32_t MemoryBitAt(memory_addr_t addr, uint32_t val)
 {
     return ( *(volatile memory_addr_t*)(addr) >> val ) &0x1;
 }
@@ -205,7 +205,7 @@ inline uint32_t MemoryBitAt(memory_addr_t addr, uint32_t val)
  * @param val    the bit location (in the 32-bit data)
  * @return void
  */
-inline void MemoryBitOn(memory_addr_t addr, uint32_t val)
+extern inline void MemoryBitOn(memory_addr_t addr, uint32_t val)
 {
     MemoryOr32(addr,1<<(val));
 }
@@ -216,7 +216,7 @@ inline void MemoryBitOn(memory_addr_t addr, uint32_t val)
  * @param val    the bit location (in the 32-bit data)
  * @return void
  */
-inline void MemoryBitOff(memory_addr_t addr, uint32_t val)
+extern inline void MemoryBitOff(memory_addr_t addr, uint32_t val)
 {
     MemoryAnd32(addr,~(1<<(val)));
 }
@@ -227,7 +227,7 @@ inline void MemoryBitOff(memory_addr_t addr, uint32_t val)
  * @param val    the bit location (in the 32-bit data)
  * @return void
  */
-inline void MemoryBitSwitch(memory_addr_t addr, uint32_t val)
+extern inline void MemoryBitSwitch(memory_addr_t addr, uint32_t val)
 {
     (*(volatile memory_addr_t*)(addr)^=(1<<(val)));
 }
