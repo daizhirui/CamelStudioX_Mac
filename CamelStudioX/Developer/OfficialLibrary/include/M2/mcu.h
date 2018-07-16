@@ -150,10 +150,7 @@ enum M2_EXTERNAL_REG {
  * @param addr  the address to read
  * @return long the read value
  */
-extern inline uint32_t MemoryRead32(memory_addr_t addr)
-{
-    return *(volatile memory_addr_t*)(addr);
-}
+#define MemoryRead32(addr)      (*(volatile memory_addr_t*)(addr))
 
 /**
  * @brief Write 32-bit data to a specific address.
@@ -161,10 +158,7 @@ extern inline uint32_t MemoryRead32(memory_addr_t addr)
  * @param val   the value to be written
  * @return void
  */
-extern inline void MemoryWrite32(memory_addr_t addr, uint32_t val)
-{
-    (*(volatile memory_addr_t*)(addr)) = (val);
-}
+#define MemoryWrite32(addr, val)    (*(volatile memory_addr_t*)(addr)) = (val)
 
 /**
  * @brief Logical OR operation on 32-bit data at a specific address.
@@ -172,10 +166,7 @@ extern inline void MemoryWrite32(memory_addr_t addr, uint32_t val)
  * @param val    the OR mask
  * @return void
  */
-extern inline void MemoryOr32(memory_addr_t addr, uint32_t val)
-{
-    (*(volatile memory_addr_t*)(addr)) |= (val);
-}
+#define MemoryOr32(addr, val)    ((*(volatile memory_addr_t*)(addr)) |= (val))
 
 /**
  * @brief Logical addrND operation on 32-bit data from a specific address.
@@ -183,10 +174,7 @@ extern inline void MemoryOr32(memory_addr_t addr, uint32_t val)
  * @param val    the AND mask
  * @return void
  */
-extern inline void MemoryAnd32(memory_addr_t addr, uint32_t val)
-{
-    (*(volatile memory_addr_t*)(addr)) &= (val);
-}
+#define MemoryAnd32(addr, val)    ((*(volatile memory_addr_t*)(addr)) &= (val))
 
 /**
  * @brief Get a specific bit of a 32-bit data from a specific address.
@@ -194,10 +182,7 @@ extern inline void MemoryAnd32(memory_addr_t addr, uint32_t val)
  * @param val    the bit location (in the 32-bit data)
  * @return long  the bit
  */
-extern inline uint32_t MemoryBitAt(memory_addr_t addr, uint32_t val)
-{
-    return ( *(volatile memory_addr_t*)(addr) >> val ) &0x1;
-}
+#define MemoryBitAt(addr, val)    (( *(volatile memory_addr_t*)(addr) >> val ) &0x1)
 
 /**
  * @brief Set a specific bit of a 32-bit data from a specific address to 1.
@@ -205,10 +190,7 @@ extern inline uint32_t MemoryBitAt(memory_addr_t addr, uint32_t val)
  * @param val    the bit location (in the 32-bit data)
  * @return void
  */
-extern inline void MemoryBitOn(memory_addr_t addr, uint32_t val)
-{
-    MemoryOr32(addr,1<<(val));
-}
+#define MemoryBitOn(addr, val)    MemoryOr32(addr,1<<(val))
 
 /**
  * @brief Set a specific bit of a 32-bit data from a specific address to 0.
@@ -216,10 +198,7 @@ extern inline void MemoryBitOn(memory_addr_t addr, uint32_t val)
  * @param val    the bit location (in the 32-bit data)
  * @return void
  */
-extern inline void MemoryBitOff(memory_addr_t addr, uint32_t val)
-{
-    MemoryAnd32(addr,~(1<<(val)));
-}
+#define MemoryBitOff(addr, val)    MemoryAnd32(addr,~(1<<(val)))
 
 /**
  * @brief Set a specific bit of a 32-bit data from a specific address to opposite state.
@@ -227,10 +206,7 @@ extern inline void MemoryBitOff(memory_addr_t addr, uint32_t val)
  * @param val    the bit location (in the 32-bit data)
  * @return void
  */
-extern inline void MemoryBitSwitch(memory_addr_t addr, uint32_t val)
-{
-    (*(volatile memory_addr_t*)(addr)^=(1<<(val)));
-}
+#define MemoryBitSwitch(addr, val)    (*(volatile memory_addr_t*)(addr)^=(1<<(val)))
 
 /*! Function pointer type (void)->void definition. */
 typedef void (*FuncPtr)(void);
@@ -251,11 +227,11 @@ typedef void (*FuncPtr2)(uint32_t, uint32_t);
                     \endcode
  * @return void
  */
-extern inline void RT_MCU_JumpTo(memory_addr_t address)
-{
-    FuncPtr funcptr;
-    funcptr = (FuncPtr)address;
-    funcptr();
+#define RT_MCU_JumpTo(address)      \
+{                                   \
+    FuncPtr funcptr;                \
+    funcptr = (FuncPtr)address;     \
+    funcptr();                      \
 }
 
 /*! Keyword for setting the system clock frequency. */
@@ -275,10 +251,10 @@ typedef enum {
                 Optional value: #SYS_CLK_3M, #SYS_CLK_6M, #SYS_CLK_12M.
  * @return void
  */
-extern inline void RT_MCU_SetSystemClock(SYS_CLK mode)
-{
-    MemoryAnd32(SYS_CTL2_REG, ~SYS_CLK_12M);
-    MemoryOr32(SYS_CTL2_REG, mode);
+#define RT_MCU_SetSystemClock(mode)             \
+{                                               \
+    MemoryAnd32(SYS_CTL2_REG, ~SYS_CLK_12M);    \
+    MemoryOr32(SYS_CTL2_REG, mode);             \
 }
 /**
  * @brief       This function is to clear the former 7K-byte sram
@@ -287,13 +263,13 @@ extern inline void RT_MCU_SetSystemClock(SYS_CLK mode)
                 in the sram for the later state recover from the interrupt.
  * @return      void
  */
-extern inline void RT_Sram_Clear()
-{
-    unsigned long i;
-    for(i=0;i<7168;i++)
-    {
-      (*(volatile unsigned char *)(0x01000000 + i)) = 0;
-    }
+#define RT_Sram_Clear()                                     \
+{                                                           \
+    unsigned long i;                                        \
+    for(i=0;i<7168;i++)                                     \
+    {                                                       \
+      (*(volatile unsigned char *)(0x01000000 + i)) = 0;    \
+    }                                                       \
 }
 
 #endif	// End of __M2_MCU__

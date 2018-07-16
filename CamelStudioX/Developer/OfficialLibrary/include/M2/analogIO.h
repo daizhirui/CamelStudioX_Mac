@@ -102,27 +102,18 @@ enum V2P_RESISTOR {
  * @note        Write 1 to #AD_CLR_REG
  * @return      void
  */
-extern inline void RT_ADC_Clear(void)
-{
-    MemoryWrite32(AD_CLR_REG, 1);
-}
+#define RT_ADC_Clear()                  MemoryWrite32(AD_CLR_REG, 1)
 /**
  * @brief       Set ADC_V2P on.
  * @note        AD_CLR_REG[8]: 1=V2P on, 0=V2P off.
  */
-extern inline void RT_ADC_V2P_On(void)
-{
-    MemoryOr32(AD_CTL0_REG, (1 << 8));
-}
+#define RT_ADC_V2P_On()                 MemoryOr32(AD_CTL0_REG, (1 << 8))
 /**
  * @brief       Set ADC_V2P off.
  * @note        AD_CLR_REG[8]: 1=V2P on, 0=V2P off.
  * @return      void
  */
-extern inline void RT_ADC_V2P_Off(void)
-{
-    MemoryAnd32(AD_CTL0_REG, ~(1 << 8));
-}
+#define RT_ADC_V2P_Off()                MemoryAnd32(AD_CTL0_REG, ~(1 << 8))
 /**
  * @brief           Set the resistor of V2P.
  *                  When res = 3, single input mode is enabled, vcom will be fed into the P-side of OPO!
@@ -139,38 +130,26 @@ extern inline void RT_ADC_V2P_Off(void)
  * @note        AD_CTL0_REG[5]: 1=on, 0=off
  * @return      void
  */
-extern inline void RT_ADC_TemperatureSensorOn(void)
-{
-    MemoryOr32(AD_CTL0_REG, 1 << 5);
-}
+#define RT_ADC_TemperatureSensorOn()        MemoryOr32(AD_CTL0_REG, 1 << 5)
 /**
  * @brief       Set ADC temperature sensor off.
  * @note        AD_CTL0_REG[5]: 1=on, 0=off
  * @return      void
  */
-extern inline void RT_ADC_TemperatureSensorOff(void)
-{
-    MemoryAnd32(AD_CTL0_REG, ~(1 << 5));
-}
+#define RT_ADC_TemperatureSensorOff()      MemoryAnd32(AD_CTL0_REG, ~(1 << 5))
 /************* OPO setup **************/
 /**
  * @brief       Turn the Amplifier on.
  * @note        AD_OPO_REG[0]: 1=on, 0=off
  * @return      void
  */
-extern inline void RT_OPO_On(void)
-{
-    MemoryOr32(AD_OPO_REG, 0x1);
-}
+#define RT_OPO_On()                         MemoryOr32(AD_OPO_REG, 0x1)
 /**
  * @brief       Turn the Amplifier off.
  * @note        AD_OPO_REG[0]: 1=on, 0=off
  * @return      void
  */
-extern inline void RT_OPO_Off(void)
-{
-    MemoryAnd32(AD_OPO_REG, ~0x1);
-}
+#define RT_OPO_Off()                        MemoryAnd32(AD_OPO_REG, ~0x1)
 /**
  * @brief           Set the state of every amplifier channel.
  * @param ch0       channel 0, optional value: #ON, #OFF
@@ -318,19 +297,13 @@ extern inline void RT_OPO_Off(void)
  * @note        AD_CTL0_REG[0]: 1=on, 0=off
  * @return      void
  */
-extern inline void RT_ADC_SD_On(void)
-{
-    MemoryOr32(AD_CTL0_REG, 1);
-}
+#define RT_ADC_SD_On()              MemoryOr32(AD_CTL0_REG, 1)
 /**
  * @brief       Turn off SD.
  * @note        AD_CTL0_REG[0]: 1=on, 0=off
  * @return      void
  */
-extern inline void RT_ADC_SD_Off(void)
-{
-    MemoryAnd32(AD_CTL0_REG, ~1);
-}
+#define RT_ADC_SD_Off()             MemoryAnd32(AD_CTL0_REG, ~1)
 /**
  * @brief           Set the sample rate of SD.
  * @param mode      optional value: #SD_CLK_3M, #SD_CLK_1_5M, #SD_CLK_781K, #SD_CLK_390K
@@ -387,18 +360,12 @@ extern inline void RT_ADC_SD_Off(void)
  *              be asserted upon conversion completed.
  * @return      void
  */
-extern inline void RT_ADC_SD_Start(void)
-{
-    MemoryWrite32(AD_READ_REG, 1);
-}
+#define RT_ADC_SD_Start()           MemoryWrite32(AD_READ_REG, 1)
 /**
  * @brief   Check is the accumulation of SD is completed.
  * @return  The result if the accumulation is completed, 1=completed, 0=not completed
  */
-extern inline uint32_t RT_ADC_SD_DataReady(void)
-{
-    return ((MemoryRead32(AD_CTL0_REG) & 0x80000000) >> 31);
-}
+#define RT_ADC_SD_DataReady()   ((MemoryRead32(AD_CTL0_REG) & 0x80000000) >> 31)
 
 /**
  * @brief           Get the result of SD.
@@ -470,12 +437,12 @@ typedef enum {   /*! Relative value of #T0_CTL0_REG to #T0_CTL0_REG. */
                     AT THE SAME TIME!
 * @return void
 */
-extern inline void RT_DAC_analogWrite(ANALOG_OUTPUT_T channel, uint32_t value, uint32_t p_vdd5)
-{
-    MemoryOr32((T0_CTL0_REG|channel), 1<<4);
-    MemoryAnd32((T0_CTL0_REG|channel), ~(0x3 << 6));
-    MemoryWrite32((T0_CLK_REG|channel), 1);
-    MemoryWrite32((T0_REF_REG|channel), value * 255/p_vdd5);
+#define RT_DAC_analogWrite(channel, value, p_vdd5)                  \
+{                                                                   \
+    MemoryOr32((T0_CTL0_REG|channel), 1<<4);                        \
+    MemoryAnd32((T0_CTL0_REG|channel), ~(0x3 << 6));                \
+    MemoryWrite32((T0_CLK_REG|channel), 1);                         \
+    MemoryWrite32((T0_REF_REG|channel), value * 255/p_vdd5);        \
 }
 
 #endif // End of __M2_ANALOG_h__

@@ -29,26 +29,17 @@ typedef enum {
  * @note  SYS_IRQ_REG[8:0]: 9 devices.
  * @param device Optional value: #SYSINT_SPIINT, #SYSINT_UART1INT, #SYSINT_UART0INT, #SYSINT_WDTINT, #SYSINT_EXTINT, #SYSINT_DBGINT, #SYSINT_TC2INT, #SYSINT_TC1INT, #SYSINT_TC0INT
  */
-extern inline uint32_t RT_SYSINT_GetFlag(SYSINT_DEVICE device)
-{
-    return ( MemoryRead32(SYS_IRQ_REG) & (0x1 << device) ) >> device;
-}
+#define RT_SYSINT_GetFlag(device)     (( MemoryRead32(SYS_IRQ_REG) & (0x1 << device) ) >> device)
 /**
  * @brief Turn on system interrupt.
  * @note  SYS_CTL0_REG[0]: 1=enable system interrupt, 0=disable system interrupt.
  */
-extern inline void RT_SYSINT_On()
-{
-    MemoryOr32(SYS_CTL0_REG, 0x1);
-}
+#define RT_SYSINT_On()          MemoryOr32(SYS_CTL0_REG, 0x1)
 /**
  * @brief Turn off system interrupt.
  * @note  SYS_CTL0_REG[0]: 1=enable system interrupt, 0=disable system interrupt.
  */
-extern inline void RT_SYSINT_Off()
-{
-    MemoryAnd32(SYS_CTL0_REG, ~0x1);
-}
+#define RT_SYSINT_Off()         MemoryAnd32(SYS_CTL0_REG, ~0x1)
 
 typedef enum {
     EXINT0 = 0x0,	/*! Enternal interrupt 0 */
@@ -64,7 +55,7 @@ typedef enum {
  * @param trigger   the trigger mode, optional value: #RISING, #FALLING
  * @return          void
  */
-extern inline void RT_EXINT_Setup(EXTINT_PORT port, trigger_mode_t mode)                \
+#define RT_EXINT_Setup(port, mode)                \
     {                                                \
         MemoryOr32(INT_CTL0_REG, 1 << port);         \
         MemoryAnd32(INT_CTL2_REG, ~(RISING_TRIGGER << port)); \
@@ -76,43 +67,28 @@ extern inline void RT_EXINT_Setup(EXTINT_PORT port, trigger_mode_t mode)        
  #EXINT0, #EXINT1, #EXINT2, #EXINT3, #EXINT4, #EXINT5
  * @return          void
  */
-extern inline void RT_EXINT_Off(port)
-{
-    MemoryAnd32(INT_CTL0_REG, ~(1 << port));
-}
+#define RT_EXINT_Off(port)          MemoryAnd32(INT_CTL0_REG, ~(1 << port))
 
 /**
  * @brief       Clear interrupt flag from specific external interrupt port
  * @param port  the external interrupt port to clear irq flag, optional value: #EXINT0, #EXINT1, #EXINT2, #EXINT3, #EXINT4, #EXINT5
  * @return      void
  */
-extern inline void RT_EXINT_Clear(port)
-{
-    MemoryWrite32(INT_CLR_REG, 1 << port);
-}
+#define RT_EXINT_Clear(port)        MemoryWrite32(INT_CLR_REG, 1 << port)
 /**
  * @brief   Clear all external interrupt flag.
  * @return  void
  */
-extern inline void RT_EXINT_ClearAll()
-{
-    MemoryWrite32(INT_CLR_REG, 0xff);
-}
+#define RT_EXINT_ClearAll()         MemoryWrite32(INT_CLR_REG, 0xff)
 /**
  * @brief   Get the external interrupt flag table.
  * @return  the external interrupt flag table
  */
-extern inline uint32_t RT_EXINT_GetAllFlag()
-{
-    return MemoryRead32(INT_CTL1_REG);
-}
+#define RT_EXINT_GetAllFlag()       MemoryRead32(INT_CTL1_REG)
 /**
  * @brief   Get the flag of specific external interrupt port.
  * @return  The flag of the external interrupt port.
  */
-extern inline uint32_t RT_EXINT_GetFlag(port)
-{
-    return ( (RT_EXINT_GetAllFlag() >> port) & 0x1 );
-}
+#define RT_EXINT_GetFlag(port)      ( (RT_EXINT_GetAllFlag() >> port) & 0x1 )
 
 #endif
