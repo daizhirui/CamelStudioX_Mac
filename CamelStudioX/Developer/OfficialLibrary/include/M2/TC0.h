@@ -98,7 +98,7 @@
  * @param irqEn     when #ON, the interrupt is enabled; when #OFF, disabled
  * @return          void
  */
-inline void RT_TC0_TimerSet1us(uint32_t T, switch_t irqEn)
+extern inline void RT_TC0_TimerSet1us(uint32_t T, switch_t irqEn)
 {
     // [T0_CLK_REG] = 3 * T / [T0_REF_REG] - 1
     // Let [T0_REF_REG] = 255, get [T0_CLK_REG]
@@ -204,7 +204,7 @@ inline void RT_TC0_TimerSet1us(uint32_t T, switch_t irqEn)
  * @param mode  Trigger mode, optional values: #RISING_TRIGGER, #FALLING_TRIGGER
  * @return      void
  */
-inline void RT_TC0_PWMMTriggerMode(trigger_mode_t mode)
+extern inline void RT_TC0_PWMMTriggerMode(trigger_mode_t mode)
 {
     MemoryAnd32(T0_CTL0_REG, ~(1 << 2));
     MemoryOr32(T0_CTL0_REG, mode << 2);
@@ -216,7 +216,7 @@ inline void RT_TC0_PWMMTriggerMode(trigger_mode_t mode)
  * @param irq       when ON, the interrupt is enabled; when OFF, disabled
  * @return          void
  */
-inline void RT_TC0_SetPWMM(trigger_mode_t mode, switch_t irq)
+extern inline void RT_TC0_SetPWMM(trigger_mode_t mode, switch_t irq)
 {
     MemoryAnd32(T0_CTL0_REG, ~((0x1 << 7) + (0x1 << 2)));
     MemoryOr32(T0_CTL0_REG, (0x18 | (irq << 7) | (mode << 2)));

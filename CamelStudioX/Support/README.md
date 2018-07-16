@@ -1,10 +1,22 @@
+### Version 3.7.5
+----
+
+#### Build 44 on 16.07.2018
+
+- Fixed: Some library mistakes.
+- Change: remove optimization option.
+
 ### Version 3.7.4
 ----
+
+#### Build 43 on 15.07.2018
 
 - Fixed Bug: Library functions for Memory should be extern.
 
 ### Version 3.7.3
 ----
+
+#### Build 42 on 14.07.2018
 
 - Fixed Bug: Crash results from Auto-indent function.
 - Fixed Bug: UI error of Side Panel in macOS 10.12.x.
@@ -12,11 +24,15 @@
 ### Version 3.7.2
 ----
 
+#### Build 41 on 13.07.2018
+
 - Change: Add gcc options: -O2 -msoft-float -Wall -Wextra
 - Improvement: update library and documentation.
 
 ### Version 3.7.1
 ----
+
+#### Build 40 on 12.07.2018
 
 - Improvement: update library and documentation.
 

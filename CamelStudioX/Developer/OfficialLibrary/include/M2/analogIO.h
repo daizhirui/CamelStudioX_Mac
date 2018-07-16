@@ -102,7 +102,7 @@ enum V2P_RESISTOR {
  * @note        Write 1 to #AD_CLR_REG
  * @return      void
  */
-inline void RT_ADC_Clear(void)
+extern inline void RT_ADC_Clear(void)
 {
     MemoryWrite32(AD_CLR_REG, 1);
 }
@@ -110,7 +110,7 @@ inline void RT_ADC_Clear(void)
  * @brief       Set ADC_V2P on.
  * @note        AD_CLR_REG[8]: 1=V2P on, 0=V2P off.
  */
-inline void RT_ADC_V2P_On(void)
+extern inline void RT_ADC_V2P_On(void)
 {
     MemoryOr32(AD_CTL0_REG, (1 << 8));
 }
@@ -119,7 +119,7 @@ inline void RT_ADC_V2P_On(void)
  * @note        AD_CLR_REG[8]: 1=V2P on, 0=V2P off.
  * @return      void
  */
-inline void RT_ADC_V2P_Off(void)
+extern inline void RT_ADC_V2P_Off(void)
 {
     MemoryAnd32(AD_CTL0_REG, ~(1 << 8));
 }
@@ -139,7 +139,7 @@ inline void RT_ADC_V2P_Off(void)
  * @note        AD_CTL0_REG[5]: 1=on, 0=off
  * @return      void
  */
-inline void RT_ADC_TemperatureSensorOn(void)
+extern inline void RT_ADC_TemperatureSensorOn(void)
 {
     MemoryOr32(AD_CTL0_REG, 1 << 5);
 }
@@ -148,7 +148,7 @@ inline void RT_ADC_TemperatureSensorOn(void)
  * @note        AD_CTL0_REG[5]: 1=on, 0=off
  * @return      void
  */
-inline void RT_ADC_TemperatureSensorOff(void)
+extern inline void RT_ADC_TemperatureSensorOff(void)
 {
     MemoryAnd32(AD_CTL0_REG, ~(1 << 5));
 }
@@ -158,7 +158,7 @@ inline void RT_ADC_TemperatureSensorOff(void)
  * @note        AD_OPO_REG[0]: 1=on, 0=off
  * @return      void
  */
-inline void RT_OPO_On(void)
+extern inline void RT_OPO_On(void)
 {
     MemoryOr32(AD_OPO_REG, 0x1);
 }
@@ -167,7 +167,7 @@ inline void RT_OPO_On(void)
  * @note        AD_OPO_REG[0]: 1=on, 0=off
  * @return      void
  */
-inline void RT_OPO_Off(void)
+extern inline void RT_OPO_Off(void)
 {
     MemoryAnd32(AD_OPO_REG, ~0x1);
 }
@@ -318,7 +318,7 @@ inline void RT_OPO_Off(void)
  * @note        AD_CTL0_REG[0]: 1=on, 0=off
  * @return      void
  */
-inline void RT_ADC_SD_On(void)
+extern inline void RT_ADC_SD_On(void)
 {
     MemoryOr32(AD_CTL0_REG, 1);
 }
@@ -327,7 +327,7 @@ inline void RT_ADC_SD_On(void)
  * @note        AD_CTL0_REG[0]: 1=on, 0=off
  * @return      void
  */
-inline void RT_ADC_SD_Off(void)
+extern inline void RT_ADC_SD_Off(void)
 {
     MemoryAnd32(AD_CTL0_REG, ~1);
 }
@@ -387,7 +387,7 @@ inline void RT_ADC_SD_Off(void)
  *              be asserted upon conversion completed.
  * @return      void
  */
-inline void RT_ADC_SD_Start(void)
+extern inline void RT_ADC_SD_Start(void)
 {
     MemoryWrite32(AD_READ_REG, 1);
 }
@@ -395,7 +395,7 @@ inline void RT_ADC_SD_Start(void)
  * @brief   Check is the accumulation of SD is completed.
  * @return  The result if the accumulation is completed, 1=completed, 0=not completed
  */
-inline uint32_t RT_ADC_SD_DataReady(void)
+extern inline uint32_t RT_ADC_SD_DataReady(void)
 {
     return ((MemoryRead32(AD_CTL0_REG) & 0x80000000) >> 31);
 }
@@ -470,7 +470,7 @@ typedef enum {   /*! Relative value of #T0_CTL0_REG to #T0_CTL0_REG. */
                     AT THE SAME TIME!
 * @return void
 */
-inline void RT_DAC_analogWrite(ANALOG_OUTPUT_T channel, uint32_t value, uint32_t p_vdd5)
+extern inline void RT_DAC_analogWrite(ANALOG_OUTPUT_T channel, uint32_t value, uint32_t p_vdd5)
 {
     MemoryOr32((T0_CTL0_REG|channel), 1<<4);
     MemoryAnd32((T0_CTL0_REG|channel), ~(0x3 << 6));

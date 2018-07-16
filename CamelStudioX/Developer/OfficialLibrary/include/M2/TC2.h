@@ -98,7 +98,7 @@
  * @param irqEn     when #ON, the interrupt is enabled; when #OFF, disabled
  * @return          void
  */
-inline void RT_TC2_TimerSet1us(uint32_t T, switch_t irqEn)
+extern inline void RT_TC2_TimerSet1us(uint32_t T, switch_t irqEn)
 {
     // [T2_CLK_REG] = 3 * T / [T2_REF_REG] - 1
     // Let [T2_REF_REG] = 255, get [T2_CLK_REG]

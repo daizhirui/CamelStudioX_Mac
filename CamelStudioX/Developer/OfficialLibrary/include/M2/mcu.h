@@ -251,7 +251,7 @@ typedef void (*FuncPtr2)(uint32_t, uint32_t);
                     \endcode
  * @return void
  */
-inline void RT_MCU_JumpTo(memory_addr_t address)
+extern inline void RT_MCU_JumpTo(memory_addr_t address)
 {
     FuncPtr funcptr;
     funcptr = (FuncPtr)address;
@@ -275,7 +275,7 @@ typedef enum {
                 Optional value: #SYS_CLK_3M, #SYS_CLK_6M, #SYS_CLK_12M.
  * @return void
  */
-inline void RT_MCU_SetSystemClock(SYS_CLK mode)
+extern inline void RT_MCU_SetSystemClock(SYS_CLK mode)
 {
     MemoryAnd32(SYS_CTL2_REG, ~SYS_CLK_12M);
     MemoryOr32(SYS_CTL2_REG, mode);
@@ -287,7 +287,7 @@ inline void RT_MCU_SetSystemClock(SYS_CLK mode)
                 in the sram for the later state recover from the interrupt.
  * @return      void
  */
-inline void RT_Sram_Clear()
+extern inline void RT_Sram_Clear()
 {
     unsigned long i;
     for(i=0;i<7168;i++)

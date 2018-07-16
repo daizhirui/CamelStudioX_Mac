@@ -167,5 +167,26 @@
                 <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.4/CamelStudioX43-42.delta" sparkle:version="43" sparkle:shortVersionString="3.7.4" sparkle:deltaFrom="42" length="78018" type="application/octet-stream" sparkle:dsaSignature="MCwCFCRcT00M91V9xL+Vj7Y5c9p2fnhbAhR2n4n+J61tNv8SxxUt0Kdhnp9wrg=="/>
                 <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.4/CamelStudioX43-41.delta" sparkle:version="43" sparkle:shortVersionString="3.7.4" sparkle:deltaFrom="41" length="226539" type="application/octet-stream" sparkle:dsaSignature="MC4CFQDNaMamLTzqEaiRJKoqBOvJ8FRNJQIVAJTH8CY76qebRpQ+AHMhkbKkI30O"/></sparkle:deltas>
         </item>
+        
+        <item>
+            <title>3.7.5</title>
+            <description><![CDATA[
+                <h2>Fixed Bugs</h2>
+                <ul>
+                <li>Some library mistakes.</li>
+                </ul>
+                <h2>Change</h2>
+                <ul>
+                <li>remove optimization option.</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Mon, 16 Jul 2018 09:03:19 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.5/CamelStudioX_3.7.5_Build44.zip" sparkle:version="44" sparkle:shortVersionString="3.7.5" length="68387488" type="application/octet-stream" sparkle:dsaSignature="MC0CFQC3huCf6efSy5Hm1YW1kxpH8pkWAgIUKep/MQ+kdaeqMqXc25DYsEJQ4zM="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.5/CamelStudioX44-43.delta" sparkle:version="44" sparkle:shortVersionString="3.7.5" sparkle:deltaFrom="43" length="173839" type="application/octet-stream" sparkle:dsaSignature="MCwCFAztJZgMxSNFvm8T4W87iIplOM/1AhQqiCLf0p2xFMh3mmbHyGtQxb0y1Q=="/>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.7.5/CamelStudioX44-42.delta" sparkle:version="44" sparkle:shortVersionString="3.7.5" sparkle:deltaFrom="42" length="210727" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCvHkLc1ETquHceUpOK/RafTo9p2AIVAJzo3EaGNo/IbIytBXs7MFaswwf7"/></sparkle:deltas>
+        </item>
 
     </channel></rss>
