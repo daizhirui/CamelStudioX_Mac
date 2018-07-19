@@ -77,6 +77,9 @@ class SerialMonitorViewController: NSViewController {
         }
     }
     // ************ Serial Setup *************
+    @IBAction func setBaudrate(_ sender: NSPopUpButton) {
+        self.serialController.serialPort?.baudRate = NSNumber(value: Int(sender.selectedItem!.title)!)
+    }
     @IBAction func toggelSerialPort(_ sender: Any) {
         self.serialController.openOrClosePort()
     }

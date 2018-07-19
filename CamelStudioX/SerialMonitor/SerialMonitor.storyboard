@@ -772,6 +772,7 @@ DQ
                                     <menu key="menu" id="bfT-uY-ldR"/>
                                 </popUpButtonCell>
                                 <connections>
+                                    <action selector="setBaudrate:" target="d3s-ps-ZGy" id="kqQ-QD-6dv"/>
                                     <binding destination="d3s-ps-ZGy" name="contentValues" keyPath="self.serialController.availableBaudrates" id="UB5-Lt-FD7"/>
                                 </connections>
                             </popUpButton>

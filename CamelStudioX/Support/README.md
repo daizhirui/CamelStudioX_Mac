@@ -4,6 +4,7 @@
 #### Build 46 on 19.07.2018
 
 - Fixed: A mistake of setting the initial stack pointer in the converter.
+- Fixed: No response of baudrate box in the serial monitor.
 
 ### Version 3.7.6
 ----
