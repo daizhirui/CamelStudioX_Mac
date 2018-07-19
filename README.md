@@ -9,6 +9,20 @@ Integrated Development Environment on Mac For Mips Chips Designed by Camel Micro
 
 ## [Documentation](https://daizhirui.github.io/CamelStudio_Library/)
 
+### Version 3.8.0
+----
+
+#### Build 46 on 19.07.2018
+
+- Fixed: A mistake of setting the initial stack pointer in the converter.
+
+### Version 3.7.6
+----
+
+#### Build 45 on 16.07.2018
+
+- Fixed: Add SPI.h back
+
 ### Version 3.7.5
 ----
 

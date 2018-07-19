@@ -161,7 +161,7 @@ class Uploader: NSObject, ORSSerialPortDelegate {
         self.getControlOfThePort(port: self.serialPort!)
         self.progressInfo = "Starting the uploader..."
         self.postProgressUpdate()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
             self.serialPort?.baudRate = 9600
             self.serialPort?.open()
             self.uploadStageControl(nil)

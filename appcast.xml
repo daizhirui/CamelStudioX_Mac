@@ -1,6 +1,17 @@
 <?xml version="1.0" standalone="yes"?><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>CamelStudioX</title>
+        <item>
+            <title>3.8.0</title>
+            <pubDate>Thu, 19 Jul 2018 11:57:09 +0200</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.8.0/CamelStudioX_3.8.0_Build46.zip" sparkle:version="46" sparkle:shortVersionString="3.8.0" length="68389489" type="application/octet-stream" sparkle:dsaSignature="MC4CFQC6G0G+T0zPqkqds8owuBdkEX7HNAIVALc2wWs9O+I1tsN0wdSA6mpazYJp"/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.8.0/CamelStudioX46-45.delta" sparkle:version="46" sparkle:shortVersionString="3.8.0" sparkle:deltaFrom="45" length="5305" type="application/octet-stream" sparkle:dsaSignature="MC4CFQDI+VBkT85f9OYX8F/Kar6yzHwTwgIVALONdIoXFP2RA6wkSrA3ioVaIY/h"/>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.8.0/CamelStudioX46-44.delta" sparkle:version="46" sparkle:shortVersionString="3.8.0" sparkle:deltaFrom="44" length="150663" type="application/octet-stream" sparkle:dsaSignature="MC4CFQC5NZt8T9sO9HU1TbhZ5vKCyM1sCAIVAIkuOO9ktYDKXfak3xjmJhHWKP46"/>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.8.0/CamelStudioX46-43.delta" sparkle:version="46" sparkle:shortVersionString="3.8.0" sparkle:deltaFrom="43" length="161876" type="application/octet-stream" sparkle:dsaSignature="MC0CFA+PDBQKGdky+PiYXhTysrAVA6QzAhUApdmojiHbLptvkC/21E4rj/oNI+s="/>
+                <enclosure url="https://github.com/daizhirui/CamelStudioX_Mac/releases/download/v3.8.0/CamelStudioX46-42.delta" sparkle:version="46" sparkle:shortVersionString="3.8.0" sparkle:deltaFrom="42" length="211096" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDGa0tJED6olH7s54dMBBTayhCwKgIUan+C1YhHkxoBQegyn+pu0z6MA7I="/></sparkle:deltas>
+        </item>
         
         <item>
             <title>3.7.6</title>
